@@ -1,2 +1,4 @@
 # Video hasil render terlalu besar untuk git
 output/*.mp4
+output/thumbnail/raw_*.png
+output/thumbnail/thumbnail_*_1280x720.jpg
