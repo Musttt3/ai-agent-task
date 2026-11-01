@@ -1,0 +1,150 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #0a0a0b;
+    }
+    #root .glow {
+      position: absolute;
+      left: 140px;
+      top: 60px;
+      width: 960px;
+      height: 960px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200, 16, 46, 0.55) 0%, rgba(200, 16, 46, 0.18) 42%, rgba(10, 10, 11, 0) 70%);
+    }
+    #root .rows {
+      position: absolute;
+      left: -400px;
+      top: 40px;
+      width: 2200px;
+    }
+    #root .row {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 250px;
+      line-height: 0.96;
+      white-space: nowrap;
+      color: transparent;
+      -webkit-text-stroke: 3px rgba(200, 16, 46, 0.75);
+    }
+    #root .person {
+      position: absolute;
+      left: 256px;
+      top: 64px;
+      width: 732px;
+    }
+    #root .shade {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 420px;
+      background: linear-gradient(to top, rgba(10, 10, 11, 0.96) 0%, rgba(10, 10, 11, 0.75) 45%, rgba(10, 10, 11, 0) 100%);
+    }
+    #root .name {
+      position: absolute;
+      left: 104px;
+      bottom: 150px;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 156px;
+      line-height: 1;
+      color: #f4f1ec;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    #root .name span {
+      display: inline-block;
+    }
+    #root .name .t {
+      color: #c8102e;
+    }
+    #root .roles {
+      position: absolute;
+      left: 110px;
+      bottom: 112px;
+      font-family: "Space Mono", monospace;
+      font-size: 30px;
+      color: #f4f1ec;
+      white-space: nowrap;
+    }
+    #root .roles span {
+      display: inline-block;
+    }
+    #root .roles .dot {
+      color: #c8102e;
+      padding: 0 12px;
+    }
+    #root .handle {
+      position: absolute;
+      left: 110px;
+      top: 112px;
+      font-family: "Space Mono", monospace;
+      font-size: 30px;
+      color: #f4f1ec;
+    }
+  </style>
+
+  <div id="root" data-composition-id="hero" data-width="1080" data-height="1080">
+    <div id="h-stage" class="clip" data-start="0" data-duration="5" data-track-index="1" data-layout-allow-overflow data-layout-allow-overlap>
+      <div id="h-glow" class="glow"></div>
+      <div id="h-rows" class="rows" data-layout-ignore>
+        <div id="h-r0" class="row">MUSTTT MUSTTT MUSTTT</div>
+        <div id="h-r1" class="row">MUSTTT MUSTTT MUSTTT</div>
+        <div id="h-r2" class="row">MUSTTT MUSTTT MUSTTT</div>
+      </div>
+      <img id="h-person" class="person" src="assets/poses/hero.png" alt="Musttt full body" />
+      <div id="h-shade" class="shade"></div>
+      <div id="h-handle" class="handle">@musttt</div>
+      <div id="h-name" class="name"><span>M</span><span>U</span><span>S</span><span class="t">T</span><span class="t">T</span><span class="t">T</span></div>
+      <div id="h-roles" class="roles"><span>creator</span><span class="dot">·</span><span>thinker</span><span class="dot">·</span><span>builder</span></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      // The world behind keeps moving (constant drift) while the titles hold still once landed.
+      tl.fromTo("#h-r0", { x: 0 }, { x: -260, duration: 5, ease: "none" }, 0);
+      tl.fromTo("#h-r1", { x: -260 }, { x: 0, duration: 5, ease: "none" }, 0);
+      tl.fromTo("#h-r2", { x: 0 }, { x: -260, duration: 5, ease: "none" }, 0);
+      tl.fromTo("#h-rows", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 0);
+      tl.fromTo("#h-glow", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "expo.out" }, 0);
+
+      // The person rises into frame.
+      tl.fromTo(
+        "#h-person",
+        { y: 220, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "expo.out" },
+        0.05,
+      );
+
+      // Name: letter by letter, 0.1 s apart, light to full with a slight blur.
+      tl.fromTo(
+        "#h-name span",
+        { opacity: 0.3, filter: "blur(6px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out", stagger: 0.1 },
+        0.7,
+      );
+
+      // Roles: word by word.
+      tl.fromTo(
+        "#h-roles span",
+        { opacity: 0, filter: "blur(6px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.13, ease: "power4.out", stagger: 0.07 },
+        1.45,
+      );
+      tl.fromTo(
+        "#h-handle",
+        { opacity: 0, filter: "blur(8px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" },
+        1.9,
+      );
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["hero"] = tl;
+    })();
+  </script>
+</template>

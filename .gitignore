@@ -1,0 +1,8 @@
+# scratch work (tiles, test frames, contact sheets)
+/work/
+
+# HyperFrames local state and snapshots
+musttt-hyperframes/.hyperframes/
+
+node_modules/
+musttt-hyperframes/renders/
