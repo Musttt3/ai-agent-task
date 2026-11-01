@@ -1,9 +1,9 @@
-# Jasa Memarahi Bos Secara Anonim — TikTok 9:16 (46 detik)
+# Jasa Memarahi Bos Secara Anonim — TikTok 9:16 (48 detik)
 
 Video vertikal 1080×1920 @30fps, dibuat dengan [Remotion](https://remotion.dev) dari bahan:
 voiceover ElevenLabs, 5 foto, dan naskah.
 
-Hasil render: `out/jasa-marahi-bos.mp4`
+Hasil final (audio dinormalisasi -14 LUFS): `../hasil/jasa-marahi-bos.mp4`
 
 ## Struktur scene (detik, sinkron ke voiceover)
 
@@ -17,10 +17,10 @@ Hasil render: `out/jasa-marahi-bos.mp4`
 | 25.0–30.1 | Viral | Viewfinder REC + shutter flash, progress unggah, counter penonton 1.000.000+, hati beterbangan | Zoom blur |
 | 30.1–35.5 | Settingan | "SERIUS?" + vignette detak jantung (hitam-putih), record scratch, coret, clapperboard, stempel UNTUK HIBURAN | Glitch |
 | 35.5–41.0 | Sorotan | Lampu sorot menyapu, "JADI SOROTAN", kartu HUMOR + MASALAH NYATA | Whip vertikal |
-| 41.0–46.3 | CTA | Bendera berkibar, "INDONESIA" slam, pertanyaan, kolom komentar mengetik + panah | Whip pan |
+| 41.0–48.0 | CTA | Bendera berkibar, "INDONESIA" slam, pertanyaan, kolom komentar mengetik + panah | Whip pan |
 
-Sepanjang video: caption kata-per-kata (timing dari transkripsi Whisper), kata kunci di-highlight,
-flash di tiap potongan, progress bar, dan ~55 sound effect + beat latar tipis.
+Sepanjang video: flash di tiap potongan dan ~55 sound effect + beat latar tipis.
+Tanpa subtitle narator. SFX dikecilkan (`SFX_GAIN` di `src/Main.tsx`) agar suara narator selalu jelas.
 
 Semua SFX dan musik latar disintesis sendiri (`public/sfx/`) — bebas lisensi.
 
