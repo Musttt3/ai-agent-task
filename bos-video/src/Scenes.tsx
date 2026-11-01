@@ -1293,7 +1293,7 @@ const Card: React.FC<{
 
 export const S8Cta: React.FC = () => {
   const t = useT();
-  const zoom = lerp(t, [40.8, 46.3], [1.05, 1.2], Easing.linear);
+  const zoom = lerp(t, [40.8, 48.0], [1.05, 1.22], Easing.linear);
   const flag = usePop(41.2, 12);
   const kalau = usePop(41.2, 13);
   const indo = lerp(t, [42.74, 42.88], [3, 1], Easing.bezier(0.5, 0, 0.9, 0.6));
@@ -1429,7 +1429,7 @@ export const S8Cta: React.FC = () => {
         </div>
       ) : null}
       {/* ending fade */}
-      <AbsoluteFill style={{ background: "#000", opacity: lerp(t, [45.95, 46.3], [0, 1]) }} />
+      <AbsoluteFill style={{ background: "#000", opacity: lerp(t, [47.3, 48.0], [0, 1]) }} />
     </AbsoluteFill>
   );
 };

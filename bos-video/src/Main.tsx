@@ -1,8 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Composition, Sequence, staticFile } from "remotion";
 import { Audio } from "@remotion/media";
-import { Captions } from "./Captions";
-import { FPS, H, W, YELLOW, lerp, sf, useT } from "./lib";
+import { FPS, H, W, lerp, sf, useT } from "./lib";
 import {
   S1Hook,
   S2Kalimar,
@@ -16,7 +15,10 @@ import {
   Scene,
 } from "./Scenes";
 
-export const DURATION = 46.3;
+export const DURATION = 48.0;
+
+/** SFX sit under the narrator: keep them well below the voice */
+const SFX_GAIN = 0.45;
 
 /** [time (s), file, volume] */
 const SFX: [number, string, number][] = [
@@ -96,23 +98,6 @@ const Flashes: React.FC = () => {
   );
 };
 
-const Progress: React.FC = () => {
-  const t = useT();
-  return (
-    <div
-      style={{
-        position: "absolute",
-        left: 0,
-        top: 0,
-        height: 10,
-        width: `${(t / DURATION) * 100}%`,
-        background: YELLOW,
-        boxShadow: "0 0 18px rgba(255,212,0,0.8)",
-      }}
-    />
-  );
-};
-
 export const BosVideo: React.FC = () => {
   const t = useT();
   return (
@@ -146,15 +131,13 @@ export const BosVideo: React.FC = () => {
       </Scene>
 
       <Flashes />
-      <Captions />
-      <Progress />
-      <AbsoluteFill style={{ background: "#000", opacity: lerp(t, [45.95, 46.3], [0, 1]) }} />
+      <AbsoluteFill style={{ background: "#000", opacity: lerp(t, [47.3, 48.0], [0, 1]) }} />
 
       <Audio src={staticFile("vo.mp3")} volume={1} />
-      <Audio src={staticFile("sfx/bgm.mp3")} volume={0.13} />
+      <Audio src={staticFile("sfx/bgm.mp3")} volume={0.1} />
       {SFX.map(([at, name, vol], i) => (
         <Sequence key={i} from={sf(at)} layout="none" name={`sfx ${name}`}>
-          <Audio src={staticFile(`sfx/${name}.mp3`)} volume={vol} />
+          <Audio src={staticFile(`sfx/${name}.mp3`)} volume={vol * SFX_GAIN} />
         </Sequence>
       ))}
     </AbsoluteFill>
