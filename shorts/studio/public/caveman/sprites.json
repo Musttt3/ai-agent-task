@@ -1,0 +1,87 @@
+{
+ "front": {
+  "w": 310,
+  "h": 660,
+  "feet": 649
+ },
+ "side": {
+  "w": 310,
+  "h": 660,
+  "feet": 651
+ },
+ "back": {
+  "w": 310,
+  "h": 660,
+  "feet": 649
+ },
+ "front_body": {
+  "w": 310,
+  "h": 660,
+  "feet": 649,
+  "face_center": [
+   193.5,
+   140
+  ],
+  "face_w": 183
+ },
+ "head_worried": {
+  "w": 242,
+  "h": 260,
+  "feet": 226,
+  "face_center": [
+   124.0,
+   137.5
+  ],
+  "face_w": 174
+ },
+ "head_happy": {
+  "w": 244,
+  "h": 260,
+  "feet": 225,
+  "face_center": [
+   128.5,
+   136.5
+  ],
+  "face_w": 169
+ },
+ "head_suspicious": {
+  "w": 247,
+  "h": 260,
+  "feet": 224,
+  "face_center": [
+   127.5,
+   136.0
+  ],
+  "face_w": 169
+ },
+ "head_shocked": {
+  "w": 243,
+  "h": 260,
+  "feet": 225,
+  "face_center": [
+   122.5,
+   136.5
+  ],
+  "face_w": 169
+ },
+ "head_scared": {
+  "w": 246,
+  "h": 260,
+  "feet": 225,
+  "face_center": [
+   126.0,
+   136.5
+  ],
+  "face_w": 170
+ },
+ "head_angry": {
+  "w": 248,
+  "h": 260,
+  "feet": 225,
+  "face_center": [
+   137.5,
+   136.5
+  ],
+  "face_w": 171
+ }
+}
