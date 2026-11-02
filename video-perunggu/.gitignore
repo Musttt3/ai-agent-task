@@ -1,0 +1,10 @@
+node_modules
+dist
+.DS_Store
+.env
+out
+# Gambar sumber ada di Google Drive (folder Indonesia), tidak disimpan di git.
+# Salin 001.jpg-128.jpg ke public/img sebelum render (lihat README).
+public/img
+*.mp4
+*.f32
