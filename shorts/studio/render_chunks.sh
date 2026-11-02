@@ -1,8 +1,8 @@
 #!/bin/bash
 # Resumable render: frames go to out/frames/<chunk>/ as JPEGs; a chunk is done when its .done marker exists.
 export REMOTION_TMP=/home/user/rtmp TMPDIR=/home/user/rtmp
-TOTAL=2291; STEP=150
-for ((a=0; a<TOTAL; a+=STEP)); do
+TOTAL=2291; STEP=150; FROM=${1:-0}; UPTO=${2:-$TOTAL}
+for ((a=FROM; a<UPTO && a<TOTAL; a+=STEP)); do
   b=$((a+STEP-1)); ((b>=TOTAL)) && b=$((TOTAL-1))
   d=out/frames/$(printf %04d $a)
   [ -f $d.done ] && continue
