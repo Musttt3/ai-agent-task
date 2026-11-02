@@ -476,12 +476,12 @@ export class World {
       }
       case "hookBreath": { // flash-forward: lamps, crowd backs breathing on the bull, a first hint of green
         this.setSet("cave"); this.fogFor("cave"); this.lights("lamps", f);
-        const spots = this.crowdSpots(9, -2.6, 2.2, -1.0, 0.6, 3).map((s) => ({ ...s }));
+        const spots = this.crowdSpots(9, -1.7, 1.3, -2.7, -1.6, 3).map((s) => ({ ...s }));
         this.crowd(f, cam, spots);
         const on = ramp(f, B(T.napas1) - 10, 12);
         this.puffs.update(f, cam, spots.map((s) => [s.pos[0], 1.55, s.pos[2] - 0.3] as V3), { period: 40, life: 34, size: 0.45, rise: 0.9, drift: [0, -0.8], on: 0.3 + 0.7 * on });
         this.green.u.uGrow.value = 0.2 * ramp(f, B(T.napas1), 18);
-        pos = lerp3([0.2, 1.75, 3.3], [0.0, 1.85, 2.7], smooth(u)); look = [-0.3, 2.6, -2.8]; fov = 50;
+        pos = lerp3([0.2, 1.7, 3.7], [0.0, 1.75, 3.3], smooth(u)); look = [-0.3, 1.8, -2.8]; fov = 58;
         const k = kick(f, [B(T.hancur)], 0.05); pos = [pos[0] + k[0], pos[1] + k[1], pos[2]];
         break;
       }
@@ -506,8 +506,8 @@ export class World {
         const cx = lerp(4.3, -3.4, atStag);
         this.cm.pose({ pos: [cx, 0, -2.45], view: "side", flip: atStag > 0.5, bob: 0.03 * Math.abs(Math.sin(t * 0.5)) * (atStag > 0.02 && atStag < 0.98 ? 1 : 0.3), lean: -4 + 3 * Math.sin(t * 0.3) }, cam);
         this.torchAt([lerp(5.0, -2.4, atStag), 0, -2.0], f);
-        pos = lerp3([5.6, 1.6, 2.6], [-1.6, 1.7, 2.4], smooth((f - (sx - 18)) / 22)); look = lerp3([4.4, 2.7, -3.0], [-4.6, 2.8, -3.0], smooth((f - (sx - 18)) / 22));
-        fov = 52; roll = -2;
+        pos = lerp3([5.6, 1.5, 3.4], [-1.6, 1.6, 3.3], smooth((f - (sx - 18)) / 22)); look = lerp3([4.4, 2.1, -3.0], [-4.6, 2.2, -3.0], smooth((f - (sx - 18)) / 22));
+        fov = 58; roll = -2;
         break;
       }
       case "bullWide": { // the great bull appears; pull back along the wall to show its five metres, proud painter below
@@ -518,7 +518,7 @@ export class World {
         const face: Face = f > B(T.sepanjang) ? "happy" : "suspicious";
         this.cm.pose({ pos: [0.2, 0, -2.3], view: "front", face, nod: f > B(T.sepanjang) ? 4 * Math.sin((f - T.sepanjang) * 0.25) : 0 }, cam);
         const pull = smooth((f - B(T.sepanjang)) / 40);
-        pos = lerp3([0.6, 1.8, 0.7], [5.6, 1.4, 2.4], pull); look = lerp3([0.0, 2.6, -2.6], [-0.6, 2.7, -3.0], pull); fov = lerp(46, 58, pull);
+        pos = lerp3([0.6, 1.5, 2.6], [5.6, 1.4, 3.2], pull); look = lerp3([0.0, 2.2, -2.6], [-0.6, 2.5, -3.0], pull); fov = lerp(56, 62, pull);
         pos = [pos[0], pos[1], pos[2] + 0.2 * smooth(u)];
         const k = kick(f, [B(T.banteng) + 2], 0.04); pos = [pos[0] + k[0], pos[1] + k[1], pos[2]];
         break;
@@ -585,7 +585,7 @@ export class World {
         this.marcel.pose(MARCEL, "marcel", [mx, 0, -0.6], cam, { expr: "shock", mode: "stand", self: 0.3 });
         this.handL.position.set(mx - 0.35, 1.25, -0.5);
         const swing = smooth((f - B(T.galeri)) / 30);
-        pos = lerp3([4.6, 1.5, 1.8], [3.6, 1.6, 2.4], swing); look = lerp3([3.0, 1.4, -0.6], [-0.2, 3.0, -3.0], swing); fov = lerp(40, 54, swing);
+        pos = lerp3([4.8, 1.4, 3.2], [3.6, 1.5, 3.3], swing); look = lerp3([3.0, 1.1, -0.6], [-0.2, 2.6, -3.0], swing); fov = lerp(52, 58, swing);
         this.handL.intensity *= 1 + 1.4 * swing;
         break;
       }
@@ -602,31 +602,31 @@ export class World {
       case "crowd": { // people come, then more, then 1,200 a day; the caveman gets squeezed in
         this.setSet("cave"); this.fogFor("cave"); this.lights("lamps", f);
         const n = f < B(T.banyak) ? 5 : f < B(T.n1200) ? 16 : 40;
-        const spots = this.crowdSpots(n, -4.2, 4.2, -2.4, 1.0, 11).map((s, i) => ({ ...s, expr: (i % 4 === 0 ? "smile" : "neutral") as "smile" | "neutral" }));
+        const spots = this.crowdSpots(n, -4.2, 4.2, -2.6, 0.0, 11).map((s, i) => ({ ...s, expr: (i % 4 === 0 ? "smile" : "neutral") as "smile" | "neutral" }));
         this.crowd(f, cam, spots);
-        if (f > B(T.banyak)) this.cm.pose({ pos: [0.85, 0, 0.2], view: "front", face: f > B(T.sehari) ? "worried" : "suspicious", bob: 0 }, cam);
+        if (f > B(T.banyak)) this.cm.pose({ pos: [0.15, 0, -1.1], view: "front", face: f > B(T.sehari) ? "worried" : "suspicious", bob: 0 }, cam);
         const k = kick(f, [B(T.banyak), B(T.n1200)], 0.04);
-        pos = lerp3([0.4, 1.9, 3.6], [0.4, 2.6, 3.7], smooth(u)); look = [0.0, 1.9, -2.2]; fov = lerp(48, 58, smooth(u));
+        pos = lerp3([0.4, 1.6, 3.7], [0.4, 2.0, 3.7], smooth(u)); look = [0.0, 1.2, -2.2]; fov = lerp(58, 64, smooth(u));
         pos = [pos[0] + k[0], pos[1] + k[1], pos[2]];
         break;
       }
       case "green": { // close on the bull: the wall starts to turn green
         this.setSet("cave"); this.fogFor("cave"); this.lights("lamps", f);
         this.green.u.uGrow.value = 0.06 + 0.42 * smooth((f - B(T.mulai)) / Math.max(1, T.hijau + 12 - T.mulai));
-        this.cm.pose({ pos: [1.0, 0, -0.6], view: "front", face: f > B(T.hijau) ? "shocked" : "suspicious", lean: f > B(T.hijau) ? -4 : 0 }, cam);
-        pos = lerp3([1.9, 1.8, 2.0], [1.7, 1.9, 1.5], smooth(u)); look = [-0.2, 2.6, -2.8]; fov = 50;
+        this.cm.pose({ pos: [0.55, 0, -1.2], view: "front", face: f > B(T.hijau) ? "shocked" : "suspicious", lean: f > B(T.hijau) ? -4 : 0 }, cam);
+        pos = lerp3([2.1, 1.6, 3.5], [1.9, 1.7, 3.1], smooth(u)); look = [0.0, 2.1, -2.6]; fov = 58;
         const k = kick(f, [B(T.hijau)], 0.03); pos = [pos[0] + k[0], pos[1] + k[1], pos[2]];
         break;
       }
       case "notouch": { // nobody touches (hands to themselves) ... but everybody breathes
         this.setSet("cave"); this.fogFor("cave"); this.lights("lamps", f);
         this.green.u.uGrow.value = 0.48;
-        const spots = [-1.8, -0.9, 0, 0.9, 1.8].map((x, i) => ({ pos: [x, 0, -0.3 - (i % 2) * 0.3] as V3, v: i + 20, expr: (f > B(T.napas2) ? "relief_open" : f > B(T.sayangnya) ? "neutral" : "smile_closed") as "smile_closed" | "neutral" | "relief_open" }));
+        const spots = [-1.3, -0.65, 0, 0.65, 1.3].map((x, i) => ({ pos: [x, 0, -1.0 - (i % 2) * 0.3] as V3, v: i + 20, expr: (f > B(T.napas2) ? "relief_open" : f > B(T.sayangnya) ? "neutral" : "smile_closed") as "smile_closed" | "neutral" | "relief_open" }));
         this.crowd(f, cam, spots);
         const big = ramp(f, B(T.napas2), 6);
         this.puffs.update(f, cam, spots.map((s) => [s.pos[0] + 0.04, 1.45, s.pos[2] + 0.1] as V3), { period: big > 0 ? 30 : 60, life: 28, size: 0.35 + 0.4 * big, rise: 0.4, drift: [0, 0.6], on: f > B(T.sayangnya) ? 0.5 + 0.5 * big : 0, seed: 9 });
-        pos = lerp3([0, 1.5, 5.2], [0, 1.55, 4.4], smooth(u)); look = [0, 1.35, -0.4]; fov = 50;
-        if (f > B(T.napas2)) { const z = smooth((f - B(T.napas2)) / 8); pos = [pos[0], pos[1], pos[2] - 0.6 * z]; }
+        pos = lerp3([0, 1.5, 3.8], [0, 1.55, 3.4], smooth(u)); look = [0, 1.3, -1.1]; fov = 60;
+        if (f > B(T.napas2)) { const z = smooth((f - B(T.napas2)) / 8); pos = [pos[0], pos[1], pos[2] - 0.3 * z]; }
         break;
       }
       case "car": { // a car full of passengers: the windows fog up
@@ -646,7 +646,7 @@ export class World {
         this.green.u.uGrow.value = 0.52;
         const shake = f > B(T.dilap) ? 9 * Math.sin((f - T.dilap) * 0.9) * Math.exp(-(f - T.dilap) / 25) : 0;
         this.cm.pose({ pos: [-0.6, 0, -1.4], view: "front", face: "worried", nod: shake }, cam);
-        pos = lerp3([-0.2, 1.65, 1.6], [-0.3, 1.7, 1.1], smooth(u)); look = [-0.7, 1.9, -2.0]; fov = 48;
+        pos = lerp3([-0.3, 1.4, 3.3], [-0.35, 1.45, 2.9], smooth(u)); look = [-0.6, 1.5, -1.4]; fov = 54;
         break;
       }
       case "grow": { // vapour, heat, light: the cave becomes a greenhouse for algae and mould
@@ -676,17 +676,17 @@ export class World {
       case "replica": { // tourists happily visit the copy
         this.setSet("cave"); this.fogFor("cave"); this.lights("replica", f);
         this.rail.visible = true;
-        const spots = this.crowdSpots(10, -3.5, 3.5, -1.2, 0.6, 21).map((s, i) => ({ ...s, v: s.v + 30, expr: (i % 3 ? "smile" : "grin") as "smile" | "grin" }));
+        const spots = this.crowdSpots(10, -3.5, 3.5, -2.2, -0.6, 21).map((s, i) => ({ ...s, v: s.v + 30, expr: (i % 3 ? "smile" : "grin") as "smile" | "grin" }));
         this.crowd(f, cam, spots);
-        this.cm.pose({ pos: [1.6, 0, 0.5], view: "front", face: "suspicious" }, cam);
-        pos = lerp3([2.4, 1.8, 4.3], [1.9, 1.9, 3.8], smooth(u)); look = [0.2, 2.0, -2.0]; fov = 54;
+        this.cm.pose({ pos: [0.75, 0, -0.3], view: "front", face: "suspicious" }, cam);
+        pos = lerp3([2.2, 1.6, 3.7], [1.8, 1.7, 3.4], smooth(u)); look = [0.2, 1.6, -2.0]; fov = 60;
         break;
       }
       case "safe": { // seventeen thousand years in the dark: safe (the clean bull, his torch)
         this.setSet("cave"); this.fogFor("cave"); this.lights("torch", f);
         this.torchAt([-0.9, 0, -1.9], f);
         this.cm.pose({ pos: [0.1, 0, -2.0], view: "front", face: "happy", nod: 3 * Math.sin(t * 0.12) }, cam);
-        pos = lerp3([0.3, 1.7, 1.6], [0.2, 1.8, 0.9], smooth(u)); look = [-0.2, 2.4, -2.8]; fov = 50;
+        pos = lerp3([0.4, 1.5, 3.4], [0.3, 1.6, 2.9], smooth(u)); look = [-0.1, 1.9, -2.6]; fov = 56;
         break;
       }
       case "end": { // fifteen years with us: almost gone
@@ -695,7 +695,7 @@ export class World {
         this.puffs.update(f, cam, [-1.5, -0.5, 0.5, 1.5].map((x) => [x, 1.6, 0.6] as V3), { period: 50, life: 44, size: 0.6, rise: 1.0, drift: [0, -1.6], on: 0.5, seed: 12 });
         const face: Face = f > B(T.hampir) ? "angry" : "scared";
         this.cm.pose({ pos: [0.1, 0, -1.6], view: "front", face, lean: f > B(T.hampir) ? 2 : 0 }, cam);
-        pos = lerp3([0.2, 1.7, 1.4], [0.15, 1.72, 0.55], smooth(u)); look = [0.0, 1.95, -2.0]; fov = 48;
+        pos = lerp3([0.2, 1.5, 3.4], [0.15, 1.55, 2.5], smooth(u)); look = [0.0, 1.5, -1.6]; fov = 56;
         break;
       }
     }
