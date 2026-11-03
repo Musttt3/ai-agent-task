@@ -1,0 +1,4 @@
+node_modules/
+player/.hyperframes/
+player/renders/
+hf_render.log
