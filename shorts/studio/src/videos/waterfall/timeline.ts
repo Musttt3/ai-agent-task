@@ -231,7 +231,7 @@ export const stateAt = (t: number): State => {
     s.cam.frame = { kind: "panel", panel: 0 };
     // local panel coords: x across (0 = panel centre), y up, z out of the panel. Seen as a relief card: wider view,
     // small orbit so the depth displacement reads, crane bottom -> top.
-    const y = lerp(-0.66, 0.62, smoother(u));
+    const y = lerp(-0.66, 0.5, smoother(u));
     const x = lerp(0.12, -0.06, smoother(u));
     s.cam.pos = [x, y - 0.1, lerp(2.0, 2.25, u)];
     s.cam.target = [lerp(0.05, 0, e), y + 0.04, -0.15];
@@ -273,7 +273,7 @@ export const stateAt = (t: number): State => {
     s.exposure = 1 + 0.12 * pulse(t, T.p3Kick, 5);
     // push-through into the centre: fast dolly + flash
     const w = inv(T.center - 0.25, T.center, t);
-    if (w > 0) { s.cam.pos[2] -= 1.1 * easeInCubic(w); s.flash = 0.75 * easeInCubic(w); s.blur = [0, -0.03 * easeInCubic(w)]; }
+    if (w > 0) { s.cam.pos[2] -= 1.1 * easeInCubic(w); s.flash = 0.65 * Math.pow(w, 4); s.blur = [0, -0.03 * easeInCubic(w)]; }
   }
 
   // ---------------- CENTER: from the sandals up to the face, then pull back with the light ----------------
@@ -284,7 +284,7 @@ export const stateAt = (t: number): State => {
     s.person.z = 0.62;
     s.disp = [0.12, 0.22, 0.12];
     s.person.bulge = 0.09;
-    s.flash = 0.75 * pulse(t, T.center, 10);
+    s.flash = 0.6 * pulse(t, T.center, 14);
     const a = smoother(inv(T.center, k2, t)); // crane up the body
     const b = smoother(inv(k2 - 0.1, T.outro, t)); // pull back
     const camA: Vec3 = [lerp(0.42, -0.3, a), lerp(-1.18, 0.36, a), lerp(2.5, 2.5, a)];
