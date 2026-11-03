@@ -215,11 +215,11 @@ export const stateAt = (t: number): State => {
     if (w > 0) {
       const ww = easeInCubic(w);
       s.cam.pos = orbit(tgt, lerp(14, 14, orbitU), lerp(1.5, 1.5, orbitU), 5.6);
-      const yaw = -ww * 0.55; // turn left, toward the jungle panel
+      const yaw = -ww * 0.3; // turn left, toward the jungle panel
       const dir = [s.cam.target[0] - s.cam.pos[0], s.cam.target[2] - s.cam.pos[2]];
       const c = Math.cos(yaw), sn = Math.sin(yaw);
       s.cam.target = [s.cam.pos[0] + dir[0] * c - dir[1] * sn, tgt[1], s.cam.pos[2] + dir[0] * sn + dir[1] * c];
-      s.blur = [-0.06 * ww, 0];
+      s.blur = [-0.13 * ww, 0];
     }
   }
 
