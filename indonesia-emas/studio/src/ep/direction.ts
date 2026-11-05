@@ -56,8 +56,10 @@ export function direct(c: Ctx) {
   const f = c.f, id = c.shot.id;
   const B0 = c.W.sets[c.shot.set];
   const hp = B0.nodes.get("HP");
+  const sel = c.W.sets.kamar.nodes.get("Selimut"); if (sel) sel.visible = true;
   switch (id) {
     case "02": {  // asleep under the blanket
+      const bl = B0.nodes.get("Selimut"); if (bl) bl.visible = false;
       const ch = place(c, "HERO_tidur", { pos: new THREE.Vector3(0, 0.6, -0.24), yaw: 0 });
       ch.root.rotation.set(-Math.PI / 2, 0, 0); ch.blob.visible = false;
       const frown = f >= 106 && f < 112 ? -0.003 : -0.004;
@@ -65,6 +67,7 @@ export function direct(c: Ctx) {
       break;
     }
     case "03": {  // wakes, glances at the window, sits bolt upright on "kaget" (182)
+      const bl = B0.nodes.get("Selimut"); if (bl) bl.visible = false;
       const ch = place(c, "HERO_duduk_kasur", { yaw: 0 }); ch.blob.visible = false;
       const t = ramp(f, 182, 6, easeOut);                 // 0 lying -> 1 sitting
       const ang = -Math.PI / 2 * (1 - t), hip = new THREE.Vector3(0, 0.6, -0.87);
@@ -112,9 +115,12 @@ export function direct(c: Ctx) {
       face(ch, "SENANG", f, 3, { look: [0, -18] }, [458]);
       break;
     }
-    case "09": {  // crosses the zebra crossing
+    case "09": {  // the cars clear the crossing first, then HERO crosses (never through a car)
+      const car = (n: string, x0: number, x1: number, a: number, b: number) => { const o = B0.nodes.get(n); if (o) o.position.x = lerp(x0, x1, clamp01((f - a) / (b - a))); };
+      car("Mobil_A", 4, 34, 482, 531); car("Mobil_B", 24, -6, 482, 531); car("Mobil_C", -30, -12, 482, 531);
       const ch = place(c, "HERO_09");
-      walkPath(ch, B(14, -2.6, 0), B(14, 1.6, 0), (f - 482) / 49, f, 482);
+      if (f < 504) { ch.root.position.copy(B(14, -2.9, 0)); ch.root.rotation.y = yawAlong(B(14, -2.9, 0), B(14, 1.6, 0)); ch.head(-35 * Math.sin(Math.PI * clamp01((f - 484) / 18)), 0); }
+      else walkPath(ch, B(14, -2.9, 0), B(14, 0.4, 0), (f - 504) / 27, f, 504);
       face(ch, "SENANG", f, 4);
       break;
     }
@@ -241,7 +247,7 @@ export function direct(c: Ctx) {
     case "26": {  // villagers on the porch wave one after another; HERO waves too
       c.W.sets.desa.json.cameras["26"].show.forEach((n, i) => {
         const sp = c.W.standin("desa", n, c.f)!.pos;
-        const ch = place(c, n, n.startsWith("FIG") ? { pos: new THREE.Vector3(sp.x, 1.3, -3.85) } : {});
+        const ch = place(c, n, n.startsWith("FIG") ? { pos: new THREE.Vector3(sp.x, 1.3, -3.85) } : { pos: B(1.1, 3.0, 0) });
         const w = ramp(f, 1549 + i * 5, 6, easeOut);
         ch.swing("upperarm.L", 150 * w); ch.turn("forearm.L", new THREE.Vector3(0, 0, 1), 25 * Math.sin((f - 1549) / 4) * w);
         face(ch, "SENYUM", f, 40 + i);
