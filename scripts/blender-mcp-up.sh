@@ -33,6 +33,15 @@ fi
 
 port_open() { (exec 3<>"/dev/tcp/127.0.0.1/${PORT}") 2>/dev/null; }
 
+# Fast path for the PreToolUse hook: already up, nothing to do.
+if [[ "${1:-}" != "install" ]] && port_open; then
+  exit 0
+fi
+
+# Serialise installs/launches: parallel tool calls each fire the hook.
+exec 9>/tmp/blender-mcp.lock
+flock 9
+
 if [[ "${1:-}" != "install" ]] && port_open; then
   echo "Something is already listening on port ${PORT}; assuming Blender MCP is up."
   exit 0
@@ -42,7 +51,7 @@ fi
 if [[ ! -x "$BLENDER_BIN" ]]; then
   echo "Downloading Blender ${BLENDER_VERSION}..."
   tmp="$(mktemp -d)"
-  curl -fL --retry 3 -o "${tmp}/blender.tar.xz" \
+  curl -fsSL --retry 3 -o "${tmp}/blender.tar.xz" \
     "https://download.blender.org/release/Blender${BLENDER_SERIES}/blender-${BLENDER_VERSION}-linux-x64.tar.xz"
   tar -xf "${tmp}/blender.tar.xz" -C /opt
   rm -rf "$tmp"
@@ -76,7 +85,7 @@ export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp/runtime-$(id -u)}"
 mkdir -p -m 700 "$XDG_RUNTIME_DIR"
 # Empty WAYLAND_DISPLAY + an X DISPLAY from xvfb-run makes Blender's GHOST use X11.
 setsid nohup env -u WAYLAND_DISPLAY xvfb-run -a -s "-screen 0 1920x1080x24" \
-  "$BLENDER_BIN" --addons blender_mcp >"$LOG" 2>&1 < /dev/null &
+  "$BLENDER_BIN" --addons blender_mcp >"$LOG" 2>&1 < /dev/null 9>&- &   # 9>&-: don't let Blender keep the lock
 echo $! > "$PIDFILE"
 
 for _ in $(seq 1 60); do

@@ -1,0 +1,19 @@
+{
+  "env": {
+    "MCP_TIMEOUT": "120000"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__blender__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/blender-autostart.sh",
+            "timeout": 600
+          }
+        ]
+      }
+    ]
+  }
+}
