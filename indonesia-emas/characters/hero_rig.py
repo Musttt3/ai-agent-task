@@ -154,7 +154,7 @@ for o in list(C.objects):
     elif n.startswith(("Paha", "Lutut")): to_bone(o, f"thigh.{side}")
     elif n.startswith(("Betis", "Sepatu", "Sol")): to_bone(o, f"shin.{side}")
     elif n.startswith(("Hoodie_Bawah",)): to_bone(o, "pelvis")
-    elif n.startswith(("Hoodie", "Logo")): to_bone(o, "spine")
+    elif n.startswith(("Hoodie", "Logo", "Kerah", "Ritsleting")): to_bone(o, "spine")
     else: to_bone(o, "head")   # head, hair, ears, neck, eyes, brows, mouth decals, lids, pivots
 
 # IK control: right hand to the chin (MIKIR); pole keeps the elbow down and out
@@ -193,6 +193,7 @@ def pose(name):
     print("POSE", name, "knee.R", tuple(round(v, 2) for v in tail("thigh.R")), "foot.R", tuple(round(v, 2) for v in tail("shin.R")), "hand.R", tuple(round(v, 2) for v in tail("forearm.R")))
 
 ekspresi("SENANG"); pose("BERDIRI")
+HR.scale = (HR.get("skala", 1.0),) * 3
 bpy.ops.wm.save_mainfile()
 print("SAVED rig")
 
