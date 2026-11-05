@@ -2,7 +2,8 @@
 // Post: depth of field (focus from the Blender camera) -> AgX tone mapping (as in Blender) -> SMAA.
 import React, { useEffect, useMemo, useState } from "react";
 import * as THREE from "three";
-import { AbsoluteFill, continueRender, delayRender, getInputProps, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Audio, continueRender, delayRender, getInputProps, staticFile, useCurrentFrame } from "remotion";
+import { Captions } from "./Captions";
 import { ThreeCanvas } from "@remotion/three";
 import { useThree } from "@react-three/fiber";
 import { EffectComposer } from "@react-three/postprocessing";
@@ -81,6 +82,8 @@ export const Episode: React.FC = () => {
           <Inner L={L} />
         </ThreeCanvas>
       )}
+      {(getInputProps() as { captions?: boolean }).captions === false ? null : <Captions />}
+      {(getInputProps() as { audio?: boolean }).audio === true ? <Audio src={staticFile("audio/mix.wav")} /> : null}
     </AbsoluteFill>
   );
 };
