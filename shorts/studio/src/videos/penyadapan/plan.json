@@ -1,0 +1,1001 @@
+{
+ "_doc": "All times are narration seconds (words.json clock). The composition starts VO seconds before the narration. Shot 'tin' = transition INTO the shot at 'from'. Marks are drawn inside the shot's camera (they move with the image): x/y are fractions of the image. Graphics are screen-space (1080x1920).",
+ "vo": 0.25,
+ "end": 67.75,
+ "shots": [
+  {
+   "id": "presiden_telepon",
+   "kind": "img",
+   "from": -0.25,
+   "to": 2.1,
+   "tin": "glitch",
+   "move": {
+    "z0": 1.24,
+    "z1": 1.07,
+    "x0": 0,
+    "y0": 200,
+    "x1": 0,
+    "y1": 60,
+    "ease": "out"
+   }
+  },
+  {
+   "id": "operator_cctv",
+   "kind": "img",
+   "from": 2.1,
+   "to": 4.4,
+   "tin": "glitch",
+   "move": {
+    "z0": 1.06,
+    "z1": 1.17,
+    "x0": 0,
+    "y0": 40,
+    "x1": 0,
+    "y1": 150
+   },
+   "marks": [
+    {
+     "type": "reticle",
+     "t0": 2.35,
+     "t1": 4.4,
+     "x": 0.485,
+     "y": 0.135,
+     "r": 115,
+     "label": "CCTV",
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "id": "polri_pers",
+   "kind": "img",
+   "from": 4.4,
+   "to": 8.85,
+   "tin": "whipUp",
+   "move": {
+    "z0": 1.2,
+    "z1": 1.14,
+    "x0": 0,
+    "y0": 170,
+    "x1": 0,
+    "y1": -150,
+    "ease": "inout",
+    "k0": 6.7,
+    "k1": 7.6
+   },
+   "marks": [
+    {
+     "type": "reticle",
+     "t0": 7.8,
+     "t1": 8.85,
+     "x": 0.215,
+     "y": 0.715,
+     "r": 92,
+     "label": "01",
+     "color": "red"
+    },
+    {
+     "type": "reticle",
+     "t0": 7.93,
+     "t1": 8.85,
+     "x": 0.5,
+     "y": 0.715,
+     "r": 92,
+     "label": "02",
+     "color": "red"
+    },
+    {
+     "type": "reticle",
+     "t0": 8.06,
+     "t1": 8.85,
+     "x": 0.785,
+     "y": 0.715,
+     "r": 92,
+     "label": "03",
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "id": "listen",
+   "kind": "broll",
+   "from": 8.85,
+   "to": 10.9,
+   "tin": "zoom",
+   "year": "1951",
+   "film": "The Nation at Your Fingertips",
+   "move": {
+    "z0": 1.0,
+    "z1": 1.08,
+    "x0": 0,
+    "y0": 0,
+    "x1": -20,
+    "y1": 0
+   }
+  },
+  {
+   "id": "presiden_target",
+   "kind": "img",
+   "from": 10.9,
+   "to": 13.15,
+   "tin": "whipLeft",
+   "move": {
+    "z0": 1.08,
+    "z1": 1.18,
+    "x0": 0,
+    "y0": -40,
+    "x1": 30,
+    "y1": -120
+   },
+   "marks": [
+    {
+     "type": "reticle",
+     "t0": 11.6,
+     "t1": 13.15,
+     "x": 0.355,
+     "y": 0.79,
+     "r": 150,
+     "label": "TARGET",
+     "color": "red",
+     "lock": true
+    }
+   ]
+  },
+  {
+   "id": "penyidik",
+   "kind": "img",
+   "from": 13.15,
+   "to": 14.2,
+   "tin": "flash",
+   "move": {
+    "z0": 1.12,
+    "z1": 1.2,
+    "x0": -30,
+    "y0": 0,
+    "x1": 20,
+    "y1": 20
+   }
+  },
+  {
+   "id": "dial",
+   "kind": "broll",
+   "from": 14.2,
+   "to": 15.55,
+   "tin": "zoom",
+   "year": "1946",
+   "film": "Telephone and Telegraph",
+   "move": {
+    "z0": 1.04,
+    "z1": 1.14,
+    "x0": 0,
+    "y0": 0,
+    "x1": 0,
+    "y1": 0
+   }
+  },
+  {
+   "id": "nomor_telepon",
+   "kind": "img",
+   "from": 15.55,
+   "to": 17.0,
+   "tin": "whipUp",
+   "move": {
+    "z0": 1.16,
+    "z1": 1.08,
+    "x0": -60,
+    "y0": 60,
+    "x1": 20,
+    "y1": 40
+   }
+  },
+  {
+   "id": "tanpa_verifikasi",
+   "kind": "img",
+   "from": 17.0,
+   "to": 20.95,
+   "tin": "glitch",
+   "move": {
+    "z0": 1.05,
+    "z1": 1.16,
+    "x0": 0,
+    "y0": 120,
+    "x1": -40,
+    "y1": 170
+   }
+  },
+  {
+   "id": "sasaran",
+   "kind": "img",
+   "from": 20.95,
+   "to": 26.45,
+   "tin": "zoom",
+   "move": {
+    "z0": 1.03,
+    "z1": 1.07,
+    "x0": 0,
+    "y0": 0,
+    "x1": 0,
+    "y1": 0
+   },
+   "marks": [
+    {
+     "type": "reticle",
+     "t0": 22.74,
+     "t1": 26.45,
+     "x": 0.25,
+     "y": 0.27,
+     "r": 100,
+     "label": "PEJABAT",
+     "color": "red"
+    },
+    {
+     "type": "reticle",
+     "t0": 23.6,
+     "t1": 26.45,
+     "x": 0.74,
+     "y": 0.25,
+     "r": 100,
+     "label": "TOKOH POLITIK",
+     "color": "red"
+    },
+    {
+     "type": "reticle",
+     "t0": 24.51,
+     "t1": 26.45,
+     "x": 0.24,
+     "y": 0.66,
+     "r": 100,
+     "label": "WARTAWAN",
+     "color": "red"
+    },
+    {
+     "type": "reticle",
+     "t0": 25.66,
+     "t1": 26.45,
+     "x": 0.76,
+     "y": 0.68,
+     "r": 100,
+     "label": "PENGUSAHA",
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "id": "control",
+   "kind": "broll",
+   "from": 26.45,
+   "to": 28.3,
+   "tin": "glitch",
+   "year": "1956",
+   "film": "On Guard! The Story of SAGE",
+   "move": {
+    "z0": 1.0,
+    "z1": 1.1,
+    "x0": 0,
+    "y0": 0,
+    "x1": 20,
+    "y1": 0
+   }
+  },
+  {
+   "id": "akses_kartu",
+   "kind": "img",
+   "from": 28.3,
+   "to": 30.7,
+   "tin": "whipLeft",
+   "move": {
+    "z0": 1.08,
+    "z1": 1.18,
+    "x0": 40,
+    "y0": 0,
+    "x1": -10,
+    "y1": 30
+   }
+  },
+  {
+   "id": "perintah",
+   "kind": "img",
+   "from": 30.7,
+   "to": 32.45,
+   "tin": "whipLeft",
+   "move": {
+    "z0": 1.06,
+    "z1": 1.15,
+    "x0": 0,
+    "y0": 60,
+    "x1": 0,
+    "y1": 120
+   }
+  },
+  {
+   "id": "deteksi",
+   "kind": "img",
+   "from": 32.45,
+   "to": 35.4,
+   "tin": "whipLeft",
+   "move": {
+    "z0": 1.08,
+    "z1": 1.2,
+    "x0": -40,
+    "y0": 40,
+    "x1": -110,
+    "y1": 70
+   },
+   "marks": [
+    {
+     "type": "alert",
+     "t0": 33.16,
+     "t1": 35.4,
+     "x": 0.7,
+     "y": 0.37,
+     "r": 70
+    }
+   ]
+  },
+  {
+   "id": "dpr",
+   "kind": "img",
+   "from": 35.4,
+   "to": 38.95,
+   "tin": "dip",
+   "move": {
+    "z0": 1.06,
+    "z1": 1.16,
+    "x0": 0,
+    "y0": 0,
+    "x1": 0,
+    "y1": 60
+   }
+  },
+  {
+   "id": "rapat_publik",
+   "kind": "img",
+   "from": 38.95,
+   "to": 42.15,
+   "tin": "zoom",
+   "move": {
+    "z0": 1.04,
+    "z1": 1.13,
+    "x0": 0,
+    "y0": 60,
+    "x1": 0,
+    "y1": 110
+   }
+  },
+  {
+   "id": "hakim",
+   "kind": "img",
+   "from": 42.15,
+   "to": 44.35,
+   "tin": "whipUp",
+   "move": {
+    "z0": 1.12,
+    "z1": 1.04,
+    "x0": 0,
+    "y0": 40,
+    "x1": 0,
+    "y1": 0
+   }
+  },
+  {
+   "id": "sidang",
+   "kind": "img",
+   "from": 44.35,
+   "to": 48.2,
+   "tin": "glitch",
+   "move": {
+    "z0": 1.05,
+    "z1": 1.16,
+    "x0": 0,
+    "y0": -100,
+    "x1": 0,
+    "y1": -180
+   }
+  },
+  {
+   "id": "street",
+   "kind": "broll",
+   "from": 48.2,
+   "to": 50.05,
+   "tin": "dip",
+   "year": "1951",
+   "film": "The Nation at Your Fingertips",
+   "move": {
+    "z0": 1.0,
+    "z1": 1.08,
+    "x0": 0,
+    "y0": 0,
+    "x1": 0,
+    "y1": 0
+   }
+  },
+  {
+   "id": "verifikasi",
+   "kind": "img",
+   "from": 50.05,
+   "to": 52.3,
+   "tin": "whipLeft",
+   "move": {
+    "z0": 1.06,
+    "z1": 1.15,
+    "x0": 40,
+    "y0": 40,
+    "x1": 70,
+    "y1": 90
+   }
+  },
+  {
+   "id": "switch",
+   "kind": "broll",
+   "from": 52.3,
+   "to": 54.4,
+   "tin": "zoom",
+   "year": "1956",
+   "film": "On Guard! The Story of SAGE",
+   "move": {
+    "z0": 1.0,
+    "z1": 1.09,
+    "x0": 0,
+    "y0": 0,
+    "x1": -20,
+    "y1": 0
+   }
+  },
+  {
+   "id": "loopcard",
+   "kind": "card",
+   "from": 54.4,
+   "to": 56.55,
+   "tin": "glitch",
+   "bg": "nomor_telepon",
+   "move": {
+    "z0": 1.1,
+    "z1": 1.18,
+    "x0": 0,
+    "y0": 0,
+    "x1": 0,
+    "y1": 0
+   }
+  },
+  {
+   "id": "telepon_wanita",
+   "kind": "img",
+   "from": 56.55,
+   "to": 58.85,
+   "tin": "flash",
+   "move": {
+    "z0": 1.06,
+    "z1": 1.16,
+    "x0": 0,
+    "y0": 0,
+    "x1": 40,
+    "y1": 60
+   }
+  },
+  {
+   "id": "couple",
+   "kind": "broll",
+   "from": 58.85,
+   "to": 60.7,
+   "tin": "zoom",
+   "year": "1951",
+   "film": "The Nation at Your Fingertips",
+   "move": {
+    "z0": 1.0,
+    "z1": 1.1,
+    "x0": 0,
+    "y0": 0,
+    "x1": 0,
+    "y1": 0
+   }
+  },
+  {
+   "id": "radar",
+   "kind": "broll",
+   "from": 60.7,
+   "to": 63.45,
+   "tin": "glitch",
+   "year": "1956",
+   "film": "On Guard! The Story of SAGE",
+   "move": {
+    "z0": 1.0,
+    "z1": 1.12,
+    "x0": 0,
+    "y0": 0,
+    "x1": 0,
+    "y1": 0
+   }
+  },
+  {
+   "id": "privasi_retak",
+   "kind": "img",
+   "from": 63.45,
+   "to": 67.75,
+   "tin": "zoom",
+   "move": {
+    "z0": 1.04,
+    "z1": 1.2,
+    "x0": 0,
+    "y0": 40,
+    "x1": 0,
+    "y1": 120
+   }
+  }
+ ],
+ "graphics": [
+  {
+   "type": "headline",
+   "t0": 0.0,
+   "t1": 2.1,
+   "y": 170,
+   "size": 132,
+   "lines": [
+    "PRESIDEN",
+    "DIDUGA DISADAP"
+   ],
+   "hl": [
+    1
+   ],
+   "glitch": true,
+   "at": [
+    0.0,
+    0.64
+   ]
+  },
+  {
+   "type": "headline",
+   "t0": 2.25,
+   "t1": 4.4,
+   "y": 800,
+   "size": 104,
+   "lines": [
+    "SIAPA YANG",
+    "MENGAWASI",
+    "PENYADAPNYA?"
+   ],
+   "hl": [
+    2
+   ],
+   "at": [
+    2.25,
+    2.72,
+    3.18
+   ]
+  },
+  {
+   "type": "date",
+   "t0": 4.6,
+   "t1": 6.85,
+   "day": "03",
+   "month": "NOVEMBER",
+   "year": "2026",
+   "y": 780
+  },
+  {
+   "type": "flash",
+   "t": 4.75,
+   "amt": 0.55
+  },
+  {
+   "type": "flash",
+   "t": 5.35,
+   "amt": 0.4
+  },
+  {
+   "type": "flash",
+   "t": 6.05,
+   "amt": 0.5
+  },
+  {
+   "type": "tag",
+   "t0": 6.94,
+   "t1": 8.85,
+   "y": 640,
+   "text": "POLRI UMUMKAN"
+  },
+  {
+   "type": "counter",
+   "t0": 7.8,
+   "t1": 8.85,
+   "y": 710,
+   "n": 3,
+   "label": "TERSANGKA"
+  },
+  {
+   "type": "stamp",
+   "t0": 9.94,
+   "t1": 10.9,
+   "y": 470,
+   "rot": -7,
+   "lines": [
+    "PENYADAPAN",
+    "ILEGAL"
+   ]
+  },
+  {
+   "type": "headline",
+   "t0": 11.14,
+   "t1": 13.15,
+   "y": 760,
+   "size": 96,
+   "lines": [
+    "MENYASAR",
+    "PRESIDEN"
+   ],
+   "hl": [
+    1
+   ],
+   "at": [
+    11.14,
+    11.74
+   ]
+  },
+  {
+   "type": "lowerthird",
+   "t0": 13.26,
+   "t1": 14.2,
+   "y": 980,
+   "kicker": "MENURUT",
+   "title": "PENYIDIK"
+  },
+  {
+   "type": "typing",
+   "t0": 14.24,
+   "t1": 17.0,
+   "y": 300,
+   "lines": [
+    "+62 8•• •••• ••21",
+    "+62 8•• •••• ••37",
+    "+62 8•• •••• ••64"
+   ],
+   "label": "NOMOR DIMASUKKAN"
+  },
+  {
+   "type": "tag",
+   "t0": 16.06,
+   "t1": 17.0,
+   "y": 720,
+   "text": "→ SISTEM PENYADAPAN",
+   "red": true
+  },
+  {
+   "type": "checklist",
+   "t0": 17.0,
+   "t1": 20.95,
+   "y": 290,
+   "title": "TANPA",
+   "items": [
+    {
+     "t": 17.54,
+     "text": "VERIFIKASI",
+     "mark": "x"
+    },
+    {
+     "t": 19.02,
+     "text": "DASAR HUKUM",
+     "mark": "x"
+    }
+   ]
+  },
+  {
+   "type": "headline",
+   "t0": 21.13,
+   "t1": 26.45,
+   "y": 800,
+   "size": 92,
+   "lines": [
+    "SASARAN",
+    "LAINNYA"
+   ],
+   "hl": [
+    0
+   ],
+   "at": [
+    21.13,
+    21.64
+   ]
+  },
+  {
+   "type": "headline",
+   "t0": 26.72,
+   "t1": 28.3,
+   "y": 250,
+   "size": 110,
+   "lines": [
+    "DI SINILAH",
+    "PERSOALANNYA"
+   ],
+   "hl": [
+    1
+   ],
+   "glitch": true,
+   "at": [
+    26.72,
+    27.14
+   ]
+  },
+  {
+   "type": "question",
+   "t0": 28.36,
+   "t1": 30.7,
+   "y": 250,
+   "num": "01",
+   "lines": [
+    "SIAPA YANG BISA",
+    "MENGAKSES SISTEM?"
+   ]
+  },
+  {
+   "type": "question",
+   "t0": 30.79,
+   "t1": 32.45,
+   "y": 250,
+   "num": "02",
+   "lines": [
+    "SIAPA YANG",
+    "MEMBERI PERINTAH?"
+   ]
+  },
+  {
+   "type": "question",
+   "t0": 32.49,
+   "t1": 35.4,
+   "y": 250,
+   "num": "03",
+   "lines": [
+    "BAGAIMANA",
+    "PENYALAHGUNAAN",
+    "TERDETEKSI?"
+   ]
+  },
+  {
+   "type": "lowerthird",
+   "t0": 35.86,
+   "t1": 38.95,
+   "y": 980,
+   "kicker": "ANGGOTA",
+   "title": "KOMISI III DPR",
+   "sub": "minta pengusutan"
+  },
+  {
+   "type": "checklist",
+   "t0": 38.95,
+   "t1": 42.15,
+   "y": 290,
+   "title": "PENGUSUTAN HARUS",
+   "items": [
+    {
+     "t": 39.12,
+     "text": "OBJEKTIF",
+     "mark": "v"
+    },
+    {
+     "t": 40.13,
+     "text": "PROFESIONAL",
+     "mark": "v"
+    },
+    {
+     "t": 41.12,
+     "text": "TRANSPARAN",
+     "mark": "v"
+    }
+   ]
+  },
+  {
+   "type": "progress",
+   "t0": 42.2,
+   "t1": 44.35,
+   "y": 700,
+   "label": "PROSES HUKUM",
+   "status": "MASIH BERJALAN"
+  },
+  {
+   "type": "neq",
+   "t0": 44.43,
+   "t1": 48.2,
+   "y": 520,
+   "left": "TERSANGKA",
+   "right": "TERBUKTI BERSALAH",
+   "at": 45.36,
+   "note": "asas praduga tak bersalah"
+  },
+  {
+   "type": "headline",
+   "t0": 48.28,
+   "t1": 50.05,
+   "y": 212,
+   "size": 100,
+   "lines": [
+    "PUBLIK",
+    "PERLU TAHU"
+   ],
+   "hl": [
+    1
+   ],
+   "at": [
+    48.28,
+    48.52
+   ]
+  },
+  {
+   "type": "headline",
+   "t0": 50.1,
+   "t1": 52.3,
+   "y": 1050,
+   "size": 84,
+   "lines": [
+    "KEWENANGAN SEBESAR ITU",
+    "DIAWASI SIAPA?"
+   ],
+   "hl": [
+    1
+   ],
+   "at": [
+    50.1,
+    51.22
+   ]
+  },
+  {
+   "type": "headline",
+   "t0": 52.33,
+   "t1": 54.4,
+   "y": 212,
+   "size": 96,
+   "lines": [
+    "LANGKAH APA",
+    "YANG DIAMBIL?"
+   ],
+   "hl": [
+    1
+   ],
+   "at": [
+    52.33,
+    53.34
+   ]
+  },
+  {
+   "type": "loop",
+   "t0": 54.4,
+   "t1": 56.55,
+   "y": 560,
+   "text": [
+    "AGAR TIDAK",
+    "TERULANG"
+   ],
+   "strike": 55.7
+  },
+  {
+   "type": "headline",
+   "t0": 57.06,
+   "t1": 58.85,
+   "y": 250,
+   "size": 104,
+   "lines": [
+    "ALAT",
+    "PENYADAPAN"
+   ],
+   "hl": [
+    1
+   ],
+   "at": [
+    57.31,
+    57.52
+   ]
+  },
+  {
+   "type": "waveform",
+   "t0": 56.65,
+   "t1": 58.85,
+   "y": 1060
+  },
+  {
+   "type": "headline",
+   "t0": 58.9,
+   "t1": 60.7,
+   "y": 212,
+   "size": 92,
+   "lines": [
+    "PERCAKAPAN",
+    "PALING PRIBADI"
+   ],
+   "hl": [
+    1
+   ],
+   "at": [
+    58.9,
+    59.44
+   ]
+  },
+  {
+   "type": "headline",
+   "t0": 61.82,
+   "t1": 63.45,
+   "y": 212,
+   "size": 100,
+   "lines": [
+    "LOLOS DARI",
+    "PENGAWASAN?"
+   ],
+   "hl": [
+    1
+   ],
+   "glitch": true,
+   "at": [
+    61.82,
+    62.42
+   ]
+  },
+  {
+   "type": "headline",
+   "t0": 63.52,
+   "t1": 65.95,
+   "y": 700,
+   "size": 104,
+   "lines": [
+    "SIAPA YANG",
+    "MENJAMIN",
+    "PRIVASI KITA?"
+   ],
+   "hl": [
+    2
+   ],
+   "at": [
+    63.52,
+    64.0,
+    64.4
+   ]
+  },
+  {
+   "type": "flash",
+   "t": 65.78,
+   "amt": 0.7
+  },
+  {
+   "type": "endcard",
+   "t0": 65.95,
+   "t1": 67.75
+  }
+ ],
+ "shakes": [
+  {
+   "t": 0.0,
+   "amt": 1.0
+  },
+  {
+   "t": 0.64,
+   "amt": 0.7
+  },
+  {
+   "t": 7.8,
+   "amt": 0.5
+  },
+  {
+   "t": 9.94,
+   "amt": 1.0
+  },
+  {
+   "t": 17.54,
+   "amt": 0.6
+  },
+  {
+   "t": 19.02,
+   "amt": 0.6
+  },
+  {
+   "t": 26.72,
+   "amt": 0.7
+  },
+  {
+   "t": 45.36,
+   "amt": 0.7
+  },
+  {
+   "t": 55.7,
+   "amt": 0.7
+  },
+  {
+   "t": 65.78,
+   "amt": 1.0
+  }
+ ]
+}
