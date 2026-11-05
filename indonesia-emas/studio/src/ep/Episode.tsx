@@ -50,7 +50,9 @@ const Inner: React.FC<{ L: Loaded }> = ({ L }) => {
   const shot = shotAt(f);
   const cam = camera as THREE.PerspectiveCamera;
   const r = world.update(f, shot, cam, scene);
-  direct({ f, shot, cam, W: world });
+  const ctx: { f: number; shot: typeof shot; cam: THREE.PerspectiveCamera; W: World; focus?: number } = { f, shot, cam, W: world };
+  direct(ctx);
+  if (ctx.focus) r.focus = ctx.focus;
   if (shot.set === "kamar") drawTV(screens.tv, f);
   if (shot.set === "kota") drawPhone(screens.ph, f);
   // thin-lens-ish: in-focus range grows with distance and f-stop

@@ -28,7 +28,7 @@ function talk(f: number, a: number, b: number) {
   const k = (f - w.a) % 8; return k < 4 ? 2 : 1;
 }
 
-type Ctx = { f: number; shot: Shot; cam: THREE.PerspectiveCamera; W: World };
+type Ctx = { f: number; shot: Shot; cam: THREE.PerspectiveCamera; W: World; focus?: number };
 function place(c: Ctx, standin: string, override?: { pos?: THREE.Vector3; yaw?: number }) {
   const set = c.shot.set;
   const ch = c.W.actor(set, standin, kindOf(standin));
@@ -58,6 +58,13 @@ export function direct(c: Ctx) {
   const hp = B0.nodes.get("HP");
   const sel = c.W.sets.kamar.nodes.get("Selimut"); if (sel) sel.visible = true;
   switch (id) {
+    case "01": {  // the hook: push in close on the glowing map
+      const t = ramp(f, 0, 57, (x) => x);
+      c.cam.position.set(0, 1.58, lerp(0.15, -0.55, t)); c.cam.lookAt(0.05, 1.6, -1.78); c.cam.updateProjectionMatrix();
+      c.focus = 1.78 + lerp(0.15, -0.55, t);
+      for (const l of B0.lights) if (l.L.name === "KILAU_PETA") l.L.intensity *= 3.5;
+      break;
+    }
     case "02": {  // asleep under the blanket
       const bl = B0.nodes.get("Selimut"); if (bl) bl.visible = false;
       const ch = place(c, "HERO_tidur", { pos: new THREE.Vector3(0, 0.6, -0.24), yaw: 0 });
@@ -77,7 +84,7 @@ export function direct(c: Ctx) {
       const look: [number, number] = f >= 150 && f < 176 ? [-30, 6] : [0, 0];
       const preset: Preset = f < 139 ? "TIDUR" : f < 182 ? "SENYUM" : "KAGET";
       ch.face({ preset, look, eyeScale: preset === "SENYUM" ? 0.92 : undefined, blink: f >= 135 && f < 139 && f % 2 === 0 });
-      if (f >= 198) ch.head(-25 * ramp(f, 198, 7), 0);
+      ch.head(-60 * ramp(f, 176, 6, easeOut), 0);   // turns toward the window/camera just before "kaget"
       break;
     }
     case "05": case "06": {  // seated on the edge of the bed, watching the TV
@@ -202,9 +209,12 @@ export function direct(c: Ctx) {
       ch.face({ preset: "SENYUM", mouth: talk(f, 1394, 1469), look: f < 1397 ? [-20, 0] : [0, 0] });
       break;
     }
-    case "13": {  // classroom: kids at desks turn to the screen, one raises a hand; HERO in the doorway
+    case "13": {  // classroom from the front corner: kids' faces, one raises a hand; HERO watches from the back
+      const t = ramp(f, 724, 69, (x) => x);
+      c.cam.position.copy(B(lerp(3.0, 2.6, t), lerp(3.1, 2.7, t), 1.55)); c.cam.lookAt(B(-0.6, -0.6, 0.8)); c.cam.fov = 58; c.cam.updateProjectionMatrix();
+      c.focus = 4.4;
       c.W.sets.sekolah.json.cameras["13"].show.forEach((n, i) => {
-        const ch = place(c, n, n.startsWith("FIG") ? { yaw: Math.PI } : {});
+        const ch = place(c, n, n.startsWith("FIG") ? { yaw: Math.PI } : { pos: B(-2.6, -3.0, 0) });
         if (n.startsWith("FIG")) {
           seat(ch, 0.45);
           ch.head(lerp(25 * (i % 2 ? 1 : -1), 0, ramp(f, 752 + i * 4, 8)), 0);
