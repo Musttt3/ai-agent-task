@@ -98,3 +98,42 @@ for i, yy in enumerate(range(270, 512, 40)):
     d.line([(0, yy), (240, yy - 18), (520, yy + 6), (768, yy - 12)], fill=(70, 110, 60), width=3)
 d.polygon([(600, 300), (640, 250), (680, 300)], fill=(150, 80, 50)); d.rectangle([610, 300, 670, 340], fill=(190, 140, 90))
 im.filter(ImageFilter.GaussianBlur(1.2)).save(os.path.join(OUT, "lukisan_sawah.png"))
+
+# gold: base colour with grime in a few soft patches, and a roughness map full of fine scratches
+gb = 0.75 + 0.25 * noise(N, 24, 30)
+save("emas_warna", tint(gb, (176, 122, 40), (232, 184, 84)))
+rough = np.full((N, N), 0.26, np.float32) + 0.08 * noise(N, 40, 31)
+im = Image.fromarray((rough * 255).astype(np.uint8)); d = ImageDraw.Draw(im); rr = np.random.default_rng(32)
+for _ in range(420):
+    x0, y0 = rr.random() * N, rr.random() * N; a = rr.random() * math.pi; L = 20 + rr.random() * 120
+    d.line([(x0, y0), (x0 + math.cos(a) * L, y0 + math.sin(a) * L)], fill=int(130 + rr.random() * 80), width=1)
+im.save(os.path.join(OUT, "emas_kasar.png"))
+
+# ---- city / school / hospital / village textures ----
+a = 0.6 * noise(N, 50, 40) + 0.4 * noise(N, 300, 41)
+save("aspal", tint(a, (58, 60, 64), (92, 94, 98)))
+# paving blocks (sidewalk): offset bricks, warm grey and terracotta
+img = tint(0.5 * noise(N, 30, 42) + 0.5 * noise(N, 200, 43), (176, 168, 156), (204, 196, 182))
+bh, bw = 64, 128
+for r_ in range(N // bh + 1):
+    y0 = r_ * bh; img[y0:y0 + 4, :] = (128, 120, 110)
+    off = (r_ % 2) * bw // 2
+    for c_ in range(-1, N // bw + 2):
+        x0 = c_ * bw + off
+        if 0 <= x0 < N: img[y0:y0 + bh, x0:x0 + 4] = (128, 120, 110)
+        if (r_ * 7 + c_ * 3) % 11 == 0: img[y0 + 4:y0 + bh, max(0, x0 + 4):max(0, x0 + bw)] *= np.array([1.05, 0.9, 0.82])
+save("paving", img)
+# building facade: window grid with warm frames, some windows lit / reflecting sky
+img = tint(0.7 + 0.3 * noise(N, 20, 44), (226, 218, 204), (244, 238, 226)); rr = np.random.default_rng(45)
+for r_ in range(8):
+    for c_ in range(4):
+        x0, y0 = 32 + c_ * 248, 24 + r_ * 128
+        glass = np.array([120, 160, 196]) * (0.8 + 0.4 * rr.random())
+        img[y0:y0 + 92, x0:x0 + 200] = (96, 78, 60)
+        img[y0 + 6:y0 + 86, x0 + 6:x0 + 194] = glass
+        img[y0 + 6:y0 + 86, x0 + 98:x0 + 102] = (96, 78, 60)
+save("fasad", img)
+g = 0.5 * noise(N, 40, 46) + 0.5 * noise(N, 260, 47)
+save("rumput", tint(g, (78, 128, 52), (118, 168, 70)))
+s_ = 0.6 * noise(N, 30, 48) + 0.4 * noise(N, 180, 49)
+save("tanah_sawah", tint(s_, (70, 112, 48), (122, 170, 72)))

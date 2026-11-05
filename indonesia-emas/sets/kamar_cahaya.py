@@ -43,8 +43,8 @@ key(bounce.data, "energy", [(0, 0.0), (MORNING, 14.0)])
 tv = lamp("TV_GLOW", "AREA", (0.6, 0.78, 1.0), loc=(0.3, -1.52, 0.86), aim=(0, 1, 0.05), shape="RECTANGLE", size=0.8, size_y=0.48)
 key(tv.data, "energy", [(0, 0.0), (206, 18.0), (366, 0.0)])
 # map glint on "emas" (frame 104), warm and short, plus a faint glow in shot 01
-glint = lamp("KILAU_PETA", "SPOT", (1.0, 0.8, 0.45), loc=(0.0, 0.6, 2.4), aim=(0, 1.18, -0.8), spot_size=math.radians(40), spot_blend=0.6, shadow_soft_size=0.05)
-key(glint.data, "energy", [(0, 1.5), (95, 1.5), (104, 14.0), (118, 3.0), (MORNING, 0.0), (1639, 3.0)], "BEZIER")
+glint = lamp("KILAU_PETA", "SPOT", (1.0, 0.86, 0.6), loc=(-0.6, 0.3, 2.5), aim=(0.6, 1.48, -0.9), spot_size=math.radians(42), spot_blend=0.5, shadow_soft_size=0.08)
+key(glint.data, "energy", [(0, 9.0), (57, 9.0), (58, 5.0), (95, 5.0), (104, 40.0), (118, 8.0), (MORNING, 0.0), (1639, 6.0)], "BEZIER")
 
 # window bars (kusen) so the sun draws a crisp window pattern on the bed and floor
 grey = bpy.data.materials.get("BLOCK_GREY")
