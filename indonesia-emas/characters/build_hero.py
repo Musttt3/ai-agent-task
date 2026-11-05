@@ -9,9 +9,12 @@ from lib import new_scene, coll, mat, ROOT
 sc = new_scene()
 C = coll("HERO")
 rnd = random.Random(4)
-SKIN = mat("Kulit", color=(0.8, 0.46, 0.25), rough=0.55)
+SKIN = mat("Kulit", color=(0.8, 0.46, 0.25), rough=0.5)
+_b = SKIN.node_tree.nodes["Principled BSDF"]
+_b.inputs["Subsurface Weight"].default_value = 0.12; _b.inputs["Subsurface Radius"].default_value = (0.04, 0.015, 0.008); _b.inputs["Subsurface Scale"].default_value = 0.05
 HAIR = mat("Rambut", color=(0.02, 0.012, 0.009), rough=0.55)
 HOOD = mat("Hoodie", color=(0.014, 0.014, 0.016), rough=0.8)
+_h = HOOD.node_tree.nodes["Principled BSDF"]; _h.inputs["Sheen Weight"].default_value = 0.06; _h.inputs["Sheen Roughness"].default_value = 0.7
 PANTS = mat("Celana", color=(0.016, 0.016, 0.018), rough=0.75)
 ARM = mat("Lengan", color=(0.045, 0.02, 0.012), rough=0.6)
 WHITE = mat("Putih_Mata", color=(0.97, 0.97, 0.96), rough=0.25)
@@ -25,7 +28,7 @@ TONGUE = mat("Lidah", color=(0.75, 0.08, 0.08), rough=0.5)
 
 def obj(kind, name, loc, m, scale=(1, 1, 1), rot=(0, 0, 0), sub=0, smooth=True, **kw):
     getattr(bpy.ops.mesh, "primitive_" + kind + "_add")(location=loc, rotation=rot, **kw)
-    o = bpy.context.object; o.name = name; o.scale = scale; bpy.ops.object.transform_apply(scale=True)
+    o = bpy.context.object; o.name = name; o.scale = scale; bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
     for cc in o.users_collection: cc.objects.unlink(o)
     C.objects.link(o); o.data.materials.append(m)
     for p in o.data.polygons: p.use_smooth = smooth
@@ -52,12 +55,14 @@ for side in (-1, 1):
     gp, _ = on_face(side * 0.06 + 0.009, 0.033, 0.033)
     obj("uv_sphere", f"Kilau_{side}", gp, WHITE, radius=0.007)
     # brow: a thick arched stroke above each eye
-    cu = bpy.data.curves.new(f"Alis_{side}", "CURVE"); cu.dimensions = "3D"; cu.bevel_depth = 0.012; cu.bevel_resolution = 4
+    cu = bpy.data.curves.new(f"Alis_{side}", "CURVE"); cu.dimensions = "3D"; cu.bevel_depth = 0.016; cu.bevel_resolution = 4
     sp = cu.splines.new("POLY"); sp.points.add(6)
     for i in range(7):
         t = i / 6; x = side * (0.03 + 0.06 * t); z = 0.105 + 0.016 * math.sin(math.pi * t) - 0.004 * t
         q, _ = on_face(x, z, 0.004); sp.points[i].co = (*q, 1)
     b = bpy.data.objects.new(f"Alis_{side}", cu); C.objects.link(b); b.data.materials.append(HAIR)
+    for o_ in list(bpy.context.selected_objects): o_.select_set(False)
+    bpy.context.view_layer.objects.active = b; b.select_set(True); bpy.ops.object.convert(target="MESH"); b.select_set(False)
 # default mouth (SENANG): dark open smile with a red tongue, set into the face (decals come in stage 3)
 mp, mn = on_face(0.0, -0.075, -0.004)
 def face_patch(name, cx, cz, w, h, img, out=0.0025, n=12):
@@ -113,6 +118,7 @@ def lock(start, sweep, length, width, curl, k):
         side = d.cross(t).normalized()
         t = (t * math.cos(curl * f * f) + side * math.sin(curl * f * f)).normalized()    # the tip turns more and more
         d = (d * math.cos(ang) + t * math.sin(ang)).normalized(); t = (t - d * t.dot(d)).normalized()
+        if d.y < -0.2 and d.z < 0.7 and i >= 3: break    # keep the forehead and the brows clear
     cu = bpy.data.curves.new(f"Ikal_{k}", "CURVE"); cu.dimensions = "3D"; cu.bevel_depth = 1.0; cu.bevel_resolution = 3; cu.use_fill_caps = True
     sp = cu.splines.new("POLY"); sp.points.add(len(pts) - 1)
     for i, (q, w_) in enumerate(zip(pts, rads)): sp.points[i].co = (*q, 1); sp.points[i].radius = w_
@@ -131,8 +137,8 @@ for i in range(9):  # nape: locks from the back of the crown down to the hood
     th = math.radians(55 + 9 * i); d = Vector((math.cos(th) * 0.8, math.sin(th) * 0.8, -0.05)).normalized()
     locks.append(lock(d, Vector((0, 0.2, -1.0)), 0.12, 0.034, 1.4 * (1 if i % 2 else -1), k)); k += 1
 for i in range(7):  # fringe: curls falling on the forehead edge, sweeping right
-    th = math.radians(-120 + 12 * i); d = Vector((math.cos(th) * 0.6, math.sin(th) * 0.6, 0.78)).normalized()
-    locks.append(lock(d, Vector((0.7, -0.35, -0.6)), 0.15, 0.038, 2.0, k)); k += 1
+    th = math.radians(-120 + 12 * i); d = Vector((math.cos(th) * 0.55, math.sin(th) * 0.55, 0.85)).normalized()
+    locks.append(lock(d, Vector((0.8, -0.3, -0.4)), 0.11, 0.036, 2.0, k)); k += 1
 for ob in locks: ob.select_set(True)
 bpy.context.view_layer.objects.active = locks[0]
 bpy.ops.object.convert(target="MESH"); bpy.ops.object.join(); hair = bpy.context.object; hair.name = "Rambut"
@@ -153,13 +159,16 @@ for k, (ang, ln) in enumerate(((0, 0.07), (35, 0.05), (-35, 0.05))):  # small wh
     obj("cube", f"Logo_{k}", (0, -0.127, 0.99), LOGO, scale=(0.0018, 0.002, ln / 2), rot=(0, math.radians(ang), 0), smooth=False)
 for side in (-1, 1):
     sl = obj("uv_sphere", f"Lengan_Hoodie_{side}", (side * 0.166, 0.0, 0.925), HOOD, scale=(0.046, 0.058, 0.088), rot=(0, math.radians(side * 14), 0), radius=1.0, segments=32, ring_count=16)
-    # stick arm from the sleeve to a ball hand
-    a0, a1 = Vector((side * 0.205, 0.0, 0.92)), Vector((side * 0.235, 0.0, 0.64))
-    mid = (a0 + a1) / 2; dirv = (a1 - a0)
-    obj("cylinder", f"Lengan_{side}", mid, ARM, radius=0.019, depth=dirv.length, rot=Vector((0, 0, 1)).rotation_difference(dirv).to_euler())
-    obj("uv_sphere", f"Tangan_{side}", a1 + Vector((0, 0, -0.012)), SKIN, radius=0.03)
-    # legs and sneakers
-    obj("cylinder", f"Kaki_{side}", (side * 0.07, 0.0, 0.37), PANTS, radius=0.043, depth=0.56)
+    # stick arm in two parts (sleeve exit -> elbow -> hand) and a ball hand; joints hidden by small balls
+    sh, el, ha = Vector((side * 0.19, 0.0, 1.0)), Vector((side * 0.214, 0.0, 0.8)), Vector((side * 0.235, 0.0, 0.64))
+    for nm, a0, a1 in ((f"Lengan_Atas_{side}", sh + (el - sh) * 0.55, el), (f"Lengan_Bawah_{side}", el, ha)):
+        dv = a1 - a0; obj("cylinder", nm, (a0 + a1) / 2, ARM, radius=0.019, depth=dv.length, rot=Vector((0, 0, 1)).rotation_difference(dv).to_euler())
+    obj("uv_sphere", f"Siku_{side}", el, ARM, radius=0.019)
+    obj("uv_sphere", f"Tangan_{side}", ha + Vector((0, 0, -0.012)), SKIN, radius=0.03)
+    # legs in two parts (hip -> knee -> ankle) and sneakers
+    obj("cylinder", f"Paha_{side}", (side * 0.07, 0.0, 0.5), PANTS, radius=0.043, depth=0.26)
+    obj("uv_sphere", f"Lutut_{side}", (side * 0.07, 0.0, 0.37), PANTS, radius=0.043)
+    obj("cylinder", f"Betis_{side}", (side * 0.07, 0.0, 0.235), PANTS, radius=0.043, depth=0.27)
     obj("cube", f"Sepatu_{side}", (side * 0.075, -0.035, 0.05), SHOE, scale=(0.065, 0.115, 0.045), sub=2)
     obj("cube", f"Sol_{side}", (side * 0.075, -0.035, 0.013), SOLE, scale=(0.068, 0.118, 0.013), sub=1)
 
