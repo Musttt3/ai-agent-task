@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "hyperframe-pro": {
+      "source": {
+        "source": "directory",
+        "path": "/home/user/ai-agent-task/.claude/plugins/hyperframe-pro"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "hyperframe-pro@hyperframe-pro": true
+  }
+}
