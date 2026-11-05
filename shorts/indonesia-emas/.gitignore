@@ -1,0 +1,7 @@
+# rebuilt by build.sh
+out/
+voice/lines/
+events.json
+# review stills (the model sheet stays as the look reference)
+stills/*
+!stills/modelsheet_0.jpg

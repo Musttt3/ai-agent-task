@@ -1,0 +1,26 @@
+Kalau Besok Indonesia Jadi Negara Emas — credits for third-party material
+
+Script, main character design and voice
+- Script and the main character (character sheet in ref/) by the user.
+- Narration: ElevenLabs text-to-speech, model eleven_v4, voice "Must4" (the user's own cloned voice in their ElevenLabs workspace).
+
+Music (original score written for this film in score.py, played with sampled instruments)
+- Piano: "Salamander Grand Piano V3" by Alexander Holm, licensed under CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/)
+- Samples (CC0 1.0): Karoryfer Samples / sfzinstruments (jazz bass), VS Chamber Orchestra: Community Edition (Versilian Studios),
+  Versilian Community Sample Library (Versilian Studios)
+
+Sound effects
+- Synthesised in code (mix.py, using the Lemo-Opuscar library's sfx.py). No recorded sound effects.
+
+Fonts (SIL Open Font License 1.1, files and licences in fonts/)
+- Limelight: Copyright (c) 2011 Sorkin Type Co
+- Poiret One: Copyright 2011 The Poiret One Project Authors
+- Josefin Sans: Copyright 2010 The Josefin Sans Project Authors
+- Italiana: Copyright (c) 2011 Santiago Orozco
+
+Code
+- Drawing engine in engine/ adapted from the Lemo-Opuscar library's Art Deco style (MIT licence, see engine/LICENSE).
+- Render, mix and mastering tools: Lemo-Opuscar core tools (MIT).
+
+Pictures
+- Everything on screen is drawn in code (Canvas 2D). No stock images, no AI-generated images or video.

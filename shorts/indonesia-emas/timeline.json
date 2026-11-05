@@ -1,0 +1,1190 @@
+{
+ "DUR": 72.434,
+ "bpmA": 128.0,
+ "bpmD": 76.0,
+ "sections": {
+  "A": 0.0,
+  "B": 42.03625,
+  "C": 44.23125,
+  "D": 49.11060416666667,
+  "D_beat0": 49.160604166666666
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "text": "Bagaimana kalau besok pagi, Indonesia tiba-tiba menjadi negara emas?",
+   "t0": 0.46875,
+   "on": 0.46875,
+   "dur": 4.408520833333333,
+   "wordsF": [
+    {
+     "w": "Bagaimana",
+     "s": 0.462,
+     "e": 0.982
+    },
+    {
+     "w": "kalau",
+     "s": 0.982,
+     "e": 1.282
+    },
+    {
+     "w": "besok",
+     "s": 1.282,
+     "e": 1.582
+    },
+    {
+     "w": "pagi,",
+     "s": 1.582,
+     "e": 2.142
+    },
+    {
+     "w": "Indonesia",
+     "s": 2.442,
+     "e": 2.802
+    },
+    {
+     "w": "tiba-tiba",
+     "s": 2.802,
+     "e": 3.482
+    },
+    {
+     "w": "menjadi",
+     "s": 3.482,
+     "e": 3.742
+    },
+    {
+     "w": "negara",
+     "s": 3.742,
+     "e": 4.122
+    },
+    {
+     "w": "emas?",
+     "s": 4.122,
+     "e": 4.602
+    }
+   ]
+  },
+  {
+   "id": "L2",
+   "text": "Baru bangun tidur, kamu langsung kaget.",
+   "t0": 5.379625,
+   "on": 5.390625,
+   "dur": 2.5288333333333335,
+   "wordsF": [
+    {
+     "w": "Baru",
+     "s": 5.391,
+     "e": 5.711
+    },
+    {
+     "w": "bangun",
+     "s": 5.711,
+     "e": 5.951
+    },
+    {
+     "w": "tidur,",
+     "s": 5.951,
+     "e": 6.551
+    },
+    {
+     "w": "kamu",
+     "s": 6.771,
+     "e": 6.931
+    },
+    {
+     "w": "langsung",
+     "s": 6.931,
+     "e": 7.251
+    },
+    {
+     "w": "kaget.",
+     "s": 7.251,
+     "e": 7.811
+    }
+   ]
+  },
+  {
+   "id": "L3",
+   "text": "Berita di televisi mengumumkan Indonesia resmi menjadi salah satu negara paling maju di dunia!",
+   "t0": 8.141833333333334,
+   "on": 8.203125,
+   "dur": 5.279416666666667,
+   "wordsF": [
+    {
+     "w": "Berita",
+     "s": 8.203,
+     "e": 8.463
+    },
+    {
+     "w": "di",
+     "s": 8.463,
+     "e": 8.583
+    },
+    {
+     "w": "televisi",
+     "s": 8.583,
+     "e": 9.123
+    },
+    {
+     "w": "mengumumkan",
+     "s": 9.123,
+     "e": 9.663
+    },
+    {
+     "w": "Indonesia",
+     "s": 9.663,
+     "e": 10.103
+    },
+    {
+     "w": "resmi",
+     "s": 10.103,
+     "e": 10.743
+    },
+    {
+     "w": "menjadi",
+     "s": 10.743,
+     "e": 11.043
+    },
+    {
+     "w": "salah",
+     "s": 11.043,
+     "e": 11.263
+    },
+    {
+     "w": "satu",
+     "s": 11.263,
+     "e": 11.563
+    },
+    {
+     "w": "negara",
+     "s": 11.563,
+     "e": 11.883
+    },
+    {
+     "w": "paling",
+     "s": 11.883,
+     "e": 12.323
+    },
+    {
+     "w": "maju",
+     "s": 12.323,
+     "e": 12.663
+    },
+    {
+     "w": "di",
+     "s": 12.663,
+     "e": 12.783
+    },
+    {
+     "w": "dunia!",
+     "s": 12.783,
+     "e": 13.163
+    }
+   ]
+  },
+  {
+   "id": "L4",
+   "text": "Kamu keluar rumah.",
+   "t0": 14.0625,
+   "on": 14.0625,
+   "dur": 1.2417708333333333,
+   "wordsF": [
+    {
+     "w": "Kamu",
+     "s": 14.032,
+     "e": 14.412
+    },
+    {
+     "w": "keluar",
+     "s": 14.412,
+     "e": 14.632
+    },
+    {
+     "w": "rumah.",
+     "s": 14.632,
+     "e": 14.972
+    }
+   ]
+  },
+  {
+   "id": "L5",
+   "text": "Jalanan bersih, transportasi umum canggih, dan hampir nggak ada kemacetan.",
+   "t0": 15.621229166666666,
+   "on": 15.703125,
+   "dur": 4.6914375,
+   "wordsF": [
+    {
+     "w": "Jalanan",
+     "s": 15.703,
+     "e": 16.103
+    },
+    {
+     "w": "bersih,",
+     "s": 16.103,
+     "e": 16.623
+    },
+    {
+     "w": "transportasi",
+     "s": 16.863,
+     "e": 17.523
+    },
+    {
+     "w": "umum",
+     "s": 17.523,
+     "e": 17.743
+    },
+    {
+     "w": "canggih,",
+     "s": 17.743,
+     "e": 18.323
+    },
+    {
+     "w": "dan",
+     "s": 18.583,
+     "e": 18.663
+    },
+    {
+     "w": "hampir",
+     "s": 18.663,
+     "e": 19.183
+    },
+    {
+     "w": "nggak",
+     "s": 19.183,
+     "e": 19.343
+    },
+    {
+     "w": "ada",
+     "s": 19.343,
+     "e": 19.503
+    },
+    {
+     "w": "kemacetan.",
+     "s": 19.503,
+     "e": 20.143
+    }
+   ]
+  },
+  {
+   "id": "L6",
+   "text": "Pas buka HP, kamu makin heran.",
+   "t0": 20.859375,
+   "on": 20.859375,
+   "dur": 2.3280416666666666,
+   "wordsF": [
+    {
+     "w": "Pas",
+     "s": 20.849,
+     "e": 21.029
+    },
+    {
+     "w": "buka",
+     "s": 21.029,
+     "e": 21.289
+    },
+    {
+     "w": "HP,",
+     "s": 21.289,
+     "e": 21.669
+    },
+    {
+     "w": "kamu",
+     "s": 22.009,
+     "e": 22.189
+    },
+    {
+     "w": "makin",
+     "s": 22.189,
+     "e": 22.489
+    },
+    {
+     "w": "heran.",
+     "s": 22.489,
+     "e": 22.929
+    }
+   ]
+  },
+  {
+   "id": "L7",
+   "text": "Lapangan kerja melimpah, gaji layak, dan harga kebutuhan pokok stabil.",
+   "t0": 23.375979166666667,
+   "on": 23.4375,
+   "dur": 4.6178333333333335,
+   "wordsF": [
+    {
+     "w": "Lapangan",
+     "s": 23.438,
+     "e": 23.738
+    },
+    {
+     "w": "kerja",
+     "s": 23.738,
+     "e": 24.098
+    },
+    {
+     "w": "melimpah,",
+     "s": 24.098,
+     "e": 24.738
+    },
+    {
+     "w": "gaji",
+     "s": 25.018,
+     "e": 25.238
+    },
+    {
+     "w": "layak,",
+     "s": 25.238,
+     "e": 25.758
+    },
+    {
+     "w": "dan",
+     "s": 25.998,
+     "e": 26.038
+    },
+    {
+     "w": "harga",
+     "s": 26.038,
+     "e": 26.378
+    },
+    {
+     "w": "kebutuhan",
+     "s": 26.378,
+     "e": 26.798
+    },
+    {
+     "w": "pokok",
+     "s": 26.798,
+     "e": 27.158
+    },
+    {
+     "w": "stabil.",
+     "s": 27.158,
+     "e": 27.638
+    }
+   ]
+  },
+  {
+   "id": "L8",
+   "text": "Sekolah berkualitas bisa diakses semua anak, sementara rumah sakit punya fasilitas modern tanpa bikin pasien takut biaya.",
+   "t0": 28.69564583333333,
+   "on": 28.828125,
+   "dur": 7.1470625,
+   "wordsF": [
+    {
+     "w": "Sekolah",
+     "s": 28.828,
+     "e": 29.088
+    },
+    {
+     "w": "berkualitas",
+     "s": 29.088,
+     "e": 29.728
+    },
+    {
+     "w": "bisa",
+     "s": 29.728,
+     "e": 30.048
+    },
+    {
+     "w": "diakses",
+     "s": 30.048,
+     "e": 30.528
+    },
+    {
+     "w": "semua",
+     "s": 30.528,
+     "e": 30.788
+    },
+    {
+     "w": "anak,",
+     "s": 30.788,
+     "e": 31.128
+    },
+    {
+     "w": "sementara",
+     "s": 31.128,
+     "e": 31.768
+    },
+    {
+     "w": "rumah",
+     "s": 31.768,
+     "e": 31.968
+    },
+    {
+     "w": "sakit",
+     "s": 31.968,
+     "e": 32.448
+    },
+    {
+     "w": "punya",
+     "s": 32.448,
+     "e": 32.708
+    },
+    {
+     "w": "fasilitas",
+     "s": 32.708,
+     "e": 33.248
+    },
+    {
+     "w": "modern",
+     "s": 33.248,
+     "e": 33.608
+    },
+    {
+     "w": "tanpa",
+     "s": 33.608,
+     "e": 34.248
+    },
+    {
+     "w": "bikin",
+     "s": 34.248,
+     "e": 34.508
+    },
+    {
+     "w": "pasien",
+     "s": 34.508,
+     "e": 34.848
+    },
+    {
+     "w": "takut",
+     "s": 34.848,
+     "e": 35.168
+    },
+    {
+     "w": "biaya.",
+     "s": 35.168,
+     "e": 35.548
+    }
+   ]
+  },
+  {
+   "id": "L9",
+   "text": "Bahkan desa-desa terpencil sudah punya internet cepat dan akses listrik yang andal.",
+   "t0": 36.328125,
+   "on": 36.328125,
+   "dur": 4.943416666666667,
+   "wordsF": [
+    {
+     "w": "Bahkan",
+     "s": 36.268,
+     "e": 36.868
+    },
+    {
+     "w": "desa-desa",
+     "s": 36.868,
+     "e": 37.328
+    },
+    {
+     "w": "terpencil",
+     "s": 37.328,
+     "e": 37.928
+    },
+    {
+     "w": "sudah",
+     "s": 37.928,
+     "e": 38.228
+    },
+    {
+     "w": "punya",
+     "s": 38.228,
+     "e": 38.508
+    },
+    {
+     "w": "internet",
+     "s": 38.508,
+     "e": 38.848
+    },
+    {
+     "w": "cepat",
+     "s": 38.848,
+     "e": 39.348
+    },
+    {
+     "w": "dan",
+     "s": 39.348,
+     "e": 39.528
+    },
+    {
+     "w": "akses",
+     "s": 39.528,
+     "e": 39.968
+    },
+    {
+     "w": "listrik",
+     "s": 39.968,
+     "e": 40.348
+    },
+    {
+     "w": "yang",
+     "s": 40.348,
+     "e": 40.548
+    },
+    {
+     "w": "andal.",
+     "s": 40.548,
+     "e": 41.088
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "text": "Tapi tunggu dulu...",
+   "t0": 42.65625,
+   "on": 42.65625,
+   "dur": 1.3932083333333334,
+   "wordsF": [
+    {
+     "w": "Tapi",
+     "s": 42.504,
+     "e": 42.944
+    },
+    {
+     "w": "tunggu",
+     "s": 43.324,
+     "e": 43.484
+    },
+    {
+     "w": "dulu...",
+     "s": 43.484,
+     "e": 43.764
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "text": "Apakah semua orang langsung kaya?",
+   "t0": 44.52183333333333,
+   "on": 44.53125,
+   "dur": 1.8794166666666667,
+   "wordsF": [
+    {
+     "w": "Apakah",
+     "s": 44.531,
+     "e": 44.871
+    },
+    {
+     "w": "semua",
+     "s": 44.871,
+     "e": 45.091
+    },
+    {
+     "w": "orang",
+     "s": 45.091,
+     "e": 45.411
+    },
+    {
+     "w": "langsung",
+     "s": 45.411,
+     "e": 45.731
+    },
+    {
+     "w": "kaya?",
+     "s": 45.731,
+     "e": 46.091
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "text": "Tentu nggak!",
+   "t0": 46.85875,
+   "on": 46.875,
+   "dur": 1.3018541666666668,
+   "wordsF": [
+    {
+     "w": "Tentu",
+     "s": 46.875,
+     "e": 47.355
+    },
+    {
+     "w": "nggak!",
+     "s": 47.355,
+     "e": 47.755
+    }
+   ]
+  },
+  {
+   "id": "L13",
+   "text": "Negara maju bukan berarti semua warganya jadi miliarder, melainkan punya kesempatan hidup yang lebih baik.",
+   "t0": 49.160604166666666,
+   "on": 49.160604166666666,
+   "dur": 6.376229166666667,
+   "wordsF": [
+    {
+     "w": "Negara",
+     "s": 49.16,
+     "e": 49.48
+    },
+    {
+     "w": "maju",
+     "s": 49.48,
+     "e": 49.88
+    },
+    {
+     "w": "bukan",
+     "s": 49.88,
+     "e": 50.14
+    },
+    {
+     "w": "berarti",
+     "s": 50.14,
+     "e": 50.6
+    },
+    {
+     "w": "semua",
+     "s": 50.6,
+     "e": 50.92
+    },
+    {
+     "w": "warganya",
+     "s": 50.92,
+     "e": 51.48
+    },
+    {
+     "w": "jadi",
+     "s": 51.48,
+     "e": 51.68
+    },
+    {
+     "w": "miliarder,",
+     "s": 51.68,
+     "e": 52.48
+    },
+    {
+     "w": "melainkan",
+     "s": 52.64,
+     "e": 53.22
+    },
+    {
+     "w": "punya",
+     "s": 53.22,
+     "e": 53.64
+    },
+    {
+     "w": "kesempatan",
+     "s": 53.64,
+     "e": 54.22
+    },
+    {
+     "w": "hidup",
+     "s": 54.22,
+     "e": 54.54
+    },
+    {
+     "w": "yang",
+     "s": 54.54,
+     "e": 54.7
+    },
+    {
+     "w": "lebih",
+     "s": 54.7,
+     "e": 55.04
+    },
+    {
+     "w": "baik.",
+     "s": 55.04,
+     "e": 55.36
+    }
+   ]
+  },
+  {
+   "id": "L14",
+   "text": "Dan ternyata, Indonesia Emas bukan cuma soal gedung tinggi atau teknologi canggih.",
+   "t0": 55.857713815789474,
+   "on": 55.87113048245614,
+   "dur": 4.763416666666667,
+   "wordsF": [
+    {
+     "w": "Dan",
+     "s": 55.871,
+     "e": 56.031
+    },
+    {
+     "w": "ternyata,",
+     "s": 56.031,
+     "e": 56.531
+    },
+    {
+     "w": "Indonesia",
+     "s": 56.951,
+     "e": 57.211
+    },
+    {
+     "w": "Emas",
+     "s": 57.211,
+     "e": 57.631
+    },
+    {
+     "w": "bukan",
+     "s": 57.631,
+     "e": 57.911
+    },
+    {
+     "w": "cuma",
+     "s": 57.911,
+     "e": 58.191
+    },
+    {
+     "w": "soal",
+     "s": 58.191,
+     "e": 58.491
+    },
+    {
+     "w": "gedung",
+     "s": 58.491,
+     "e": 58.751
+    },
+    {
+     "w": "tinggi",
+     "s": 58.751,
+     "e": 59.211
+    },
+    {
+     "w": "atau",
+     "s": 59.211,
+     "e": 59.451
+    },
+    {
+     "w": "teknologi",
+     "s": 59.451,
+     "e": 59.991
+    },
+    {
+     "w": "canggih.",
+     "s": 59.991,
+     "e": 60.431
+    }
+   ]
+  },
+  {
+   "id": "L15",
+   "text": "Tapi tentang rakyat yang benar-benar merasakan kemajuannya.",
+   "t0": 61.39744627192982,
+   "on": 61.39744627192982,
+   "dur": 3.5698541666666666,
+   "wordsF": [
+    {
+     "w": "Tapi",
+     "s": 61.367,
+     "e": 61.767
+    },
+    {
+     "w": "tentang",
+     "s": 61.767,
+     "e": 62.107
+    },
+    {
+     "w": "rakyat",
+     "s": 62.107,
+     "e": 62.667
+    },
+    {
+     "w": "yang",
+     "s": 62.667,
+     "e": 62.827
+    },
+    {
+     "w": "benar-benar",
+     "s": 62.827,
+     "e": 63.567
+    },
+    {
+     "w": "merasakan",
+     "s": 63.567,
+     "e": 64.047
+    },
+    {
+     "w": "kemajuannya.",
+     "s": 64.047,
+     "e": 64.727
+    }
+   ]
+  },
+  {
+   "id": "L16",
+   "text": "Pertanyaannya, kapan Indonesia bisa seperti itu?",
+   "t0": 66.13428837719297,
+   "on": 66.13428837719297,
+   "dur": 3.3001666666666667,
+   "wordsF": [
+    {
+     "w": "Pertanyaannya,",
+     "s": 65.602,
+     "e": 66.942
+    },
+    {
+     "w": "kapan",
+     "s": 67.462,
+     "e": 67.822
+    },
+    {
+     "w": "Indonesia",
+     "s": 67.822,
+     "e": 68.202
+    },
+    {
+     "w": "bisa",
+     "s": 68.202,
+     "e": 68.482
+    },
+    {
+     "w": "seperti",
+     "s": 68.482,
+     "e": 68.782
+    },
+    {
+     "w": "itu?",
+     "s": 68.782,
+     "e": 69.182
+    }
+   ]
+  }
+ ],
+ "shots": [
+  [
+   "tower",
+   0.0
+  ],
+  [
+   "bedroom",
+   4.940625
+  ],
+  [
+   "tv",
+   7.903125
+  ],
+  [
+   "street",
+   13.5625
+  ],
+  [
+   "phone",
+   20.459375
+  ],
+  [
+   "school",
+   28.328125
+  ],
+  [
+   "village",
+   35.928125
+  ],
+  [
+   "wait",
+   42.10625
+  ],
+  [
+   "marquee",
+   44.18125
+  ],
+  [
+   "overhead",
+   48.61060416666667
+  ],
+  [
+   "towers",
+   55.47113048245614
+  ],
+  [
+   "city",
+   60.94744627192982
+  ],
+  [
+   "dial",
+   65.53428837719298
+  ]
+ ],
+ "keys": {
+  "emas": 4.122,
+  "indonesia1": 2.442,
+  "kaget": 7.251,
+  "resmi": 10.103,
+  "maju": 12.323,
+  "dunia": 12.783,
+  "transportasi": 16.863,
+  "hampir": 18.663,
+  "kemacetan": 19.503,
+  "heran": 22.489,
+  "lapangan": 23.438,
+  "gaji": 25.018,
+  "harga": 26.038,
+  "sekolah": 28.828,
+  "rumah": 31.768,
+  "biaya": 35.168,
+  "desa": 36.268,
+  "internet": 38.508,
+  "listrik": 39.968,
+  "andal": 40.548,
+  "tunggu": 43.324,
+  "kaya": 45.731,
+  "tentu": 46.875,
+  "nggak": 47.355,
+  "miliarder": 51.68,
+  "kesempatan": 53.64,
+  "baik": 55.04,
+  "gedung": 58.491,
+  "teknologi": 59.451,
+  "rakyat": 62.107,
+  "merasakan": 63.567,
+  "kemajuannya": 64.047,
+  "kapan": 67.462,
+  "itu": 68.782
+ },
+ "cards": [
+  {
+   "line": "L1",
+   "rows": [
+    "Bagaimana kalau besok pagi,"
+   ],
+   "t0": 0.382,
+   "speechEnd": 2.142,
+   "t1": 2.342
+  },
+  {
+   "line": "L1",
+   "rows": [
+    "Indonesia tiba-tiba",
+    "menjadi negara emas?"
+   ],
+   "t0": 2.362,
+   "speechEnd": 4.602,
+   "t1": 5.202
+  },
+  {
+   "line": "L2",
+   "rows": [
+    "Baru bangun tidur,",
+    "kamu langsung kaget."
+   ],
+   "t0": 5.311,
+   "speechEnd": 7.811,
+   "t1": 8.103
+  },
+  {
+   "line": "L3",
+   "rows": [
+    "Berita di televisi mengumumkan",
+    "Indonesia resmi menjadi"
+   ],
+   "t0": 8.123,
+   "speechEnd": 11.043,
+   "t1": 10.943
+  },
+  {
+   "line": "L3",
+   "rows": [
+    "salah satu negara",
+    "paling maju di dunia!"
+   ],
+   "t0": 10.963,
+   "speechEnd": 13.163,
+   "t1": 13.763
+  },
+  {
+   "line": "L4",
+   "rows": [
+    "Kamu keluar rumah."
+   ],
+   "t0": 13.803,
+   "speechEnd": 14.972,
+   "t1": 15.603
+  },
+  {
+   "line": "L5",
+   "rows": [
+    "Jalanan bersih,",
+    "transportasi umum canggih,"
+   ],
+   "t0": 15.623,
+   "speechEnd": 18.323,
+   "t1": 18.483
+  },
+  {
+   "line": "L5",
+   "rows": [
+    "dan hampir nggak",
+    "ada kemacetan."
+   ],
+   "t0": 18.503,
+   "speechEnd": 20.143,
+   "t1": 20.743
+  },
+  {
+   "line": "L6",
+   "rows": [
+    "Pas buka HP,",
+    "kamu makin heran."
+   ],
+   "t0": 20.769,
+   "speechEnd": 22.929,
+   "t1": 23.338
+  },
+  {
+   "line": "L7",
+   "rows": [
+    "Lapangan kerja",
+    "melimpah, gaji layak,"
+   ],
+   "t0": 23.358,
+   "speechEnd": 25.758,
+   "t1": 25.898
+  },
+  {
+   "line": "L7",
+   "rows": [
+    "dan harga kebutuhan",
+    "pokok stabil."
+   ],
+   "t0": 25.918,
+   "speechEnd": 27.638,
+   "t1": 28.238
+  },
+  {
+   "line": "L8",
+   "rows": [
+    "Sekolah berkualitas",
+    "bisa diakses semua anak,"
+   ],
+   "t0": 28.748,
+   "speechEnd": 31.128,
+   "t1": 31.028
+  },
+  {
+   "line": "L8",
+   "rows": [
+    "sementara rumah sakit",
+    "punya fasilitas modern"
+   ],
+   "t0": 31.048,
+   "speechEnd": 33.608,
+   "t1": 33.508
+  },
+  {
+   "line": "L8",
+   "rows": [
+    "tanpa bikin pasien",
+    "takut biaya."
+   ],
+   "t0": 33.528,
+   "speechEnd": 35.548,
+   "t1": 36.148
+  },
+  {
+   "line": "L9",
+   "rows": [
+    "Bahkan desa-desa terpencil",
+    "sudah punya internet"
+   ],
+   "t0": 36.188,
+   "speechEnd": 38.848,
+   "t1": 38.748
+  },
+  {
+   "line": "L9",
+   "rows": [
+    "cepat dan akses",
+    "listrik yang andal."
+   ],
+   "t0": 38.768,
+   "speechEnd": 41.088,
+   "t1": 41.688
+  },
+  {
+   "line": "L10",
+   "rows": [
+    "Tapi tunggu dulu..."
+   ],
+   "t0": 42.424,
+   "speechEnd": 43.764,
+   "t1": 44.364
+  },
+  {
+   "line": "L11",
+   "rows": [
+    "Apakah semua orang",
+    "langsung kaya?"
+   ],
+   "t0": 44.451,
+   "speechEnd": 46.091,
+   "t1": 46.691
+  },
+  {
+   "line": "L12",
+   "rows": [
+    "Tentu nggak!"
+   ],
+   "t0": 46.795,
+   "speechEnd": 47.755,
+   "t1": 48.595
+  },
+  {
+   "line": "L13",
+   "rows": [
+    "Negara maju bukan berarti",
+    "semua warganya jadi miliarder,"
+   ],
+   "t0": 49.08,
+   "speechEnd": 52.48,
+   "t1": 52.54
+  },
+  {
+   "line": "L13",
+   "rows": [
+    "melainkan punya kesempatan",
+    "hidup yang lebih baik."
+   ],
+   "t0": 52.56,
+   "speechEnd": 55.36,
+   "t1": 55.771
+  },
+  {
+   "line": "L14",
+   "rows": [
+    "Dan ternyata, Indonesia Emas",
+    "bukan cuma soal gedung"
+   ],
+   "t0": 55.791,
+   "speechEnd": 58.751,
+   "t1": 58.651
+  },
+  {
+   "line": "L14",
+   "rows": [
+    "tinggi atau",
+    "teknologi canggih."
+   ],
+   "t0": 58.671,
+   "speechEnd": 60.431,
+   "t1": 61.031
+  },
+  {
+   "line": "L15",
+   "rows": [
+    "Tapi tentang rakyat",
+    "yang benar-benar"
+   ],
+   "t0": 61.287,
+   "speechEnd": 63.567,
+   "t1": 63.467
+  },
+  {
+   "line": "L15",
+   "rows": [
+    "merasakan kemajuannya."
+   ],
+   "t0": 63.487,
+   "speechEnd": 64.727,
+   "t1": 65.327
+  },
+  {
+   "line": "L16",
+   "rows": [
+    "Pertanyaannya, kapan",
+    "Indonesia bisa seperti itu?"
+   ],
+   "t0": 65.522,
+   "speechEnd": 69.182,
+   "t1": 69.782
+  }
+ ]
+}
