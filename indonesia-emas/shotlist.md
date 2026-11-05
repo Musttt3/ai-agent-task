@@ -71,7 +71,7 @@ Pengecualian durasi (sengaja, bukan salah hitung):
 - SUARA: pintu terbuka (frame 366), langkah sepatu (setiap 12 frame sejak 378).
 
 ### Shot 08 — "transportasi umum canggih,"
-- Frame **434–482** · 49 f · 1,63 dtk
+- Frame **434–481** · 48 f · 1,60 dtk
 - SET: Kota, bawah jalur kereta layang.
 - KAMERA: low angle wide, statis. Kereta lewat dari kanan ke kiri. Alasan: gerakan datang dari objeknya, kamera diam.
 - KARAKTER: HERO kecil di trotoar, mendongak. SENANG.
@@ -79,7 +79,7 @@ Pengecualian durasi (sengaja, bukan salah hitung):
 - SUARA: kereta listrik lewat (puncak frame 458).
 
 ### Shot 09 — "dan hampir nggak ada kemacetan."
-- Frame **483–531** · 49 f · 1,63 dtk
+- Frame **482–531** · 50 f · 1,67 dtk
 - SET: Kota, persimpangan dari atas halte.
 - KAMERA: high angle, dolly samping pelan mengikuti mobil. Alasan: memperlihatkan arus lalu lintas lancar.
 - KARAKTER: HERO menyeberang di zebra cross dengan santai. SENANG.
@@ -183,7 +183,7 @@ Pengecualian durasi (sengaja, bukan salah hitung):
 - SUARA: langkah sepatu.
 
 ### Shot 22 — "semua warganya jadi miliarder,"
-- Frame **1261–1316** · 56 f · 1,87 dtk
+- Frame **1261–1315** · 55 f · 1,83 dtk
 - SET: Kota, trotoar dan halte.
 - KAMERA: wide, dolly samping pelan menyusuri warga. Alasan: memperlihatkan banyak orang biasa.
 - KARAKTER: warga beragam profesi (varian): petani dengan caping, guru membawa buku, pengemudi ojek. Tidak ada yang berpakaian mewah. SENYUM.
@@ -191,7 +191,7 @@ Pengecualian durasi (sengaja, bukan salah hitung):
 - SUARA: ambience kota pagi.
 
 ### Shot 23 — "melainkan punya kesempatan hidup yang lebih baik."
-- Frame **1317–1393** · 77 f · 2,57 dtk
+- Frame **1316–1393** · 78 f · 2,60 dtk
 - SET: Kota, halte.
 - KAMERA: medium, push-in pelan ke HERO dan guru. Alasan: penutup kalimat, kembali ke wajah.
 - KARAKTER: HERO dan guru tersenyum; anak naik bus. SENYUM.
@@ -256,7 +256,7 @@ Pengecualian durasi (sengaja, bukan salah hitung):
 | 366 | Cut: pintu terbuka + SFX pintu |
 | 401 | Reveal jalan bersih ("Jalanan") |
 | 434 | Cut: kereta layang; 458 puncak SFX kereta |
-| 483 | Cut: persimpangan lancar |
+| 482 | Cut: persimpangan lancar |
 | 532 | Cut: HP; 545 notifikasi HP; 578 KAGET ("heran") |
 | 598 | Cut: layar HP, ikon kerja; 641 ikon dompet |
 | 667 | Cut: HERO senang |
@@ -270,7 +270,7 @@ Pengecualian durasi (sengaja, bukan salah hitung):
 | 1188 | Cut: "Tentu nggak!"; geleng 1199–1210 |
 | 1218 | Cut: HERO berjalan |
 | 1261 | Cut: warga beragam profesi |
-| 1317 | Cut: halte; 1340 bus berhenti |
+| 1316 | Cut: halte; 1340 bus berhenti |
 | 1394 | Cut: HERO menoleh ke kamera (1399) |
 | 1470 | Cut: crane naik gedung tinggi |
 | 1532 | Cut: warga desa |
