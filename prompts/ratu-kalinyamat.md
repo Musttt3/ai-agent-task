@@ -1,0 +1,754 @@
+# Prompt Gambar Stickman — "Ratu Kalinyamat"
+
+Total: **105 prompt** (1 prompt per timestamp). Rasio 16:9. Prompt dalam bahasa Inggris agar hasil model gambar lebih akurat.
+
+Setiap prompt merujuk ke lembar karakter dari `ratu-kalinyamat-karakter.md` (mis. *use the 'ratu' character sheet*) dan tetap menyertakan deskripsi singkat pakaiannya, jadi tiap prompt bisa berdiri sendiri.
+
+## Cara pakai di Google Flow
+
+1. Pastikan lembar karakter berikut sudah tersimpan sebagai **Ingredient** dengan nama tag-nya: `aceh`, `albuquerque`, `hadlirin`, `hitu`, `johor`, `laksamana`, `pedagang`, `pemandu`, `pemandu_laut`, `pemandu_perang`, `penangsang`, `portugis`, `prajurit_jepara`, `ratu`, `ratu_duka`, `retna_muda`, `trenggana`.
+2. Tempel instruksi agent di bawah, lalu tempel isi file `ratu-kalinyamat.txt`.
+3. Nama file hasil = timestamp, supaya mudah disusun di editor video.
+
+### Instruksi untuk agent Flow
+
+```
+Generate one 16:9 image for EACH prompt below, in order. Each prompt names the character sheets to use (e.g. "use the 'ratu' character sheet"): attach those saved Ingredients as references for that image and keep every character's face, hair, outfit, colors and props identical to their sheet. Draw any unnamed extra people as stickmen in the same style. Keep the same hand-drawn doodle art style across all images. Name each image with its timestamp (e.g. 0-00, 0-08). Do not add any text or captions.
+```
+
+## Daftar prompt
+
+### 0:00
+> Tahun 1574, 300 kapal dari Jawa datang untuk menggempur Portugis di Malaka.
+
+```
+[0:00] Epic wide shot at sea: a huge fleet of Javanese war ships (large jong junks with layered rectangular woven sails and long lancaran galleys with oars) fills the horizon, sailing toward the stone fortress of Portuguese Malacca on a green coastal hill. The stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) stands on the prow of the nearest ship, seen from behind, looking ahead. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 0:08
+> Armada itu membawa ribuan prajurit, meriam, dan persenjataan perang.
+
+```
+[0:08] On the crowded deck of a Javanese war ship: rows of Jepara soldiers (use the 'prajurit_jepara' character sheet: stickman soldiers with indigo head cloths, short brown vests, checkered lurik cloth at the waist, red sashes, spears and round rattan shields) with spears and shields, bronze cannons (cetbang) lined up along the rails, barrels of gunpowder and stacks of arrows; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) squeezes between them with a surprised face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 0:13
+> Namun, yang paling mengejutkan, kekuatan besar tersebut dikirim atas perintah seorang perempuan.
+
+```
+[0:13] Close-up of the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) with a surprised face (wide eyes, open round mouth), simple radiating burst lines behind his head; behind him a soft silhouette of a royal woman with a large hair bun. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 0:20
+> Namanya Ratu Kalinyamat.
+
+```
+[0:20] Heroic portrait: Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) stands tall on a teak wooden balcony of her palace overlooking the Jepara harbour full of ships, calm and dignified expression, her maroon shawl moving in the sea breeze, golden afternoon light. The stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands a little behind her, impressed. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 0:22
+> Ia adalah penguasa Jepara yang berani menantang salah satu kekuatan maritim Eropa paling berpengaruh pada abad ke-16.
+
+```
+[0:22] Split-screen divided by a wavy line: on the left Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) with a determined face in front of the Jepara harbour and Javanese ships; on the right a Portuguese carrack with white sails marked with a red cross and the stone fortress of Malacca, Portuguese soldiers (use the 'portugis' character sheet: stickman soldiers with steel morion helmets, breastplates over red puffed sleeves, red-and-yellow striped breeches, arquebuses and pikes) on its walls. The stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands on the dividing line, worried. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 0:32
+> Tetapi, mengapa seorang ratu dari pesisir Jawa rela mengirim ribuan prajurit menyeberangi lautan untuk berperang di Malaka?
+
+```
+[0:32] The stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) scratches his head with a big question mark symbol above him, standing on a beach of northern Java; in the background many ships sail away across the sea toward a distant fortress. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 0:41
+> Dan bagaimana nasib armada yang begitu besar itu?
+
+```
+[0:41] Mysterious shot: a large Javanese fleet sailing into a dark, foggy sea under heavy clouds, only silhouettes of sails visible; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) on the last ship looks back at the viewer with a worried face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 0:45
+> Kisah ini dimulai jauh sebelum pertempuran tersebut terjadi.
+
+```
+[0:45] A swirling time-travel vortex made of batik patterns, old palm-leaf manuscripts (lontar) and sand-timers; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) is pulled into it, surprised; at the end of the tunnel a busy 16th-century port is visible. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 0:49
+> Pada awal abad ke-16, Malaka merupakan salah satu pelabuhan perdagangan terpenting di Asia.
+
+```
+[0:49] Wide view of the busy port of Malacca in the early 1500s, before the Portuguese: a Malay royal palace with tiered roofs on the hill, a river mouth packed with ships of many kinds, warehouses and market stalls; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands on a hill above it, smiling. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 0:56
+> Kapal-kapal dari Jawa, Sumatera, India, Tiongkok, dan berbagai wilayah lain datang membawa barang dagangan.
+
+```
+[0:56] Harbour scene with many different ships side by side: a Javanese jong with woven sails, a Sumatran trading boat, an Indian dhow with a triangular sail, and a large Chinese junk with red battened sails; traders (use the 'pedagang' character sheet: stickman traders: a Javanese trader with a batik head cloth, a Malay trader in baju Melayu, a Gujarati merchant in a white turban and long white coat, a Chinese merchant in a black hat and blue robe) unload goods on the wooden pier; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) waves at them. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 1:05
+> Rempah-rempah dari Maluku, hasil bumi dari Jawa, serta kain dari India diperdagangkan melalui jalur laut yang sangat sibuk.
+
+```
+[1:05] Close-up of a colourful market stall: sacks of cloves and nutmeg, baskets of rice and pepper, bolts of bright Indian cotton cloth, Chinese porcelain; traders (use the 'pedagang' character sheet: stickman traders: a Javanese trader with a batik head cloth, a Malay trader in baju Melayu, a Gujarati merchant in a white turban and long white coat, a Chinese merchant in a black hat and blue robe) bargain with each other; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) sniffs a handful of cloves, happy. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 1:13
+> Siapapun yang menguasai Malaka memiliki pengaruh besar terhadap perdagangan di kawasan tersebut.
+
+```
+[1:13] Simple hand-drawn cartoon map of Southeast Asia: the narrow Strait of Malacca between Sumatra and the Malay Peninsula, with many dotted ship routes all passing through the city of Malacca, which glows like a key; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) points at it. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 1:21
+> Namun, keadaan berubah pada tahun 1511.
+
+```
+[1:21] Dramatic shot: the peaceful Malacca harbour suddenly darkened by storm clouds, the shadows of large European ships falling over the town; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) turns around with a scared face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 1:25
+> Armada Portugis yang dipimpin Afonso de Albuquerque berhasil merebut Malaka.
+
+```
+[1:25] Afonso de Albuquerque (use the 'albuquerque' character sheet: stickman Portuguese commander with a very long pointed white beard, black flat cap, black doublet and cape, long sword) stands on the deck of a big Portuguese carrack with a red cross on its sails, pointing his sword at the burning Malay town of Malacca while Portuguese soldiers (use the 'portugis' character sheet: stickman soldiers with steel morion helmets, breastplates over red puffed sleeves, red-and-yellow striped breeches, arquebuses and pikes) land in small boats; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) watches from behind a palm tree, shocked. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 1:31
+> Portugis kemudian memperkuat pertahanannya dan berusaha mengendalikan jalur perdagangan strategis tersebut.
+
+```
+[1:31] Portuguese soldiers (use the 'portugis' character sheet: stickman soldiers with steel morion helmets, breastplates over red puffed sleeves, red-and-yellow striped breeches, arquebuses and pikes) and workers building the stone fortress of Malacca (A Famosa) on the hill: thick white stone walls, a tall square keep tower, cannons pointing at the sea; a Portuguese ship blocks the strait; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) looks up at the walls, worried. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 1:38
+> Kehadiran kekuatan Eropa ini menimbulkan persaingan dan konflik dengan sejumlah kerajaan di Asia Tenggara.
+
+```
+[1:38] Cartoon map of Southeast Asia: a Portuguese flag icon on Malacca, and angry crossed-sword icons rising from Aceh, Johor and Java around it; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands at the edge of the map with a skeptical face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 1:46
+> Sementara itu, di pesisir utara Jawa, sebuah kekuatan baru sedang berkembang.
+
+```
+[1:46] Cartoon map zooming to the north coast of Central Java, where a small port town glows warmly with rising sun rays behind it; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) walks along the coastline on the map, curious. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 1:52
+> Wilayah itu bernama Jepara.
+
+```
+[1:52] Wide establishing shot of 16th-century Jepara: a harbour town on the north Java coast with teak-wood houses with red tile roofs, a mosque with a tiered roof, shipyards with half-built wooden ships, and a busy port; Mount Muria in the distance; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands on a hill, happy. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 1:54
+> Pada masa tersebut, Jepara dikenal sebagai kota pelabuhan yang memiliki hubungan perdagangan dengan berbagai daerah.
+
+```
+[1:54] The busy Jepara harbour: traders (use the 'pedagang' character sheet: stickman traders: a Javanese trader with a batik head cloth, a Malay trader in baju Melayu, a Gujarati merchant in a white turban and long white coat, a Chinese merchant in a black hat and blue robe) loading teak wood, rice and goods onto Javanese ships, carpenters building a ship on the beach; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) helps carry a bundle of goods, smiling. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 2:02
+> Disinilah seorang perempuan bernama Retna Kencana tumbuh dalam lingkungan keluarga penguasa.
+
+```
+[2:02] Inside a Javanese royal pavilion (pendopo) with carved teak pillars and a tiled roof: young Retna Kencana (use the 'retna_muda' character sheet: young stickman princess with a small black hair bun and one gold hairpin, soft yellow blouse, brown batik skirt, light green shawl) sits gracefully on a woven mat reading a palm-leaf manuscript, palace servants in the background; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) peeks from behind a pillar, curious. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 2:09
+> Ia merupakan putri Sultan Trenggana, penguasa Kesultanan Demak.
+
+```
+[2:09] Sultan Trenggana (use the 'trenggana' character sheet: old stickman sultan with a short grey beard, white turban with gold band, long dark-green robe with gold embroidery, wooden staff) sitting on a carved wooden throne in the Demak palace, with young Retna Kencana (use the 'retna_muda' character sheet: young stickman princess with a small black hair bun and one gold hairpin, soft yellow blouse, brown batik skirt, light green shawl) standing beside him respectfully; through the open pavilion the Great Mosque of Demak with its three-tiered roof is visible; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) bows politely. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 2:14
+> Sejak muda, Retna Kencana hidup di tengah dunia politik yang penuh persaingan.
+
+```
+[2:14] Young Retna Kencana (use the 'retna_muda' character sheet: young stickman princess with a small black hair bun and one gold hairpin, soft yellow blouse, brown batik skirt, light green shawl) walks through a palace courtyard while nobles in batik clothes whisper and point at each other in small groups, some with suspicious faces; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) follows her with a skeptical face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 2:19
+> Demak ketika itu merupakan salah satu kekuatan penting di Jawa.
+
+```
+[2:19] Cartoon map of Java with the Sultanate of Demak glowing large in the center-north, the Great Mosque of Demak icon on it, and small arrows of influence spreading across the island; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands on the map proudly. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 2:23
+> Namun, setelah Sultan Trenggana meninggal pada tahun 1546, perebutan kekuasaan mulai mengguncang lingkungan kerajaan.
+
+```
+[2:23] An empty carved throne in a dim Demak palace hall with a white cloth draped over it and a fallen turban on the seat; nobles in the shadows arguing and reaching toward the throne; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands in the doorway, worried. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 2:33
+> Perselisihan antar keluarga penguasa berubah menjadi konflik yang memakan korban.
+
+```
+[2:33] Tense palace scene at night: two groups of armed Javanese nobles facing each other with hands on their keris hilts, torches flickering, long shadows on the wall; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) hides behind a pillar, scared. Non-graphic, no blood. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 2:39
+> Salah satunya adalah Pangeran Hadlirin, suami Retna Kencana.
+
+```
+[2:39] Warm portrait of Pangeran Hadlirin (use the 'hadlirin' character sheet: young stickman prince with a neat moustache, dark blue batik head cloth, dark blue high-collared jacket with gold buttons) standing beside Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) in front of the Kalinyamat palace, both smiling gently; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands nearby, happy. Soft golden light. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 2:43
+> Menurut berbagai catatan sejarah Jawa, kematian Pangeran Hadlirin berkaitan dengan konflik kekuasaan yang melibatkan Arya Penangsang.
+
+```
+[2:43] Dark, ominous scene: Arya Penangsang (use the 'penangsang' character sheet: fierce stickman duke with thick eyebrows and a big curled moustache, red head cloth, black jacket with red trim, red sash, long keris) sits in a dim hall with a scheming smile, his hand resting on his long keris, a map of Demak on the table in front of him; in a faded thought bubble the silhouette of Pangeran Hadlirin (use the 'hadlirin' character sheet: young stickman prince with a neat moustache, dark blue batik head cloth, dark blue high-collared jacket with gold buttons); the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) watches from the shadows, scared. Non-graphic. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 2:52
+> Kejadian itu menjadi titik balik kehidupan Retna Kencana.
+
+```
+[2:52] Retna Kencana in mourning (use the 'ratu_duka' character sheet: the same woman with loose untidy hair, plain off-white blouse, dark brown skirt, grey shawl, no jewelry) kneels alone in an empty pavilion at dusk, holding her husband's batik head cloth in her hands, tears on her face; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands at a distance with a sad face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 2:56
+> Perempuan yang sebelumnya dikenal sebagai bagian dari keluarga kerajaan, kini harus menghadapi kehilangan sekaligus ketidakstabilan politik.
+
+```
+[2:56] Retna Kencana in mourning (use the 'ratu_duka' character sheet: the same woman with loose untidy hair, plain off-white blouse, dark brown skirt, grey shawl, no jewelry) stands in the rain on a palace veranda looking out at a stormy sky over the town, a broken palace roof and fleeing people in the distance; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) holds a banana leaf over her like an umbrella, worried. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 3:06
+> Namun, ia tidak menghilang dari panggung kekuasaan.
+
+```
+[3:06] Retna Kencana in mourning (use the 'ratu_duka' character sheet: the same woman with loose untidy hair, plain off-white blouse, dark brown skirt, grey shawl, no jewelry) slowly rises to her feet and wipes her tears, a ray of sunlight breaking through the clouds onto her; she looks up with resolve; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) smiles hopefully. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 3:10
+> Sekitar tahun 1549, Retna Kencana mulai memerintah Jepara sebagai Ratu Kalinyamat.
+
+```
+[3:10] Coronation-like scene in the Jepara palace pendopo: Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) in her full royal outfit with the gold diadem stands in front of a carved teak throne while nobles, Jepara soldiers (use the 'prajurit_jepara' character sheet: stickman soldiers with indigo head cloths, short brown vests, checkered lurik cloth at the waist, red sashes, spears and round rattan shields) and townspeople bow respectfully; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) cheers in the crowd. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 3:18
+> Dan di bawah kepemimpinannya, wilayah ini berkembang menjadi kekuatan maritim yang diperhitungkan.
+
+```
+[3:18] Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) stands on a hill above the Jepara bay pointing toward the sea, where many new ships with woven sails are sailing out of the harbour; Kidemang Laksamana (use the 'laksamana' character sheet: stickman admiral with short moustache and beard, dark red head cloth, brown sleeveless vest, gold-red sash, wavy-bladed spear, rattan shield) stands beside her; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) looks amazed. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 3:24
+> Pelabuhan Jepara semakin ramai dikunjungi pedagang.
+
+```
+[3:24] Very busy Jepara harbour: ships of many nations anchored, traders (use the 'pedagang' character sheet: stickman traders: a Javanese trader with a batik head cloth, a Malay trader in baju Melayu, a Gujarati merchant in a white turban and long white coat, a Chinese merchant in a black hat and blue robe) trading on the pier, porters carrying sacks; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) weaves through the crowd, happy. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 3:28
+> Kapal-kapal membawa berbagai hasil bumi, kayu, dan barang perdagangan dari satu wilayah ke wilayah lain.
+
+```
+[3:28] Javanese cargo ships loaded with teak logs, sacks of rice, baskets of pepper and jars sailing across a calm sea under the sun; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) sits on top of the teak logs on one ship, waving. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 3:35
+> Kegiatan ekonomi tersebut memberikan kekayaan sekaligus memperkuat kedudukan politik Jepara.
+
+```
+[3:35] Jepara palace treasury: chests of gold coins, rolls of fine cloth and porcelain; Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) reviews records on palm-leaf manuscripts with officials; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) admires a gold coin with a happy face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 3:42
+> Tetapi ada satu hal yang membuat Jepara berbeda.
+
+```
+[3:42] The stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) faces the viewer, raising one finger as if about to tell a secret, with a sly skeptical smile; plain warm background with a faint batik pattern. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 3:46
+> Wilayah ini tidak hanya memiliki pedagang dan kapal pengangkut barang.
+
+```
+[3:46] A row of plain Javanese cargo ships anchored in the harbour, traders (use the 'pedagang' character sheet: stickman traders: a Javanese trader with a batik head cloth, a Malay trader in baju Melayu, a Gujarati merchant in a white turban and long white coat, a Chinese merchant in a black hat and blue robe) busy with goods; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) walks past them shaking his head slightly with a skeptical face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 3:51
+> Jepara juga mampu mengerahkan armada perang dalam jumlah besar.
+
+```
+[3:51] Dramatic reveal: a huge Jepara war fleet sails out of the bay in formation, long galleys with many oars and large jong ships with cannons, Jepara soldiers (use the 'prajurit_jepara' character sheet: stickman soldiers with indigo head cloths, short brown vests, checkered lurik cloth at the waist, red sashes, spears and round rattan shields) on deck raising their spears; Kidemang Laksamana (use the 'laksamana' character sheet: stickman admiral with short moustache and beard, dark red head cloth, brown sleeveless vest, gold-red sash, wavy-bladed spear, rattan shield) commands from the leading ship; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) cheers on the shore. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 3:56
+> Kekuatan tersebut memungkinkan Ratu Kalinyamat menjalin hubungan dengan kerajaan-kerajaan lain termasuk Johor dan Aceh.
+
+```
+[3:56] Cartoon map of the western Indonesian seas with Jepara, Johor and Aceh marked by small palace icons and connected by glowing dotted sea routes; Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) stands beside the map holding a royal letter; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) points at Johor and Aceh. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 4:04
+> Pada tahun 1550, sebuah permintaan penting datang dari Johor.
+
+```
+[4:04] A Malay messenger from Johor kneels in the Jepara pendopo presenting a royal letter wrapped in yellow silk on a tray to Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) on her throne; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) watches with a curious face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 4:10
+> Penguasanya mengajak Ratu Kalinyamat bergabung dalam upaya menyerang Portugis di Malaka.
+
+```
+[4:10] The Sultan of Johor (use the 'johor' character sheet: stickman Malay sultan with a short beard, golden-yellow folded head cloth with a peak, golden-yellow baju Melayu, dark green songket at the waist, keris) in his palace, pointing at a map toward the Portuguese fortress of Malacca with a serious face, while a scribe writes the invitation; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) looks over the map with a worried face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 4:16
+> Bagi Johor, keberadaan Portugis merupakan persoalan politik dan perdagangan yang sangat penting.
+
+```
+[4:16] The Sultan of Johor (use the 'johor' character sheet: stickman Malay sultan with a short beard, golden-yellow folded head cloth with a peak, golden-yellow baju Melayu, dark green songket at the waist, keris) standing on the shore watching Portuguese ships block his trading boats in the strait, an empty market stall beside him; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) beside him with a worried face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 4:23
+> Sementara bagi Jepara, konflik di Malaka juga berkaitan dengan kepentingan jalur pelayaran dan pengaruhnya di kawasan.
+
+```
+[4:23] Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) studying a large sea chart on a teak table with Kidemang Laksamana (use the 'laksamana' character sheet: stickman admiral with short moustache and beard, dark red head cloth, brown sleeveless vest, gold-red sash, wavy-bladed spear, rattan shield), routes from Jepara to Malacca and the Spice Islands drawn on it; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) leans over the table, thoughtful. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 4:30
+> Ratu Kalinyamat memutuskan menerima ajakan tersebut.
+
+```
+[4:30] Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) rises from her throne and raises her hand with a determined face, giving the order; nobles and Kidemang Laksamana (use the 'laksamana' character sheet: stickman admiral with short moustache and beard, dark red head cloth, brown sleeveless vest, gold-red sash, wavy-bladed spear, rattan shield) bow; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) salutes enthusiastically. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 4:35
+> Pada tahun 1551, Jepara mengirim armada menuju Malaka.
+
+```
+[4:35] A Jepara war fleet of about forty ships leaving the harbour at dawn, people waving from the shore; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) waves from the deck of one ship. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 4:40
+> Sejumlah catatan sejarah menyebut sekitar 40 kapal dari Jepara membawa 4 hingga 5 ribu prajurit.
+
+```
+[4:40] Bird's-eye view of a fleet of about forty Javanese war ships in formation on a blue sea, their decks full of tiny Jepara soldiers (use the 'prajurit_jepara' character sheet: stickman soldiers with indigo head cloths, short brown vests, checkered lurik cloth at the waist, red sashes, spears and round rattan shields); the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) on the nearest ship looks amazed. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 4:48
+> Mereka bergabung dengan kekuatan sekutu yang berusaha menghadapi Portugis.
+
+```
+[4:48] At sea, the Jepara fleet meets Malay war boats from Johor flying yellow banners; Kidemang Laksamana (use the 'laksamana' character sheet: stickman admiral with short moustache and beard, dark red head cloth, brown sleeveless vest, gold-red sash, wavy-bladed spear, rattan shield) and a Johor commander greet each other across the ships; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) smiles. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 4:53
+> Kapal-kapal perang bergerak melintasi perairan menuju pelabuhan yang dijaga pasukan Eropa.
+
+```
+[4:53] The allied fleet sailing toward the Malacca fortress on the horizon, white stone walls and a tower on the hill, Portuguese ships anchored in front; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) on the deck grips the rail, tense. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 4:59
+> Di Malaka, Portugis memiliki benteng, meriam dan pengalaman mempertahankan wilayah strategis.
+
+```
+[4:59] On the walls of the Malacca fortress: Portuguese soldiers (use the 'portugis' character sheet: stickman soldiers with steel morion helmets, breastplates over red puffed sleeves, red-and-yellow striped breeches, arquebuses and pikes) load big iron cannons and aim arquebuses at the sea, a Portuguese captain with a red feather plume gives orders; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) hides behind a merlon, scared. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 5:06
+> Pertempuran pun terjadi. Pasukan gabungan berusaha menekan pertahanan Portugis.
+
+```
+[5:06] Battle scene at Malacca: Javanese and Malay ships fire their bronze cannons at the fortress, smoke clouds everywhere, Jepara soldiers (use the 'prajurit_jepara' character sheet: stickman soldiers with indigo head cloths, short brown vests, checkered lurik cloth at the waist, red sashes, spears and round rattan shields) with ladders and shields advancing on the beach toward the walls; the stickman guide in his battle outfit (use the 'pemandu_perang' character sheet: shaggy hair, indigo head cloth, faded red quilted cotton vest, round rattan shield, steel-tipped spear, soot smudges) charges with them shouting. Non-graphic cartoon battle, no blood. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 5:12
+> Tetapi merebut kota berbenteng ternyata bukan pekerjaan mudah.
+
+```
+[5:12] Close view of the thick stone fortress wall: spears and arrows bounce off it, a ladder slips away; the stickman guide in his battle outfit (use the 'pemandu_perang' character sheet: shaggy hair, indigo head cloth, faded red quilted cotton vest, round rattan shield, steel-tipped spear, soot smudges) stands at the foot of the wall looking up with a worried face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 5:17
+> Serangan itu akhirnya gagal mencapai tujuan utamanya.
+
+```
+[5:17] The allied ships turning back at sunset with torn sails and smoke rising; the Malacca fortress still standing on the hill; the stickman guide in his battle outfit (use the 'pemandu_perang' character sheet: shaggy hair, indigo head cloth, faded red quilted cotton vest, round rattan shield, steel-tipped spear, soot smudges) sits on the deck with a disappointed face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 5:20
+> Portugis masih mempertahankan Malaka.
+
+```
+[5:20] Portuguese soldiers (use the 'portugis' character sheet: stickman soldiers with steel morion helmets, breastplates over red puffed sleeves, red-and-yellow striped breeches, arquebuses and pikes) raising the Portuguese flag (white with a royal coat of arms) on the fortress tower, cheering; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) watches from a small boat in the distance, sad. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 5:23
+> Bagi Jepara, kegagalan tersebut tentu membawa kerugian.
+
+```
+[5:23] Back in the Jepara harbour: fewer ships return, some damaged; families wait on the shore with worried faces; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) helps a tired soldier off a boat. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 5:27
+> Namun, Ratu Kalinyamat tidak menghentikan perannya dalam persaingan maritim kawasan.
+
+```
+[5:27] Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) stands firmly on the harbour pier with a determined face, looking out to sea as new ships are being built behind her; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) looks at her, inspired. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 5:33
+> Ia terus memperkuat hubungan dengan kerajaan lain.
+
+```
+[5:33] Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) receives envoys from different kingdoms in her pendopo, exchanging gifts of cloth and letters; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) carries a tray of gifts, happy. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 5:37
+> Pada pertengahan abad ke-16, pengaruh Jepara bahkan menjangkau wilayah Maluku.
+
+```
+[5:37] Cartoon map of the Indonesian archipelago with a glowing dotted route from Jepara far east to the Maluku islands, little clove-tree icons on Maluku; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) follows the long route with his finger, amazed. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 5:42
+> Ratu Kalinyamat juga mengirim bantuan kepada masyarakat hitu yang sedang menghadapi konflik dengan Portugis.
+
+```
+[5:42] On a Maluku beach with clove trees and green hills: Jepara ships unload weapons and supplies to Hitu warriors (use the 'hitu' character sheet: stickman warriors from Maluku with red headbands, red sleeveless tops, white waist cloths, long narrow salawaku shields and parang swords), who greet them gratefully; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) hands a spear to a Hitu warrior. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 5:49
+> Hal ini menunjukkan bahwa kekuatan Jepara tidak hanya terbatas di sekitar Laut Jawa.
+
+```
+[5:49] Cartoon map showing Jepara's reach as a large glowing circle from Java to Malacca in the west and Maluku in the east; Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) stands proudly beside the map; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) looks impressed. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 5:54
+> Puluhan tahun setelah serangan pertama, kesempatan untuk kembali menghadapi Portugis muncul.
+
+```
+[5:54] Passage of time: the same Jepara harbour seen in three overlapping layers of seasons and years, trees growing taller, Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) a little older in the foreground looking toward Malacca on the horizon; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) beside her with a determined face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 6:01
+> Kali ini hubungan dengan Kesultanan Aceh menjadi bagian penting dari rencana tersebut.
+
+```
+[6:01] An Acehnese envoy with a tall kupiah meukeutop hat presents a letter to Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) in the Jepara pendopo; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) looks on with interest. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 6:07
+> Aceh juga memiliki kepentingan besar dalam menguasai perdagangan di selat Malaka.
+
+```
+[6:07] The busy port of Aceh at the northern tip of Sumatra, with Acehnese warriors (use the 'aceh' character sheet: stickman warriors with tall red-yellow-green kupiah meukeutop hats, black tunics with gold embroidery, songket at the waist, rencong daggers, spears) on the docks and ships loaded with pepper; a cartoon map inset shows the Strait of Malacca between Aceh and Malacca; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands on the dock. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 6:12
+> Pada tahun 1573, pasukan Aceh melancarkan serangan terhadap kedudukan Portugis.
+
+```
+[6:12] Acehnese warriors (use the 'aceh' character sheet: stickman warriors with tall red-yellow-green kupiah meukeutop hats, black tunics with gold embroidery, songket at the waist, rencong daggers, spears) attacking the Malacca fortress from their war galleys with cannons and arrows, smoke rising; Portuguese soldiers (use the 'portugis' character sheet: stickman soldiers with steel morion helmets, breastplates over red puffed sleeves, red-and-yellow striped breeches, arquebuses and pikes) defending the walls; the stickman guide in his battle outfit (use the 'pemandu_perang' character sheet: shaggy hair, indigo head cloth, faded red quilted cotton vest, round rattan shield, steel-tipped spear, soot smudges) watches from a rock, tense. Non-graphic. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 6:19
+> Namun, usaha tersebut belum berhasil mengusir mereka.
+
+```
+[6:19] Acehnese galleys retreating from Malacca, the fortress still standing; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) with a sad face shakes his head. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 6:23
+> Ratu Kalinyamat kemudian mengerahkan kekuatan yang jauh lebih besar dibandingkan ekspedisi sebelumnya.
+
+```
+[6:23] Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) on a high platform above the Jepara bay giving a powerful command with her arm outstretched; below her countless ships are being prepared and thousands of Jepara soldiers (use the 'prajurit_jepara' character sheet: stickman soldiers with indigo head cloths, short brown vests, checkered lurik cloth at the waist, red sashes, spears and round rattan shields) assemble on the beach; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) looks amazed. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 6:30
+> Pada Oktober 1574, Armada Jepara tiba di Malaka.
+
+```
+[6:30] Grand arrival: a massive Jepara fleet fills the sea in front of the Malacca fortress under a dramatic cloudy sky, sails as far as the eye can see; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) on the leading ship's prow, determined. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 6:36
+> Menurut catatan yang dikutip sejumlah sejarawan, kekuatannya mencapai sekitar 300 kapal dengan 15.000 prajurit.
+
+```
+[6:36] Bird's-eye view of an enormous fleet of around 300 Javanese ships covering the sea, decks packed with tiny Jepara soldiers (use the 'prajurit_jepara' character sheet: stickman soldiers with indigo head cloths, short brown vests, checkered lurik cloth at the waist, red sashes, spears and round rattan shields); the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) in the foreground with his jaw dropped. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 6:44
+> Sekitar 80 kapal di antaranya merupakan kapal berukuran besar.
+
+```
+[6:44] Close view of several giant jong ships, many times larger than the smaller galleys around them, with four-layered woven sails and high wooden hulls; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) looks tiny standing next to one hull, looking up. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 6:48
+> Armada itu juga membawa persenjataan, meriam, dan persediaan untuk mendukung operasi militer.
+
+```
+[6:48] Inside the hold of a big jong: bronze cannons, cannonballs, barrels of gunpowder, sacks of rice, jars of water and dried fish neatly stored; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) counts the supplies on his fingers. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 6:56
+> Panglima yang disebut memimpin ekspedisi tersebut adalah Kidemang Laksamana.
+
+```
+[6:56] Heroic portrait: Kidemang Laksamana (use the 'laksamana' character sheet: stickman admiral with short moustache and beard, dark red head cloth, brown sleeveless vest, gold-red sash, wavy-bladed spear, rattan shield) stands on the prow of the flagship holding his wavy-bladed spear high, the huge fleet behind him; the stickman guide in his battle outfit (use the 'pemandu_perang' character sheet: shaggy hair, indigo head cloth, faded red quilted cotton vest, round rattan shield, steel-tipped spear, soot smudges) stands beside him, proud. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 7:01
+> Besarnya kekuatan ini menunjukkan kemampuan Jepara mengorganisasi kapal, manusia, dan perbekalan dalam skala luar biasa untuk zamannya.
+
+```
+[7:01] Busy organised scene on the Jepara shore before departure: scribes recording supplies on palm-leaf manuscripts, porters loading rice and cannons onto ships in neat lines, Jepara soldiers (use the 'prajurit_jepara' character sheet: stickman soldiers with indigo head cloths, short brown vests, checkered lurik cloth at the waist, red sashes, spears and round rattan shields) marching in formation; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) watches impressed. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 7:11
+> Tetapi jumlah pasukan bukan satu-satunya penentu kemenangan.
+
+```
+[7:11] The stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) raises one finger with a skeptical face in front of the huge fleet, as if warning the viewer. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 7:14
+> Mengirim ribuan orang melintasi lautan membutuhkan persediaan makanan yang sangat besar.
+
+```
+[7:14] Cooks on a ship deck stirring giant pots of rice for long lines of hungry Jepara soldiers (use the 'prajurit_jepara' character sheet: stickman soldiers with indigo head cloths, short brown vests, checkered lurik cloth at the waist, red sashes, spears and round rattan shields) holding bowls; piles of empty sacks behind them; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) holds an empty bowl, worried. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 7:21
+> Setiap hari para prajurit harus makan, kapal-kapal membutuhkan perawatan,
+
+```
+[7:21] Two-panel scene: left, soldiers eating rice on deck; right, carpenters patching a leaking ship hull and repairing a torn sail; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) hammers a plank, tired. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 7:26
+> dan semakin lama pengepungan berlangsung, semakin sulit mempertahankan pasokan dari tempat yang jauh.
+
+```
+[7:26] A long dotted supply route on a cartoon map stretching from Jepara to Malacca, with only a few small supply boats on it and an hourglass beside the map running low; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) looks worried. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 7:33
+> Sementara itu, Portugis masih memiliki pertahanan kuat di Malaka.
+
+```
+[7:33] The Malacca fortress standing strong, cannons on every wall, Portuguese soldiers (use the 'portugis' character sheet: stickman soldiers with steel morion helmets, breastplates over red puffed sleeves, red-and-yellow striped breeches, arquebuses and pikes) on guard with arquebuses, a Portuguese captain with a red plume watching the sea confidently; the stickman guide in his battle outfit (use the 'pemandu_perang' character sheet: shaggy hair, indigo head cloth, faded red quilted cotton vest, round rattan shield, steel-tipped spear, soot smudges) looks at it from a ship, worried. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 7:37
+> Pasukan Jepara berusaha menekan kedudukan lawan melalui serangan dan pengepungan.
+
+```
+[7:37] Siege scene: Jepara ships surrounding the bay of Malacca, cannons firing, Jepara soldiers (use the 'prajurit_jepara' character sheet: stickman soldiers with indigo head cloths, short brown vests, checkered lurik cloth at the waist, red sashes, spears and round rattan shields) building wooden barricades on the shore; Kidemang Laksamana (use the 'laksamana' character sheet: stickman admiral with short moustache and beard, dark red head cloth, brown sleeveless vest, gold-red sash, wavy-bladed spear, rattan shield) directing the attack; the stickman guide in his battle outfit (use the 'pemandu_perang' character sheet: shaggy hair, indigo head cloth, faded red quilted cotton vest, round rattan shield, steel-tipped spear, soot smudges) carries shields forward. Non-graphic. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 7:42
+> Namun keadaan mulai menjadi semakin sulit.
+
+```
+[7:42] Dark rain clouds over the siege camp, tired soldiers sitting in the mud, torn tents; the stickman guide in his battle outfit (use the 'pemandu_perang' character sheet: shaggy hair, indigo head cloth, faded red quilted cotton vest, round rattan shield, steel-tipped spear, soot smudges) sits slumped with an exhausted face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 7:46
+> Salah satu masalah terbesar muncul ketika Portugis berhasil merebut beberapa kapal yang membawa bahan makanan.
+
+```
+[7:46] At sea, Portuguese ships surround several small Javanese supply boats loaded with rice sacks, Portuguese soldiers (use the 'portugis' character sheet: stickman soldiers with steel morion helmets, breastplates over red puffed sleeves, red-and-yellow striped breeches, arquebuses and pikes) climbing aboard; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) on a distant ship points at it in shock. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 7:53
+> Sejumlah sumber menyebut 6 kapal pengangkut perbekalan jatuh ke tangan Portugis.
+
+```
+[7:53] Six small Javanese supply boats being towed away by a Portuguese ship toward the fortress, their cargo of rice sacks visible; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) counts six on his fingers with a worried face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 7:59
+> Kehilangan persediaan tersebut memperburuk keadaan pasukan Jepara.
+
+```
+[7:59] Inside a ship's storeroom with empty rice sacks and empty jars; hungry Jepara soldiers (use the 'prajurit_jepara' character sheet: stickman soldiers with indigo head cloths, short brown vests, checkered lurik cloth at the waist, red sashes, spears and round rattan shields) sitting with empty bowls; the stickman guide in his battle outfit (use the 'pemandu_perang' character sheet: shaggy hair, indigo head cloth, faded red quilted cotton vest, round rattan shield, steel-tipped spear, soot smudges) holds his stomach, sad. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 8:03
+> Armada besar yang sebelumnya datang dengan kekuatan luar biasa, kini menghadapi kesulitan mempertahankan operasi militer.
+
+```
+[8:03] The once-grand fleet now looks weary: torn sails, damaged hulls, tired soldiers resting on deck under grey skies; Kidemang Laksamana (use the 'laksamana' character sheet: stickman admiral with short moustache and beard, dark red head cloth, brown sleeveless vest, gold-red sash, wavy-bladed spear, rattan shield) looks at the fortress with a worried face; the stickman guide in his battle outfit (use the 'pemandu_perang' character sheet: shaggy hair, indigo head cloth, faded red quilted cotton vest, round rattan shield, steel-tipped spear, soot smudges) beside him. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 8:10
+> Serangan yang diharapkan dapat mengakhiri kekuasaan Portugis, akhirnya kembali mengalami kegagalan.
+
+```
+[8:10] The Malacca fortress still standing under clearing skies while smoke drifts from the beach; Portuguese soldiers (use the 'portugis' character sheet: stickman soldiers with steel morion helmets, breastplates over red puffed sleeves, red-and-yellow striped breeches, arquebuses and pikes) cheering on the walls; the stickman guide in his battle outfit (use the 'pemandu_perang' character sheet: shaggy hair, indigo head cloth, faded red quilted cotton vest, round rattan shield, steel-tipped spear, soot smudges) kneels on the sand, disappointed. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 8:17
+> Pasukan Jepara terpaksa mundur. Malaka tetap berada di bawah kekuasaan Portugis.
+
+```
+[8:17] The Jepara fleet sailing away from Malacca at dusk, the fortress silhouetted behind them with the Portuguese flag on its tower; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) looks back from the stern, sad. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 8:23
+> Banyak prajurit tidak pernah kembali ke Tanah Jawa.
+
+```
+[8:23] Quiet, respectful scene on the Jepara beach at sunset: women and children waiting and looking at the empty sea, a few small offerings of flowers on the sand; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands with his head bowed. No bodies, gentle mood. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 8:26
+> Dua ekspedisi besar telah dikirim Ratu Kalinyamat, tetapi keduanya tidak berhasil merebut kota yang menjadi tujuan utama mereka.
+
+```
+[8:26] Two-panel scene: left, the smaller 1551 fleet retreating; right, the huge 1574 fleet retreating; the Malacca fortress standing in both; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands between the panels with a sad face. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 8:34
+> Lantas, apakah itu berarti perjuangannya tidak memiliki arti?
+
+```
+[8:34] The stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) sits on the beach looking out to sea with a thoughtful face, a question mark above his head; sunset sky. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 8:38
+> Justru disinilah bagian menarik dari kisah tersebut.
+
+```
+[8:38] The stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) jumps up with an excited, surprised face, a small light bulb above his head; warm background. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 8:43
+> Ratu Kalinyamat menunjukkan bahwa kerajaan di Nusantara memiliki kemampuan membangun kekuatan maritim besar dan menjalin kerjasama militer lintas wilayah.
+
+```
+[8:43] Cartoon map of the archipelago with Jepara, Johor, Aceh and Hitu linked by glowing sea routes and allied ship icons; Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) stands confidently beside it; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) gives a thumbs-up. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 8:53
+> Jepara bukan sekedar pelabuhan kecil yang menunggu kedatangan pedagang asing.
+
+```
+[8:53] Split-screen: left, a tiny sleepy harbour with one small boat (crossed out with a red X); right, the mighty Jepara harbour with a war fleet and shipyards; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) points at the right side, proud. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 8:58
+> Pada masa pemerintahannya, Jepara merupakan pusat kekuasaan yang mampu memengaruhi persaingan politik hingga selat Malaka dan Maluku.
+
+```
+[8:58] Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) on her throne in the Jepara pendopo, behind her a large painted map showing her influence reaching the Strait of Malacca in the west and Maluku in the east; envoys bowing; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands proudly beside the throne. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 9:06
+> Keberaniannya bahkan tercatat dalam sumber-sumber Portugis.
+
+```
+[9:06] A Portuguese chronicler at a wooden desk by candlelight writing in a thick leather book with a quill pen (no readable text), a small portrait sketch of Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) pinned on the wall; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) peeks over his shoulder, surprised. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 9:10
+> Ia dikenal sebagai penguasa Jepara yang kaya, berkuasa dan pemberani.
+
+```
+[9:10] Majestic portrait of Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) standing in front of her palace with gold treasures on one side and her war fleet on the other, a proud confident smile; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) applauds. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 9:15
+> Pengakuan dari pihak yang pernah dihadapinya memperlihatkan betapa besar pengaruh Sang Ratu pada zamannya.
+
+```
+[9:15] Portuguese officers in the Malacca fortress, drawn like Portuguese soldiers (use the 'portugis' character sheet: stickman soldiers with steel morion helmets, breastplates over red puffed sleeves, red-and-yellow striped breeches, arquebuses and pikes), looking at a map of Java with respectful, slightly worried faces, one pointing at Jepara; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) grins knowingly. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 9:22
+> Ratu Kalinyamat diperkirakan meninggal pada tahun 1579 setelah pemerintah Jepara selama sekitar 30 tahun.
+
+```
+[9:22] Peaceful, solemn scene: an older Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) sitting on a veranda of her palace at sunset, looking out over the calm Jepara harbour, a soft golden light; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) sits quietly nearby, sad but respectful. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 9:30
+> Kekuatan politik dan perdagangan Jepara kemudian mengalami perubahan seiring perkembangan kerajaan-kerajaan lain di Jawa.
+
+```
+[9:30] Cartoon map of Java where the glow over Jepara slowly fades while new kingdom icons appear inland; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) watches the map change, thoughtful. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 9:38
+> Tetapi, kisah kepemimpinannya tidak ikut menghilang.
+
+```
+[9:38] An old palm-leaf manuscript lying open on a carved wooden stand, glowing softly, with a small drawing of Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) on it; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) looks at it with a gentle smile. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 9:42
+> Berabad-abad kemudian, namanya tetap dikenang sebagai salah satu tokoh perempuan penting dalam sejarah maritim Nusantara.
+
+```
+[9:42] Present-day scene: Indonesian schoolchildren in red-and-white uniforms in a museum looking up at a large painting of Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) standing in front of her fleet; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands among them in his Jepara outfit, proud. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 9:50
+> Perjuangannya mengingatkan kita bahwa sejarah bukan hanya tentang siapa yang memenangkan pertempuran.
+
+```
+[9:50] The stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) standing on a beach holding a broken spear in one hand and a small flower in the other, thoughtful face, sunset sky. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 9:55
+> Sejarah juga mencatat siapa yang berani mengambil keputusan besar, membangun kekuatan dan menghadapi lawan yang tangguh.
+
+```
+[9:55] Three-panel montage: Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) giving the command from her throne; shipbuilders in Jepara constructing a great jong; the fleet sailing toward the Malacca fortress; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) appears small in the center panel, inspired. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 10:04
+> Ratu Kalinyamat memang tidak berhasil mengusir Portugis dari Malaka.
+
+```
+[10:04] The Malacca fortress on the hill in calm weather with the Portuguese flag still flying; Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) standing on a ship at a distance looking at it with a calm, accepting face; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) beside her. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 10:08
+> Namun, ia membuktikan bahwa pada abad ke-16 seorang perempuan dari pesisir Jawa mampu memimpin kerajaan yang kekuatan armadanya diperhitungkan hingga keluar Nusantara.
+
+```
+[10:08] Heroic final portrait: Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) standing tall on the prow of her flagship, maroon shawl blowing in the wind, her huge fleet spreading out behind her across the sea under a golden sky; the stickman guide in his sailor outfit (use the 'pemandu_laut' character sheet: shaggy hair, indigo batik head cloth, lurik vest, conical bamboo hat on his back, cloth hitched above the knees, rope over the shoulder) kneels respectfully beside her. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 10:20
+> Dan mungkin hal paling mengesankan dari kisah ini bukanlah jumlah kapal yang dikirimnya.
+
+```
+[10:20] The stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stands in front of the huge fleet, gently waving his hand to dismiss it, with a calm skeptical smile; soft background. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 10:26
+> Melainkan kenyataan bahwa jauh sebelum Indonesia menjadi sebuah negara,
+
+```
+[10:26] A time-lapse view of the north Java coast: the 16th-century Jepara harbour on the left gradually transforming into a modern Indonesian coastal town on the right; the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) walks from left to right through the scene. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
+
+### 10:31
+> Lautan Nusantara sudah melahirkan pemimpin-pemimpin besar yang berani menentukan arah sejarahnya sendiri.
+
+```
+[10:31] Emotional ending: Ratu Kalinyamat (use the 'ratu' character sheet: stickman queen with a large black hair bun, gold hairpins and thin gold diadem, emerald-green long blouse with gold trim, brown-gold batik skirt, maroon shawl, small keris) and the stickman guide (use the 'pemandu' character sheet: shaggy dark-brown hair, indigo batik head cloth, open striped lurik vest with a small white fur patch, batik cloth to the knees, red sash with rope belt, steel-tipped spear) stand side by side on a cliff above the Java Sea at sunset, looking at the horizon where a single Javanese ship with woven sails sails into the golden light. Warm, hopeful mood. Style: simple hand-drawn 2D cartoon doodle, exactly the same art style and line quality as the character reference sheets, thick clean black outlines, flat muted colors with a warm tropical palette (teak brown, batik indigo, sea blue, gold, red), minimal shading, simple illustrated background, 16th-century Java and Strait of Malacca unless stated otherwise, 16:9 widescreen composition, no text, no letters, no captions, no watermark.
+```
