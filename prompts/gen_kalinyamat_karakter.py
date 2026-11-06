@@ -102,11 +102,37 @@ CHARS = [
      "a Gujarati Indian merchant with a white turban, a long white coat (jama) and a roll of colourful cloth; (4) a "
      "Chinese merchant with a black hat and a long blue robe holding a porcelain jar",
      "friendly smile, bargaining (raised eyebrow), happy laughing, worried, surprised, thinking"),
-    ("pemandu", "Si Stickman Purba (opsional)", "Pemandu/saksi seperti di video-video sebelumnya",
-     "the stickman caveman from the reference sheet, completely unchanged (messy shaggy dark-brown hair, ragged brown "
-     "fur tunic with white fur collar and rope belt, stone-tipped wooden spear). Use the reference sheet as is",
-     "worried, happy, skeptical, surprised, scared, angry"),
+    ("pemandu", "Si Stickman — pemandu zaman Jepara", "Versi utama: karakter stickman kamu berpakaian Jawa abad ke-16",
+     "the SAME stickman character as the attached caveman reference sheet, with his identity kept exactly: the same round white head and face, the same messy shaggy dark-brown hair sticking out in every direction, the same simple dot eyes and expressive eyebrows, the same thin black stick arms and legs and the same proportions, but now dressed as a 16th-century Javanese man of the Jepara harbour: an indigo-blue batik head cloth (iket) "
+     "tied around his head with two short tails at the back, his shaggy hair still poking out above and around it; a "
+     "short brown-and-cream striped lurik vest, open at the front, worn over his stick torso, with a small white fur patch "
+     "sewn on the left shoulder as a reminder of his old fur tunic; a brown-and-gold batik cloth (kain) wrapped around the "
+     "waist down to the knees over short dark trousers; his old thin rope belt tied over a red cloth sash; a small keris "
+     "with a plain wooden sheath tucked at the front of the sash; barefoot; he still carries his tall wooden spear, but its "
+     "stone tip has been replaced with a narrow Javanese steel spearhead (tombak) bound with rattan cord; a small woven "
+     "pandan pouch hangs at his hip; curious, friendly posture",
+     "worried, happy, skeptical, surprised, scared, angry — matching the six expressions of the reference sheet"),
+    ("pemandu_laut", "Si Stickman — varian di kapal", "Untuk adegan pelayaran & armada (lebih ringan, siap berlayar)",
+     "the SAME stickman character as the attached caveman reference sheet, with his identity kept exactly: the same round white head and face, the same messy shaggy dark-brown hair sticking out in every direction, the same simple dot eyes and expressive eyebrows, the same thin black stick arms and legs and the same proportions, dressed as a 16th-century Javanese sailor on a Jepara war fleet: the same indigo batik head cloth and lurik "
+     "vest as his main outfit, plus a wide conical bamboo hat (caping) hanging on his back from a cord; the batik cloth "
+     "hitched up above the knees for work on deck; a coil of rope over one shoulder; holding a wooden oar in one hand and "
+     "his steel-tipped spear strapped to his back; barefoot",
+     "seasick and queasy, happy, skeptical, surprised looking at the sea, scared, determined"),
+    ("pemandu_perang", "Si Stickman — varian pertempuran", "Untuk adegan pengepungan Malaka (1551 & 1574)",
+     "the SAME stickman character as the attached caveman reference sheet, with his identity kept exactly: the same round white head and face, the same messy shaggy dark-brown hair sticking out in every direction, the same simple dot eyes and expressive eyebrows, the same thin black stick arms and legs and the same proportions, dressed for battle as a soldier of the Jepara army: the same indigo batik head cloth tied tighter, a thick "
+     "quilted cotton vest (padded armour) in faded red over his lurik vest, the batik cloth tucked short, a red sash with "
+     "the keris, a round woven rattan shield on his left arm and his steel-tipped spear held ready in his right hand; smudges "
+     "of soot on his face and clothes",
+     "worried, battle cry, skeptical, surprised, scared, angry"),
 ]
+
+TRANSFORM = ("Before-and-after illustration on a plain white background, in exactly the same art style as the attached stickman "
+             "reference sheet. Left: the stickman caveman from the reference sheet, unchanged, with his fur tunic and stone-"
+             "tipped spear. A thick hand-drawn arrow in the middle points to the right. Right: the very same stickman (same "
+             "face, same shaggy dark-brown hair, same proportions) now dressed as a 16th-century Javanese man of Jepara: indigo "
+             "batik head cloth, open brown-and-cream striped lurik vest with a small white fur patch on the shoulder, brown-"
+             "gold batik cloth to the knees, rope belt over a red sash, small keris, barefoot, and his spear now with a narrow "
+             "steel tombak blade. Both stand in front view with a happy expression. No text, no labels, no letters, no watermark.")
 
 LINEUP = ("Group lineup on a plain white background, in exactly the same art style as the attached stickman reference "
           "sheet (round white heads, thin black stick limbs, thick clean black outlines, flat muted colors). All main "
@@ -115,6 +141,7 @@ LINEUP = ("Group lineup on a plain white background, in exactly the same art sty
           "No text, no labels, no letters, no watermark.")
 
 SHORT = {
+    "pemandu": "the shaggy-haired stickman guide with an indigo batik head cloth, open striped lurik vest, batik cloth to the knees, red sash with rope belt and a steel-tipped spear",
     "ratu": "the queen with a large black hair bun, thin gold diadem, emerald-green long blouse, brown-gold batik skirt, maroon shawl and a small keris",
     "trenggana": "the old sultan with a grey beard, white turban with gold band, long dark-green robe and a wooden staff",
     "hadlirin": "the young prince with a moustache, dark blue head cloth and dark blue high-collared jacket with gold buttons",
@@ -135,14 +162,14 @@ def sheet_prompt(c):
 
 if __name__ == "__main__":
     here = os.path.dirname(os.path.abspath(__file__))
-    main = [c for c in CHARS if c[0] in ("ratu", "trenggana", "hadlirin", "penangsang", "laksamana", "albuquerque")]
+    main = [c for c in CHARS if c[0] in ("pemandu", "ratu", "trenggana", "hadlirin", "penangsang", "laksamana", "albuquerque")]
     lineup = LINEUP.format(names=", ".join(c[1].split(" (")[0] for c in main),
                            descs="; ".join(SHORT[c[0]] for c in main))
     with open(os.path.join(here, "ratu-kalinyamat-karakter.txt"), "w") as f:
-        blocks = [f"[{c[0]}] {sheet_prompt(c)}" for c in CHARS] + [f"[lineup] {lineup}"]
+        blocks = [f"[{c[0]}] {sheet_prompt(c)}" for c in CHARS] + [f"[transformasi] {TRANSFORM}", f"[lineup] {lineup}"]
         f.write("\n\n".join(blocks) + "\n")
     md = ["# Desain Karakter — \"Ratu Kalinyamat\"", "",
-          f"Total: **{len(CHARS)} lembar karakter** + 1 gambar lineup. Rasio yang disarankan 3:2 atau 16:9.", "",
+          f"Total: **{len(CHARS)} lembar karakter** + 1 gambar transformasi + 1 gambar lineup. Rasio yang disarankan 3:2 atau 16:9.", "",
           "Semua karakter memakai gaya stickman yang sama dengan lembar referensi kamu (kepala bulat putih, tubuh garis "
           "hitam tipis, garis tebal doodle); yang berbeda hanya pakaian dan properti khas abad ke-16.", "",
           "## Cara pakai di Google Flow", "",
@@ -152,12 +179,14 @@ if __name__ == "__main__":
           "Lembar-lembar inilah yang nanti dipakai sebagai referensi saat membuat gambar per timestamp.", "",
           "### Instruksi untuk agent Flow", "", "```",
           "Generate one character reference sheet for EACH prompt below (tagged [ratu], [trenggana], ...), plus the "
-          "[lineup] image. Use the attached stickman sheet only as the ART STYLE reference: round white heads, thin "
+          "[transformasi] and [lineup] images. Use the attached stickman sheet only as the ART STYLE reference: round white heads, thin "
           "black stick limbs, thick clean black outlines, flat muted colors. Follow each prompt's outfit description "
           "exactly. Name each image with its tag. Do not add any text or labels.", "```", "",
           "## Daftar karakter", ""]
     for c in CHARS:
         md += [f"### {c[1]}", f"*{c[2]}*", "", "```", f"[{c[0]}] {sheet_prompt(c)}", "```", ""]
+    md += ["### Transformasi stickman (sebelum → sesudah)", "*Untuk memastikan wajah & rambutnya tetap sama setelah ganti pakaian*", "", "```",
+           f"[transformasi] {TRANSFORM}", "```", ""]
     md += ["### Lineup semua tokoh utama", "*Untuk mengecek konsistensi ukuran & gaya antar karakter*", "", "```",
            f"[lineup] {lineup}", "```", ""]
     with open(os.path.join(here, "ratu-kalinyamat-karakter.md"), "w") as f:
