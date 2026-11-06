@@ -240,7 +240,7 @@ def amb_gulls(d, density=0.12):
             tt = np.arange(m) / SR
             f = rng.uniform(1500, 1900) * (1 - 0.35 * tt / tt[-1])
             ph = 2 * np.pi * np.cumsum(f) / SR
-            y = sum(np.sin(h * ph) / h for h in range(1, 5)) * np.sin(np.pi * tt / tt[-1]) ** 1.5
+            y = sum(np.sin(h * ph) / h for h in range(1, 5)) * np.clip(np.sin(np.pi * tt / tt[-1]), 0, None) ** 1.5
             i = int((t0 + k * rng.uniform(0.3, 0.45)) * SR)
             if i + m < n:
                 out[i:i + m] += pan(filt(y, "bandpass", [700, 5000]) * rng.uniform(0.02, 0.05), p)

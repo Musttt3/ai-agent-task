@@ -1,0 +1,2716 @@
+{
+ "fps": 30,
+ "duration": 641.5,
+ "narrEnd": 637.47,
+ "scenes": [
+  {
+   "i": 1,
+   "img": "img/001.jpg",
+   "video": "clips/001.mp4",
+   "start": 0.0,
+   "end": 7.680000000000001,
+   "trans": "none",
+   "tlen": 0,
+   "motion": "static",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 2,
+   "img": "img/002.jpg",
+   "video": "clips/002.mp4",
+   "start": 7.680000000000001,
+   "end": 13.0,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "static",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 3,
+   "img": "img/003.jpg",
+   "video": "clips/003.mp4",
+   "start": 13.0,
+   "end": 20.2,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "static",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 4,
+   "img": "img/004.jpg",
+   "video": "clips/004.mp4",
+   "start": 20.2,
+   "end": 22.819999999999997,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "static",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 5,
+   "img": "img/005.jpg",
+   "video": "clips/005.mp4",
+   "start": 22.819999999999997,
+   "end": 31.68,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "static",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 6,
+   "img": "img/006.jpg",
+   "video": null,
+   "start": 31.68,
+   "end": 40.76,
+   "trans": "flash",
+   "tlen": 10,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 7,
+   "img": "img/007.jpg",
+   "video": null,
+   "start": 40.76,
+   "end": 44.92,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 8,
+   "img": "img/008.jpg",
+   "video": null,
+   "start": 44.92,
+   "end": 49.13999999999999,
+   "trans": "warp",
+   "tlen": 20,
+   "motion": "spin",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 9,
+   "img": "img/009.jpg",
+   "video": null,
+   "start": 49.13999999999999,
+   "end": 56.1,
+   "trans": "flash",
+   "tlen": 10,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 10,
+   "img": "img/010.jpg",
+   "video": null,
+   "start": 56.1,
+   "end": 64.68,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 11,
+   "img": "img/011.jpg",
+   "video": null,
+   "start": 64.68,
+   "end": 73.88000000000001,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 12,
+   "img": "img/012.jpg",
+   "video": null,
+   "start": 73.88000000000001,
+   "end": 80.44000000000001,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 13,
+   "img": "img/013.jpg",
+   "video": null,
+   "start": 80.44000000000001,
+   "end": 85.18,
+   "trans": "flash",
+   "tlen": 10,
+   "motion": "right",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 14,
+   "img": "img/014.jpg",
+   "video": null,
+   "start": 85.18,
+   "end": 90.82000000000001,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [
+    {
+     "at": 0.3,
+     "dur": 1.0,
+     "amp": 5
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 15,
+   "img": "img/015.jpg",
+   "video": null,
+   "start": 90.82000000000001,
+   "end": 98.30000000000001,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 16,
+   "img": "img/016.jpg",
+   "video": null,
+   "start": 98.30000000000001,
+   "end": 105.62,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 17,
+   "img": "img/017.jpg",
+   "video": null,
+   "start": 105.62,
+   "end": 111.32000000000001,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 18,
+   "img": "img/018.jpg",
+   "video": null,
+   "start": 111.32000000000001,
+   "end": 114.30000000000001,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 19,
+   "img": "img/019.jpg",
+   "video": null,
+   "start": 114.30000000000001,
+   "end": 121.82000000000001,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 20,
+   "img": "img/020.jpg",
+   "video": null,
+   "start": 121.82000000000001,
+   "end": 128.74,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 21,
+   "img": "img/021.jpg",
+   "video": null,
+   "start": 128.74,
+   "end": 133.62,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 22,
+   "img": "img/022.jpg",
+   "video": null,
+   "start": 133.62,
+   "end": 139.08,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 23,
+   "img": "img/023.jpg",
+   "video": null,
+   "start": 139.08,
+   "end": 143.64000000000001,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 24,
+   "img": "img/024.jpg",
+   "video": null,
+   "start": 143.64000000000001,
+   "end": 153.06,
+   "trans": "dip",
+   "tlen": 24,
+   "motion": "in",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 25,
+   "img": "img/025.jpg",
+   "video": null,
+   "start": 153.06,
+   "end": 158.54,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 26,
+   "img": "img/026.jpg",
+   "video": null,
+   "start": 158.54,
+   "end": 163.02,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 27,
+   "img": "img/027.jpg",
+   "video": null,
+   "start": 163.02,
+   "end": 172.16,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 28,
+   "img": "img/028.jpg",
+   "video": null,
+   "start": 172.16,
+   "end": 175.9,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 29,
+   "img": "img/029.jpg",
+   "video": null,
+   "start": 175.9,
+   "end": 185.58,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 30,
+   "img": "img/030.jpg",
+   "video": null,
+   "start": 185.58,
+   "end": 189.70000000000002,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 31,
+   "img": "img/031.jpg",
+   "video": null,
+   "start": 189.70000000000002,
+   "end": 197.46,
+   "trans": "flash",
+   "tlen": 10,
+   "motion": "punch",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 32,
+   "img": "img/032.jpg",
+   "video": null,
+   "start": 197.46,
+   "end": 204.02,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 33,
+   "img": "img/033.jpg",
+   "video": null,
+   "start": 204.02,
+   "end": 207.5,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 34,
+   "img": "img/034.jpg",
+   "video": null,
+   "start": 207.5,
+   "end": 215.32,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 35,
+   "img": "img/035.jpg",
+   "video": null,
+   "start": 215.32,
+   "end": 221.8,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 36,
+   "img": "img/036.jpg",
+   "video": null,
+   "start": 221.8,
+   "end": 225.78,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 37,
+   "img": "img/037.jpg",
+   "video": null,
+   "start": 225.78,
+   "end": 230.68,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 38,
+   "img": "img/038.jpg",
+   "video": null,
+   "start": 230.68,
+   "end": 235.70000000000002,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 39,
+   "img": "img/039.jpg",
+   "video": null,
+   "start": 235.70000000000002,
+   "end": 243.94,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 40,
+   "img": "img/040.jpg",
+   "video": null,
+   "start": 243.94,
+   "end": 249.52,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 41,
+   "img": "img/041.jpg",
+   "video": null,
+   "start": 249.52,
+   "end": 255.80999999999997,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 42,
+   "img": "img/042.jpg",
+   "video": null,
+   "start": 255.80999999999997,
+   "end": 262.44,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 43,
+   "img": "img/043.jpg",
+   "video": null,
+   "start": 262.44,
+   "end": 270.53999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 44,
+   "img": "img/044.jpg",
+   "video": null,
+   "start": 270.53999999999996,
+   "end": 274.44,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 45,
+   "img": "img/045.jpg",
+   "video": null,
+   "start": 274.44,
+   "end": 280.32,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 46,
+   "img": "img/046.jpg",
+   "video": null,
+   "start": 280.32,
+   "end": 288.17999999999995,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 47,
+   "img": "img/047.jpg",
+   "video": null,
+   "start": 288.17999999999995,
+   "end": 293.06,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 48,
+   "img": "img/048.jpg",
+   "video": null,
+   "start": 293.06,
+   "end": 299.29999999999995,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 49,
+   "img": "img/049.jpg",
+   "video": null,
+   "start": 299.29999999999995,
+   "end": 305.9,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 50,
+   "img": "img/050.jpg",
+   "video": null,
+   "start": 305.9,
+   "end": 311.88,
+   "trans": "flash",
+   "tlen": 10,
+   "motion": "in",
+   "shake": [
+    {
+     "at": 0.2,
+     "dur": 2.5,
+     "amp": 8
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 51,
+   "img": "img/051.jpg",
+   "video": null,
+   "start": 311.88,
+   "end": 316.35999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [
+    {
+     "at": 0.6,
+     "dur": 0.5,
+     "amp": 6
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 52,
+   "img": "img/052.jpg",
+   "video": null,
+   "start": 316.35999999999996,
+   "end": 320.09999999999997,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 53,
+   "img": "img/053.jpg",
+   "video": null,
+   "start": 320.09999999999997,
+   "end": 323.35999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 54,
+   "img": "img/054.jpg",
+   "video": null,
+   "start": 323.35999999999996,
+   "end": 327.47999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 55,
+   "img": "img/055.jpg",
+   "video": null,
+   "start": 327.47999999999996,
+   "end": 333.08,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 56,
+   "img": "img/056.jpg",
+   "video": null,
+   "start": 333.08,
+   "end": 336.44,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 57,
+   "img": "img/057.jpg",
+   "video": null,
+   "start": 336.44,
+   "end": 342.03999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 58,
+   "img": "img/058.jpg",
+   "video": null,
+   "start": 342.03999999999996,
+   "end": 348.96,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 59,
+   "img": "img/059.jpg",
+   "video": null,
+   "start": 348.96,
+   "end": 354.97999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 60,
+   "img": "img/060.jpg",
+   "video": null,
+   "start": 354.97999999999996,
+   "end": 361.03999999999996,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 61,
+   "img": "img/061.jpg",
+   "video": null,
+   "start": 361.03999999999996,
+   "end": 366.9,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 62,
+   "img": "img/062.jpg",
+   "video": null,
+   "start": 366.9,
+   "end": 372.28,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 63,
+   "img": "img/063.jpg",
+   "video": null,
+   "start": 372.28,
+   "end": 379.03999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [
+    {
+     "at": 0.4,
+     "dur": 2.0,
+     "amp": 7
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 64,
+   "img": "img/064.jpg",
+   "video": null,
+   "start": 379.03999999999996,
+   "end": 383.09999999999997,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 65,
+   "img": "img/065.jpg",
+   "video": null,
+   "start": 383.09999999999997,
+   "end": 389.62,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 66,
+   "img": "img/066.jpg",
+   "video": null,
+   "start": 389.62,
+   "end": 395.35999999999996,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 67,
+   "img": "img/067.jpg",
+   "video": null,
+   "start": 395.35999999999996,
+   "end": 403.97999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 68,
+   "img": "img/068.jpg",
+   "video": null,
+   "start": 403.97999999999996,
+   "end": 408.73999999999995,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 69,
+   "img": "img/069.jpg",
+   "video": null,
+   "start": 408.73999999999995,
+   "end": 415.5,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 70,
+   "img": "img/070.jpg",
+   "video": null,
+   "start": 415.5,
+   "end": 420.71999999999997,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 71,
+   "img": "img/071.jpg",
+   "video": null,
+   "start": 420.71999999999997,
+   "end": 430.41999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 72,
+   "img": "img/072.jpg",
+   "video": null,
+   "start": 430.41999999999996,
+   "end": 434.73999999999995,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 73,
+   "img": "img/073.jpg",
+   "video": null,
+   "start": 434.73999999999995,
+   "end": 440.73999999999995,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 74,
+   "img": "img/074.jpg",
+   "video": null,
+   "start": 440.73999999999995,
+   "end": 446.12,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 75,
+   "img": "img/075.jpg",
+   "video": null,
+   "start": 446.12,
+   "end": 452.53999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 76,
+   "img": "img/076.jpg",
+   "video": null,
+   "start": 452.53999999999996,
+   "end": 457.08,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 77,
+   "img": "img/077.jpg",
+   "video": null,
+   "start": 457.08,
+   "end": 462.38,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [
+    {
+     "at": 0.3,
+     "dur": 2.0,
+     "amp": 7
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 78,
+   "img": "img/078.jpg",
+   "video": null,
+   "start": 462.38,
+   "end": 465.79999999999995,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "in",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 79,
+   "img": "img/079.jpg",
+   "video": null,
+   "start": 465.79999999999995,
+   "end": 473.11999999999995,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 80,
+   "img": "img/080.jpg",
+   "video": null,
+   "start": 473.11999999999995,
+   "end": 478.59999999999997,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 81,
+   "img": "img/081.jpg",
+   "video": null,
+   "start": 478.59999999999997,
+   "end": 482.96,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 82,
+   "img": "img/082.jpg",
+   "video": null,
+   "start": 482.96,
+   "end": 490.52,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 83,
+   "img": "img/083.jpg",
+   "video": null,
+   "start": 490.52,
+   "end": 496.7,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 84,
+   "img": "img/084.jpg",
+   "video": null,
+   "start": 496.7,
+   "end": 502.47999999999996,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 85,
+   "img": "img/085.jpg",
+   "video": null,
+   "start": 502.47999999999996,
+   "end": 506.2,
+   "trans": "dip",
+   "tlen": 24,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 86,
+   "img": "img/086.jpg",
+   "video": null,
+   "start": 506.2,
+   "end": 514.34,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 87,
+   "img": "img/087.jpg",
+   "video": null,
+   "start": 514.34,
+   "end": 518.66,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 88,
+   "img": "img/088.jpg",
+   "video": null,
+   "start": 518.66,
+   "end": 522.36,
+   "trans": "flash",
+   "tlen": 10,
+   "motion": "punch",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 89,
+   "img": "img/089.jpg",
+   "video": null,
+   "start": 522.36,
+   "end": 532.8,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 90,
+   "img": "img/090.jpg",
+   "video": null,
+   "start": 532.8,
+   "end": 537.52,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 91,
+   "img": "img/091.jpg",
+   "video": null,
+   "start": 537.52,
+   "end": 546.02,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 92,
+   "img": "img/092.jpg",
+   "video": null,
+   "start": 546.02,
+   "end": 549.78,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 93,
+   "img": "img/093.jpg",
+   "video": null,
+   "start": 549.78,
+   "end": 554.64,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 94,
+   "img": "img/094.jpg",
+   "video": null,
+   "start": 554.64,
+   "end": 561.56,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 95,
+   "img": "img/095.jpg",
+   "video": null,
+   "start": 561.56,
+   "end": 570.38,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 96,
+   "img": "img/096.jpg",
+   "video": null,
+   "start": 570.38,
+   "end": 577.72,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 97,
+   "img": "img/097.jpg",
+   "video": null,
+   "start": 577.72,
+   "end": 581.1,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 98,
+   "img": "img/098.jpg",
+   "video": null,
+   "start": 581.1,
+   "end": 589.38,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 99,
+   "img": "img/099.jpg",
+   "video": null,
+   "start": 589.38,
+   "end": 595.5799999999999,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 100,
+   "img": "img/100.jpg",
+   "video": null,
+   "start": 595.5799999999999,
+   "end": 603.8199999999999,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 101,
+   "img": "img/101.jpg",
+   "video": null,
+   "start": 603.8199999999999,
+   "end": 607.62,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 102,
+   "img": "img/102.jpg",
+   "video": null,
+   "start": 607.62,
+   "end": 619.8,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 103,
+   "img": "img/103.jpg",
+   "video": null,
+   "start": 619.8,
+   "end": 625.62,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 104,
+   "img": "img/104.jpg",
+   "video": null,
+   "start": 625.62,
+   "end": 630.66,
+   "trans": "wipe",
+   "tlen": 14,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 105,
+   "img": "img/105.jpg",
+   "video": null,
+   "start": 630.66,
+   "end": 641.5,
+   "trans": "slowfade",
+   "tlen": 24,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  }
+ ],
+ "overlays": [
+  {
+   "scene": 1,
+   "kind": "fleet",
+   "at": 1.2,
+   "dur": 6.0,
+   "count": 12,
+   "start": 1.2
+  },
+  {
+   "scene": 2,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 4.4,
+   "icons": [
+    "people",
+    "cannon",
+    "swords"
+   ],
+   "slot": "tr",
+   "stagger": 0.9,
+   "start": 8.28
+  },
+  {
+   "scene": 3,
+   "kind": "icons",
+   "at": 3.6,
+   "dur": 3.4,
+   "icons": [
+    "queen"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 16.6
+  },
+  {
+   "scene": 4,
+   "kind": "crown",
+   "at": 0.2,
+   "dur": 2.47,
+   "x": 0.82,
+   "y": 0.22,
+   "start": 20.4
+  },
+  {
+   "scene": 5,
+   "kind": "icons",
+   "at": 0.8,
+   "dur": 7.6,
+   "icons": [
+    "queen",
+    "swords",
+    "portugal"
+   ],
+   "slot": "tc",
+   "stagger": 0.8,
+   "start": 23.62
+  },
+  {
+   "scene": 7,
+   "kind": "icons",
+   "at": 1.0,
+   "dur": 3.0,
+   "icons": [
+    "ship",
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.6,
+   "start": 41.76
+  },
+  {
+   "scene": 9,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 5.6,
+   "icons": [
+    "anchor",
+    "coins"
+   ],
+   "slot": "tr",
+   "stagger": 0.7,
+   "start": 49.74
+  },
+  {
+   "scene": 10,
+   "kind": "converge",
+   "at": 0.4,
+   "dur": 7.0,
+   "icons": [
+    "ship",
+    "ship",
+    "ship",
+    "ship"
+   ],
+   "x": 0.5,
+   "y": 0.35,
+   "start": 56.5
+  },
+  {
+   "scene": 11,
+   "kind": "icons",
+   "at": 0.3,
+   "dur": 7.4,
+   "icons": [
+    "clove",
+    "bowl",
+    "cloth"
+   ],
+   "slot": "tr",
+   "stagger": 1.6,
+   "start": 64.98
+  },
+  {
+   "scene": 12,
+   "kind": "pin",
+   "at": 0.5,
+   "dur": 6.11,
+   "x": 0.62,
+   "y": 0.42,
+   "start": 74.38
+  },
+  {
+   "scene": 14,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 5.09,
+   "icons": [
+    "portugal",
+    "flame"
+   ],
+   "slot": "tr",
+   "stagger": 0.8,
+   "start": 85.78
+  },
+  {
+   "scene": 15,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 6.0,
+   "icons": [
+    "fortress",
+    "cannon"
+   ],
+   "slot": "tr",
+   "stagger": 1.2,
+   "start": 91.32
+  },
+  {
+   "scene": 16,
+   "kind": "icons",
+   "at": 0.8,
+   "dur": 6.0,
+   "icons": [
+    "swords"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 99.1
+  },
+  {
+   "scene": 17,
+   "kind": "pin",
+   "at": 0.6,
+   "dur": 5.0,
+   "x": 0.46,
+   "y": 0.3,
+   "start": 106.22
+  },
+  {
+   "scene": 18,
+   "kind": "pin",
+   "at": 0.4,
+   "dur": 1.8,
+   "x": 0.52,
+   "y": 0.42,
+   "start": 111.72
+  },
+  {
+   "scene": 19,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 7.0,
+   "icons": [
+    "handshake",
+    "ship"
+   ],
+   "slot": "tr",
+   "stagger": 0.9,
+   "start": 114.8
+  },
+  {
+   "scene": 20,
+   "kind": "icons",
+   "at": 1.0,
+   "dur": 5.4,
+   "icons": [
+    "queen"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 122.82
+  },
+  {
+   "scene": 21,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 4.4,
+   "icons": [
+    "mosque",
+    "crown"
+   ],
+   "slot": "tr",
+   "stagger": 0.8,
+   "start": 129.14
+  },
+  {
+   "scene": 22,
+   "kind": "icons",
+   "at": 1.0,
+   "dur": 3.6,
+   "icons": [
+    "swords"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 134.62
+  },
+  {
+   "scene": 23,
+   "kind": "pin",
+   "at": 0.4,
+   "dur": 3.6,
+   "x": 0.52,
+   "y": 0.33,
+   "start": 139.48
+  },
+  {
+   "scene": 24,
+   "kind": "icons",
+   "at": 1.2,
+   "dur": 8.0,
+   "icons": [
+    "tear"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 144.84
+  },
+  {
+   "scene": 25,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 4.93,
+   "icons": [
+    "swords",
+    "flame"
+   ],
+   "slot": "tr",
+   "stagger": 0.8,
+   "start": 153.66
+  },
+  {
+   "scene": 26,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 3.2,
+   "icons": [
+    "heart"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 159.14
+  },
+  {
+   "scene": 27,
+   "kind": "icons",
+   "at": 1.0,
+   "dur": 7.4,
+   "icons": [
+    "swords",
+    "flame"
+   ],
+   "slot": "tr",
+   "stagger": 1.0,
+   "start": 164.02
+  },
+  {
+   "scene": 28,
+   "kind": "heartbreak",
+   "at": 0.6,
+   "dur": 3.19,
+   "start": 172.76
+  },
+  {
+   "scene": 29,
+   "kind": "icons",
+   "at": 1.0,
+   "dur": 8.6,
+   "icons": [
+    "tear"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 176.9
+  },
+  {
+   "scene": 30,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 3.4,
+   "icons": [
+    "sparkle"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 186.18
+  },
+  {
+   "scene": 31,
+   "kind": "crown",
+   "at": 0.3,
+   "dur": 4.0,
+   "x": 0.62,
+   "y": 0.2,
+   "start": 190.0
+  },
+  {
+   "scene": 32,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 5.0,
+   "icons": [
+    "anchor",
+    "ship"
+   ],
+   "slot": "tr",
+   "stagger": 0.9,
+   "start": 198.06
+  },
+  {
+   "scene": 33,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.13,
+   "icons": [
+    "people",
+    "ship"
+   ],
+   "slot": "tr",
+   "stagger": 0.7,
+   "start": 204.42
+  },
+  {
+   "scene": 34,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 6.4,
+   "icons": [
+    "sack",
+    "bowl",
+    "cloth"
+   ],
+   "slot": "tr",
+   "stagger": 1.1,
+   "start": 207.9
+  },
+  {
+   "scene": 35,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 5.93,
+   "icons": [
+    "coins",
+    "crown"
+   ],
+   "slot": "tr",
+   "stagger": 1.4,
+   "start": 215.92
+  },
+  {
+   "scene": 36,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 3.4,
+   "icons": [
+    "bulb"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 222.3
+  },
+  {
+   "scene": 37,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 4.4,
+   "icons": [
+    "ship",
+    "sack"
+   ],
+   "slot": "tr",
+   "stagger": 0.8,
+   "start": 226.28
+  },
+  {
+   "scene": 38,
+   "kind": "fleet",
+   "at": 0.4,
+   "dur": 4.4,
+   "count": 10,
+   "start": 231.08
+  },
+  {
+   "scene": 38,
+   "kind": "icons",
+   "at": 1.6,
+   "dur": 3.0,
+   "icons": [
+    "cannon"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 232.28
+  },
+  {
+   "scene": 39,
+   "kind": "route",
+   "at": 0.6,
+   "dur": 7.6,
+   "points": [
+    [
+     0.42,
+     0.66
+    ],
+    [
+     0.33,
+     0.36
+    ]
+   ],
+   "start": 236.3
+  },
+  {
+   "scene": 39,
+   "kind": "route",
+   "at": 2.4,
+   "dur": 5.8,
+   "points": [
+    [
+     0.42,
+     0.66
+    ],
+    [
+     0.26,
+     0.18
+    ]
+   ],
+   "start": 238.1
+  },
+  {
+   "scene": 39,
+   "kind": "icons",
+   "at": 4.0,
+   "dur": 4.0,
+   "icons": [
+    "handshake"
+   ],
+   "slot": "br",
+   "stagger": 0.45,
+   "start": 239.7
+  },
+  {
+   "scene": 40,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 5.13,
+   "icons": [
+    "scroll"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 244.44
+  },
+  {
+   "scene": 41,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 5.6,
+   "icons": [
+    "swords",
+    "fortress"
+   ],
+   "slot": "tr",
+   "stagger": 0.9,
+   "start": 250.02
+  },
+  {
+   "scene": 42,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 6.08,
+   "icons": [
+    "coins",
+    "xmark"
+   ],
+   "slot": "tr",
+   "stagger": 1.3,
+   "start": 256.41
+  },
+  {
+   "scene": 43,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 6.4,
+   "icons": [
+    "compass",
+    "ship"
+   ],
+   "slot": "tr",
+   "stagger": 1.0,
+   "start": 263.04
+  },
+  {
+   "scene": 44,
+   "kind": "icons",
+   "at": 0.8,
+   "dur": 3.15,
+   "icons": [
+    "check"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 271.34
+  },
+  {
+   "scene": 45,
+   "kind": "fleet",
+   "at": 0.3,
+   "dur": 4.6,
+   "count": 6,
+   "start": 274.74
+  },
+  {
+   "scene": 46,
+   "kind": "fleet",
+   "at": 0.3,
+   "dur": 4.0,
+   "count": 8,
+   "start": 280.62
+  },
+  {
+   "scene": 46,
+   "kind": "swarm",
+   "at": 3.4,
+   "dur": 4.4,
+   "icon": "people",
+   "count": 18,
+   "start": 283.72
+  },
+  {
+   "scene": 47,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 4.4,
+   "icons": [
+    "handshake"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 288.68
+  },
+  {
+   "scene": 48,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 5.6,
+   "icons": [
+    "ship",
+    "fortress"
+   ],
+   "slot": "tr",
+   "stagger": 1.0,
+   "start": 293.56
+  },
+  {
+   "scene": 49,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 6.25,
+   "icons": [
+    "fortress",
+    "cannon",
+    "shield"
+   ],
+   "slot": "tr",
+   "stagger": 0.9,
+   "start": 299.7
+  },
+  {
+   "scene": 50,
+   "kind": "bursts",
+   "at": 0.2,
+   "dur": 5.83,
+   "count": 7,
+   "start": 306.1
+  },
+  {
+   "scene": 51,
+   "kind": "icons",
+   "at": 1.0,
+   "dur": 3.53,
+   "icons": [
+    "shield",
+    "xmark"
+   ],
+   "slot": "tr",
+   "stagger": 1.0,
+   "start": 312.88
+  },
+  {
+   "scene": 52,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 2.8,
+   "icons": [
+    "xmark"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 316.96
+  },
+  {
+   "scene": 53,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 2.6,
+   "icons": [
+    "portugal",
+    "fortress"
+   ],
+   "slot": "tr",
+   "stagger": 0.6,
+   "start": 320.5
+  },
+  {
+   "scene": 54,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 3.4,
+   "icons": [
+    "tear"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 323.96
+  },
+  {
+   "scene": 55,
+   "kind": "icons",
+   "at": 0.8,
+   "dur": 4.8,
+   "icons": [
+    "anchor",
+    "sparkle"
+   ],
+   "slot": "tr",
+   "stagger": 0.8,
+   "start": 328.28
+  },
+  {
+   "scene": 56,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 2.81,
+   "icons": [
+    "handshake"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 333.68
+  },
+  {
+   "scene": 57,
+   "kind": "route",
+   "at": 0.4,
+   "dur": 5.0,
+   "points": [
+    [
+     0.3,
+     0.5
+    ],
+    [
+     0.47,
+     0.47
+    ],
+    [
+     0.62,
+     0.44
+    ]
+   ],
+   "start": 336.84
+  },
+  {
+   "scene": 57,
+   "kind": "icons",
+   "at": 1.6,
+   "dur": 3.6,
+   "icons": [
+    "clove"
+   ],
+   "slot": "br",
+   "stagger": 0.45,
+   "start": 338.04
+  },
+  {
+   "scene": 58,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 6.37,
+   "icons": [
+    "spear",
+    "shield",
+    "clove"
+   ],
+   "slot": "tr",
+   "stagger": 1.0,
+   "start": 342.64
+  },
+  {
+   "scene": 59,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 4.4,
+   "icons": [
+    "compass"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 349.56
+  },
+  {
+   "scene": 60,
+   "kind": "hourglass",
+   "at": 0.4,
+   "dur": 5.71,
+   "start": 355.38
+  },
+  {
+   "scene": 61,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 5.4,
+   "icons": [
+    "handshake",
+    "scroll"
+   ],
+   "slot": "tr",
+   "stagger": 0.9,
+   "start": 361.54
+  },
+  {
+   "scene": 62,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 4.6,
+   "icons": [
+    "coins",
+    "ship"
+   ],
+   "slot": "tr",
+   "stagger": 0.9,
+   "start": 367.4
+  },
+  {
+   "scene": 63,
+   "kind": "bursts",
+   "at": 0.2,
+   "dur": 6.0,
+   "count": 6,
+   "start": 372.48
+  },
+  {
+   "scene": 64,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 3.4,
+   "icons": [
+    "xmark"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 379.54
+  },
+  {
+   "scene": 65,
+   "kind": "fleet",
+   "at": 0.3,
+   "dur": 6.27,
+   "count": 14,
+   "start": 383.4
+  },
+  {
+   "scene": 66,
+   "kind": "flagdrop",
+   "at": 0.4,
+   "dur": 5.0,
+   "start": 390.02
+  },
+  {
+   "scene": 67,
+   "kind": "fleet",
+   "at": 0.2,
+   "dur": 4.0,
+   "count": 24,
+   "start": 395.56
+  },
+  {
+   "scene": 67,
+   "kind": "swarm",
+   "at": 2.6,
+   "dur": 5.2,
+   "icon": "people",
+   "count": 30,
+   "start": 397.96
+  },
+  {
+   "scene": 68,
+   "kind": "fleet",
+   "at": 0.2,
+   "dur": 3.8,
+   "count": 8,
+   "big": true,
+   "start": 404.18
+  },
+  {
+   "scene": 69,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 6.41,
+   "icons": [
+    "cannon",
+    "sack",
+    "bowl"
+   ],
+   "slot": "tr",
+   "stagger": 1.4,
+   "start": 409.14
+  },
+  {
+   "scene": 70,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 4.4,
+   "icons": [
+    "spear",
+    "sparkle"
+   ],
+   "slot": "tr",
+   "stagger": 0.7,
+   "start": 416.1
+  },
+  {
+   "scene": 71,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 9.15,
+   "icons": [
+    "ship",
+    "people",
+    "sack"
+   ],
+   "slot": "tr",
+   "stagger": 1.6,
+   "start": 421.32
+  },
+  {
+   "scene": 72,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 2.8,
+   "icons": [
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 430.82
+  },
+  {
+   "scene": 73,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 5.55,
+   "icons": [
+    "bowl",
+    "sack"
+   ],
+   "slot": "tr",
+   "stagger": 1.2,
+   "start": 435.24
+  },
+  {
+   "scene": 74,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 4.6,
+   "icons": [
+    "bowl",
+    "ship"
+   ],
+   "slot": "tr",
+   "stagger": 1.6,
+   "start": 441.24
+  },
+  {
+   "scene": 75,
+   "kind": "hourglass",
+   "at": 0.4,
+   "dur": 6.07,
+   "start": 446.52
+  },
+  {
+   "scene": 76,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.8,
+   "icons": [
+    "fortress",
+    "shield"
+   ],
+   "slot": "tr",
+   "stagger": 0.8,
+   "start": 452.94
+  },
+  {
+   "scene": 77,
+   "kind": "bursts",
+   "at": 0.2,
+   "dur": 4.6,
+   "count": 5,
+   "start": 457.28
+  },
+  {
+   "scene": 78,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 2.87,
+   "icons": [
+    "tear"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 462.98
+  },
+  {
+   "scene": 79,
+   "kind": "icons",
+   "at": 0.8,
+   "dur": 6.2,
+   "icons": [
+    "sack",
+    "xmark"
+   ],
+   "slot": "tr",
+   "stagger": 1.6,
+   "start": 466.6
+  },
+  {
+   "scene": 80,
+   "kind": "crossout",
+   "at": 0.4,
+   "dur": 5.13,
+   "icon": "sack",
+   "count": 6,
+   "start": 473.52
+  },
+  {
+   "scene": 81,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 3.6,
+   "icons": [
+    "bowl",
+    "tear"
+   ],
+   "slot": "tr",
+   "stagger": 0.9,
+   "start": 479.1
+  },
+  {
+   "scene": 82,
+   "kind": "hourglass",
+   "at": 0.6,
+   "dur": 6.2,
+   "start": 483.56
+  },
+  {
+   "scene": 83,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 5.83,
+   "icons": [
+    "xmark"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 490.92
+  },
+  {
+   "scene": 84,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 5.23,
+   "icons": [
+    "portugal",
+    "fortress"
+   ],
+   "slot": "tr",
+   "stagger": 1.0,
+   "start": 497.3
+  },
+  {
+   "scene": 85,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 2.6,
+   "icons": [
+    "flame"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 503.08
+  },
+  {
+   "scene": 86,
+   "kind": "crossout",
+   "at": 0.6,
+   "dur": 7.0,
+   "icon": "ship",
+   "count": 2,
+   "start": 506.8
+  },
+  {
+   "scene": 87,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.6,
+   "icons": [
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 514.74
+  },
+  {
+   "scene": 88,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.35,
+   "icons": [
+    "bulb"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 519.06
+  },
+  {
+   "scene": 89,
+   "kind": "route",
+   "at": 0.8,
+   "dur": 9.2,
+   "points": [
+    [
+     0.38,
+     0.62
+    ],
+    [
+     0.22,
+     0.36
+    ],
+    [
+     0.17,
+     0.22
+    ]
+   ],
+   "start": 523.16
+  },
+  {
+   "scene": 89,
+   "kind": "icons",
+   "at": 2.2,
+   "dur": 7.6,
+   "icons": [
+    "handshake",
+    "anchor"
+   ],
+   "slot": "br",
+   "stagger": 1.0,
+   "start": 524.56
+  },
+  {
+   "scene": 90,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 4.17,
+   "icons": [
+    "anchor",
+    "sparkle"
+   ],
+   "slot": "tr",
+   "stagger": 0.9,
+   "start": 533.4
+  },
+  {
+   "scene": 91,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 7.4,
+   "icons": [
+    "crown",
+    "compass"
+   ],
+   "slot": "tr",
+   "stagger": 1.2,
+   "start": 537.92
+  },
+  {
+   "scene": 92,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.41,
+   "icons": [
+    "scroll",
+    "portugal"
+   ],
+   "slot": "tr",
+   "stagger": 0.9,
+   "start": 546.42
+  },
+  {
+   "scene": 93,
+   "kind": "icons",
+   "at": 1.2,
+   "dur": 3.71,
+   "icons": [
+    "coins",
+    "crown",
+    "shield"
+   ],
+   "slot": "tr",
+   "stagger": 0.9,
+   "start": 550.98
+  },
+  {
+   "scene": 94,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 6.37,
+   "icons": [
+    "portugal",
+    "check"
+   ],
+   "slot": "tr",
+   "stagger": 1.0,
+   "start": 555.24
+  },
+  {
+   "scene": 95,
+   "kind": "hourglass",
+   "at": 0.6,
+   "dur": 7.0,
+   "start": 562.16
+  },
+  {
+   "scene": 96,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 6.79,
+   "icons": [
+    "compass"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 570.98
+  },
+  {
+   "scene": 97,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.03,
+   "icons": [
+    "sparkle"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 578.12
+  },
+  {
+   "scene": 98,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 7.6,
+   "icons": [
+    "queen",
+    "anchor",
+    "sparkle"
+   ],
+   "slot": "tr",
+   "stagger": 1.2,
+   "start": 581.7
+  },
+  {
+   "scene": 99,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 4.6,
+   "icons": [
+    "swords"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 589.98
+  },
+  {
+   "scene": 100,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 7.69,
+   "icons": [
+    "crown",
+    "ship",
+    "shield"
+   ],
+   "slot": "tr",
+   "stagger": 2.0,
+   "start": 596.18
+  },
+  {
+   "scene": 101,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.45,
+   "icons": [
+    "portugal",
+    "fortress"
+   ],
+   "slot": "tr",
+   "stagger": 0.8,
+   "start": 604.22
+  },
+  {
+   "scene": 102,
+   "kind": "fleet",
+   "at": 2.0,
+   "dur": 8.0,
+   "count": 16,
+   "start": 609.62
+  },
+  {
+   "scene": 102,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 6.0,
+   "icons": [
+    "crown"
+   ],
+   "slot": "tl",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 608.02
+  },
+  {
+   "scene": 103,
+   "kind": "crossout",
+   "at": 0.6,
+   "dur": 5.0,
+   "icon": "ship",
+   "count": 3,
+   "start": 620.4
+  },
+  {
+   "scene": 105,
+   "kind": "icons",
+   "at": 1.0,
+   "dur": 8.0,
+   "icons": [
+    "crown",
+    "sparkle"
+   ],
+   "slot": "tr",
+   "stagger": 1.2,
+   "start": 631.66
+  }
+ ]
+}
