@@ -30,7 +30,7 @@ export type Overlay = {
   arrow?: boolean;
   from?: number;
   to?: number;
-  items?: [string, string][];
+  items?: string[][];
   icons?: string[];
   slot?: string;
   stagger?: number;

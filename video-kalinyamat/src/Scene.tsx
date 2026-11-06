@@ -21,15 +21,15 @@ const ease = Easing.bezier(0.33, 0, 0.2, 1);
 const camera = (motion: string, t: number, f: number) => {
   switch (motion) {
     case "in":
-      return { s: 1.0 + 0.06 * t, x: 0, y: 0, r: 0 };
+      return { s: 1.0 + 0.1 * t, x: 0, y: 0, r: 0 };
     case "out":
-      return { s: 1.06 - 0.06 * t, x: 0, y: 0, r: 0 };
+      return { s: 1.1 - 0.1 * t, x: 0, y: 0, r: 0 };
     case "left":
-      return { s: 1.07, x: 2 - 4 * t, y: 0, r: 0 };
+      return { s: 1.1, x: 3 - 6 * t, y: 0, r: 0 };
     case "right":
-      return { s: 1.07, x: -2 + 4 * t, y: 0, r: 0 };
+      return { s: 1.1, x: -3 + 6 * t, y: 0, r: 0 };
     case "up":
-      return { s: 1.07, x: 0, y: 1.6 - 3.2 * t, r: 0 };
+      return { s: 1.1, x: 0, y: 2.5 - 5 * t, r: 0 };
     case "static":
       return { s: 1.0, x: 0, y: 0, r: 0 };
     case "pushSlow":

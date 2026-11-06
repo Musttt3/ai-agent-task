@@ -63,7 +63,7 @@ const renderOverlay = (o: Overlay) => {
     case "flagdrop":
       return <Arrival o={o} />;
     case "compare":
-      return <Compare />;
+      return <Compare o={o} />;
     case "outro":
       return <Outro o={o} />;
     default:

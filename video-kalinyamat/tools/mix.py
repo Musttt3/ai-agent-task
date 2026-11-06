@@ -517,7 +517,24 @@ def build_sfx():
     # overlays (icon motion graphics)
     for o in plan["overlays"]:
         t, k = o["start"], o["kind"]
-        if k == "icons":
+        if k in ("tag", "label", "big"):
+            cue(t, "pop", -13)
+        elif k == "chapter":
+            cue(t, "boomSoft", -10); cue(t + 0.05, "fwhoosh", -16)
+        elif k == "stamp":
+            cue(t + 0.12, "stamp", -7)
+        elif k == "year":
+            cue(t, "boom", -10)
+        elif k == "counter":
+            for j in range(22):
+                cue(t + 0.13 * j * (1 - j / 60), "tick", -16)
+        elif k == "compare":
+            cue(t + 0.4, "whoosh", -14); cue(t + 1.6, "pop", -12); cue(t + 2.6, "pop", -12)
+        elif k == "title":
+            cue(t - 0.2, "boom", -9); cue(t + 1.0, "twinkle", -16)
+        elif k == "outro":
+            cue(t + 0.2, "chime", -10)
+        elif k == "icons":
             for j in range(len(o.get("icons", []))):
                 cue(t + o.get("stagger", 0.45) * j, "pop", -12)
             if o.get("glow"):

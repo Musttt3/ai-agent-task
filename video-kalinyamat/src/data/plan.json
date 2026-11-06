@@ -1,6 +1,6 @@
 {
  "fps": 30,
- "duration": 641.5,
+ "duration": 643.5,
  "narrEnd": 637.47,
  "scenes": [
   {
@@ -587,8 +587,8 @@
    "video": null,
    "start": 274.44,
    "end": 280.32,
-   "trans": "cut",
-   "tlen": 0,
+   "trans": "whip",
+   "tlen": 12,
    "motion": "up",
    "shake": [],
    "night": false,
@@ -755,8 +755,8 @@
    "video": null,
    "start": 336.44,
    "end": 342.03999999999996,
-   "trans": "cut",
-   "tlen": 0,
+   "trans": "whip",
+   "tlen": 12,
    "motion": "left",
    "shake": [],
    "night": false,
@@ -865,8 +865,8 @@
    "video": null,
    "start": 383.09999999999997,
    "end": 389.62,
-   "trans": "cut",
-   "tlen": 0,
+   "trans": "whip",
+   "tlen": 12,
    "motion": "up",
    "shake": [],
    "night": false,
@@ -956,8 +956,8 @@
    "video": null,
    "start": 430.41999999999996,
    "end": 434.73999999999995,
-   "trans": "cut",
-   "tlen": 0,
+   "trans": "whip",
+   "tlen": 12,
    "motion": "out",
    "shake": [],
    "night": false,
@@ -1157,8 +1157,8 @@
    "video": null,
    "start": 514.34,
    "end": 518.66,
-   "trans": "cut",
-   "tlen": 0,
+   "trans": "whip",
+   "tlen": 12,
    "motion": "left",
    "shake": [],
    "night": false,
@@ -1390,7 +1390,7 @@
    "img": "img/105.jpg",
    "video": null,
    "start": 630.66,
-   "end": 641.5,
+   "end": 643.5,
    "trans": "slowfade",
    "tlen": 24,
    "motion": "in",
@@ -1402,61 +1402,202 @@
  "overlays": [
   {
    "scene": 1,
-   "kind": "fleet",
-   "at": 1.2,
-   "dur": 6.0,
-   "count": 12,
-   "start": 1.2
+   "kind": "title",
+   "at": 0.4,
+   "dur": 6.4,
+   "title": "RATU KALINYAMAT",
+   "text": "300 KAPAL MENGGEMPUR MALAKA",
+   "sub": "Ratu dari Jawa yang berani melawan Portugis",
+   "start": 0.4
+  },
+  {
+   "scene": 9,
+   "kind": "chapter",
+   "at": 0.25,
+   "dur": 3.2,
+   "num": "BAB 1",
+   "title": "Malaka, Pusat Dunia Dagang",
+   "sub": "Awal abad ke-16",
+   "start": 49.39
+  },
+  {
+   "scene": 13,
+   "kind": "chapter",
+   "at": 0.25,
+   "dur": 3.2,
+   "num": "BAB 2",
+   "title": "Portugis Datang",
+   "sub": "1511 · Malaka jatuh",
+   "start": 80.69
+  },
+  {
+   "scene": 17,
+   "kind": "chapter",
+   "at": 0.25,
+   "dur": 3.2,
+   "num": "BAB 3",
+   "title": "Jepara & Retna Kencana",
+   "sub": "Pesisir utara Jawa",
+   "start": 105.87
+  },
+  {
+   "scene": 24,
+   "kind": "chapter",
+   "at": 0.25,
+   "dur": 3.2,
+   "num": "BAB 4",
+   "title": "Duka di Istana Demak",
+   "sub": "1546 · Perebutan kekuasaan",
+   "start": 143.89
+  },
+  {
+   "scene": 31,
+   "kind": "chapter",
+   "at": 0.25,
+   "dur": 3.2,
+   "num": "BAB 5",
+   "title": "Lahirnya Sang Ratu",
+   "sub": "± 1549 · Ratu Kalinyamat",
+   "start": 189.95
+  },
+  {
+   "scene": 40,
+   "kind": "chapter",
+   "at": 0.25,
+   "dur": 3.2,
+   "num": "BAB 6",
+   "title": "Ajakan dari Johor",
+   "sub": "1550",
+   "start": 244.19
+  },
+  {
+   "scene": 45,
+   "kind": "chapter",
+   "at": 0.25,
+   "dur": 3.2,
+   "num": "BAB 7",
+   "title": "Ekspedisi Pertama",
+   "sub": "1551 · Menuju Malaka",
+   "start": 274.69
+  },
+  {
+   "scene": 57,
+   "kind": "chapter",
+   "at": 0.25,
+   "dur": 3.2,
+   "num": "BAB 8",
+   "title": "Pengaruh hingga Maluku",
+   "sub": "Bantuan untuk Hitu",
+   "start": 336.69
+  },
+  {
+   "scene": 60,
+   "kind": "chapter",
+   "at": 0.25,
+   "dur": 3.2,
+   "num": "BAB 9",
+   "title": "Bersama Aceh",
+   "sub": "1573",
+   "start": 355.23
+  },
+  {
+   "scene": 65,
+   "kind": "chapter",
+   "at": 0.25,
+   "dur": 3.2,
+   "num": "BAB 10",
+   "title": "Armada Raksasa",
+   "sub": "Oktober 1574",
+   "start": 383.35
+  },
+  {
+   "scene": 72,
+   "kind": "chapter",
+   "at": 0.25,
+   "dur": 3.2,
+   "num": "BAB 11",
+   "title": "Pengepungan & Kelaparan",
+   "sub": "Masalah perbekalan",
+   "start": 430.67
+  },
+  {
+   "scene": 87,
+   "kind": "chapter",
+   "at": 0.25,
+   "dur": 3.2,
+   "num": "BAB 12",
+   "title": "Warisan Sang Ratu",
+   "sub": "Lebih dari sekadar kemenangan",
+   "start": 514.59
   },
   {
    "scene": 2,
-   "kind": "icons",
-   "at": 0.6,
-   "dur": 4.4,
-   "icons": [
-    "people",
-    "cannon",
-    "swords"
-   ],
-   "slot": "tr",
-   "stagger": 0.9,
-   "start": 8.28
+   "kind": "tag",
+   "at": 0.8,
+   "dur": 4.0,
+   "text": "Armada perang Jawa",
+   "sub": "ribuan prajurit · meriam · senjata",
+   "icon": "info",
+   "start": 8.48
   },
   {
    "scene": 3,
    "kind": "icons",
-   "at": 3.6,
-   "dur": 3.4,
+   "at": 3.4,
+   "dur": 3.6,
    "icons": [
     "queen"
    ],
    "slot": "tr",
    "stagger": 0.45,
    "glow": true,
-   "start": 16.6
+   "start": 16.4
   },
   {
    "scene": 4,
-   "kind": "crown",
-   "at": 0.2,
-   "dur": 2.47,
-   "x": 0.82,
-   "y": 0.22,
-   "start": 20.4
+   "kind": "big",
+   "at": 0.1,
+   "dur": 2.5,
+   "text": "RATU KALINYAMAT",
+   "sub": "penguasa Jepara",
+   "start": 20.3
+  },
+  {
+   "scene": 5,
+   "kind": "tag",
+   "at": 1.2,
+   "dur": 6.0,
+   "text": "Melawan Portugis",
+   "sub": "kekuatan maritim Eropa abad ke-16",
+   "icon": "warn",
+   "start": 24.02
   },
   {
    "scene": 5,
    "kind": "icons",
-   "at": 0.8,
-   "dur": 7.6,
+   "at": 1.6,
+   "dur": 6.0,
    "icons": [
     "queen",
     "swords",
     "portugal"
    ],
-   "slot": "tc",
-   "stagger": 0.8,
-   "start": 23.62
+   "slot": "tr",
+   "stagger": 0.6,
+   "start": 24.42
+  },
+  {
+   "scene": 6,
+   "kind": "icons",
+   "at": 1.0,
+   "dur": 6.0,
+   "icons": [
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 32.68
   },
   {
    "scene": 7,
@@ -1472,22 +1613,42 @@
    "start": 41.76
   },
   {
+   "scene": 8,
+   "kind": "counter",
+   "at": 0.4,
+   "dur": 3.6,
+   "from": 2026,
+   "to": 1500,
+   "sub": "AWAL ABAD KE-16",
+   "start": 45.32
+  },
+  {
    "scene": 9,
    "kind": "icons",
-   "at": 0.6,
-   "dur": 5.6,
+   "at": 3.6,
+   "dur": 3.2,
    "icons": [
     "anchor",
     "coins"
    ],
    "slot": "tr",
-   "stagger": 0.7,
-   "start": 49.74
+   "stagger": 0.6,
+   "start": 52.74
+  },
+  {
+   "scene": 10,
+   "kind": "tag",
+   "at": 1.0,
+   "dur": 6.4,
+   "text": "Jalur dagang internasional",
+   "sub": "Jawa · Sumatra · India · Tiongkok",
+   "icon": "info",
+   "start": 57.1
   },
   {
    "scene": 10,
    "kind": "converge",
-   "at": 0.4,
+   "at": 0.6,
    "dur": 7.0,
    "icons": [
     "ship",
@@ -1496,127 +1657,174 @@
     "ship"
    ],
    "x": 0.5,
-   "y": 0.35,
-   "start": 56.5
+   "y": 0.3,
+   "start": 56.7
+  },
+  {
+   "scene": 11,
+   "kind": "tag",
+   "at": 0.6,
+   "dur": 6.8,
+   "text": "Barang dagangan",
+   "sub": "rempah Maluku · beras Jawa · kain India",
+   "icon": "info",
+   "start": 65.28
   },
   {
    "scene": 11,
    "kind": "icons",
-   "at": 0.3,
-   "dur": 7.4,
+   "at": 1.0,
+   "dur": 6.4,
    "icons": [
     "clove",
     "bowl",
     "cloth"
    ],
    "slot": "tr",
-   "stagger": 1.6,
-   "start": 64.98
+   "stagger": 1.4,
+   "start": 65.68
   },
   {
    "scene": 12,
-   "kind": "pin",
-   "at": 0.5,
-   "dur": 6.11,
+   "kind": "label",
+   "at": 0.6,
+   "dur": 6.01,
+   "text": "MALAKA",
    "x": 0.62,
-   "y": 0.42,
-   "start": 74.38
+   "y": 0.3,
+   "arrow": true,
+   "start": 74.48
+  },
+  {
+   "scene": 14,
+   "kind": "year",
+   "at": 0.3,
+   "dur": 5.2,
+   "text": "1511",
+   "sub": "Afonso de Albuquerque merebut Malaka",
+   "start": 85.48
   },
   {
    "scene": 14,
    "kind": "icons",
-   "at": 0.6,
-   "dur": 5.09,
+   "at": 2.0,
+   "dur": 3.6,
    "icons": [
     "portugal",
     "flame"
    ],
-   "slot": "tr",
-   "stagger": 0.8,
-   "start": 85.78
+   "slot": "br",
+   "stagger": 0.6,
+   "start": 87.18
+  },
+  {
+   "scene": 15,
+   "kind": "tag",
+   "at": 0.6,
+   "dur": 5.6,
+   "text": "Benteng A Famosa",
+   "sub": "dibangun Portugis di Malaka",
+   "icon": "pin",
+   "start": 91.42
   },
   {
    "scene": 15,
    "kind": "icons",
-   "at": 0.5,
-   "dur": 6.0,
+   "at": 1.0,
+   "dur": 5.0,
    "icons": [
     "fortress",
     "cannon"
    ],
    "slot": "tr",
-   "stagger": 1.2,
-   "start": 91.32
+   "stagger": 1.0,
+   "start": 91.82
   },
   {
    "scene": 16,
-   "kind": "icons",
+   "kind": "tag",
    "at": 0.8,
    "dur": 6.0,
-   "icons": [
-    "swords"
-   ],
-   "slot": "tr",
-   "stagger": 0.45,
-   "glow": true,
+   "text": "Persaingan & konflik",
+   "sub": "Portugis vs kerajaan-kerajaan Asia Tenggara",
+   "icon": "warn",
    "start": 99.1
   },
   {
    "scene": 17,
-   "kind": "pin",
-   "at": 0.6,
-   "dur": 5.0,
+   "kind": "label",
+   "at": 3.6,
+   "dur": 2.15,
+   "text": "JEPARA",
    "x": 0.46,
-   "y": 0.3,
-   "start": 106.22
+   "y": 0.24,
+   "arrow": true,
+   "start": 109.22
   },
   {
    "scene": 18,
-   "kind": "pin",
-   "at": 0.4,
-   "dur": 1.8,
-   "x": 0.52,
-   "y": 0.42,
-   "start": 111.72
+   "kind": "big",
+   "at": 0.1,
+   "dur": 2.5,
+   "text": "JEPARA",
+   "sub": "kota pelabuhan pesisir utara Jawa",
+   "start": 111.42
+  },
+  {
+   "scene": 19,
+   "kind": "tag",
+   "at": 0.6,
+   "dur": 6.4,
+   "text": "Kota pelabuhan",
+   "sub": "berdagang dengan banyak daerah",
+   "icon": "pin",
+   "start": 114.9
   },
   {
    "scene": 19,
    "kind": "icons",
-   "at": 0.5,
-   "dur": 7.0,
+   "at": 1.2,
+   "dur": 5.6,
    "icons": [
     "handshake",
     "ship"
    ],
    "slot": "tr",
-   "stagger": 0.9,
-   "start": 114.8
+   "stagger": 0.8,
+   "start": 115.5
   },
   {
    "scene": 20,
-   "kind": "icons",
-   "at": 1.0,
-   "dur": 5.4,
-   "icons": [
-    "queen"
-   ],
-   "slot": "tr",
-   "stagger": 0.45,
-   "glow": true,
-   "start": 122.82
+   "kind": "tag",
+   "at": 0.8,
+   "dur": 5.6,
+   "text": "Retna Kencana",
+   "sub": "kelak menjadi Ratu Kalinyamat",
+   "icon": "info",
+   "start": 122.62
+  },
+  {
+   "scene": 21,
+   "kind": "tag",
+   "at": 0.4,
+   "dur": 4.4,
+   "text": "Sultan Trenggana",
+   "sub": "penguasa Kesultanan Demak",
+   "icon": "info",
+   "start": 129.14
   },
   {
    "scene": 21,
    "kind": "icons",
-   "at": 0.4,
-   "dur": 4.4,
+   "at": 0.8,
+   "dur": 4.0,
    "icons": [
     "mosque",
     "crown"
    ],
    "slot": "tr",
    "stagger": 0.8,
-   "start": 129.14
+   "start": 129.54
   },
   {
    "scene": 22,
@@ -1632,24 +1840,26 @@
   },
   {
    "scene": 23,
-   "kind": "pin",
+   "kind": "label",
    "at": 0.4,
-   "dur": 3.6,
-   "x": 0.52,
-   "y": 0.33,
+   "dur": 3.4,
+   "text": "DEMAK",
+   "x": 0.5,
+   "y": 0.22,
+   "arrow": true,
    "start": 139.48
   },
   {
    "scene": 24,
    "kind": "icons",
-   "at": 1.2,
-   "dur": 8.0,
+   "at": 3.8,
+   "dur": 5.67,
    "icons": [
     "tear"
    ],
    "slot": "tr",
    "stagger": 0.45,
-   "start": 144.84
+   "start": 147.44
   },
   {
    "scene": 25,
@@ -1666,29 +1876,36 @@
   },
   {
    "scene": 26,
+   "kind": "tag",
+   "at": 0.4,
+   "dur": 3.4,
+   "text": "Pangeran Hadlirin",
+   "sub": "suami Retna Kencana",
+   "icon": "info",
+   "start": 158.94
+  },
+  {
+   "scene": 26,
    "kind": "icons",
-   "at": 0.6,
-   "dur": 3.2,
+   "at": 0.8,
+   "dur": 3.0,
    "icons": [
     "heart"
    ],
    "slot": "tr",
    "stagger": 0.45,
    "glow": true,
-   "start": 159.14
+   "start": 159.34
   },
   {
    "scene": 27,
-   "kind": "icons",
-   "at": 1.0,
-   "dur": 7.4,
-   "icons": [
-    "swords",
-    "flame"
-   ],
-   "slot": "tr",
-   "stagger": 1.0,
-   "start": 164.02
+   "kind": "tag",
+   "at": 0.8,
+   "dur": 7.6,
+   "text": "Arya Penangsang",
+   "sub": "Adipati Jipang",
+   "icon": "warn",
+   "start": 163.82
   },
   {
    "scene": 28,
@@ -1725,24 +1942,34 @@
   {
    "scene": 31,
    "kind": "crown",
-   "at": 0.3,
+   "at": 3.6,
    "dur": 4.0,
    "x": 0.62,
    "y": 0.2,
-   "start": 190.0
+   "start": 193.3
+  },
+  {
+   "scene": 32,
+   "kind": "tag",
+   "at": 0.6,
+   "dur": 5.0,
+   "text": "Kekuatan maritim",
+   "sub": "armada dagang & armada perang",
+   "icon": "info",
+   "start": 198.06
   },
   {
    "scene": 32,
    "kind": "icons",
-   "at": 0.6,
-   "dur": 5.0,
+   "at": 1.0,
+   "dur": 4.6,
    "icons": [
     "anchor",
     "ship"
    ],
    "slot": "tr",
-   "stagger": 0.9,
-   "start": 198.06
+   "stagger": 0.8,
+   "start": 198.46
   },
   {
    "scene": 33,
@@ -1773,16 +2000,26 @@
   },
   {
    "scene": 35,
-   "kind": "icons",
+   "kind": "tag",
    "at": 0.6,
    "dur": 5.93,
+   "text": "Kaya & berpengaruh",
+   "sub": "hasil perdagangan pelabuhan",
+   "icon": "info",
+   "start": 215.92
+  },
+  {
+   "scene": 35,
+   "kind": "icons",
+   "at": 1.0,
+   "dur": 5.53,
    "icons": [
     "coins",
     "crown"
    ],
    "slot": "tr",
-   "stagger": 1.4,
-   "start": 215.92
+   "stagger": 1.2,
+   "start": 216.32
   },
   {
    "scene": 36,
@@ -1821,20 +2058,21 @@
   {
    "scene": 38,
    "kind": "icons",
-   "at": 1.6,
-   "dur": 3.0,
+   "at": 1.4,
+   "dur": 3.2,
    "icons": [
-    "cannon"
+    "cannon",
+    "swords"
    ],
    "slot": "tr",
-   "stagger": 0.45,
-   "start": 232.28
+   "stagger": 0.6,
+   "start": 232.08
   },
   {
    "scene": 39,
    "kind": "route",
    "at": 0.6,
-   "dur": 7.6,
+   "dur": 7.4,
    "points": [
     [
      0.42,
@@ -1851,7 +2089,7 @@
    "scene": 39,
    "kind": "route",
    "at": 2.4,
-   "dur": 5.8,
+   "dur": 5.6,
    "points": [
     [
      0.42,
@@ -1866,41 +2104,61 @@
   },
   {
    "scene": 39,
-   "kind": "icons",
-   "at": 4.0,
-   "dur": 4.0,
-   "icons": [
-    "handshake"
-   ],
-   "slot": "br",
-   "stagger": 0.45,
-   "start": 239.7
+   "kind": "label",
+   "at": 3.0,
+   "dur": 4.8,
+   "text": "JOHOR",
+   "x": 0.33,
+   "y": 0.31,
+   "small": true,
+   "start": 238.7
+  },
+  {
+   "scene": 39,
+   "kind": "label",
+   "at": 4.4,
+   "dur": 3.4,
+   "text": "ACEH",
+   "x": 0.26,
+   "y": 0.13,
+   "small": true,
+   "start": 240.1
   },
   {
    "scene": 40,
    "kind": "icons",
-   "at": 0.5,
-   "dur": 5.13,
+   "at": 3.6,
+   "dur": 2.03,
    "icons": [
     "scroll"
    ],
    "slot": "tr",
    "stagger": 0.45,
    "glow": true,
-   "start": 244.44
+   "start": 247.54
+  },
+  {
+   "scene": 41,
+   "kind": "tag",
+   "at": 0.5,
+   "dur": 5.4,
+   "text": "Sultan Johor",
+   "sub": "mengajak menyerang Malaka",
+   "icon": "info",
+   "start": 250.02
   },
   {
    "scene": 41,
    "kind": "icons",
-   "at": 0.5,
-   "dur": 5.6,
+   "at": 0.8,
+   "dur": 5.0,
    "icons": [
     "swords",
     "fortress"
    ],
    "slot": "tr",
    "stagger": 0.9,
-   "start": 250.02
+   "start": 250.32
   },
   {
    "scene": 42,
@@ -1930,41 +2188,36 @@
   },
   {
    "scene": 44,
-   "kind": "icons",
+   "kind": "stamp",
    "at": 0.8,
    "dur": 3.15,
-   "icons": [
-    "check"
-   ],
-   "slot": "tr",
-   "stagger": 0.45,
-   "glow": true,
+   "text": "DITERIMA!",
    "start": 271.34
   },
   {
    "scene": 45,
    "kind": "fleet",
-   "at": 0.3,
-   "dur": 4.6,
+   "at": 0.6,
+   "dur": 4.2,
    "count": 6,
-   "start": 274.74
+   "start": 275.04
   },
   {
    "scene": 46,
-   "kind": "fleet",
+   "kind": "year",
    "at": 0.3,
-   "dur": 4.0,
-   "count": 8,
+   "dur": 6.6,
+   "text": "± 40 KAPAL",
+   "sub": "membawa 4.000 – 5.000 prajurit",
    "start": 280.62
   },
   {
    "scene": 46,
-   "kind": "swarm",
-   "at": 3.4,
-   "dur": 4.4,
-   "icon": "people",
-   "count": 18,
-   "start": 283.72
+   "kind": "fleet",
+   "at": 0.6,
+   "dur": 6.8,
+   "count": 8,
+   "start": 280.92
   },
   {
    "scene": 47,
@@ -1994,17 +2247,27 @@
   },
   {
    "scene": 49,
-   "kind": "icons",
+   "kind": "tag",
    "at": 0.4,
    "dur": 6.25,
+   "text": "Pertahanan Portugis",
+   "sub": "benteng · meriam · pengalaman",
+   "icon": "warn",
+   "start": 299.7
+  },
+  {
+   "scene": 49,
+   "kind": "icons",
+   "at": 0.8,
+   "dur": 5.85,
    "icons": [
     "fortress",
     "cannon",
     "shield"
    ],
    "slot": "tr",
-   "stagger": 0.9,
-   "start": 299.7
+   "stagger": 0.8,
+   "start": 300.1
   },
   {
    "scene": 50,
@@ -2029,16 +2292,11 @@
   },
   {
    "scene": 52,
-   "kind": "icons",
-   "at": 0.6,
-   "dur": 2.8,
-   "icons": [
-    "xmark"
-   ],
-   "slot": "tr",
-   "stagger": 0.45,
-   "glow": true,
-   "start": 316.96
+   "kind": "stamp",
+   "at": 0.3,
+   "dur": 2.6,
+   "text": "GAGAL",
+   "start": 316.66
   },
   {
    "scene": 53,
@@ -2094,8 +2352,8 @@
   {
    "scene": 57,
    "kind": "route",
-   "at": 0.4,
-   "dur": 5.0,
+   "at": 3.4,
+   "dur": 2.0,
    "points": [
     [
      0.3,
@@ -2110,25 +2368,23 @@
      0.44
     ]
    ],
-   "start": 336.84
+   "start": 339.84
   },
   {
-   "scene": 57,
-   "kind": "icons",
-   "at": 1.6,
-   "dur": 3.6,
-   "icons": [
-    "clove"
-   ],
-   "slot": "br",
-   "stagger": 0.45,
-   "start": 338.04
+   "scene": 58,
+   "kind": "tag",
+   "at": 0.6,
+   "dur": 6.37,
+   "text": "Masyarakat Hitu",
+   "sub": "Maluku · dibantu Jepara melawan Portugis",
+   "icon": "pin",
+   "start": 342.64
   },
   {
    "scene": 58,
    "kind": "icons",
-   "at": 0.6,
-   "dur": 6.37,
+   "at": 1.0,
+   "dur": 5.97,
    "icons": [
     "spear",
     "shield",
@@ -2136,7 +2392,7 @@
    ],
    "slot": "tr",
    "stagger": 1.0,
-   "start": 342.64
+   "start": 343.04
   },
   {
    "scene": 59,
@@ -2154,22 +2410,32 @@
   {
    "scene": 60,
    "kind": "hourglass",
-   "at": 0.4,
-   "dur": 5.71,
-   "start": 355.38
+   "at": 3.6,
+   "dur": 2.51,
+   "start": 358.58
+  },
+  {
+   "scene": 61,
+   "kind": "tag",
+   "at": 0.5,
+   "dur": 5.4,
+   "text": "Kesultanan Aceh",
+   "sub": "sekutu penting Jepara",
+   "icon": "pin",
+   "start": 361.54
   },
   {
    "scene": 61,
    "kind": "icons",
-   "at": 0.5,
-   "dur": 5.4,
+   "at": 0.8,
+   "dur": 5.0,
    "icons": [
     "handshake",
     "scroll"
    ],
    "slot": "tr",
    "stagger": 0.9,
-   "start": 361.54
+   "start": 361.84
   },
   {
    "scene": 62,
@@ -2186,65 +2452,72 @@
   },
   {
    "scene": 63,
-   "kind": "bursts",
+   "kind": "year",
    "at": 0.2,
-   "dur": 6.0,
-   "count": 6,
+   "dur": 3.0,
+   "text": "1573",
+   "sub": "Aceh menyerang Portugis",
    "start": 372.48
   },
   {
+   "scene": 63,
+   "kind": "bursts",
+   "at": 2.6,
+   "dur": 4.2,
+   "count": 4,
+   "start": 374.88
+  },
+  {
    "scene": 64,
-   "kind": "icons",
+   "kind": "stamp",
    "at": 0.5,
-   "dur": 3.4,
-   "icons": [
-    "xmark"
-   ],
-   "slot": "tr",
-   "stagger": 0.45,
-   "glow": true,
+   "dur": 3.0,
+   "text": "BELUM BERHASIL",
    "start": 379.54
   },
   {
    "scene": 65,
    "kind": "fleet",
-   "at": 0.3,
-   "dur": 6.27,
+   "at": 3.6,
+   "dur": 2.97,
    "count": 14,
-   "start": 383.4
+   "start": 386.7
   },
   {
    "scene": 66,
-   "kind": "flagdrop",
-   "at": 0.4,
-   "dur": 5.0,
-   "start": 390.02
+   "kind": "year",
+   "at": 0.3,
+   "dur": 5.2,
+   "text": "OKTOBER 1574",
+   "sub": "armada Jepara tiba di Malaka",
+   "start": 389.92
   },
   {
    "scene": 67,
-   "kind": "fleet",
+   "kind": "year",
    "at": 0.2,
-   "dur": 4.0,
-   "count": 24,
+   "dur": 7.4,
+   "text": "± 300 KAPAL",
+   "sub": "sekitar 15.000 prajurit",
    "start": 395.56
   },
   {
    "scene": 67,
-   "kind": "swarm",
-   "at": 2.6,
-   "dur": 5.2,
-   "icon": "people",
-   "count": 30,
-   "start": 397.96
+   "kind": "fleet",
+   "at": 0.4,
+   "dur": 7.4,
+   "count": 24,
+   "start": 395.76
   },
   {
    "scene": 68,
-   "kind": "fleet",
-   "at": 0.2,
-   "dur": 3.8,
-   "count": 8,
-   "big": true,
-   "start": 404.18
+   "kind": "tag",
+   "at": 0.3,
+   "dur": 3.6,
+   "text": "± 80 kapal besar",
+   "sub": "jung Jawa berukuran raksasa",
+   "icon": "info",
+   "start": 404.28
   },
   {
    "scene": 69,
@@ -2262,16 +2535,26 @@
   },
   {
    "scene": 70,
-   "kind": "icons",
-   "at": 0.6,
+   "kind": "tag",
+   "at": 0.5,
    "dur": 4.4,
+   "text": "Kidemang Laksamana",
+   "sub": "panglima armada Jepara",
+   "icon": "info",
+   "start": 416.0
+  },
+  {
+   "scene": 70,
+   "kind": "icons",
+   "at": 0.8,
+   "dur": 4.0,
    "icons": [
     "spear",
     "sparkle"
    ],
    "slot": "tr",
    "stagger": 0.7,
-   "start": 416.1
+   "start": 416.3
   },
   {
    "scene": 71,
@@ -2288,30 +2571,27 @@
    "start": 421.32
   },
   {
-   "scene": 72,
-   "kind": "icons",
-   "at": 0.4,
-   "dur": 2.8,
-   "icons": [
-    "question"
-   ],
-   "slot": "tr",
-   "stagger": 0.45,
-   "glow": true,
-   "start": 430.82
+   "scene": 73,
+   "kind": "tag",
+   "at": 0.5,
+   "dur": 5.55,
+   "text": "Kebutuhan pangan",
+   "sub": "ribuan prajurit harus makan setiap hari",
+   "icon": "warn",
+   "start": 435.24
   },
   {
    "scene": 73,
    "kind": "icons",
-   "at": 0.5,
-   "dur": 5.55,
+   "at": 0.8,
+   "dur": 5.25,
    "icons": [
     "bowl",
     "sack"
    ],
    "slot": "tr",
    "stagger": 1.2,
-   "start": 435.24
+   "start": 435.54
   },
   {
    "scene": 74,
@@ -2389,6 +2669,16 @@
    "start": 473.52
   },
   {
+   "scene": 80,
+   "kind": "tag",
+   "at": 0.8,
+   "dur": 4.73,
+   "text": "6 kapal perbekalan",
+   "sub": "jatuh ke tangan Portugis",
+   "icon": "warn",
+   "start": 473.92
+  },
+  {
    "scene": 81,
    "kind": "icons",
    "at": 0.5,
@@ -2410,16 +2700,11 @@
   },
   {
    "scene": 83,
-   "kind": "icons",
-   "at": 0.4,
-   "dur": 5.83,
-   "icons": [
-    "xmark"
-   ],
-   "slot": "tr",
-   "stagger": 0.45,
-   "glow": true,
-   "start": 490.92
+   "kind": "stamp",
+   "at": 0.6,
+   "dur": 4.0,
+   "text": "GAGAL LAGI",
+   "start": 491.12
   },
   {
    "scene": 84,
@@ -2449,25 +2734,23 @@
   },
   {
    "scene": 86,
-   "kind": "crossout",
-   "at": 0.6,
+   "kind": "compare",
+   "at": 0.8,
    "dur": 7.0,
-   "icon": "ship",
-   "count": 2,
-   "start": 506.8
-  },
-  {
-   "scene": 87,
-   "kind": "icons",
-   "at": 0.4,
-   "dur": 3.6,
-   "icons": [
-    "question"
+   "title": "DUA EKSPEDISI KE MALAKA",
+   "items": [
+    [
+     "Ekspedisi 1551",
+     "± 40 kapal · 4–5 ribu prajurit",
+     "0.133"
+    ],
+    [
+     "Ekspedisi 1574",
+     "± 300 kapal · ± 15.000 prajurit",
+     "1"
+    ]
    ],
-   "slot": "tr",
-   "stagger": 0.45,
-   "glow": true,
-   "start": 514.74
+   "start": 507.0
   },
   {
    "scene": 88,
@@ -2505,16 +2788,13 @@
   },
   {
    "scene": 89,
-   "kind": "icons",
-   "at": 2.2,
+   "kind": "tag",
+   "at": 2.0,
    "dur": 7.6,
-   "icons": [
-    "handshake",
-    "anchor"
-   ],
-   "slot": "br",
-   "stagger": 1.0,
-   "start": 524.56
+   "text": "Kerja sama lintas wilayah",
+   "sub": "Jepara · Johor · Aceh · Hitu",
+   "icon": "info",
+   "start": 524.36
   },
   {
    "scene": 90,
@@ -2544,22 +2824,19 @@
   },
   {
    "scene": 92,
-   "kind": "icons",
+   "kind": "tag",
    "at": 0.4,
    "dur": 3.41,
-   "icons": [
-    "scroll",
-    "portugal"
-   ],
-   "slot": "tr",
-   "stagger": 0.9,
+   "text": "Sumber Portugis",
+   "sub": "mencatat keberanian Sang Ratu",
+   "icon": "info",
    "start": 546.42
   },
   {
    "scene": 93,
    "kind": "icons",
-   "at": 1.2,
-   "dur": 3.71,
+   "at": 1.0,
+   "dur": 3.91,
    "icons": [
     "coins",
     "crown",
@@ -2567,7 +2844,7 @@
    ],
    "slot": "tr",
    "stagger": 0.9,
-   "start": 550.98
+   "start": 550.78
   },
   {
    "scene": 94,
@@ -2584,10 +2861,12 @@
   },
   {
    "scene": 95,
-   "kind": "hourglass",
-   "at": 0.6,
-   "dur": 7.0,
-   "start": 562.16
+   "kind": "year",
+   "at": 0.4,
+   "dur": 7.2,
+   "text": "1579",
+   "sub": "± 30 tahun memerintah Jepara",
+   "start": 561.96
   },
   {
    "scene": 96,
@@ -2617,17 +2896,26 @@
   },
   {
    "scene": 98,
-   "kind": "icons",
+   "kind": "tag",
    "at": 0.6,
-   "dur": 7.6,
+   "dur": 7.0,
+   "text": "Pahlawan Nasional",
+   "sub": "ditetapkan pada tahun 2023",
+   "icon": "info",
+   "start": 581.7
+  },
+  {
+   "scene": 98,
+   "kind": "icons",
+   "at": 1.0,
+   "dur": 6.6,
    "icons": [
     "queen",
-    "anchor",
     "sparkle"
    ],
    "slot": "tr",
-   "stagger": 1.2,
-   "start": 581.7
+   "stagger": 1.0,
+   "start": 582.1
   },
   {
    "scene": 99,
@@ -2703,7 +2991,7 @@
    "scene": 105,
    "kind": "icons",
    "at": 1.0,
-   "dur": 8.0,
+   "dur": 5.0,
    "icons": [
     "crown",
     "sparkle"
@@ -2711,6 +2999,14 @@
    "slot": "tr",
    "stagger": 1.2,
    "start": 631.66
+  },
+  {
+   "scene": 105,
+   "kind": "outro",
+   "at": 7.110000000000059,
+   "dur": 5.73,
+   "text": "RATU KALINYAMAT",
+   "start": 637.77
   }
  ]
 }

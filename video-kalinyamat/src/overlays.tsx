@@ -98,6 +98,7 @@ export const TitleCard: React.FC<{ o: Overlay }> = ({ o }) => {
                   translate: `0 ${(1 - s) * -120}px`,
                   opacity: Math.min(1, s * 1.5),
                   textShadow: outline(7),
+                  whiteSpace: "pre",
                 }}
               >
                 {ch}
@@ -509,7 +510,7 @@ export const Year: React.FC<{ o: Overlay }> = ({ o }) => {
 };
 
 // ---------------- time comparison bars ----------------
-export const Compare: React.FC = () => {
+export const Compare: React.FC<{ o: Overlay }> = ({ o }) => {
   const { f, fps, out } = useEnv(10, 14);
   const s = spring({ frame: f, fps, config: { damping: 14, stiffness: 120 } });
   const a = interpolate(f, [14, 70], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
@@ -538,9 +539,10 @@ export const Compare: React.FC = () => {
           translate: `0 ${(1 - s) * 420}px`,
         }}
       >
-        <div style={{ fontFamily: display, fontSize: 46, color: C.orange, paddingTop: 6 }}>PERBANDINGAN WAKTU</div>
-        {row("Homo erectus di Jawa", "> 1.000.000 tahun", 1, a, C.orange, 0)}
-        {row("Seluruh sejarah peradaban (sejak tulisan)", "± 5.000 tahun", 0.005, b, C.leaf, 10)}
+        <div style={{ fontFamily: display, fontSize: 46, color: C.orange, paddingTop: 6 }}>{o.title ?? "PERBANDINGAN"}</div>
+        {(o.items ?? []).map((it, k) => (
+          <React.Fragment key={k}>{row(it[0], it[1], parseFloat(it[2] ?? "1"), k === 0 ? a : b, k === 0 ? C.leaf : C.orange, 10)}</React.Fragment>
+        ))}
       </div>
     </AbsoluteFill>
   );
