@@ -5,3 +5,4 @@ output/thumbnail/thumbnail_*_1280x720.jpg
 output/**/*.mp4
 output/**/raw_*.png
 stickman/*.mp4
+stickman/thumbnail/raw_*.png
