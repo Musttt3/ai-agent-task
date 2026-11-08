@@ -94,14 +94,26 @@ def save(im, name):
     print(p)
 
 
-# 1 — the final twist: someone with your hair is outside the door
-im = vignette(base("197.jpg", crop_center_x=0.62, zoom=1.12), 0.7)
-save(headline(im, "SIAPA", "DI LUAR?", tag="HARI 6", sub="JANGAN BANGUNKAN DIA"), "thumbnail_1_siapa_di_luar.jpg")
+def title_block(im, x=40, y=30):
+    """Video title: WABAH HILANG / INGATAN [HARI KE-6] / DI KLINIK PULAU."""
+    d = ImageDraw.Draw(im)
+    f1 = ImageFont.truetype(FONT, 112)
+    f2 = ImageFont.truetype(FONT, 160)
+    outlined(d, (x, y), "WABAH HILANG", f1, WHITE, stroke=11, shadow=7)
+    y2 = d.textbbox((x, y), "WABAH HILANG", font=f1)[3] + 6
+    outlined(d, (x, y2), "INGATAN", f2, YELLOW, stroke=13, shadow=8)
+    l, t, r, b = d.textbbox((x, y2), "INGATAN", font=f2)
+    pill(d, (r + 22, t + (b - t) // 2 - 32), "HARI KE-6", size=44)
+    banner(d, (x + 4, b + 16), "DI KLINIK PULAU", size=50)
+    return im
 
-# 2 — best friend forgets you
-im = vignette(base("003.jpg", crop_center_x=0.36, zoom=1.3), 0.75)
-save(headline(im, "KAMU", "SIAPA?", tag="HARI 6", sub="DIA LUPA AKU"), "thumbnail_2_kamu_siapa.jpg")
 
-# 3 — you at the red door at 2 a.m.
-im = vignette(base("144.jpg", crop_center_x=0.72, zoom=1.2), 0.7)
-save(headline(im, "PUKUL", "02.00", tag="HARI 6", sub="AKU YANG MEMBUKANYA?"), "thumbnail_3_pukul_dua.jpg")
+TITLE_SHOTS = [
+    # (image, horizontal crop centre, zoom) — subject kept on the right, text on the left
+    ("197.jpg", 0.62, 1.12),  # someone with your hair behind the door
+    ("045.jpg", 0.5, 1.0),   # best friend raising scissors: "Kamu siapa?"
+    ("144.jpg", 0.72, 1.2),   # you at the red door at 2 a.m.
+]
+for i, (name, cx, z) in enumerate(TITLE_SHOTS, 1):
+    im = vignette(base(name, crop_center_x=cx, zoom=z), 0.75)
+    save(title_block(im), f"thumbnail_{i}.jpg")
