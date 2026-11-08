@@ -9,3 +9,5 @@ out
 # Bahan dari Google Drive (Pulau.zip) — terlalu besar untuk git
 public/img/
 public/narasi.mp3
+public/purba/*.jpg
+public/purba/narasi.mp3

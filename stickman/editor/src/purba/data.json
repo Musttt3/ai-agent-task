@@ -1,0 +1,795 @@
+{
+"fps": 30,
+"total": 1746,
+"audioEnd": 1729,
+"shots": [
+{
+"n": 1,
+"file": "01.jpg",
+"text": "Minus 30 derajat, tanpa jaket, tanpa sepatu modern.",
+"from": 0,
+"dur": 154
+},
+{
+"n": 2,
+"file": "02.jpg",
+"text": "Apakah manusia purba bisa selamat?",
+"from": 154,
+"dur": 78
+},
+{
+"n": 3,
+"file": "03.jpg",
+"text": "Jawabannya bisa, tapi tidak mudah.",
+"from": 232,
+"dur": 121
+},
+{
+"n": 4,
+"file": "04.jpg",
+"text": "Manusia purba tidak bertahan sendirian melawan dingin.",
+"from": 353,
+"dur": 108
+},
+{
+"n": 5,
+"file": "05.jpg",
+"text": "Mereka memakai kulit hewan tebal,",
+"from": 461,
+"dur": 72
+},
+{
+"n": 6,
+"file": "06.jpg",
+"text": "tinggal di gua atau tempat berlindung sederhana,",
+"from": 533,
+"dur": 86
+},
+{
+"n": 7,
+"file": "07.jpg",
+"text": "lalu menjaga api tetap menyala siang dan malam.",
+"from": 619,
+"dur": 111
+},
+{
+"n": 8,
+"file": "08.jpg",
+"text": "Mereka juga makan makanan berlemak dan tinggi energi supaya tubuh tetap panas.",
+"from": 730,
+"dur": 166
+},
+{
+"n": 9,
+"file": "09.jpg",
+"text": "Di tempat bersalju, mereka bergerak dalam kelompok,",
+"from": 896,
+"dur": 99
+},
+{
+"n": 10,
+"file": "10.jpg",
+"text": "saling menghangatkan dan menghindari terlalu lama diam di luar.",
+"from": 995,
+"dur": 135
+},
+{
+"n": 11,
+"file": "11.jpg",
+"text": "Tapi kalau api padam,",
+"from": 1130,
+"dur": 53
+},
+{
+"n": 12,
+"file": "12.jpg",
+"text": "pakaian basah,",
+"from": 1183,
+"dur": 43
+},
+{
+"n": 13,
+"file": "13.jpg",
+"text": "atau mereka terpisah dari kelompok,",
+"from": 1226,
+"dur": 75
+},
+{
+"n": 14,
+"file": "14.jpg",
+"text": "suhu minus 30 derajat bisa membunuh dalam waktu singkat.",
+"from": 1301,
+"dur": 130
+},
+{
+"n": 15,
+"file": "15.jpg",
+"text": "Jadi, manusia purba memang bisa bertahan di cuaca ekstrim,",
+"from": 1431,
+"dur": 133
+},
+{
+"n": 16,
+"file": "16.jpg",
+"text": "tapi kuncinya cuma tiga, api,",
+"from": 1564,
+"dur": 98
+},
+{
+"n": 17,
+"file": "17.jpg",
+"text": "perlindungan,",
+"from": 1662,
+"dur": 21
+},
+{
+"n": 18,
+"file": "18.jpg",
+"text": "dan kebersamaan.",
+"from": 1683,
+"dur": 63
+}
+],
+"words": [
+{
+"w": "Minus",
+"shot": 1,
+"to": 14,
+"from": 0
+},
+{
+"w": "30",
+"shot": 1,
+"to": 31,
+"from": 14
+},
+{
+"w": "derajat,",
+"shot": 1,
+"to": 53,
+"from": 31
+},
+{
+"w": "tanpa",
+"shot": 1,
+"to": 77,
+"from": 63
+},
+{
+"w": "jaket,",
+"shot": 1,
+"to": 97,
+"from": 77
+},
+{
+"w": "tanpa",
+"shot": 1,
+"to": 119,
+"from": 106
+},
+{
+"w": "sepatu",
+"shot": 1,
+"to": 131,
+"from": 119
+},
+{
+"w": "modern.",
+"shot": 1,
+"to": 143,
+"from": 131
+},
+{
+"w": "Apakah",
+"shot": 2,
+"to": 175,
+"from": 157
+},
+{
+"w": "manusia",
+"shot": 2,
+"to": 189,
+"from": 175
+},
+{
+"w": "purba",
+"shot": 2,
+"to": 201,
+"from": 189
+},
+{
+"w": "bisa",
+"shot": 2,
+"to": 209,
+"from": 201
+},
+{
+"w": "selamat?",
+"shot": 2,
+"to": 223,
+"from": 209
+},
+{
+"w": "Jawabannya",
+"shot": 3,
+"to": 261,
+"from": 236
+},
+{
+"w": "bisa,",
+"shot": 3,
+"to": 283,
+"from": 261
+},
+{
+"w": "tapi",
+"shot": 3,
+"to": 312,
+"from": 295
+},
+{
+"w": "tidak",
+"shot": 3,
+"to": 325,
+"from": 312
+},
+{
+"w": "mudah.",
+"shot": 3,
+"to": 343,
+"from": 325
+},
+{
+"w": "Manusia",
+"shot": 4,
+"to": 374,
+"from": 356
+},
+{
+"w": "purba",
+"shot": 4,
+"to": 386,
+"from": 374
+},
+{
+"w": "tidak",
+"shot": 4,
+"to": 393,
+"from": 386
+},
+{
+"w": "bertahan",
+"shot": 4,
+"to": 407,
+"from": 393
+},
+{
+"w": "sendirian",
+"shot": 4,
+"to": 428,
+"from": 407
+},
+{
+"w": "melawan",
+"shot": 4,
+"to": 439,
+"from": 428
+},
+{
+"w": "dingin.",
+"shot": 4,
+"to": 454,
+"from": 439
+},
+{
+"w": "Mereka",
+"shot": 5,
+"to": 480,
+"from": 464
+},
+{
+"w": "memakai",
+"shot": 5,
+"to": 494,
+"from": 480
+},
+{
+"w": "kulit",
+"shot": 5,
+"to": 502,
+"from": 494
+},
+{
+"w": "hewan",
+"shot": 5,
+"to": 509,
+"from": 502
+},
+{
+"w": "tebal,",
+"shot": 5,
+"to": 524,
+"from": 509
+},
+{
+"w": "tinggal",
+"shot": 6,
+"to": 547,
+"from": 537
+},
+{
+"w": "di",
+"shot": 6,
+"to": 552,
+"from": 547
+},
+{
+"w": "gua",
+"shot": 6,
+"to": 563,
+"from": 552
+},
+{
+"w": "atau",
+"shot": 6,
+"to": 570,
+"from": 563
+},
+{
+"w": "tempat",
+"shot": 6,
+"to": 581,
+"from": 570
+},
+{
+"w": "berlindung",
+"shot": 6,
+"to": 594,
+"from": 581
+},
+{
+"w": "sederhana,",
+"shot": 6,
+"to": 613,
+"from": 594
+},
+{
+"w": "lalu",
+"shot": 7,
+"to": 637,
+"from": 622
+},
+{
+"w": "menjaga",
+"shot": 7,
+"to": 649,
+"from": 637
+},
+{
+"w": "api",
+"shot": 7,
+"to": 661,
+"from": 649
+},
+{
+"w": "tetap",
+"shot": 7,
+"to": 677,
+"from": 661
+},
+{
+"w": "menyala",
+"shot": 7,
+"to": 689,
+"from": 677
+},
+{
+"w": "siang",
+"shot": 7,
+"to": 703,
+"from": 689
+},
+{
+"w": "dan",
+"shot": 7,
+"to": 709,
+"from": 703
+},
+{
+"w": "malam.",
+"shot": 7,
+"to": 721,
+"from": 709
+},
+{
+"w": "Mereka",
+"shot": 8,
+"to": 746,
+"from": 733
+},
+{
+"w": "juga",
+"shot": 8,
+"to": 752,
+"from": 746
+},
+{
+"w": "makan",
+"shot": 8,
+"to": 762,
+"from": 752
+},
+{
+"w": "makanan",
+"shot": 8,
+"to": 773,
+"from": 762
+},
+{
+"w": "berlemak",
+"shot": 8,
+"to": 790,
+"from": 773
+},
+{
+"w": "dan",
+"shot": 8,
+"to": 796,
+"from": 790
+},
+{
+"w": "tinggi",
+"shot": 8,
+"to": 809,
+"from": 796
+},
+{
+"w": "energi",
+"shot": 8,
+"to": 826,
+"from": 809
+},
+{
+"w": "supaya",
+"shot": 8,
+"to": 843,
+"from": 831
+},
+{
+"w": "tubuh",
+"shot": 8,
+"to": 858,
+"from": 843
+},
+{
+"w": "tetap",
+"shot": 8,
+"to": 868,
+"from": 858
+},
+{
+"w": "panas.",
+"shot": 8,
+"to": 884,
+"from": 868
+},
+{
+"w": "Di",
+"shot": 9,
+"to": 905,
+"from": 899
+},
+{
+"w": "tempat",
+"shot": 9,
+"to": 911,
+"from": 905
+},
+{
+"w": "bersalju,",
+"shot": 9,
+"to": 929,
+"from": 911
+},
+{
+"w": "mereka",
+"shot": 9,
+"to": 948,
+"from": 941
+},
+{
+"w": "bergerak",
+"shot": 9,
+"to": 965,
+"from": 948
+},
+{
+"w": "dalam",
+"shot": 9,
+"to": 973,
+"from": 965
+},
+{
+"w": "kelompok,",
+"shot": 9,
+"to": 991,
+"from": 973
+},
+{
+"w": "saling",
+"shot": 10,
+"to": 1009,
+"from": 998
+},
+{
+"w": "menghangatkan",
+"shot": 10,
+"to": 1033,
+"from": 1010
+},
+{
+"w": "dan",
+"shot": 10,
+"to": 1045,
+"from": 1033
+},
+{
+"w": "menghindari",
+"shot": 10,
+"to": 1063,
+"from": 1045
+},
+{
+"w": "terlalu",
+"shot": 10,
+"to": 1083,
+"from": 1063
+},
+{
+"w": "lama",
+"shot": 10,
+"to": 1090,
+"from": 1083
+},
+{
+"w": "diam",
+"shot": 10,
+"to": 1102,
+"from": 1090
+},
+{
+"w": "di",
+"shot": 10,
+"to": 1109,
+"from": 1102
+},
+{
+"w": "luar.",
+"shot": 10,
+"to": 1119,
+"from": 1109
+},
+{
+"w": "Tapi",
+"shot": 11,
+"to": 1147,
+"from": 1134
+},
+{
+"w": "kalau",
+"shot": 11,
+"to": 1159,
+"from": 1147
+},
+{
+"w": "api",
+"shot": 11,
+"to": 1168,
+"from": 1159
+},
+{
+"w": "padam,",
+"shot": 11,
+"to": 1186,
+"from": 1168
+},
+{
+"w": "pakaian",
+"shot": 12,
+"to": 1206,
+"from": 1187
+},
+{
+"w": "basah,",
+"shot": 12,
+"to": 1229,
+"from": 1206
+},
+{
+"w": "atau",
+"shot": 13,
+"to": 1238,
+"from": 1229
+},
+{
+"w": "mereka",
+"shot": 13,
+"to": 1247,
+"from": 1238
+},
+{
+"w": "terpisah",
+"shot": 13,
+"to": 1268,
+"from": 1247
+},
+{
+"w": "dari",
+"shot": 13,
+"to": 1274,
+"from": 1268
+},
+{
+"w": "kelompok,",
+"shot": 13,
+"to": 1291,
+"from": 1274
+},
+{
+"w": "suhu",
+"shot": 14,
+"to": 1316,
+"from": 1305
+},
+{
+"w": "minus",
+"shot": 14,
+"to": 1326,
+"from": 1316
+},
+{
+"w": "30",
+"shot": 14,
+"to": 1337,
+"from": 1326
+},
+{
+"w": "derajat",
+"shot": 14,
+"to": 1356,
+"from": 1337
+},
+{
+"w": "bisa",
+"shot": 14,
+"to": 1371,
+"from": 1356
+},
+{
+"w": "membunuh",
+"shot": 14,
+"to": 1390,
+"from": 1371
+},
+{
+"w": "dalam",
+"shot": 14,
+"to": 1397,
+"from": 1390
+},
+{
+"w": "waktu",
+"shot": 14,
+"to": 1405,
+"from": 1397
+},
+{
+"w": "singkat.",
+"shot": 14,
+"to": 1420,
+"from": 1405
+},
+{
+"w": "Jadi,",
+"shot": 15,
+"to": 1448,
+"from": 1435
+},
+{
+"w": "manusia",
+"shot": 15,
+"to": 1475,
+"from": 1461
+},
+{
+"w": "purba",
+"shot": 15,
+"to": 1487,
+"from": 1475
+},
+{
+"w": "memang",
+"shot": 15,
+"to": 1495,
+"from": 1487
+},
+{
+"w": "bisa",
+"shot": 15,
+"to": 1511,
+"from": 1495
+},
+{
+"w": "bertahan",
+"shot": 15,
+"to": 1526,
+"from": 1511
+},
+{
+"w": "di",
+"shot": 15,
+"to": 1531,
+"from": 1526
+},
+{
+"w": "cuaca",
+"shot": 15,
+"to": 1539,
+"from": 1531
+},
+{
+"w": "ekstrim,",
+"shot": 15,
+"to": 1553,
+"from": 1539
+},
+{
+"w": "tapi",
+"shot": 16,
+"to": 1580,
+"from": 1567
+},
+{
+"w": "kuncinya",
+"shot": 16,
+"to": 1606,
+"from": 1580
+},
+{
+"w": "cuma",
+"shot": 16,
+"to": 1612,
+"from": 1606
+},
+{
+"w": "tiga,",
+"shot": 16,
+"to": 1623,
+"from": 1612
+},
+{
+"w": "api,",
+"shot": 16,
+"to": 1654,
+"from": 1639
+},
+{
+"w": "perlindungan,",
+"shot": 17,
+"to": 1687,
+"from": 1666
+},
+{
+"w": "dan",
+"shot": 18,
+"to": 1697,
+"from": 1687
+},
+{
+"w": "kebersamaan.",
+"shot": 18,
+"to": 1714,
+"from": 1697
+}
+]
+}

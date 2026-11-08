@@ -1,0 +1,23 @@
+TIMELINE GAMBAR - SINKRON DENGAN AUDIO
+Minus 30 Derajat: Bisakah Manusia Purba Selamat?
+Total: sekitar 0:57.3 (akhir audio adalah perkiraan). 18 gambar, rasio 9:16.
+Format: nomor | label | mulai - selesai | durasi | file | narasi
+
+01 | 0:00  | 0:00.0 - 0:05.0 | 5.0s | 01.jpg | Minus 30 derajat, tanpa jaket, tanpa sepatu modern.
+02 | 0:05  | 0:05.0 - 0:08.0 | 3.0s | 02.jpg | Apakah manusia purba bisa selamat?
+03 | 0:08  | 0:08.0 - 0:12.0 | 4.0s | 03.jpg | Jawabannya bisa, tapi tidak mudah.
+04 | 0:12  | 0:12.0 - 0:16.0 | 4.0s | 04.jpg | Manusia purba tidak bertahan sendirian melawan dingin.
+05 | 0:16a | 0:16.0 - 0:18.1 | 2.1s | 05.jpg | Mereka memakai kulit hewan tebal,
+06 | 0:16b | 0:18.1 - 0:21.0 | 2.9s | 06.jpg | tinggal di gua atau tempat berlindung sederhana,
+07 | 0:21  | 0:21.0 - 0:24.0 | 3.0s | 07.jpg | lalu menjaga api tetap menyala siang dan malam.
+08 | 0:24  | 0:24.0 - 0:30.0 | 6.0s | 08.jpg | Mereka juga makan makanan berlemak dan tinggi energi supaya tubuh tetap panas.
+09 | 0:30  | 0:30.0 - 0:33.0 | 3.0s | 09.jpg | Di tempat bersalju, mereka bergerak dalam kelompok,
+10 | 0:33  | 0:33.0 - 0:38.0 | 5.0s | 10.jpg | saling menghangatkan dan menghindari terlalu lama diam di luar.
+11 | 0:38a | 0:38.0 - 0:39.8 | 1.8s | 11.jpg | Tapi kalau api padam,
+12 | 0:38b | 0:39.8 - 0:41.1 | 1.3s | 12.jpg | pakaian basah,
+13 | 0:38c | 0:41.1 - 0:44.0 | 2.9s | 13.jpg | atau mereka terpisah dari kelompok,
+14 | 0:44  | 0:44.0 - 0:48.0 | 4.0s | 14.jpg | suhu minus 30 derajat bisa membunuh dalam waktu singkat.
+15 | 0:48  | 0:48.0 - 0:52.0 | 4.0s | 15.jpg | Jadi, manusia purba memang bisa bertahan di cuaca ekstrim,
+16 | 0:52a | 0:52.0 - 0:54.5 | 2.5s | 16.jpg | tapi kuncinya cuma tiga, api,
+17 | 0:52b | 0:54.5 - 0:55.8 | 1.3s | 17.jpg | perlindungan,
+18 | 0:52c | 0:55.8 - 0:57.3 | 1.5s | 18.jpg | dan kebersamaan.
