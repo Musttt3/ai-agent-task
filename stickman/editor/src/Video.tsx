@@ -1,15 +1,13 @@
 import React from "react";
 import { AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, interpolate } from "remotion";
 import data from "./data.json";
-import { cueFor, DAY6_FROM, FLASHBACK, RADIO, REC, SECTIONS } from "./cues";
+import { cueFor, DAY6_FROM, FLASHBACK, RADIO, REC } from "./cues";
 import { Shot } from "./Shot";
 import {
-  ChapterCard,
   DayStamp,
   EndCard,
   Flicker,
   Grain,
-  HudTag,
   Letterbox,
   Quote,
   RadioPanel,
@@ -53,7 +51,6 @@ const Drone: React.FC = () => {
 export const PulauVideo: React.FC = () => {
   const recRange = rangeSeq(REC.from, REC.to);
   const radioRange = rangeSeq(RADIO.from, RADIO.to);
-  const fb = rangeSeq(FLASHBACK.from, FLASHBACK.to);
   const day6From = byN(DAY6_FROM).from;
   const darkFrom = byN(83).from;
 
@@ -94,27 +91,12 @@ export const PulauVideo: React.FC = () => {
       <Sequence from={0} durationInFrames={150} name="Title">
         <TitleCard />
       </Sequence>
-      <Sequence from={fb.from + 20} durationInFrames={fb.dur - 20} name="HUD kilas balik">
-        <HudTag label="KILAS BALIK · HARI 1–5" tone="sepia" />
-      </Sequence>
-      {/* hidden while the phone-video REC overlay is on screen */}
-      <Sequence from={day6From + 90} durationInFrames={recRange.from - day6From - 90} name="HUD hari 6">
-        <HudTag label="HARI KE-6 · KLINIK PULAU" tone="red" />
-      </Sequence>
-      <Sequence from={recRange.from + recRange.dur} durationInFrames={data.audioFrames - recRange.from - recRange.dur} name="HUD hari 6 (lanjut)">
-        <HudTag label="HARI KE-6 · KLINIK PULAU" tone="red" />
-      </Sequence>
       <Sequence from={day6From} durationInFrames={90} name="Stamp hari 6">
         <DayStamp />
       </Sequence>
       <Sequence from={radioRange.from} durationInFrames={radioRange.dur} name="Radio">
         <RadioPanel />
       </Sequence>
-      {SECTIONS.map((sec, i) => (
-        <Sequence key={sec.shot} from={byN(sec.shot).from + 4} durationInFrames={112} name={`Bab ${i + 2}`}>
-          <ChapterCard index={i + 2} title={sec.title} />
-        </Sequence>
-      ))}
       {shots.map((s, i) => {
         const q = cueFor(s.n).quote;
         if (!q) return null;
