@@ -1,0 +1,1779 @@
+{
+"fps": 30,
+"audioFrames": 17269,
+"shots": [
+{
+"n": 1,
+"file": "001.jpg",
+"text": "Sudah enam hari kamu terjebak di sebuah pulau yang dilanda wabah misterius.",
+"start": 0.0,
+"from": 0,
+"dur": 162,
+"snap": 0.0
+},
+{
+"n": 2,
+"file": "002.jpg",
+"text": "Pagi ini, sahabatmu menatapmu dengan ketakutan dan bertanya,",
+"start": 5.0,
+"from": 162,
+"dur": 130,
+"snap": 0.39
+},
+{
+"n": 3,
+"file": "003.jpg",
+"text": "kamu siapa?",
+"start": 10.0,
+"from": 292,
+"dur": 40,
+"snap": -0.26
+},
+{
+"n": 4,
+"file": "004.jpg",
+"text": "Padahal semalam kalian masih berbicara seperti biasa.",
+"start": 11.0,
+"from": 332,
+"dur": 114,
+"snap": 0.07
+},
+{
+"n": 5,
+"file": "005.jpg",
+"text": "Dan sebelum hari ini berakhir,",
+"start": 15.0,
+"from": 446,
+"dur": 64,
+"snap": -0.12
+},
+{
+"n": 6,
+"file": "006.jpg",
+"text": "kamu akan menemukan sesuatu yang jauh lebih mengerikan.",
+"start": 17.0,
+"from": 510,
+"dur": 111,
+"snap": 0.0
+},
+{
+"n": 7,
+"file": "007.jpg",
+"text": "Mungkin selama ini, kamu juga sudah kehilangan ingatan.",
+"start": 21.0,
+"from": 621,
+"dur": 115,
+"snap": -0.31
+},
+{
+"n": 8,
+"file": "008.jpg",
+"text": "Semuanya dimulai ketika kalian datang ke pulau kecil untuk berlibur.",
+"start": 25.0,
+"from": 736,
+"dur": 164,
+"snap": -0.47
+},
+{
+"n": 9,
+"file": "009.jpg",
+"text": "Kamu hanya punya sebuah pelabuhan, beberapa permukiman, dan klinik kesehatan di dekat bukit.",
+"start": 30.0,
+"from": 900,
+"dur": 154,
+"snap": 0.0
+},
+{
+"n": 10,
+"file": "010.jpg",
+"text": "Pada hari pertama, seorang nelayan ditemukan berjalan tanpa tujuan.",
+"start": 35.0,
+"from": 1054,
+"dur": 141,
+"snap": 0.15
+},
+{
+"n": 11,
+"file": "011.jpg",
+"text": "Ia lupa alamat rumahnya.",
+"start": 40.0,
+"from": 1195,
+"dur": 58,
+"snap": -0.18
+},
+{
+"n": 12,
+"file": "012.jpg",
+"text": "Besoknya, seorang pedagang tidak mengenali anaknya sendiri.",
+"start": 42.0,
+"from": 1253,
+"dur": 117,
+"snap": -0.24
+},
+{
+"n": 13,
+"file": "013.jpg",
+"text": "Kemudian lebih banyak penduduk mulai melupakan percakapan yang baru saja terjadi.",
+"start": 46.0,
+"from": 1370,
+"dur": 152,
+"snap": -0.34
+},
+{
+"n": 14,
+"file": "014.jpg",
+"text": "Dalam tiga hari, kepanikan menyebar ke seluruh pulau.",
+"start": 51.0,
+"from": 1522,
+"dur": 98,
+"snap": -0.27
+},
+{
+"n": 15,
+"file": "015.jpg",
+"text": "Tak seorang pun tahu penyebabnya.",
+"start": 54.0,
+"from": 1620,
+"dur": 76,
+"snap": 0.0
+},
+{
+"n": 16,
+"file": "016.jpg",
+"text": "Ada yang menuduh air minum, ada yang menyebut penyakit menular.",
+"start": 56.0,
+"from": 1696,
+"dur": 134,
+"snap": 0.55
+},
+{
+"n": 17,
+"file": "017.jpg",
+"text": "Petugas kesehatan hanya bisa memastikan satu hal.",
+"start": 61.0,
+"from": 1830,
+"dur": 90,
+"snap": 0.0
+},
+{
+"n": 18,
+"file": "018.jpg",
+"text": "Sebagian penderita masih mengingat masa kecil, tetapi kesulitan menyimpan ingatan baru.",
+"start": 64.0,
+"from": 1920,
+"dur": 178,
+"snap": 0.0
+},
+{
+"n": 19,
+"file": "019.jpg",
+"text": "Kapal penumpang berhenti beroperasi.",
+"start": 70.0,
+"from": 2098,
+"dur": 76,
+"snap": -0.07
+},
+{
+"n": 20,
+"file": "020.jpg",
+"text": "Pelabuhan ditutup. Telepon mulai sulit tersambung.",
+"start": 73.0,
+"from": 2174,
+"dur": 104,
+"snap": -0.55
+},
+{
+"n": 21,
+"file": "021.jpg",
+"text": "Kalian gagal meninggalkan pulau,",
+"start": 76.0,
+"from": 2278,
+"dur": 62,
+"snap": -0.08
+},
+{
+"n": 22,
+"file": "022.jpg",
+"text": "lalu berlindung di klinik yang tiba-tiba ditinggalkan petugasnya.",
+"start": 78.0,
+"from": 2340,
+"dur": 126,
+"snap": 0.0
+},
+{
+"n": 23,
+"file": "023.jpg",
+"text": "Sebelum pelabuhan ditutup,",
+"start": 82.0,
+"from": 2466,
+"dur": 54,
+"snap": 0.2
+},
+{
+"n": 24,
+"file": "024.jpg",
+"text": "kalian sempat melihat seorang petugas menempel pengumuman evakuasi.",
+"start": 84.0,
+"from": 2520,
+"dur": 128,
+"snap": 0.0
+},
+{
+"n": 25,
+"file": "025.jpg",
+"text": "Ia meminta penduduk berkumpul di dermaga sebelum matahari terbenam.",
+"start": 88.0,
+"from": 2648,
+"dur": 129,
+"snap": 0.27
+},
+{
+"n": 26,
+"file": "026.jpg",
+"text": "Tetapi ketika kalian tiba, kapal yang dijanjikan tidak pernah datang.",
+"start": 93.0,
+"from": 2777,
+"dur": 149,
+"snap": -0.44
+},
+{
+"n": 27,
+"file": "027.jpg",
+"text": "Yang tersisa hanya koper-koper terbuka dan sandal berserakan.",
+"start": 98.0,
+"from": 2926,
+"dur": 134,
+"snap": -0.46
+},
+{
+"n": 28,
+"file": "028.jpg",
+"text": "Seorang pria tua terus mengulang bahwa putrinya sedang menjemput,",
+"start": 102.0,
+"from": 3060,
+"dur": 120,
+"snap": -0.01
+},
+{
+"n": 29,
+"file": "029.jpg",
+"text": "meskipun ia sendiri baru saja melihat putrinya dibawa ke klinik.",
+"start": 106.0,
+"from": 3180,
+"dur": 134,
+"snap": 0.0
+},
+{
+"n": 30,
+"file": "030.jpg",
+"text": "Kamu ingin menolongnya, tetapi sahabatmu menarik lenganmu.",
+"start": 110.0,
+"from": 3314,
+"dur": 115,
+"snap": 0.48
+},
+{
+"n": 31,
+"file": "031.jpg",
+"text": "Kalian tidak tahu apa yang akan terjadi jika tetap berada di pelabuhan sampai malam.",
+"start": 114.0,
+"from": 3429,
+"dur": 163,
+"snap": 0.29
+},
+{
+"n": 32,
+"file": "032.jpg",
+"text": "Di ruang tunggu, kalian menemukan kursi terbalik,",
+"start": 120.0,
+"from": 3592,
+"dur": 98,
+"snap": -0.26
+},
+{
+"n": 33,
+"file": "033.jpg",
+"text": "bekas berserakan, dan pesan tertempel di dinding.",
+"start": 123.0,
+"from": 3690,
+"dur": 111,
+"snap": 0.0
+},
+{
+"n": 34,
+"file": "034.jpg",
+"text": "Kalau mulai lupa, tulis semuanya.",
+"start": 127.0,
+"from": 3801,
+"dur": 84,
+"snap": -0.3
+},
+{
+"n": 35,
+"file": "035.jpg",
+"text": "Sejak itu, kalian membuat buku catatan bersama.",
+"start": 130.0,
+"from": 3885,
+"dur": 103,
+"snap": -0.5
+},
+{
+"n": 36,
+"file": "036.jpg",
+"text": "Setiap pagi kamu menuliskan tanggal, persediaan makanan, dan tempat kalian berada.",
+"start": 133.0,
+"from": 3988,
+"dur": 169,
+"snap": -0.07
+},
+{
+"n": 37,
+"file": "037.jpg",
+"text": "Kalian berjanji, siapapun yang masih mengingat harus membantu temannya.",
+"start": 138.0,
+"from": 4157,
+"dur": 145,
+"snap": 0.57
+},
+{
+"n": 38,
+"file": "038.jpg",
+"text": "Janji sederhana itu terasa penting, meskipun kalian berharap tidak perlu menggunakannya.",
+"start": 144.0,
+"from": 4302,
+"dur": 164,
+"snap": -0.6
+},
+{
+"n": 39,
+"file": "039.jpg",
+"text": "Pada hari ke-6, kamu terbangun sendirian.",
+"start": 149.0,
+"from": 4466,
+"dur": 92,
+"snap": -0.14
+},
+{
+"n": 40,
+"file": "040.jpg",
+"text": "Selimut sahabatmu tergeletak di lantai.",
+"start": 152.0,
+"from": 4558,
+"dur": 81,
+"snap": -0.07
+},
+{
+"n": 41,
+"file": "041.jpg",
+"text": "Lalu terdengar suara barang jatuh dari ruang pemeriksaan.",
+"start": 155.0,
+"from": 4639,
+"dur": 100,
+"snap": -0.36
+},
+{
+"n": 42,
+"file": "042.jpg",
+"text": "Ketika pintunya dibuka, ia berdiri di sudut sambil menggenggam gunting.",
+"start": 158.0,
+"from": 4739,
+"dur": 142,
+"snap": -0.02
+},
+{
+"n": 43,
+"file": "043.jpg",
+"text": "Kamu memanggil namanya.",
+"start": 163.0,
+"from": 4881,
+"dur": 39,
+"snap": -0.3
+},
+{
+"n": 44,
+"file": "044.jpg",
+"text": "Ia malah mundur, mengangkat gunting, dan berteriak.",
+"start": 164.0,
+"from": 4920,
+"dur": 120,
+"snap": 0.0
+},
+{
+"n": 45,
+"file": "045.jpg",
+"text": "Jangan dekat-dekat! Kamu siapa?",
+"start": 168.0,
+"from": 5040,
+"dur": 60,
+"snap": 0.0
+},
+{
+"n": 46,
+"file": "046.jpg",
+"text": "Tidak ada tanda ia sedang bercanda. Wajahnya benar-benar ketakutan.",
+"start": 170.0,
+"from": 5100,
+"dur": 152,
+"snap": 0.0
+},
+{
+"n": 47,
+"file": "047.jpg",
+"text": "Kamu menunjukkan buku catatan dan foto kalian berdua.",
+"start": 175.0,
+"from": 5252,
+"dur": 100,
+"snap": 0.06
+},
+{
+"n": 48,
+"file": "048.jpg",
+"text": "Ia melihat wajahnya di layar ponsel, lalu membaca seluruh halaman pertama.",
+"start": 179.0,
+"from": 5352,
+"dur": 158,
+"snap": -0.59
+},
+{
+"n": 49,
+"file": "049.jpg",
+"text": "Perlahan, tangannya turun.",
+"start": 184.0,
+"from": 5510,
+"dur": 61,
+"snap": -0.35
+},
+{
+"n": 50,
+"file": "050.jpg",
+"text": "Aku percaya tulisan ini, katanya.",
+"start": 186.0,
+"from": 5571,
+"dur": 106,
+"snap": -0.29
+},
+{
+"n": 51,
+"file": "051.jpg",
+"text": "Tapi aku sama sekali tidak ingat kamu.",
+"start": 189.0,
+"from": 5677,
+"dur": 64,
+"snap": 0.23
+},
+{
+"n": 52,
+"file": "052.jpg",
+"text": "Kalimat itu membuat dadamu sesak.",
+"start": 191.0,
+"from": 5741,
+"dur": 70,
+"snap": 0.37
+},
+{
+"n": 53,
+"file": "053.jpg",
+"text": "Orang yang selama bertahun-tahun mengenalmu, kini memandangmu seperti orang asing.",
+"start": 194.0,
+"from": 5811,
+"dur": 155,
+"snap": -0.29
+},
+{
+"n": 54,
+"file": "054.jpg",
+"text": "Namun air bersih tinggal satu botol, dan makanan hanya beberapa bungkus biskuit.",
+"start": 199.0,
+"from": 5966,
+"dur": 155,
+"snap": -0.12
+},
+{
+"n": 55,
+"file": "055.jpg",
+"text": "Kalian harus bergerak!",
+"start": 204.0,
+"from": 6121,
+"dur": 59,
+"snap": 0.03
+},
+{
+"n": 56,
+"file": "056.jpg",
+"text": "Kamu mengajaknya mencari gudang persediaan.",
+"start": 206.0,
+"from": 6180,
+"dur": 65,
+"snap": 0.0
+},
+{
+"n": 57,
+"file": "057.jpg",
+"text": "Sepanjang koridor, ia terus menanyakan pertanyaan yang sama.",
+"start": 208.0,
+"from": 6245,
+"dur": 115,
+"snap": 0.17
+},
+{
+"n": 58,
+"file": "058.jpg",
+"text": "Kita di mana?",
+"start": 212.0,
+"from": 6360,
+"dur": 30,
+"snap": 0.0
+},
+{
+"n": 59,
+"file": "059.jpg",
+"text": "Lima menit kemudian, pertanyaan itu muncul lagi.",
+"start": 213.0,
+"from": 6390,
+"dur": 91,
+"snap": 0.0
+},
+{
+"n": 60,
+"file": "060.jpg",
+"text": "Kamu mencoba menguji ingatannya dengan tiga kata.",
+"start": 216.0,
+"from": 6481,
+"dur": 94,
+"snap": 0.03
+},
+{
+"n": 61,
+"file": "061.jpg",
+"text": "Kunci, gelas, jam.",
+"start": 219.0,
+"from": 6575,
+"dur": 72,
+"snap": 0.17
+},
+{
+"n": 62,
+"file": "062.jpg",
+"text": "Setelah berjalan sebentar, ia tidak mampu mengulang satupun.",
+"start": 222.0,
+"from": 6647,
+"dur": 119,
+"snap": -0.42
+},
+{
+"n": 63,
+"file": "063.jpg",
+"text": "Kamu ingin marah karena lelah mengulang jawaban.",
+"start": 226.0,
+"from": 6766,
+"dur": 104,
+"snap": -0.47
+},
+{
+"n": 64,
+"file": "064.jpg",
+"text": "Tetapi melihat kebingungannya, kamu justru merasa bersalah.",
+"start": 229.0,
+"from": 6870,
+"dur": 103,
+"snap": 0.0
+},
+{
+"n": 65,
+"file": "065.jpg",
+"text": "Gudang akhirnya ditemukan, terkunci dari luar.",
+"start": 233.0,
+"from": 6973,
+"dur": 100,
+"snap": -0.55
+},
+{
+"n": 66,
+"file": "066.jpg",
+"text": "Kunci cadangan terselip di laci meja pendaftaran.",
+"start": 236.0,
+"from": 7073,
+"dur": 89,
+"snap": -0.22
+},
+{
+"n": 67,
+"file": "067.jpg",
+"text": "Di dalamnya ada makanan kemasan, beberapa botol air, senter, dan radio portable.",
+"start": 239.0,
+"from": 7162,
+"dur": 172,
+"snap": -0.26
+},
+{
+"n": 68,
+"file": "068.jpg",
+"text": "Kalian hampir bersorak!",
+"start": 245.0,
+"from": 7334,
+"dur": 46,
+"snap": -0.54
+},
+{
+"n": 69,
+"file": "069.jpg",
+"text": "Saat radio dinyalakan, suara berdesis memenuhi ruangan.",
+"start": 246.0,
+"from": 7380,
+"dur": 121,
+"snap": 0.0
+},
+{
+"n": 70,
+"file": "070.jpg",
+"text": "Setelah beberapa kali memutar frekuensi, muncul pesan terputus-putus.",
+"start": 250.0,
+"from": 7501,
+"dur": 136,
+"snap": 0.03
+},
+{
+"n": 71,
+"file": "071.jpg",
+"text": "Untuk siapapun yang masih berada di klinik, jangan buka pintu belakang.",
+"start": 255.0,
+"from": 7637,
+"dur": 141,
+"snap": -0.44
+},
+{
+"n": 72,
+"file": "072.jpg",
+"text": "Pesan itu kemudian berulang dari awal.",
+"start": 259.0,
+"from": 7778,
+"dur": 78,
+"snap": 0.28
+},
+{
+"n": 73,
+"file": "073.jpg",
+"text": "Rupanya rekaman otomatis.",
+"start": 262.0,
+"from": 7856,
+"dur": 67,
+"snap": -0.14
+},
+{
+"n": 74,
+"file": "074.jpg",
+"text": "Saat menemukan air, kamu segera memberi sahabatmu satu botol.",
+"start": 264.0,
+"from": 7923,
+"dur": 123,
+"snap": 0.09
+},
+{
+"n": 75,
+"file": "075.jpg",
+"text": "Ia menolak karena mengira kalian belum saling mengenal.",
+"start": 268.0,
+"from": 8046,
+"dur": 94,
+"snap": 0.21
+},
+{
+"n": 76,
+"file": "076.jpg",
+"text": "Kamu menjelaskan kembali bahwa kalian sudah berteman lama.",
+"start": 271.0,
+"from": 8140,
+"dur": 107,
+"snap": 0.34
+},
+{
+"n": 77,
+"file": "077.jpg",
+"text": "Ia bertanya apa yang biasanya kalian lakukan bersama.",
+"start": 275.0,
+"from": 8247,
+"dur": 100,
+"snap": -0.09
+},
+{
+"n": 78,
+"file": "078.jpg",
+"text": "Kamu menyebut perjalanan, pertengkaran kecil, dan malam-malam ketika kalian saling menemani menghadapi masalah.",
+"start": 278.0,
+"from": 8347,
+"dur": 205,
+"snap": 0.23
+},
+{
+"n": 79,
+"file": "079.jpg",
+"text": "Ia tersenyum tipis, tetapi senyum itu menghilang sewaktu ia bertanya.",
+"start": 285.0,
+"from": 8552,
+"dur": 131,
+"snap": 0.06
+},
+{
+"n": 80,
+"file": "080.jpg",
+"text": "Kenapa aku tidak bisa mengingat semua itu?",
+"start": 289.0,
+"from": 8683,
+"dur": 75,
+"snap": 0.44
+},
+{
+"n": 81,
+"file": "081.jpg",
+"text": "Kamu tidak punya jawaban.",
+"start": 292.0,
+"from": 8758,
+"dur": 53,
+"snap": -0.05
+},
+{
+"n": 82,
+"file": "082.jpg",
+"text": "Kamu hanya menyimpan botol tersebut di tangannya, berharap paling tidak ia masih mau menerimanya.",
+"start": 294.0,
+"from": 8811,
+"dur": 178,
+"snap": -0.28
+},
+{
+"n": 83,
+"file": "083.jpg",
+"text": "Kamu mengikuti koridor menuju belakang klinik.",
+"start": 300.0,
+"from": 8989,
+"dur": 86,
+"snap": -0.37
+},
+{
+"n": 84,
+"file": "084.jpg",
+"text": "Di ujungnya berdiri pintu besi merah terlilit rantai.",
+"start": 302.0,
+"from": 9075,
+"dur": 108,
+"snap": 0.49
+},
+{
+"n": 85,
+"file": "085.jpg",
+"text": "Pada tembok di sebelahnya terdapat goresan panjang seperti bekas sesuatu yang diseret.",
+"start": 306.0,
+"from": 9183,
+"dur": 156,
+"snap": 0.09
+},
+{
+"n": 86,
+"file": "086.jpg",
+"text": "Sahabatmu berhenti mendadak.",
+"start": 311.0,
+"from": 9339,
+"dur": 58,
+"snap": 0.29
+},
+{
+"n": 87,
+"file": "087.jpg",
+"text": "Ia menatap pintu, lalu berbisik.",
+"start": 313.0,
+"from": 9397,
+"dur": 72,
+"snap": 0.23
+},
+{
+"n": 88,
+"file": "088.jpg",
+"text": "Aku pernah ada di sini.",
+"start": 316.0,
+"from": 9469,
+"dur": 55,
+"snap": -0.37
+},
+{
+"n": 89,
+"file": "089.jpg",
+"text": "Di baliknya ada seseorang.",
+"start": 318.0,
+"from": 9524,
+"dur": 58,
+"snap": -0.53
+},
+{
+"n": 90,
+"file": "090.jpg",
+"text": "Kamu memintanya menjelaskan, namun beberapa detik kemudian ia mengerutkan dahi.",
+"start": 319.0,
+"from": 9582,
+"dur": 151,
+"snap": 0.39
+},
+{
+"n": 91,
+"file": "091.jpg",
+"text": "Pintu apa?",
+"start": 325.0,
+"from": 9733,
+"dur": 41,
+"snap": -0.55
+},
+{
+"n": 92,
+"file": "092.jpg",
+"text": "Ingatan yang baru muncul itu sudah hilang.",
+"start": 325.8,
+"from": 9774,
+"dur": 78,
+"snap": 0.0
+},
+{
+"n": 93,
+"file": "093.jpg",
+"text": "Tiba-tiba terdengar ketukan.",
+"start": 329.0,
+"from": 9852,
+"dur": 48,
+"snap": -0.6
+},
+{
+"n": 94,
+"file": "094.jpg",
+"text": "Tiga kali dari sisi lain pintu.",
+"start": 330.0,
+"from": 9900,
+"dur": 95,
+"snap": 0.0
+},
+{
+"n": 95,
+"file": "095.jpg",
+"text": "Tok, tok, tok.",
+"start": 333.0,
+"from": 9995,
+"dur": 70,
+"snap": 0.15
+},
+{
+"n": 96,
+"file": "096.jpg",
+"text": "Sahabatmu ingin membukanya.",
+"start": 336.0,
+"from": 10065,
+"dur": 61,
+"snap": -0.51
+},
+{
+"n": 97,
+"file": "097.jpg",
+"text": "Menurutnya mungkin ada orang yang membutuhkan pertolongan.",
+"start": 338.0,
+"from": 10126,
+"dur": 110,
+"snap": -0.46
+},
+{
+"n": 98,
+"file": "098.jpg",
+"text": "Kamu mengingat pesan radio dan menahan tangannya.",
+"start": 341.0,
+"from": 10236,
+"dur": 95,
+"snap": 0.22
+},
+{
+"n": 99,
+"file": "099.jpg",
+"text": "Kalian bertengkar.",
+"start": 344.0,
+"from": 10331,
+"dur": 40,
+"snap": 0.35
+},
+{
+"n": 100,
+"file": "100.jpg",
+"text": "Katamu kita harus saling percaya.",
+"start": 346.0,
+"from": 10371,
+"dur": 69,
+"snap": -0.31
+},
+{
+"n": 101,
+"file": "101.jpg",
+"text": "Ucapnya dengan mata berkaca-kaca.",
+"start": 348.0,
+"from": 10440,
+"dur": 58,
+"snap": 0.0
+},
+{
+"n": 102,
+"file": "102.jpg",
+"text": "Tapi kamu memperlakukanku seperti ancaman.",
+"start": 350.0,
+"from": 10498,
+"dur": 82,
+"snap": -0.08
+},
+{
+"n": 103,
+"file": "103.jpg",
+"text": "Kamu terdiam.",
+"start": 353.0,
+"from": 10580,
+"dur": 35,
+"snap": -0.34
+},
+{
+"n": 104,
+"file": "104.jpg",
+"text": "Akhirnya kalian sepakat mencari informasi terlebih dahulu.",
+"start": 354.0,
+"from": 10615,
+"dur": 95,
+"snap": -0.16
+},
+{
+"n": 105,
+"file": "105.jpg",
+"text": "Meski ketukan itu terus terbayang di kepala.",
+"start": 357.0,
+"from": 10710,
+"dur": 97,
+"snap": 0.0
+},
+{
+"n": 106,
+"file": "106.jpg",
+"text": "Di ruang arsip, kamu menemukan alat perekam kecil.",
+"start": 360.0,
+"from": 10807,
+"dur": 97,
+"snap": 0.25
+},
+{
+"n": 107,
+"file": "107.jpg",
+"text": "Suara petugas terdengar ketika tombolnya ditekan.",
+"start": 364.0,
+"from": 10904,
+"dur": 92,
+"snap": -0.52
+},
+{
+"n": 108,
+"file": "108.jpg",
+"text": "Catatan hari kelima.",
+"start": 367.0,
+"from": 10996,
+"dur": 47,
+"snap": -0.45
+},
+{
+"n": 109,
+"file": "109.jpg",
+"text": "Beberapa pasien kehilangan ingatan setelah tidur.",
+"start": 368.0,
+"from": 11043,
+"dur": 91,
+"snap": 0.1
+},
+{
+"n": 110,
+"file": "110.jpg",
+"text": "Yang lain lupa dalam hitungan menit.",
+"start": 371.0,
+"from": 11134,
+"dur": 65,
+"snap": 0.12
+},
+{
+"n": 111,
+"file": "111.jpg",
+"text": "Nomor satu masih mampu menyembunyikan gejalanya.",
+"start": 373.0,
+"from": 11199,
+"dur": 91,
+"snap": 0.3
+},
+{
+"n": 112,
+"file": "112.jpg",
+"text": "Rekaman berhenti akibat suara benturan.",
+"start": 376.0,
+"from": 11290,
+"dur": 73,
+"snap": 0.33
+},
+{
+"n": 113,
+"file": "113.jpg",
+"text": "Disusul teriakan singkat.",
+"start": 379.0,
+"from": 11363,
+"dur": 53,
+"snap": -0.24
+},
+{
+"n": 114,
+"file": "114.jpg",
+"text": "Pada bagian belakang alat tertulis angka 01.",
+"start": 381.0,
+"from": 11416,
+"dur": 109,
+"snap": -0.45
+},
+{
+"n": 115,
+"file": "115.jpg",
+"text": "Kalian menemukan daftar pasien dalam Mac berdebu.",
+"start": 384.0,
+"from": 11525,
+"dur": 93,
+"snap": 0.16
+},
+{
+"n": 116,
+"file": "116.jpg",
+"text": "Nomor dua adalah sahabatmu.",
+"start": 387.0,
+"from": 11618,
+"dur": 61,
+"snap": 0.25
+},
+{
+"n": 117,
+"file": "117.jpg",
+"text": "Nama pasien nomor satu sudah dicoret hitam.",
+"start": 389.0,
+"from": 11679,
+"dur": 85,
+"snap": 0.31
+},
+{
+"n": 118,
+"file": "118.jpg",
+"text": "Sebelum meninggalkan ruang arsip,",
+"start": 392.0,
+"from": 11764,
+"dur": 55,
+"snap": 0.12
+},
+{
+"n": 119,
+"file": "119.jpg",
+"text": "kamu melihat jam dinding berhenti pada pukul 2 lewat 3 menit.",
+"start": 394.0,
+"from": 11819,
+"dur": 121,
+"snap": -0.04
+},
+{
+"n": 120,
+"file": "120.jpg",
+"text": "Di lantai tergeletak kartu akses dengan ujung patah.",
+"start": 398.0,
+"from": 11940,
+"dur": 98,
+"snap": -0.01
+},
+{
+"n": 121,
+"file": "121.jpg",
+"text": "Kartu itu memiliki bekas noda merah tua,",
+"start": 401.0,
+"from": 12038,
+"dur": 79,
+"snap": 0.28
+},
+{
+"n": 122,
+"file": "122.jpg",
+"text": "tetapi kamu tidak berani memastikan asalnya.",
+"start": 404.0,
+"from": 12117,
+"dur": 89,
+"snap": -0.09
+},
+{
+"n": 123,
+"file": "123.jpg",
+"text": "Sahabatmu menunjuk foto petugas yang tergantung di dinding.",
+"start": 407.0,
+"from": 12206,
+"dur": 105,
+"snap": -0.13
+},
+{
+"n": 124,
+"file": "124.jpg",
+"text": "Aku pernah melihat orang ini, katanya.",
+"start": 410.0,
+"from": 12311,
+"dur": 80,
+"snap": 0.37
+},
+{
+"n": 125,
+"file": "125.jpg",
+"text": "Kamu buru-buru bertanya kapan.",
+"start": 413.0,
+"from": 12391,
+"dur": 58,
+"snap": 0.02
+},
+{
+"n": 126,
+"file": "126.jpg",
+"text": "Ia memejamkan mata, berusaha mengingat,",
+"start": 415.0,
+"from": 12449,
+"dur": 88,
+"snap": -0.04
+},
+{
+"n": 127,
+"file": "127.jpg",
+"text": "lalu mulai menangis.",
+"start": 418.0,
+"from": 12537,
+"dur": 46,
+"snap": -0.11
+},
+{
+"n": 128,
+"file": "128.jpg",
+"text": "Semakin keras ia mencoba,",
+"start": 420.0,
+"from": 12583,
+"dur": 56,
+"snap": -0.58
+},
+{
+"n": 129,
+"file": "129.jpg",
+"text": "semakin bingung dirinya.",
+"start": 421.0,
+"from": 12639,
+"dur": 52,
+"snap": 0.29
+},
+{
+"n": 130,
+"file": "130.jpg",
+"text": "Akhirnya kamu berhenti bertanya dan mengajaknya keluar.",
+"start": 423.0,
+"from": 12691,
+"dur": 105,
+"snap": 0.05
+},
+{
+"n": 131,
+"file": "131.jpg",
+"text": "Untuk pertama kalinya,",
+"start": 427.0,
+"from": 12796,
+"dur": 43,
+"snap": -0.48
+},
+{
+"n": 132,
+"file": "132.jpg",
+"text": "kamu takut mencari jawaban justru menyakitinya.",
+"start": 428.0,
+"from": 12839,
+"dur": 100,
+"snap": -0.02
+},
+{
+"n": 133,
+"file": "133.jpg",
+"text": "Di bawah angka itu tercatat,",
+"start": 431.0,
+"from": 12939,
+"dur": 56,
+"snap": 0.29
+},
+{
+"n": 134,
+"file": "134.jpg",
+"text": "tidak menyadari kehilangan ingatannya sendiri.",
+"start": 433.0,
+"from": 12995,
+"dur": 91,
+"snap": 0.15
+},
+{
+"n": 135,
+"file": "135.jpg",
+"text": "Kamu merasa tengkukmu dingin.",
+"start": 436.0,
+"from": 13086,
+"dur": 58,
+"snap": 0.18
+},
+{
+"n": 136,
+"file": "136.jpg",
+"text": "Sejak pagi, kamu yakin hanya sahabatmu yang sakit.",
+"start": 438.0,
+"from": 13144,
+"dur": 98,
+"snap": 0.15
+},
+{
+"n": 137,
+"file": "137.jpg",
+"text": "Tetapi saat mencoba mengingat malam sebelumnya,",
+"start": 441.0,
+"from": 13242,
+"dur": 86,
+"snap": 0.39
+},
+{
+"n": 138,
+"file": "138.jpg",
+"text": "kamu kosong.",
+"start": 445.0,
+"from": 13328,
+"dur": 43,
+"snap": -0.74
+},
+{
+"n": 139,
+"file": "139.jpg",
+"text": "Kalian makan, lalu tidur.",
+"start": 446.0,
+"from": 13371,
+"dur": 59,
+"snap": -0.3
+},
+{
+"n": 140,
+"file": "140.jpg",
+"text": "Setidaknya begitu ceritanya.",
+"start": 448.0,
+"from": 13430,
+"dur": 67,
+"snap": -0.32
+},
+{
+"n": 141,
+"file": "141.jpg",
+"text": "Kamu membuka galeri ponsel dan menemukan video",
+"start": 450.0,
+"from": 13497,
+"dur": 93,
+"snap": -0.09
+},
+{
+"n": 142,
+"file": "142.jpg",
+"text": "yang direkam pukul 2 dini hari.",
+"start": 453.0,
+"from": 13590,
+"dur": 56,
+"snap": 0.0
+},
+{
+"n": 143,
+"file": "143.jpg",
+"text": "Dalam video itu,",
+"start": 455.0,
+"from": 13646,
+"dur": 34,
+"snap": -0.14
+},
+{
+"n": 144,
+"file": "144.jpg",
+"text": "kamu berdiri di depan pintu merah sambil memegang kunci.",
+"start": 456.0,
+"from": 13680,
+"dur": 105,
+"snap": 0.0
+},
+{
+"n": 145,
+"file": "145.jpg",
+"text": "Sahabatmu yang merekam dari belakang,",
+"start": 460.0,
+"from": 13785,
+"dur": 75,
+"snap": -0.5
+},
+{
+"n": 146,
+"file": "146.jpg",
+"text": "memohon agar kamu menjauh.",
+"start": 462.0,
+"from": 13860,
+"dur": 57,
+"snap": -0.0
+},
+{
+"n": 147,
+"file": "147.jpg",
+"text": "Suaramu sendiri terdengar jelas.",
+"start": 464.0,
+"from": 13917,
+"dur": 65,
+"snap": -0.09
+},
+{
+"n": 148,
+"file": "148.jpg",
+"text": "Kalau besok aku lupa,",
+"start": 466.0,
+"from": 13982,
+"dur": 58,
+"snap": 0.06
+},
+{
+"n": 149,
+"file": "149.jpg",
+"text": "jangan ceritakan semuanya.",
+"start": 468.0,
+"from": 14040,
+"dur": 40,
+"snap": 0.0
+},
+{
+"n": 150,
+"file": "150.jpg",
+"text": "Video berhenti mendadak.",
+"start": 469.0,
+"from": 14080,
+"dur": 51,
+"snap": 0.34
+},
+{
+"n": 151,
+"file": "151.jpg",
+"text": "Kamu memutarnya lagi,",
+"start": 471.0,
+"from": 14131,
+"dur": 122,
+"snap": 0.04
+},
+{
+"n": 152,
+"file": "152.jpg",
+"text": "tapi berbeda.",
+"start": 475.0,
+"from": 14253,
+"dur": 15,
+"snap": 0.09
+},
+{
+"n": 153,
+"file": "153.jpg",
+"text": "Kamu sama sekali tidak ingat pernah berdiri di sana.",
+"start": 475.6,
+"from": 14268,
+"dur": 78,
+"snap": -0.01
+},
+{
+"n": 154,
+"file": "154.jpg",
+"text": "Ternyata selama ini,",
+"start": 478.0,
+"from": 14346,
+"dur": 54,
+"snap": 0.19
+},
+{
+"n": 155,
+"file": "155.jpg",
+"text": "kamu juga mengalami kekosongan ingatan.",
+"start": 480.0,
+"from": 14400,
+"dur": 58,
+"snap": 0.0
+},
+{
+"n": 156,
+"file": "156.jpg",
+"text": "Bedanya,",
+"start": 482.0,
+"from": 14458,
+"dur": 32,
+"snap": -0.05
+},
+{
+"n": 157,
+"file": "157.jpg",
+"text": "kamu cukup percaya diri untuk tidak menyadarinya.",
+"start": 483.0,
+"from": 14490,
+"dur": 90,
+"snap": 0.0
+},
+{
+"n": 158,
+"file": "158.jpg",
+"text": "Sore itu,",
+"start": 486.0,
+"from": 14580,
+"dur": 30,
+"snap": 0.0
+},
+{
+"n": 159,
+"file": "159.jpg",
+"text": "kalian duduk berhadapan di ruang tunggu.",
+"start": 487.0,
+"from": 14610,
+"dur": 90,
+"snap": 0.0
+},
+{
+"n": 160,
+"file": "160.jpg",
+"text": "Kamu menunjukkan video tersebut",
+"start": 490.0,
+"from": 14700,
+"dur": 30,
+"snap": 0.0
+},
+{
+"n": 161,
+"file": "161.jpg",
+"text": "dan mengakui bahwa ada hal-hal yang tidak bisa kamu ingat.",
+"start": 491.0,
+"from": 14730,
+"dur": 133,
+"snap": 0.0
+},
+{
+"n": 162,
+"file": "162.jpg",
+"text": "Sahabatmu lama terdiam.",
+"start": 496.0,
+"from": 14863,
+"dur": 55,
+"snap": -0.57
+},
+{
+"n": 163,
+"file": "163.jpg",
+"text": "Kemudian berkata,",
+"start": 497.0,
+"from": 14918,
+"dur": 45,
+"snap": 0.27
+},
+{
+"n": 164,
+"file": "164.jpg",
+"text": "kalau kita berdua lupa,",
+"start": 499.0,
+"from": 14963,
+"dur": 53,
+"snap": -0.25
+},
+{
+"n": 165,
+"file": "165.jpg",
+"text": "siapa yang bisa kita percaya?",
+"start": 501.0,
+"from": 15016,
+"dur": 44,
+"snap": -0.47
+},
+{
+"n": 166,
+"file": "166.jpg",
+"text": "Kamu membuka buku bersama",
+"start": 502.0,
+"from": 15060,
+"dur": 60,
+"snap": 0.0
+},
+{
+"n": 167,
+"file": "167.jpg",
+"text": "dan menulis semua temuan hari itu.",
+"start": 504.0,
+"from": 15120,
+"dur": 85,
+"snap": 0.0
+},
+{
+"n": 168,
+"file": "168.jpg",
+"text": "Kalian sepakat,",
+"start": 507.0,
+"from": 15205,
+"dur": 35,
+"snap": -0.15
+},
+{
+"n": 169,
+"file": "169.jpg",
+"text": "tidak akan menyembunyikan informasi lagi.",
+"start": 508.0,
+"from": 15240,
+"dur": 72,
+"snap": 0.0
+},
+{
+"n": 170,
+"file": "170.jpg",
+"text": "Untuk sesaat,",
+"start": 511.0,
+"from": 15312,
+"dur": 48,
+"snap": -0.59
+},
+{
+"n": 171,
+"file": "171.jpg",
+"text": "janji itu membuat ruangan terasa lebih aman.",
+"start": 512.0,
+"from": 15360,
+"dur": 86,
+"snap": 0.0
+},
+{
+"n": 172,
+"file": "172.jpg",
+"text": "Menjelang malam,",
+"start": 515.0,
+"from": 15446,
+"dur": 34,
+"snap": -0.12
+},
+{
+"n": 173,
+"file": "173.jpg",
+"text": "sahabatmu menyerahkan buku kecil bersampul biru.",
+"start": 516.0,
+"from": 15480,
+"dur": 93,
+"snap": 0.0
+},
+{
+"n": 174,
+"file": "174.jpg",
+"text": "Ini milikku.",
+"start": 519.0,
+"from": 15573,
+"dur": 33,
+"snap": 0.09
+},
+{
+"n": 175,
+"file": "175.jpg",
+"text": "Kalau besok aku lupa,",
+"start": 520.0,
+"from": 15606,
+"dur": 63,
+"snap": 0.21
+},
+{
+"n": 176,
+"file": "176.jpg",
+"text": "bacakan, katanya.",
+"start": 522.0,
+"from": 15669,
+"dur": 35,
+"snap": 0.3
+},
+{
+"n": 177,
+"file": "177.jpg",
+"text": "Setelah ia tertidur,",
+"start": 524.0,
+"from": 15704,
+"dur": 46,
+"snap": -0.52
+},
+{
+"n": 178,
+"file": "178.jpg",
+"text": "kamu membuka halaman demi halaman.",
+"start": 525.0,
+"from": 15750,
+"dur": 71,
+"snap": 0.0
+},
+{
+"n": 179,
+"file": "179.jpg",
+"text": "Ada catatan makanan,",
+"start": 528.0,
+"from": 15821,
+"dur": 49,
+"snap": -0.64
+},
+{
+"n": 180,
+"file": "180.jpg",
+"text": "denah klinik,",
+"start": 529.0,
+"from": 15870,
+"dur": 95,
+"snap": 0.0
+},
+{
+"n": 181,
+"file": "181.jpg",
+"text": "lalu kamu menemukan tulisan besar di halaman terakhir.",
+"start": 532.0,
+"from": 15965,
+"dur": 100,
+"snap": 0.17
+},
+{
+"n": 182,
+"file": "182.jpg",
+"text": "Jika aku lupa lagi,",
+"start": 536.0,
+"from": 16065,
+"dur": 55,
+"snap": -0.51
+},
+{
+"n": 183,
+"file": "183.jpg",
+"text": "jangan percaya cerita orang yang bersamaku.",
+"start": 537.0,
+"from": 16120,
+"dur": 96,
+"snap": 0.34
+},
+{
+"n": 184,
+"file": "184.jpg",
+"text": "Di bawahnya tergambar wajahmu.",
+"start": 541.0,
+"from": 16216,
+"dur": 80,
+"snap": -0.48
+},
+{
+"n": 185,
+"file": "185.jpg",
+"text": "Kamu menatap sahabatmu yang sedang tidur.",
+"start": 543.0,
+"from": 16296,
+"dur": 73,
+"snap": 0.19
+},
+{
+"n": 186,
+"file": "186.jpg",
+"text": "Apakah ia pernah melihatmu melakukan sesuatu yang berbahaya?",
+"start": 546.0,
+"from": 16369,
+"dur": 111,
+"snap": -0.37
+},
+{
+"n": 187,
+"file": "187.jpg",
+"text": "Apakah kamu menyembunyikan rahasia darinya",
+"start": 550.0,
+"from": 16480,
+"dur": 80,
+"snap": -0.68
+},
+{
+"n": 188,
+"file": "188.jpg",
+"text": "lalu melupakannya sendiri?",
+"start": 552.0,
+"from": 16560,
+"dur": 62,
+"snap": 0.0
+},
+{
+"n": 189,
+"file": "189.jpg",
+"text": "Sebelum sempat mencari jawaban,",
+"start": 554.0,
+"from": 16622,
+"dur": 58,
+"snap": 0.07
+},
+{
+"n": 190,
+"file": "190.jpg",
+"text": "terdengar tiga ketukan.",
+"start": 556.0,
+"from": 16680,
+"dur": 128,
+"snap": 0.0
+},
+{
+"n": 191,
+"file": "191.jpg",
+"text": "Kali ini bukan dari pintu besi merah.",
+"start": 560.0,
+"from": 16808,
+"dur": 52,
+"snap": 0.27
+},
+{
+"n": 192,
+"file": "192.jpg",
+"text": "Suaranya datang dari pintu ruang tunggu",
+"start": 562.0,
+"from": 16860,
+"dur": 90,
+"snap": 0.0
+},
+{
+"n": 193,
+"file": "193.jpg",
+"text": "tepat di belakangmu.",
+"start": 565.0,
+"from": 16950,
+"dur": 50,
+"snap": 0.0
+},
+{
+"n": 194,
+"file": "194.jpg",
+"text": "Padahal beberapa detik lalu,",
+"start": 567.0,
+"from": 17000,
+"dur": 70,
+"snap": -0.32
+},
+{
+"n": 195,
+"file": "195.jpg",
+"text": "koridor itu kosong.",
+"start": 569.0,
+"from": 17070,
+"dur": 30,
+"snap": 0.0
+},
+{
+"n": 196,
+"file": "196.jpg",
+"text": "Dan sebuah suara yang kamu kenal berbisik dari luar.",
+"start": 570.0,
+"from": 17100,
+"dur": 113,
+"snap": 0.0
+},
+{
+"n": 197,
+"file": "197.jpg",
+"text": "Jangan bangunkan dia.",
+"start": 574.0,
+"from": 17213,
+"dur": 56,
+"snap": -0.24
+}
+]
+}

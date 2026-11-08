@@ -1,0 +1,202 @@
+TIMELINE GAMBAR - SINKRON DENGAN AUDIO
+Pulau yang Lupa (Stickman Horror-Misteri)
+Total: sekitar 9:36.5 (akhir audio adalah perkiraan). 197 gambar, rasio 16:9.
+Format: nomor | mulai - selesai | durasi | file | narasi
+
+001 | 0:00.0 - 0:05.0 | 5.0s | 001.jpg | Sudah enam hari kamu terjebak di sebuah pulau yang dilanda wabah misterius.
+002 | 0:05.0 - 0:10.0 | 5.0s | 002.jpg | Pagi ini, sahabatmu menatapmu dengan ketakutan dan bertanya,
+003 | 0:10.0 - 0:11.0 | 1.0s | 003.jpg | kamu siapa?
+004 | 0:11.0 - 0:15.0 | 4.0s | 004.jpg | Padahal semalam kalian masih berbicara seperti biasa.
+005 | 0:15.0 - 0:17.0 | 2.0s | 005.jpg | Dan sebelum hari ini berakhir,
+006 | 0:17.0 - 0:21.0 | 4.0s | 006.jpg | kamu akan menemukan sesuatu yang jauh lebih mengerikan.
+007 | 0:21.0 - 0:25.0 | 4.0s | 007.jpg | Mungkin selama ini, kamu juga sudah kehilangan ingatan.
+008 | 0:25.0 - 0:30.0 | 5.0s | 008.jpg | Semuanya dimulai ketika kalian datang ke pulau kecil untuk berlibur.
+009 | 0:30.0 - 0:35.0 | 5.0s | 009.jpg | Kamu hanya punya sebuah pelabuhan, beberapa permukiman, dan klinik kesehatan di dekat bukit.
+010 | 0:35.0 - 0:40.0 | 5.0s | 010.jpg | Pada hari pertama, seorang nelayan ditemukan berjalan tanpa tujuan.
+011 | 0:40.0 - 0:42.0 | 2.0s | 011.jpg | Ia lupa alamat rumahnya.
+012 | 0:42.0 - 0:46.0 | 4.0s | 012.jpg | Besoknya, seorang pedagang tidak mengenali anaknya sendiri.
+013 | 0:46.0 - 0:51.0 | 5.0s | 013.jpg | Kemudian lebih banyak penduduk mulai melupakan percakapan yang baru saja terjadi.
+014 | 0:51.0 - 0:54.0 | 3.0s | 014.jpg | Dalam tiga hari, kepanikan menyebar ke seluruh pulau.
+015 | 0:54.0 - 0:56.0 | 2.0s | 015.jpg | Tak seorang pun tahu penyebabnya.
+016 | 0:56.0 - 1:01.0 | 5.0s | 016.jpg | Ada yang menuduh air minum, ada yang menyebut penyakit menular.
+017 | 1:01.0 - 1:04.0 | 3.0s | 017.jpg | Petugas kesehatan hanya bisa memastikan satu hal.
+018 | 1:04.0 - 1:10.0 | 6.0s | 018.jpg | Sebagian penderita masih mengingat masa kecil, tetapi kesulitan menyimpan ingatan baru.
+019 | 1:10.0 - 1:13.0 | 3.0s | 019.jpg | Kapal penumpang berhenti beroperasi.
+020 | 1:13.0 - 1:16.0 | 3.0s | 020.jpg | Pelabuhan ditutup. Telepon mulai sulit tersambung.
+021 | 1:16.0 - 1:18.0 | 2.0s | 021.jpg | Kalian gagal meninggalkan pulau,
+022 | 1:18.0 - 1:22.0 | 4.0s | 022.jpg | lalu berlindung di klinik yang tiba-tiba ditinggalkan petugasnya.
+023 | 1:22.0 - 1:24.0 | 2.0s | 023.jpg | Sebelum pelabuhan ditutup,
+024 | 1:24.0 - 1:28.0 | 4.0s | 024.jpg | kalian sempat melihat seorang petugas menempel pengumuman evakuasi.
+025 | 1:28.0 - 1:33.0 | 5.0s | 025.jpg | Ia meminta penduduk berkumpul di dermaga sebelum matahari terbenam.
+026 | 1:33.0 - 1:38.0 | 5.0s | 026.jpg | Tetapi ketika kalian tiba, kapal yang dijanjikan tidak pernah datang.
+027 | 1:38.0 - 1:42.0 | 4.0s | 027.jpg | Yang tersisa hanya koper-koper terbuka dan sandal berserakan.
+028 | 1:42.0 - 1:46.0 | 4.0s | 028.jpg | Seorang pria tua terus mengulang bahwa putrinya sedang menjemput,
+029 | 1:46.0 - 1:50.0 | 4.0s | 029.jpg | meskipun ia sendiri baru saja melihat putrinya dibawa ke klinik.
+030 | 1:50.0 - 1:54.0 | 4.0s | 030.jpg | Kamu ingin menolongnya, tetapi sahabatmu menarik lenganmu.
+031 | 1:54.0 - 2:00.0 | 6.0s | 031.jpg | Kalian tidak tahu apa yang akan terjadi jika tetap berada di pelabuhan sampai malam.
+032 | 2:00.0 - 2:03.0 | 3.0s | 032.jpg | Di ruang tunggu, kalian menemukan kursi terbalik,
+033 | 2:03.0 - 2:07.0 | 4.0s | 033.jpg | bekas berserakan, dan pesan tertempel di dinding.
+034 | 2:07.0 - 2:10.0 | 3.0s | 034.jpg | Kalau mulai lupa, tulis semuanya.
+035 | 2:10.0 - 2:13.0 | 3.0s | 035.jpg | Sejak itu, kalian membuat buku catatan bersama.
+036 | 2:13.0 - 2:18.0 | 5.0s | 036.jpg | Setiap pagi kamu menuliskan tanggal, persediaan makanan, dan tempat kalian berada.
+037 | 2:18.0 - 2:24.0 | 6.0s | 037.jpg | Kalian berjanji, siapapun yang masih mengingat harus membantu temannya.
+038 | 2:24.0 - 2:29.0 | 5.0s | 038.jpg | Janji sederhana itu terasa penting, meskipun kalian berharap tidak perlu menggunakannya.
+039 | 2:29.0 - 2:32.0 | 3.0s | 039.jpg | Pada hari ke-6, kamu terbangun sendirian.
+040 | 2:32.0 - 2:35.0 | 3.0s | 040.jpg | Selimut sahabatmu tergeletak di lantai.
+041 | 2:35.0 - 2:38.0 | 3.0s | 041.jpg | Lalu terdengar suara barang jatuh dari ruang pemeriksaan.
+042 | 2:38.0 - 2:43.0 | 5.0s | 042.jpg | Ketika pintunya dibuka, ia berdiri di sudut sambil menggenggam gunting.
+043 | 2:43.0 - 2:44.0 | 1.0s | 043.jpg | Kamu memanggil namanya.
+044 | 2:44.0 - 2:48.0 | 4.0s | 044.jpg | Ia malah mundur, mengangkat gunting, dan berteriak.
+045 | 2:48.0 - 2:50.0 | 2.0s | 045.jpg | Jangan dekat-dekat! Kamu siapa?
+046 | 2:50.0 - 2:55.0 | 5.0s | 046.jpg | Tidak ada tanda ia sedang bercanda. Wajahnya benar-benar ketakutan.
+047 | 2:55.0 - 2:59.0 | 4.0s | 047.jpg | Kamu menunjukkan buku catatan dan foto kalian berdua.
+048 | 2:59.0 - 3:04.0 | 5.0s | 048.jpg | Ia melihat wajahnya di layar ponsel, lalu membaca seluruh halaman pertama.
+049 | 3:04.0 - 3:06.0 | 2.0s | 049.jpg | Perlahan, tangannya turun.
+050 | 3:06.0 - 3:09.0 | 3.0s | 050.jpg | Aku percaya tulisan ini, katanya.
+051 | 3:09.0 - 3:11.0 | 2.0s | 051.jpg | Tapi aku sama sekali tidak ingat kamu.
+052 | 3:11.0 - 3:14.0 | 3.0s | 052.jpg | Kalimat itu membuat dadamu sesak.
+053 | 3:14.0 - 3:19.0 | 5.0s | 053.jpg | Orang yang selama bertahun-tahun mengenalmu, kini memandangmu seperti orang asing.
+054 | 3:19.0 - 3:24.0 | 5.0s | 054.jpg | Namun air bersih tinggal satu botol, dan makanan hanya beberapa bungkus biskuit.
+055 | 3:24.0 - 3:26.0 | 2.0s | 055.jpg | Kalian harus bergerak!
+056 | 3:26.0 - 3:28.0 | 2.0s | 056.jpg | Kamu mengajaknya mencari gudang persediaan.
+057 | 3:28.0 - 3:32.0 | 4.0s | 057.jpg | Sepanjang koridor, ia terus menanyakan pertanyaan yang sama.
+058 | 3:32.0 - 3:33.0 | 1.0s | 058.jpg | Kita di mana?
+059 | 3:33.0 - 3:36.0 | 3.0s | 059.jpg | Lima menit kemudian, pertanyaan itu muncul lagi.
+060 | 3:36.0 - 3:39.0 | 3.0s | 060.jpg | Kamu mencoba menguji ingatannya dengan tiga kata.
+061 | 3:39.0 - 3:42.0 | 3.0s | 061.jpg | Kunci, gelas, jam.
+062 | 3:42.0 - 3:46.0 | 4.0s | 062.jpg | Setelah berjalan sebentar, ia tidak mampu mengulang satupun.
+063 | 3:46.0 - 3:49.0 | 3.0s | 063.jpg | Kamu ingin marah karena lelah mengulang jawaban.
+064 | 3:49.0 - 3:53.0 | 4.0s | 064.jpg | Tetapi melihat kebingungannya, kamu justru merasa bersalah.
+065 | 3:53.0 - 3:56.0 | 3.0s | 065.jpg | Gudang akhirnya ditemukan, terkunci dari luar.
+066 | 3:56.0 - 3:59.0 | 3.0s | 066.jpg | Kunci cadangan terselip di laci meja pendaftaran.
+067 | 3:59.0 - 4:05.0 | 6.0s | 067.jpg | Di dalamnya ada makanan kemasan, beberapa botol air, senter, dan radio portable.
+068 | 4:05.0 - 4:06.0 | 1.0s | 068.jpg | Kalian hampir bersorak!
+069 | 4:06.0 - 4:10.0 | 4.0s | 069.jpg | Saat radio dinyalakan, suara berdesis memenuhi ruangan.
+070 | 4:10.0 - 4:15.0 | 5.0s | 070.jpg | Setelah beberapa kali memutar frekuensi, muncul pesan terputus-putus.
+071 | 4:15.0 - 4:19.0 | 4.0s | 071.jpg | Untuk siapapun yang masih berada di klinik, jangan buka pintu belakang.
+072 | 4:19.0 - 4:22.0 | 3.0s | 072.jpg | Pesan itu kemudian berulang dari awal.
+073 | 4:22.0 - 4:24.0 | 2.0s | 073.jpg | Rupanya rekaman otomatis.
+074 | 4:24.0 - 4:28.0 | 4.0s | 074.jpg | Saat menemukan air, kamu segera memberi sahabatmu satu botol.
+075 | 4:28.0 - 4:31.0 | 3.0s | 075.jpg | Ia menolak karena mengira kalian belum saling mengenal.
+076 | 4:31.0 - 4:35.0 | 4.0s | 076.jpg | Kamu menjelaskan kembali bahwa kalian sudah berteman lama.
+077 | 4:35.0 - 4:38.0 | 3.0s | 077.jpg | Ia bertanya apa yang biasanya kalian lakukan bersama.
+078 | 4:38.0 - 4:45.0 | 7.0s | 078.jpg | Kamu menyebut perjalanan, pertengkaran kecil, dan malam-malam ketika kalian saling menemani menghadapi masalah.
+079 | 4:45.0 - 4:49.0 | 4.0s | 079.jpg | Ia tersenyum tipis, tetapi senyum itu menghilang sewaktu ia bertanya.
+080 | 4:49.0 - 4:52.0 | 3.0s | 080.jpg | Kenapa aku tidak bisa mengingat semua itu?
+081 | 4:52.0 - 4:54.0 | 2.0s | 081.jpg | Kamu tidak punya jawaban.
+082 | 4:54.0 - 5:00.0 | 6.0s | 082.jpg | Kamu hanya menyimpan botol tersebut di tangannya, berharap paling tidak ia masih mau menerimanya.
+083 | 5:00.0 - 5:02.0 | 2.0s | 083.jpg | Kamu mengikuti koridor menuju belakang klinik.
+084 | 5:02.0 - 5:06.0 | 4.0s | 084.jpg | Di ujungnya berdiri pintu besi merah terlilit rantai.
+085 | 5:06.0 - 5:11.0 | 5.0s | 085.jpg | Pada tembok di sebelahnya terdapat goresan panjang seperti bekas sesuatu yang diseret.
+086 | 5:11.0 - 5:13.0 | 2.0s | 086.jpg | Sahabatmu berhenti mendadak.
+087 | 5:13.0 - 5:16.0 | 3.0s | 087.jpg | Ia menatap pintu, lalu berbisik.
+088 | 5:16.0 - 5:18.0 | 2.0s | 088.jpg | Aku pernah ada di sini.
+089 | 5:18.0 - 5:19.0 | 1.0s | 089.jpg | Di baliknya ada seseorang.
+090 | 5:19.0 - 5:25.0 | 6.0s | 090.jpg | Kamu memintanya menjelaskan, namun beberapa detik kemudian ia mengerutkan dahi.
+091 | 5:25.0 - 5:25.8 | 0.8s | 091.jpg | Pintu apa?
+092 | 5:25.8 - 5:29.0 | 3.2s | 092.jpg | Ingatan yang baru muncul itu sudah hilang.
+093 | 5:29.0 - 5:30.0 | 1.0s | 093.jpg | Tiba-tiba terdengar ketukan.
+094 | 5:30.0 - 5:33.0 | 3.0s | 094.jpg | Tiga kali dari sisi lain pintu.
+095 | 5:33.0 - 5:36.0 | 3.0s | 095.jpg | Tok, tok, tok.
+096 | 5:36.0 - 5:38.0 | 2.0s | 096.jpg | Sahabatmu ingin membukanya.
+097 | 5:38.0 - 5:41.0 | 3.0s | 097.jpg | Menurutnya mungkin ada orang yang membutuhkan pertolongan.
+098 | 5:41.0 - 5:44.0 | 3.0s | 098.jpg | Kamu mengingat pesan radio dan menahan tangannya.
+099 | 5:44.0 - 5:46.0 | 2.0s | 099.jpg | Kalian bertengkar.
+100 | 5:46.0 - 5:48.0 | 2.0s | 100.jpg | Katamu kita harus saling percaya.
+101 | 5:48.0 - 5:50.0 | 2.0s | 101.jpg | Ucapnya dengan mata berkaca-kaca.
+102 | 5:50.0 - 5:53.0 | 3.0s | 102.jpg | Tapi kamu memperlakukanku seperti ancaman.
+103 | 5:53.0 - 5:54.0 | 1.0s | 103.jpg | Kamu terdiam.
+104 | 5:54.0 - 5:57.0 | 3.0s | 104.jpg | Akhirnya kalian sepakat mencari informasi terlebih dahulu.
+105 | 5:57.0 - 6:00.0 | 3.0s | 105.jpg | Meski ketukan itu terus terbayang di kepala.
+106 | 6:00.0 - 6:04.0 | 4.0s | 106.jpg | Di ruang arsip, kamu menemukan alat perekam kecil.
+107 | 6:04.0 - 6:07.0 | 3.0s | 107.jpg | Suara petugas terdengar ketika tombolnya ditekan.
+108 | 6:07.0 - 6:08.0 | 1.0s | 108.jpg | Catatan hari kelima.
+109 | 6:08.0 - 6:11.0 | 3.0s | 109.jpg | Beberapa pasien kehilangan ingatan setelah tidur.
+110 | 6:11.0 - 6:13.0 | 2.0s | 110.jpg | Yang lain lupa dalam hitungan menit.
+111 | 6:13.0 - 6:16.0 | 3.0s | 111.jpg | Nomor satu masih mampu menyembunyikan gejalanya.
+112 | 6:16.0 - 6:19.0 | 3.0s | 112.jpg | Rekaman berhenti akibat suara benturan.
+113 | 6:19.0 - 6:21.0 | 2.0s | 113.jpg | Disusul teriakan singkat.
+114 | 6:21.0 - 6:24.0 | 3.0s | 114.jpg | Pada bagian belakang alat tertulis angka 01.
+115 | 6:24.0 - 6:27.0 | 3.0s | 115.jpg | Kalian menemukan daftar pasien dalam Mac berdebu.
+116 | 6:27.0 - 6:29.0 | 2.0s | 116.jpg | Nomor dua adalah sahabatmu.
+117 | 6:29.0 - 6:32.0 | 3.0s | 117.jpg | Nama pasien nomor satu sudah dicoret hitam.
+118 | 6:32.0 - 6:34.0 | 2.0s | 118.jpg | Sebelum meninggalkan ruang arsip,
+119 | 6:34.0 - 6:38.0 | 4.0s | 119.jpg | kamu melihat jam dinding berhenti pada pukul 2 lewat 3 menit.
+120 | 6:38.0 - 6:41.0 | 3.0s | 120.jpg | Di lantai tergeletak kartu akses dengan ujung patah.
+121 | 6:41.0 - 6:44.0 | 3.0s | 121.jpg | Kartu itu memiliki bekas noda merah tua,
+122 | 6:44.0 - 6:47.0 | 3.0s | 122.jpg | tetapi kamu tidak berani memastikan asalnya.
+123 | 6:47.0 - 6:50.0 | 3.0s | 123.jpg | Sahabatmu menunjuk foto petugas yang tergantung di dinding.
+124 | 6:50.0 - 6:53.0 | 3.0s | 124.jpg | Aku pernah melihat orang ini, katanya.
+125 | 6:53.0 - 6:55.0 | 2.0s | 125.jpg | Kamu buru-buru bertanya kapan.
+126 | 6:55.0 - 6:58.0 | 3.0s | 126.jpg | Ia memejamkan mata, berusaha mengingat,
+127 | 6:58.0 - 7:00.0 | 2.0s | 127.jpg | lalu mulai menangis.
+128 | 7:00.0 - 7:01.0 | 1.0s | 128.jpg | Semakin keras ia mencoba,
+129 | 7:01.0 - 7:03.0 | 2.0s | 129.jpg | semakin bingung dirinya.
+130 | 7:03.0 - 7:07.0 | 4.0s | 130.jpg | Akhirnya kamu berhenti bertanya dan mengajaknya keluar.
+131 | 7:07.0 - 7:08.0 | 1.0s | 131.jpg | Untuk pertama kalinya,
+132 | 7:08.0 - 7:11.0 | 3.0s | 132.jpg | kamu takut mencari jawaban justru menyakitinya.
+133 | 7:11.0 - 7:13.0 | 2.0s | 133.jpg | Di bawah angka itu tercatat,
+134 | 7:13.0 - 7:16.0 | 3.0s | 134.jpg | tidak menyadari kehilangan ingatannya sendiri.
+135 | 7:16.0 - 7:18.0 | 2.0s | 135.jpg | Kamu merasa tengkukmu dingin.
+136 | 7:18.0 - 7:21.0 | 3.0s | 136.jpg | Sejak pagi, kamu yakin hanya sahabatmu yang sakit.
+137 | 7:21.0 - 7:25.0 | 4.0s | 137.jpg | Tetapi saat mencoba mengingat malam sebelumnya,
+138 | 7:25.0 - 7:26.0 | 1.0s | 138.jpg | kamu kosong.
+139 | 7:26.0 - 7:28.0 | 2.0s | 139.jpg | Kalian makan, lalu tidur.
+140 | 7:28.0 - 7:30.0 | 2.0s | 140.jpg | Setidaknya begitu ceritanya.
+141 | 7:30.0 - 7:33.0 | 3.0s | 141.jpg | Kamu membuka galeri ponsel dan menemukan video
+142 | 7:33.0 - 7:35.0 | 2.0s | 142.jpg | yang direkam pukul 2 dini hari.
+143 | 7:35.0 - 7:36.0 | 1.0s | 143.jpg | Dalam video itu,
+144 | 7:36.0 - 7:40.0 | 4.0s | 144.jpg | kamu berdiri di depan pintu merah sambil memegang kunci.
+145 | 7:40.0 - 7:42.0 | 2.0s | 145.jpg | Sahabatmu yang merekam dari belakang,
+146 | 7:42.0 - 7:44.0 | 2.0s | 146.jpg | memohon agar kamu menjauh.
+147 | 7:44.0 - 7:46.0 | 2.0s | 147.jpg | Suaramu sendiri terdengar jelas.
+148 | 7:46.0 - 7:48.0 | 2.0s | 148.jpg | Kalau besok aku lupa,
+149 | 7:48.0 - 7:49.0 | 1.0s | 149.jpg | jangan ceritakan semuanya.
+150 | 7:49.0 - 7:51.0 | 2.0s | 150.jpg | Video berhenti mendadak.
+151 | 7:51.0 - 7:55.0 | 4.0s | 151.jpg | Kamu memutarnya lagi,
+152 | 7:55.0 - 7:55.6 | 0.6s | 152.jpg | tapi berbeda.
+153 | 7:55.6 - 7:58.0 | 2.4s | 153.jpg | Kamu sama sekali tidak ingat pernah berdiri di sana.
+154 | 7:58.0 - 8:00.0 | 2.0s | 154.jpg | Ternyata selama ini,
+155 | 8:00.0 - 8:02.0 | 2.0s | 155.jpg | kamu juga mengalami kekosongan ingatan.
+156 | 8:02.0 - 8:03.0 | 1.0s | 156.jpg | Bedanya,
+157 | 8:03.0 - 8:06.0 | 3.0s | 157.jpg | kamu cukup percaya diri untuk tidak menyadarinya.
+158 | 8:06.0 - 8:07.0 | 1.0s | 158.jpg | Sore itu,
+159 | 8:07.0 - 8:10.0 | 3.0s | 159.jpg | kalian duduk berhadapan di ruang tunggu.
+160 | 8:10.0 - 8:11.0 | 1.0s | 160.jpg | Kamu menunjukkan video tersebut
+161 | 8:11.0 - 8:16.0 | 5.0s | 161.jpg | dan mengakui bahwa ada hal-hal yang tidak bisa kamu ingat.
+162 | 8:16.0 - 8:17.0 | 1.0s | 162.jpg | Sahabatmu lama terdiam.
+163 | 8:17.0 - 8:19.0 | 2.0s | 163.jpg | Kemudian berkata,
+164 | 8:19.0 - 8:21.0 | 2.0s | 164.jpg | kalau kita berdua lupa,
+165 | 8:21.0 - 8:22.0 | 1.0s | 165.jpg | siapa yang bisa kita percaya?
+166 | 8:22.0 - 8:24.0 | 2.0s | 166.jpg | Kamu membuka buku bersama
+167 | 8:24.0 - 8:27.0 | 3.0s | 167.jpg | dan menulis semua temuan hari itu.
+168 | 8:27.0 - 8:28.0 | 1.0s | 168.jpg | Kalian sepakat,
+169 | 8:28.0 - 8:31.0 | 3.0s | 169.jpg | tidak akan menyembunyikan informasi lagi.
+170 | 8:31.0 - 8:32.0 | 1.0s | 170.jpg | Untuk sesaat,
+171 | 8:32.0 - 8:35.0 | 3.0s | 171.jpg | janji itu membuat ruangan terasa lebih aman.
+172 | 8:35.0 - 8:36.0 | 1.0s | 172.jpg | Menjelang malam,
+173 | 8:36.0 - 8:39.0 | 3.0s | 173.jpg | sahabatmu menyerahkan buku kecil bersampul biru.
+174 | 8:39.0 - 8:40.0 | 1.0s | 174.jpg | Ini milikku.
+175 | 8:40.0 - 8:42.0 | 2.0s | 175.jpg | Kalau besok aku lupa,
+176 | 8:42.0 - 8:44.0 | 2.0s | 176.jpg | bacakan, katanya.
+177 | 8:44.0 - 8:45.0 | 1.0s | 177.jpg | Setelah ia tertidur,
+178 | 8:45.0 - 8:48.0 | 3.0s | 178.jpg | kamu membuka halaman demi halaman.
+179 | 8:48.0 - 8:49.0 | 1.0s | 179.jpg | Ada catatan makanan,
+180 | 8:49.0 - 8:52.0 | 3.0s | 180.jpg | denah klinik,
+181 | 8:52.0 - 8:56.0 | 4.0s | 181.jpg | lalu kamu menemukan tulisan besar di halaman terakhir.
+182 | 8:56.0 - 8:57.0 | 1.0s | 182.jpg | Jika aku lupa lagi,
+183 | 8:57.0 - 9:01.0 | 4.0s | 183.jpg | jangan percaya cerita orang yang bersamaku.
+184 | 9:01.0 - 9:03.0 | 2.0s | 184.jpg | Di bawahnya tergambar wajahmu.
+185 | 9:03.0 - 9:06.0 | 3.0s | 185.jpg | Kamu menatap sahabatmu yang sedang tidur.
+186 | 9:06.0 - 9:10.0 | 4.0s | 186.jpg | Apakah ia pernah melihatmu melakukan sesuatu yang berbahaya?
+187 | 9:10.0 - 9:12.0 | 2.0s | 187.jpg | Apakah kamu menyembunyikan rahasia darinya
+188 | 9:12.0 - 9:14.0 | 2.0s | 188.jpg | lalu melupakannya sendiri?
+189 | 9:14.0 - 9:16.0 | 2.0s | 189.jpg | Sebelum sempat mencari jawaban,
+190 | 9:16.0 - 9:20.0 | 4.0s | 190.jpg | terdengar tiga ketukan.
+191 | 9:20.0 - 9:22.0 | 2.0s | 191.jpg | Kali ini bukan dari pintu besi merah.
+192 | 9:22.0 - 9:25.0 | 3.0s | 192.jpg | Suaranya datang dari pintu ruang tunggu
+193 | 9:25.0 - 9:27.0 | 2.0s | 193.jpg | tepat di belakangmu.
+194 | 9:27.0 - 9:29.0 | 2.0s | 194.jpg | Padahal beberapa detik lalu,
+195 | 9:29.0 - 9:30.0 | 1.0s | 195.jpg | koridor itu kosong.
+196 | 9:30.0 - 9:34.0 | 4.0s | 196.jpg | Dan sebuah suara yang kamu kenal berbisik dari luar.
+197 | 9:34.0 - 9:36.5 | 2.5s | 197.jpg | Jangan bangunkan dia.
