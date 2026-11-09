@@ -17,13 +17,27 @@ export const S2 = { from: 255, dur: 180 }; // "Di sebuah pulau kecil di Samudra 
 export const S3 = { from: 435, dur: 180 }; // "Padahal ... Selat Sunda, di antara Jawa dan Sumatra."
 export const KRAKATAU_SAMPLE_FRAMES = 630; // + 0.5 s black tail
 
+// The distant boom (audio cue at 2.7 s): a short punch-in plus a decaying shake, so the picture reacts to the sound.
+const BOOM_F = 81;
+const addV = (a: V3, b: V3): V3 => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
+const boomKick = (f: number, at: number): V3 => {
+  const t = f - at;
+  if (t < 0) return [0, 0, 0];
+  const push = -0.07 * interpolate(t, [0, 7], [0, 1], { ...clamp, easing: ease });
+  const amp = 0.006 * Math.exp(-t / 7);
+  return [amp * Math.sin(t * 2.1), amp * Math.cos(t * 2.7 + 1), push];
+};
+
 const shot1: Shot = {
   img: "s01",
   zn: 1.2,
   zf: 7,
   cam: (f): CamState => ({
     // whip-in over the waves, then a slow push toward the island
-    pos: f < 14 ? lerp3(f, [0, 14], [[0, 0, 0.02], [0, 0.006, -0.12]], ease) : lerp3(f, [14, 255], [[0, 0.006, -0.12], [0, 0.02, -0.3]]),
+    pos: addV(
+      f < 14 ? lerp3(f, [0, 14], [[0, 0, 0.02], [0, 0.006, -0.12]], ease) : lerp3(f, [14, 255], [[0, 0.006, -0.12], [0, 0.02, -0.24]]),
+      boomKick(f, BOOM_F),
+    ),
     look: [0, 0.06, -8],
     roll: 0,
     crop: 1.06,
