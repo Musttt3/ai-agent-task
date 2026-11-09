@@ -2,7 +2,7 @@
 import React from "react";
 import { AbsoluteFill, Audio, Easing, Img, interpolate, random, Sequence, staticFile, useCurrentFrame } from "remotion";
 import data from "./data.json";
-import { Captions, Frost, Headline, Hook, ListCard, Snow, Stamp, TempPill, Vignette, Warm, Word } from "./ui";
+import { Captions, DangerCard, Embers, Frost, Hook, KeyTablets, Mood, Snow, Stamp, SurvivalBar, TempPill, Vignette, Warm, Word } from "./ui";
 
 export const PURBA_FPS = data.fps;
 export const PURBA_TOTAL = data.total;
@@ -18,30 +18,53 @@ const at = (shot: number, word: string) => {
   return w.from;
 };
 
-type Move = "pushIn" | "pullBack" | "panL" | "panR" | "tiltUp" | "tiltDown" | "punch" | "arc";
+type Move = "pushIn" | "pullBack" | "panL" | "panR" | "tiltUp" | "tiltDown" | "punch" | "arc" | "drift";
 type In = "cut" | "whip" | "flash" | "whiteout" | "punch";
 const SHOT: Record<number, { move: Move; in?: In; shake?: boolean }> = {
   1: { move: "pushIn" },
-  2: { move: "pushIn", in: "punch" },
-  3: { move: "panR", in: "whip" },
-  4: { move: "pullBack", in: "whip" },
+  2: { move: "drift", in: "punch" },
+  3: { move: "drift", in: "whip" },
+  4: { move: "drift", in: "whip" },
   5: { move: "tiltUp", in: "punch" },
   6: { move: "pushIn", in: "whip" },
-  7: { move: "pushIn", in: "punch" },
-  8: { move: "arc", in: "whip" },
+  7: { move: "drift", in: "punch" },
+  8: { move: "drift", in: "whip" },
   9: { move: "tiltDown", in: "flash" },
-  10: { move: "pushIn", in: "whip" },
+  10: { move: "drift", in: "whip" },
   11: { move: "pushIn", in: "whiteout" },
-  12: { move: "punch", in: "punch", shake: true },
+  12: { move: "drift", in: "punch", shake: true },
   13: { move: "pullBack", in: "whip" },
   14: { move: "pullBack", in: "whiteout", shake: true },
-  15: { move: "arc", in: "flash" },
+  15: { move: "drift", in: "flash" },
   16: { move: "punch", in: "punch" },
   17: { move: "punch", in: "punch" },
   18: { move: "pullBack", in: "flash" },
 };
 const SNOWY = new Set([1, 2, 3, 4, 9, 11, 12, 13, 14, 15, 16]);
 const WARM = new Set([7, 8, 16, 18]);
+const EMBERS = new Set([7, 8, 16, 18]);
+// Per-shot placement (px from top, 1920 tall) worked out from where the characters stand
+// in each picture; TikTok UI keeps the top ~120 px and bottom ~380 px busy.
+const LAYOUT: Record<number, { cap: number; gfx?: number; mood: Mood }> = {
+  1: { cap: 1300, gfx: 200, mood: "cold" },
+  2: { cap: 200, mood: "cold" },
+  3: { cap: 1465, mood: "cold" },
+  4: { cap: 200, mood: "cold" },
+  5: { cap: 1180, gfx: 1340, mood: "warm" },
+  6: { cap: 1430, gfx: 200, mood: "warm" },
+  7: { cap: 1400, gfx: 170, mood: "warm" },
+  8: { cap: 1430, gfx: 1300, mood: "warm" },
+  9: { cap: 1450, gfx: 200, mood: "cold" },
+  10: { cap: 340, gfx: 200, mood: "warm" },
+  11: { cap: 1250, gfx: 700, mood: "danger" },
+  12: { cap: 330, gfx: 180, mood: "danger" },
+  13: { cap: 800, gfx: 180, mood: "danger" },
+  14: { cap: 420, gfx: 190, mood: "danger" },
+  15: { cap: 1440, gfx: 118, mood: "hope" },
+  16: { cap: 480, gfx: 180, mood: "warm" },
+  17: { cap: 1250, gfx: 180, mood: "warm" },
+  18: { cap: 480, gfx: 180, mood: "warm" },
+};
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 const Shot: React.FC<{ s: ShotD; nextIn?: In }> = ({ s, nextIn }) => {
@@ -51,6 +74,7 @@ const Shot: React.FC<{ s: ShotD; nextIn?: In }> = ({ s, nextIn }) => {
   let sc = 1.08, x = 0, y = 0, rot = 0;
   switch (cfg.move) {
     case "pushIn": sc = 1.04 + 0.14 * p; break;
+    case "drift": sc = 1.02 + 0.05 * p; break;
     case "pullBack": sc = 1.2 - 0.14 * p; break;
     case "panL": sc = 1.18; x = 5 - 10 * p; break;
     case "panR": sc = 1.18; x = -5 + 10 * p; break;
@@ -100,6 +124,25 @@ const Fx: React.FC<{ name: string; from: number; vol: number; dir?: string; loop
   </Sequence>
 );
 
+const SURVIVAL = [
+  { icon: "pelt" as const, label: "KULIT HEWAN", at: at(5, "kulit") },
+  { icon: "cave" as const, label: "GUA", at: at(6, "gua") },
+  { icon: "fire" as const, label: "API NONSTOP", at: at(7, "api") },
+  { icon: "meat" as const, label: "MAKANAN BERLEMAK", at: at(8, "berlemak") },
+  { icon: "group" as const, label: "BERKELOMPOK", at: at(9, "kelompok") },
+  { icon: "warmth" as const, label: "SALING MENGHANGATKAN", at: at(10, "saling") },
+];
+const DANGER = [
+  { shot: 11, word: "padam", icon: "fire" as const, label: "API PADAM" },
+  { shot: 12, word: "basah", icon: "wet" as const, label: "PAKAIAN BASAH" },
+  { shot: 13, word: "terpisah", icon: "alone" as const, label: "TERPISAH" },
+];
+const KEYS = [
+  { icon: "fire" as const, label: "API", at: at(16, "api") },
+  { icon: "cave" as const, label: "PERLINDUNGAN", at: at(17, "perlindungan") },
+  { icon: "group" as const, label: "KEBERSAMAAN", at: at(18, "kebersamaan") },
+];
+
 const span = (a: number, b: number) => ({ from: S(a).from, durationInFrames: S(b).from + S(b).dur - S(a).from });
 
 export const PurbaVideo: React.FC = () => {
@@ -111,6 +154,7 @@ export const PurbaVideo: React.FC = () => {
         <Sequence key={s.n} from={s.from} durationInFrames={s.dur} name={`${s.n} ${s.text.slice(0, 28)}`}>
           <Shot s={s} nextIn={shots[i + 1] ? SHOT[shots[i + 1].n].in : undefined} />
           {WARM.has(s.n) ? <Warm /> : null}
+          {EMBERS.has(s.n) ? <Embers /> : null}
           {SNOWY.has(s.n) ? <Snow wind={s.n === 14 ? 0.4 : 1.4} count={s.n === 14 ? 90 : 140} /> : null}
         </Sequence>
       ))}
@@ -122,70 +166,39 @@ export const PurbaVideo: React.FC = () => {
       </Sequence>
       <Vignette />
 
-      {/* ---- motion graphics ---- */}
+      {/* ---- motion graphics (positions chosen per shot so nothing covers a character) ---- */}
       <Sequence {...span(1, 1)} name="Hook">
-        <Hook jaketAt={at(1, "jaket") - S(1).from} sepatuAt={at(1, "sepatu") - S(1).from} />
+        <Hook top={200} jaketAt={at(1, "jaket") - S(1).from} sepatuAt={at(1, "sepatu") - S(1).from} />
       </Sequence>
-      <Sequence {...span(2, 2)} name="Pertanyaan">
-        <Headline text={"BISA\nSELAMAT?"} color="white" size={150} />
+      <Sequence from={at(3, "bisa")} durationInFrames={at(3, "tapi") - at(3, "bisa") + 10} name="BISA">
+        <Stamp top={1325} text="BISA!" mood="hope" size={90} />
       </Sequence>
-      <Sequence from={at(3, "bisa")} durationInFrames={at(3, "tapi") - at(3, "bisa")} name="BISA">
-        <Stamp text="BISA!" color={"#4ee08a"} />
-      </Sequence>
-      <Sequence from={at(3, "tapi")} durationInFrames={S(4).from - at(3, "tapi")} name="tidak mudah">
-        <Headline text={"TAPI\nTIDAK MUDAH"} color="#ff6b6b" size={120} rotate={-3} />
-      </Sequence>
-      <Sequence from={at(4, "sendirian")} durationInFrames={S(5).from - at(4, "sendirian")} name="tidak sendirian">
-        <Headline text={"TIDAK\nSENDIRIAN"} color={"#9fe3ff"} size={120} />
-      </Sequence>
-      <Sequence {...span(5, 10)} name="Checklist bertahan">
-        <ListCard
-          title="CARA BERTAHAN"
-          tone="good"
-          items={[
-            { label: "KULIT HEWAN", at: at(5, "kulit") - S(5).from },
-            { label: "GUA", at: at(6, "gua") - S(5).from },
-            { label: "API NONSTOP", at: at(7, "api") - S(5).from },
-            { label: "MAKANAN BERLEMAK", at: at(8, "berlemak") - S(5).from },
-            { label: "BERKELOMPOK", at: at(9, "kelompok") - S(5).from },
-            { label: "SALING MENGHANGATKAN", at: at(10, "saling") - S(5).from },
-          ]}
-        />
-      </Sequence>
-      <Sequence {...span(11, 13)} name="Bahaya">
-        <ListCard
-          title="BAHAYA!"
-          tone="bad"
-          items={[
-            { label: "API PADAM", at: at(11, "padam") - S(11).from },
-            { label: "PAKAIAN BASAH", at: at(12, "basah") - S(11).from },
-            { label: "TERPISAH", at: at(13, "terpisah") - S(11).from },
-          ]}
-        />
-      </Sequence>
+      {[5, 6, 7, 8, 9, 10].map((n) => (
+        <Sequence key={`bar${n}`} from={S(n).from} durationInFrames={S(n).dur} name={`Bertahan ${n}`}>
+          <SurvivalBar top={LAYOUT[n].gfx!} items={SURVIVAL.map((it) => ({ ...it, at: it.at - S(n).from }))} />
+        </Sequence>
+      ))}
+      {DANGER.map((d) => (
+        <Sequence key={d.label} from={S(d.shot).from} durationInFrames={S(d.shot).dur} name={`Bahaya ${d.label}`}>
+          <DangerCard top={LAYOUT[d.shot].gfx!} icon={d.icon} label={d.label} delay={at(d.shot, d.word) - S(d.shot).from} />
+        </Sequence>
+      ))}
       <Sequence from={at(14, "minus")} durationInFrames={S(15).from - at(14, "minus")} name="-30 besar">
-        <Headline text="-30°C" color={"#9fe3ff"} size={230} top={300} />
+        <Stamp top={LAYOUT[14].gfx!} text="-30°C" mood="danger" size={150} />
       </Sequence>
       <Sequence from={at(15, "bertahan")} durationInFrames={S(16).from - at(15, "bertahan")} name="bisa bertahan">
-        <Stamp text="BISA BERTAHAN!" color={"#ffd23f"} />
+        <Stamp top={LAYOUT[15].gfx!} text="BISA BERTAHAN!" mood="hope" size={66} />
       </Sequence>
-      <Sequence {...span(16, 18)} name="3 kunci">
-        <ListCard
-          title="3 KUNCI BERTAHAN"
-          tone="key"
-          top={260}
-          items={[
-            { label: "API", at: at(16, "api") - S(16).from },
-            { label: "PERLINDUNGAN", at: at(17, "perlindungan") - S(16).from },
-            { label: "KEBERSAMAAN", at: at(18, "kebersamaan") - S(16).from },
-          ]}
-        />
-      </Sequence>
+      {[16, 17, 18].map((n) => (
+        <Sequence key={`key${n}`} from={S(n).from} durationInFrames={S(n).dur} name={`Kunci ${n}`}>
+          <KeyTablets top={LAYOUT[n].gfx!} items={KEYS.map((k) => ({ ...k, at: k.at - S(n).from }))} />
+        </Sequence>
+      ))}
       <Sequence {...span(2, 15)} name="Suhu">
         <TempPillSwitch />
       </Sequence>
 
-      <Captions words={words} />
+      <Captions words={words} layout={(n) => ({ top: LAYOUT[n].cap, mood: LAYOUT[n].mood })} />
 
       {/* ---- sound ---- */}
       <Audio src={staticFile("purba/narasi.mp3")} />
