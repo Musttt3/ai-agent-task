@@ -12,7 +12,8 @@ pip install numpy scipy pillow fonttools brotli faster-whisper soundfile matplot
 python3 -I src/prep.py          # graded prints + desk/paper/grain textures -> assets/gen
 python3 -I src/sound.py         # sound effects + voiceover mix -> out/mix.wav, cues.md
 ./render_all.sh                 # 4K frames in parallel chunks -> out/video_silent.mp4
-ffmpeg -i out/video_silent.mp4 -i out/mix.wav -c:v copy -c:a aac -b:a 256k -shortest senyum_suharto.mp4
+ffmpeg -i out/video_silent.mp4 -i out/mix.wav -map 0:v -map 1:a -c:v libx264 -preset slow -b:v 42M -maxrate 55M -bufsize 84M \
+  -pix_fmt yuv420p -profile:v high -level 5.2 -c:a aac -b:a 256k -ar 48000 -movflags +faststart out/senyum_suharto_4k.mp4
 ```
 
 Review tools:
@@ -44,3 +45,5 @@ Review tools:
 | 17 | 58.08 | tetapi ... keputusan dan tindakannya. | official papers | KEPUTUSAN stamp (61.40), TINDAKAN stamp (62.40) |
 
 Sound cues: see `cues.md`.
+
+The final MP4 (334 MB) is too large for git (over GitHub's 100 MB file limit), so it lives in `out/` and isn't committed.
