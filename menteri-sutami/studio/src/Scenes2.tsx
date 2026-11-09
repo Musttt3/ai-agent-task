@@ -87,12 +87,12 @@ export const S10Bocor: React.FC = () => (
     filter="saturate(0.55) contrast(1.08) brightness(0.88) hue-rotate(-6deg)" />
 );
 export const S10Hujan: React.FC = () => (
-  <VideoFull src="vid/roofrain.mp4" vw={1920} vh={1080} posX={0.7} filter="saturate(0.5) contrast(1.1) brightness(1.05)" zoom={[1.0, 1.06]} dur={69} />
+  <VideoFull src="vid/puddle.mp4" filter="saturate(0.35) contrast(1.1) brightness(0.85) hue-rotate(-8deg)" zoom={[1.12, 1.0]} dur={69} />
 );
 
 // ===================================================== S11: illness
 export const S11Monitor: React.FC = () => (
-  <VideoCard src="vid/monitor.mp4" filter="saturate(0.6) contrast(1.1)" y={620} />
+  <VideoCard src="vid/monitor.mp4" filter="saturate(0.6) contrast(1.1) brightness(1.1)" y={640} inner={1.6} origin="50% 55%" bgBright={0.6} />
 );
 export const S11Ranjang: React.FC = () => (
   <KenBurns src="img/ai_bocor_sakit.jpg" iw={AI.w} ih={AI.h} dur={51}

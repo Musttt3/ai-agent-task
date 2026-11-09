@@ -53,7 +53,7 @@ Foto (Wikimedia Commons):
 - Slide rule J Klawun Hannover in box.jpg — CC0
 
 Video (Mixkit, Mixkit License): pensil di cetak biru (34274), pekerja beton (14729), jarum jahit (32433),
-tetesan hujan dari genteng (2209), monitor jantung (49226), lilin (48919), beras jatuh (46354).
+tetesan air di genangan (2208), monitor jantung (49226), lilin (48919), beras jatuh (46354).
 
 Audio:
 - Musik: dibuat dengan ElevenLabs Music (instrumental, 66 dtk), 2 bar diulang agar akhir musik jatuh di akhir video.

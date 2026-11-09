@@ -13,7 +13,7 @@ clip() { # id start dur width name
 clip 34274 3 2.6 1280 pencil 720
 clip 14729 2 2.4 1280 concrete 720
 clip 32433 12 2.6 1280 needle 720
-clip 2209 4 3.4 1080 roofrain 1080
+clip 2208 3 2.6 1280 puddle 720
 clip 49226 2 2.6 1280 monitor 720
 clip 48919 5 3.2 1280 candle 720
 clip 46354 4 1.6 1280 rice 720

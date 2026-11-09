@@ -177,20 +177,20 @@ export const S4Jenius: React.FC = () => {
 };
 
 // ===================================================== B-roll helpers
-export const VideoCard: React.FC<{ src: string; filter?: string; y?: number; w?: number; rot?: number; children?: React.ReactNode }> = ({
-  src, filter = "", y = 640, w = 1000, rot = 0, children,
+export const VideoCard: React.FC<{ src: string; filter?: string; y?: number; w?: number; rot?: number; inner?: number; origin?: string; bgBright?: number; children?: React.ReactNode }> = ({
+  src, filter = "", y = 640, w = 1000, rot = 0, inner = 1, origin = "50% 50%", bgBright = 0.45, children,
 }) => {
   const f = useCurrentFrame();
   const h = (w * 9) / 16;
   const s = interpolate(f, [0, 60], [1, 1.05], clamp);
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      <AbsoluteFill style={{ scale: "3.6", filter: `blur(26px) brightness(0.45) ${filter}` }}>
+      <AbsoluteFill style={{ scale: "3.6", filter: `blur(26px) brightness(${bgBright}) ${filter}` }}>
         <OffthreadVideo src={staticFile(src)} muted style={{ width: W, height: (W * 9) / 16, position: "absolute", top: (H - (W * 9) / 16) / 2 }} />
       </AbsoluteFill>
       <div style={{ position: "absolute", left: (W - w) / 2, top: y, width: w, height: h, rotate: `${rot}deg`, scale: `${s}`,
         boxShadow: "0 30px 70px rgba(0,0,0,0.6)", border: "6px solid rgba(255,255,255,0.9)", overflow: "hidden" }}>
-        <OffthreadVideo src={staticFile(src)} muted style={{ width: "100%", height: "100%", objectFit: "cover", filter }} />
+        <OffthreadVideo src={staticFile(src)} muted style={{ width: "100%", height: "100%", objectFit: "cover", filter, scale: `${inner}`, transformOrigin: origin }} />
         {children}
       </div>
     </AbsoluteFill>
