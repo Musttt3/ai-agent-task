@@ -1,0 +1,45 @@
+# Sound cues
+
+All synthesised in `src/sound.py`. Length 63.333 s, 48 kHz stereo, normalised to -14 LUFS.
+
+-   0.00 s  room tone + low drone (swells under the map and the final move)
+-   0.06 s  typewriter: SUHARTO strip
+-   0.60 s  grease pencil: circle round the smile
+-   3.04 s  pin: index card
+-   3.40 s  felt pen: Senang?
+-   4.35 s  string pulled: portrait -> book
+-   6.67 s  letterpress: THE / SMILING / GENERAL
+-   8.62 s  graphite pencil: 'Jenderal yang tersenyum'
+-  13.66 s  pin: 1969 tag
+-  13.74 s  tag swings
+-  14.75 s  string pulled: book -> contact sheet
+-  20.28 s  light switch: lights out on 'Namun'
+-  20.50 s  string pulled in the dark
+-  20.90 s  flashlight click
+-  21.30 s  low pulse under the flashlight
+-  21.55 s  typewriter: JOHN ROOSA strip
+-  22.05 s  typewriter: SEJARAWAN strip
+-  23.72 s  tracing paper slides over the face
+-  24.37 s  pin: tracing paper
+-  26.95 s  light switch: lights back on on 'Kesan'
+-  27.10 s  string pulled: down to the map
+-  28.20 s  low bloom: network spreads
+-  28.42 s  pin: Jakarta hub
+-  30.02 s  string network: 26 pulls, last lands on 'dominan'
+-  35.02 s  print lands: military photo, pinned at Jakarta
+-  36.90 s  print lands + pin: protest photo
+-  37.50 s  pins: corners of the protest photo
+-  37.62 s  strings snap across the protest photo on 'dibatasi'
+-  39.72 s  print lands + pin: rice field
+-  41.40 s  air: long pull back over the board
+-  45.25 s  string pulled: map -> contact sheet
+-  48.10 s  pin + felt pen: SETUJU?
+-  49.10 s  pin + felt pen: KESAL?
+-  50.50 s  pin + felt pen: MENJAGA SIKAP?
+-  52.00 s  string pulled: back to the portrait
+-  55.30 s  felt pen: ? on 'tafsir'
+-  58.20 s  air: the big pull back over the board
+-  58.20 s  string pulled: portrait -> the papers
+-  61.40 s  stamp: KEPUTUSAN
+-  62.40 s  stamp: TINDAKAN
+-  62.98 s  light switch: lights out

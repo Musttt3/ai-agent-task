@@ -47,3 +47,20 @@ Review tools:
 Sound cues: see `cues.md`.
 
 The final MP4 (334 MB) is too large for git (over GitHub's 100 MB file limit), so it lives in `out/` and isn't committed.
+
+## Evidence-board cut (versi papan bukti)
+
+Same voiceover, beats and format (2160x3840, 30 fps). The style follows the
+detective-board reference: cork board, red push pins, red string pulled from clue to
+clue, black name strips typed on, a manila 1969 tag, red handwritten index cards,
+lights out with a flashlight on John Roosa ("Namun" 20.3 to "Kesan" 27.0),
+a string network from Jakarta to the whole archipelago (complete on "dominan" 32.02),
+two strings snapping across the protest photo on "dibatasi", and lights out at the end.
+
+```bash
+python3 -I src/prep_board.py                                   # cork textures
+python3 -I src/sound_board.py                                  # -> out/mix_board.wav, cues_board.md
+./render_all.sh src/render_board.mjs out/video_board_silent.mp4
+ffmpeg -i out/video_board_silent.mp4 -i out/mix_board.wav -map 0:v -map 1:a -c:v libx264 -preset slow -b:v 42M -maxrate 55M \
+  -bufsize 84M -pix_fmt yuv420p -profile:v high -level 5.2 -c:a aac -b:a 256k -ar 48000 -movflags +faststart out/senyum_suharto_papanbukti_4k.mp4
+```
