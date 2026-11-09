@@ -1,0 +1,18 @@
+// node stills.mjs out/dir/prefix f1,f2,... [scale]  -> renders stills with one bundle
+import { bundle } from "@remotion/bundler";
+import { renderStill, selectComposition, openBrowser } from "@remotion/renderer";
+import path from "path";
+import fs from "fs";
+const [prefix, framesArg, scaleArg] = process.argv.slice(2);
+const frames = framesArg.split(",").map(Number);
+const scale = Number(scaleArg ?? 0.5);
+fs.mkdirSync(path.dirname(prefix), { recursive: true });
+const serveUrl = await bundle({ entryPoint: path.resolve("src/index.ts"), publicDir: path.resolve("public") });
+const browser = await openBrowser("chrome", { browserExecutable: "/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell", chromiumOptions: { gl: "swangle" } });
+const composition = await selectComposition({ serveUrl, id: "Sutami", puppeteerInstance: browser });
+for (const f of frames) {
+  const t0 = Date.now();
+  await renderStill({ composition, serveUrl, frame: f, output: `${prefix}${String(f).padStart(4, "0")}.jpg`, imageFormat: "jpeg", jpegQuality: 88, scale, puppeteerInstance: browser, chromiumOptions: { gl: "swangle" } });
+  console.log("frame", f, Date.now() - t0, "ms");
+}
+await browser.close({ silent: true });

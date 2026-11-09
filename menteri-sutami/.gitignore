@@ -1,0 +1,5 @@
+# Mixkit files: licensed for use in the edit, not for redistribution -> fetched by fetch_assets.sh
+studio/public/vid/
+audio/sfx_mixkit/
+__pycache__/
+audio/mix.wav
