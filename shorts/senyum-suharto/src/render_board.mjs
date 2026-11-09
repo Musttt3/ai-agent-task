@@ -306,9 +306,9 @@ O.portrait.strip = makeStrip('SUHARTO', 150, 7);
 }
 // SENANG? index card pinned over the portrait's lower right
 {
-  const [cx, cy] = L2W(O.portrait, 300, 640);
-  place('cardS', makeCard(1250, 560), cx, cy, 4, { R: 30, appear: 3.12 });
-  O.cardS.hand = makeHand('Senang?', 'Caveat', 330, RED, 51, 1100);
+  const [cx, cy] = L2W(O.portrait, 1110, 330); // beside the print, so the return to the face stays clean
+  place('cardS', makeCard(900, 420), cx, cy, 4, { R: 30, appear: 3.12 });
+  O.cardS.hand = makeHand('Senang?', 'Caveat', 270, RED, 51, 790);
   O.cardS.write = [3.40, 3.88];
 }
 
@@ -560,9 +560,9 @@ const P = (id, lx, ly, vh, r = 0) => { const [x, y] = L2W(O[id], lx, ly); return
 const Wp = (x, y, vh, r = 0) => ({ x, y, vh, r });
 const HOLDS = [
   [0.00, 1.55, P('portrait', -40, 300, 3000, 0.4), P('portrait', -10, -140, 2350, 0.2)],
-  [2.25, 4.30, P('portrait', -20, 120, 3500, -0.3), P('portrait', 90, 120, 3330, -0.4)],
+  [2.25, 4.30, P('portrait', 560, 150, 3800, -0.3), P('portrait', 640, 150, 3650, -0.4)],
   [5.55, 9.90, P('book', 0, -640, 2950, 0.5), P('book', 20, -420, 2700, 0.3)],
-  [10.90, 14.70, P('book', 0, 80, 4350, 0), P('book', -160, 170, 4050, -0.3)],
+  [10.90, 14.70, P('book', 200, 80, 4350, 0), P('book', 120, 200, 4100, -0.3)],
   [16.35, 18.85, P('contact', 0, -1500, 2750, -0.4), P('contact', 0, -250, 2900, -0.2)],
   [19.55, 20.45, P('contact', 0, 330, 5350, 0), P('contact', 180, 280, 5200, 0.2)],
   [21.35, 23.45, Wp(5760, 6720, 4400, 0.3), Wp(5730, 6950, 4150, 0.4)],
@@ -575,7 +575,7 @@ const HOLDS = [
   [47.10, 48.90, P('contact', 0, -1300, 3500, -0.3), P('contact', 0, -1120, 3450, -0.3)],
   [49.45, 50.40, P('contact', 0, 250, 3500, 0), P('contact', 0, 400, 3480, 0)],
   [50.85, 51.90, P('contact', 0, 1720, 3550, 0.2), P('contact', 0, 1780, 3650, 0.2)],
-  [53.75, 55.85, P('portrait', 150, -300, 3000, 0.3), P('portrait', 180, -320, 2800, 0.3)],
+  [53.75, 55.85, P('portrait', -20, -320, 2750, 0.3), P('portrait', -10, -330, 2650, 0.3)],
   [55.95, 58.00, P('portrait', 10, -360, 2350, 0.1), P('portrait', 20, -190, 2120, 0)],
   [60.95, 61.65, P('docA', 0, -520, 3300, -0.3), P('docA', 60, -330, 3450, -0.2)],
   [62.55, 63.50, Wp(5030, 19880, 4700, 0.2), Wp(5060, 19960, 4580, 0.2)],
@@ -641,11 +641,12 @@ function camAt(t) {
 
 // ------------------------------------------------------------------ hero spotlight
 const HERO = [
-  [0, 'portrait', 0.55], [4.0, 'book', 0.55], [15.6, 'contact', 0.55], [20.6, 'roosa', 0.55], [23.8, 'peci', 0.58],
+  [0, 'portrait', 0.55], [1.9, 'portraitCard', 0.55], [4.0, 'book', 0.55], [15.6, 'contact', 0.55], [20.6, 'roosa', 0.55], [23.8, 'peci', 0.58],
   [27.6, 'map', 0.66], [33.9, 'militer', 0.55], [35.95, 'protes', 0.58], [39.3, 'sawah', 0.55], [41.6, 'map', 0.62],
   [45.3, 'contact', 0.55], [52.9, 'portrait', 0.55], [58.6, 'docs', 0.5],
 ];
 function heroRect(id) {
+  if (id === 'portraitCard') { const o = O.portrait, [cx, cy] = L2W(o, 420, -60); return { cx, cy, w: o.w + 1100, h: o.h + 300, r: o.rot }; }
   if (id === 'roosa') return { cx: 5760, cy: 6720, w: 2350, h: 3550, r: 0 };
   if (id === 'docs') return { cx: 5000, cy: 19600, w: 2600, h: 4500, r: 0 };
   if (id === 'sawahWide') { const o = O.sawah; return { cx: o.cx, cy: o.cy, w: o.w + 500, h: o.h + 500, r: o.rot }; }
@@ -817,7 +818,7 @@ const DYN = {
       // question mark beside the smile on "tafsir"
       if (t > 55.3) {
         const q = QMARK, p = eOut3(prog(t, 55.3, 55.62));
-        ctx.save(); ctx.translate(560, -330); ctx.rotate(8 * DEG);
+        ctx.save(); ctx.translate(490, -330); ctx.rotate(8 * DEG);
         ctx.drawImage(q.tex, 0, 0, q.tex.width, q.tex.height * p, -q.w / 2, -q.h / 2, q.w, q.h * p);
         ctx.restore();
       }
