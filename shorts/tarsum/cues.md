@@ -1,0 +1,42 @@
+# Sound cues
+
+All synthesised in `src/sound.py`. Length 68.367 s, 48 kHz stereo, normalised to -14 LUFS.
+
+-   0.00 s  room tone + low drone (swells under the map and the final move)
+-   3.30 s  pin: Ciamis
+-   3.54 s  typewriter: CIAMIS strip
+-   6.75 s  string pulled: Ciamis -> Tarsum
+-   7.60 s  pin: 3 MEI 2024 tag
+-   7.68 s  tag swings
+-   9.38 s  typewriter: TARSUM strip
+-  11.00 s  string pulled: Tarsum -> Yanti
+-  11.22 s  pin: Yanti's card
+-  11.58 s  typewriter: YANTI strip
+-  13.92 s  light switch: lights out on 'Tak berhenti di situ'
+-  14.50 s  flashlight click
+-  14.60 s  string pulled down into the dark
+-  15.00 s  low pulse under the flashlight
+-  17.62 s  pin: basin illustration
+-  19.72 s  grease pencil: circle round the basin on 'baskom'
+-  20.72 s  light switch: lights back on
+-  20.90 s  string pulled: basin -> village map
+-  22.66 s  marker: route around the village
+-  25.84 s  pins: houses he went to, on 'warga'
+-  26.20 s  string pulled: village -> RT
+-  26.76 s  typewriter: KETUA RT strip
+-  28.22 s  typewriter: YOYO TARYA strip
+-  33.70 s  print lands + pin: frightened villagers (AI illustration)
+-  36.76 s  print lands + pin: arrest (AI illustration)
+-  38.30 s  string pulled: arrest -> goat pen
+-  41.56 s  stamp: BANGKRUT
+-  44.84 s  print lands + pin: RSJ (AI illustration)
+-  47.84 s  typewriter: 'gangguan jiwa'
+-  48.42 s  grease pencil: circle round 'gangguan jiwa'
+-  48.60 s  string pulled: exam -> case folder
+-  49.66 s  pin: SEPTEMBER 2024 tag
+-  52.90 s  stamp: DIHENTIKAN
+-  56.00 s  air: the long move back up the board
+-  58.70 s  pin: house of mourning (AI illustration)
+-  61.94 s  pin: question card
+-  62.04 s  felt pen: ? on 'pertanyaan'
+-  67.50 s  light switch: lights out on 'kekerasan'
