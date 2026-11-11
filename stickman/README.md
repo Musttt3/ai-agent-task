@@ -3,7 +3,8 @@
 Video YouTube 16:9 (1920x1080, 30 fps, 7:46) dari bahan di Google Drive `Helikopter/Helikopter.zip`:
 145 gambar berurutan, narasi ElevenLabs (7:44.8), naskah dan transkrip bertimestamp.
 
-Hasil akhir: `out/helikopter_zaman_purba.mp4`
+Hasil akhir: `out/helikopter_zaman_purba.mp4` (1080p, untuk upload YouTube) dan `out/preview_720p.mp4` (preview ringan).
+Keduanya disimpan lewat Git LFS (`git lfs pull` setelah clone).
 
 ## Gaya edit
 - Dasar: pergantian gambar dengan cut sederhana, satu gambar per kalimat narasi.
