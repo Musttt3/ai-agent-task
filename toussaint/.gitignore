@@ -1,0 +1,6 @@
+audio/
+assets/broll/raw/
+frames/
+out/
+node_modules/
+*.log
