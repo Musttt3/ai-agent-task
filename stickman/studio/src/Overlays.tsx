@@ -56,7 +56,7 @@ const CUES: Cue[] = [
   },
   {
     name: "Tidak ada bandara",
-    from: shotVoice(3) + 0.1,
+    from: wt("bandara", shotVoice(3)) - 0.2,
     to: shotStart(4) - 0.1,
     el: (fr) => {
       const a = wt("bandara", shotVoice(3));
