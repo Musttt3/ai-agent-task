@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill, Img, interpolate, Sequence, staticFile, useCurrentFrame } from "remotion";
-import { moveFor, SHAKE, Trans, TRANSITIONS } from "./edit";
+import { moveFor, Trans, TRANSITIONS } from "./edit";
 import { clamp, COLORS, easeIn, easeInOut, easeOut, f, H, SHOTS, shotEnd, TOTAL_FRAMES, W } from "./lib";
 
 // source pictures are 1376x768; cover 1920x1080
@@ -29,18 +29,6 @@ const kenBurns = (n: number, p: number) => {
     default:
       return { s: 1.0, x: 0, y: 0 };
   }
-};
-
-const shake = (n: number, frame: number, startF: number, endF: number) => {
-  const k = SHAKE[n];
-  if (!k) return { x: 0, y: 0, r: 0 };
-  const env = interpolate(frame, [startF, startF + 6, endF - 8, endF], [0.3, 1, 1, 0.2], clamp);
-  const a = 7 * k * env;
-  return {
-    x: a * (Math.sin(frame * 1.9) * 0.6 + Math.sin(frame * 3.7 + 1.3) * 0.4),
-    y: a * (Math.sin(frame * 2.3 + 0.7) * 0.6 + Math.sin(frame * 4.1 + 2.1) * 0.4),
-    r: 0.25 * k * env * Math.sin(frame * 1.3 + 0.4),
-  };
 };
 
 /** style contribution of a transition for one side of the cut. p runs 0..1 over the window. */
@@ -102,7 +90,6 @@ const transStyle = (t: Trans, role: "in" | "out", p: number): TS => {
 const Shot: React.FC<Props> = ({ n, from, startF, endF, tin, tout }) => {
   const frame = useCurrentFrame() + from;
   const kb = kenBurns(n, interpolate(frame, [startF, endF], [0, 1], clamp));
-  const sh = shake(n, frame, startF, endF);
 
   let st: TS = {};
   if (tin && pad(tin) && frame < startF + pad(tin)) {
@@ -117,9 +104,8 @@ const Shot: React.FC<Props> = ({ n, from, startF, endF, tin, tout }) => {
       <AbsoluteFill style={{ ...wrap, backgroundColor: COLORS.ink }}>
         <AbsoluteFill
           style={{
-            translate: `${kb.x + sh.x}px ${kb.y + sh.y}px`,
+            translate: `${kb.x}px ${kb.y}px`,
             scale: String(kb.s),
-            rotate: `${sh.r}deg`,
           }}
         >
           <Img

@@ -67,17 +67,6 @@ export const TRANSITIONS: Record<number, Trans> = {
   144: dissolve(22),
 };
 
-/** Shots that get a camera shake (strong wind, panic, flood). Value = strength. */
-export const SHAKE: Record<number, number> = {
-  11: 1,
-  13: 0.8,
-  27: 1.2,
-  28: 1,
-  30: 0.8,
-  72: 0.9,
-  80: 0.7,
-  100: 0.6,
-};
 
 export type Move = "in" | "out" | "left" | "right" | "up" | "still";
 const CYCLE: Move[] = ["in", "right", "out", "left", "in", "up"];
