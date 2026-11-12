@@ -7,6 +7,11 @@ def clean(s):
     s = re.sub(r"\s+", " ", s or "").strip()
     s = re.sub(r"^(.{3,}?)\1$", r"\1", s)                       # "Unknown authorUnknown author" -> "Unknown author"
     s = re.sub(r"label QS:\S+", "", s).strip()
+    m = re.search(r'title QS:P1476,\w+:"([^"]+)"?', s)              # Wikidata title template -> its title text
+    if m: s = s[:m.start()].strip() if len(s[:m.start()].strip()) > 8 else m.group(1)
+    s = re.sub(r"^(French|English|Français): ", "", s)
+    s = re.sub(r" – Artist \(.*$", "", s)
+    s = s.replace("20 mai 1800,8 Napoleon Crossing the Alps", "20 mai 1800")
     if s.startswith("http"): s = "Geographicus Rare Antique Maps (after John Stockdale, 1800)"
     return s
 out = ["SUMBER GAMBAR & VIDEO / IMAGE & VIDEO CREDITS", "",

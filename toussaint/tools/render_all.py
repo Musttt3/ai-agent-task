@@ -33,12 +33,16 @@ def chunk_assets(data, f0, f1):
             for a in ([o["asset"]] if o.get("asset") else []) + ([o["overlay"]["asset"]] if o.get("overlay") else []): used.add(a)
     return sorted(used)
 
-def signature(data, assets):
+def chunk_beats(data, f0, f1):
+    t0, t1 = f0 / 30, f1 / 30
+    return [b for b in data["beats"] if not (b["t1"] + 1.2 < t0 - 0.2 or b["t0"] - 1.2 > t1 + 0.2)]
+
+def signature(data, assets, f0, f1):
     h = hashlib.sha1()
     for a in assets:
         A = data["assets"][a]; p = os.path.join(ROOT, A.get("src") or A["dir"] + "/0001.jpg")
         h.update(f"{a}:{A.get('src', A.get('dir'))}:{os.path.getsize(p)}".encode())
-    h.update(hashlib.sha1(json.dumps([b for b in data["beats"]], sort_keys=True).encode()).digest())  # beat edits invalidate too
+    h.update(hashlib.sha1(json.dumps(chunk_beats(data, f0, f1) + [data.get("fx"), data.get("shakes"), data.get("stampTimes")], sort_keys=True).encode()).digest())  # edits to beats in/near this chunk invalidate it
     return h.hexdigest()
 
 def is_final(data, a):
@@ -54,7 +58,7 @@ def main():
         waiting = 0
         for i, f0, f1 in chunks:
             if i in taken: continue
-            out = os.path.join(OUT, f"c{i:03d}.mp4"); assets = chunk_assets(data, f0, f1); sig = signature(data, assets)
+            out = os.path.join(OUT, f"c{i:03d}.mp4"); assets = chunk_assets(data, f0, f1); sig = signature(data, assets, f0, f1)
             if os.path.exists(out) and open(out + ".sig").read() == sig if os.path.exists(out + ".sig") else False: continue
             if not all(is_final(data, a) for a in assets) and time.time() - START < ALLOW_INTERIM_AFTER: waiting += 1; continue
             taken.add(i); bj = os.path.join(OUT, f"beats_c{i:03d}.json"); shutil.copy(os.path.join(ROOT, "data", "beats.json"), bj)
@@ -80,7 +84,7 @@ def main():
         d = build()
         for i, f0, f1 in chunks:
             out = os.path.join(OUT, f"c{i:03d}.mp4"); a = chunk_assets(d, f0, f1)
-            if not (os.path.exists(out + ".sig") and open(out + ".sig").read() == signature(d, a)): return False
+            if not (os.path.exists(out + ".sig") and open(out + ".sig").read() == signature(d, a, f0, f1)): return False
         return True
     while not all_done():
         ts = [threading.Thread(target=worker, args=(k,)) for k in range(WORKERS)]
@@ -98,4 +102,10 @@ def main():
     log("FINAL", final)
 
 if __name__ == "__main__":
+    if "--resign" in sys.argv:   # re-stamp finished chunks with the current signature format (no re-render)
+        d = build(); fr = d["frames"]
+        for i in range((fr + CH - 1) // CH):
+            f0, f1 = i * CH, min(fr, (i + 1) * CH); out = os.path.join(OUT, f"c{i:03d}.mp4")
+            if os.path.exists(out + ".sig"): open(out + ".sig", "w").write(signature(d, chunk_assets(d, f0, f1), f0, f1))
+        sys.exit(0)
     main()
