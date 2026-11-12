@@ -2,6 +2,7 @@ import React from "react";
 import { AbsoluteFill, Audio, Composition, staticFile } from "remotion";
 import { FPS, H, TOTAL_FRAMES, W } from "./lib";
 import { CutOverlays, Shots } from "./Shots";
+import { Thumbnail } from "./Thumbnail";
 
 // Pictures + cuts/transitions + narration only (no motion graphics, no camera shake).
 const Helikopter: React.FC<{ audio: boolean }> = ({ audio }) => (
@@ -13,7 +14,8 @@ const Helikopter: React.FC<{ audio: boolean }> = ({ audio }) => (
 );
 
 export const Root: React.FC = () => (
-  <Composition
+  <>
+    <Composition
     id="Helikopter"
     component={Helikopter}
     durationInFrames={TOTAL_FRAMES}
@@ -21,5 +23,7 @@ export const Root: React.FC = () => (
     width={W}
     height={H}
     defaultProps={{ audio: true }}
-  />
+    />
+    <Composition id="Thumbnail" component={Thumbnail} durationInFrames={1} fps={FPS} width={1280} height={720} defaultProps={{ variant: "A" as const }} />
+  </>
 );
