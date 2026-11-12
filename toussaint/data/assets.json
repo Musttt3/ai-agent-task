@@ -1,0 +1,292 @@
+{
+ "_note": "id -> source. kind=commons (title on Wikimedia Commons) | pexels (local file supplied by user, Pexels licence). ilus=true -> 'ILUSTRASI' tag on the print. width = Wikimedia standard thumbnail width requested. Order = fetch priority.",
+ "b02_napoleon_ingres": {
+  "kind": "commons",
+  "title": "Jean_Auguste_Dominique_Ingres,_Portrait_de_Napoléon_Bonaparte_en_premier_consul.jpg"
+ },
+ "b05_toussaint_bust": {
+  "kind": "commons",
+  "title": "AduC 073Toussaint-Louverture (1748-1803).JPG"
+ },
+ "b06_legionaries_san_domingo": {
+  "kind": "commons",
+  "title": "January Suchodolski - Legionaries at San Domingo - MP 2606 - National Museum in Warsaw.jpg"
+ },
+ "b07_prise_du_cap_1802": {
+  "kind": "commons",
+  "title": "Prise du Cap Français par l'Armée Française, sous le Commandement du Général Leclerc ; le 15 et 20 Pluviose, An 10 (4-9 Février 1802) Le Capitaine Magon entre dans la Rade, il est reçu à coups de Canon par le... - btv1b6950306r.jpg",
+  "width": 3840
+ },
+ "b09_map_stockdale_1800": {
+  "kind": "commons",
+  "title": "1800 Stockdale Map of Hispaniola or Santo Domingo, West Indies (Haiti, Dominican Republic) - Geographicus - SantoDomingo-stockdale-1800.jpg",
+  "width": 3840
+ },
+ "b101_aedes_aegypti": {
+  "kind": "commons",
+  "title": "Aedes aegypti CDC9178.tif"
+ },
+ "b102_dessalines": {
+  "kind": "commons",
+  "title": "Jean-Jaques Dessalines (Fondateur de l'Independance d'Haiti).jpg"
+ },
+ "b104_acte_independance_1804": {
+  "kind": "commons",
+  "title": "Deklarasyon Endepandans Ayiti, 1804.djvu"
+ },
+ "b10_vue_du_cap_ponce": {
+  "kind": "commons",
+  "title": "Recueil de vues des lieux principaux de la colonie françoise de Saint-Domingue. gravées par les soins de M. Ponce... par M. Moreau de Saint-Méry... - btv1b52510633h (10 of 72).jpg",
+  "width": 3840
+ },
+ "b11_tall_ship": {
+  "kind": "pexels",
+  "file": "/home/user/inbox/doc2/Photos of the real people/15507261_2160_3840_30fps.mp4",
+  "pexels_id": "15507261",
+  "ss": 4,
+  "t": 5,
+  "ilus": true
+ },
+ "b12_cane_field": {
+  "kind": "pexels",
+  "file": "/home/user/inbox/doc2/Photos of the real people/16357486_1920_1080_30fps.mp4",
+  "pexels_id": "16357486",
+  "ss": 2,
+  "t": 5
+ },
+ "b12_coffee_beans": {
+  "kind": "pexels",
+  "file": "/home/user/inbox/doc2/Photos of the real people/20772454-uhd_3840_2160_24fps.mp4",
+  "pexels_id": "20772454",
+  "ss": 8,
+  "t": 5
+ },
+ "b13_cutting_cane_antigua_1823": {
+  "kind": "commons",
+  "title": "Slaves_cutting_the_sugar_cane_-_Ten_Views_in_the_Island_of_Antigua_(1823),_plate_IV_-_BL.jpg",
+  "ilus": true
+ },
+ "b14_sugar_mill_1681": {
+  "kind": "commons",
+  "title": "Travail_des_esclaves_dans_le_moulin_à_sucre,_1681,_par_César_de_Rochefort.jpg"
+ },
+ "b17_code_noir_1685": {
+  "kind": "commons",
+  "title": "Edit touchant la police des Isles de l'Amérique Françoise, Code Noir, 1685.djvu"
+ },
+ "b18_mortels_egaux_1794": {
+  "kind": "commons",
+  "title": "Les_Mortels_sont_égaux,_ce_n'est_pas_la_naissance_c'est_la_seule_vertu_qui_fait_la_différence.jpg",
+  "width": 3840
+ },
+ "b19_toussaint_rijks": {
+  "kind": "commons",
+  "title": "Portret van Toussaint Louverture, RP-P-1878-A-2156.jpg"
+ },
+ "b20_toussaint_a_cheval": {
+  "kind": "commons",
+  "title": "Portrait de Toussaint Louverture, à cheval1.jpg"
+ },
+ "b21_quill_writing": {
+  "kind": "pexels",
+  "file": "/home/user/inbox/doc2/Photos of the real people/11137423-hd_3840_2160_25fps.mp4",
+  "pexels_id": "11137423",
+  "ss": 5,
+  "t": 5,
+  "ilus": true
+ },
+ "b26_toussaint_kupfer_1806": {
+  "kind": "commons",
+  "title": "Toussaint_Louverture._Kupfer,_1806.jpg"
+ },
+ "b28_prise_bastille": {
+  "kind": "commons",
+  "title": "Prise_de_la_Bastille.jpg",
+  "width": 3840
+ },
+ "b29_declaration_droits": {
+  "kind": "commons",
+  "title": "Jean-Jacques-François_(dit_l'Aîné)_Le_Barbier_-_Déclaration_des_droits_de_l'homme_et_du_citoyen_-_P809_-_Musée_Carnavalet.jpg"
+ },
+ "b31_moi_libre_aussi_homme": {
+  "kind": "commons",
+  "title": "Révolution française. Portrait d'esclave libre. Noir Africain coiffé d'un bonnet d'affranchi. 1794. G.23466.jpg"
+ },
+ "b32_incendie_plaine_1791": {
+  "kind": "commons",
+  "title": "Vue des 40. jours d'incendie des habitations de la plaine du cap français. G.29486.jpg",
+  "width": 3840
+ },
+ "b33_fire_saint_domingo_1791": {
+  "kind": "commons",
+  "title": "Fire_in_Saint-Domingo_1791,_German_copper_engraving.jpg"
+ },
+ "b33_smoke": {
+  "kind": "pexels",
+  "file": "/home/user/inbox/doc2/Photos of the real people/12152708_3840_2160_60fps.mp4",
+  "pexels_id": "12152708",
+  "ss": 0.5,
+  "t": 5,
+  "ilus": true
+ },
+ "b34_incendie_cap_1793": {
+  "kind": "commons",
+  "title": "La incendie du Cap Francais 1802.jpg",
+  "note": "print is captioned juin 1793 despite the Commons title"
+ },
+ "b36_toussaint_standing": {
+  "kind": "commons",
+  "title": "19th century engraving of L'Ouverture.JPG"
+ },
+ "b40_map_tardieu_1802": {
+  "kind": "commons",
+  "title": "1802 Tardieu Map of Santo Domingo or Hispaniola, West Indies - Geographicus - StDomingue2-tardieu-1802.jpg"
+ },
+ "b47_moi_libre_aussi_femme": {
+  "kind": "commons",
+  "title": "Moi libre aussi - estampe - Boizot del.t ; Darcis sculp.t - btv1b52515411r.jpg"
+ },
+ "b48_planter_brunias": {
+  "kind": "commons",
+  "title": "Agostino Brunias - Planter and his Wife, with a Servant - Google Art Project.jpg",
+  "ilus": true
+ },
+ "b56_toussaint_signature": {
+  "kind": "commons",
+  "title": "Toussaint Louverture jpg.jpg"
+ },
+ "b61_lois_colonie_1801": {
+  "kind": "commons",
+  "title": "Lois de la colonie française de Saint-Domingue (IA b29315682).pdf"
+ },
+ "b64_toussaint_paris_musees": {
+  "kind": "commons",
+  "title": "Toussaint Louverture Général en Chef à S(t) Domingue. G.39307.jpg"
+ },
+ "b68_acte_insurrection_1801": {
+  "kind": "commons",
+  "title": "Acte écrit de Toussaint Louverture contre l'insurrection de 1801.jpg"
+ },
+ "b69_toussaint_colour_cheval": {
+  "kind": "commons",
+  "title": "Toussaint L'Ouverture.jpg"
+ },
+ "b72_constitution_1801": {
+  "kind": "commons",
+  "title": "Constitution de la colonie française de Saint-Domingue, 8 juillet 1801, page de titre.png"
+ },
+ "b77_proclamation_1801": {
+  "kind": "commons",
+  "title": "Le 1er juillet 1801, Toussaint-L'Ouverture proclame le Gouverneur général d'Haïti en présence des mandataires légalement convoqués et sous la Constitution de la république d'Haïti (lith. de Villain, r. de Sèvres No. 11).jpg"
+ },
+ "b81_ocean_waves": {
+  "kind": "pexels",
+  "file": "/home/user/inbox/doc2/Photos of the real people/10779129-hd_1920_1080_25fps.mp4",
+  "pexels_id": "10779129",
+  "ss": 3,
+  "t": 5,
+  "ilus": true
+ },
+ "b87_candle": {
+  "kind": "pexels",
+  "file": "/home/user/inbox/doc2/Photos of the real people/5767251-uhd_3840_2160_30fps.mp4",
+  "pexels_id": "5767251",
+  "ss": 6,
+  "t": 4
+ },
+ "b89_green_hills": {
+  "kind": "pexels",
+  "file": "/home/user/inbox/doc2/Photos of the real people/12456456_3840_2160_25fps.mp4",
+  "pexels_id": "12456456",
+  "ss": 3,
+  "t": 6,
+  "ilus": true
+ },
+ "b107_citadelle_laferriere": {
+  "kind": "commons",
+  "title": "Citadelle_Laferrière.jpg"
+ },
+ "b109_buste_fort_de_joux": {
+  "kind": "commons",
+  "title": "Fort_de_Joux_-_Toussaint_Louverture_1.jpg"
+ },
+ "b112_pantheon_memorial": {
+  "kind": "commons",
+  "title": "Memorial_to_Toussaint_Louverture_(Panthéon_de_Paris),_August_2023.JPG"
+ },
+ "b115_pantheon_inscription": {
+  "kind": "commons",
+  "title": "Panthéon_-_Inscription_à_la_mémoire_de_Toussaint_Louverture_(bgw17_0335).jpg",
+  "width": 3840
+ },
+ "b42_decret_abolition_1794": {
+  "kind": "commons",
+  "title": "Décret_d'abolition_de_l’esclavage_par_la_Convention-_Archives_nationales-BB-34-1-58.jpg"
+ },
+ "b43_rejouissances_1794": {
+  "kind": "commons",
+  "title": "Réjouissances_à_l'annonce_de_l'abolition_de_l'esclavage,_30_pluviôse_an_II.jpg"
+ },
+ "b46_insurrection_convention": {
+  "kind": "commons",
+  "title": "L'insurrection_des_esclaves_entre_dans_la_Convention._Jeanne_Odo_à_la_tribune.jpg",
+  "width": 3840
+ },
+ "b49_maitland_1798": {
+  "kind": "commons",
+  "title": "Le_général_Toussaint_L'Ouverture_recevant_le_général_anglais_Thomas_Maitland_le_30_mars_1798.jpg"
+ },
+ "b51_incendie_frontispiece": {
+  "kind": "commons",
+  "title": "Frontispiece_from_the_book_Saint-Domingue,_ou_Histoire_de_Ses_Révolutions._ca._1815.jpg"
+ },
+ "b52_toussaint_horseback_met": {
+  "kind": "commons",
+  "title": "Toussaint_Louverture_on_Horseback_MET_DP-21495-001.jpg"
+ },
+ "b54_toussaint_a_saint_domingue": {
+  "kind": "commons",
+  "title": "Toussaint_Louverture_à_Saint-Domingue.jpg"
+ },
+ "b67_andre_rigaud": {
+  "kind": "commons",
+  "title": "André_Rigaud.gif"
+ },
+ "b71_carte_colonie": {
+  "kind": "commons",
+  "title": "Carte_de_la_colonie_française_de_Saint-Domingue.jpg",
+  "fix": "remove phone-camera stamp (bottom-left)"
+ },
+ "b74_napoleon_gros": {
+  "kind": "commons",
+  "title": "Gros_-_First_Consul_Bonaparte.png"
+ },
+ "b78_napoleon_david": {
+  "kind": "commons",
+  "title": "Jacques_Louis_David_-_Bonaparte_franchissant_le_Grand_Saint-Bernard,_20_mai_1800_-_Google_Art_Project.jpg"
+ },
+ "b80_leclerc": {
+  "kind": "commons",
+  "title": "Général_CHARLES-EMMANUEL_LECLERC_(1772-1802).jpg"
+ },
+ "b83_crete_a_pierrot_1802": {
+  "kind": "commons",
+  "title": "Combat_et_prise_de_la_Crête-à-Pierrot_-_Auguste_Raffet.jpg"
+ },
+ "b88_lettre_napoleon_1802": {
+  "kind": "commons",
+  "title": "1802_Toussaint_Louverture_reçoit_une_lettre_de_Napoléon.jpg"
+ },
+ "b94_fort_de_joux": {
+  "kind": "commons",
+  "title": "Fort_de_Joux_02.jpg"
+ },
+ "b95_toussaint_au_fort_de_joux": {
+  "kind": "commons",
+  "title": "Toussaint_au_Fort_de_Joux.jpg"
+ },
+ "b96_cellule_plaque": {
+  "kind": "commons",
+  "title": "Cellule_de_Toussaint_Louverture_au_fort_de_Joux_-_buste_plaque.jpg"
+ }
+}

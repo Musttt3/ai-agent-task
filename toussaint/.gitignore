@@ -4,3 +4,5 @@ frames/
 out/
 node_modules/
 *.log
+assets/placeholder/
+data/beats_*.json

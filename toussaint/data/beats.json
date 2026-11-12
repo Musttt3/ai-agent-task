@@ -1,0 +1,6860 @@
+{
+ "fps": 30,
+ "width": 1920,
+ "height": 1080,
+ "fov": 32,
+ "duration": 588.121,
+ "frames": 17644,
+ "assets": {
+  "b02_napoleon_ingres": {
+   "type": "image",
+   "src": "assets/broll/b02_napoleon_ingres.jpg",
+   "ilus": false
+  },
+  "b05_toussaint_bust": {
+   "type": "image",
+   "src": "assets/broll/b05_toussaint_bust.jpg",
+   "ilus": false
+  },
+  "b06_legionaries_san_domingo": {
+   "type": "image",
+   "src": "assets/broll/b06_legionaries_san_domingo.jpg",
+   "ilus": false
+  },
+  "b07_prise_du_cap_1802": {
+   "type": "image",
+   "src": "assets/broll/b07_prise_du_cap_1802.jpg",
+   "ilus": false
+  },
+  "b09_map_stockdale_1800": {
+   "type": "image",
+   "src": "assets/broll/b09_map_stockdale_1800.jpg",
+   "ilus": false
+  },
+  "b101_aedes_aegypti": {
+   "type": "image",
+   "src": "assets/broll/b101_aedes_aegypti.jpg",
+   "ilus": false
+  },
+  "b102_dessalines": {
+   "type": "image",
+   "src": "assets/broll/b102_dessalines.jpg",
+   "ilus": false
+  },
+  "b104_acte_independance_1804": {
+   "type": "image",
+   "src": "assets/broll/b104_acte_independance_1804.jpg",
+   "ilus": false
+  },
+  "b107_citadelle_laferriere": {
+   "type": "image",
+   "src": "assets/broll_interim/b107_citadelle_laferriere.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b109_buste_fort_de_joux": {
+   "type": "image",
+   "src": "assets/broll_interim/b109_buste_fort_de_joux.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b10_vue_du_cap_ponce": {
+   "type": "image",
+   "src": "assets/broll/b10_vue_du_cap_ponce.jpg",
+   "ilus": false
+  },
+  "b112_pantheon_memorial": {
+   "type": "image",
+   "src": "assets/broll_interim/b112_pantheon_memorial.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b115_pantheon_inscription": {
+   "type": "image",
+   "src": "assets/broll_interim/b115_pantheon_inscription.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b11_tall_ship": {
+   "type": "video",
+   "dir": "frames/vid/b11_tall_ship",
+   "count": 150,
+   "fps": 30,
+   "ilus": true
+  },
+  "b12_cane_field": {
+   "type": "video",
+   "dir": "frames/vid/b12_cane_field",
+   "count": 150,
+   "fps": 30,
+   "ilus": false
+  },
+  "b12_coffee_beans": {
+   "type": "video",
+   "dir": "frames/vid/b12_coffee_beans",
+   "count": 150,
+   "fps": 30,
+   "ilus": false
+  },
+  "b13_cutting_cane_antigua_1823": {
+   "type": "image",
+   "src": "assets/broll/b13_cutting_cane_antigua_1823.jpg",
+   "ilus": true
+  },
+  "b14_sugar_mill_1681": {
+   "type": "image",
+   "src": "assets/broll/b14_sugar_mill_1681.jpg",
+   "ilus": false
+  },
+  "b17_code_noir_1685": {
+   "type": "image",
+   "src": "assets/broll/b17_code_noir_1685.jpg",
+   "ilus": false
+  },
+  "b18_mortels_egaux_1794": {
+   "type": "image",
+   "src": "assets/broll/b18_mortels_egaux_1794.jpg",
+   "ilus": false
+  },
+  "b19_toussaint_rijks": {
+   "type": "image",
+   "src": "assets/broll/b19_toussaint_rijks.jpg",
+   "ilus": false
+  },
+  "b20_toussaint_a_cheval": {
+   "type": "image",
+   "src": "assets/broll/b20_toussaint_a_cheval.jpg",
+   "ilus": false
+  },
+  "b21_quill_writing": {
+   "type": "video",
+   "dir": "frames/vid/b21_quill_writing",
+   "count": 150,
+   "fps": 30,
+   "ilus": true
+  },
+  "b26_toussaint_kupfer_1806": {
+   "type": "image",
+   "src": "assets/broll/b26_toussaint_kupfer_1806.jpg",
+   "ilus": false
+  },
+  "b28_prise_bastille": {
+   "type": "image",
+   "src": "assets/broll/b28_prise_bastille.jpg",
+   "ilus": false
+  },
+  "b29_declaration_droits": {
+   "type": "image",
+   "src": "assets/broll/b29_declaration_droits.jpg",
+   "ilus": false
+  },
+  "b31_moi_libre_aussi_homme": {
+   "type": "image",
+   "src": "assets/broll/b31_moi_libre_aussi_homme.jpg",
+   "ilus": false
+  },
+  "b32_incendie_plaine_1791": {
+   "type": "image",
+   "src": "assets/broll/b32_incendie_plaine_1791.jpg",
+   "ilus": false
+  },
+  "b33_fire_saint_domingo_1791": {
+   "type": "image",
+   "src": "assets/broll/b33_fire_saint_domingo_1791.jpg",
+   "ilus": false
+  },
+  "b33_smoke": {
+   "type": "video",
+   "dir": "frames/vid/b33_smoke",
+   "count": 150,
+   "fps": 30,
+   "ilus": true
+  },
+  "b34_incendie_cap_1793": {
+   "type": "image",
+   "src": "assets/broll/b34_incendie_cap_1793.jpg",
+   "ilus": false
+  },
+  "b36_toussaint_standing": {
+   "type": "image",
+   "src": "assets/broll/b36_toussaint_standing.jpg",
+   "ilus": false
+  },
+  "b40_map_tardieu_1802": {
+   "type": "image",
+   "src": "assets/broll/b40_map_tardieu_1802.jpg",
+   "ilus": false
+  },
+  "b42_decret_abolition_1794": {
+   "type": "image",
+   "src": "assets/broll_interim/b42_decret_abolition_1794.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b43_rejouissances_1794": {
+   "type": "image",
+   "src": "assets/broll_interim/b43_rejouissances_1794.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b46_insurrection_convention": {
+   "type": "image",
+   "src": "assets/broll_interim/b46_insurrection_convention.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b47_moi_libre_aussi_femme": {
+   "type": "image",
+   "src": "assets/placeholder/b47_moi_libre_aussi_femme.jpg",
+   "placeholder": true,
+   "ilus": false
+  },
+  "b48_planter_brunias": {
+   "type": "image",
+   "src": "assets/placeholder/b48_planter_brunias.jpg",
+   "placeholder": true,
+   "ilus": true
+  },
+  "b49_maitland_1798": {
+   "type": "image",
+   "src": "assets/broll_interim/b49_maitland_1798.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b51_incendie_frontispiece": {
+   "type": "image",
+   "src": "assets/broll_interim/b51_incendie_frontispiece.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b52_toussaint_horseback_met": {
+   "type": "image",
+   "src": "assets/broll_interim/b52_toussaint_horseback_met.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b54_toussaint_a_saint_domingue": {
+   "type": "image",
+   "src": "assets/broll_interim/b54_toussaint_a_saint_domingue.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b56_toussaint_signature": {
+   "type": "image",
+   "src": "assets/placeholder/b56_toussaint_signature.jpg",
+   "placeholder": true,
+   "ilus": false
+  },
+  "b61_lois_colonie_1801": {
+   "type": "image",
+   "src": "assets/placeholder/b61_lois_colonie_1801.jpg",
+   "placeholder": true,
+   "ilus": false
+  },
+  "b64_toussaint_paris_musees": {
+   "type": "image",
+   "src": "assets/placeholder/b64_toussaint_paris_musees.jpg",
+   "placeholder": true,
+   "ilus": false
+  },
+  "b67_andre_rigaud": {
+   "type": "image",
+   "src": "assets/broll_interim/b67_andre_rigaud.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b68_acte_insurrection_1801": {
+   "type": "image",
+   "src": "assets/placeholder/b68_acte_insurrection_1801.jpg",
+   "placeholder": true,
+   "ilus": false
+  },
+  "b69_toussaint_colour_cheval": {
+   "type": "image",
+   "src": "assets/placeholder/b69_toussaint_colour_cheval.jpg",
+   "placeholder": true,
+   "ilus": false
+  },
+  "b71_carte_colonie": {
+   "type": "image",
+   "src": "assets/broll_interim/b71_carte_colonie.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b72_constitution_1801": {
+   "type": "image",
+   "src": "assets/placeholder/b72_constitution_1801.jpg",
+   "placeholder": true,
+   "ilus": false
+  },
+  "b74_napoleon_gros": {
+   "type": "image",
+   "src": "assets/broll_interim/b74_napoleon_gros.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b77_proclamation_1801": {
+   "type": "image",
+   "src": "assets/placeholder/b77_proclamation_1801.jpg",
+   "placeholder": true,
+   "ilus": false
+  },
+  "b78_napoleon_david": {
+   "type": "image",
+   "src": "assets/broll_interim/b78_napoleon_david.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b80_leclerc": {
+   "type": "image",
+   "src": "assets/broll_interim/b80_leclerc.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b81_ocean_waves": {
+   "type": "video",
+   "dir": "frames/vid/b81_ocean_waves",
+   "count": 150,
+   "fps": 30,
+   "ilus": true
+  },
+  "b83_crete_a_pierrot_1802": {
+   "type": "image",
+   "src": "assets/broll_interim/b83_crete_a_pierrot_1802.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b87_candle": {
+   "type": "video",
+   "dir": "frames/vid/b87_candle",
+   "count": 120,
+   "fps": 30,
+   "ilus": false
+  },
+  "b88_lettre_napoleon_1802": {
+   "type": "image",
+   "src": "assets/broll_interim/b88_lettre_napoleon_1802.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b89_green_hills": {
+   "type": "video",
+   "dir": "frames/vid/b89_green_hills",
+   "count": 180,
+   "fps": 30,
+   "ilus": true
+  },
+  "b94_fort_de_joux": {
+   "type": "image",
+   "src": "assets/broll_interim/b94_fort_de_joux.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b95_toussaint_au_fort_de_joux": {
+   "type": "image",
+   "src": "assets/broll_interim/b95_toussaint_au_fort_de_joux.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b96_cellule_plaque": {
+   "type": "image",
+   "src": "assets/broll_interim/b96_cellule_plaque.jpg",
+   "interim": true,
+   "ilus": false
+  }
+ },
+ "beats": [
+  {
+   "id": "01",
+   "t0": 0.0,
+   "tr": "fade",
+   "trFrames": 0,
+   "center": [
+    0.0,
+    0.0
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 14,
+    "az": -96,
+    "roll": -1.2,
+    "push": 0.05,
+    "z": 0.35,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "card",
+     "x": 0,
+     "y": 0,
+     "w": 3.0,
+     "h": 1.9,
+     "z": 0.25
+    },
+    {
+     "type": "type",
+     "text": "AWAL 1800-AN",
+     "x": 0,
+     "y": 0.02,
+     "size": 0.1,
+     "z": 0.35,
+     "align": "center",
+     "words": [
+      [
+       0.24,
+       0.56
+      ],
+      [
+       0.56,
+       1.26
+      ]
+     ],
+     "cursorUntil": 1.9
+    }
+   ],
+   "t1": 1.8
+  },
+  {
+   "id": "02",
+   "t0": 1.8,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    13.254,
+    0.0
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -84,
+    "roll": 1.0,
+    "push": 0.09,
+    "z": 0.14,
+    "off": [
+     0.04,
+     0.02
+    ],
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b02_napoleon_ingres",
+     "x": 0.08,
+     "y": 0.07,
+     "h": 0.8,
+     "rot": -3,
+     "z": 0.14
+    },
+    {
+     "type": "doc",
+     "kind": "typed",
+     "x": -0.7,
+     "y": 0.12,
+     "w": 0.55,
+     "h": 0.72,
+     "rot": 9,
+     "z": 0.02,
+     "dim": 0.55
+    },
+    {
+     "type": "tape",
+     "text": "NAPOLEON BONAPARTE",
+     "t": 1.92,
+     "x": 0.1,
+     "y": -0.31,
+     "size": 0.048,
+     "rot": -3,
+     "z": 0.3
+    }
+   ],
+   "t1": 5.39
+  },
+  {
+   "id": "03",
+   "t0": 5.39,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    26.508,
+    0.0
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 21,
+    "az": -95,
+    "roll": -0.8,
+    "push": 0.1,
+    "off": [
+     0.42,
+     0.1
+    ],
+    "drift": [
+     -0.62,
+     -0.12
+    ],
+    "z": 0.06
+   },
+   "objects": [
+    {
+     "type": "map",
+     "bbox": [
+      -92,
+      2,
+      14,
+      56
+     ],
+     "x": 0,
+     "y": 0,
+     "w": 1.95,
+     "h": 1.12,
+     "rot": -1.5,
+     "z": 0.05,
+     "labels": [
+      {
+       "text": "Samudra Atlantik",
+       "lon": -42,
+       "lat": 30,
+       "size": 0.055,
+       "rot": -6
+      }
+     ],
+     "routes": [
+      {
+       "pts": [
+        [
+         -4.49,
+         48.39
+        ],
+        [
+         -35,
+         36
+        ],
+        [
+         -72.2,
+         19.76
+        ]
+       ],
+       "t0": 6.88,
+       "t1": 8.2,
+       "dash": true
+      }
+     ],
+     "pulses": [
+      {
+       "lon": -72.2,
+       "lat": 19.76,
+       "t": 8.92
+      }
+     ]
+    }
+   ],
+   "t1": 12.34
+  },
+  {
+   "id": "04",
+   "t0": 12.34,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    39.762,
+    0.0
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 16,
+    "az": -88,
+    "roll": 0.6,
+    "push": 0.09,
+    "z": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "card",
+     "x": 0,
+     "y": 0,
+     "w": 1.15,
+     "h": 0.72,
+     "rot": 1.5,
+     "z": 0.08
+    },
+    {
+     "type": "type",
+     "text": "RAJA",
+     "x": -0.42,
+     "y": 0.13,
+     "size": 0.085,
+     "z": 0.35,
+     "color": "ink",
+     "align": "left",
+     "words": [
+      [
+       13.3,
+       13.72
+      ]
+     ],
+     "cursorUntil": 0
+    },
+    {
+     "type": "mark",
+     "kind": "strike",
+     "t": 13.770000000000001,
+     "x": -0.25,
+     "y": 0.17,
+     "w": 0.42,
+     "h": 0.09,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.35
+    },
+    {
+     "type": "type",
+     "text": "BANGSAWAN",
+     "x": -0.42,
+     "y": -0.06,
+     "size": 0.085,
+     "z": 0.35,
+     "color": "ink",
+     "align": "left",
+     "words": [
+      [
+       14.34,
+       15.02
+      ]
+     ],
+     "cursorUntil": 0
+    },
+    {
+     "type": "mark",
+     "kind": "strike",
+     "t": 15.07,
+     "x": -0.04,
+     "y": -0.02,
+     "w": 0.82,
+     "h": 0.09,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.4
+    },
+    {
+     "type": "stamp",
+     "text": "BUDAK",
+     "t": 17.5,
+     "x": 0.3,
+     "y": -0.2,
+     "size": 0.11,
+     "rot": -9,
+     "z": 0.32
+    }
+   ],
+   "t1": 18.69
+  },
+  {
+   "id": "05",
+   "t0": 18.69,
+   "tr": "G",
+   "trFrames": 6,
+   "center": [
+    62.192,
+    0.0
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -92,
+    "roll": -0.7,
+    "push": 0.08,
+    "z": 0.2,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b05_toussaint_bust",
+     "x": -0.52,
+     "y": 0.0,
+     "h": 0.84,
+     "rot": -2.5,
+     "z": 0.14
+    },
+    {
+     "type": "title",
+     "text": "TOUSSAINT\nLOUVERTURE",
+     "sub": "1743 – 1803",
+     "t": 18.72,
+     "x": 0.36,
+     "y": 0.03,
+     "size": 0.085,
+     "z": 0.4,
+     "lineHeight": 1.12
+    }
+   ],
+   "t1": 20.22
+  },
+  {
+   "id": "06",
+   "t0": 20.22,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    75.446,
+    0.0
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -86,
+    "roll": 0.8,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b06_legionaries_san_domingo",
+     "x": 0,
+     "y": 0.02,
+     "h": 0.7,
+     "rot": 2,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "circle",
+     "t": 25.16,
+     "x": 0.05,
+     "y": -0.08,
+     "w": 0.5,
+     "h": 0.32,
+     "rot": -3,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 25.76
+  },
+  {
+   "id": "07",
+   "t0": 25.76,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    88.7,
+    0.0
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 20,
+    "az": -97,
+    "roll": -0.8,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b07_prise_du_cap_1802",
+     "x": 0,
+     "y": 0.0,
+     "h": 0.82,
+     "rot": -1.5,
+     "z": 0.12
+    },
+    {
+     "type": "doc",
+     "kind": "typed",
+     "x": 0.72,
+     "y": -0.1,
+     "w": 0.5,
+     "h": 0.7,
+     "rot": -7,
+     "z": 0.02,
+     "dim": 0.55
+    }
+   ],
+   "t1": 32.03
+  },
+  {
+   "id": "08",
+   "t0": 32.03,
+   "tr": "L",
+   "trFrames": 14,
+   "center": [
+    104.401,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 16,
+    "az": -84,
+    "roll": 1.0,
+    "push": 0.05,
+    "z": 0.35,
+    "drift": [
+     0.034999999999999996,
+     -0.027999999999999997
+    ]
+   },
+   "objects": [
+    {
+     "type": "card",
+     "x": 0,
+     "y": 0,
+     "w": 3.0,
+     "h": 1.9,
+     "z": 0.25
+    },
+    {
+     "type": "type",
+     "text": "SAINT-DOMINGUE",
+     "x": 0,
+     "y": 0.02,
+     "size": 0.1,
+     "z": 0.35,
+     "align": "center",
+     "words": [
+      [
+       33.42,
+       34.14
+      ]
+     ],
+     "cursorUntil": 34.74
+    }
+   ],
+   "t1": 34.26
+  },
+  {
+   "id": "09",
+   "t0": 34.26,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    117.655,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -92,
+    "roll": -0.6,
+    "push": 0.1,
+    "off": [
+     0.1,
+     0
+    ],
+    "drift": [
+     -0.12,
+     0
+    ]
+   },
+   "objects": [
+    {
+     "type": "map",
+     "bbox": [
+      -75.0,
+      17.2,
+      -67.8,
+      20.6
+     ],
+     "x": 0,
+     "y": 0,
+     "w": 1.85,
+     "h": 0.92,
+     "rot": 1,
+     "z": 0.05,
+     "fills": [
+      {
+       "id": "332",
+       "t": 38.44,
+       "dur": 0.7,
+       "alpha": 0.55
+      }
+     ]
+    },
+    {
+     "type": "hand",
+     "text": "Haiti",
+     "t": 38.44,
+     "x": -0.36,
+     "y": 0.27,
+     "size": 0.07,
+     "rot": -5,
+     "z": 0.3,
+     "color": "red"
+    }
+   ],
+   "t1": 39.06
+  },
+  {
+   "id": "10",
+   "t0": 39.06,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    130.909,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -94,
+    "roll": 0.7,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b10_vue_du_cap_ponce",
+     "x": 0,
+     "y": 0.06,
+     "h": 0.5,
+     "rot": -1.5,
+     "z": 0.12
+    },
+    {
+     "type": "tape",
+     "text": "KOLONI TERKAYA",
+     "t": 42.64,
+     "x": -0.1,
+     "y": -0.27,
+     "size": 0.05,
+     "rot": -2.5,
+     "z": 0.3
+    }
+   ],
+   "t1": 43.92
+  },
+  {
+   "id": "11",
+   "t0": 43.92,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    144.163,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -86,
+    "roll": -1.0,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b11_tall_ship",
+     "x": -0.05,
+     "y": 0,
+     "h": 0.88,
+     "rot": 2.5,
+     "z": 0.12,
+     "film": true,
+     "video": {
+      "t0": 43.52,
+      "rate": 0.85
+     },
+     "ilus": true
+    },
+    {
+     "type": "mark",
+     "kind": "arrow",
+     "t": 46.14,
+     "x": 0.42,
+     "y": 0.0,
+     "w": 0.35,
+     "h": 0.6,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      -0.35,
+      -0.4
+     ],
+     "to": [
+      0.3,
+      0.4
+     ]
+    }
+   ],
+   "t1": 47.54
+  },
+  {
+   "id": "12",
+   "t0": 47.54,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    157.417,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -92,
+    "roll": 0.6,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b12_coffee_beans",
+     "x": -0.22,
+     "y": 0.05,
+     "h": 0.56,
+     "rot": -2,
+     "z": 0.14,
+     "film": true
+    },
+    {
+     "type": "print",
+     "asset": "b12_cane_field",
+     "x": 0.5,
+     "y": -0.16,
+     "h": 0.42,
+     "rot": 5,
+     "z": 0.06,
+     "film": true,
+     "dim": 0.35
+    }
+   ],
+   "t1": 51.29
+  },
+  {
+   "id": "13",
+   "t0": 51.29,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    170.671,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -89,
+    "roll": -0.6,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b13_cutting_cane_antigua_1823",
+     "x": 0,
+     "y": 0.02,
+     "h": 0.72,
+     "rot": -1.5,
+     "z": 0.12,
+     "ilus": true
+    }
+   ],
+   "t1": 54.6
+  },
+  {
+   "id": "14",
+   "t0": 54.6,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    183.925,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 16,
+    "az": -95,
+    "roll": 0.8,
+    "push": 0.07,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b14_sugar_mill_1681",
+     "x": 0.3,
+     "y": 0.04,
+     "h": 0.62,
+     "rot": 3,
+     "z": 0.06,
+     "dim": 0.45
+    },
+    {
+     "type": "title",
+     "text": "±500.000",
+     "sub": "ORANG DIPERBUDAK",
+     "t": 54.7,
+     "x": -0.12,
+     "y": 0.0,
+     "size": 0.12,
+     "z": 0.45
+    }
+   ],
+   "t1": 59.15
+  },
+  {
+   "id": "15",
+   "t0": 59.15,
+   "tr": "L",
+   "trFrames": 14,
+   "center": [
+    183.925,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 15,
+    "az": -94,
+    "roll": -1.0,
+    "push": 0.05,
+    "z": 0.35,
+    "drift": [
+     0.0,
+     -0.04
+    ]
+   },
+   "objects": [
+    {
+     "type": "card",
+     "x": 0,
+     "y": 0,
+     "w": 3.0,
+     "h": 1.9,
+     "z": 0.25
+    },
+    {
+     "type": "type",
+     "text": "PERKEBUNAN BRÉDA",
+     "x": 0,
+     "y": 0.02,
+     "size": 0.095,
+     "z": 0.35,
+     "align": "center",
+     "words": [
+      [
+       59.88,
+       60.84
+      ],
+      [
+       60.84,
+       61.36
+      ]
+     ],
+     "cursorUntil": 61.9
+    }
+   ],
+   "t1": 61.54
+  },
+  {
+   "id": "16",
+   "t0": 61.54,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    197.179,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 20,
+    "az": -90,
+    "roll": 0.7,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "ledger",
+     "x": 0,
+     "y": 0,
+     "w": 0.95,
+     "h": 1.05,
+     "rot": -2,
+     "z": 0.08,
+     "seed": 1743
+    },
+    {
+     "type": "stamp",
+     "text": "±1743",
+     "t": 62.28,
+     "x": 0.22,
+     "y": 0.26,
+     "size": 0.1,
+     "rot": -7,
+     "z": 0.32
+    },
+    {
+     "type": "mark",
+     "kind": "circle",
+     "t": 65.98,
+     "x": -0.08,
+     "y": -0.12,
+     "w": 0.62,
+     "h": 0.12,
+     "rot": -2,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 66.6
+  },
+  {
+   "id": "17",
+   "t0": 66.6,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    210.433,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -92,
+    "roll": -0.6,
+    "push": 0.1,
+    "off": [
+     0,
+     0.08
+    ],
+    "drift": [
+     0,
+     -0.06
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b17_code_noir_1685",
+     "x": 0,
+     "y": 0,
+     "h": 0.95,
+     "rot": 1.5,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "underline",
+     "t": 68.28,
+     "x": 0,
+     "y": 0.12,
+     "w": 0.42,
+     "h": 0.08,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 69.84
+  },
+  {
+   "id": "18",
+   "t0": 69.84,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    223.687,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -88,
+    "roll": 0.9,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b18_mortels_egaux_1794",
+     "x": 0,
+     "y": 0.06,
+     "h": 0.66,
+     "rot": -1,
+     "z": 0.12
+    },
+    {
+     "type": "tape",
+     "text": "STATUS",
+     "t": 73.6,
+     "x": -0.32,
+     "y": -0.32,
+     "size": 0.05,
+     "rot": -4,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "WARNA KULIT",
+     "t": 74.38,
+     "x": 0.28,
+     "y": -0.34,
+     "size": 0.05,
+     "rot": 3,
+     "z": 0.3
+    }
+   ],
+   "t1": 75.2
+  },
+  {
+   "id": "19",
+   "t0": 75.2,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    236.941,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -93,
+    "roll": -0.8,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b19_toussaint_rijks",
+     "x": 0,
+     "y": 0,
+     "h": 0.92,
+     "rot": -2,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "circle",
+     "t": 76.66,
+     "x": 0.0,
+     "y": 0.06,
+     "w": 0.34,
+     "h": 0.42,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 79.6
+  },
+  {
+   "id": "20",
+   "t0": 79.6,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    250.195,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -88,
+    "roll": 0.6,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b20_toussaint_a_cheval",
+     "x": 0,
+     "y": 0,
+     "h": 0.92,
+     "rot": 2,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "arrow",
+     "t": 81.54,
+     "x": 0.36,
+     "y": -0.12,
+     "w": 0.3,
+     "h": 0.3,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      0.45,
+      0.35
+     ],
+     "to": [
+      -0.35,
+      -0.3
+     ]
+    }
+   ],
+   "t1": 82.3
+  },
+  {
+   "id": "21",
+   "t0": 82.3,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    263.449,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 16,
+    "az": -91,
+    "roll": -0.7,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b21_quill_writing",
+     "x": 0,
+     "y": 0.02,
+     "h": 0.64,
+     "rot": -1.5,
+     "z": 0.12,
+     "film": true,
+     "ilus": true
+    }
+   ],
+   "t1": 87.03
+  },
+  {
+   "id": "22",
+   "t0": 87.03,
+   "tr": "L",
+   "trFrames": 14,
+   "center": [
+    285.879,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -90,
+    "roll": 0.8,
+    "push": 0.09,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "cert",
+     "x": 0,
+     "y": 0,
+     "w": 0.85,
+     "h": 1.0,
+     "rot": 1,
+     "z": 0.08,
+     "seed": 1776
+    },
+    {
+     "type": "type",
+     "text": "1770-AN",
+     "x": 0,
+     "y": 0.28,
+     "size": 0.085,
+     "z": 0.35,
+     "color": "ink",
+     "align": "center",
+     "words": [
+      [
+       87.74,
+       89.34
+      ]
+     ],
+     "cursorUntil": 0
+    },
+    {
+     "type": "stamp",
+     "text": "MERDEKA",
+     "t": 90.54,
+     "x": 0.02,
+     "y": -0.12,
+     "size": 0.11,
+     "rot": -8,
+     "z": 0.32
+    }
+   ],
+   "t1": 91.38
+  },
+  {
+   "id": "23",
+   "t0": 91.38,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    299.133,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 21,
+    "az": -88,
+    "roll": -0.6,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "timeline",
+     "items": [
+      {
+       "label": "1743",
+       "pos": 0.0
+      },
+      {
+       "label": "1770-AN",
+       "pos": 0.45
+      },
+      {
+       "label": "1791",
+       "pos": 1.0
+      }
+     ],
+     "x": 0,
+     "y": 0.02,
+     "w": 1.55,
+     "h": 0.22,
+     "rot": -1.5,
+     "z": 0.08
+    },
+    {
+     "type": "mark",
+     "kind": "bracket",
+     "t": 95.6,
+     "x": 0.33,
+     "y": 0.15,
+     "w": 0.75,
+     "h": 0.12,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.6
+    }
+   ],
+   "t1": 97.24
+  },
+  {
+   "id": "24",
+   "t0": 97.24,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    312.387,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 22,
+    "az": -92,
+    "roll": 0.7,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "folder",
+     "t": 99.06,
+     "x": 0.1,
+     "y": 0,
+     "w": 0.68,
+     "h": 0.9,
+     "rot": -2,
+     "z": 0.08
+    }
+   ],
+   "t1": 99.64
+  },
+  {
+   "id": "25",
+   "t0": 99.64,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    325.641,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -89,
+    "roll": -0.8,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "typed",
+     "x": 0,
+     "y": 0,
+     "w": 0.9,
+     "h": 1.0,
+     "rot": -1,
+     "z": 0.08,
+     "seed": 1780
+    },
+    {
+     "type": "type",
+     "text": "PEMILIK BUDAK",
+     "x": 0,
+     "y": 0.02,
+     "size": 0.085,
+     "z": 0.2,
+     "color": "ink",
+     "align": "center"
+    },
+    {
+     "type": "redact",
+     "t": 102.1,
+     "x": 0,
+     "y": 0.045,
+     "w": 0.85,
+     "h": 0.14,
+     "rot": 0,
+     "z": 0.24,
+     "dur": 0.45
+    }
+   ],
+   "t1": 103.96
+  },
+  {
+   "id": "26",
+   "t0": 103.96,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    338.895,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -94,
+    "roll": 0.7,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b26_toussaint_kupfer_1806",
+     "x": -0.12,
+     "y": 0,
+     "h": 0.95,
+     "rot": 1.5,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "q",
+     "t": 108.0,
+     "x": 0.38,
+     "y": 0.18,
+     "w": 0.16,
+     "h": 0.28,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.6
+    }
+   ],
+   "t1": 111.32
+  },
+  {
+   "id": "27",
+   "t0": 111.32,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    352.149,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -87,
+    "roll": -0.7,
+    "off": [
+     0.05,
+     0
+    ],
+    "drift": [
+     -0.12,
+     0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b36_toussaint_standing",
+     "x": 0.45,
+     "y": 0.02,
+     "h": 0.82,
+     "rot": 2.5,
+     "z": 0.1
+    },
+    {
+     "type": "tape",
+     "text": "SIKAP",
+     "t": 116.16,
+     "x": -0.5,
+     "y": 0.22,
+     "size": 0.045,
+     "rot": -5,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "KEPENTINGAN",
+     "t": 116.9,
+     "x": -0.32,
+     "y": 0.0,
+     "size": 0.045,
+     "rot": 2,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "POLITIK",
+     "t": 118.44,
+     "x": -0.52,
+     "y": -0.24,
+     "size": 0.045,
+     "rot": -3,
+     "z": 0.3
+    },
+    {
+     "type": "mark",
+     "kind": "thread",
+     "t": 117.05000000000001,
+     "x": -0.4,
+     "y": 0.11,
+     "w": 0.3,
+     "h": 0.26,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      -0.35,
+      0.4
+     ],
+     "to": [
+      0.3,
+      -0.4
+     ]
+    },
+    {
+     "type": "mark",
+     "kind": "thread",
+     "t": 118.59,
+     "x": -0.42,
+     "y": -0.12,
+     "w": 0.3,
+     "h": 0.26,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      0.3,
+      0.4
+     ],
+     "to": [
+      -0.3,
+      -0.4
+     ]
+    }
+   ],
+   "t1": 119.17
+  },
+  {
+   "id": "28",
+   "t0": 119.17,
+   "tr": "L",
+   "trFrames": 14,
+   "center": [
+    352.149,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -91,
+    "roll": 0.8,
+    "push": 0.1,
+    "drift": [
+     0.0,
+     0.04
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b28_prise_bastille",
+     "x": 0,
+     "y": 0.04,
+     "h": 0.7,
+     "rot": -1.5,
+     "z": 0.12
+    },
+    {
+     "type": "tape",
+     "text": "1789",
+     "t": 119.58,
+     "x": -0.44,
+     "y": -0.3,
+     "size": 0.06,
+     "rot": -4,
+     "z": 0.3
+    }
+   ],
+   "t1": 124.0
+  },
+  {
+   "id": "29",
+   "t0": 124.0,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    365.403,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -88,
+    "roll": -0.6,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b29_declaration_droits",
+     "x": 0,
+     "y": 0,
+     "h": 0.95,
+     "rot": 1,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "underline",
+     "t": 126.48,
+     "x": 0.02,
+     "y": -0.02,
+     "w": 0.5,
+     "h": 0.08,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 127.55
+  },
+  {
+   "id": "30",
+   "t0": 127.55,
+   "tr": "T",
+   "trFrames": 12,
+   "center": [
+    378.657,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 15,
+    "az": -93,
+    "roll": 1.0,
+    "push": 0.05,
+    "z": 0.35,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "card",
+     "x": 0,
+     "y": 0,
+     "w": 3.0,
+     "h": 1.9,
+     "z": 0.25
+    },
+    {
+     "type": "type",
+     "text": "?",
+     "x": 0,
+     "y": 0.02,
+     "size": 0.2,
+     "z": 0.35,
+     "align": "center",
+     "color": "red",
+     "words": [
+      [
+       128.02,
+       128.58
+      ]
+     ],
+     "cursorUntil": 129.76
+    }
+   ],
+   "t1": 129.66
+  },
+  {
+   "id": "31",
+   "t0": 129.66,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    391.911,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -90,
+    "roll": -0.7,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b31_moi_libre_aussi_homme",
+     "x": 0,
+     "y": 0,
+     "h": 0.92,
+     "rot": -1.5,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "circle",
+     "t": 135.86,
+     "x": 0.0,
+     "y": 0.08,
+     "w": 0.5,
+     "h": 0.56,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 136.45
+  },
+  {
+   "id": "32",
+   "t0": 136.45,
+   "tr": "L",
+   "trFrames": 14,
+   "center": [
+    414.341,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -94,
+    "roll": 0.8,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b32_incendie_plaine_1791",
+     "x": 0,
+     "y": 0.05,
+     "h": 0.62,
+     "rot": 1,
+     "z": 0.12
+    },
+    {
+     "type": "stamp",
+     "text": "AGUSTUS 1791",
+     "t": 137.3,
+     "x": 0.2,
+     "y": -0.3,
+     "size": 0.07,
+     "rot": -6,
+     "z": 0.32
+    }
+   ],
+   "t1": 141.78
+  },
+  {
+   "id": "33",
+   "t0": 141.78,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    427.595,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -88,
+    "roll": -0.6,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b33_fire_saint_domingo_1791",
+     "x": 0,
+     "y": 0,
+     "h": 0.72,
+     "rot": -2,
+     "z": 0.12,
+     "overlay": {
+      "asset": "b33_smoke",
+      "opacity": 0.35
+     }
+    }
+   ],
+   "t1": 146.06
+  },
+  {
+   "id": "34",
+   "t0": 146.06,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    440.849,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -92,
+    "roll": 0.7,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b34_incendie_cap_1793",
+     "x": 0,
+     "y": 0,
+     "h": 0.82,
+     "rot": 1.5,
+     "z": 0.12
+    }
+   ],
+   "t1": 151.32
+  },
+  {
+   "id": "35",
+   "t0": 151.32,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    454.103,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -90,
+    "roll": -0.7,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "typed",
+     "x": 0,
+     "y": 0,
+     "w": 1.1,
+     "h": 0.7,
+     "rot": -1,
+     "z": 0.08,
+     "seed": 1791
+    },
+    {
+     "type": "type",
+     "text": "BUKAN PEMIMPIN\nTUNGGAL",
+     "x": 0,
+     "y": 0.04,
+     "size": 0.085,
+     "z": 0.35,
+     "color": "ink",
+     "align": "center",
+     "words": [
+      [
+       151.78,
+       152.1
+      ],
+      [
+       152.1,
+       152.6
+      ],
+      [
+       152.6,
+       153.02
+      ]
+     ],
+     "cursorUntil": 0
+    }
+   ],
+   "t1": 154.52
+  },
+  {
+   "id": "36",
+   "t0": 154.52,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    467.357,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -94,
+    "roll": 0.8,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b54_toussaint_a_saint_domingue",
+     "x": 0,
+     "y": 0,
+     "h": 0.75,
+     "rot": -1.5,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "arrow",
+     "t": 159.62,
+     "x": -0.12,
+     "y": 0.0,
+     "w": 0.5,
+     "h": 0.4,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      -0.45,
+      -0.4
+     ],
+     "to": [
+      0.3,
+      0.2
+     ]
+    }
+   ],
+   "t1": 162.43
+  },
+  {
+   "id": "38",
+   "t0": 162.43,
+   "tr": "G",
+   "trFrames": 6,
+   "center": [
+    489.787,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 20,
+    "az": -90,
+    "roll": -0.5,
+    "push": 0.06,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "map",
+     "bbox": [
+      -75.0,
+      17.2,
+      -67.8,
+      20.6
+     ],
+     "x": 0,
+     "y": 0,
+     "w": 1.1,
+     "h": 0.55,
+     "rot": -1,
+     "z": 0.04,
+     "dim": 0.25
+    },
+    {
+     "type": "tape",
+     "text": "PEMBERONTAK",
+     "t": 163.4,
+     "x": -0.58,
+     "y": 0.33,
+     "size": 0.045,
+     "rot": -4,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "PEMILIK PERKEBUNAN",
+     "t": 164.88,
+     "x": 0.42,
+     "y": 0.36,
+     "size": 0.045,
+     "rot": 3,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "ORANG MERDEKA",
+     "t": 166.2,
+     "x": -0.55,
+     "y": -0.32,
+     "size": 0.045,
+     "rot": 3,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "TENTARA PRANCIS",
+     "t": 167.7,
+     "x": 0.48,
+     "y": -0.3,
+     "size": 0.045,
+     "rot": -3,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "KEKUATAN ASING",
+     "t": 169.1,
+     "x": 0.0,
+     "y": -0.43,
+     "size": 0.045,
+     "rot": 1.5,
+     "z": 0.3
+    },
+    {
+     "type": "mark",
+     "kind": "thread",
+     "t": 163.6,
+     "x": -0.3,
+     "y": 0.17,
+     "w": 0.5,
+     "h": 0.3,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      -0.45,
+      0.4
+     ],
+     "to": [
+      0.45,
+      -0.4
+     ]
+    },
+    {
+     "type": "mark",
+     "kind": "thread",
+     "t": 165.07999999999998,
+     "x": 0.22,
+     "y": 0.18,
+     "w": 0.4,
+     "h": 0.32,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      0.45,
+      0.4
+     ],
+     "to": [
+      -0.45,
+      -0.4
+     ]
+    },
+    {
+     "type": "mark",
+     "kind": "thread",
+     "t": 167.89999999999998,
+     "x": 0.25,
+     "y": -0.15,
+     "w": 0.45,
+     "h": 0.26,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      0.45,
+      -0.4
+     ],
+     "to": [
+      -0.45,
+      0.4
+     ]
+    }
+   ],
+   "t1": 171.72
+  },
+  {
+   "id": "39",
+   "t0": 171.72,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    503.041,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -91,
+    "roll": 0.6,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b64_toussaint_paris_musees",
+     "x": 0,
+     "y": 0,
+     "h": 0.88,
+     "rot": 1.5,
+     "z": 0.12
+    }
+   ],
+   "t1": 175.26
+  },
+  {
+   "id": "40",
+   "t0": 175.26,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    516.295,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -89,
+    "roll": -0.7,
+    "push": 0.1,
+    "off": [
+     0.0,
+     0.05
+    ],
+    "drift": [
+     0.06,
+     -0.05
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b71_carte_colonie",
+     "x": 0,
+     "y": 0.02,
+     "h": 0.92,
+     "rot": -1,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "circle",
+     "t": 177.08,
+     "x": -0.1747,
+     "y": 0.251,
+     "w": 0.2899,
+     "h": 0.0829,
+     "rot": -1,
+     "z": 0.33,
+     "dur": 0.5
+    },
+    {
+     "type": "tape",
+     "text": "SEKUTU: SPANYOL",
+     "t": 177.23000000000002,
+     "x": 0.42,
+     "y": -0.36,
+     "size": 0.05,
+     "rot": -3,
+     "z": 0.3
+    }
+   ],
+   "t1": 182.37
+  },
+  {
+   "id": "42",
+   "t0": 182.37,
+   "tr": "G",
+   "trFrames": 6,
+   "center": [
+    538.724,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -92,
+    "roll": 0.8,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b42_decret_abolition_1794",
+     "x": -0.08,
+     "y": 0,
+     "h": 0.95,
+     "rot": 1,
+     "z": 0.12
+    },
+    {
+     "type": "stamp",
+     "text": "1794",
+     "t": 182.86,
+     "x": 0.4,
+     "y": 0.2,
+     "size": 0.11,
+     "rot": -8,
+     "z": 0.32
+    },
+    {
+     "type": "mark",
+     "kind": "circle",
+     "t": 186.56,
+     "x": -0.08,
+     "y": 0.25,
+     "w": 0.5,
+     "h": 0.22,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 189.24
+  },
+  {
+   "id": "43",
+   "t0": 189.24,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    551.978,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -88,
+    "roll": -0.6,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b43_rejouissances_1794",
+     "x": 0,
+     "y": 0,
+     "h": 0.9,
+     "rot": -2,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "arrow",
+     "t": 189.79999999999998,
+     "x": 0.4,
+     "y": 0.1,
+     "w": 0.3,
+     "h": 0.4,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "bend": 0.45,
+     "from": [
+      -0.3,
+      -0.4
+     ],
+     "to": [
+      0.2,
+      0.4
+     ]
+    }
+   ],
+   "t1": 191.84
+  },
+  {
+   "id": "44",
+   "t0": 191.84,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    565.233,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 20,
+    "az": -91,
+    "roll": 0.7,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "map",
+     "bbox": [
+      -75.0,
+      17.2,
+      -67.8,
+      20.6
+     ],
+     "x": 0,
+     "y": 0,
+     "w": 1.85,
+     "h": 0.92,
+     "rot": 1.5,
+     "z": 0.05
+    },
+    {
+     "type": "mark",
+     "kind": "arrow",
+     "t": 196.26000000000002,
+     "x": 0.0,
+     "y": 0.05,
+     "w": 0.9,
+     "h": 0.25,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "bend": -0.25,
+     "from": [
+      0.45,
+      0.0
+     ],
+     "to": [
+      -0.45,
+      0.0
+     ]
+    },
+    {
+     "type": "hand",
+     "text": "berpindah pihak?",
+     "t": 196.46,
+     "x": 0.05,
+     "y": -0.3,
+     "size": 0.065,
+     "rot": -3,
+     "z": 0.3
+    }
+   ],
+   "t1": 197.4
+  },
+  {
+   "id": "45a",
+   "t0": 197.4,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    578.487,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 16,
+    "az": -90,
+    "roll": -0.6,
+    "push": 0.14,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b05_toussaint_bust",
+     "x": 0,
+     "y": 0,
+     "h": 0.95,
+     "rot": 1.5,
+     "z": 0.12,
+     "crop": [
+      0.12,
+      0.08,
+      0.88,
+      0.7
+     ]
+    }
+   ],
+   "t1": 201.19
+  },
+  {
+   "id": "45",
+   "t0": 201.19,
+   "tr": "T",
+   "trFrames": 12,
+   "center": [
+    591.741,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 15,
+    "az": -86,
+    "roll": 1.0,
+    "push": 0.05,
+    "z": 0.35,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "card",
+     "x": 0,
+     "y": 0,
+     "w": 3.0,
+     "h": 1.9,
+     "z": 0.25
+    },
+    {
+     "type": "type",
+     "text": "PERBUDAKAN\nTIDAK KEMBALI?",
+     "x": 0,
+     "y": 0.04,
+     "size": 0.095,
+     "z": 0.35,
+     "align": "center",
+     "words": [
+      [
+       203.56,
+       204.2
+      ],
+      [
+       204.2,
+       204.56
+      ],
+      [
+       204.56,
+       205.08
+      ]
+     ],
+     "cursorUntil": 205.3
+    }
+   ],
+   "t1": 205.37
+  },
+  {
+   "id": "46",
+   "t0": 205.37,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    604.995,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -92,
+    "roll": 0.7,
+    "off": [
+     -0.12,
+     0
+    ],
+    "drift": [
+     0.22,
+     0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b46_insurrection_convention",
+     "x": 0,
+     "y": 0.02,
+     "h": 0.7,
+     "rot": 1,
+     "z": 0.12
+    }
+   ],
+   "t1": 210.08
+  },
+  {
+   "id": "47",
+   "t0": 210.08,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    618.249,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -88,
+    "roll": -0.6,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b47_moi_libre_aussi_femme",
+     "x": 0,
+     "y": 0,
+     "h": 0.9,
+     "rot": -2,
+     "z": 0.12
+    }
+   ],
+   "t1": 213.44
+  },
+  {
+   "id": "48",
+   "t0": 213.44,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    631.503,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -93,
+    "roll": 0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b48_planter_brunias",
+     "x": 0,
+     "y": 0,
+     "h": 0.92,
+     "rot": 1.5,
+     "z": 0.12,
+     "ilus": true
+    }
+   ],
+   "t1": 216.6
+  },
+  {
+   "id": "49",
+   "t0": 216.6,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    644.757,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -90,
+    "roll": -0.7,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b49_maitland_1798",
+     "x": 0,
+     "y": 0,
+     "h": 0.92,
+     "rot": -1.5,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "arrow",
+     "t": 217.7,
+     "x": -0.32,
+     "y": 0.0,
+     "w": 0.3,
+     "h": 0.3,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      -0.45,
+      -0.4
+     ],
+     "to": [
+      0.4,
+      0.3
+     ]
+    }
+   ],
+   "t1": 221.84
+  },
+  {
+   "id": "50",
+   "t0": 221.84,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    658.011,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -91,
+    "roll": 0.6,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b31_moi_libre_aussi_homme",
+     "x": -0.45,
+     "y": 0,
+     "h": 0.62,
+     "rot": -2,
+     "z": 0.1
+    },
+    {
+     "type": "print",
+     "asset": "b48_planter_brunias",
+     "x": 0.45,
+     "y": 0,
+     "h": 0.62,
+     "rot": 2,
+     "z": 0.1,
+     "ilus": true
+    },
+    {
+     "type": "mark",
+     "kind": "line",
+     "t": 222.52,
+     "x": 0,
+     "y": 0,
+     "w": 0.9,
+     "h": 0.06,
+     "rot": 90,
+     "z": 0.33,
+     "dur": 0.45,
+     "out": 223.22
+    },
+    {
+     "type": "mark",
+     "kind": "tear",
+     "t": 223.22,
+     "x": 0,
+     "y": 0,
+     "w": 0.12,
+     "h": 0.9,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.35
+    }
+   ],
+   "t1": 226.04
+  },
+  {
+   "id": "51",
+   "t0": 226.04,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    671.265,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -89,
+    "roll": -0.7,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b51_incendie_frontispiece",
+     "x": 0,
+     "y": 0.03,
+     "h": 0.68,
+     "rot": -1,
+     "z": 0.12
+    }
+   ],
+   "t1": 230.02
+  },
+  {
+   "id": "52",
+   "t0": 230.02,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    684.519,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -92,
+    "roll": 0.7,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b52_toussaint_horseback_met",
+     "x": -0.12,
+     "y": 0,
+     "h": 0.94,
+     "rot": 1.5,
+     "z": 0.12
+    },
+    {
+     "type": "tape",
+     "text": "KOMANDAN",
+     "t": 235.02,
+     "x": 0.42,
+     "y": -0.25,
+     "size": 0.055,
+     "rot": -4,
+     "z": 0.3
+    }
+   ],
+   "t1": 236.82
+  },
+  {
+   "id": "53",
+   "t0": 236.82,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    697.773,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -88,
+    "roll": -0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b49_maitland_1798",
+     "x": 0,
+     "y": 0,
+     "h": 0.95,
+     "rot": 1,
+     "z": 0.12,
+     "crop": [
+      0.05,
+      0.25,
+      0.95,
+      0.8
+     ]
+    },
+    {
+     "type": "tape",
+     "text": "PERUNDING",
+     "t": 237.98,
+     "x": 0.3,
+     "y": -0.32,
+     "size": 0.055,
+     "rot": 3,
+     "z": 0.3
+    }
+   ],
+   "t1": 243.38
+  },
+  {
+   "id": "54",
+   "t0": 243.38,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    711.027,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -90,
+    "roll": 0.7,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b36_toussaint_standing",
+     "x": 0,
+     "y": 0,
+     "h": 0.94,
+     "rot": -1.5,
+     "z": 0.12
+    }
+   ],
+   "t1": 247.66
+  },
+  {
+   "id": "55",
+   "t0": 247.66,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    724.281,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -94,
+    "roll": -0.6,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b06_legionaries_san_domingo",
+     "x": 0,
+     "y": 0,
+     "h": 0.8,
+     "rot": 1.5,
+     "z": 0.12,
+     "crop": [
+      0.3,
+      0.1,
+      1.0,
+      0.95
+     ]
+    },
+    {
+     "type": "mark",
+     "kind": "arrow",
+     "t": 250.72,
+     "x": 0.35,
+     "y": 0.05,
+     "w": 0.4,
+     "h": 0.3,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      -0.45,
+      0.0
+     ],
+     "to": [
+      0.45,
+      0.1
+     ]
+    }
+   ],
+   "t1": 254.34
+  },
+  {
+   "id": "56",
+   "t0": 254.34,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    737.535,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -91,
+    "roll": 0.7,
+    "push": 0.1,
+    "off": [
+     0,
+     -0.08
+    ],
+    "drift": [
+     0,
+     0.04
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b56_toussaint_signature",
+     "x": 0,
+     "y": 0,
+     "h": 0.94,
+     "rot": -1.5,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "circle",
+     "t": 256.1,
+     "x": 0.04,
+     "y": -0.36,
+     "w": 0.5,
+     "h": 0.14,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 258.18
+  },
+  {
+   "id": "57",
+   "t0": 258.18,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    750.789,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -89,
+    "roll": -0.7,
+    "off": [
+     -0.12,
+     0
+    ],
+    "drift": [
+     0.2,
+     0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "ledger",
+     "x": -0.55,
+     "y": -0.05,
+     "w": 0.55,
+     "h": 0.65,
+     "rot": -5,
+     "z": 0.04,
+     "seed": 1743,
+     "dim": 0.3
+    },
+    {
+     "type": "print",
+     "asset": "b69_toussaint_colour_cheval",
+     "x": 0.32,
+     "y": 0,
+     "h": 0.9,
+     "rot": 2,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "arrow",
+     "t": 261.5,
+     "x": -0.15,
+     "y": 0.1,
+     "w": 0.45,
+     "h": 0.3,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      -0.45,
+      -0.3
+     ],
+     "to": [
+      0.4,
+      0.2
+     ]
+    }
+   ],
+   "t1": 265.55
+  },
+  {
+   "id": "58",
+   "t0": 265.55,
+   "tr": "L",
+   "trFrames": 14,
+   "center": [
+    735.088,
+    -23.551
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 15,
+    "az": -93,
+    "roll": -1.0,
+    "push": 0.05,
+    "z": 0.35,
+    "drift": [
+     -0.034999999999999996,
+     -0.027999999999999997
+    ]
+   },
+   "objects": [
+    {
+     "type": "card",
+     "x": 0,
+     "y": 0,
+     "w": 3.0,
+     "h": 1.9,
+     "z": 0.25
+    },
+    {
+     "type": "type",
+     "text": "HARGA SEBUAH\nKETERTIBAN",
+     "x": 0,
+     "y": 0.04,
+     "size": 0.095,
+     "z": 0.35,
+     "align": "center",
+     "t0": 265.95000000000005,
+     "t1": 268.24,
+     "cursorUntil": 269.9
+    }
+   ],
+   "t1": 269.98
+  },
+  {
+   "id": "59",
+   "t0": 269.98,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    748.342,
+    -23.551
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 20,
+    "az": -90,
+    "roll": 0.6,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "ledger",
+     "x": 0,
+     "y": 0,
+     "w": 1.1,
+     "h": 0.85,
+     "rot": -1.5,
+     "z": 0.06,
+     "seed": 1800
+    },
+    {
+     "type": "tape",
+     "text": "PANGAN",
+     "t": 271.4,
+     "x": -0.38,
+     "y": 0.2,
+     "size": 0.055,
+     "rot": -4,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "PERDAGANGAN",
+     "t": 272.18,
+     "x": 0.15,
+     "y": 0.0,
+     "size": 0.055,
+     "rot": 2,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "PEMASUKAN",
+     "t": 273.08,
+     "x": -0.18,
+     "y": -0.22,
+     "size": 0.055,
+     "rot": -2,
+     "z": 0.3
+    }
+   ],
+   "t1": 273.94
+  },
+  {
+   "id": "60",
+   "t0": 273.94,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    761.596,
+    -23.551
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -92,
+    "roll": -0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b12_cane_field",
+     "x": 0,
+     "y": 0.02,
+     "h": 0.62,
+     "rot": -1.5,
+     "z": 0.12,
+     "film": true,
+     "video": {
+      "t0": 272.0,
+      "rate": 0.8
+     }
+    }
+   ],
+   "t1": 277.23
+  },
+  {
+   "id": "61",
+   "t0": 277.23,
+   "tr": "G",
+   "trFrames": 6,
+   "center": [
+    784.026,
+    -23.551
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -89,
+    "roll": 0.7,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b61_lois_colonie_1801",
+     "x": 0,
+     "y": 0,
+     "h": 0.95,
+     "rot": 1,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "underline",
+     "t": 282.78,
+     "x": 0,
+     "y": -0.12,
+     "w": 0.45,
+     "h": 0.08,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 283.18
+  },
+  {
+   "id": "62",
+   "t0": 283.18,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    797.28,
+    -23.551
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -91,
+    "roll": -0.7,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b13_cutting_cane_antigua_1823",
+     "x": 0,
+     "y": 0.02,
+     "h": 0.7,
+     "rot": 1.5,
+     "z": 0.12,
+     "crop": [
+      0.0,
+      0.25,
+      0.75,
+      1.0
+     ],
+     "ilus": true
+    }
+   ],
+   "t1": 287.54
+  },
+  {
+   "id": "63",
+   "t0": 287.54,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    810.534,
+    -23.551
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -88,
+    "roll": 0.6,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "petition",
+     "x": 0,
+     "y": 0,
+     "w": 0.85,
+     "h": 1.0,
+     "rot": -1.5,
+     "z": 0.08,
+     "seed": 1801
+    },
+    {
+     "type": "tape",
+     "text": "PETANI MENENTANG",
+     "t": 288.34,
+     "x": 0.05,
+     "y": 0.32,
+     "size": 0.055,
+     "rot": -3,
+     "z": 0.3
+    }
+   ],
+   "t1": 290.41
+  },
+  {
+   "id": "64",
+   "t0": 290.41,
+   "tr": "G",
+   "trFrames": 6,
+   "center": [
+    832.963,
+    -23.551
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -90,
+    "roll": -0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b64_toussaint_paris_musees",
+     "x": 0,
+     "y": 0,
+     "h": 0.92,
+     "rot": -1,
+     "z": 0.12,
+     "crop": [
+      0.1,
+      0.05,
+      0.9,
+      0.75
+     ]
+    },
+    {
+     "type": "mark",
+     "kind": "tear",
+     "t": 291.56,
+     "x": 0.0,
+     "y": 0.0,
+     "w": 0.1,
+     "h": 0.9,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.45
+    }
+   ],
+   "t1": 293.7
+  },
+  {
+   "id": "65",
+   "t0": 293.7,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    846.217,
+    -23.551
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -92,
+    "roll": 0.7,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "notice",
+     "x": 0,
+     "y": 0,
+     "w": 0.85,
+     "h": 0.95,
+     "rot": 2,
+     "z": 0.08,
+     "seed": 1795,
+     "torn": true
+    },
+    {
+     "type": "mark",
+     "kind": "x",
+     "t": 296.32,
+     "x": 0,
+     "y": 0.05,
+     "w": 0.6,
+     "h": 0.6,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.55
+    }
+   ],
+   "t1": 298.06
+  },
+  {
+   "id": "66",
+   "t0": 298.06,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    859.472,
+    -23.551
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -88,
+    "roll": -0.6,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "decree",
+     "x": 0,
+     "y": 0,
+     "w": 0.85,
+     "h": 1.0,
+     "rot": -1.5,
+     "z": 0.08,
+     "seed": 1800
+    },
+    {
+     "type": "stamp",
+     "text": "KEKUASAAN KERAS",
+     "t": 301.02,
+     "x": 0.0,
+     "y": -0.05,
+     "size": 0.075,
+     "rot": -7,
+     "z": 0.32
+    }
+   ],
+   "t1": 304.12
+  },
+  {
+   "id": "67",
+   "t0": 304.12,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    872.726,
+    -23.551
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -91,
+    "roll": 0.7,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "typed",
+     "x": 0.08,
+     "y": 0,
+     "w": 0.95,
+     "h": 0.95,
+     "rot": 1.5,
+     "z": 0.06,
+     "seed": 1799
+    },
+    {
+     "type": "print",
+     "asset": "b67_andre_rigaud",
+     "x": -0.12,
+     "y": 0.1,
+     "h": 0.5,
+     "rot": -4,
+     "z": 0.14
+    },
+    {
+     "type": "tape",
+     "text": "ANDRÉ RIGAUD",
+     "t": 307.34,
+     "x": 0.02,
+     "y": -0.26,
+     "size": 0.055,
+     "rot": -3,
+     "z": 0.3
+    }
+   ],
+   "t1": 308.28
+  },
+  {
+   "id": "68",
+   "t0": 308.28,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    885.98,
+    -23.551
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -89,
+    "roll": -0.7,
+    "off": [
+     -0.08,
+     0
+    ],
+    "drift": [
+     0.12,
+     0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b68_acte_insurrection_1801",
+     "x": -0.22,
+     "y": 0,
+     "h": 0.95,
+     "rot": -1.5,
+     "z": 0.12
+    },
+    {
+     "type": "tape",
+     "text": "MOÏSE · 1801",
+     "t": 311.62,
+     "x": 0.45,
+     "y": 0.12,
+     "size": 0.055,
+     "rot": 4,
+     "z": 0.3
+    }
+   ],
+   "t1": 313.32
+  },
+  {
+   "id": "69",
+   "t0": 313.32,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    899.234,
+    -23.551
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -91,
+    "roll": 0.6,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b26_toussaint_kupfer_1806",
+     "x": 0,
+     "y": 0,
+     "h": 0.95,
+     "rot": 1,
+     "z": 0.12,
+     "crop": [
+      0.0,
+      0.0,
+      1.0,
+      0.62
+     ]
+    },
+    {
+     "type": "tape",
+     "text": "PEMBEBAS",
+     "t": 314.5,
+     "x": -0.5,
+     "y": 0.1,
+     "size": 0.055,
+     "rot": -4,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "OTORITER",
+     "t": 318.42,
+     "x": 0.5,
+     "y": -0.12,
+     "size": 0.055,
+     "rot": 4,
+     "z": 0.3,
+     "color": "red"
+    }
+   ],
+   "t1": 319.27
+  },
+  {
+   "id": "70",
+   "t0": 319.27,
+   "tr": "L",
+   "trFrames": 14,
+   "center": [
+    914.934,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 15,
+    "az": -86,
+    "roll": 1.0,
+    "push": 0.05,
+    "z": 0.35,
+    "drift": [
+     0.034999999999999996,
+     0.027999999999999997
+    ]
+   },
+   "objects": [
+    {
+     "type": "card",
+     "x": 0,
+     "y": 0,
+     "w": 3.0,
+     "h": 1.9,
+     "z": 0.25
+    },
+    {
+     "type": "type",
+     "text": "1801",
+     "x": 0,
+     "y": 0.02,
+     "size": 0.15,
+     "z": 0.35,
+     "align": "center",
+     "words": [
+      [
+       319.64,
+       320.82
+      ]
+     ],
+     "cursorUntil": 322.6
+    }
+   ],
+   "t1": 322.86
+  },
+  {
+   "id": "71",
+   "t0": 322.86,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    928.188,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 20,
+    "az": -90,
+    "roll": -0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "map",
+     "bbox": [
+      -75.0,
+      17.2,
+      -67.8,
+      20.6
+     ],
+     "x": 0,
+     "y": 0,
+     "w": 1.85,
+     "h": 0.92,
+     "rot": -1,
+     "z": 0.05,
+     "fills": [
+      {
+       "id": "332",
+       "t": 324.26,
+       "dur": 0.5,
+       "alpha": 0.55
+      },
+      {
+       "id": "214",
+       "t": 324.71,
+       "dur": 0.7,
+       "alpha": 0.55
+      }
+     ]
+    }
+   ],
+   "t1": 328.3
+  },
+  {
+   "id": "72",
+   "t0": 328.3,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    941.442,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -92,
+    "roll": 0.7,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b72_constitution_1801",
+     "x": -0.15,
+     "y": 0,
+     "h": 0.95,
+     "rot": 1,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "underline",
+     "t": 329.02,
+     "x": -0.15,
+     "y": 0.24,
+     "w": 0.42,
+     "h": 0.08,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5
+    },
+    {
+     "type": "stamp",
+     "text": "SEUMUR HIDUP",
+     "t": 332.28,
+     "x": 0.35,
+     "y": -0.28,
+     "size": 0.075,
+     "rot": -8,
+     "z": 0.32
+    }
+   ],
+   "t1": 333.28
+  },
+  {
+   "id": "73",
+   "t0": 333.28,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    954.696,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -89,
+    "roll": -0.7,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b40_map_tardieu_1802",
+     "x": 0,
+     "y": 0,
+     "h": 0.88,
+     "rot": -1.5,
+     "z": 0.12
+    }
+   ],
+   "t1": 337.7
+  },
+  {
+   "id": "73b",
+   "t0": 337.7,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    967.95,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -91,
+    "roll": 0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b09_map_stockdale_1800",
+     "x": 0,
+     "y": 0.02,
+     "h": 0.62,
+     "rot": 1.5,
+     "z": 0.12
+    },
+    {
+     "type": "hand",
+     "text": "otonomi",
+     "t": 340.18,
+     "x": 0.3,
+     "y": -0.32,
+     "size": 0.075,
+     "rot": -6,
+     "z": 0.3,
+     "color": "red"
+    }
+   ],
+   "t1": 341.75
+  },
+  {
+   "id": "74",
+   "t0": 341.75,
+   "tr": "G",
+   "trFrames": 6,
+   "center": [
+    990.38,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -91,
+    "roll": 0.6,
+    "push": 0.14,
+    "off": [
+     0,
+     0.1
+    ],
+    "drift": [
+     0,
+     0.04
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b74_napoleon_gros",
+     "x": 0,
+     "y": 0,
+     "h": 0.95,
+     "rot": -1,
+     "z": 0.12
+    }
+   ],
+   "t1": 346.5
+  },
+  {
+   "id": "75",
+   "t0": 346.5,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1003.634,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 20,
+    "az": -92,
+    "roll": 0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "map",
+     "bbox": [
+      -92,
+      7,
+      -56,
+      30
+     ],
+     "x": 0,
+     "y": 0,
+     "w": 1.85,
+     "h": 1.0,
+     "rot": 1,
+     "z": 0.05,
+     "labels": [
+      {
+       "text": "Laut Karibia",
+       "lon": -76,
+       "lat": 14.5,
+       "size": 0.05,
+       "rot": -4
+      }
+     ],
+     "pulses": [
+      {
+       "lon": -72.5,
+       "lat": 19.0,
+       "t": 348.96
+      }
+     ]
+    }
+   ],
+   "t1": 350.4
+  },
+  {
+   "id": "76",
+   "t0": 350.4,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1016.888,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -88,
+    "roll": -0.6,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b12_coffee_beans",
+     "x": -0.32,
+     "y": 0.05,
+     "h": 0.5,
+     "rot": -3,
+     "z": 0.12,
+     "film": true,
+     "video": {
+      "t0": 349.0,
+      "rate": 0.8
+     }
+    },
+    {
+     "type": "print",
+     "asset": "b12_cane_field",
+     "x": 0.38,
+     "y": -0.1,
+     "h": 0.46,
+     "rot": 3,
+     "z": 0.1,
+     "film": true,
+     "video": {
+      "t0": 351.0,
+      "rate": 0.8
+     }
+    },
+    {
+     "type": "mark",
+     "kind": "arrow",
+     "t": 353.5,
+     "x": 0.05,
+     "y": 0.25,
+     "w": 0.6,
+     "h": 0.3,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      -0.45,
+      -0.3
+     ],
+     "to": [
+      0.45,
+      0.4
+     ]
+    }
+   ],
+   "t1": 355.56
+  },
+  {
+   "id": "77",
+   "t0": 355.56,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1030.142,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -91,
+    "roll": 0.7,
+    "push": 0.06,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b77_proclamation_1801",
+     "x": -0.22,
+     "y": 0,
+     "h": 0.92,
+     "rot": -1.5,
+     "z": 0.12
+    },
+    {
+     "type": "tape",
+     "text": "KEPUTUSAN",
+     "t": 357.12,
+     "x": 0.48,
+     "y": 0.28,
+     "size": 0.05,
+     "rot": -3,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "TENTARA",
+     "t": 359.02,
+     "x": 0.5,
+     "y": 0.08,
+     "size": 0.05,
+     "rot": 2,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "KONSTITUSI",
+     "t": 360.76,
+     "x": 0.47,
+     "y": -0.12,
+     "size": 0.05,
+     "rot": -2,
+     "z": 0.3
+    },
+    {
+     "type": "stamp",
+     "text": "ANCAMAN",
+     "t": 362.56,
+     "x": 0.42,
+     "y": -0.34,
+     "size": 0.075,
+     "rot": -9,
+     "z": 0.32
+    }
+   ],
+   "t1": 364.51
+  },
+  {
+   "id": "78",
+   "t0": 364.51,
+   "tr": "G",
+   "trFrames": 6,
+   "center": [
+    1052.572,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -90,
+    "roll": -0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b78_napoleon_david",
+     "x": 0,
+     "y": 0,
+     "h": 0.95,
+     "rot": 1,
+     "z": 0.12
+    }
+   ],
+   "t1": 366.61
+  },
+  {
+   "id": "79",
+   "t0": 366.61,
+   "tr": "L",
+   "trFrames": 14,
+   "center": [
+    1075.002,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 21,
+    "az": -86,
+    "roll": 0.8,
+    "push": 0.08,
+    "off": [
+     0.5,
+     0.12
+    ],
+    "drift": [
+     -0.75,
+     -0.15
+    ],
+    "z": 0.06
+   },
+   "objects": [
+    {
+     "type": "map",
+     "bbox": [
+      -92,
+      2,
+      14,
+      56
+     ],
+     "x": 0,
+     "y": 0,
+     "w": 1.95,
+     "h": 1.12,
+     "rot": 1.5,
+     "z": 0.05,
+     "labels": [
+      {
+       "text": "Brest",
+       "lon": -2,
+       "lat": 50.5,
+       "size": 0.04
+      }
+     ],
+     "routes": [
+      {
+       "pts": [
+        [
+         -4.49,
+         48.39
+        ],
+        [
+         -35,
+         36
+        ],
+        [
+         -72.2,
+         19.76
+        ]
+       ],
+       "t0": 369.14,
+       "t1": 371.84000000000003,
+       "dash": false
+      }
+     ]
+    }
+   ],
+   "t1": 371.62
+  },
+  {
+   "id": "80",
+   "t0": 371.62,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1088.256,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -91,
+    "roll": 0.6,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b80_leclerc",
+     "x": -0.15,
+     "y": 0,
+     "h": 0.95,
+     "rot": -1.5,
+     "z": 0.12
+    },
+    {
+     "type": "tape",
+     "text": "JENDERAL LECLERC",
+     "t": 372.98,
+     "x": 0.42,
+     "y": 0.12,
+     "size": 0.05,
+     "rot": 3,
+     "z": 0.3
+    },
+    {
+     "type": "hand",
+     "text": "ipar Napoleon",
+     "t": 375.42,
+     "x": 0.45,
+     "y": -0.12,
+     "size": 0.06,
+     "rot": -5,
+     "z": 0.3,
+     "color": "red"
+    }
+   ],
+   "t1": 376.42
+  },
+  {
+   "id": "81",
+   "t0": 376.42,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1101.51,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -89,
+    "roll": -0.7,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b81_ocean_waves",
+     "x": 0,
+     "y": 0.03,
+     "h": 0.62,
+     "rot": 1.5,
+     "z": 0.12,
+     "film": true,
+     "ilus": true
+    },
+    {
+     "type": "stamp",
+     "text": "1802",
+     "t": 376.92,
+     "x": 0.4,
+     "y": -0.25,
+     "size": 0.1,
+     "rot": -7,
+     "z": 0.32
+    }
+   ],
+   "t1": 380.32
+  },
+  {
+   "id": "82",
+   "t0": 380.32,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1114.764,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -92,
+    "roll": 0.7,
+    "off": [
+     -0.1,
+     0
+    ],
+    "drift": [
+     0.18,
+     0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b07_prise_du_cap_1802",
+     "x": 0,
+     "y": 0,
+     "h": 0.95,
+     "rot": 1.5,
+     "z": 0.12,
+     "crop": [
+      0.0,
+      0.05,
+      0.75,
+      0.85
+     ]
+    }
+   ],
+   "t1": 383.72
+  },
+  {
+   "id": "82b",
+   "t0": 383.72,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1128.018,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -90,
+    "roll": -0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b19_toussaint_rijks",
+     "x": 0,
+     "y": 0,
+     "h": 0.92,
+     "rot": -1.5,
+     "z": 0.12,
+     "crop": [
+      0.08,
+      0.05,
+      0.92,
+      0.8
+     ]
+    },
+    {
+     "type": "mark",
+     "kind": "x",
+     "t": 387.16,
+     "x": 0,
+     "y": 0.02,
+     "w": 0.55,
+     "h": 0.6,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 388.47
+  },
+  {
+   "id": "83",
+   "t0": 388.47,
+   "tr": "G",
+   "trFrames": 6,
+   "center": [
+    1150.448,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -89,
+    "roll": -0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b83_crete_a_pierrot_1802",
+     "x": 0,
+     "y": 0.02,
+     "h": 0.75,
+     "rot": -1.5,
+     "z": 0.12
+    }
+   ],
+   "t1": 391.94
+  },
+  {
+   "id": "84",
+   "t0": 391.94,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1163.702,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -91,
+    "roll": 0.7,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b06_legionaries_san_domingo",
+     "x": 0,
+     "y": 0,
+     "h": 0.82,
+     "rot": 1,
+     "z": 0.12,
+     "crop": [
+      0.0,
+      0.0,
+      0.7,
+      1.0
+     ],
+     "overlay": {
+      "asset": "b33_smoke",
+      "opacity": 0.3
+     }
+    }
+   ],
+   "t1": 398.44
+  },
+  {
+   "id": "85",
+   "t0": 398.44,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1176.956,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -90,
+    "roll": -0.6,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "roster",
+     "x": 0,
+     "y": 0,
+     "w": 0.85,
+     "h": 1.0,
+     "rot": -1,
+     "z": 0.08,
+     "seed": 1802
+    },
+    {
+     "type": "mark",
+     "kind": "strike",
+     "t": 399.54,
+     "x": -0.05,
+     "y": 0.12,
+     "w": 0.55,
+     "h": 0.06,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.3
+    },
+    {
+     "type": "mark",
+     "kind": "strike",
+     "t": 399.89000000000004,
+     "x": -0.08,
+     "y": -0.04,
+     "w": 0.5,
+     "h": 0.06,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.3
+    }
+   ],
+   "t1": 401.16
+  },
+  {
+   "id": "86",
+   "t0": 401.16,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1190.21,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -92,
+    "roll": 0.6,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "petition",
+     "x": 0,
+     "y": 0,
+     "w": 0.85,
+     "h": 1.0,
+     "rot": 1.5,
+     "z": 0.08,
+     "seed": 1806
+    },
+    {
+     "type": "mark",
+     "kind": "tear",
+     "t": 406.6,
+     "x": 0.05,
+     "y": 0,
+     "w": 0.12,
+     "h": 0.95,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.4
+    }
+   ],
+   "t1": 407.48
+  },
+  {
+   "id": "87",
+   "t0": 407.48,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1203.464,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -89,
+    "roll": -0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b87_candle",
+     "x": 0,
+     "y": 0.02,
+     "h": 0.62,
+     "rot": -1.5,
+     "z": 0.12,
+     "film": true
+    }
+   ],
+   "t1": 410.61
+  },
+  {
+   "id": "88",
+   "t0": 410.61,
+   "tr": "L",
+   "trFrames": 14,
+   "center": [
+    1203.464,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -90,
+    "roll": 0.7,
+    "push": 0.08,
+    "drift": [
+     0.0,
+     -0.04
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "decree",
+     "x": 0.18,
+     "y": 0,
+     "w": 0.8,
+     "h": 0.98,
+     "rot": 1.5,
+     "z": 0.06,
+     "seed": 1802
+    },
+    {
+     "type": "print",
+     "asset": "b88_lettre_napoleon_1802",
+     "x": -0.5,
+     "y": 0.05,
+     "h": 0.55,
+     "rot": -6,
+     "z": 0.14
+    },
+    {
+     "type": "stamp",
+     "text": "MEI 1802",
+     "t": 410.94,
+     "x": 0.2,
+     "y": -0.2,
+     "size": 0.09,
+     "rot": -7,
+     "z": 0.32
+    }
+   ],
+   "t1": 416.32
+  },
+  {
+   "id": "89",
+   "t0": 416.32,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1216.718,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -92,
+    "roll": -0.5,
+    "off": [
+     -0.1,
+     0
+    ],
+    "drift": [
+     0.2,
+     0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b89_green_hills",
+     "x": 0,
+     "y": 0.03,
+     "h": 0.62,
+     "rot": 1,
+     "z": 0.12,
+     "film": true,
+     "video": {
+      "t0": 415.5,
+      "rate": 0.8
+     },
+     "ilus": true
+    }
+   ],
+   "t1": 421.84
+  },
+  {
+   "id": "90",
+   "t0": 421.84,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1229.972,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -89,
+    "roll": 0.6,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "typed",
+     "x": 0,
+     "y": 0,
+     "w": 1.0,
+     "h": 0.72,
+     "rot": -1,
+     "z": 0.08,
+     "seed": 18026
+    },
+    {
+     "type": "type",
+     "text": "JUNI 1802",
+     "x": 0,
+     "y": 0.04,
+     "size": 0.1,
+     "z": 0.35,
+     "color": "ink",
+     "align": "center",
+     "words": [
+      [
+       426.34,
+       427.84
+      ]
+     ],
+     "cursorUntil": 0
+    }
+   ],
+   "t1": 428.19
+  },
+  {
+   "id": "91",
+   "t0": 428.19,
+   "tr": "G",
+   "trFrames": 6,
+   "center": [
+    1252.402,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -91,
+    "roll": -0.7,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "cert",
+     "x": 0,
+     "y": 0,
+     "w": 0.88,
+     "h": 1.0,
+     "rot": 1,
+     "z": 0.08,
+     "seed": 1702
+    },
+    {
+     "type": "stamp",
+     "text": "DITANGKAP",
+     "t": 428.43,
+     "x": 0.0,
+     "y": 0.18,
+     "size": 0.1,
+     "rot": -7,
+     "z": 0.32
+    },
+    {
+     "type": "type",
+     "text": "JAMINAN",
+     "x": 0,
+     "y": -0.2,
+     "size": 0.075,
+     "z": 0.2,
+     "color": "ink",
+     "align": "center",
+     "words": [
+      [
+       432.04,
+       432.56
+      ]
+     ],
+     "cursorUntil": 0
+    },
+    {
+     "type": "mark",
+     "kind": "strike",
+     "t": 432.64,
+     "x": 0,
+     "y": -0.17,
+     "w": 0.5,
+     "h": 0.08,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.35
+    }
+   ],
+   "t1": 433.74
+  },
+  {
+   "id": "92",
+   "t0": 433.74,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1265.656,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 21,
+    "az": -93,
+    "roll": -0.7,
+    "push": 0.06,
+    "off": [
+     -0.5,
+     -0.1
+    ],
+    "drift": [
+     0.8,
+     0.16
+    ],
+    "z": 0.06
+   },
+   "objects": [
+    {
+     "type": "map",
+     "bbox": [
+      -92,
+      2,
+      14,
+      56
+     ],
+     "x": 0,
+     "y": 0,
+     "w": 1.95,
+     "h": 1.12,
+     "rot": -1,
+     "z": 0.05,
+     "routes": [
+      {
+       "pts": [
+        [
+         -72.2,
+         19.76
+        ],
+        [
+         -35,
+         36
+        ],
+        [
+         -4.49,
+         48.39
+        ]
+       ],
+       "t0": 434.78,
+       "t1": 440.26,
+       "dash": true
+      }
+     ]
+    }
+   ],
+   "t1": 440.44
+  },
+  {
+   "id": "93",
+   "t0": 440.44,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1278.91,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -90,
+    "roll": 0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b19_toussaint_rijks",
+     "x": 0,
+     "y": 0,
+     "h": 0.94,
+     "rot": 1.5,
+     "z": 0.12,
+     "drain": {
+      "t": 441.58,
+      "dur": 1.2
+     }
+    }
+   ],
+   "t1": 443.15
+  },
+  {
+   "id": "94",
+   "t0": 443.15,
+   "tr": "L",
+   "trFrames": 14,
+   "center": [
+    1301.34,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -91,
+    "roll": -0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b94_fort_de_joux",
+     "x": 0,
+     "y": 0.04,
+     "h": 0.7,
+     "rot": -1,
+     "z": 0.12
+    },
+    {
+     "type": "tape",
+     "text": "BENTENG DE JOUX",
+     "t": 445.22,
+     "x": -0.2,
+     "y": -0.31,
+     "size": 0.055,
+     "rot": -3,
+     "z": 0.3
+    },
+    {
+     "type": "mark",
+     "kind": "circle",
+     "t": 446.66,
+     "x": 0.08,
+     "y": 0.12,
+     "w": 0.4,
+     "h": 0.3,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 448.84
+  },
+  {
+   "id": "95",
+   "t0": 448.84,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1314.594,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 16,
+    "az": -90,
+    "roll": 0.5,
+    "push": 0.14,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b95_toussaint_au_fort_de_joux",
+     "x": 0,
+     "y": 0,
+     "h": 0.72,
+     "rot": 1,
+     "z": 0.12
+    }
+   ],
+   "t1": 452.62
+  },
+  {
+   "id": "96",
+   "t0": 452.62,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1327.848,
+    -28.598
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 16,
+    "az": -91,
+    "roll": -0.4,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b96_cellule_plaque",
+     "x": 0,
+     "y": 0.04,
+     "h": 0.72,
+     "rot": -1,
+     "z": 0.12
+    },
+    {
+     "type": "stamp",
+     "text": "7 APRIL 1803",
+     "t": 453.6,
+     "x": 0.2,
+     "y": -0.3,
+     "size": 0.07,
+     "rot": -6,
+     "z": 0.32
+    }
+   ],
+   "t1": 457.91
+  },
+  {
+   "id": "97",
+   "t0": 457.91,
+   "tr": "L",
+   "trFrames": 14,
+   "center": [
+    1327.848,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -89,
+    "roll": 0.6,
+    "push": 0.12,
+    "drift": [
+     0.0,
+     0.04
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b02_napoleon_ingres",
+     "x": 0,
+     "y": 0,
+     "h": 0.95,
+     "rot": 1.5,
+     "z": 0.12,
+     "crop": [
+      0.1,
+      0.0,
+      0.9,
+      0.55
+     ]
+    }
+   ],
+   "t1": 462.72
+  },
+  {
+   "id": "98",
+   "t0": 462.72,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1341.102,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -92,
+    "roll": -0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b78_napoleon_david",
+     "x": 0,
+     "y": 0,
+     "h": 0.92,
+     "rot": -1.5,
+     "z": 0.12,
+     "crop": [
+      0.15,
+      0.05,
+      0.85,
+      0.6
+     ]
+    }
+   ],
+   "t1": 466.4
+  },
+  {
+   "id": "99a",
+   "t0": 466.4,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1354.356,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -89,
+    "roll": 0.6,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b47_moi_libre_aussi_femme",
+     "x": 0,
+     "y": 0,
+     "h": 0.92,
+     "rot": 1.5,
+     "z": 0.12,
+     "crop": [
+      0.1,
+      0.05,
+      0.9,
+      0.8
+     ]
+    }
+   ],
+   "t1": 470.84
+  },
+  {
+   "id": "99",
+   "t0": 470.84,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1367.61,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -90,
+    "roll": 0.7,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b42_decret_abolition_1794",
+     "x": 0,
+     "y": 0,
+     "h": 0.95,
+     "rot": -1,
+     "z": 0.12
+    },
+    {
+     "type": "stamp",
+     "text": "DIPULIHKAN",
+     "t": 471.96,
+     "x": 0.05,
+     "y": -0.05,
+     "size": 0.095,
+     "rot": -10,
+     "z": 0.32
+    }
+   ],
+   "t1": 474.72
+  },
+  {
+   "id": "100",
+   "t0": 474.72,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1380.864,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -91,
+    "roll": -0.6,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b83_crete_a_pierrot_1802",
+     "x": 0,
+     "y": 0,
+     "h": 0.82,
+     "rot": 1.5,
+     "z": 0.12,
+     "crop": [
+      0.25,
+      0.1,
+      1.0,
+      1.0
+     ]
+    }
+   ],
+   "t1": 476.97
+  },
+  {
+   "id": "101",
+   "t0": 476.97,
+   "tr": "G",
+   "trFrames": 6,
+   "center": [
+    1403.294,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -89,
+    "roll": 0.6,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b101_aedes_aegypti",
+     "x": 0,
+     "y": 0.04,
+     "h": 0.66,
+     "rot": -1,
+     "z": 0.12
+    },
+    {
+     "type": "tape",
+     "text": "DEMAM KUNING",
+     "t": 477.9,
+     "x": -0.25,
+     "y": -0.3,
+     "size": 0.055,
+     "rot": -3,
+     "z": 0.3
+    },
+    {
+     "type": "mark",
+     "kind": "circle",
+     "t": 478.18,
+     "x": 0.05,
+     "y": 0.06,
+     "w": 0.55,
+     "h": 0.38,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 480.42
+  },
+  {
+   "id": "102",
+   "t0": 480.42,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1416.548,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -91,
+    "roll": -0.6,
+    "push": 0.07,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b102_dessalines",
+     "x": -0.5,
+     "y": 0,
+     "h": 0.86,
+     "rot": -2,
+     "z": 0.14
+    },
+    {
+     "type": "title",
+     "text": "JEAN-JACQUES\nDESSALINES",
+     "sub": null,
+     "t": 483.72,
+     "x": 0.32,
+     "y": 0.03,
+     "size": 0.08,
+     "z": 0.4,
+     "lineHeight": 1.12
+    }
+   ],
+   "t1": 485.2
+  },
+  {
+   "id": "103",
+   "t0": 485.2,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1429.802,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -89,
+    "roll": 0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b06_legionaries_san_domingo",
+     "x": 0,
+     "y": 0,
+     "h": 0.8,
+     "rot": -1,
+     "z": 0.12,
+     "crop": [
+      0.15,
+      0.2,
+      0.85,
+      1.0
+     ],
+     "overlay": {
+      "asset": "b33_smoke",
+      "opacity": 0.3
+     }
+    }
+   ],
+   "t1": 489.79
+  },
+  {
+   "id": "104",
+   "t0": 489.79,
+   "tr": "L",
+   "trFrames": 14,
+   "center": [
+    1452.232,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -90,
+    "roll": -0.6,
+    "push": 0.07,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b104_acte_independance_1804",
+     "x": -0.48,
+     "y": 0,
+     "h": 0.9,
+     "rot": -1.5,
+     "z": 0.12
+    },
+    {
+     "type": "title",
+     "text": "1 JANUARI\n1804",
+     "sub": null,
+     "t": 490.06,
+     "x": 0.42,
+     "y": 0.03,
+     "size": 0.095,
+     "z": 0.4,
+     "lineHeight": 1.15
+    },
+    {
+     "type": "mark",
+     "kind": "circle",
+     "t": 493.46,
+     "x": -0.48,
+     "y": 0.33,
+     "w": 0.48,
+     "h": 0.13,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 494.34
+  },
+  {
+   "id": "105",
+   "t0": 494.34,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1465.486,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -92,
+    "roll": 0.6,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "map",
+     "bbox": [
+      -75.0,
+      17.2,
+      -67.8,
+      20.6
+     ],
+     "x": 0,
+     "y": 0,
+     "w": 1.85,
+     "h": 0.92,
+     "rot": 1,
+     "z": 0.05,
+     "fills": [
+      {
+       "id": "332",
+       "t": 494.74,
+       "dur": 0.6,
+       "alpha": 0.55
+      }
+     ],
+     "rings": [
+      {
+       "lon": -72.6,
+       "lat": 19.0,
+       "t": 499.48,
+       "dur": 2.0
+      }
+     ]
+    }
+   ],
+   "t1": 501.44
+  },
+  {
+   "id": "106",
+   "t0": 501.44,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1478.74,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 21,
+    "az": -90,
+    "roll": -0.6,
+    "push": -0.05,
+    "off": [
+     -0.3,
+     -0.12
+    ],
+    "drift": [
+     0.2,
+     0.08
+    ],
+    "z": 0.06
+   },
+   "objects": [
+    {
+     "type": "map",
+     "bbox": [
+      -92,
+      2,
+      14,
+      56
+     ],
+     "x": 0,
+     "y": 0,
+     "w": 1.95,
+     "h": 1.12,
+     "rot": 1,
+     "z": 0.05,
+     "rings": [
+      {
+       "lon": -72.6,
+       "lat": 19.0,
+       "t": 503.96,
+       "dur": 3.0
+      }
+     ]
+    }
+   ],
+   "t1": 505.9
+  },
+  {
+   "id": "106b",
+   "t0": 505.9,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1491.994,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -91,
+    "roll": 0.6,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b31_moi_libre_aussi_homme",
+     "x": 0,
+     "y": 0,
+     "h": 0.9,
+     "rot": 1.5,
+     "z": 0.12,
+     "crop": [
+      0.1,
+      0.05,
+      0.9,
+      0.85
+     ]
+    }
+   ],
+   "t1": 510.4
+  },
+  {
+   "id": "106c",
+   "t0": 510.4,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1505.248,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -91,
+    "roll": -0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b17_code_noir_1685",
+     "x": 0,
+     "y": 0,
+     "h": 0.95,
+     "rot": -1.5,
+     "z": 0.12,
+     "crop": [
+      0.0,
+      0.0,
+      1.0,
+      0.7
+     ]
+    },
+    {
+     "type": "mark",
+     "kind": "underline",
+     "t": 513.8,
+     "x": 0,
+     "y": 0.05,
+     "w": 0.5,
+     "h": 0.08,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 514.82
+  },
+  {
+   "id": "107a",
+   "t0": 514.82,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1518.502,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -89,
+    "roll": -0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b104_acte_independance_1804",
+     "x": 0,
+     "y": 0,
+     "h": 0.95,
+     "rot": 1,
+     "z": 0.12,
+     "crop": [
+      0.05,
+      0.0,
+      0.95,
+      0.45
+     ]
+    }
+   ],
+   "t1": 517.86
+  },
+  {
+   "id": "107",
+   "t0": 517.86,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1531.756,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -91,
+    "roll": 0.6,
+    "off": [
+     -0.08,
+     0
+    ],
+    "drift": [
+     0.14,
+     0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b107_citadelle_laferriere",
+     "x": 0,
+     "y": 0.05,
+     "h": 0.7,
+     "rot": -1,
+     "z": 0.12
+    },
+    {
+     "type": "tape",
+     "text": "CITADELLE LAFERRIÈRE · 1805–1820",
+     "t": 518.5600000000001,
+     "x": -0.05,
+     "y": -0.32,
+     "size": 0.036,
+     "rot": -2,
+     "z": 0.3
+    }
+   ],
+   "t1": 521.84
+  },
+  {
+   "id": "107c",
+   "t0": 521.84,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1545.01,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -90,
+    "roll": -0.6,
+    "push": 0.08,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b09_map_stockdale_1800",
+     "x": 0,
+     "y": 0.02,
+     "h": 0.62,
+     "rot": 1,
+     "z": 0.12
+    },
+    {
+     "type": "mark",
+     "kind": "arrow",
+     "t": 523.62,
+     "x": -0.45,
+     "y": 0.2,
+     "w": 0.35,
+     "h": 0.25,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      -0.45,
+      0.4
+     ],
+     "to": [
+      0.4,
+      -0.35
+     ]
+    },
+    {
+     "type": "mark",
+     "kind": "arrow",
+     "t": 523.92,
+     "x": 0.45,
+     "y": 0.22,
+     "w": 0.35,
+     "h": 0.25,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      0.45,
+      0.4
+     ],
+     "to": [
+      -0.4,
+      -0.35
+     ]
+    },
+    {
+     "type": "mark",
+     "kind": "arrow",
+     "t": 524.84,
+     "x": 0.0,
+     "y": -0.36,
+     "w": 0.3,
+     "h": 0.2,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5,
+     "from": [
+      0.0,
+      -0.45
+     ],
+     "to": [
+      0.0,
+      0.4
+     ]
+    }
+   ],
+   "t1": 527.29
+  },
+  {
+   "id": "108",
+   "t0": 527.29,
+   "tr": "T",
+   "trFrames": 12,
+   "center": [
+    1558.264,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 15,
+    "az": -94,
+    "roll": -1.0,
+    "push": 0.05,
+    "z": 0.35,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "card",
+     "x": 0,
+     "y": 0,
+     "w": 3.0,
+     "h": 1.9,
+     "z": 0.25
+    },
+    {
+     "type": "type",
+     "text": "KEBEBASAN\nTELAH DIREBUT",
+     "x": 0,
+     "y": 0.04,
+     "size": 0.1,
+     "z": 0.35,
+     "align": "center",
+     "words": [
+      [
+       527.34,
+       528.28
+      ],
+      [
+       528.28,
+       528.52
+      ],
+      [
+       528.52,
+       528.98
+      ]
+     ],
+     "cursorUntil": 532.6
+    }
+   ],
+   "t1": 533.03
+  },
+  {
+   "id": "109",
+   "t0": 533.03,
+   "tr": "L",
+   "trFrames": 14,
+   "center": [
+    1580.693,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 16,
+    "az": -90,
+    "roll": 0.5,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b109_buste_fort_de_joux",
+     "x": 0,
+     "y": 0,
+     "h": 0.92,
+     "rot": -1,
+     "z": 0.12
+    }
+   ],
+   "t1": 539.14
+  },
+  {
+   "id": "110",
+   "t0": 539.14,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1593.948,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -91,
+    "roll": -0.6,
+    "push": 0.06,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b05_toussaint_bust",
+     "x": -0.48,
+     "y": 0.02,
+     "h": 0.62,
+     "rot": -3,
+     "z": 0.12
+    },
+    {
+     "type": "print",
+     "asset": "b102_dessalines",
+     "x": 0.42,
+     "y": -0.02,
+     "h": 0.62,
+     "rot": 3,
+     "z": 0.12
+    }
+   ],
+   "t1": 542.18
+  },
+  {
+   "id": "111",
+   "t0": 542.18,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1607.202,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -90,
+    "roll": 0.6,
+    "push": 0.06,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b52_toussaint_horseback_met",
+     "x": -0.42,
+     "y": 0,
+     "h": 0.9,
+     "rot": -1.5,
+     "z": 0.12
+    },
+    {
+     "type": "tape",
+     "text": "KEPEMIMPINAN",
+     "t": 543.38,
+     "x": 0.4,
+     "y": 0.22,
+     "size": 0.055,
+     "rot": -3,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "STRATEGI",
+     "t": 544.4,
+     "x": 0.42,
+     "y": 0.02,
+     "size": 0.055,
+     "rot": 2,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "PERJUANGAN",
+     "t": 545.34,
+     "x": 0.38,
+     "y": -0.18,
+     "size": 0.055,
+     "rot": -2,
+     "z": 0.3
+    }
+   ],
+   "t1": 549.68
+  },
+  {
+   "id": "112",
+   "t0": 549.68,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1620.456,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -89,
+    "roll": 0.6,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b112_pantheon_memorial",
+     "x": 0,
+     "y": 0.03,
+     "h": 0.7,
+     "rot": 1,
+     "z": 0.12
+    }
+   ],
+   "t1": 553.86
+  },
+  {
+   "id": "112b",
+   "t0": 553.86,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1633.71,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -91,
+    "roll": -0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b20_toussaint_a_cheval",
+     "x": 0,
+     "y": 0,
+     "h": 0.92,
+     "rot": -1.5,
+     "z": 0.12,
+     "crop": [
+      0.0,
+      0.0,
+      1.0,
+      0.75
+     ]
+    },
+    {
+     "type": "mark",
+     "kind": "q",
+     "t": 556.9799999999999,
+     "x": 0.4,
+     "y": 0.2,
+     "w": 0.16,
+     "h": 0.28,
+     "rot": 0,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 557.66
+  },
+  {
+   "id": "113",
+   "t0": 557.66,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1646.964,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 19,
+    "az": -90,
+    "roll": 0.6,
+    "push": 0.06,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "doc",
+     "kind": "typed",
+     "x": 0,
+     "y": 0,
+     "w": 1.25,
+     "h": 0.9,
+     "rot": -1,
+     "z": 0.04,
+     "seed": 1803,
+     "dim": 0.35
+    },
+    {
+     "type": "tape",
+     "text": "PEJUANG",
+     "t": 558.0,
+     "x": -0.38,
+     "y": 0.2,
+     "size": 0.055,
+     "rot": -3,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "ATURAN KERAS",
+     "t": 560.58,
+     "x": 0.38,
+     "y": 0.2,
+     "size": 0.055,
+     "rot": 3,
+     "z": 0.3,
+     "color": "red"
+    },
+    {
+     "type": "tape",
+     "text": "MELAWAN KUASA",
+     "t": 562.54,
+     "x": -0.38,
+     "y": -0.14,
+     "size": 0.055,
+     "rot": 2,
+     "z": 0.3
+    },
+    {
+     "type": "tape",
+     "text": "MEMPERTAHANKAN\nKUASA",
+     "t": 565.5,
+     "x": 0.38,
+     "y": -0.16,
+     "size": 0.05,
+     "rot": -2,
+     "z": 0.3,
+     "color": "red"
+    },
+    {
+     "type": "mark",
+     "kind": "line",
+     "t": 557.96,
+     "x": 0,
+     "y": 0.02,
+     "w": 0.8,
+     "h": 0.05,
+     "rot": 90,
+     "z": 0.33,
+     "dur": 0.5
+    }
+   ],
+   "t1": 567.5
+  },
+  {
+   "id": "114",
+   "t0": 567.5,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1660.218,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -91,
+    "roll": -0.6,
+    "push": 0.12,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b95_toussaint_au_fort_de_joux",
+     "x": 0,
+     "y": 0,
+     "h": 0.72,
+     "rot": -1.5,
+     "z": 0.12,
+     "crop": [
+      0.15,
+      0.0,
+      0.85,
+      1.0
+     ]
+    }
+   ],
+   "t1": 570.92
+  },
+  {
+   "id": "114b",
+   "t0": 570.92,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1673.472,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 18,
+    "az": -89,
+    "roll": 0.6,
+    "push": 0.1,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b104_acte_independance_1804",
+     "x": 0,
+     "y": 0,
+     "h": 0.95,
+     "rot": 1.5,
+     "z": 0.12,
+     "crop": [
+      0.0,
+      0.3,
+      1.0,
+      1.0
+     ]
+    }
+   ],
+   "t1": 575.28
+  },
+  {
+   "id": "115",
+   "t0": 575.28,
+   "tr": "W",
+   "trFrames": 11,
+   "center": [
+    1686.726,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 17,
+    "az": -90,
+    "roll": -0.5,
+    "off": [
+     -0.15,
+     0
+    ],
+    "drift": [
+     0.28,
+     0
+    ]
+   },
+   "objects": [
+    {
+     "type": "print",
+     "asset": "b115_pantheon_inscription",
+     "x": 0,
+     "y": 0.03,
+     "h": 0.52,
+     "rot": -1,
+     "z": 0.12
+    }
+   ],
+   "t1": 578.55
+  },
+  {
+   "id": "116",
+   "t0": 578.55,
+   "tr": "T",
+   "trFrames": 12,
+   "center": [
+    1699.98,
+    -11.776
+   ],
+   "dist": 10.0,
+   "cam": {
+    "tilt": 15,
+    "az": -90,
+    "roll": 0.6,
+    "push": 0.08,
+    "z": 0.35,
+    "drift": [
+     0.05,
+     0.0
+    ]
+   },
+   "objects": [
+    {
+     "type": "card",
+     "x": 0,
+     "y": 0,
+     "w": 3.0,
+     "h": 1.9,
+     "z": 0.25
+    },
+    {
+     "type": "type",
+     "text": "GAGASAN TAK BISA\nDIKURUNG.",
+     "x": 0,
+     "y": 0.04,
+     "size": 0.095,
+     "z": 0.35,
+     "align": "center",
+     "t0": 580.48,
+     "t1": 582.48,
+     "cursorUntil": 588.121
+    }
+   ],
+   "t1": 588.121
+  }
+ ],
+ "fx": [
+  {
+   "type": "fadein",
+   "t": 0,
+   "dur": 0.6
+  },
+  {
+   "type": "glitch",
+   "t": 18.69,
+   "frames": 6
+  },
+  {
+   "type": "glitch",
+   "t": 31.3,
+   "frames": 6,
+   "extra": true
+  },
+  {
+   "type": "leak",
+   "t": 32.03,
+   "frames": 14
+  },
+  {
+   "type": "glitch",
+   "t": 53.98,
+   "frames": 5,
+   "extra": true
+  },
+  {
+   "type": "leak",
+   "t": 59.15,
+   "frames": 14
+  },
+  {
+   "type": "leak",
+   "t": 87.03,
+   "frames": 14
+  },
+  {
+   "type": "glitch",
+   "t": 102.1,
+   "frames": 5,
+   "extra": true
+  },
+  {
+   "type": "leak",
+   "t": 119.17,
+   "frames": 14
+  },
+  {
+   "type": "glitch",
+   "t": 122.7,
+   "frames": 4,
+   "extra": true
+  },
+  {
+   "type": "glitch",
+   "t": 135.86,
+   "frames": 5,
+   "extra": true
+  },
+  {
+   "type": "leak",
+   "t": 136.45,
+   "frames": 14
+  },
+  {
+   "type": "glitch",
+   "t": 150.32,
+   "frames": 5,
+   "extra": true
+  },
+  {
+   "type": "glitch",
+   "t": 162.43,
+   "frames": 6
+  },
+  {
+   "type": "glitch",
+   "t": 182.37,
+   "frames": 6
+  },
+  {
+   "type": "glitch",
+   "t": 229.74,
+   "frames": 5,
+   "extra": true
+  },
+  {
+   "type": "leak",
+   "t": 265.55,
+   "frames": 14
+  },
+  {
+   "type": "glitch",
+   "t": 277.23,
+   "frames": 6
+  },
+  {
+   "type": "glitch",
+   "t": 290.41,
+   "frames": 6
+  },
+  {
+   "type": "glitch",
+   "t": 313.02,
+   "frames": 5,
+   "extra": true
+  },
+  {
+   "type": "leak",
+   "t": 319.27,
+   "frames": 14
+  },
+  {
+   "type": "glitch",
+   "t": 341.75,
+   "frames": 6
+  },
+  {
+   "type": "glitch",
+   "t": 343.98,
+   "frames": 5,
+   "extra": true
+  },
+  {
+   "type": "glitch",
+   "t": 364.51,
+   "frames": 6
+  },
+  {
+   "type": "glitch",
+   "t": 366.22,
+   "frames": 5,
+   "extra": true
+  },
+  {
+   "type": "leak",
+   "t": 366.61,
+   "frames": 14
+  },
+  {
+   "type": "glitch",
+   "t": 388.47,
+   "frames": 6
+  },
+  {
+   "type": "leak",
+   "t": 410.61,
+   "frames": 14
+  },
+  {
+   "type": "glitch",
+   "t": 428.19,
+   "frames": 6
+  },
+  {
+   "type": "leak",
+   "t": 443.15,
+   "frames": 14
+  },
+  {
+   "type": "leak",
+   "t": 457.91,
+   "frames": 14
+  },
+  {
+   "type": "glitch",
+   "t": 464.64,
+   "frames": 5,
+   "extra": true
+  },
+  {
+   "type": "glitch",
+   "t": 476.97,
+   "frames": 6
+  },
+  {
+   "type": "leak",
+   "t": 489.79,
+   "frames": 14
+  },
+  {
+   "type": "leak",
+   "t": 533.03,
+   "frames": 14
+  },
+  {
+   "type": "glitch",
+   "t": 574.6,
+   "frames": 5,
+   "extra": true
+  },
+  {
+   "type": "fadeout",
+   "t": 587.221,
+   "dur": 0.9
+  }
+ ],
+ "stampTimes": [
+  17.5,
+  62.28,
+  90.54,
+  137.3,
+  182.86,
+  301.02,
+  332.28,
+  362.56,
+  376.92,
+  410.94,
+  428.43,
+  453.6,
+  471.96
+ ],
+ "shakes": [
+  {
+   "t": 31.3,
+   "amp": 10
+  },
+  {
+   "t": 122.7,
+   "amp": 14
+  }
+ ]
+}

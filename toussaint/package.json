@@ -1,0 +1,19 @@
+{
+  "name": "toussaint-case-file",
+  "private": true,
+  "description": "Case-file documentary renderer: three.js in headless Chromium, frames to ffmpeg",
+  "scripts": {
+    "beats": "python3 tools/build_beats.py",
+    "render": "node tools/render.js"
+  },
+  "dependencies": {
+    "@fontsource/black-ops-one": "^5.1.0",
+    "@fontsource/caveat": "^5.1.0",
+    "@fontsource/oswald": "^5.1.0",
+    "@fontsource/special-elite": "^5.1.0",
+    "d3-geo": "^3.1.1",
+    "three": "^0.170.0",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
+  }
+}
