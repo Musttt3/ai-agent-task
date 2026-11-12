@@ -36,8 +36,8 @@ beat("05", w("Toussaint", 18.7) - 0.03, "G", [
 ], cam={"tilt": 17, "az": -92, "roll": -0.7, "push": 0.08, "z": 0.2})
 
 beat("06", w("Dia", 20.3) - 0.1, "W", [
-    P("b06_legionaries_san_domingo", x=0, y=0.02, h=0.7, rot=2, z=0.12),
-    MARK("circle", w("diperbudak", 25.2), x=0.05, y=-0.08, w=0.5, h=0.32, rot=-3),
+    P("b83_crete_a_pierrot_1802", x=0, y=0.02, h=0.78, rot=2, z=0.12, crop=[0.0, 0.0, 0.75, 1.0]),
+    MARK("circle", w("diperbudak", 25.2), x=-0.08, y=0.0, w=0.55, h=0.45, rot=-3),
 ], cam={"tilt": 18, "az": -86, "roll": 0.8})
 
 beat("07", w("Dan", 25.9) - 0.1, "W", [
@@ -100,7 +100,7 @@ beat("17", w("Sejak", 66.7) - 0.1, "W", [
 ], cam={"tilt": 18, "az": -92, "roll": -0.6, "push": 0.1, "off": [0, 0.08], "drift": [0, -0.06]})
 
 beat("18", w("Dia", 69.9) - 0.1, "W", [
-    P("b18_mortels_egaux_1794", x=0, y=0.06, h=0.66, rot=-1, z=0.12),
+    P("b48_planter_brunias", x=0, y=0.08, h=0.78, rot=-1, z=0.12, crop=[0.0, 0.1, 1.0, 0.85]),
     TAPE("STATUS", w("status", 73.6), x=-0.32, y=-0.32, rot=-4, size=0.05),
     TAPE("WARNA KULIT", w("warna", 74.4), x=0.28, y=-0.34, rot=3, size=0.05),
 ], cam={"tilt": 17, "az": -88, "roll": 0.9})
@@ -232,7 +232,7 @@ beat("42", w("Pada", 182.4) - 0.05, "G", [
 ], cam={"tilt": 17, "az": -92, "roll": 0.8, "push": 0.1})
 
 beat("43", w("Toussaint", 189.3) - 0.1, "W", [
-    P("b43_rejouissances_1794", x=0, y=0, h=0.9, rot=-2, z=0.12),
+    P("b18_mortels_egaux_1794", x=-0.05, y=0.02, h=0.7, rot=-2, z=0.12),
     MARK("arrow", w("beralih", 189.7) + 0.1, x=0.4, y=0.1, w=0.3, h=0.4, bend=0.45, **{"from": [-0.3, -0.4], "to": [0.2, 0.4]}),
 ], cam={"tilt": 18, "az": -88, "roll": -0.6})
 
@@ -296,7 +296,7 @@ beat("54", w("Dengan", 243.5) - 0.1, "W", [
 ], cam={"tilt": 19, "az": -90, "roll": 0.7, "push": 0.12})
 
 beat("55", w("pasukannya", 247.8) - 0.1, "W", [
-    P("b06_legionaries_san_domingo", x=0, y=0, h=0.8, rot=1.5, z=0.12, crop=[0.3, 0.1, 1.0, 0.95]),
+    P("b55_palm_tree_hill", x=0, y=0, h=0.66, rot=1.5, z=0.12),
     MARK("arrow", w("mengusir", 250.7), x=0.35, y=0.05, w=0.4, h=0.3, **{"from": [-0.45, 0.0], "to": [0.45, 0.1]}),
 ], cam={"tilt": 18, "az": -94, "roll": -0.6})
 
@@ -460,7 +460,7 @@ beat("83", w("Perlawanan", 388.5) - 0.05, "G", [
 ], cam={"tilt": 18, "az": -89, "roll": -0.6, "push": 0.1})
 
 beat("84", w("Pasukan", 392.0) - 0.1, "W", [
-    P("b06_legionaries_san_domingo", x=0, y=0, h=0.82, rot=1, z=0.12, crop=[0.0, 0.0, 0.7, 1.0], overlay={"asset": "b33_smoke", "opacity": 0.3}),
+    P("b55_palm_tree_hill", x=0, y=0, h=0.66, rot=1, z=0.12, overlay={"asset": "b33_smoke", "opacity": 0.3}),
 ], cam={"tilt": 18, "az": -91, "roll": 0.7, "push": 0.1})
 
 beat("85", w("Beberapa", 398.5) - 0.1, "W", [
@@ -559,7 +559,7 @@ beat("102", w("Perjuangan", 480.5) - 0.1, "W", [
 ], cam={"tilt": 17, "az": -91, "roll": -0.6, "push": 0.07})
 
 beat("103", w("Setelah", 485.3) - 0.1, "W", [
-    P("b06_legionaries_san_domingo", x=0, y=0, h=0.8, rot=-1, z=0.12, crop=[0.15, 0.2, 0.85, 1.0], overlay={"asset": "b33_smoke", "opacity": 0.3}),
+    P("b55_palm_tree_hill", x=0, y=0, h=0.66, rot=-1, z=0.12, crop=[0.0, 0.15, 1.0, 1.0], overlay={"asset": "b33_smoke", "opacity": 0.3}),
 ], cam={"tilt": 18, "az": -89, "roll": 0.6, "push": 0.1})
 
 beat("104", w("Pada", 489.8) - 0.05, "L", [

@@ -8,10 +8,6 @@
   "kind": "commons",
   "title": "AduC 073Toussaint-Louverture (1748-1803).JPG"
  },
- "b06_legionaries_san_domingo": {
-  "kind": "commons",
-  "title": "January Suchodolski - Legionaries at San Domingo - MP 2606 - National Museum in Warsaw.jpg"
- },
  "b07_prise_du_cap_1802": {
   "kind": "commons",
   "title": "Prise du Cap Français par l'Armée Française, sous le Commandement du Général Leclerc ; le 15 et 20 Pluviose, An 10 (4-9 Février 1802) Le Capitaine Magon entre dans la Rade, il est reçu à coups de Canon par le... - btv1b6950306r.jpg",
@@ -68,7 +64,8 @@
  },
  "b14_sugar_mill_1681": {
   "kind": "commons",
-  "title": "Travail_des_esclaves_dans_le_moulin_à_sucre,_1681,_par_César_de_Rochefort.jpg"
+  "title": "Travail_des_esclaves_dans_le_moulin_à_sucre,_1681,_par_César_de_Rochefort.jpg",
+  "ilus": true
  },
  "b17_code_noir_1685": {
   "kind": "commons",
@@ -223,10 +220,6 @@
   "kind": "commons",
   "title": "Décret_d'abolition_de_l’esclavage_par_la_Convention-_Archives_nationales-BB-34-1-58.jpg"
  },
- "b43_rejouissances_1794": {
-  "kind": "commons",
-  "title": "Réjouissances_à_l'annonce_de_l'abolition_de_l'esclavage,_30_pluviôse_an_II.jpg"
- },
  "b46_insurrection_convention": {
   "kind": "commons",
   "title": "L'insurrection_des_esclaves_entre_dans_la_Convention._Jeanne_Odo_à_la_tribune.jpg",
@@ -288,5 +281,10 @@
  "b96_cellule_plaque": {
   "kind": "commons",
   "title": "Cellule_de_Toussaint_Louverture_au_fort_de_Joux_-_buste_plaque.jpg"
+ },
+ "b55_palm_tree_hill": {
+  "kind": "commons",
+  "title": "Battle_for_Palm_Tree_Hill.jpg",
+  "note": "largest version on Commons is 800px; used only at supporting size"
  }
 }

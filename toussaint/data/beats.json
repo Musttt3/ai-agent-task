@@ -16,11 +16,6 @@
    "src": "assets/broll/b05_toussaint_bust.jpg",
    "ilus": false
   },
-  "b06_legionaries_san_domingo": {
-   "type": "image",
-   "src": "assets/broll/b06_legionaries_san_domingo.jpg",
-   "ilus": false
-  },
   "b07_prise_du_cap_1802": {
    "type": "image",
    "src": "assets/broll/b07_prise_du_cap_1802.jpg",
@@ -104,7 +99,7 @@
   "b14_sugar_mill_1681": {
    "type": "image",
    "src": "assets/broll/b14_sugar_mill_1681.jpg",
-   "ilus": false
+   "ilus": true
   },
   "b17_code_noir_1685": {
    "type": "image",
@@ -191,12 +186,6 @@
    "interim": true,
    "ilus": false
   },
-  "b43_rejouissances_1794": {
-   "type": "image",
-   "src": "assets/broll_interim/b43_rejouissances_1794.jpg",
-   "interim": true,
-   "ilus": false
-  },
   "b46_insurrection_convention": {
    "type": "image",
    "src": "assets/broll_interim/b46_insurrection_convention.jpg",
@@ -205,14 +194,12 @@
   },
   "b47_moi_libre_aussi_femme": {
    "type": "image",
-   "src": "assets/placeholder/b47_moi_libre_aussi_femme.jpg",
-   "placeholder": true,
+   "src": "assets/broll/b47_moi_libre_aussi_femme.jpg",
    "ilus": false
   },
   "b48_planter_brunias": {
    "type": "image",
-   "src": "assets/placeholder/b48_planter_brunias.jpg",
-   "placeholder": true,
+   "src": "assets/broll/b48_planter_brunias.jpg",
    "ilus": true
   },
   "b49_maitland_1798": {
@@ -236,6 +223,12 @@
   "b54_toussaint_a_saint_domingue": {
    "type": "image",
    "src": "assets/broll_interim/b54_toussaint_a_saint_domingue.jpg",
+   "interim": true,
+   "ilus": false
+  },
+  "b55_palm_tree_hill": {
+   "type": "image",
+   "src": "assets/broll_interim/b55_palm_tree_hill.jpg",
    "interim": true,
    "ilus": false
   },
@@ -727,21 +720,27 @@
    "objects": [
     {
      "type": "print",
-     "asset": "b06_legionaries_san_domingo",
+     "asset": "b83_crete_a_pierrot_1802",
      "x": 0,
      "y": 0.02,
-     "h": 0.7,
+     "h": 0.78,
      "rot": 2,
-     "z": 0.12
+     "z": 0.12,
+     "crop": [
+      0.0,
+      0.0,
+      0.75,
+      1.0
+     ]
     },
     {
      "type": "mark",
      "kind": "circle",
      "t": 25.16,
-     "x": 0.05,
-     "y": -0.08,
-     "w": 0.5,
-     "h": 0.32,
+     "x": -0.08,
+     "y": 0.0,
+     "w": 0.55,
+     "h": 0.45,
      "rot": -3,
      "z": 0.33,
      "dur": 0.5
@@ -1112,7 +1111,8 @@
      "h": 0.62,
      "rot": 3,
      "z": 0.06,
-     "dim": 0.45
+     "dim": 0.45,
+     "ilus": true
     },
     {
      "type": "title",
@@ -1308,12 +1308,19 @@
    "objects": [
     {
      "type": "print",
-     "asset": "b18_mortels_egaux_1794",
+     "asset": "b48_planter_brunias",
      "x": 0,
-     "y": 0.06,
-     "h": 0.66,
+     "y": 0.08,
+     "h": 0.78,
      "rot": -1,
-     "z": 0.12
+     "z": 0.12,
+     "crop": [
+      0.0,
+      0.1,
+      1.0,
+      0.85
+     ],
+     "ilus": true
     },
     {
      "type": "tape",
@@ -2560,10 +2567,10 @@
    "objects": [
     {
      "type": "print",
-     "asset": "b43_rejouissances_1794",
-     "x": 0,
-     "y": 0,
-     "h": 0.9,
+     "asset": "b18_mortels_egaux_1794",
+     "x": -0.05,
+     "y": 0.02,
+     "h": 0.7,
      "rot": -2,
      "z": 0.12
     },
@@ -3160,18 +3167,12 @@
    "objects": [
     {
      "type": "print",
-     "asset": "b06_legionaries_san_domingo",
+     "asset": "b55_palm_tree_hill",
      "x": 0,
      "y": 0,
-     "h": 0.8,
+     "h": 0.66,
      "rot": 1.5,
-     "z": 0.12,
-     "crop": [
-      0.3,
-      0.1,
-      1.0,
-      0.95
-     ]
+     "z": 0.12
     },
     {
      "type": "mark",
@@ -4719,18 +4720,12 @@
    "objects": [
     {
      "type": "print",
-     "asset": "b06_legionaries_san_domingo",
+     "asset": "b55_palm_tree_hill",
      "x": 0,
      "y": 0,
-     "h": 0.82,
+     "h": 0.66,
      "rot": 1,
      "z": 0.12,
-     "crop": [
-      0.0,
-      0.0,
-      0.7,
-      1.0
-     ],
      "overlay": {
       "asset": "b33_smoke",
       "opacity": 0.3
@@ -5653,16 +5648,16 @@
    "objects": [
     {
      "type": "print",
-     "asset": "b06_legionaries_san_domingo",
+     "asset": "b55_palm_tree_hill",
      "x": 0,
      "y": 0,
-     "h": 0.8,
+     "h": 0.66,
      "rot": -1,
      "z": 0.12,
      "crop": [
+      0.0,
       0.15,
-      0.2,
-      0.85,
+      1.0,
       1.0
      ],
      "overlay": {
