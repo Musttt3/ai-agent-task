@@ -6,3 +6,4 @@ node_modules/
 *.log
 assets/placeholder/
 data/beats_*.json
+toussaint/thumbnail/thumb_1920.png
