@@ -24,10 +24,10 @@ beat("03", w("Tetapi", 6) - 0.05, "W", [
 beat("04", w("Pria", 13.3) - 0.1, "W", [
     DOC("card", x=0, y=0, w=1.15, h=0.72, rot=1.5, z=0.08),
     TYPE("RAJA", x=-0.42, y=0.13, size=0.085, color="ink", align="left", words=ws("raja", 14.0), cursorUntil=0),
-    MARK("strike", we("raja", 14.0) + 0.05, x=-0.25, y=0.17, w=0.42, h=0.09, dur=0.35),
+    MARK("strike", we("raja", 14.0) + 0.05, x=-0.272, y=0.122, w=0.33, h=0.06, dur=0.35, width=0.011),
     TYPE("BANGSAWAN", x=-0.42, y=-0.06, size=0.085, color="ink", align="left", words=ws("bangsawan", 15.2), cursorUntil=0),
-    MARK("strike", we("bangsawan", 15.2) + 0.05, x=-0.04, y=-0.02, w=0.82, h=0.09, dur=0.4),
-    STAMP("BUDAK", w("budak", 17.5), x=0.3, y=-0.2, size=0.11, rot=-9),
+    MARK("strike", we("bangsawan", 15.2) + 0.05, x=-0.088, y=-0.068, w=0.67, h=0.06, dur=0.4, width=0.011),
+    STAMP("BUDAK", w("budak", 17.5), x=0.33, y=-0.255, size=0.105, rot=-8),
 ], cam={"tilt": 16, "az": -88, "roll": 0.6, "push": 0.09, "z": 0.1})
 
 beat("05", w("Toussaint", 18.7) - 0.03, "G", [
@@ -498,7 +498,7 @@ beat("91", w("dia", 428.2) - 0.03, "G", [
     DOC("cert", x=0, y=0, w=0.88, h=1.0, rot=1, z=0.08, seed=1702),
     STAMP("DITANGKAP", w("ditangkap", 428.4) + 0.05, x=0.0, y=0.18, size=0.1, rot=-7),
     TYPE("JAMINAN", x=0, y=-0.2, size=0.075, color="ink", align="center", words=ws("jaminan", 432.0), cursorUntil=0, z=0.2),
-    MARK("strike", we("jaminan", 432.0) + 0.08, x=0, y=-0.17, w=0.5, h=0.08, dur=0.35),
+    MARK("strike", we("jaminan", 432.0) + 0.08, x=0, y=-0.209, w=0.48, h=0.06, dur=0.35, width=0.011),
 ], cam={"tilt": 18, "az": -91, "roll": -0.7, "push": 0.08})
 
 beat("92", w("Toussaint", 433.8) - 0.1, "W", [

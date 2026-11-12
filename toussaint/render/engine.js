@@ -652,7 +652,8 @@ window.__init = async (dataUrl, opts = {}) => {
   desk.renderOrder = -2; scene.add(desk);
   makePost();
   beats = D.beats; fx = D.fx || []; shakes = (D.stampTimes || []).map(t => ({ t, amp: 9 })).concat(D.shakes || []); D.stampTimes = D.stampTimes || [];
-  for (const b of beats) for (const spec of b.objects) { const O = BUILDERS[spec.type]; if (!O) throw new Error('unknown type ' + spec.type); const o = new O(spec, b); await o.build(); objects.push(o); }
+  const R = opts.range; // [t0, t1]: build only objects alive in this time range (chunked rendering)
+  for (const b of beats) for (const spec of b.objects) { if (R && !((spec.life ? spec.life[1] : b.t1 + 1.2) >= R[0] - 0.2 && (spec.life ? spec.life[0] : b.t0 - 1.2) <= R[1] + 0.2)) continue; const O = BUILDERS[spec.type]; if (!O) throw new Error('unknown type ' + spec.type); const o = new O(spec, b); await o.build(); objects.push(o); }
   buildCamera();
   return { frames: D.frames, objects: objects.length };
 };

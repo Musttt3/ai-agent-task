@@ -26,7 +26,8 @@ function serve() {
   await page.goto(`http://127.0.0.1:${port}/render/index.html`);
   await page.waitForFunction(() => window.__ready === true);
   const t0 = Date.now();
-  const info = await page.evaluate(d => window.__init(d), '/' + (A.data || 'data/beats.json'));
+  const range = A.stills ? null : [+(A.from || 0) / 30, +(A.to || 1e9) / 30];
+  const info = await page.evaluate(([d, range]) => window.__init(d, { range }), ['/' + (A.data || 'data/beats.json'), range]);
   console.error(`init ${((Date.now() - t0) / 1000).toFixed(1)}s, ${info.objects} objects, ${info.frames} frames`);
   const grab = async (f, png) => { const r = await page.evaluate(([f, png]) => window.__frame(f, { png }), [f, png]); return { buf: Buffer.from(r.url.split(',')[1], 'base64'), N: r.N, tr: r.tr, te: r.te }; };
 

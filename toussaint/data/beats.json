@@ -43,14 +43,12 @@
   },
   "b107_citadelle_laferriere": {
    "type": "image",
-   "src": "assets/broll_interim/b107_citadelle_laferriere.jpg",
-   "interim": true,
+   "src": "assets/broll/b107_citadelle_laferriere.jpg",
    "ilus": false
   },
   "b109_buste_fort_de_joux": {
    "type": "image",
-   "src": "assets/broll_interim/b109_buste_fort_de_joux.jpg",
-   "interim": true,
+   "src": "assets/broll/b109_buste_fort_de_joux.jpg",
    "ilus": false
   },
   "b10_vue_du_cap_ponce": {
@@ -60,14 +58,12 @@
   },
   "b112_pantheon_memorial": {
    "type": "image",
-   "src": "assets/broll_interim/b112_pantheon_memorial.jpg",
-   "interim": true,
+   "src": "assets/broll/b112_pantheon_memorial.jpg",
    "ilus": false
   },
   "b115_pantheon_inscription": {
    "type": "image",
-   "src": "assets/broll_interim/b115_pantheon_inscription.jpg",
-   "interim": true,
+   "src": "assets/broll/b115_pantheon_inscription.jpg",
    "ilus": false
   },
   "b11_tall_ship": {
@@ -182,14 +178,12 @@
   },
   "b42_decret_abolition_1794": {
    "type": "image",
-   "src": "assets/broll_interim/b42_decret_abolition_1794.jpg",
-   "interim": true,
+   "src": "assets/broll/b42_decret_abolition_1794.jpg",
    "ilus": false
   },
   "b46_insurrection_convention": {
    "type": "image",
-   "src": "assets/broll_interim/b46_insurrection_convention.jpg",
-   "interim": true,
+   "src": "assets/broll/b46_insurrection_convention.jpg",
    "ilus": false
   },
   "b47_moi_libre_aussi_femme": {
@@ -204,20 +198,17 @@
   },
   "b49_maitland_1798": {
    "type": "image",
-   "src": "assets/broll_interim/b49_maitland_1798.jpg",
-   "interim": true,
+   "src": "assets/broll/b49_maitland_1798.jpg",
    "ilus": false
   },
   "b51_incendie_frontispiece": {
    "type": "image",
-   "src": "assets/broll_interim/b51_incendie_frontispiece.jpg",
-   "interim": true,
+   "src": "assets/broll/b51_incendie_frontispiece.jpg",
    "ilus": false
   },
   "b52_toussaint_horseback_met": {
    "type": "image",
-   "src": "assets/broll_interim/b52_toussaint_horseback_met.jpg",
-   "interim": true,
+   "src": "assets/broll/b52_toussaint_horseback_met.jpg",
    "ilus": false
   },
   "b54_toussaint_a_saint_domingue": {
@@ -228,26 +219,22 @@
   },
   "b55_palm_tree_hill": {
    "type": "image",
-   "src": "assets/broll_interim/b55_palm_tree_hill.jpg",
-   "interim": true,
+   "src": "assets/broll/b55_palm_tree_hill.jpg",
    "ilus": false
   },
   "b56_toussaint_signature": {
    "type": "image",
-   "src": "assets/placeholder/b56_toussaint_signature.jpg",
-   "placeholder": true,
+   "src": "assets/broll/b56_toussaint_signature.jpg",
    "ilus": false
   },
   "b61_lois_colonie_1801": {
    "type": "image",
-   "src": "assets/placeholder/b61_lois_colonie_1801.jpg",
-   "placeholder": true,
+   "src": "assets/broll/b61_lois_colonie_1801.jpg",
    "ilus": false
   },
   "b64_toussaint_paris_musees": {
    "type": "image",
-   "src": "assets/placeholder/b64_toussaint_paris_musees.jpg",
-   "placeholder": true,
+   "src": "assets/broll/b64_toussaint_paris_musees.jpg",
    "ilus": false
   },
   "b67_andre_rigaud": {
@@ -258,14 +245,12 @@
   },
   "b68_acte_insurrection_1801": {
    "type": "image",
-   "src": "assets/placeholder/b68_acte_insurrection_1801.jpg",
-   "placeholder": true,
+   "src": "assets/broll/b68_acte_insurrection_1801.jpg",
    "ilus": false
   },
   "b69_toussaint_colour_cheval": {
    "type": "image",
-   "src": "assets/placeholder/b69_toussaint_colour_cheval.jpg",
-   "placeholder": true,
+   "src": "assets/broll/b69_toussaint_colour_cheval.jpg",
    "ilus": false
   },
   "b71_carte_colonie": {
@@ -276,8 +261,7 @@
   },
   "b72_constitution_1801": {
    "type": "image",
-   "src": "assets/placeholder/b72_constitution_1801.jpg",
-   "placeholder": true,
+   "src": "assets/broll/b72_constitution_1801.jpg",
    "ilus": false
   },
   "b74_napoleon_gros": {
@@ -288,8 +272,7 @@
   },
   "b77_proclamation_1801": {
    "type": "image",
-   "src": "assets/placeholder/b77_proclamation_1801.jpg",
-   "placeholder": true,
+   "src": "assets/broll/b77_proclamation_1801.jpg",
    "ilus": false
   },
   "b78_napoleon_david": {
@@ -603,13 +586,14 @@
      "type": "mark",
      "kind": "strike",
      "t": 13.770000000000001,
-     "x": -0.25,
-     "y": 0.17,
-     "w": 0.42,
-     "h": 0.09,
+     "x": -0.272,
+     "y": 0.122,
+     "w": 0.33,
+     "h": 0.06,
      "rot": 0,
      "z": 0.33,
-     "dur": 0.35
+     "dur": 0.35,
+     "width": 0.011
     },
     {
      "type": "type",
@@ -632,22 +616,23 @@
      "type": "mark",
      "kind": "strike",
      "t": 15.07,
-     "x": -0.04,
-     "y": -0.02,
-     "w": 0.82,
-     "h": 0.09,
+     "x": -0.088,
+     "y": -0.068,
+     "w": 0.67,
+     "h": 0.06,
      "rot": 0,
      "z": 0.33,
-     "dur": 0.4
+     "dur": 0.4,
+     "width": 0.011
     },
     {
      "type": "stamp",
      "text": "BUDAK",
      "t": 17.5,
-     "x": 0.3,
-     "y": -0.2,
-     "size": 0.11,
-     "rot": -9,
+     "x": 0.33,
+     "y": -0.255,
+     "size": 0.105,
+     "rot": -8,
      "z": 0.32
     }
    ],
@@ -5086,12 +5071,13 @@
      "kind": "strike",
      "t": 432.64,
      "x": 0,
-     "y": -0.17,
-     "w": 0.5,
-     "h": 0.08,
+     "y": -0.209,
+     "w": 0.48,
+     "h": 0.06,
      "rot": 0,
      "z": 0.33,
-     "dur": 0.35
+     "dur": 0.35,
+     "width": 0.011
     }
    ],
    "t1": 433.74
