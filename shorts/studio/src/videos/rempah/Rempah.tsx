@@ -243,7 +243,7 @@ const S9Map3: React.FC = () => {
         { lon: PL.kollam[0], lat: PL.kollam[1], at: CUT.map3, label: "INDIA", side: "b" },
         { lon: 45, lat: 15, at: CUT.map3 + 0.1, label: "ARAB", side: "r", until: cutAt + 0.6 },
         { lon: PL.venice[0], lat: PL.venice[1], at: ws(58), label: "VENESIA", side: "t" },
-        { lon: PL.lisbon[0], lat: PL.lisbon[1], at: cutAt + 0.3, label: "PORTUGAL", side: "t", color: C.ink },
+        { lon: PL.lisbon[0], lat: PL.lisbon[1], at: cutAt + 0.3, label: "PORTUGAL", side: "b", color: C.ink },
       ]}
     >
       {({ sx }) => {

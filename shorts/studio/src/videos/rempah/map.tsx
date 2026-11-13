@@ -5,18 +5,31 @@ import { geoGraticule10, geoMercator, geoPath } from "d3-geo";
 import { feature, mesh } from "topojson-client";
 import land50 from "world-atlas/land-50m.json";
 import countries50 from "world-atlas/countries-50m.json";
+import land110 from "world-atlas/land-110m.json";
+import countries110 from "world-atlas/countries-110m.json";
 import { AbsoluteFill, Img, staticFile } from "remotion";
 import { C, F, clamp01, ease, eout, lin, mix, pop } from "./kit";
 
 const MW = 4000;
 const proj = geoMercator().scale(MW / (2 * Math.PI)).translate([MW / 2, MW / 2]).precision(0.2);
 export const P = (lon: number, lat: number) => proj([lon, lat]) as [number, number];
-const path = geoPath(proj);
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const LAND = path(feature(land50 as any, (land50 as any).objects.land) as any) ?? "";
+const LAND_F = feature(land50 as any, (land50 as any).objects.land) as any;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const BORDERS = path(mesh(countries50 as any, (countries50 as any).objects.countries, (a: unknown, b: unknown) => a !== b) as any) ?? "";
-const GRAT = path(geoGraticule10()) ?? "";
+const BORDER_M = mesh(countries50 as any, (countries50 as any).objects.countries, (a: unknown, b: unknown) => a !== b) as any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const LAND_LO = feature(land110 as any, (land110 as any).objects.land) as any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const BORDER_LO = mesh(countries110 as any, (countries110 as any).objects.countries, (a: unknown, b: unknown) => a !== b) as any;
+const GRAT_F = geoGraticule10();
+/** the map re-projected for one camera (scale z, offset tx/ty) and clipped to the frame: cheap to rasterize at any zoom */
+const viewPaths = (z: number, tx: number, ty: number) => {
+  const pr = geoMercator().scale((MW * z) / (2 * Math.PI)).translate([(MW / 2) * z + tx, (MW / 2) * z + ty])
+    .clipExtent([[-60, -60], [1140, 1980]]).precision(0.4);
+  const g = geoPath(pr);
+  const lo = z < 1.2;
+  return { land: g(lo ? LAND_LO : LAND_F) ?? "", borders: g(lo ? BORDER_LO : BORDER_M) ?? "", grat: g(GRAT_F) ?? "" };
+};
 
 export type Cam = { t: number; lon: number; lat: number; z: number };
 export const camAt = (keys: Cam[], t: number) => {
@@ -66,8 +79,10 @@ export const arcWp = (a: [number, number], b: [number, number], lift = 0.25): [n
   return out;
 };
 
-const partial = (wp: [number, number][], p: number) => {
-  const { pts, cum } = routePts(wp);
+const partial = (wp: [number, number][], p: number, z: number, tx: number, ty: number) => {
+  const r0 = routePts(wp);
+  const pts = r0.pts.map(([x, y]) => [x * z + tx, y * z + ty] as [number, number]);
+  const cum = r0.cum.map((c) => c * z);
   const L = cum[cum.length - 1] * clamp01(p);
   let d = `M${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;
   let head = pts[0];
@@ -92,6 +107,7 @@ export const MapView: React.FC<{ t: number; cam: Cam[]; routes?: Route[]; pins?:
   t, cam, routes = [], pins = [], children,
 }) => {
   const { z, tx, ty } = camAt(cam, t);
+  const vp = viewPaths(z, tx, ty);
   const sx = (lon: number, lat: number): [number, number] => {
     const [x, y] = P(lon, lat);
     return [x * z + tx, y * z + ty];
@@ -99,26 +115,24 @@ export const MapView: React.FC<{ t: number; cam: Cam[]; routes?: Route[]; pins?:
   return (
     <AbsoluteFill style={{ backgroundColor: C.sea, overflow: "hidden" }}>
       <svg width={1080} height={1920} style={{ position: "absolute", left: 0, top: 0 }}>
-        <g transform={`translate(${tx},${ty}) scale(${z})`}>
-          <path d={GRAT} fill="none" stroke="rgba(40,70,80,0.16)" strokeWidth={1.2} vectorEffect="non-scaling-stroke" />
-          <path d={LAND} fill="rgba(70,55,35,0.20)" transform="translate(1.6,2.2)" />
-          <path d={LAND} fill={C.land} stroke="#4a3f33" strokeWidth={2.2} strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
-          <path d={BORDERS} fill="none" stroke="rgba(74,63,51,0.30)" strokeWidth={1.1} strokeDasharray="5 5" vectorEffect="non-scaling-stroke" />
-          {routes.map((r, i) => {
-            const p = ease(t, r.a, r.b);
-            if (p <= 0) return null;
-            const { d, head } = partial(r.wp, p);
-            const fk = r.fadeTo ? lin(t, r.fadeTo.at, r.fadeTo.at + 0.3) : 0;
-            const col = fk > 0 && r.fadeTo ? r.fadeTo.color : r.color;
-            return (
-              <g key={i}>
-                <path d={d} fill="none" stroke="rgba(246,238,220,0.9)" strokeWidth={(r.w ?? 7) + 7} strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" opacity={1 - fk * 0.6} />
-                <path d={d} fill="none" stroke={col} strokeWidth={r.w ?? 7} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={r.dash} vectorEffect="non-scaling-stroke" />
-                {r.headDot !== false && p < 1 ? <circle cx={head[0]} cy={head[1]} r={9 / z} fill={col} stroke={C.paperHi} strokeWidth={3 / z} /> : null}
-              </g>
-            );
-          })}
-        </g>
+        <path d={vp.grat} fill="none" stroke="rgba(40,70,80,0.16)" strokeWidth={1.2} />
+        <path d={vp.land} fill="rgba(70,55,35,0.20)" transform="translate(4,6)" />
+        <path d={vp.land} fill={C.land} stroke="#4a3f33" strokeWidth={2.2} strokeLinejoin="round" />
+        <path d={vp.borders} fill="none" stroke="rgba(74,63,51,0.22)" strokeWidth={1.1} />
+        {routes.map((r, i) => {
+          const p = ease(t, r.a, r.b);
+          if (p <= 0) return null;
+          const { d, head } = partial(r.wp, p, z, tx, ty);
+          const fk = r.fadeTo ? lin(t, r.fadeTo.at, r.fadeTo.at + 0.3) : 0;
+          const col = fk > 0 && r.fadeTo ? r.fadeTo.color : r.color;
+          return (
+            <g key={i}>
+              <path d={d} fill="none" stroke="rgba(246,238,220,0.9)" strokeWidth={(r.w ?? 7) + 7} strokeLinecap="round" strokeLinejoin="round" opacity={1 - fk * 0.6} />
+              <path d={d} fill="none" stroke={col} strokeWidth={r.w ?? 7} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={r.dash} />
+              {r.headDot !== false && p < 1 ? <circle cx={head[0]} cy={head[1]} r={9} fill={col} stroke={C.paperHi} strokeWidth={3} /> : null}
+            </g>
+          );
+        })}
       </svg>
       <AbsoluteFill style={{ mixBlendMode: "multiply", opacity: 0.55 }}>
         <Img src={staticFile("rempah/paper.jpg")} style={{ width: 1080, height: 1920 }} />
