@@ -1,0 +1,41 @@
+# Cues
+
+Length 61.900 s, 48 kHz stereo. Integrated -14.1 LUFS, true peak -1.2 dBTP.
+
+-   0.00 s  amb: high wind over the city
+-   0.32 s  stamp: year strip
+-   0.33 s  music: timpani on 1667
+-   2.47 s  paper in: castello
+-   3.39 s  pen: handwritten notes (13x)
+-   3.98 s  stamp: KE INGGRIS
+-   4.87 s  map pins (10x)
+-   5.45 s  whoosh: Manhattan -> Maluku
+-   8.47 s  music: glock ping on Pulau Run
+-   9.19 s  amb: forest birds (pala)
+-  12.15 s  paper in: plancius
+-  14.71 s  amb: village breeze (cengkih)
+-  16.71 s  whoosh: to Syria
+-  20.95 s  counter ticks 3.700
+-  22.79 s  paper in: merveilles
+-  25.91 s  price card up
+-  26.67 s  price bars grow
+-  29.91 s  snip: red X on old route
+-  29.93 s  music: hit + stop on 'memotong'
+-  31.03 s  paper in: malaka
+-  32.94 s  stamp: 1511
+-  34.47 s  paper in: ortelius
+-  34.55 s  amb: sea under the Victoria
+-  38.66 s  ledger slides up
+-  41.10 s  stamp: LUNAS
+-  41.11 s  music: glock on LUNAS
+-  41.87 s  paper in: vroom
+-  42.94 s  stamp: VOC seal
+-  42.95 s  music: low timpani on VOC
+-  43.59 s  paper in: coen
+-  45.03 s  paper in: banda
+-  46.46 s  stamp: 1621
+-  52.02 s  low boom after 'tersisa'
+-  53.10 s  music: swell on 'Rempah'
+-  53.25 s  whoosh: world routes
+-  55.71 s  amb: island shore + birds
+-  60.34 s  music: final D major chord
