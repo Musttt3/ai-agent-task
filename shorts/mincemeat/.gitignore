@@ -1,0 +1,9 @@
+node_modules
+out
+public/media
+public/audio
+audio/sfx_src
+audio/*.wav
+audio/vo.mp3
+public/fx/grain_*.png
+__pycache__

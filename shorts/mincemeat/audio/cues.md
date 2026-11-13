@@ -1,0 +1,77 @@
+# Cues
+
+Length 70.50 s, 48 kHz stereo. Integrated -14.1 LUFS, true peak -1.2 dBTP.
+
+-   0.00 s  tape start (archive)
+-   0.50 s  typewriter: '1943'
+-   1.00 s  body-bag zipper
+-   4.34 s  hit: 'NAZI'
+-   6.00 s  riser into the body reveal
+-   7.60 s  impact: cut to the body
+-   7.62 s  bodyfall on the cut
+-   7.90 s  sheet rustle
+-   8.28 s  impact: 'mayat'
+-   9.05 s  whoosh: light leak
+-  10.32 s  HUD tag
+-  11.65 s  HUD typing
+-  11.85 s  map card slides in
+-  12.50 s  pin: 'Sicilia'
+-  12.75 s  arrow: Africa -> Sicily
+-  13.03 s  synth whoosh (whip) s04
+-  16.42 s  dashed arrows to Greece / Sardinia
+-  17.90 s  pins: 'YUNANI? SARDINIA?'
+-  18.25 s  map card out
+-  18.43 s  synth whoosh (zoom) s05
+-  19.40 s  morgue drawer
+-  21.65 s  dossier lands
+-  22.50 s  typewriter: 'GLYNDWR MICHAEL'
+-  23.20 s  typewriter: dates
+-  23.58 s  synth whoosh (zoom) s06
+-  24.10 s  uniform cloth
+-  24.95 s  callout ring
+-  26.60 s  ID card flips
+-  27.36 s  stamp: 'PALSU'
+-  28.20 s  typewriter: 'WILLIAM MARTIN'
+-  29.05 s  shutter transition
+-  29.60 s  photo handled
+-  30.35 s  pen writes 'Surat cinta'
+-  31.40 s  callout ring
+-  33.38 s  synth whoosh (whipV) s08
+-  33.90 s  briefcase latch
+-  35.32 s  impact: TOP SECRET
+-  35.32 s  stamp: 'TOP SECRET'
+-  35.72 s  typing: DOKUMEN MILITER PALSU
+-  37.15 s  map card in
+-  37.50 s  arrow to Greece
+-  38.55 s  pin: 'YUNANI'
+-  39.90 s  HUD typing: HMS SERAPH
+-  42.05 s  reticle lock
+-  42.25 s  coordinates
+-  43.25 s  whoosh: light leak
+-  44.40 s  Germans handle the papers
+-  44.50 s  map card in
+-  45.10 s  route Huelva -> Madrid
+-  45.80 s  route Madrid -> Berlin
+-  46.80 s  pin: 'BERLIN'
+-  47.63 s  synth whoosh (whip) s11
+-  48.44 s  impact: TERTIPU
+-  48.44 s  stamp: 'TERTIPU'
+-  49.85 s  map card in
+-  50.10 s  German arrows south
+-  50.30 s  German arrows south 2
+-  51.65 s  riser into the invasion
+-  52.05 s  hit: 'WILAYAH YANG SALAH'
+-  52.85 s  impact: invasion flash
+-  53.60 s  typing: 10 JULI 1943
+-  53.98 s  impact: '1943'
+-  56.10 s  hit: 'Sekutu menyerbu Sicilia'
+-  58.12 s  power cut / lamp breaker
+-  58.60 s  coin spins on the desk
+-  59.18 s  riser into the title
+-  59.75 s  typing: 'OPERATION'
+-  60.48 s  impact: MINCEMEAT
+-  60.48 s  stamp: 'MINCEMEAT'
+-  61.60 s  match strike (the ironic turn)
+-  66.55 s  memorial card
+-  67.50 s  carriage return
+-  69.55 s  final low hit
