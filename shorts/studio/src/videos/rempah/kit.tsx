@@ -130,8 +130,8 @@ export const Photo: React.FC<{
 export const Hand: React.FC<{
   t: number; at: number; x: number; y: number; text: string; size?: number; color?: string; rot?: number; width?: number;
   arrow?: { x1: number; y1: number; x2: number; y2: number; bend?: number }; until?: number; align?: "left" | "center";
-  halo?: boolean;
-}> = ({ t, at, x, y, text, size = 64, color = C.ink, rot = -3, width = 900, arrow, until, align = "left", halo }) => {
+  halo?: boolean; shade?: boolean;
+}> = ({ t, at, x, y, text, size = 64, color = C.ink, rot = -3, width = 900, arrow, until, align = "left", halo, shade }) => {
   const k = lin(t, at, at + Math.min(0.9, 0.12 + text.length * 0.035));
   const out = until !== undefined ? 1 - lin(t, until, until + 0.2) : 1;
   if (k <= 0 || out <= 0) return null;
@@ -146,11 +146,11 @@ export const Hand: React.FC<{
     head = `M${x2 - L * Math.cos(ang - 0.45)},${y2 - L * Math.sin(ang - 0.45)} L${x2},${y2} L${x2 - L * Math.cos(ang + 0.45)},${y2 - L * Math.sin(ang + 0.45)}`;
     ka = lin(t, at + 0.15, at + 0.55);
   }
-  const shadow = halo ? "0 0 14px rgba(246,238,220,0.95), 0 0 4px rgba(246,238,220,1)" : undefined;
+  const shadow = halo ? "0 0 14px rgba(246,238,220,0.95), 0 0 4px rgba(246,238,220,1)" : shade ? "0 3px 12px rgba(0,0,0,0.9), 0 0 4px rgba(0,0,0,0.95)" : undefined;
   return (
     <AbsoluteFill style={{ opacity: out }}>
       {arrow ? (
-        <svg width={1080} height={1920} style={{ position: "absolute", left: 0, top: 0 }}>
+        <svg width={1080} height={1920} style={{ position: "absolute", left: 0, top: 0, filter: shade ? "drop-shadow(0 3px 6px rgba(0,0,0,0.85))" : undefined }}>
           {halo ? <path d={path} stroke="rgba(246,238,220,0.85)" strokeWidth={14} fill="none" strokeLinecap="round" pathLength={1} strokeDasharray={`${ka} 1`} /> : null}
           <path d={path} stroke={color} strokeWidth={6} fill="none" strokeLinecap="round" pathLength={1} strokeDasharray={`${ka} 1`} />
           {ka >= 1 ? <path d={head} stroke={color} strokeWidth={6} fill="none" strokeLinecap="round" strokeLinejoin="round" /> : null}

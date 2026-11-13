@@ -34,7 +34,7 @@ const S1Manhattan: React.FC = () => (
     {(t) => (
       <>
         <YearStrip t={t} at={0.35} text="1667" y={330} />
-        <Hand t={t} at={1.0} x={540} y={640} text="Perjanjian Breda" size={60} color={C.paperHi} rot={-3} align="center" width={800} />
+        <Hand t={t} at={1.0} x={540} y={640} text="Perjanjian Breda" size={64} color={C.paperHi} rot={-3} align="center" width={800} shade />
       </>
     )}
   </Footage>
@@ -100,7 +100,7 @@ const S4Pala: React.FC = () => (
   <Footage src="rempah/pala.mp4" t0={CUT.pala} t1={CUT.plancius} rate={0.95} push={[1.04, 1.12]} origin="50% 45%">
     {(t) => (
       <>
-        <Hand t={t} at={ws(21)} x={650} y={300} text="pala" size={120} color={C.paperHi} rot={-6} width={400}
+        <Hand t={t} at={ws(21)} x={650} y={300} text="pala" size={120} color={C.paperHi} rot={-6} width={400} shade
           arrow={{ x1: 700, y1: 450, x2: 610, y2: 720, bend: -0.3 }} />
         <Tag t={t} at={ws(21) + 0.3} x={650} y={445} text="MYRISTICA FRAGRANS" size={30} rot={-4} bg="rgba(20,16,12,0.8)" />
       </>
@@ -522,6 +522,7 @@ export const Rempah: React.FC = () => {
       <Vignette k={0.3} />
       <Grain amount={0.14} />
       <Captions t={t} />
+      <AbsoluteFill style={{ backgroundColor: "#000", opacity: Math.max(0, (f - (REMPAH_FRAMES - 14)) / 13), pointerEvents: "none" }} />
       {audio ? <Audio src={staticFile("rempah/mix.wav")} /> : null}
     </AbsoluteFill>
   );
