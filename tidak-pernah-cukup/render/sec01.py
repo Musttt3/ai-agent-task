@@ -192,8 +192,8 @@ def audio_events() -> list[Ev]:
     ev = [
         Ev("vo/VO01_hook.mp3", v1.start, 0, bus="vo"),
         Ev("vo/VO02_pembuka.mp3", v2.start, 0, bus="vo"),
-        Ev("MUSIK01_misteri-tenang.mp3", 0.0, -13, fade_in=4.0, dur=40.0, bus="bed"),
-        Ev("SFX01_room-tone.mp3", 0.0, -24, dur=40.0, loop=True, fade_in=1.5, bus="bed"),
+        Ev("MUSIK01_misteri-tenang.mp3", 0.0, -4, fade_in=4.0, dur=40.0, bus="bed"),
+        Ev("SFX01_room-tone.mp3", 0.0, -20, dur=40.0, loop=True, fade_in=1.5, bus="bed"),
         Ev("SFX02_proyektor-film.mp3", 0.0, -27, dur=8.6, fade_in=1.0, fade_out=1.5, bus="bed"),
         Ev("SFX03_bola-lotre.mp3", 0.3, -26, dur=7.6, fade_in=1.2, fade_out=1.8),
         Ev("SFX04_uang-kertas.mp3", v1.at("Uang") - 0.2, -24),

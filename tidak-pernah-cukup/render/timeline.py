@@ -103,7 +103,7 @@ def mix(events: list[Ev], duration: float, out: Path, t0: float = 0.0):
             g.append(f"anullsrc=r=48000:cl=stereo[{b}]")
     # ducking: bed ditekan saat ada narasi
     g.append("[vo]asplit=2[vo1][vokey]")
-    g.append("[bed][vokey]sidechaincompress=threshold=0.02:ratio=6:attack=80:release=900:makeup=1[bedd]")
+    g.append("[bed][vokey]sidechaincompress=threshold=0.012:ratio=10:attack=60:release=1100:makeup=1[bedd]")
     g.append(f"[vo1][sfx][bedd]amix=inputs=3:normalize=0,atrim=duration={duration:.3f},alimiter=limit=0.89[out]")
     tmp = out.with_suffix(".tmp.wav")
     cmd = ["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", ";".join(g), "-map", "[out]",
