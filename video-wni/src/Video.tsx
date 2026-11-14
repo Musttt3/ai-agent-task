@@ -11,7 +11,13 @@ const ATTACHED = ["label", "pin", "route"];
 export const FPS = plan.fps;
 export const TOTAL = Math.round(plan.duration * FPS);
 
-const Grain: React.FC = () => {
+const FadeOut: React.FC = () => {
+  const f = useCurrentFrame();
+  const o = Math.min(1, Math.max(0, (f - (TOTAL - 45)) / 45));
+  return o > 0 ? <AbsoluteFill style={{ backgroundColor: "black", opacity: o }} /> : null;
+};
+
+export const Grain: React.FC = () => {
   const f = useCurrentFrame();
   const x = Math.floor(random(`gx${f}`) * 256);
   const y = Math.floor(random(`gy${f}`) * 256);
@@ -97,7 +103,7 @@ export const IndonesiaVideo: React.FC = () => {
       <AbsoluteFill
         style={{ background: "radial-gradient(ellipse at center, rgba(0,0,0,0) 58%, rgba(0,0,0,0.38) 100%)", pointerEvents: "none" }}
       />
-      <Grain />
+      <FadeOut />
       {plan.overlays
         .filter((o) => !ATTACHED.includes(o.kind))
         .map((o, k) => (

@@ -8,7 +8,7 @@ ALIGN = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "align_fixed.js
 
 FPS = 30
 NARR_END = 587.73
-END = 593.5
+END = 590.5
 
 align = json.load(open(ALIGN))
 T = {a["i"]: max(0.0, a["t"] - 0.10) for a in align}
@@ -234,6 +234,16 @@ icons(169, 1.0, 5.0, ["calendar", "money"], stagger=1.0)
 ov(169, "outro", NARR_END - T[169] + 0.4, END - NARR_END, text="Tulis di komentar: kamu tim purba atau tim modern?")
 
 OV[:] = [o for o in OV if o is not None]
+
+# Clean version (user request): no motion graphics on screen and no camera shake / punch / spin.
+# Picture changes with simple cuts + gentle Ken Burns only; chapters go to the YouTube description.
+CLEAN = True
+if CLEAN:
+    OV.clear()
+    SHAKE.clear()
+    MOTION.clear()
+    json.dump({"1": "Pembuka"} | {str(k): v[1] for k, v in CHAPTERS.items()},
+              open(os.path.join(HERE, "chapters.json"), "w"), ensure_ascii=False, indent=1)
 
 scenes = []
 ids = sorted(T)
