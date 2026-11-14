@@ -274,7 +274,7 @@ def cork_texture(w: int, h: int) -> np.ndarray:
     """Papan gabus dari TX02 (area gabus polos di-tile), sedikit digelapkan."""
     im = Image.open(ASSETS / "TX02_papan-gabus.jpg").convert("RGB")
     iw, ih = im.size
-    tile = im.crop((int(iw * 0.02), int(ih * 0.02), int(iw * 0.45), int(ih * 0.45)))
+    tile = im.crop((int(iw * 0.10), int(ih * 0.45), int(iw * 0.62), int(ih * 0.84)))  # area gabus polos
     tw, th = tile.size
     canvas = Image.new("RGB", (w, h))
     for y in range(0, h, th):

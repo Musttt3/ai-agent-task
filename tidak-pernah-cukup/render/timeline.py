@@ -16,6 +16,20 @@ VO_ORDER = ["VO01_hook", "VO02_pembuka", "VO03_latar", "VO04_tersangka-otak", "V
 VO_START = {
     "VO01_hook": 1.0,
     "VO02_pembuka": 17.5,
+    "VO03_latar": 41.0,
+    "VO04_tersangka-otak": 114.8,
+    "VO05_bukti": 209.8,
+    "VO06_klimaks": 410.8,
+    "VO07_penutup": 479.6,
+}
+# Batas file video tiap bagian di timeline global (detik)
+SECTIONS = {
+    "sec01": (0.0, 40.0),
+    "sec03": (40.0, 114.4),
+    "sec04": (114.4, 209.4),
+    "sec05": (209.4, 410.2),
+    "sec06": (410.2, 479.2),
+    "sec07": (479.2, 556.0),
 }
 
 
@@ -46,8 +60,9 @@ class VO:
         raise KeyError(f"{word}#{nth} tidak ada di {self.name}")
 
 
-def vo(name: str) -> VO:
-    return VO(name, VO_START[name])
+def vo(name: str, offset: float = 0.0) -> VO:
+    """VO dengan waktu dikurangi offset (offset = awal bagian di timeline global -> waktu lokal)."""
+    return VO(name, VO_START[name] - offset)
 
 
 # ---------------------------------------------------------------- audio
@@ -73,10 +88,12 @@ def mix(events: list[Ev], duration: float, out: Path, t0: float = 0.0):
         if start + (length or 999) < 0 or start > duration:
             continue
         ss = e.ss
-        if start < 0:  # event mulai sebelum rentang
+        fade_in = e.fade_in
+        if start < 0:  # event mulai sebelum rentang: lanjutan, jangan fade-in ulang
             ss += -start
             if length:
                 length -= -start
+            fade_in = 0.0 if -start >= e.fade_in else 0.0
             start = 0.0
         args = []
         if e.loop:
@@ -88,8 +105,8 @@ def mix(events: list[Ev], duration: float, out: Path, t0: float = 0.0):
         if length:
             f += f":duration={length:.3f}"
         f += ",asetpts=PTS-STARTPTS"
-        if e.fade_in:
-            f += f",afade=t=in:st=0:d={e.fade_in:.2f}"
+        if fade_in:
+            f += f",afade=t=in:st=0:d={fade_in:.2f}"
         if e.fade_out and length:
             f += f",afade=t=out:st={max(0, length - e.fade_out):.2f}:d={e.fade_out:.2f}"
         f += f",volume={e.vol_db}dB,adelay={int(start * 1000)}:all=1[e{i}]"
@@ -107,7 +124,7 @@ def mix(events: list[Ev], duration: float, out: Path, t0: float = 0.0):
     g.append(f"[vo1][sfx][bedd]amix=inputs=3:normalize=0,atrim=duration={duration:.3f},alimiter=limit=0.89[out]")
     tmp = out.with_suffix(".tmp.wav")
     cmd = ["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", ";".join(g), "-map", "[out]",
-           "-ar", "48000", "-c:a", "pcm_s16le", str(tmp)]
+           "-t", f"{duration:.3f}", "-ar", "48000", "-c:a", "pcm_s16le", str(tmp)]
     subprocess.run(cmd, check=True)
     tmp.replace(out)
     return out

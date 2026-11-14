@@ -179,7 +179,7 @@ def build() -> Section:
         shot_title(v2.at("Berkas", 2) - 0.1, T_END, type_start=v2.at("Berkas", 2) + 0.3,
                    type_end=v2.at("cukup", edge="e") + 0.2, stamp_at=v2.at("cukup", edge="e") + 0.9),
     ]
-    sec = Section("01_hook-pembuka", T_END, shots, fade_from_black=1.4)
+    sec = Section("01_hook-pembuka", T_END, shots, fade_from_black=1.4, fade_to_black=0.6)
     kw = [("ILLINOIS, 1978", v1.at("Tahun") + 0.6, v1.at("lotre") + 0.9)]
 
     def overlay(frame, t):
