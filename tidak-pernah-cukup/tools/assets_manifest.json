@@ -401,5 +401,11 @@
   "name": "MUSIK03_cadangan-denyut.mp3",
   "url": "https://assets.mixkit.co/music/184/184.mp3",
   "license": "Mixkit Music Free"
+ },
+ {
+  "name": "LK15_tiga-peneliti-1970.jpg",
+  "url": "https://wwwn.cdc.gov/phil/PHIL_Images/9604/9604.tif",
+  "license": "Public Domain (CDC/NIOSH, Barbara Jenkins)",
+  "convert": "tif->jpg"
  }
 ]

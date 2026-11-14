@@ -162,15 +162,20 @@ def build() -> Section:
     v1, v2 = vo("VO01_hook"), vo("VO02_pembuka")
     T_END = 40.0
     shots = [
-        shot_image(0.0, 8.0, "LK01_mesin-undian-lotre.jpg", 2.6, 2.76, (0.625, 0.71), (0.63, 0.70), fade=0),
+        # "tiga psikolog mendatangi..." -> foto arsip tiga peneliti mencatat (CDC/NIOSH, 1970, domain publik)
+        shot_image(0.0, v1.at("orang") + 0.6, "LK15_tiga-peneliti-1970.jpg", 1.0, 1.08, (0.5, 0.5), (0.4, 0.5),
+                   fade=0, grade=0.6),
+        # "...orang-orang yang baru saja menang lotre" -> tabung bola undian (crop rapat)
+        shot_image(v1.at("orang") - 0.2, 8.4, "LK01_mesin-undian-lotre.jpg", 2.6, 2.72, (0.625, 0.71), (0.63, 0.70),
+                   fade=0.8),
         shot_footage(v1.at("Uang") - 0.45, v1.at("Tapi") + 0.5, "FT01_uang-jatuh.mp4", ss=1.5, z0=1.12, z1=1.17, c0=(0.5, 0.6), c1=(0.5, 0.62), fade=0.7),
         shot_desk(v1.at("Tapi") + 0.1, v2.start - 0.1, circle_at=v1.at("kebahagiaan") - 0.2, q_at=v1.at("heran")),
         shot_collage(v2.start - 0.4, v2.at("Kenapa", 2) - 0.1,
                      appear=[v2.at("Gaji"), v2.at("ponsel"), v2.at("rumah")], fade_at=v2.at("tapi")),
         shot_footage(v2.at("Kenapa", 2) - 0.5, v2.at("Hari") + 0.3, "FT02_ponsel-malam.mp4", ss=2.0, z0=1.0, z1=1.06,
                      c0=(0.5, 0.5), c1=(0.55, 0.5)),
-        shot_footage(v2.at("Hari") - 0.2, v2.at("diselidiki") + 0.2, "FT14_membuka-buku.mp4", ss=2.0, z0=1.0, z1=1.05),
-        shot_board(v2.at("diselidiki") - 0.3, v2.at("Berkas", 2) + 0.4),
+        shot_footage(v2.at("Hari") - 0.2, v2.at("selama") + 0.2, "FT14_membuka-buku.mp4", ss=1.2, z0=1.0, z1=1.05),
+        shot_board(v2.at("selama") - 0.4, v2.at("Berkas", 2) + 0.4),
         shot_title(v2.at("Berkas", 2) - 0.1, T_END, type_start=v2.at("Berkas", 2) + 0.3,
                    type_end=v2.at("cukup", edge="e") + 0.2, stamp_at=v2.at("cukup", edge="e") + 0.9),
     ]
@@ -190,8 +195,8 @@ def audio_events() -> list[Ev]:
     sh = {s.name: s for s in sec.shots}
     st = stamp_time = v2.at("cukup", edge="e") + 0.9
     ev = [
-        Ev("vo/VO01_hook.mp3", v1.start, 0, bus="vo"),
-        Ev("vo/VO02_pembuka.mp3", v2.start, 0, bus="vo"),
+        Ev("vo/VO01_hook.mp3", v1.start, 2.5, bus="vo"),
+        Ev("vo/VO02_pembuka.mp3", v2.start, 2.5, bus="vo"),
         Ev("MUSIK01_misteri-tenang.mp3", 0.0, -4, fade_in=4.0, dur=40.0, bus="bed"),
         Ev("SFX01_room-tone.mp3", 0.0, -20, dur=40.0, loop=True, fade_in=1.5, bus="bed"),
         Ev("SFX02_proyektor-film.mp3", 0.0, -27, dur=8.6, fade_in=1.0, fade_out=1.5, bus="bed"),
@@ -207,7 +212,7 @@ def audio_events() -> list[Ev]:
         Ev("SFX08_foto-diletakkan.mp3", v2.at("rumah") - 0.05, -26),
         Ev("SFX05_whoosh-lembut.mp3", v2.at("Kenapa", 2) - 0.7, -29),
         Ev("SFX15_map-dibuka.mp3", v2.at("buka") - 0.1, -22),
-        Ev("SFX12_pin-papan.mp3", v2.at("diselidiki") + 0.3, -26),
+        Ev("SFX12_pin-papan.mp3", v2.at("selama") + 0.4, -26),
         Ev("SFX06_whoosh-udara.mp3", v2.at("Berkas", 2) - 0.5, -28),
         Ev("SFX09_mesin-ketik-judul.mp3", v2.at("Berkas", 2) + 0.3, -21, ss=2.0,
            dur=v2.at("cukup", edge="e") - v2.at("Berkas", 2) - 0.1, fade_out=0.3),

@@ -81,6 +81,7 @@ Lisensi Pexels: bebas dipakai, termasuk untuk YouTube komersial, dan **tidak waj
 | 12 | `LK12_timbangan_nobg.png` | 07:53 | Timbangan dua lengan, Amerika ±1845–55 (Met Museum) | **Ya** | ±0,9 MB | **CC0** (Met Open Access) | Met balance scale | [file asli](https://images.metmuseum.org/CRDImages/ad/original/DP318014.jpg) · [halaman](https://www.metmuseum.org/art/collection/search/629597) |
 | 13 | `LK13_tangga-spiral.jpg` | 07:58 | Tangga spiral dari atas (foto diam, diberi rotasi sangat pelan) | Tidak | 5917×3945 | Pexels License (kredit: Jan van der Wolf) | spiral stairs top view | [file asli](https://images.pexels.com/photos/26202869/pexels-photo-26202869.jpeg) · [halaman](https://www.pexels.com/photo/top-view-of-spiral-stairs-26202869/) |
 | 14 | `LK14_polaroid-di-meja.jpg` | 05:31 | Banyak foto polaroid vintage di meja kayu | Tidak | 3838×6239 | Pexels License (kredit: Alexander Mass) | polaroid photos table | [file asli](https://images.pexels.com/photos/32805946/pexels-photo-32805946.jpeg) · [halaman](https://www.pexels.com/photo/collection-of-vintage-polaroid-photos-displayed-on-table-32805946/) |
+| 15 | `LK15_tiga-peneliti-1970.jpg` | 00:00–00:05 | Foto arsip tiga pria peneliti mengamati dan mencatat (investigasi NIOSH, ±1970). Dipakai untuk "tiga psikolog mendatangi…". *Ditambahkan atas permintaan revisi.* | Tidak | 2592×1799 | Public Domain, kredit: CDC/NIOSH (Barbara Jenkins) | CDC PHIL 9604 | [file asli (TIFF)](https://wwwn.cdc.gov/phil/PHIL_Images/9604/9604.tif) · [halaman](https://wwwn.cdc.gov/phil/Details.aspx?pid=9604) |
 
 
 ## g. Lukisan / ilustrasi sejarah — 8 file
@@ -155,6 +156,7 @@ Kredit gambar:
 - Estadi Olímpic Lluís Companys — foto oleh Andrew Moore, CC BY-SA 2.0, via Wikimedia Commons
 - Pengundian Texas Lottery — foto oleh Matt May, CC BY 2.0, via Wikimedia Commons
 - Treadmill (V0041192) — Wellcome Collection, CC BY 4.0, via Wikimedia Commons
+- Foto tiga peneliti (PHIL #9604) — CDC/NIOSH, Barbara Jenkins (domain publik)
 - Arsip domain publik: British Library, Library of Congress, Geographicus/Wikimedia Commons, The Metropolitan Museum of Art (Open Access, CC0)
 - Footage & foto stok: Pexels (Pixabay, cottonbro studio, Monstera Production, RDNE Stock project, K, Ricky Esquivel, Sergei Starostin, Oscar Flores, ArtHouse Studio, Tima Miroshnichenko, KATRIN BOLOVTSOVA, Jan van der Wolf, Alexander Mass, Dan Cristian Pădureț, Elīna Arāja)
 ```
