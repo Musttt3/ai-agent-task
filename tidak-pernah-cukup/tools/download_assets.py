@@ -24,11 +24,13 @@ UA = "CasefileDocAssets/1.0 (educational documentary asset download)"
 
 
 def fetch(session, url, dest):
-    for attempt in range(5):
+    wiki = "wikimedia.org" in url
+    for attempt in range(8 if wiki else 5):
         try:
             with session.get(url, stream=True, timeout=120, allow_redirects=True) as r:
                 if r.status_code == 429:
-                    time.sleep(20 * (attempt + 1))
+                    # Wikimedia membatasi IP bersama; tunggu lebih lama dan coba lagi
+                    time.sleep((60 if wiki else 20) * (attempt + 1))
                     continue
                 r.raise_for_status()
                 tmp = dest.with_suffix(dest.suffix + ".part")
@@ -48,6 +50,8 @@ def main():
     OUT.mkdir(exist_ok=True)
     ORIG.mkdir(exist_ok=True)
     manifest = json.loads(MANIFEST.read_text())
+    # sumber yang cepat (Pexels, Met) dulu, Wikimedia belakangan
+    manifest.sort(key=lambda a: "wikimedia.org" in a.get("url", ""))
     s = requests.Session()
     s.headers["User-Agent"] = UA
     ok, fail = [], []
