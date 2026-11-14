@@ -1,2 +1,4 @@
 assets/*
 !assets/vo/
+out/
+__pycache__/
