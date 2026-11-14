@@ -1,0 +1,4243 @@
+{
+ "fps": 30,
+ "duration": 593.5,
+ "narrEnd": 587.73,
+ "scenes": [
+  {
+   "i": 1,
+   "img": "img/001.jpg",
+   "video": null,
+   "start": 0.0,
+   "end": 7.54,
+   "trans": "none",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 2,
+   "img": "img/002.jpg",
+   "video": null,
+   "start": 7.54,
+   "end": 12.8,
+   "trans": "dip",
+   "tlen": 24,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 3,
+   "img": "img/003.jpg",
+   "video": null,
+   "start": 12.8,
+   "end": 19.759999999999998,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 4,
+   "img": "img/004.jpg",
+   "video": null,
+   "start": 19.759999999999998,
+   "end": 24.06,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 5,
+   "img": "img/005.jpg",
+   "video": null,
+   "start": 24.06,
+   "end": 28.939999999999998,
+   "trans": "flash",
+   "tlen": 10,
+   "motion": "spin",
+   "shake": [
+    {
+     "at": 0.4,
+     "dur": 3.5,
+     "amp": 7
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 6,
+   "img": "img/006.jpg",
+   "video": null,
+   "start": 28.939999999999998,
+   "end": 33.4,
+   "trans": "warp",
+   "tlen": 20,
+   "motion": "punch",
+   "shake": [
+    {
+     "at": 0.0,
+     "dur": 1.2,
+     "amp": 9
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 7,
+   "img": "img/007.jpg",
+   "video": null,
+   "start": 33.4,
+   "end": 37.64,
+   "trans": "flash",
+   "tlen": 10,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 8,
+   "img": "img/008.jpg",
+   "video": null,
+   "start": 37.64,
+   "end": 42.24,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [
+    {
+     "at": 0.4,
+     "dur": 2.0,
+     "amp": 4
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 9,
+   "img": "img/009.jpg",
+   "video": null,
+   "start": 42.24,
+   "end": 44.66,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 10,
+   "img": "img/010.jpg",
+   "video": null,
+   "start": 44.66,
+   "end": 48.82,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 11,
+   "img": "img/011.jpg",
+   "video": null,
+   "start": 48.82,
+   "end": 54.28,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 12,
+   "img": "img/012.jpg",
+   "video": null,
+   "start": 54.28,
+   "end": 58.58,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 13,
+   "img": "img/013.jpg",
+   "video": null,
+   "start": 58.58,
+   "end": 64.32000000000001,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "punch",
+   "shake": [
+    {
+     "at": 1.6,
+     "dur": 1.4,
+     "amp": 9
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 14,
+   "img": "img/014.jpg",
+   "video": null,
+   "start": 64.32000000000001,
+   "end": 70.94000000000001,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [
+    {
+     "at": 0.2,
+     "dur": 1.0,
+     "amp": 5
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 15,
+   "img": "img/015.jpg",
+   "video": null,
+   "start": 70.94000000000001,
+   "end": 75.72,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 16,
+   "img": "img/016.jpg",
+   "video": null,
+   "start": 75.72,
+   "end": 80.64,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 17,
+   "img": "img/017.jpg",
+   "video": null,
+   "start": 80.64,
+   "end": 83.4,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 18,
+   "img": "img/018.jpg",
+   "video": null,
+   "start": 83.4,
+   "end": 89.32000000000001,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 19,
+   "img": "img/019.jpg",
+   "video": null,
+   "start": 89.32000000000001,
+   "end": 94.0,
+   "trans": "flash",
+   "tlen": 10,
+   "motion": "punch",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 20,
+   "img": "img/020.jpg",
+   "video": null,
+   "start": 94.0,
+   "end": 97.98,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 21,
+   "img": "img/021.jpg",
+   "video": null,
+   "start": 97.98,
+   "end": 100.46000000000001,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 22,
+   "img": "img/022.jpg",
+   "video": null,
+   "start": 100.46000000000001,
+   "end": 107.66000000000001,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 23,
+   "img": "img/023.jpg",
+   "video": null,
+   "start": 107.66000000000001,
+   "end": 113.4,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 24,
+   "img": "img/024.jpg",
+   "video": null,
+   "start": 113.4,
+   "end": 117.02000000000001,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 25,
+   "img": "img/025.jpg",
+   "video": null,
+   "start": 117.02000000000001,
+   "end": 119.0,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 26,
+   "img": "img/026.jpg",
+   "video": null,
+   "start": 119.0,
+   "end": 122.5,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 27,
+   "img": "img/027.jpg",
+   "video": null,
+   "start": 122.5,
+   "end": 125.06,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 28,
+   "img": "img/028.jpg",
+   "video": null,
+   "start": 125.06,
+   "end": 129.52,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 29,
+   "img": "img/029.jpg",
+   "video": null,
+   "start": 129.52,
+   "end": 134.70000000000002,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [
+    {
+     "at": 0.3,
+     "dur": 0.8,
+     "amp": 5
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 30,
+   "img": "img/030.jpg",
+   "video": null,
+   "start": 134.70000000000002,
+   "end": 138.20000000000002,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 31,
+   "img": "img/031.jpg",
+   "video": null,
+   "start": 138.20000000000002,
+   "end": 141.54,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 32,
+   "img": "img/032.jpg",
+   "video": null,
+   "start": 141.54,
+   "end": 146.1,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 33,
+   "img": "img/033.jpg",
+   "video": null,
+   "start": 146.1,
+   "end": 148.28,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 34,
+   "img": "img/034.jpg",
+   "video": null,
+   "start": 148.28,
+   "end": 153.14000000000001,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 35,
+   "img": "img/035.jpg",
+   "video": null,
+   "start": 153.14000000000001,
+   "end": 158.42000000000002,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 36,
+   "img": "img/036.jpg",
+   "video": null,
+   "start": 158.42000000000002,
+   "end": 160.96,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 37,
+   "img": "img/037.jpg",
+   "video": null,
+   "start": 160.96,
+   "end": 165.44,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 38,
+   "img": "img/038.jpg",
+   "video": null,
+   "start": 165.44,
+   "end": 169.22,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 39,
+   "img": "img/039.jpg",
+   "video": null,
+   "start": 169.22,
+   "end": 171.96,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 40,
+   "img": "img/040.jpg",
+   "video": null,
+   "start": 171.96,
+   "end": 177.04,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 41,
+   "img": "img/041.jpg",
+   "video": null,
+   "start": 177.04,
+   "end": 182.36,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 42,
+   "img": "img/042.jpg",
+   "video": null,
+   "start": 182.36,
+   "end": 185.96,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 43,
+   "img": "img/043.jpg",
+   "video": null,
+   "start": 185.96,
+   "end": 190.76000000000002,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 44,
+   "img": "img/044.jpg",
+   "video": null,
+   "start": 190.76000000000002,
+   "end": 193.86,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 45,
+   "img": "img/045.jpg",
+   "video": null,
+   "start": 193.86,
+   "end": 196.3,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 46,
+   "img": "img/046.jpg",
+   "video": null,
+   "start": 196.3,
+   "end": 198.46,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 47,
+   "img": "img/047.jpg",
+   "video": null,
+   "start": 198.46,
+   "end": 204.08,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 48,
+   "img": "img/048.jpg",
+   "video": null,
+   "start": 204.08,
+   "end": 209.46,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "punch",
+   "shake": [
+    {
+     "at": 1.4,
+     "dur": 1.0,
+     "amp": 6
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 49,
+   "img": "img/049.jpg",
+   "video": null,
+   "start": 209.46,
+   "end": 213.04,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [
+    {
+     "at": 0.2,
+     "dur": 3.0,
+     "amp": 4
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 50,
+   "img": "img/050.jpg",
+   "video": null,
+   "start": 213.04,
+   "end": 217.0,
+   "trans": "zoom",
+   "tlen": 14,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 51,
+   "img": "img/051.jpg",
+   "video": null,
+   "start": 217.0,
+   "end": 219.94,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 52,
+   "img": "img/052.jpg",
+   "video": null,
+   "start": 219.94,
+   "end": 223.86,
+   "trans": "wipe",
+   "tlen": 14,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 53,
+   "img": "img/053.jpg",
+   "video": null,
+   "start": 223.86,
+   "end": 228.94,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 54,
+   "img": "img/054.jpg",
+   "video": null,
+   "start": 228.94,
+   "end": 230.72,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 55,
+   "img": "img/055.jpg",
+   "video": null,
+   "start": 230.72,
+   "end": 233.04,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 56,
+   "img": "img/056.jpg",
+   "video": null,
+   "start": 233.04,
+   "end": 237.70000000000002,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 57,
+   "img": "img/057.jpg",
+   "video": null,
+   "start": 237.70000000000002,
+   "end": 241.64000000000001,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 58,
+   "img": "img/058.jpg",
+   "video": null,
+   "start": 241.64000000000001,
+   "end": 244.8,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 59,
+   "img": "img/059.jpg",
+   "video": null,
+   "start": 244.8,
+   "end": 249.08,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 60,
+   "img": "img/060.jpg",
+   "video": null,
+   "start": 249.08,
+   "end": 255.70000000000002,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 61,
+   "img": "img/061.jpg",
+   "video": null,
+   "start": 255.70000000000002,
+   "end": 257.82,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 62,
+   "img": "img/062.jpg",
+   "video": null,
+   "start": 257.82,
+   "end": 260.46,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 63,
+   "img": "img/063.jpg",
+   "video": null,
+   "start": 260.46,
+   "end": 265.29999999999995,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 64,
+   "img": "img/064.jpg",
+   "video": null,
+   "start": 265.29999999999995,
+   "end": 269.32,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 65,
+   "img": "img/065.jpg",
+   "video": null,
+   "start": 269.32,
+   "end": 274.84,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "up",
+   "shake": [
+    {
+     "at": 1.6,
+     "dur": 1.2,
+     "amp": 4
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 66,
+   "img": "img/066.jpg",
+   "video": null,
+   "start": 274.84,
+   "end": 278.91999999999996,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 67,
+   "img": "img/067.jpg",
+   "video": null,
+   "start": 278.91999999999996,
+   "end": 281.7,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 68,
+   "img": "img/068.jpg",
+   "video": null,
+   "start": 281.7,
+   "end": 283.35999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 69,
+   "img": "img/069.jpg",
+   "video": null,
+   "start": 283.35999999999996,
+   "end": 286.79999999999995,
+   "trans": "flash",
+   "tlen": 10,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 70,
+   "img": "img/070.jpg",
+   "video": null,
+   "start": 286.79999999999995,
+   "end": 289.03999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 71,
+   "img": "img/071.jpg",
+   "video": null,
+   "start": 289.03999999999996,
+   "end": 292.47999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 72,
+   "img": "img/072.jpg",
+   "video": null,
+   "start": 292.47999999999996,
+   "end": 294.26,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 73,
+   "img": "img/073.jpg",
+   "video": null,
+   "start": 294.26,
+   "end": 298.5,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 74,
+   "img": "img/074.jpg",
+   "video": null,
+   "start": 298.5,
+   "end": 300.53999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 75,
+   "img": "img/075.jpg",
+   "video": null,
+   "start": 300.53999999999996,
+   "end": 303.67999999999995,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 76,
+   "img": "img/076.jpg",
+   "video": null,
+   "start": 303.67999999999995,
+   "end": 307.0,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 77,
+   "img": "img/077.jpg",
+   "video": null,
+   "start": 307.0,
+   "end": 309.64,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 78,
+   "img": "img/078.jpg",
+   "video": null,
+   "start": 309.64,
+   "end": 311.59999999999997,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 79,
+   "img": "img/079.jpg",
+   "video": null,
+   "start": 311.59999999999997,
+   "end": 314.7,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "right",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 80,
+   "img": "img/080.jpg",
+   "video": null,
+   "start": 314.7,
+   "end": 318.84,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "in",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 81,
+   "img": "img/081.jpg",
+   "video": null,
+   "start": 318.84,
+   "end": 322.2,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 82,
+   "img": "img/082.jpg",
+   "video": null,
+   "start": 322.2,
+   "end": 325.46,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 83,
+   "img": "img/083.jpg",
+   "video": null,
+   "start": 325.46,
+   "end": 328.29999999999995,
+   "trans": "zoom",
+   "tlen": 14,
+   "motion": "punch",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 84,
+   "img": "img/084.jpg",
+   "video": null,
+   "start": 328.29999999999995,
+   "end": 330.52,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 85,
+   "img": "img/085.jpg",
+   "video": null,
+   "start": 330.52,
+   "end": 332.71999999999997,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 86,
+   "img": "img/086.jpg",
+   "video": null,
+   "start": 332.71999999999997,
+   "end": 335.41999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 87,
+   "img": "img/087.jpg",
+   "video": null,
+   "start": 335.41999999999996,
+   "end": 337.67999999999995,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 88,
+   "img": "img/088.jpg",
+   "video": null,
+   "start": 337.67999999999995,
+   "end": 339.82,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 89,
+   "img": "img/089.jpg",
+   "video": null,
+   "start": 339.82,
+   "end": 342.5,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 90,
+   "img": "img/090.jpg",
+   "video": null,
+   "start": 342.5,
+   "end": 345.94,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 91,
+   "img": "img/091.jpg",
+   "video": null,
+   "start": 345.94,
+   "end": 349.29999999999995,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 92,
+   "img": "img/092.jpg",
+   "video": null,
+   "start": 349.29999999999995,
+   "end": 350.82,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 93,
+   "img": "img/093.jpg",
+   "video": null,
+   "start": 350.82,
+   "end": 354.23999999999995,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 94,
+   "img": "img/094.jpg",
+   "video": null,
+   "start": 354.23999999999995,
+   "end": 357.62,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 95,
+   "img": "img/095.jpg",
+   "video": null,
+   "start": 357.62,
+   "end": 362.59999999999997,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 96,
+   "img": "img/096.jpg",
+   "video": null,
+   "start": 362.59999999999997,
+   "end": 366.65999999999997,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 97,
+   "img": "img/097.jpg",
+   "video": null,
+   "start": 366.65999999999997,
+   "end": 368.47999999999996,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 98,
+   "img": "img/098.jpg",
+   "video": null,
+   "start": 368.47999999999996,
+   "end": 371.38,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 99,
+   "img": "img/099.jpg",
+   "video": null,
+   "start": 371.38,
+   "end": 373.26,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 100,
+   "img": "img/100.jpg",
+   "video": null,
+   "start": 373.26,
+   "end": 376.46,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 101,
+   "img": "img/101.jpg",
+   "video": null,
+   "start": 376.46,
+   "end": 379.47999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 102,
+   "img": "img/102.jpg",
+   "video": null,
+   "start": 379.47999999999996,
+   "end": 381.12,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 103,
+   "img": "img/103.jpg",
+   "video": null,
+   "start": 381.12,
+   "end": 384.28,
+   "trans": "wipe",
+   "tlen": 14,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 104,
+   "img": "img/104.jpg",
+   "video": null,
+   "start": 384.28,
+   "end": 387.97999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 105,
+   "img": "img/105.jpg",
+   "video": null,
+   "start": 387.97999999999996,
+   "end": 390.7,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 106,
+   "img": "img/106.jpg",
+   "video": null,
+   "start": 390.7,
+   "end": 394.84,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 107,
+   "img": "img/107.jpg",
+   "video": null,
+   "start": 394.84,
+   "end": 397.4,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 108,
+   "img": "img/108.jpg",
+   "video": null,
+   "start": 397.4,
+   "end": 399.26,
+   "trans": "slowfade",
+   "tlen": 24,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 109,
+   "img": "img/109.jpg",
+   "video": null,
+   "start": 399.26,
+   "end": 402.26,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 110,
+   "img": "img/110.jpg",
+   "video": null,
+   "start": 402.26,
+   "end": 406.0,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 111,
+   "img": "img/111.jpg",
+   "video": null,
+   "start": 406.0,
+   "end": 408.58,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 112,
+   "img": "img/112.jpg",
+   "video": null,
+   "start": 408.58,
+   "end": 410.58,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 113,
+   "img": "img/113.jpg",
+   "video": null,
+   "start": 410.58,
+   "end": 412.9,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 114,
+   "img": "img/114.jpg",
+   "video": null,
+   "start": 412.9,
+   "end": 415.28,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [
+    {
+     "at": 0.3,
+     "dur": 0.7,
+     "amp": 5
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 115,
+   "img": "img/115.jpg",
+   "video": null,
+   "start": 415.28,
+   "end": 417.14,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 116,
+   "img": "img/116.jpg",
+   "video": null,
+   "start": 417.14,
+   "end": 420.76,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 117,
+   "img": "img/117.jpg",
+   "video": null,
+   "start": 420.76,
+   "end": 425.34,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 118,
+   "img": "img/118.jpg",
+   "video": null,
+   "start": 425.34,
+   "end": 428.62,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "in",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 119,
+   "img": "img/119.jpg",
+   "video": null,
+   "start": 428.62,
+   "end": 430.32,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 120,
+   "img": "img/120.jpg",
+   "video": null,
+   "start": 430.32,
+   "end": 433.58,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 121,
+   "img": "img/121.jpg",
+   "video": null,
+   "start": 433.58,
+   "end": 435.96,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 122,
+   "img": "img/122.jpg",
+   "video": null,
+   "start": 435.96,
+   "end": 438.58,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 123,
+   "img": "img/123.jpg",
+   "video": null,
+   "start": 438.58,
+   "end": 441.35999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 124,
+   "img": "img/124.jpg",
+   "video": null,
+   "start": 441.35999999999996,
+   "end": 445.14,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 125,
+   "img": "img/125.jpg",
+   "video": null,
+   "start": 445.14,
+   "end": 449.03999999999996,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 126,
+   "img": "img/126.jpg",
+   "video": null,
+   "start": 449.03999999999996,
+   "end": 451.17999999999995,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 127,
+   "img": "img/127.jpg",
+   "video": null,
+   "start": 451.17999999999995,
+   "end": 453.06,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 128,
+   "img": "img/128.jpg",
+   "video": null,
+   "start": 453.06,
+   "end": 455.78,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 129,
+   "img": "img/129.jpg",
+   "video": null,
+   "start": 455.78,
+   "end": 457.15999999999997,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 130,
+   "img": "img/130.jpg",
+   "video": null,
+   "start": 457.15999999999997,
+   "end": 460.4,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 131,
+   "img": "img/131.jpg",
+   "video": null,
+   "start": 460.4,
+   "end": 463.23999999999995,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 132,
+   "img": "img/132.jpg",
+   "video": null,
+   "start": 463.23999999999995,
+   "end": 466.23999999999995,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 133,
+   "img": "img/133.jpg",
+   "video": null,
+   "start": 466.23999999999995,
+   "end": 469.9,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 134,
+   "img": "img/134.jpg",
+   "video": null,
+   "start": 469.9,
+   "end": 473.35999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 135,
+   "img": "img/135.jpg",
+   "video": null,
+   "start": 473.35999999999996,
+   "end": 475.97999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 136,
+   "img": "img/136.jpg",
+   "video": null,
+   "start": 475.97999999999996,
+   "end": 479.08,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 137,
+   "img": "img/137.jpg",
+   "video": null,
+   "start": 479.08,
+   "end": 480.4,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 138,
+   "img": "img/138.jpg",
+   "video": null,
+   "start": 480.4,
+   "end": 484.47999999999996,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 139,
+   "img": "img/139.jpg",
+   "video": null,
+   "start": 484.47999999999996,
+   "end": 487.02,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 140,
+   "img": "img/140.jpg",
+   "video": null,
+   "start": 487.02,
+   "end": 490.73999999999995,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 141,
+   "img": "img/141.jpg",
+   "video": null,
+   "start": 490.73999999999995,
+   "end": 492.62,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 142,
+   "img": "img/142.jpg",
+   "video": null,
+   "start": 492.62,
+   "end": 495.08,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 143,
+   "img": "img/143.jpg",
+   "video": null,
+   "start": 495.08,
+   "end": 498.09999999999997,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 144,
+   "img": "img/144.jpg",
+   "video": null,
+   "start": 498.09999999999997,
+   "end": 500.23999999999995,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 145,
+   "img": "img/145.jpg",
+   "video": null,
+   "start": 500.23999999999995,
+   "end": 504.2,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 146,
+   "img": "img/146.jpg",
+   "video": null,
+   "start": 504.2,
+   "end": 507.97999999999996,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 147,
+   "img": "img/147.jpg",
+   "video": null,
+   "start": 507.97999999999996,
+   "end": 511.59999999999997,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 148,
+   "img": "img/148.jpg",
+   "video": null,
+   "start": 511.59999999999997,
+   "end": 513.78,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 149,
+   "img": "img/149.jpg",
+   "video": null,
+   "start": 513.78,
+   "end": 516.6,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 150,
+   "img": "img/150.jpg",
+   "video": null,
+   "start": 516.6,
+   "end": 521.14,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 151,
+   "img": "img/151.jpg",
+   "video": null,
+   "start": 521.14,
+   "end": 525.06,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 152,
+   "img": "img/152.jpg",
+   "video": null,
+   "start": 525.06,
+   "end": 528.84,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 153,
+   "img": "img/153.jpg",
+   "video": null,
+   "start": 528.84,
+   "end": 532.6,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 154,
+   "img": "img/154.jpg",
+   "video": null,
+   "start": 532.6,
+   "end": 535.26,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 155,
+   "img": "img/155.jpg",
+   "video": null,
+   "start": 535.26,
+   "end": 538.34,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 156,
+   "img": "img/156.jpg",
+   "video": null,
+   "start": 538.34,
+   "end": 543.02,
+   "trans": "fade",
+   "tlen": 10,
+   "motion": "out",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 157,
+   "img": "img/157.jpg",
+   "video": null,
+   "start": 543.02,
+   "end": 547.74,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "left",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 158,
+   "img": "img/158.jpg",
+   "video": null,
+   "start": 547.74,
+   "end": 549.86,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [
+    {
+     "at": 0.2,
+     "dur": 1.4,
+     "amp": 3
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 159,
+   "img": "img/159.jpg",
+   "video": null,
+   "start": 549.86,
+   "end": 552.78,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 160,
+   "img": "img/160.jpg",
+   "video": null,
+   "start": 552.78,
+   "end": 555.38,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "punch",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 161,
+   "img": "img/161.jpg",
+   "video": null,
+   "start": 555.38,
+   "end": 558.84,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 162,
+   "img": "img/162.jpg",
+   "video": null,
+   "start": 558.84,
+   "end": 563.6,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "out",
+   "shake": [],
+   "night": true,
+   "sepia": false
+  },
+  {
+   "i": 163,
+   "img": "img/163.jpg",
+   "video": null,
+   "start": 563.6,
+   "end": 565.3,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "right",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 164,
+   "img": "img/164.jpg",
+   "video": null,
+   "start": 565.3,
+   "end": 569.34,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 165,
+   "img": "img/165.jpg",
+   "video": null,
+   "start": 569.34,
+   "end": 572.3199999999999,
+   "trans": "film",
+   "tlen": 16,
+   "motion": "up",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 166,
+   "img": "img/166.jpg",
+   "video": null,
+   "start": 572.3199999999999,
+   "end": 576.36,
+   "trans": "flash",
+   "tlen": 10,
+   "motion": "spin",
+   "shake": [
+    {
+     "at": 0.3,
+     "dur": 3.0,
+     "amp": 6
+    }
+   ],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 167,
+   "img": "img/167.jpg",
+   "video": null,
+   "start": 576.36,
+   "end": 578.9,
+   "trans": "warp",
+   "tlen": 20,
+   "motion": "left",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 168,
+   "img": "img/168.jpg",
+   "video": null,
+   "start": 578.9,
+   "end": 582.04,
+   "trans": "cut",
+   "tlen": 0,
+   "motion": "in",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  },
+  {
+   "i": 169,
+   "img": "img/169.jpg",
+   "video": null,
+   "start": 582.04,
+   "end": 593.5,
+   "trans": "whip",
+   "tlen": 12,
+   "motion": "pushSlow",
+   "shake": [],
+   "night": false,
+   "sepia": false
+  }
+ ],
+ "overlays": [
+  {
+   "scene": 1,
+   "kind": "title",
+   "at": 0.3,
+   "dur": 7.2,
+   "title": "MANUSIA PURBA JADI WNI",
+   "text": "BAGAIMANA RASANYA?",
+   "sub": "Bertahan hidup ribuan tahun... lalu tinggal di Indonesia modern",
+   "start": 0.3
+  },
+  {
+   "scene": 1,
+   "kind": "crossout",
+   "at": 2.4,
+   "dur": 5.0,
+   "icons": [
+    "bulb",
+    "money",
+    "cloth"
+   ],
+   "start": 2.4
+  },
+  {
+   "scene": 2,
+   "kind": "icons",
+   "at": 1.6,
+   "dur": 3.6,
+   "icons": [
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 9.14
+  },
+  {
+   "scene": 3,
+   "kind": "crossout",
+   "at": 0.1,
+   "dur": 3.4,
+   "icons": [
+    "fang",
+    "people"
+   ],
+   "start": 12.9
+  },
+  {
+   "scene": 3,
+   "kind": "stamp",
+   "at": 3.6,
+   "dur": 3.3,
+   "text": "WNI!",
+   "start": 16.4
+  },
+  {
+   "scene": 4,
+   "kind": "chapter",
+   "at": 0.2,
+   "dur": 3.0,
+   "num": "BAB 1",
+   "title": "Terlempar ke Masa Depan",
+   "sub": "Dari hutan purba ke Jakarta",
+   "start": 19.96
+  },
+  {
+   "scene": 5,
+   "kind": "embers",
+   "at": 0.6,
+   "dur": 4.33,
+   "start": 24.66
+  },
+  {
+   "scene": 6,
+   "kind": "counter",
+   "at": 0.0,
+   "dur": 4.4,
+   "from": -10000,
+   "to": 2026,
+   "title": "MAJU KE MASA DEPAN",
+   "sub": "JAKARTA",
+   "start": 28.94
+  },
+  {
+   "scene": 7,
+   "kind": "label",
+   "at": 1.0,
+   "dur": 3.2,
+   "text": "JAKARTA",
+   "x": 0.5,
+   "y": 0.2,
+   "arrow": true,
+   "start": 34.4
+  },
+  {
+   "scene": 8,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 4.2,
+   "icons": [
+    "horn",
+    "bus",
+    "horn"
+   ],
+   "slot": "tr",
+   "stagger": 0.35,
+   "start": 38.04
+  },
+  {
+   "scene": 9,
+   "kind": "icons",
+   "at": 0.3,
+   "dur": 2.0,
+   "icons": [
+    "arrowup"
+   ],
+   "slot": "tl",
+   "stagger": 0.45,
+   "start": 42.54
+  },
+  {
+   "scene": 10,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 3.6,
+   "icons": [
+    "phone"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 45.26
+  },
+  {
+   "scene": 11,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 4.8,
+   "icons": [
+    "sun"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 49.42
+  },
+  {
+   "scene": 11,
+   "kind": "tag",
+   "at": 1.4,
+   "dur": 4.0,
+   "text": "PANAS!",
+   "sub": "jauh lebih panas daripada hutan",
+   "icon": "sun",
+   "start": 50.22
+  },
+  {
+   "scene": 12,
+   "kind": "icons",
+   "at": 0.8,
+   "dur": 3.4,
+   "icons": [
+    "crown",
+    "star"
+   ],
+   "slot": "tr",
+   "stagger": 0.6,
+   "start": 55.08
+  },
+  {
+   "scene": 13,
+   "kind": "icons",
+   "at": 1.4,
+   "dur": 4.2,
+   "icons": [
+    "horn"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 59.98
+  },
+  {
+   "scene": 14,
+   "kind": "stamp",
+   "at": 2.4,
+   "dur": 4.0,
+   "text": "AWAS!",
+   "start": 66.72
+  },
+  {
+   "scene": 15,
+   "kind": "tag",
+   "at": 0.6,
+   "dur": 4.0,
+   "text": "Petugas datang",
+   "sub": "dibawa ke tempat aman",
+   "icon": "pin",
+   "start": 71.54
+  },
+  {
+   "scene": 16,
+   "kind": "chapter",
+   "at": 0.2,
+   "dur": 3.0,
+   "num": "BAB 2",
+   "title": "Menjadi WNI",
+   "sub": "Nama · alamat · KTP",
+   "start": 75.92
+  },
+  {
+   "scene": 16,
+   "kind": "icons",
+   "at": 3.4,
+   "dur": 1.4,
+   "icons": [
+    "sparkle",
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 79.12
+  },
+  {
+   "scene": 17,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 2.41,
+   "icons": [
+    "scroll",
+    "check"
+   ],
+   "slot": "tr",
+   "stagger": 0.8,
+   "start": 81.04
+  },
+  {
+   "scene": 18,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 4.4,
+   "icons": [
+    "idcard",
+    "house",
+    "flag"
+   ],
+   "slot": "tr",
+   "stagger": 1.1,
+   "start": 83.8
+  },
+  {
+   "scene": 19,
+   "kind": "bursts",
+   "at": 0.0,
+   "dur": 2.0,
+   "count": 3,
+   "start": 89.32
+  },
+  {
+   "scene": 19,
+   "kind": "stamp",
+   "at": 0.5,
+   "dur": 4.0,
+   "text": "RESMI WNI",
+   "start": 89.82
+  },
+  {
+   "scene": 19,
+   "kind": "icons",
+   "at": 0.8,
+   "dur": 3.6,
+   "icons": [
+    "flag"
+   ],
+   "slot": "tl",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 90.12
+  },
+  {
+   "scene": 20,
+   "kind": "tag",
+   "at": 0.4,
+   "dur": 3.6,
+   "text": "KTP",
+   "sub": "Kartu Tanda Penduduk",
+   "icon": "info",
+   "start": 94.4
+  },
+  {
+   "scene": 20,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 3.2,
+   "icons": [
+    "idcard"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 94.6
+  },
+  {
+   "scene": 21,
+   "kind": "icons",
+   "at": 0.3,
+   "dur": 2.2,
+   "icons": [
+    "question",
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.3,
+   "start": 98.28
+  },
+  {
+   "scene": 22,
+   "kind": "tag",
+   "at": 0.6,
+   "dur": 6.4,
+   "text": "Dulu dikenal dari...",
+   "sub": "kemampuan berburu & keberanian",
+   "icon": "sun",
+   "start": 101.06
+  },
+  {
+   "scene": 22,
+   "kind": "icons",
+   "at": 1.0,
+   "dur": 6.0,
+   "icons": [
+    "spear",
+    "muscle",
+    "drumstick"
+   ],
+   "slot": "tr",
+   "stagger": 1.4,
+   "start": 101.46
+  },
+  {
+   "scene": 23,
+   "kind": "icons",
+   "at": 1.6,
+   "dur": 4.0,
+   "icons": [
+    "idcard"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 109.26
+  },
+  {
+   "scene": 24,
+   "kind": "chapter",
+   "at": 0.2,
+   "dur": 3.0,
+   "num": "BAB 3",
+   "title": "Masalah Pertama: Makan",
+   "sub": "Hewan tak bisa ditangkap sembarangan",
+   "start": 113.6
+  },
+  {
+   "scene": 25,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 1.8,
+   "icons": [
+    "bowl",
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.3,
+   "start": 117.22
+  },
+  {
+   "scene": 26,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 2.8,
+   "icons": [
+    "chicken"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 119.6
+  },
+  {
+   "scene": 27,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 2.4,
+   "icons": [
+    "bulb"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 122.7
+  },
+  {
+   "scene": 28,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 3.8,
+   "icons": [
+    "stone"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 125.66
+  },
+  {
+   "scene": 29,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 4.6,
+   "icons": [
+    "xmark",
+    "chicken"
+   ],
+   "slot": "tr",
+   "stagger": 0.4,
+   "start": 129.92
+  },
+  {
+   "scene": 30,
+   "kind": "stamp",
+   "at": 0.6,
+   "dur": 2.8,
+   "text": "MILIK ORANG!",
+   "start": 135.3
+  },
+  {
+   "scene": 31,
+   "kind": "crossout",
+   "at": 0.4,
+   "dur": 2.99,
+   "icons": [
+    "chicken",
+    "spear"
+   ],
+   "start": 138.6
+  },
+  {
+   "scene": 32,
+   "kind": "converge",
+   "at": 0.3,
+   "dur": 4.0,
+   "icons": [
+    "money",
+    "money",
+    "money"
+   ],
+   "icon": "bowl",
+   "x": 0.72,
+   "y": 0.32,
+   "start": 141.84
+  },
+  {
+   "scene": 33,
+   "kind": "label",
+   "at": 0.4,
+   "dur": 1.83,
+   "text": "WARUNG NASI",
+   "x": 0.5,
+   "y": 0.18,
+   "arrow": true,
+   "start": 146.5
+  },
+  {
+   "scene": 34,
+   "kind": "icons",
+   "at": 0.3,
+   "dur": 4.6,
+   "icons": [
+    "drumstick",
+    "bowl"
+   ],
+   "slot": "tr",
+   "stagger": 1.6,
+   "start": 148.58
+  },
+  {
+   "scene": 35,
+   "kind": "crossout",
+   "at": 0.6,
+   "dur": 4.6,
+   "icons": [
+    "flame",
+    "spear",
+    "hourglass"
+   ],
+   "start": 153.74
+  },
+  {
+   "scene": 36,
+   "kind": "icons",
+   "at": 0.1,
+   "dur": 2.4,
+   "icons": [
+    "sparkle",
+    "star",
+    "sparkle"
+   ],
+   "slot": "tc",
+   "stagger": 0.2,
+   "glow": true,
+   "start": 158.52
+  },
+  {
+   "scene": 37,
+   "kind": "icons",
+   "at": 1.6,
+   "dur": 2.8,
+   "icons": [
+    "money",
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.5,
+   "start": 162.56
+  },
+  {
+   "scene": 38,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 3.2,
+   "icons": [
+    "stone",
+    "stone",
+    "stone"
+   ],
+   "slot": "tr",
+   "stagger": 0.35,
+   "start": 166.04
+  },
+  {
+   "scene": 39,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 2.2,
+   "icons": [
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 169.62
+  },
+  {
+   "scene": 40,
+   "kind": "big",
+   "at": 0.4,
+   "dur": 4.6,
+   "text": "HUKUM MODERN",
+   "sub": "tak punya uang = susah",
+   "start": 172.36
+  },
+  {
+   "scene": 41,
+   "kind": "crossout",
+   "at": 0.6,
+   "dur": 4.6,
+   "icons": [
+    "bowl",
+    "house",
+    "cloth",
+    "bus"
+   ],
+   "start": 177.64
+  },
+  {
+   "scene": 42,
+   "kind": "chapter",
+   "at": 0.2,
+   "dur": 3.0,
+   "num": "BAB 4",
+   "title": "Bekerja & Gaji Pertama",
+   "sub": "Pekerja bangunan",
+   "start": 182.56
+  },
+  {
+   "scene": 43,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 4.0,
+   "icons": [
+    "stone",
+    "muscle"
+   ],
+   "slot": "tr",
+   "stagger": 1.2,
+   "start": 186.56
+  },
+  {
+   "scene": 44,
+   "kind": "icons",
+   "at": 0.3,
+   "dur": 2.6,
+   "icons": [
+    "check",
+    "muscle"
+   ],
+   "slot": "tr",
+   "stagger": 0.5,
+   "start": 191.06
+  },
+  {
+   "scene": 45,
+   "kind": "tag",
+   "at": 0.2,
+   "dur": 2.2,
+   "text": "Pekerja bangunan",
+   "sub": "hari pertama",
+   "icon": "info",
+   "start": 194.06
+  },
+  {
+   "scene": 46,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 2.0,
+   "icons": [
+    "check"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 196.5
+  },
+  {
+   "scene": 47,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 4.8,
+   "icons": [
+    "muscle",
+    "sun"
+   ],
+   "slot": "tr",
+   "stagger": 1.6,
+   "start": 199.06
+  },
+  {
+   "scene": 48,
+   "kind": "icons",
+   "at": 2.6,
+   "dur": 2.8,
+   "icons": [
+    "xmark"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 206.68
+  },
+  {
+   "scene": 49,
+   "kind": "tag",
+   "at": 0.4,
+   "dur": 3.2,
+   "text": "MONSTER?!",
+   "sub": "mesin pengaduk semen",
+   "icon": "warn",
+   "start": 209.86
+  },
+  {
+   "scene": 50,
+   "kind": "stamp",
+   "at": 0.8,
+   "dur": 3.0,
+   "text": "MONSTER JINAK",
+   "start": 213.84
+  },
+  {
+   "scene": 51,
+   "kind": "icons",
+   "at": 0.3,
+   "dur": 2.4,
+   "icons": [
+    "calendar",
+    "check"
+   ],
+   "slot": "tr",
+   "stagger": 0.6,
+   "start": 217.3
+  },
+  {
+   "scene": 52,
+   "kind": "icons",
+   "at": 1.2,
+   "dur": 2.6,
+   "icons": [
+    "money"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 221.14
+  },
+  {
+   "scene": 53,
+   "kind": "converge",
+   "at": 0.2,
+   "dur": 4.8,
+   "icons": [
+    "money",
+    "money",
+    "money",
+    "money"
+   ],
+   "icon": "money",
+   "x": 0.74,
+   "y": 0.3,
+   "start": 224.06
+  },
+  {
+   "scene": 54,
+   "kind": "icons",
+   "at": 0.1,
+   "dur": 1.7,
+   "icons": [
+    "laugh"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 229.04
+  },
+  {
+   "scene": 55,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 2.1,
+   "icons": [
+    "spear",
+    "drumstick"
+   ],
+   "slot": "tr",
+   "stagger": 0.5,
+   "start": 230.92
+  },
+  {
+   "scene": 56,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 3.8,
+   "icons": [
+    "fang"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 233.64
+  },
+  {
+   "scene": 57,
+   "kind": "tag",
+   "at": 0.3,
+   "dur": 3.4,
+   "text": "Kerja = uang = makanan",
+   "sub": "tanpa diterkam binatang buas",
+   "icon": "info",
+   "start": 238.0
+  },
+  {
+   "scene": 58,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 2.6,
+   "icons": [
+    "thumbsup"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 242.04
+  },
+  {
+   "scene": 59,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 3.6,
+   "icons": [
+    "money",
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.6,
+   "start": 245.4
+  },
+  {
+   "scene": 60,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 6.0,
+   "icons": [
+    "house",
+    "bulb",
+    "tap",
+    "bus"
+   ],
+   "slot": "tr",
+   "stagger": 1.0,
+   "start": 249.48
+  },
+  {
+   "scene": 61,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 1.9,
+   "icons": [
+    "money"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 255.9
+  },
+  {
+   "scene": 62,
+   "kind": "ticker",
+   "at": 0.1,
+   "dur": 2.4,
+   "from": 1,
+   "to": 10,
+   "icon": "muscle",
+   "sub": "jari... tidak cukup!",
+   "start": 257.92
+  },
+  {
+   "scene": 63,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 4.2,
+   "icons": [
+    "calendar",
+    "scroll",
+    "money"
+   ],
+   "slot": "tr",
+   "stagger": 0.9,
+   "start": 260.86
+  },
+  {
+   "scene": 63,
+   "kind": "tag",
+   "at": 0.6,
+   "dur": 4.0,
+   "text": "Cicilan · Tagihan · Pajak",
+   "sub": "belum pernah dengar",
+   "icon": "warn",
+   "start": 261.06
+  },
+  {
+   "scene": 64,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 3.2,
+   "icons": [
+    "fang"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 265.9
+  },
+  {
+   "scene": 65,
+   "kind": "icons",
+   "at": 1.0,
+   "dur": 4.2,
+   "icons": [
+    "house",
+    "calendar"
+   ],
+   "slot": "tr",
+   "stagger": 0.8,
+   "start": 270.32
+  },
+  {
+   "scene": 65,
+   "kind": "stamp",
+   "at": 2.6,
+   "dur": 2.8,
+   "text": "TOK TOK TOK!",
+   "start": 271.92
+  },
+  {
+   "scene": 66,
+   "kind": "chapter",
+   "at": 0.2,
+   "dur": 3.0,
+   "num": "BAB 5",
+   "title": "Ponsel & Internet",
+   "sub": "Keajaiban sekecil telapak tangan",
+   "start": 275.04
+  },
+  {
+   "scene": 67,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 2.4,
+   "icons": [
+    "wifi"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 279.32
+  },
+  {
+   "scene": 69,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 3.2,
+   "icons": [
+    "phone",
+    "sparkle"
+   ],
+   "slot": "tr",
+   "stagger": 0.4,
+   "glow": true,
+   "start": 283.56
+  },
+  {
+   "scene": 70,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 2.0,
+   "icons": [
+    "phone"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 287.0
+  },
+  {
+   "scene": 71,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 3.2,
+   "icons": [
+    "plane",
+    "tree"
+   ],
+   "slot": "tr",
+   "stagger": 0.7,
+   "start": 289.24
+  },
+  {
+   "scene": 72,
+   "kind": "icons",
+   "at": 0.1,
+   "dur": 1.7,
+   "icons": [
+    "chat"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 292.58
+  },
+  {
+   "scene": 73,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 3.4,
+   "icons": [
+    "phone",
+    "spear"
+   ],
+   "slot": "tr",
+   "stagger": 0.8,
+   "start": 294.86
+  },
+  {
+   "scene": 74,
+   "kind": "icons",
+   "at": 0.1,
+   "dur": 1.9,
+   "icons": [
+    "star",
+    "sparkle"
+   ],
+   "slot": "tr",
+   "stagger": 0.3,
+   "glow": true,
+   "start": 298.6
+  },
+  {
+   "scene": 75,
+   "kind": "tag",
+   "at": 0.4,
+   "dur": 2.6,
+   "text": "Mulai kecanduan...",
+   "sub": "satu video lagi",
+   "icon": "warn",
+   "start": 300.94
+  },
+  {
+   "scene": 76,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 2.8,
+   "icons": [
+    "moon",
+    "phone"
+   ],
+   "slot": "tr",
+   "stagger": 0.6,
+   "start": 304.08
+  },
+  {
+   "scene": 77,
+   "kind": "ticker",
+   "at": 0.1,
+   "dur": 2.5,
+   "from": 1,
+   "to": 87,
+   "icon": "phone",
+   "sub": "video ditonton",
+   "start": 307.1
+  },
+  {
+   "scene": 78,
+   "kind": "icons",
+   "at": 0.1,
+   "dur": 1.9,
+   "icons": [
+    "sun"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 309.74
+  },
+  {
+   "scene": 79,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 2.6,
+   "icons": [
+    "moon"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 312.1
+  },
+  {
+   "scene": 80,
+   "kind": "icons",
+   "at": 0.5,
+   "dur": 3.6,
+   "icons": [
+    "phone",
+    "flame"
+   ],
+   "slot": "tr",
+   "stagger": 0.8,
+   "start": 315.2
+  },
+  {
+   "scene": 81,
+   "kind": "chapter",
+   "at": 0.2,
+   "dur": 3.0,
+   "num": "BAB 6",
+   "title": "Viral di Media Sosial",
+   "sub": "Foto berbaju kulit hewan",
+   "start": 319.04
+  },
+  {
+   "scene": 82,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 2.8,
+   "icons": [
+    "phone"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 322.6
+  },
+  {
+   "scene": 83,
+   "kind": "ticker",
+   "at": 0.1,
+   "dur": 2.7,
+   "from": 0,
+   "to": 25000,
+   "icon": "heart",
+   "sub": "suka",
+   "big": true,
+   "start": 325.56
+  },
+  {
+   "scene": 85,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 2.0,
+   "icons": [
+    "laugh"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 330.72
+  },
+  {
+   "scene": 86,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 2.55,
+   "icons": [
+    "laugh",
+    "star"
+   ],
+   "slot": "tr",
+   "stagger": 0.5,
+   "start": 332.92
+  },
+  {
+   "scene": 87,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 2.11,
+   "icons": [
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 335.62
+  },
+  {
+   "scene": 88,
+   "kind": "notif",
+   "at": 0.1,
+   "dur": 2.0,
+   "title": "KOMENTAR BARU",
+   "text": "\"Beli rambut palsu di mana?\"",
+   "icon": "chat",
+   "start": 337.78
+  },
+  {
+   "scene": 89,
+   "kind": "icons",
+   "at": 0.3,
+   "dur": 2.4,
+   "icons": [
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 340.12
+  },
+  {
+   "scene": 90,
+   "kind": "swarm",
+   "at": 0.0,
+   "dur": 3.4,
+   "count": 12,
+   "icon": "chat",
+   "start": 342.5
+  },
+  {
+   "scene": 91,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.0,
+   "icons": [
+    "tree"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 346.34
+  },
+  {
+   "scene": 92,
+   "kind": "icons",
+   "at": 0.1,
+   "dur": 1.4,
+   "icons": [
+    "check"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 349.4
+  },
+  {
+   "scene": 93,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 3.2,
+   "icons": [
+    "chat",
+    "burst",
+    "chat"
+   ],
+   "slot": "tr",
+   "stagger": 0.4,
+   "start": 351.02
+  },
+  {
+   "scene": 94,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.0,
+   "icons": [
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 354.64
+  },
+  {
+   "scene": 95,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 4.6,
+   "icons": [
+    "wifi",
+    "people"
+   ],
+   "slot": "tr",
+   "stagger": 1.0,
+   "start": 358.02
+  },
+  {
+   "scene": 96,
+   "kind": "crossout",
+   "at": 0.4,
+   "dur": 3.71,
+   "icons": [
+    "handshake"
+   ],
+   "start": 363.0
+  },
+  {
+   "scene": 97,
+   "kind": "chapter",
+   "at": 0.2,
+   "dur": 3.0,
+   "num": "BAB 7",
+   "title": "Rindu Hutan",
+   "sub": "Kota yang tak pernah sepi",
+   "start": 366.86
+  },
+  {
+   "scene": 98,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 2.6,
+   "icons": [
+    "bus"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 368.68
+  },
+  {
+   "scene": 99,
+   "kind": "icons",
+   "at": 0.1,
+   "dur": 1.8,
+   "icons": [
+    "phone",
+    "bowl"
+   ],
+   "slot": "tr",
+   "stagger": 0.4,
+   "start": 371.48
+  },
+  {
+   "scene": 100,
+   "kind": "stamp",
+   "at": 0.8,
+   "dur": 2.4,
+   "text": "LUNAS!",
+   "start": 374.06
+  },
+  {
+   "scene": 101,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 2.6,
+   "icons": [
+    "cloth",
+    "check"
+   ],
+   "slot": "tr",
+   "stagger": 0.6,
+   "start": 376.86
+  },
+  {
+   "scene": 103,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 2.6,
+   "icons": [
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 381.72
+  },
+  {
+   "scene": 104,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.35,
+   "icons": [
+    "horn",
+    "bell",
+    "phone"
+   ],
+   "slot": "tr",
+   "stagger": 0.5,
+   "start": 384.68
+  },
+  {
+   "scene": 105,
+   "kind": "icons",
+   "at": 0.1,
+   "dur": 2.6,
+   "icons": [
+    "horn",
+    "horn"
+   ],
+   "slot": "tr",
+   "stagger": 0.3,
+   "start": 388.08
+  },
+  {
+   "scene": 106,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 3.8,
+   "icons": [
+    "bell",
+    "phone"
+   ],
+   "slot": "tr",
+   "stagger": 0.4,
+   "start": 390.9
+  },
+  {
+   "scene": 107,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 2.4,
+   "icons": [
+    "hardhat"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 395.04
+  },
+  {
+   "scene": 108,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 1.51,
+   "icons": [
+    "tree"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 397.8
+  },
+  {
+   "scene": 110,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.39,
+   "icons": [
+    "tree",
+    "moon"
+   ],
+   "slot": "tr",
+   "stagger": 1.0,
+   "start": 402.66
+  },
+  {
+   "scene": 112,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 1.8,
+   "icons": [
+    "tree"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 408.78
+  },
+  {
+   "scene": 113,
+   "kind": "icons",
+   "at": 0.3,
+   "dur": 2.0,
+   "icons": [
+    "moon"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 410.88
+  },
+  {
+   "scene": 114,
+   "kind": "stamp",
+   "at": 0.3,
+   "dur": 2.1,
+   "text": "DILARANG TIDUR!",
+   "start": 413.2
+  },
+  {
+   "scene": 115,
+   "kind": "icons",
+   "at": 0.1,
+   "dur": 1.8,
+   "icons": [
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 415.38
+  },
+  {
+   "scene": 116,
+   "kind": "ticker",
+   "at": 0.2,
+   "dur": 3.3,
+   "from": 0,
+   "to": 10000,
+   "icon": "hourglass",
+   "sub": "tahun membangun peradaban",
+   "big": true,
+   "start": 417.34
+  },
+  {
+   "scene": 117,
+   "kind": "hourglass",
+   "at": 0.4,
+   "dur": 4.2,
+   "start": 421.16
+  },
+  {
+   "scene": 118,
+   "kind": "chapter",
+   "at": 0.2,
+   "dur": 3.0,
+   "num": "BAB 8",
+   "title": "Anak yang Hilang",
+   "sub": "Sesuatu yang terasa akrab",
+   "start": 425.54
+  },
+  {
+   "scene": 120,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 2.6,
+   "icons": [
+    "tear"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 430.92
+  },
+  {
+   "scene": 121,
+   "kind": "icons",
+   "at": 0.3,
+   "dur": 2.0,
+   "icons": [
+    "people",
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.5,
+   "start": 433.88
+  },
+  {
+   "scene": 122,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 2.4,
+   "icons": [
+    "question",
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.3,
+   "start": 436.16
+  },
+  {
+   "scene": 123,
+   "kind": "icons",
+   "at": 0.3,
+   "dur": 2.4,
+   "icons": [
+    "heart"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 438.88
+  },
+  {
+   "scene": 124,
+   "kind": "tag",
+   "at": 0.4,
+   "dur": 3.4,
+   "text": "Di zamanmu...",
+   "sub": "kehilangan anggota kelompok = bahaya",
+   "icon": "warn",
+   "start": 441.76
+  },
+  {
+   "scene": 125,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.4,
+   "icons": [
+    "people",
+    "handshake"
+   ],
+   "slot": "tr",
+   "stagger": 0.8,
+   "start": 445.54
+  },
+  {
+   "scene": 126,
+   "kind": "icons",
+   "at": 0.1,
+   "dur": 2.0,
+   "icons": [
+    "people"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 449.14
+  },
+  {
+   "scene": 127,
+   "kind": "icons",
+   "at": 0.1,
+   "dur": 1.8,
+   "icons": [
+    "phone"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 451.28
+  },
+  {
+   "scene": 128,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 2.4,
+   "icons": [
+    "people",
+    "pin"
+   ],
+   "slot": "tr",
+   "stagger": 0.5,
+   "start": 453.26
+  },
+  {
+   "scene": 130,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 2.6,
+   "icons": [
+    "heart"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 457.76
+  },
+  {
+   "scene": 131,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 2.4,
+   "icons": [
+    "heart",
+    "sparkle"
+   ],
+   "slot": "tr",
+   "stagger": 0.5,
+   "start": 460.8
+  },
+  {
+   "scene": 133,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.2,
+   "icons": [
+    "heart"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 466.64
+  },
+  {
+   "scene": 134,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.0,
+   "icons": [
+    "hourglass"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 470.3
+  },
+  {
+   "scene": 136,
+   "kind": "stamp",
+   "at": 0.4,
+   "dur": 2.6,
+   "text": "SALING MEMBUTUHKAN",
+   "start": 476.38
+  },
+  {
+   "scene": 137,
+   "kind": "chapter",
+   "at": 0.2,
+   "dur": 3.0,
+   "num": "BAB 9",
+   "title": "Kesimpulan",
+   "sub": "Nyaman, tapi tidak mudah",
+   "start": 479.28
+  },
+  {
+   "scene": 138,
+   "kind": "crossout",
+   "at": 0.4,
+   "dur": 3.6,
+   "icons": [
+    "money",
+    "hardhat",
+    "phone"
+   ],
+   "start": 480.8
+  },
+  {
+   "scene": 140,
+   "kind": "compare",
+   "at": 0.2,
+   "dur": 3.57,
+   "title": "ZAMAN PURBA vs ZAMAN MODERN",
+   "items": [
+    [
+     "Kenyamanan zaman purba",
+     "rendah",
+     "0.25"
+    ],
+    [
+     "Kenyamanan zaman modern",
+     "jauh lebih tinggi",
+     "1"
+    ]
+   ],
+   "start": 487.22
+  },
+  {
+   "scene": 142,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 2.31,
+   "icons": [
+    "pill",
+    "check"
+   ],
+   "slot": "tr",
+   "stagger": 0.5,
+   "start": 492.82
+  },
+  {
+   "scene": 143,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 2.6,
+   "icons": [
+    "calendar"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 495.48
+  },
+  {
+   "scene": 144,
+   "kind": "icons",
+   "at": 0.1,
+   "dur": 2.0,
+   "icons": [
+    "plane",
+    "clock"
+   ],
+   "slot": "tr",
+   "stagger": 0.4,
+   "start": 498.2
+  },
+  {
+   "scene": 145,
+   "kind": "tag",
+   "at": 0.4,
+   "dur": 3.6,
+   "text": "Masalah baru",
+   "sub": "kemajuan juga punya harga",
+   "icon": "warn",
+   "start": 500.64
+  },
+  {
+   "scene": 146,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.4,
+   "icons": [
+    "fang"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 504.6
+  },
+  {
+   "scene": 147,
+   "kind": "icons",
+   "at": 0.3,
+   "dur": 3.3,
+   "icons": [
+    "hardhat"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 508.28
+  },
+  {
+   "scene": 148,
+   "kind": "icons",
+   "at": 0.1,
+   "dur": 2.1,
+   "icons": [
+    "money",
+    "arrowup"
+   ],
+   "slot": "tr",
+   "stagger": 0.3,
+   "start": 511.7
+  },
+  {
+   "scene": 149,
+   "kind": "icons",
+   "at": 0.3,
+   "dur": 2.5,
+   "icons": [
+    "people",
+    "arrowup"
+   ],
+   "slot": "tr",
+   "stagger": 0.5,
+   "start": 514.08
+  },
+  {
+   "scene": 150,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 4.0,
+   "icons": [
+    "drumstick",
+    "xmark"
+   ],
+   "slot": "tr",
+   "stagger": 0.8,
+   "start": 517.0
+  },
+  {
+   "scene": 151,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.4,
+   "icons": [
+    "bowl",
+    "drumstick",
+    "chicken"
+   ],
+   "slot": "tr",
+   "stagger": 0.5,
+   "start": 521.54
+  },
+  {
+   "scene": 152,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.4,
+   "icons": [
+    "calendar",
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.6,
+   "start": 525.46
+  },
+  {
+   "scene": 153,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 3.0,
+   "icons": [
+    "idcard"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 529.44
+  },
+  {
+   "scene": 154,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 2.4,
+   "icons": [
+    "bulb"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 532.8
+  },
+  {
+   "scene": 156,
+   "kind": "big",
+   "at": 0.3,
+   "dur": 4.2,
+   "text": "TIDAK SEMUDAH ITU",
+   "sub": "menjadi manusia modern",
+   "start": 538.64
+  },
+  {
+   "scene": 157,
+   "kind": "chapter",
+   "at": 0.2,
+   "dur": 3.0,
+   "num": "BAB 10",
+   "title": "Tanggal Tua",
+   "sub": "Sebuah pesan masuk...",
+   "start": 543.22
+  },
+  {
+   "scene": 157,
+   "kind": "icons",
+   "at": 3.2,
+   "dur": 1.4,
+   "icons": [
+    "bowl"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 546.22
+  },
+  {
+   "scene": 158,
+   "kind": "icons",
+   "at": 0.1,
+   "dur": 2.0,
+   "icons": [
+    "bell"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "glow": true,
+   "start": 547.84
+  },
+  {
+   "scene": 159,
+   "kind": "notif",
+   "at": 0.2,
+   "dur": 2.77,
+   "title": "PEMILIK KONTRAKAN · baru saja",
+   "text": "\"Besok jangan lupa bayar sewa ya.\"",
+   "icon": "house",
+   "start": 550.06
+  },
+  {
+   "scene": 162,
+   "kind": "icons",
+   "at": 0.6,
+   "dur": 4.0,
+   "icons": [
+    "moon"
+   ],
+   "slot": "tr",
+   "stagger": 0.45,
+   "start": 559.44
+  },
+  {
+   "scene": 164,
+   "kind": "icons",
+   "at": 0.4,
+   "dur": 3.6,
+   "icons": [
+    "spear",
+    "tree"
+   ],
+   "slot": "tr",
+   "stagger": 0.9,
+   "start": 565.7
+  },
+  {
+   "scene": 166,
+   "kind": "icons",
+   "at": 1.2,
+   "dur": 2.6,
+   "icons": [
+    "clock",
+    "question"
+   ],
+   "slot": "tr",
+   "stagger": 0.6,
+   "start": 573.52
+  },
+  {
+   "scene": 167,
+   "kind": "embers",
+   "at": 0.0,
+   "dur": 2.5,
+   "start": 576.36
+  },
+  {
+   "scene": 168,
+   "kind": "icons",
+   "at": 0.2,
+   "dur": 2.8,
+   "icons": [
+    "hardhat",
+    "clock"
+   ],
+   "slot": "tr",
+   "stagger": 0.5,
+   "start": 579.1
+  },
+  {
+   "scene": 169,
+   "kind": "icons",
+   "at": 1.0,
+   "dur": 5.0,
+   "icons": [
+    "calendar",
+    "money"
+   ],
+   "slot": "tr",
+   "stagger": 1.0,
+   "start": 583.04
+  },
+  {
+   "scene": 169,
+   "kind": "stamp",
+   "at": 1.4,
+   "dur": 4.6,
+   "text": "TANGGAL TUA",
+   "start": 583.44
+  },
+  {
+   "scene": 169,
+   "kind": "outro",
+   "at": 6.090000000000055,
+   "dur": 5.37,
+   "text": "Tulis di komentar: kamu tim purba atau tim modern?",
+   "start": 588.13
+  }
+ ]
+}
