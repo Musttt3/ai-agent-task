@@ -21,7 +21,7 @@ User rules that apply:
 - Voice: one steady tone.
 - Jokes are researched real facts.
 - Standard mix: music +3 dB, SFX -6 dB, voice unchanged.
-- Final export 2K vertical: 1440x2560, `--scale 1.3333`.
+- Final export 2K vertical: 1440x2560, `--scale 1.3333`. **Always 2K, never downgrade to 1080x1920** (the user confirmed this after the Viking short, 2026-11-15). On a slow cloud container (software WebGL, ~10-20 s/frame at 2K) do NOT drop the resolution: render in resumable chunks at `--scale 1.3333` and plan for the longer render time.
 - Opus max verifies every check.
 - Save after every step.
 - "Just do it" once the script is approved.
