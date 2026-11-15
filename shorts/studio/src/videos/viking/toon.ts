@@ -645,10 +645,12 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
       p.ell(hx, hy - 19 * u, 11 * u, 10 * u, "#f7c6d9", 2.2 * u);
       p.dot(hx, hy, 5.5 * u);
     } else if (prop === "wood") { // a cut wooden fragment held up for inspection: pale fresh cut faces + saw/axe marks
+      const u0 = u; { const u = u0 * 1.7;
       const pl: P2[] = [[hx - 26 * u, hy - 30 * u], [hx + 22 * u, hy - 38 * u], [hx + 28 * u, hy - 4 * u], [hx - 20 * u, hy + 4 * u]];
       p.poly(pl, "#b8864f", 2.4 * u);
       p.poly([[hx + 22 * u, hy - 38 * u], [hx + 30 * u, hy - 32 * u], [hx + 34 * u, hy - 2 * u], [hx + 28 * u, hy - 4 * u]], "#e8c99a", 2 * u);
       for (let i = 0; i < 3; i++) p.stroke([[hx - 14 * u + i * 12 * u, hy - 26 * u], [hx - 8 * u + i * 12 * u, hy - 6 * u]], 1.6 * u);
+      }
       p.dot(hx, hy, 5.5 * u);
     } else if (prop === "brush") {
       p.band([[hx - 4 * u, hy - 2 * u], [hx + 26 * u, hy + 16 * u]], "#9a6a3a", 4 * u, 1.2 * u, "round");

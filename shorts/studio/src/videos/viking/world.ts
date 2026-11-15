@@ -669,14 +669,14 @@ export class World {
         break;
       }
       case "stormFlash": { // the crossing nearly killed you
-        this.light("storm"); seaA = 1.5; seaK = 0.75; rain = 1; wind = 1;
+        this.light("storm"); seaA = 1.9; seaK = 0.7; rain = 1; wind = 1;
         const heel = 10 * Math.sin(t * 0.09 + 0.5);
         this.shipAt(f, S(0, 0, 0), 0.6, seaA, seaK, heel);
         this.sailSet(f, 1, 1);
         const hero = this.onShip(0.5, -0.1);
         this.actor(f, cam, { o: HERO, id: "hero", pos: hero, opts: { expr: f < B(T.killed) ? "nervous" : "shock", tilt: -heel * 0.8, facing: 1 } }, false);
         this.actor(f, cam, { o: sailor(2), id: "s2", pos: this.onShip(-1.1, 2.4), opts: { expr: "pained", tilt: -heel } }, false);
-        pos = this.onShip(6.2, -3.6, 2.9); look = this.onShip(0.3, -0.6, 1.9); fov = 50; roll = -heel * 0.4;
+        pos = this.onShip(6.2, -3.6, 2.9); look = this.onShip(0.3, -0.6, 1.9); fov = 50; roll = 6 - heel * 0.9;
         const k = kick(f, [B(T.killed)], 0.08); pos = add3(pos, k);
         if (f >= B(T.killed) && f < B(T.killed) + 18) this.fx.show(splashTex(clamp01((f - B(T.killed)) / 18)), this.onShip(3.0, -1.2, 1.2), cam, 2.6);
         focus = [hero[0], hero[1] + 1.6, hero[2]];
@@ -732,8 +732,8 @@ export class World {
         const hp = this.onShip(1.0, -0.6);
         const hit = B(T.mistake);
         this.actor(f, cam, { o: HERO, id: "hero", pos: hp, opts: { expr: f < hit ? "grin" : f < hit + 8 ? "shock" : "dazed", facing: 0, ...blinkOff } }, false);
-        if (f >= hit - 6) this.fx.show(splashTex(clamp01((f - hit + 6) / 22)), this.onShip(0.4, 0.4, 0.7), cam, 3.2);
-        pos = lerp3(this.onShip(3.6, -2.4, 2.2), this.onShip(3.0, -1.8, 2.15), smooth(u)); look = this.onShip(1.0, -0.6, 1.75); fov = 42;
+        if (f >= hit - 6) { this.fx.show(splashTex(clamp01((f - hit + 6) / 22)), this.onShip(1.9, -1.9, 1.7), cam, 4.6); this.fx2.show(splashTex(clamp01((f - hit + 2) / 22)), this.onShip(0.2, -0.9, 1.5), cam, 3.4); }
+        pos = lerp3(this.onShip(2.7, 1.4, 2.2), this.onShip(2.4, 1.0, 2.15), smooth(u)); look = this.onShip(1.0, -0.6, 1.75); fov = 44;
         pos = add3(pos, kick(f, [hit + 2], 0.05));
         focus = [hp[0], hp[1] + 1.6, hp[2]];
         break;
@@ -762,7 +762,7 @@ export class World {
         this.shipAt(f, [6, 0, lerp(118, 110, u)], 0.05, seaA);
         const shout = B(T.land);
         this.actor(f, cam, { o: sailor(0), id: "s0", pos: this.onShip(-0.4, -6.0, 0.55), opts: { expr: f < shout ? "neutral" : "laugh", wave: f < B(T.shouts) ? undefined : 1, facing: -1 } }, false);
-        this.actor(f, cam, { o: HERO, id: "hero", pos: this.onShip(0.8, -3.6), opts: { expr: f < shout ? "neutral" : f < shout + 12 ? "shock" : "grin", facing: -1 } }, false);
+        this.actor(f, cam, { o: HERO, id: "hero", pos: this.onShip(1.6, -2.6), opts: { expr: f < shout ? "neutral" : f < shout + 12 ? "shock" : "grin", facing: -1 } }, false);
         if (f >= shout) this.fx.show(burstTex(clamp01((f - shout) / 16)), this.onShip(-0.4, -6.8, 3.6), cam, 2.6 * (1 - 0.3 * clamp01((f - shout - 16) / 10)));
         pos = lerp3(this.onShip(2.8, 1.6, 2.4), this.onShip(2.2, 0.4, 2.3), smooth(u)); look = this.onShip(-0.4, -10, 1.9); fov = 50;
         pos = add3(pos, kick(f, [shout], 0.06));
@@ -825,12 +825,13 @@ export class World {
       case "notAlone": { // you're not alone
         this.light("day"); this.vin.visible = true; seaA = 0.08;
         this.hutWalls.forEach((w) => (w.scale.y = 0.72)); this.hutRoof.visible = false; this.hutDoor.forEach((d) => (d.visible = false));
-        const hx = Vp(6.6, -1.6);
+        const hx = Vp(7.0, -1.2);
         this.actor(f, cam, { o: HERO, id: "hero", pos: hx, opts: { expr: f < B(T.alone) ? "neutral" : "shock", facing: 1 } });
-        for (let i = 0; i < 3; i++) this.actor(f, cam, { o: native(i), id: "n" + i, pos: Vp(15.5 + i * 1.5, -9.5 - (i % 2) * 1.3), opts: { expr: i === 1 ? "stern" : "neutral", facing: -1 } });
-        pos = lerp3(Vp(3.8, 1.6, 1.9), Vp(4.4, 0.8, 1.9), smooth(u)); look = lerp3(Vp(12, -6, 1.5), Vp(13.5, -7.5, 1.6), smooth(u)); fov = 48;
+        const NP: [number, number][] = [[9.6, -6.0], [10.9, -6.8], [9.9, -7.6]];
+        NP.forEach(([x, z], i) => this.actor(f, cam, { o: native(i), id: "n" + i, pos: Vp(x, z), opts: { expr: i === 1 ? "stern" : "neutral", facing: -1 } }));
+        pos = lerp3(Vp(5.4, 0.4, 1.85), Vp(5.8, -0.2, 1.85), smooth(u)); look = Vp(10.1, -6.6, 1.5); fov = 48;
         pos = add3(pos, kick(f, [B(T.alone)], 0.05));
-        focus = Vp(16.5, -10, 1.6);
+        focus = Vp(10.1, -6.6, 1.6);
         break;
       }
       case "indigenous": { // the people who had lived here for thousands of years
@@ -920,7 +921,7 @@ export class World {
         this.actor(f, cam, { o: digger(2), id: "d2", pos: hp, opts: { expr: f < B(T.confirms) ? "neutral" : f < aha ? "shock" : "grin", prop: "wood", facing: 0 } });
         this.actor(f, cam, { o: digger(1), id: "d1", pos: Vp(6.6, -6.4), opts: { expr: "smile", mode: "sit", prop: "brush" } });
         if (f >= aha) this.fx.show(burstTex(clamp01((f - aha) / 16)), add3(hp, [0.4, 1.4, -0.3]), cam, 1.4);
-        pos = lerp3(add3(hp, [-0.3, 1.5, 2.6]), add3(hp, [-0.15, 1.45, 1.9]), smooth(u)); look = add3(hp, [0.15, 1.3, 0]); fov = 44;
+        pos = lerp3(add3(hp, [-0.4, 1.35, 3.8]), add3(hp, [-0.3, 1.35, 3.2]), smooth(u)); look = add3(hp, [0.15, 1.2, 0]); fov = 44;
         focus = add3(hp, [0.1, 1.4, 0]);
         break;
       }
@@ -932,7 +933,8 @@ export class World {
         this.actor(f, cam, { o: native(0), id: "n0", pos: Vp(35.6, -3.6), opts: { expr: "smile", facing: 1 } });
         this.actor(f, cam, { o: native(2), id: "n2", pos: Vp(38.4, -3.4), opts: { expr: "smile", facing: -1 } });
         this.actor(f, cam, { o: native(5), id: "n5", pos: Vp(37.0, -2.5), opts: { expr: "laugh" } });
-        pos = lerp3(Vp(37.0, 2.6, 1.5), Vp(37.0, 1.4, 1.55), smooth(u)); look = Vp(37.0, -4.0, 1.3); fov = 48;
+        this.actor(f, cam, { o: native(3), id: "n3", pos: Vp(36.2, -6.4), opts: { expr: "smile", prop: "bowl" } });
+        pos = lerp3(Vp(37.0, 5.2, 1.7), Vp(37.0, 4.2, 1.7), smooth(u)); look = Vp(37.0, -3.6, 1.2); fov = 52;
         focus = Vp(37, -3, 1.4);
         break;
       }
