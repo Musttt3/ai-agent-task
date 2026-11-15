@@ -6,6 +6,7 @@ Video YouTube 16:9 (1920×1080, 30 fps), gaya cut sederhana tanpa SFX/musik.
 - `timeline.csv` — daftar 294 gambar dengan waktu mulai/selesai di video
 - `align.json` — timestamp naskah vs awal kalimat sebenarnya di voice over (whisper)
 - `align.py`, `build.py` — skrip sinkronisasi dan render
+- `thumbnail_12000-tahun.jpg`, `thumbnail_kalah-sama-kerang.jpg` — thumbnail 1280×720 (dibuat dengan `thumbnail.py`, font Anton)
 
 Bahan dari Google Drive `Mancing/Mancing.zip` (294 gambar 1376×768, VO ElevenLabs, naskah, `daftar_adegan.csv`).
 
