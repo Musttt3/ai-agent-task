@@ -42,3 +42,5 @@ No captions or labels in the video.
 
 ## Notes
 - Render at 1080x1920 (software WebGL in the cloud container: ~10 s/frame). 2K would need ~2x the time.
+- QA pass 1: the tension shot's sky switched texture in one frame (light blend crossed 0.5). Fixed with a second sky layer that cross-fades; join/crossing/tension/supplies re-rendered with `studio/vpatch.sh`.
+- Remaining QA "pops" are planned: shot cuts, the hook flash, lightning, the LAND! burst, the shocked reaction on "not alone" and the kick on "dangerous". The last 2 frames are the fade to black.

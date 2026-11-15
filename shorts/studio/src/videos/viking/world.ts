@@ -113,7 +113,7 @@ export class World {
   private fireL = new THREE.PointLight(0xffa860, 0, 0, 1.4);
   private fog = new THREE.Fog(0xcfe0f2, 30, 300);
   // sky + weather
-  private sky: THREE.Mesh; private skyMat: THREE.MeshBasicMaterial;
+  private sky: THREE.Mesh; private skyMat: THREE.MeshBasicMaterial; private sky2!: THREE.Mesh; private sky2Mat!: THREE.MeshBasicMaterial;
   private sunDisc: THREE.Mesh;
   private clouds: THREE.Mesh[] = [];
   private rain: THREE.LineSegments; private snow: THREE.Points;
@@ -182,6 +182,11 @@ export class World {
     this.sky = new THREE.Mesh(new THREE.SphereGeometry(420, 32, 16), this.skyMat);
     this.sky.renderOrder = -10; this.sky.layers.set(NOINK);
     this.root.add(this.sky);
+    // second sky layer: cross-fades the B preset over A while lights blend (no hard texture swap)
+    this.sky2Mat = new THREE.MeshBasicMaterial({ map: this.skyMat.map, side: THREE.BackSide, fog: false, depthWrite: false, transparent: true, opacity: 0 });
+    this.sky2 = new THREE.Mesh(new THREE.SphereGeometry(419, 32, 16), this.sky2Mat);
+    this.sky2.renderOrder = -9.5; this.sky2.layers.set(NOINK); this.sky2.visible = false;
+    this.root.add(this.sky2);
     this.sunDisc = new THREE.Mesh(new THREE.CircleGeometry(14, 32), new THREE.MeshBasicMaterial({ color: new THREE.Color(3.2, 2.5, 1.7), fog: false, toneMapped: false, depthWrite: false }));
     this.sunDisc.layers.set(NOINK); this.sunDisc.renderOrder = -9;
     this.root.add(this.sunDisc);
@@ -512,7 +517,8 @@ export class World {
     const d = lerp3(A.sunDir, B.sunDir, t);
     this.sunDir.set(...d).normalize();
     this.fog.color.copy(c(A.fog, B.fog)); this.fog.near = l(A.near, B.near); this.fog.far = l(A.far, B.far);
-    this.skyMat.map = t < 0.5 ? A.skyT : B.skyT;
+    this.skyMat.map = A.skyT;
+    this.sky2Mat.map = B.skyT; this.sky2Mat.opacity = t; this.sky2.visible = B.skyT !== A.skyT && t > 0.001;
     this.seaCols = [0, 1, 2, 3].map((i) => c(A.sea[i], B.sea[i]));
     this.cloudK = l(A.cloud, B.cloud);
     this.golden = (a === "golden" ? 1 - t : 0) + (b === "golden" ? t : 0);
@@ -610,7 +616,7 @@ export class World {
   }
 
   private skyUpdate(cam: THREE.Camera) {
-    this.sky.position.copy(cam.position);
+    this.sky.position.copy(cam.position); this.sky2.position.copy(cam.position);
     const d = this.sunDir;
     this.sunDisc.visible = this.golden > 0.5;
     this.sunDisc.position.set(cam.position.x + d.x * 380, Math.max(6, d.y * 380) + cam.position.y * 0.0, cam.position.z + d.z * 380);
