@@ -423,7 +423,7 @@ export class World {
     };
     this.barrel = barrel(true);
     this.barrel.position.set(9.2, hVin(9.2, -2.6), -2.6); this.era.add(this.barrel);
-    for (const [x, z] of [[10.2, -2.0], [8.6, -1.6]] as const) { const b = barrel(false); b.position.set(x, hVin(x, z), z); this.era.add(b); }
+    for (const [x, z] of [[10.5, -3.5], [11.1, -2.6]] as const) { const b = barrel(false); b.position.set(x, hVin(x, z), z); this.era.add(b); }
     this.vin.add(this.era);
     // the camp of the people of the land
     const hide = hideTexture(); hide.repeat.set(2, 1);
@@ -663,8 +663,8 @@ export class World {
         this.actor(f, cam, { o: HERO, id: "hero", pos: hero, opts: { expr: f < B(T.reached) ? "smile" : "grin", facing: -1 } }, false);
         this.actor(f, cam, { o: sailor(1), id: "s1", pos: this.onShip(0.9, -1.8), opts: { expr: "smile" } }, false);
         this.actor(f, cam, { o: sailor(3), id: "s3", pos: this.onShip(-1.0, 1.2), opts: { expr: "neutral" } }, false);
-        const p0 = this.onShip(3.6, -0.2, 2.8), p1 = this.onShip(2.9, -1.6, 2.6);
-        pos = lerp3(p0, p1, smooth(u)); look = this.onShip(-0.4, -8.5, 1.9); fov = 56; roll = -2;
+        const p0 = this.onShip(1.9, -1.4, 2.7), p1 = this.onShip(1.6, -2.0, 2.6);
+        pos = lerp3(p0, p1, smooth(u)); look = this.onShip(-1.4, -9.5, 1.8); fov = 56; roll = -2;
         focus = [hero[0], hero[1] + 1.6, hero[2]];
         break;
       }
@@ -722,7 +722,7 @@ export class World {
         this.actor(f, cam, { o: HERO, id: "hero", pos: hp, opts: { expr: "grin", mode: w < 1 ? "stroll" : "stand", phase: t / 16, facing: 1 } });
         this.actor(f, cam, { o: sailor(1), id: "s1", pos: this.onShip(-0.6, 0.8), opts: { expr: "grin", wave: Math.floor(f / 8) % 2 } }, false);
         this.actor(f, cam, { o: sailor(2), id: "s2", pos: this.onShip(0.8, 3.0), opts: { expr: "smile" } }, false);
-        pos = lerp3(Gp(4.2, 7.8, 2.2), Gp(5.0, 10.5, 2.4), smooth(u)); look = lerp3(Gp(9.6, 1.0, 1.8), Gp(10.2, 5.0, 1.9), smooth(u)); fov = 50;
+        pos = lerp3([G[0] + 4.0, 2.7, G[2] + 8.2], [G[0] + 4.6, 2.8, G[2] + 10.6], smooth(u)); look = lerp3(Gp(9.6, 1.0, 1.8), Gp(10.2, 5.0, 1.9), smooth(u)); fov = 50;
         focus = [hp[0], hp[1] + 1.6, hp[2]];
         break;
       }
@@ -966,7 +966,7 @@ export class World {
     this.endActors();
     // every hold creeps: a tiny push toward the look target
     const dir = new THREE.Vector3(look[0] - pos[0], look[1] - pos[1], look[2] - pos[2]);
-    const creep = 0.0018 * t;
+    const creep = Math.min(0.08, 0.0009 * t);
     cam.position.set(pos[0] + dir.x * creep, pos[1] + dir.y * creep, pos[2] + dir.z * creep);
     cam.fov = fov; cam.near = 0.1; cam.far = 1500; cam.up.set(0, 1, 0);
     cam.lookAt(...look); cam.rotateZ(rad(roll)); cam.updateProjectionMatrix(); cam.updateMatrixWorld(true);
