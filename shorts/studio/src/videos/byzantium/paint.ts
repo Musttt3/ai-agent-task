@@ -562,7 +562,10 @@ export const byzBannerTexture = () => {
   g.fillStyle = "#b02a26"; g.fillRect(0, 0, 512, 384);
   g.fillStyle = "#e8c04a"; g.fillRect(232, 0, 48, 384); g.fillRect(0, 168, 512, 48);
   g.strokeStyle = "#e8c04a"; g.lineWidth = 16;
-  for (const [x, y, s] of [[116, 84, 1], [396, 84, -1], [116, 300, 1], [396, 300, -1]] as const) { g.beginPath(); g.arc(x + s * 20, y, 40, s > 0 ? Math.PI * 0.5 : -Math.PI * 0.5, s > 0 ? Math.PI * 1.5 : Math.PI * 0.5); g.stroke(); }
+  for (const [x, y, s] of [[116, 84, -1], [396, 84, 1], [116, 300, -1], [396, 300, 1]] as const) { // the four "B" fire-steels, mirrored outward
+    g.beginPath(); g.moveTo(x - s * 22, y - 52); g.lineTo(x - s * 22, y + 52); g.stroke();
+    for (const yy of [-26, 26]) { g.beginPath(); g.arc(x - s * 22, y + yy, 26, s > 0 ? -Math.PI / 2 : Math.PI / 2, s > 0 ? Math.PI / 2 : Math.PI * 1.5); g.stroke(); }
+  }
   g.strokeStyle = "#5a1410"; g.lineWidth = 10; g.strokeRect(0, 0, 512, 384);
   return tex(c);
 };

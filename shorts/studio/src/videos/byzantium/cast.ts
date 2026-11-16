@@ -32,7 +32,7 @@ export const defender = (v: number): Outfit => ({ jacket: ["#8a8f98", "#7a3a3a",
 export const janissary = (v: number): Outfit => ({ jacket: ["#2f4f8a", "#8a2a2a", "#2f6a4a"][v % 3], dress: ["#28457a", "#7a2424", "#285e40"][v % 3], pants: "#3a3030",
   boots: "#6a3a20", hat: "bork", moustache: "#2a1a14", hair: "#2a1a14", trim: "#c9a24a", skin: ["#e8c8a4", "#dcb48c", "#f0d4b4"][v % 3] });
 /** Sultan Mehmed II (21 in 1453): red kaftan, great white turban, short dark beard */
-export const MEHMED: Outfit = { jacket: "#b8322c", dress: "#a82c28", pants: "#3a3030", boots: "#6a3a20", hat: "turban", beard: "#2a1a14", hair: "#2a1a14",
+export const MEHMED: Outfit = { jacket: "#b8322c", dress: "#a82c28", pants: "#3a3030", boots: "#6a3a20", hat: "turban", beard: "#6a4a30", moustache: "#3a2418", hair: "#3a2418",
   trim: "#d9b04a", skin: "#ecd0b0" };
 /** Emperor Constantine XI: imperial purple, gilded helmet, grey-brown beard */
 export const EMPEROR: Outfit = { jacket: "#5a2a6a", pants: "#3a2a3a", boots: "#8a2a2a", hat: "helm", helmCol: "#d9b04a", beard: "#6a5a4a", hair: "#6a5a4a",

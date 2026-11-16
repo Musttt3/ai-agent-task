@@ -521,7 +521,7 @@ const beardOn = (p: Pen, col: string, hp: P2[], H: Blob, cx: number, hc: number,
 export type Arms = [P2[], P2[]];
 /** held prop; for the hammer the number is the strike 0 (raised) .. 1 (struck) */
 export type Prop = null | "icecream" | "shako" | ["hammer", number] | "wood" | "brush" | "log" | "bowl"
-  | "flask" | "mortar" | "mortar2" | "herbs" | "posy" | "scroll" | "spear" | "shield" | "sword";
+  | "flask" | "mortar" | "mortar2" | "herbs" | "posy" | "scroll" | "spear" | "shield" | "sword" | "reach";
 
 const BUILD: Record<Build, { a: number; torso: number; legs: number; tw: number }> = {
   adult: { a: 118, torso: 1.1, legs: 1.4, tw: 0.8 },
@@ -628,7 +628,7 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
   type Arm = { pts: [P2, P2, P2]; front: boolean };
   const arms: Arm[] = [];
   if (mode === "sit") for (const side of [-1, 1]) {
-    if (side === 1 && (prop === "bowl" || prop === "brush")) { const S = sh(1); arms.push({ pts: [S, [tcx + 1.1 * T.a + 6 * u, S[1] + 0.4 * HH], [tcx + 0.45 * T.a, S[1] + (prop === "bowl" ? 0.42 : 0.5) * HH]], front: true }); continue; }
+    if (side === 1 && (prop === "bowl" || prop === "brush" || prop === "scroll")) { const S = sh(1); arms.push({ pts: [S, [tcx + 1.1 * T.a + 6 * u, S[1] + 0.4 * HH], [tcx + 0.45 * T.a, S[1] + (prop === "bowl" ? 0.42 : 0.5) * HH]], front: true }); continue; }
     arms.push({ pts: [sh(side), [tcx + side * (1.1 * T.a + 6 * u), sh(side)[1] + 0.4 * HH], [tcx + side * (1.2 * T.a + 10 * u), torsoBot + 0.04 * HH]], front: false });
   }
   else if (mode === "fall") for (const side of [-1, 1]) arms.push({ pts: [sh(side), [tcx + side * (1.15 * T.a + 12 * u), sh(side)[1] - 0.25 * HH], [tcx + side * (1.3 * T.a + 24 * u), sh(side)[1] - 0.68 * HH]], front: false });
@@ -640,6 +640,9 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
     } else if (wave !== undefined) {
       const S = sh(1);
       arms.push({ pts: [S, [tcx + 1.1 * T.a + 10 * u + 3 * u * wave, S[1] - 0.22 * HH], [tcx + 1.18 * T.a + 16 * u + 12 * u * wave, S[1] - 0.6 * HH]], front: prop === "herbs" || prop === "sword" });
+    } else if (prop === "reach") { // arm out sideways at shoulder height (a hand on someone's shoulder)
+      const S = sh(1);
+      arms.push({ pts: [S, [tcx + 1.3 * T.a + 16 * u, S[1] + 0.06 * HH], [tcx + 1.6 * T.a + 40 * u, S[1] + 0.1 * HH]], front: true });
     } else if (prop === "scroll") {
       const S = sh(1);
       arms.push({ pts: [S, [tcx + 1.1 * T.a + 6 * u, S[1] + 0.4 * HH], [tcx + 0.45 * T.a, S[1] + 0.12 * HH]], front: true });

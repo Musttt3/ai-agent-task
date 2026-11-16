@@ -62,7 +62,7 @@ export class World {
   // moving set pieces
   private doors: THREE.Mesh[] = []; private crumble = new THREE.Group(); private bell!: THREE.Mesh; private ball!: THREE.Mesh;
   private banner = new THREE.Group(); private bannerCloth!: THREE.Mesh; private bannerBase!: Float32Array;
-  private helmet = new THREE.Group(); private pennants: THREE.Group[] = [];
+  private helmet = new THREE.Group(); private pennants: THREE.Group[] = []; private cloak!: THREE.Mesh;
   private embers: THREE.Mesh[] = [];
   // cast + fx
   private people: Person[] = []; private pi = 0;
@@ -142,7 +142,7 @@ export class World {
     // inner wall, gap for the gate at |x| < 3
     W(147, 12, 5, -76.5, WZ); W(147, 12, 5, 76.5, WZ);
     W(6, 4.5, 5, 0, WZ, 7.5); // over the gate arch
-    const arch = new THREE.Mesh(new THREE.CylinderGeometry(3, 3, 5.02, 20, 1, false, 0, Math.PI).rotateX(Math.PI / 2).rotateZ(Math.PI / 2), wallM); arch.position.set(0, 7.5, WZ); arch.rotation.z = Math.PI / 2; this.set.add(arch);
+    const arch = new THREE.Mesh(new THREE.CylinderGeometry(3, 3, 5.02, 20, 1, false, 0, Math.PI).rotateX(Math.PI / 2).rotateZ(Math.PI / 2), wallM); arch.position.set(0, 7.5, WZ); this.set.add(arch);
     // merlons on the outer edge of the wall walk
     const merl: THREE.BufferGeometry[] = [];
     for (let x = -148; x < 148; x += 2.4) if (Math.abs(x) > 2) merl.push(new THREE.BoxGeometry(1.3, 1.4, 0.9).translate(x, 12.7, WZ - 2.1));
@@ -152,11 +152,11 @@ export class World {
       if (x === CRUMBLE_X) {
         W(9, 13, 9, x, WZ - 1);
         const t = wt.clone(); t.needsUpdate = true; t.repeat.set(1.1, 0.8);
-        const top = new THREE.Mesh(new THREE.BoxGeometry(9, 6, 9).translate(0, 3, 0), lambert({ map: t }));
+        const top = new THREE.Mesh(new THREE.BoxGeometry(9, 6, 9).translate(0, 3, 4.5), lambert({ map: t }));
         const tm: THREE.BufferGeometry[] = [];
-        for (let k = -3; k <= 3; k += 2) for (const [sx, sz] of [[k, -4.2], [k, 4.2], [-4.2, k], [4.2, k]] as const) tm.push(new THREE.BoxGeometry(1.1, 1.3, 1.1).translate(sx, 6.6, sz));
+        for (let k = -3; k <= 3; k += 2) for (const [sx, sz] of [[k, -4.2], [k, 4.2], [-4.2, k], [4.2, k]] as const) tm.push(new THREE.BoxGeometry(1.1, 1.3, 1.1).translate(sx, 6.6, sz + 4.5));
         this.crumble.add(top, new THREE.Mesh(mergeGeometries(tm), wallM));
-        this.crumble.position.set(x, 13, WZ - 1); this.set.add(this.crumble);
+        this.crumble.position.set(x, 13, WZ - 5.5); this.set.add(this.crumble);
       } else {
         W(9, 19, 9, x, WZ - 1);
         const tm: THREE.BufferGeometry[] = [];
@@ -171,7 +171,8 @@ export class World {
       const d = new THREE.Mesh(new THREE.BoxGeometry(3, 7.5, 0.4).translate(-s * 1.5, 3.75, 0), dm); d.position.set(s * 3, 0, WZ + 1.8); this.set.add(d); this.doors.push(d);
     }
     // outer wall (lower) and its towers, gap at the gate
-    W(146, 7, 2.6, -77, OZ); W(146, 7, 2.6, 77, OZ);
+    W(146, 7, 2.6, -77, OZ); W(146, 7, 2.6, 77, OZ); W(8, 1.5, 2.6, 0, OZ, 5.5);
+    const fill = new THREE.Mesh(new THREE.PlaneGeometry(16, 10).rotateX(-Math.PI / 2), lambert({ color: "#8a7a58" })); fill.position.set(0, 0.04, -76); fill.layers.set(NOINK); this.set.add(fill);
     const om: THREE.BufferGeometry[] = [];
     for (let x = -148; x < 148; x += 2.4) if (Math.abs(x) > 4) om.push(new THREE.BoxGeometry(1.1, 1.1, 0.8).translate(x, 7.5, OZ - 0.9));
     this.set.add(new THREE.Mesh(mergeGeometries(om), wallM));
@@ -240,12 +241,15 @@ export class World {
     const r = rng(19);
     for (const side of [-1, 1]) {
       let z = -44;
+      const hit = (z0: number, z1: number, za: number, zb: number) => z1 > za && z0 < zb;
       while (z < 64) {
         const w = 5 + r() * 3, d = 7, h = 6.5 + r() * 4.5;
         const g = this.house(w, d, h, 300 + side * 40 + Math.round(z), mats, side);
-        g.position.set(side * (2.8 + d / 2), 0, z + w / 2); this.set.add(g);
+        g.position.set(side * (2.8 + d / 2), 0, z + w / 2);
+        if (!(side > 0 && (hit(z, z + w, -7, 9) || hit(z, z + w, -32.5, -27.5)))) this.set.add(g);
         const b = this.house(w * 1.2, 8, h + 2 + r() * 4, 500 + side * 40 + Math.round(z), mats, side);
-        b.position.set(side * (13 + 4), 0, z + w / 2 + 1); this.set.add(b);
+        b.position.set(side * (13 + 4), 0, z + w / 2 + 1);
+        if (!(side > 0 && hit(z + 1 - w * 0.1, z + 1 + w * 1.1, -7, 9))) this.set.add(b);
         z += w + 0.05;
       }
     }
@@ -253,10 +257,10 @@ export class World {
     const ter = new THREE.Mesh(new THREE.BoxGeometry(8, 7, 8).translate(0, 3.5, 0), mats.walls[0]); ter.position.set(12, 0, 4); this.set.add(ter);
     for (const [x, z, w, d] of [[12, 0.1, 8, 0.3], [8.1, 4, 0.3, 8], [15.9, 4, 0.3, 8]] as const) { const p = new THREE.Mesh(new THREE.BoxGeometry(w, 0.9, d).translate(0, 7.45, 0), mats.walls[0]); p.position.set(x, 0, z); this.set.add(p); }
     // the bell tower above the right-hand roofs near the walls
-    const bt = new THREE.Mesh(new THREE.BoxGeometry(4, 18, 4).translate(0, 9, 0), mats.walls[3]); bt.position.set(7.5, 0, -24); this.set.add(bt);
-    const open = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 3.2), lambert({ color: "#1a1418" })); open.position.set(5.48, 15.6, -24); open.rotation.y = -Math.PI / 2; open.layers.set(NOINK); this.set.add(open);
-    const cap = new THREE.Mesh(new THREE.ConeGeometry(3.2, 3, 4).rotateY(Math.PI / 4).translate(0, 19.5, 0), mats.roof); cap.position.set(7.5, 0, -24); this.set.add(cap);
-    this.bell = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.8, 1.2, 14).translate(0, -0.7, 0), lambert({ color: "#b08a3a" })); this.bell.position.set(5.6, 16.9, -24); this.set.add(this.bell);
+    const bt = new THREE.Mesh(new THREE.BoxGeometry(4, 18, 4).translate(0, 9, 0), mats.walls[3]); bt.position.set(5.2, 0, -30); this.set.add(bt);
+    const open = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 3.2), lambert({ color: "#1a1418" })); open.position.set(3.18, 15.6, -30); open.rotation.y = -Math.PI / 2; open.layers.set(NOINK); this.set.add(open);
+    const cap = new THREE.Mesh(new THREE.ConeGeometry(3.2, 3, 4).rotateY(Math.PI / 4).translate(0, 19.5, 0), mats.roof); cap.position.set(5.2, 0, -30); this.set.add(cap);
+    this.bell = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.8, 1.2, 14).translate(0, -0.7, 0), lambert({ color: "#b08a3a" })); this.bell.position.set(3.3, 16.9, -30); this.set.add(this.bell);
     // small church domes over the roofs (skyline)
     const lead = lambert({ map: leadTexture() });
     for (const [x, z, s] of [[-24, 10, 4], [26, 30, 5], [-30, 48, 3.5], [34, -10, 3.5]] as const) {
@@ -269,7 +273,7 @@ export class World {
     this.helmet.add(new THREE.Mesh(new THREE.SphereGeometry(0.26, 16, 10, 0, Math.PI * 2, 0, Math.PI / 2), gold));
     const brim = new THREE.Mesh(new THREE.TorusGeometry(0.26, 0.035, 6, 18).rotateX(Math.PI / 2), gold); this.helmet.add(brim);
     const nasal = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.22, 0.03).translate(0, -0.08, 0.27), gold); this.helmet.add(nasal);
-    const cloak = new THREE.Mesh(new THREE.PlaneGeometry(1.4, 0.9).rotateX(-Math.PI / 2), lambert({ color: "#4a2058", side: THREE.DoubleSide })); cloak.position.set(0.5, -0.14, 0.2); cloak.rotation.y = 0.4; this.helmet.add(cloak);
+    const cloak = new THREE.Mesh(new THREE.PlaneGeometry(1.4, 0.9).rotateX(-Math.PI / 2), lambert({ color: "#4a2058", side: THREE.DoubleSide })); cloak.position.set(0.8, 0.03, -42.0); cloak.rotation.y = 0.4; cloak.visible = false; this.set.add(cloak); this.cloak = cloak;
     this.helmet.rotation.z = 0.5; this.helmet.visible = false; this.set.add(this.helmet);
   }
 
@@ -362,8 +366,8 @@ export class World {
     const B = (w: number) => w - 3;
     this.pi = 0;
     this.puffs.hide(); this.smoke.hide(); this.dust.hide(); this.fx.hide(); this.fx2.hide(); this.fireAt(f, cam, null);
-    this.doors.forEach((d, i) => (d.rotation.y = 0 * i)); this.crumble.position.set(CRUMBLE_X, 13, WZ - 1); this.crumble.rotation.set(0, 0, 0); this.crumble.visible = true;
-    this.bell.rotation.x = 0; this.ball.visible = false; this.helmet.visible = false; this.pennants.forEach((p) => (p.visible = false));
+    this.doors.forEach((d, i) => (d.rotation.y = 0 * i)); this.crumble.position.set(CRUMBLE_X, 13, WZ - 5.5); this.crumble.rotation.set(0, 0, 0); this.crumble.visible = true;
+    this.bell.rotation.x = 0; this.ball.visible = false; this.helmet.visible = false; this.cloak.visible = false; this.pennants.forEach((p) => (p.visible = false));
     this.banner.visible = true; this.bannerCloth.position.set(0.1, 14.8, 0); this.bannerCloth.rotation.set(0, 0, 0); this.bannerWave(f);
     const face = (p: V3, dy = 1.62): V3 => [p[0], p[1] + dy, p[2]];
     const smokeCols = (em: V3[], o: { op?: number; size?: number; col?: string } = {}) => {
@@ -406,7 +410,7 @@ export class World {
           this.fx2.show(burstTex(Math.round(d * 12) / 12), BALL_TO, cam, 9, 1, "#e8d8c0");
           this.dust.update(f, cam, [BALL_TO, add3(BALL_TO, [3, -3, -1]), add3(BALL_TO, [-3, -5, -1])], { period: 30, life: 60, size: 6, rise: 3, drift: [1, -2], opacity: 0.7, col: "#c8b8a0", seed: 7 });
         }
-        pos = lerp3([-25.5, 3.4, -133], [-24.5, 3.2, -128], smooth(u)); look = [-14, 9, -60]; fov = 46;
+        pos = lerp3([-25.5, 1.8, -133], [-24.5, 1.8, -128], smooth(u)); look = [-20, 7, -60]; fov = 52;
         pos = add3(pos, kick(f, fires, 0.12)); pos = add3(pos, kick(f, [B(T.walls1)], 0.06));
         focus = [-20, 3, -114];
         break;
@@ -417,12 +421,12 @@ export class World {
         this.actor(f, cam, { o: defender(0), id: "d0", pos: [41, y, z - 1.2], opts: { expr: "stern", prop: "shield" } });
         this.actor(f, cam, { o: defender(1), id: "d1", pos: [43.4, y, z - 1.6], opts: { expr: f < B(T.collapsing) ? "nervous" : "shock", prop: "spear" } });
         this.actor(f, cam, { o: defender(2), id: "d2", pos: [45.6, y, z - 1.0], opts: { expr: "stern", prop: "shield" } });
-        this.actor(f, cam, { o: MESSENGER, id: "msg", pos: [38.6, y, z - 0.6], opts: { expr: f < B(T.collapsing) ? "nervous" : "shock", prop: "scroll" } });
+        this.actor(f, cam, { o: MESSENGER, id: "msg", pos: [41.5, y, -48.4], opts: { expr: f < B(T.collapsing) ? "nervous" : "shock", prop: "scroll" } });
         const c = ramp(f, B(T.collapsing), 26);
-        this.crumble.position.set(CRUMBLE_X + c * 2.5, 13 - c * 15, WZ - 1 - c * 3); this.crumble.rotation.set(-c * 0.5, 0, c * 0.6);
+        this.crumble.position.set(CRUMBLE_X + c * 1.5, 13 - c * 9, WZ - 5.5 - c * 4); this.crumble.rotation.set(-c * 1.3, 0, c * 0.35);
         if (c > 0.02) this.dust.update(f, cam, [[CRUMBLE_X, 14, WZ - 2], [CRUMBLE_X + 3, 8, WZ - 4], [CRUMBLE_X - 2, 4, WZ - 5]], { period: 26, life: 70, size: 9, rise: 4, drift: [1, -2], opacity: 0.7 * c, col: "#c8b8a0", seed: 9 });
         smokeCols([[30, 14, -70], [70, 12, -80], [10, 12, -75]], { op: 0.45, size: 8 });
-        pos = lerp3([36.6, 13.9, -44.6], [37.4, 13.8, -45.6], smooth(u)); look = [47, 14.5, -51]; fov = 50;
+        pos = lerp3([36.6, 13.9, -44.6], [37.4, 13.8, -45.6], smooth(u)); look = [51, 13.5, -52]; fov = 56;
         pos = add3(pos, kick(f, [B(T.collapsing) + 8], 0.07));
         focus = [42, 13.6, -49.6];
         break;
@@ -431,7 +435,7 @@ export class World {
         this.light("golden", "storm", 0.35);
         const mp: V3 = [37.6, 12, -49.6], cp: V3 = [38.85, 12, -50.0], g = f >= B(T.grabs);
         this.actor(f, cam, { o: MESSENGER, id: "msg", pos: mp, opts: { expr: g ? "shock" : "nervous", prop: "scroll", facing: g ? 1 : 0, ...(g ? { blink: false } : {}) } });
-        this.actor(f, cam, { o: COMMANDER, id: "cmd", pos: cp, opts: { expr: "stern", facing: -1, ...(g ? { wave: 0 } : {}), flip: true } });
+        this.actor(f, cam, { o: COMMANDER, id: "cmd", pos: [38.3, 12, -50.0], opts: { expr: "stern", facing: -1, prop: g ? "reach" : null, flip: true } });
         smokeCols([[30, 14, -70], [50, 12, -80]], { op: 0.4, size: 8 });
         pos = lerp3([38.4, 13.55, -45.4], [38.3, 13.5, -46.2], smooth(u)); look = [38.2, 13.35, -49.8]; fov = 44;
         pos = add3(pos, kick(f, [B(T.grabs)], 0.025));
@@ -443,7 +447,7 @@ export class World {
         const cp: V3 = [38.85, 12, -50.0];
         this.actor(f, cam, { o: COMMANDER, id: "cmd", pos: cp, opts: { expr: "shout", wave: f > B(T.palace) ? 1 : 0.5, blink: false } });
         smokeCols([[30, 14, -70], [50, 12, -80], [20, 12, -76]], { op: 0.45, size: 8 });
-        pos = lerp3([39.15, 13.62, -47.1], [39.1, 13.6, -47.6], smooth(u)); look = face(cp, 1.5); fov = 40;
+        pos = lerp3([39.15, 13.62, -47.1], [39.1, 13.6, -47.6], smooth(u)); look = face(cp, 1.2); fov = 40;
         pos = add3(pos, kick(f, [B(T.palace), B(T.warn)], 0.03));
         focus = face(cp);
         break;
@@ -468,18 +472,18 @@ export class World {
         if (f < B(T.sultan) - 2) {
           const dz = OZ + 0.3;
           [-3.6, -1.4, 0.8, 3.0].forEach((x, i) => this.actor(f, cam, { o: defender(i), id: "d" + i, pos: [x, 7, dz], opts: { expr: i % 2 ? "shout" : "stern", prop: i % 2 ? "spear" : "shield" } }));
-          [-5, -2.6, -0.2, 2.2, 4.6, -3.8, 1.0, 3.6].forEach((x, i) => this.actor(f, cam, { o: janissary(i), id: "j" + i, pos: [x, 0, -71 - (i > 4 ? 2.4 : 0) - 0.3 * Math.sin(f * 0.2 + i)], opts: { expr: i % 3 ? "stern" : "shout", prop: i % 2 ? "spear" : null } }));
+          [-5, -2.6, -0.2, 2.2, 4.6, -3.8, 1.0, 3.6].forEach((x, i) => this.actor(f, cam, { o: janissary(i), id: "j" + i, pos: [x, 0.04, -74 - (i > 4 ? 3.5 : 0) - 0.3 * Math.sin(f * 0.2 + i)], opts: { expr: i % 3 ? "stern" : "shout", prop: i % 2 ? "spear" : null } }));
           this.dust.update(f, cam, [[-2, 2, -70], [3, 2, -72], [0, 3, -75], [-5, 2, -73]], { period: 22, life: 60, size: 4, rise: 3, drift: [1, -1], opacity: 0.5, col: "#b8a890", seed: 11 });
-          pos = lerp3([1.2, 11.2, -55.5], [0.9, 11.0, -57], smooth(u)); look = [0, 5.0, -70]; fov = 50;
+          pos = lerp3([1.2, 14, -55.5], [0.9, 13.8, -57], smooth(u)); look = [0, 3, -74]; fov = 50;
           pos = add3(pos, kick(f, [B(T.fight)], 0.04));
           focus = [0, 7.8, -64];
         } else {
           const mp: V3 = [0, 0.6, -138];
           this.actor(f, cam, { o: MEHMED, id: "meh", pos: mp, opts: { expr: "stern" } });
-          this.actor(f, cam, { o: janissary(0), id: "jg0", pos: [-2.4, 0, -138.6], opts: { expr: "stern", prop: "spear" } });
-          this.actor(f, cam, { o: janissary(1), id: "jg1", pos: [2.4, 0, -138.6], opts: { expr: "stern", prop: "spear" } });
+          this.actor(f, cam, { o: janissary(0), id: "jg0", pos: [-1.3, 0.6, -138.9], opts: { expr: "stern", prop: "spear" } });
+          this.actor(f, cam, { o: janissary(1), id: "jg1", pos: [1.3, 0.6, -138.9], opts: { expr: "stern", prop: "spear" } });
           const k = ramp(f, B(T.sultan) - 2, 50);
-          pos = lerp3([1.2, 2.3, -131.2], [0.8, 2.4, -132.6], k); look = face(mp, 1.45); fov = 44;
+          pos = lerp3([0.6, 2.6, -129.5], [0.5, 2.55, -130.6], k); look = face(mp, 1.3); fov = 46;
           focus = face(mp);
         }
         break;
@@ -542,8 +546,8 @@ export class World {
         const k = smooth(u * 1.1), mp: V3 = [lerp(-1.5, 0.4, k), 0, lerp(70, 78, k)];
         this.actor(f, cam, { o: MESSENGER, id: "msg", pos: mp, opts: { expr: "pained", mode: k < 1 ? "stroll" : "stand", phase: t / 14, prop: "scroll" } });
         smokeCols(CITY_SMOKE, { op: 0.45, size: 12 });
-        pos = lerp3([2.4, 2.0, 70.5], [7, 15, 56], k); look = lerp3(face(mp, 1.3), [0, 24, 140], k); fov = lerp(46, 54, k);
-        focus = lerp3(face(mp), [0, 24, 140], k);
+        pos = lerp3([2.4, 2.0, 70.5], [1.5, 27, 52], k); look = lerp3(face(mp, 1.3), [0, 31, 150], k); fov = lerp(46, 44, k);
+        focus = lerp3(face(mp), [0, 31, 150], k);
         break;
       }
       case "late": { // it's already too late
@@ -551,7 +555,7 @@ export class World {
         const mp: V3 = [0.4, 0, 78];
         this.actor(f, cam, { o: MESSENGER, id: "msg", pos: mp, opts: { expr: f < B(T.late) ? "nervous" : "pained", prop: "scroll" } });
         smokeCols(CITY_SMOKE, { op: 0.45, size: 12 });
-        pos = lerp3([0.9, 1.72, 74.9], [0.75, 1.7, 75.9], smooth(u)); look = face(mp, 1.6); fov = 40;
+        pos = lerp3([0.9, 1.72, 74.9], [0.75, 1.7, 75.9], smooth(u)); look = face(mp, 1.3); fov = 40;
         focus = face(mp);
         break;
       }
@@ -562,7 +566,7 @@ export class World {
           this.actor(f, cam, { o: EMPEROR, id: "emp", pos: ep, opts: { expr: "shout", prop: "sword", wave: 1, blink: false } });
           this.actor(f, cam, { o: defender(0), id: "d0", pos: [-1.6, 0, -42.8], opts: { expr: "stern", prop: "shield" } });
           this.actor(f, cam, { o: defender(3), id: "d3", pos: [1.7, 0, -42.6], opts: { expr: "shout", prop: "spear" } });
-        } else { this.helmet.visible = true; this.helmet.position.set(0.3, 0.22, -42.3); }
+        } else { this.helmet.visible = true; this.cloak.visible = true; this.helmet.position.set(0.3, 0.2, -42.3); }
         const sm = ramp(f, B(T.dies) - 6, 14);
         this.dust.update(f, cam, [[0, 1.5, -41], [-1.6, 1.5, -41.5], [1.6, 2, -41.2], [0, 3, -42.5], [-0.8, 1, -40.5]], { period: 20, life: 70, size: 1.5 + 4 * sm, rise: 1.5, drift: [0.6, 0.4], opacity: 0.25 + 0.6 * sm * (1 - ramp(f, gone + 4, 30) * 0.7), col: "#8a7a70", seed: 19 });
         const down = ramp(f, gone - 2, 26);
@@ -574,11 +578,11 @@ export class World {
         this.light("golden");
         const low = ramp(f, B(T.survived), B(T.end) - B(T.survived));
         const fall = ramp(f, B(T.end), 24);
-        this.bannerCloth.position.set(0.1 + fall * 1.5, lerp(14.8, 4.5, low) - fall * 3.3, fall * 0.6); this.bannerCloth.rotation.z = -fall * 1.2;
+        this.bannerCloth.position.set(0.1 + fall * 0.6, lerp(lerp(14.8, 4.5, low), 0.06, fall), fall * 0.4); this.bannerCloth.rotation.set(-fall * Math.PI / 2, 0, -fall * 0.25);
         this.bannerWave(f, 1 - 0.6 * fall);
         smokeCols(CITY_SMOKE, { op: 0.4, size: 12 });
-        pos = lerp3([14.5, 2.0, 83], [13.6, 2.2, 85.5], smooth(u)); look = lerp3([9.5, 12.5, 96], [9.5, 6.5, 96], low); fov = 52; roll = -3;
-        focus = [9.5, lerp(13, 5, low), 96];
+        pos = lerp3([14.5, 2.0, 83], [13.6, 2.2, 85.5], smooth(u)); look = lerp3(lerp3([9.5, 12.5, 96], [9.5, 6.5, 96], low), [10.2, 0.4, 97.5], fall); fov = 52; roll = -3;
+        focus = lerp3([9.5, lerp(13, 5, low), 96], [10.2, 0.3, 97.5], fall);
         break;
       }
       case "warning": { // you were supposed to deliver a warning
@@ -586,7 +590,7 @@ export class World {
         const mp: V3 = [0.4, 0, 78];
         this.actor(f, cam, { o: MESSENGER, id: "msg", pos: mp, opts: { expr: f < B(T.warning) ? "pained" : "dazed", prop: "scroll" } });
         smokeCols(CITY_SMOKE, { op: 0.4, size: 12 });
-        pos = lerp3([0.95, 1.55, 75.6], [0.85, 1.52, 76.2], smooth(u)); look = [0.42, 1.35, 78]; fov = 40;
+        pos = lerp3([0.95, 1.55, 75.6], [0.85, 1.52, 76.2], smooth(u)); look = [0.42, 1.15, 78]; fov = 40;
         focus = [0.42, 1.4, 78];
         break;
       }
@@ -597,7 +601,7 @@ export class World {
         this.banner.visible = false;
         smokeCols([[-20, 14, 60], [24, 14, 40], [-6, 30, 150], [30, 26, 170], [-40, 12, 90], [6, 12, 30], [-24, 10, 20]], { op: 0.65, size: 18 });
         const k = ramp(f, shot.a + 8, len - 8);
-        pos = lerp3([12.0, 8.35, 0.4], [12.3, 9.6, -2.6], k); look = lerp3(face(mp, 0.95), [10, 9.5, 40], k); fov = lerp(42, 54, k);
+        pos = lerp3([12.0, 8.35, 0.4], [12.2, 8.6, -1.4], k); look = lerp3(face(mp, 0.95), [6, 7, 40], k); fov = lerp(42, 50, k);
         focus = face(mp, 0.95);
         break;
       }
