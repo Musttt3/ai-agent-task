@@ -42,3 +42,6 @@ No captions or labels in the video.
 
 ## Notes
 - Render 2K (1440x2560) as the user requires; chunked and resumable.
+- Final: `plague_short.mp4`, 1440x2560 (2K), 30 fps, 60.9 s, H.264 crf 18 + AAC 192k; -15.3 LUFS, peak -0.8 dBFS (true peak of the mix -1.2 dBTP).
+- Verifier (Opus): ~6.5/10 on stills; all 8 fixes applied (pained face no longer a wink, plum swelling with throb ticks, magnifier clear of the doctor, flea hop in the rat's plane, fully fogged ink in the dawn mist, moving darkness front + smoke columns over Europe, blood in the bowl, shorter pestle, brazier flames, robe-shaped robe and cap on the bedpost, no beard on the kid, brown-hooded gravedigger, moustached colleagues).
+- QA pass 1: a 1.5 s frozen hold at the end of the patients dolly (fixed with a push-in, 238-379 re-rendered) and a 0.37 s silence before "you're the patient" (room tone + pad). Pass 2: no frozen spans, no silences; the remaining frame-diff spikes are planned (cuts, flash, lightning, kicks on "punishment", "culprit", "fever", "patient", the flea jump, the flush).
