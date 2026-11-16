@@ -1,0 +1,568 @@
+// Painted Canvas2D textures: limestone, the ice-age animals (our own drawings in the Lascaux manner: ochre, red-brown
+// and black pigment, thick black contours), algae growth, ground, bark, sky. Deterministic (seeded) so every frame and
+// every render worker paints the same pixels.
+import * as THREE from "three";
+
+export const rng = (seed: number) => {
+  let s = seed >>> 0 || 1;
+  return () => { s ^= s << 13; s >>>= 0; s ^= s >> 17; s ^= s << 5; s >>>= 0; return s / 4294967296; };
+};
+
+const canvas = (w: number, h: number) => {
+  const c = document.createElement("canvas");
+  c.width = w; c.height = h;
+  return [c, c.getContext("2d")!] as const;
+};
+
+export const tex = (c: HTMLCanvasElement, repeat = false, srgb = true) => {
+  const t = new THREE.CanvasTexture(c);
+  if (srgb) t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = 8;
+  if (repeat) t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  return t;
+};
+
+/** soft blotches of a colour, wrapped so the texture tiles */
+const blotches = (g: CanvasRenderingContext2D, w: number, h: number, r: () => number, n: number, cols: string[], rMin: number, rMax: number, alpha: number) => {
+  for (let i = 0; i < n; i++) {
+    const x = r() * w, y = r() * h, rad = rMin + r() * (rMax - rMin);
+    for (const dx of [-w, 0, w]) for (const dy of [-h, 0, h]) {
+      const gr = g.createRadialGradient(x + dx, y + dy, 0, x + dx, y + dy, rad);
+      const c = cols[Math.floor(r() * cols.length) % cols.length];
+      gr.addColorStop(0, c); gr.addColorStop(1, c + "00");
+      g.globalAlpha = alpha; g.fillStyle = gr;
+      g.fillRect(x + dx - rad, y + dy - rad, rad * 2, rad * 2);
+    }
+  }
+  g.globalAlpha = 1;
+};
+
+/** cream limestone with ochre stains, grey patches and a few dark hairline cracks */
+export const rockTexture = (seed = 3, base = "#e9d6b0") => {
+  const [c, g] = canvas(1024, 1024), r = rng(seed);
+  g.fillStyle = base; g.fillRect(0, 0, 1024, 1024);
+  blotches(g, 1024, 1024, r, 70, ["#d9b98a", "#f3e6c8", "#cdb08a", "#e2c79a"], 60, 220, 0.55);
+  blotches(g, 1024, 1024, r, 40, ["#b9a68e", "#a8907a"], 20, 80, 0.35);
+  g.strokeStyle = "#6e5a48"; g.lineCap = "round";
+  for (let i = 0; i < 18; i++) {
+    let x = r() * 1024, y = r() * 1024;
+    g.globalAlpha = 0.35 + r() * 0.25; g.lineWidth = 1.5 + r() * 2;
+    g.beginPath(); g.moveTo(x, y);
+    for (let k = 0; k < 6; k++) { x += (r() - 0.5) * 90; y += 20 + r() * 50; g.lineTo(x, y); }
+    g.stroke();
+  }
+  g.globalAlpha = 1;
+  return tex(c, true);
+};
+
+export const groundTexture = (seed: number, base: string, cols: string[], specks: string[]) => {
+  const [c, g] = canvas(1024, 1024), r = rng(seed);
+  g.fillStyle = base; g.fillRect(0, 0, 1024, 1024);
+  blotches(g, 1024, 1024, r, 90, cols, 50, 200, 0.5);
+  for (let i = 0; i < 900; i++) {
+    g.fillStyle = specks[i % specks.length]; g.globalAlpha = 0.5;
+    const x = r() * 1024, y = r() * 1024, s = 2 + r() * 4;
+    g.fillRect(x, y, s, s * 0.6);
+  }
+  g.globalAlpha = 1;
+  return tex(c, true);
+};
+
+// ---------------- the paintings ----------------
+const PIG = { black: "#1c1410", red: "#93361c", ochre: "#c8862c", yellow: "#d9a54a", brown: "#6b3a1f" };
+
+/** brushy stroke: a few jittered passes so the line reads as pigment, not vector */
+const brush = (g: CanvasRenderingContext2D, pts: [number, number][], w: number, col: string, r: () => number, passes = 3) => {
+  g.strokeStyle = col; g.lineCap = "round"; g.lineJoin = "round";
+  for (let p = 0; p < passes; p++) {
+    g.globalAlpha = 0.55 + 0.3 * r(); g.lineWidth = w * (0.75 + 0.4 * r());
+    g.beginPath();
+    pts.forEach(([x, y], i) => {
+      const jx = x + (r() - 0.5) * w * 0.35, jy = y + (r() - 0.5) * w * 0.35;
+      if (i === 0) g.moveTo(jx, jy); else g.lineTo(jx, jy);
+    });
+    g.stroke();
+  }
+  g.globalAlpha = 1;
+};
+
+/** smooth closed blob through control points (Catmull-Rom) */
+const blob = (g: CanvasRenderingContext2D, pts: [number, number][]) => {
+  const n = pts.length;
+  g.beginPath();
+  for (let i = 0; i < n; i++) {
+    const p0 = pts[(i - 1 + n) % n], p1 = pts[i], p2 = pts[(i + 1) % n], p3 = pts[(i + 2) % n];
+    if (i === 0) g.moveTo(p1[0], p1[1]);
+    g.bezierCurveTo(p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6, p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6, p2[0], p2[1]);
+  }
+  g.closePath();
+};
+const ring = (pts: [number, number][], n = 8): [number, number][] => {
+  const out: [number, number][] = [], m = pts.length;
+  for (let i = 0; i <= m * n; i++) {
+    const k = (i / n) | 0, t = (i % n) / n;
+    const p0 = pts[(k - 1 + m) % m], p1 = pts[k % m], p2 = pts[(k + 1) % m], p3 = pts[(k + 2) % m];
+    const t2 = t * t, t3 = t2 * t;
+    const f = (a: number, b: number, c: number, d: number) => 0.5 * (2 * b + (-a + c) * t + (2 * a - 5 * b + 4 * c - d) * t2 + (-a + 3 * b - 3 * c + d) * t3);
+    out.push([f(p0[0], p1[0], p2[0], p3[0]), f(p0[1], p1[1], p2[1], p3[1])]);
+  }
+  return out;
+};
+
+/** pigment fill clipped to a body: a base wash plus darker mottling, ragged like blown pigment */
+const wash = (g: CanvasRenderingContext2D, body: [number, number][], col: string, dark: string, r: () => number, a = 0.8) => {
+  g.save(); blob(g, body); g.clip();
+  g.globalAlpha = a; g.fillStyle = col; g.fill();
+  const xs = body.map((p) => p[0]), ys = body.map((p) => p[1]);
+  const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+  for (let i = 0; i < 60; i++) {
+    const x = x0 + r() * (x1 - x0), y = y0 + r() * (y1 - y0), rad = 10 + r() * 40;
+    const gr = g.createRadialGradient(x, y, 0, x, y, rad);
+    gr.addColorStop(0, i % 3 ? dark + "66" : "#00000000"); gr.addColorStop(1, dark + "00");
+    g.fillStyle = gr; g.globalAlpha = 0.6; g.fillRect(x - rad, y - rad, rad * 2, rad * 2);
+  }
+  g.restore(); g.globalAlpha = 1;
+};
+
+/** the great aurochs (bull): black contour, red-brown patches, big lyre horns. Canvas 2048 x 900, facing left. */
+export const paintBull = (seed = 11) => {
+  const [c, g] = canvas(2048, 900), r = rng(seed);
+  const body: [number, number][] = [[420, 330], [560, 190], [760, 150], [900, 200], [1250, 230], [1560, 260], [1760, 330], [1800, 470], [1700, 560],
+    [1560, 600], [1200, 610], [800, 600], [520, 560], [380, 470], [330, 380]];
+  wash(g, body, PIG.red, PIG.brown, r, 0.55);
+  // black head and forequarters wash (the Lascaux bulls are darker at the front)
+  const head: [number, number][] = [[200, 330], [300, 250], [430, 240], [560, 270], [640, 360], [620, 480], [520, 540], [380, 520], [260, 470], [170, 420]];
+  wash(g, head, PIG.black, PIG.black, r, 0.82);
+  // spots
+  for (let i = 0; i < 26; i++) { g.fillStyle = PIG.black; g.globalAlpha = 0.75; g.beginPath(); g.arc(700 + r() * 900, 300 + r() * 240, 8 + r() * 14, 0, 7); g.fill(); }
+  g.globalAlpha = 1;
+  // contour
+  brush(g, ring(body), 18, PIG.black, r);
+  brush(g, ring(head), 16, PIG.black, r);
+  // horns: two lyre curves
+  brush(g, [[300, 270], [250, 190], [250, 110], [310, 50], [400, 40]], 34, PIG.black, r, 4);
+  brush(g, [[420, 255], [450, 170], [520, 110], [610, 95], [680, 120]], 30, PIG.black, r, 4);
+  // legs
+  const legs: [number, number][][] = [[[620, 570], [610, 700], [600, 820]], [[760, 590], [770, 720], [780, 830]], [[1450, 600], [1430, 720], [1420, 830]], [[1600, 580], [1630, 700], [1660, 820]]];
+  for (const l of legs) { brush(g, l, 50, PIG.black, r, 4); const [hx, hy] = l[2]; g.fillStyle = PIG.black; g.beginPath(); g.ellipse(hx, hy + 10, 34, 20, 0, 0, 7); g.fill(); }
+  // tail
+  brush(g, [[1780, 360], [1880, 420], [1920, 560], [1900, 680]], 12, PIG.black, r);
+  // eye + muzzle
+  g.fillStyle = "#e8d6b0"; g.beginPath(); g.ellipse(330, 340, 16, 10, 0, 0, 7); g.fill();
+  return tex(c);
+};
+
+/** a horse: yellow-ochre body, black mane, legs and head. Canvas 1400 x 900, facing left. */
+export const paintHorse = (seed = 21) => {
+  const [c, g] = canvas(1400, 900), r = rng(seed);
+  const body: [number, number][] = [[360, 330], [520, 300], [800, 290], [1050, 300], [1200, 360], [1220, 480], [1120, 560], [820, 590], [520, 570], [380, 500]];
+  wash(g, body, PIG.yellow, PIG.ochre, r, 0.85);
+  const head: [number, number][] = [[130, 300], [210, 210], [330, 170], [420, 220], [460, 330], [400, 420], [300, 420], [190, 380]];
+  wash(g, head, PIG.black, PIG.black, r, 0.85);
+  brush(g, ring(body), 16, PIG.black, r);
+  brush(g, [[300, 180], [380, 150], [470, 180], [560, 240], [640, 290]], 34, PIG.black, r, 4); // mane
+  const legs: [number, number][][] = [[[480, 560], [470, 690], [490, 820]], [[600, 580], [620, 700], [640, 830]], [[1000, 570], [990, 700], [1000, 820]], [[1130, 540], [1160, 680], [1180, 810]]];
+  for (const l of legs) brush(g, l, 30, PIG.black, r, 4);
+  brush(g, [[1210, 380], [1300, 470], [1330, 620]], 22, PIG.black, r, 4); // tail
+  return tex(c);
+};
+
+/** a red stag with branching antlers. Canvas 1200 x 1000, facing left. */
+export const paintStag = (seed = 31) => {
+  const [c, g] = canvas(1200, 1000), r = rng(seed);
+  const body: [number, number][] = [[330, 520], [500, 480], [760, 480], [960, 510], [1020, 600], [960, 680], [700, 700], [460, 690], [340, 620]];
+  wash(g, body, PIG.red, PIG.brown, r, 0.7);
+  brush(g, ring(body), 14, PIG.red, r);
+  brush(g, ring(body), 6, PIG.black, r, 2);
+  const neck: [number, number][] = [[200, 420], [270, 360], [360, 380], [420, 470], [380, 560], [290, 540], [210, 490]];
+  wash(g, neck, PIG.red, PIG.black, r, 0.8);
+  brush(g, ring(neck), 12, PIG.black, r);
+  // antlers: main beams with tines
+  const beam = (x0: number, dir: number) => {
+    const pts: [number, number][] = [[x0, 360], [x0 - 20 * dir, 260], [x0 + 10 * dir, 160], [x0 + 60 * dir, 70]];
+    brush(g, pts, 12, PIG.black, r, 3);
+    for (let i = 1; i < 4; i++) { const [x, y] = pts[i]; brush(g, [[x, y], [x + (50 + 20 * i) * dir, y - 40]], 9, PIG.black, r, 2); brush(g, [[x, y], [x - 40 * dir, y - 50]], 8, PIG.black, r, 2); }
+  };
+  beam(260, -1); beam(320, 1);
+  const legs: [number, number][][] = [[[430, 680], [420, 820], [430, 950]], [[540, 690], [560, 830], [570, 950]], [[860, 690], [850, 820], [860, 950]], [[960, 650], [990, 800], [1000, 940]]];
+  for (const l of legs) brush(g, l, 20, PIG.black, r, 3);
+  return tex(c);
+};
+
+/** a row of red dots and a hand stencil: small marks for the frieze */
+export const paintMarks = (seed = 41) => {
+  const [c, g] = canvas(800, 400), r = rng(seed);
+  for (let i = 0; i < 9; i++) { g.fillStyle = PIG.red; g.globalAlpha = 0.85; g.beginPath(); g.arc(60 + i * 80 + r() * 10, 120 + r() * 20, 22 + r() * 6, 0, 7); g.fill(); }
+  // hand stencil: blown pigment around a hand
+  const cx = 560, cy = 290;
+  const gr = g.createRadialGradient(cx, cy, 20, cx, cy, 140);
+  gr.addColorStop(0, PIG.red + "cc"); gr.addColorStop(1, PIG.red + "00");
+  g.globalAlpha = 1; g.fillStyle = gr; g.fillRect(cx - 150, cy - 150, 300, 300);
+  g.globalCompositeOperation = "destination-out";
+  g.beginPath(); g.ellipse(cx, cy + 30, 55, 65, 0, 0, 7); g.fill();
+  for (let k = 0; k < 4; k++) { g.save(); g.translate(cx - 45 + k * 30, cy - 30); g.rotate((k - 1.5) * 0.12); g.fillRect(-11, -90, 22, 95); g.restore(); }
+  g.save(); g.translate(cx + 70, cy + 20); g.rotate(-0.9); g.fillRect(-11, -70, 22, 75); g.restore();
+  g.globalCompositeOperation = "source-over";
+  return tex(c);
+};
+
+/** algae + mould overlay: rgb = colour (green film with white and black mould spots), plus a growth-order map
+ *  (0 = grows first) so a single uniform reveals it over time. */
+export const growthTextures = (seed = 51) => {
+  const [c, g] = canvas(1024, 512), r = rng(seed);
+  g.fillStyle = "#3f8f3a"; g.fillRect(0, 0, 1024, 512);
+  blotches(g, 1024, 512, r, 80, ["#2f7a2e", "#5aa846", "#1f5e26", "#79b84f"], 20, 90, 0.7);
+  const [o, go] = canvas(256, 128), r2 = rng(seed + 7);
+  // growth order = distance to the nearest seed (wrapped, so the map tiles), plus ragged noise: 0 grows first
+  const seeds = Array.from({ length: 16 }, () => [r2() * 256, r2() * 128, 0.7 + 0.6 * r2()]);
+  const id = go.createImageData(256, 128), r3 = rng(seed + 9);
+  for (let y = 0; y < 128; y++) for (let x = 0; x < 256; x++) {
+    let d = 1e9;
+    for (const [sx, sy, k] of seeds) { const dx = Math.min(Math.abs(x - sx), 256 - Math.abs(x - sx)), dy = Math.min(Math.abs(y - sy), 128 - Math.abs(y - sy)); d = Math.min(d, Math.hypot(dx, dy) / k); }
+    const n = 0.12 * Math.sin(x * 0.31 + y * 0.17) * Math.cos(y * 0.43 - x * 0.07) + (r3() - 0.5) * 0.1;
+    const v = Math.max(0, Math.min(255, 255 * (d / 70 + n)));
+    const i = (y * 256 + x) * 4; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 255;
+  }
+  go.putImageData(id, 0, 0);
+  // mould spots (separate layer, revealed by its own uniform): alpha canvas
+  const [m, gm] = canvas(1024, 512), r4 = rng(seed + 13);
+  for (let i = 0; i < 160; i++) {
+    gm.fillStyle = i % 3 ? "#f1f1ea" : "#141414"; gm.globalAlpha = 0.9;
+    gm.beginPath(); gm.arc(r4() * 1024, r4() * 512, 3 + r4() * 9, 0, 7); gm.fill();
+  }
+  const t = tex(c, true), ord = tex(o, true, false), mould = tex(m, true);
+  ord.magFilter = THREE.LinearFilter;
+  return { color: t, order: ord, mould };
+};
+
+/** vertical sky gradient as a texture for a back-side sphere */
+export const skyTexture = (top: string, mid: string, horizon: string) => {
+  const [c, g] = canvas(16, 512);
+  const gr = g.createLinearGradient(0, 0, 0, 512);
+  gr.addColorStop(0, top); gr.addColorStop(0.42, mid); gr.addColorStop(0.5, horizon); gr.addColorStop(1, horizon);
+  g.fillStyle = gr; g.fillRect(0, 0, 16, 512);
+  return tex(c);
+};
+
+/** soft round puff (breath, steam, dust) as an alpha sprite */
+export const puffTexture = () => {
+  const [c, g] = canvas(256, 256), r = rng(77);
+  for (let i = 0; i < 7; i++) {
+    const x = 128 + (r() - 0.5) * 90, y = 128 + (r() - 0.5) * 60, rad = 50 + r() * 40;
+    const gr = g.createRadialGradient(x, y, 0, x, y, rad);
+    gr.addColorStop(0, "rgba(255,255,255,0.75)"); gr.addColorStop(0.6, "rgba(255,255,255,0.35)"); gr.addColorStop(1, "rgba(255,255,255,0)");
+    g.fillStyle = gr; g.fillRect(0, 0, 256, 256);
+  }
+  return tex(c);
+};
+
+/** flame for the torch: inked flat flame shape (orange, yellow core) */
+export const flameTexture = (k: number) => {
+  const [c, g] = canvas(128, 256), r = rng(90 + k);
+  const pts = (s: number, w: number): [number, number][] => [[64, 250], [64 - w, 200], [64 - w * 0.8 - r() * 8, 140], [64 - w * 0.3, 60 + r() * 20], [64 + (r() - 0.5) * 20, 10 + r() * 20], [64 + w * 0.4, 70 + r() * 20], [64 + w * 0.85 + r() * 8, 150], [64 + w, 205]].map(([x, y]) => [64 + (x - 64) * s, 250 - (250 - y) * s] as [number, number]);
+  g.lineJoin = "round";
+  blob(g, pts(1, 52)); g.fillStyle = "#ff8a1e"; g.fill(); g.lineWidth = 7; g.strokeStyle = "#241726"; g.stroke();
+  blob(g, pts(0.62, 30)); g.fillStyle = "#ffd75a"; g.fill();
+  return tex(c);
+};
+
+// ================= viking short textures (our own) =================
+const INKC = "#0b0a0c";
+/** square wool sail: red and cream vertical stripes, a woven tooth, darker hem and reef-line stitching */
+export const sailTexture = () => {
+  const [c, g] = canvas(512, 512), r = rng(61);
+  const stripes = 7;
+  for (let i = 0; i < stripes; i++) { g.fillStyle = i % 2 ? "#efe3c4" : "#b8322c"; g.fillRect((i * 512) / stripes, 0, 512 / stripes + 1, 512); }
+  blotches(g, 512, 512, r, 40, ["#7a1e1a", "#d9c9a0", "#8a2a22"], 20, 80, 0.18);
+  g.globalAlpha = 0.18; g.strokeStyle = "#3a1a14"; g.lineWidth = 1;
+  for (let y = 0; y < 512; y += 6) { g.beginPath(); g.moveTo(0, y); g.lineTo(512, y + (r() - 0.5) * 2); g.stroke(); }
+  g.globalAlpha = 0.45; g.lineWidth = 2; g.setLineDash([6, 6]);
+  for (const y of [128, 256, 384]) { g.beginPath(); g.moveTo(0, y); g.lineTo(512, y); g.stroke(); }
+  g.setLineDash([]); g.globalAlpha = 1;
+  g.strokeStyle = "#5a2a1e"; g.lineWidth = 14; g.strokeRect(0, 0, 512, 512);
+  return tex(c);
+};
+/** clinker planking: overlapping strakes with dark seams and rivet dots; v runs gunwale -> keel */
+export const plankTexture = (seed = 62, base = "#9c6a3c") => {
+  const [c, g] = canvas(1024, 512), r = rng(seed);
+  g.fillStyle = base; g.fillRect(0, 0, 1024, 512);
+  blotches(g, 1024, 512, r, 50, ["#8a5a30", "#b07c48", "#7a4e28"], 30, 120, 0.4);
+  const n = 8;
+  for (let i = 0; i < n; i++) {
+    const y = (i * 512) / n;
+    const gr = g.createLinearGradient(0, y, 0, y + 512 / n);
+    gr.addColorStop(0, "rgba(255,230,190,0.18)"); gr.addColorStop(0.75, "rgba(0,0,0,0)"); gr.addColorStop(1, "rgba(40,20,10,0.35)");
+    g.fillStyle = gr; g.fillRect(0, y, 1024, 512 / n);
+    g.fillStyle = "#2a1a10"; g.fillRect(0, y + 512 / n - 4, 1024, 4);
+    for (let x = 10 + r() * 30; x < 1024; x += 46) { g.fillStyle = "#3a2a1a"; g.beginPath(); g.arc(x, y + 512 / n - 10, 2.6, 0, 7); g.fill(); }
+    for (let k = 0; k < 6; k++) { g.strokeStyle = "rgba(60,30,15,0.25)"; g.lineWidth = 1.5; g.beginPath(); const yy = y + 6 + r() * (512 / n - 14); g.moveTo(r() * 1024, yy); g.lineTo(r() * 1024, yy + (r() - 0.5) * 3); g.stroke(); }
+  }
+  return tex(c, true);
+};
+/** round shield: two-colour quarters, iron boss, rim */
+export const shieldTexture = (a: string, b: string) => {
+  const [c, g] = canvas(256, 256);
+  for (let q = 0; q < 4; q++) { g.beginPath(); g.moveTo(128, 128); g.arc(128, 128, 120, (q * Math.PI) / 2, ((q + 1) * Math.PI) / 2); g.closePath(); g.fillStyle = q % 2 ? a : b; g.fill(); }
+  g.lineWidth = 10; g.strokeStyle = "#5a4a3a"; g.beginPath(); g.arc(128, 128, 118, 0, 7); g.stroke();
+  g.lineWidth = 5; g.strokeStyle = INKC; g.beginPath(); g.arc(128, 128, 124, 0, 7); g.stroke();
+  g.fillStyle = "#8e959e"; g.beginPath(); g.arc(128, 128, 30, 0, 7); g.fill(); g.lineWidth = 5; g.stroke();
+  return tex(c);
+};
+/** cut sod / turf: grass top with soil streaks (walls and roofs of turf houses) */
+export const turfTexture = (seed = 63) => {
+  const [c, g] = canvas(1024, 1024), r = rng(seed);
+  g.fillStyle = "#6f8a44"; g.fillRect(0, 0, 1024, 1024);
+  blotches(g, 1024, 1024, r, 80, ["#5d7a38", "#86a052", "#7a6a40", "#8a9a50"], 40, 160, 0.5);
+  for (let y = 0; y < 1024; y += 64) {
+    g.fillStyle = "rgba(90,64,40,0.55)"; g.fillRect(0, y + 44 + r() * 6, 1024, 8 + r() * 6);
+    for (let x = 0; x < 1024; x += 90 + r() * 60) { g.fillStyle = "rgba(60,44,30,0.6)"; g.fillRect(x, y, 4, 64); }
+  }
+  for (let i = 0; i < 2500; i++) { g.fillStyle = ["#9ab45e", "#4e6a2c", "#a7c068"][i % 3]; g.globalAlpha = 0.6; g.fillRect(r() * 1024, r() * 1024, 2, 6); }
+  g.globalAlpha = 1;
+  return tex(c, true);
+};
+/** smoked hide / birch bark covering for the lodges */
+export const hideTexture = (seed = 64) => {
+  const [c, g] = canvas(512, 512), r = rng(seed);
+  g.fillStyle = "#c8a77a"; g.fillRect(0, 0, 512, 512);
+  blotches(g, 512, 512, r, 50, ["#b8946a", "#d8bc90", "#a8845a"], 30, 110, 0.5);
+  g.strokeStyle = "#5a3e26"; g.lineWidth = 3; g.globalAlpha = 0.7;
+  for (let i = 0; i < 6; i++) { const y = 40 + i * 80 + r() * 20; g.beginPath(); g.moveTo(0, y); for (let x = 0; x <= 512; x += 32) g.lineTo(x, y + (r() - 0.5) * 10); g.stroke(); }
+  g.globalAlpha = 0.9; g.fillStyle = "#b5432e"; g.fillRect(0, 470, 512, 16);
+  g.globalAlpha = 1;
+  return tex(c, true);
+};
+/** birch bark: white with dark lenticel dashes */
+export const birchTexture = () => {
+  const [c, g] = canvas(512, 256), r = rng(65);
+  g.fillStyle = "#efe9dc"; g.fillRect(0, 0, 512, 256);
+  for (let i = 0; i < 160; i++) { g.fillStyle = "#3a3330"; g.globalAlpha = 0.7; g.fillRect(r() * 512, r() * 256, 6 + r() * 18, 2 + r() * 2); }
+  g.globalAlpha = 1;
+  return tex(c, true);
+};
+/** cartoon cloud card: white puffs, flat underside, inked rim */
+export const cloudTexture = (seed: number, body = "#ffffff", shadow = "#d6dfee") => {
+  const [c, g] = canvas(512, 256), r = rng(seed);
+  const pts: [number, number][] = [];
+  const n = 5 + Math.floor(r() * 3);
+  for (let i = 0; i < n; i++) pts.push([90 + (i * 330) / (n - 1), 150 - 40 * Math.sin((i / (n - 1)) * Math.PI) - r() * 30]);
+  g.beginPath();
+  g.moveTo(60, 200);
+  for (const [x, y] of pts) g.arc(x, y, 55 + r() * 25, Math.PI * 0.9, Math.PI * 2.1);
+  g.lineTo(450, 200); g.closePath();
+  g.fillStyle = body; g.fill();
+  g.save(); g.clip(); g.fillStyle = shadow; g.fillRect(0, 175, 512, 40); g.restore();
+  g.lineWidth = 7; g.strokeStyle = INKC; g.stroke();
+  return tex(c);
+};
+/** dream bubble with a forest of tall pines (the sailors' story) */
+export const bubbleTexture = () => {
+  const [c, g] = canvas(512, 512), r = rng(66);
+  g.beginPath(); g.ellipse(256, 230, 230, 200, 0, 0, 7); g.fillStyle = "#fbfaf2"; g.fill(); g.lineWidth = 9; g.strokeStyle = INKC; g.stroke();
+  for (const [x, y, rr] of [[120, 470, 26], [70, 500, 14]] as const) { g.beginPath(); g.arc(x, y, rr, 0, 7); g.fillStyle = "#fbfaf2"; g.fill(); g.stroke(); }
+  g.save(); g.beginPath(); g.ellipse(256, 230, 222, 192, 0, 0, 7); g.clip();
+  const sky = g.createLinearGradient(0, 40, 0, 420); sky.addColorStop(0, "#7fb2e8"); sky.addColorStop(1, "#d6ecff"); g.fillStyle = sky; g.fillRect(0, 0, 512, 512);
+  g.fillStyle = "#6fae48"; g.fillRect(0, 330, 512, 200);
+  for (let i = 0; i < 9; i++) {
+    const x = 50 + i * 52 + (r() - 0.5) * 20, h = 170 + r() * 120, w = 46 + r() * 16, y = 345 + (i % 2) * 18;
+    g.fillStyle = "#6b4a2c"; g.fillRect(x - 5, y - 20, 10, 30);
+    for (let k = 0; k < 3; k++) {
+      const yy = y - 20 - k * h * 0.28, ww = w * (1 - k * 0.22);
+      g.beginPath(); g.moveTo(x - ww, yy); g.lineTo(x, yy - h * 0.45); g.lineTo(x + ww, yy); g.closePath();
+      g.fillStyle = ["#2f6b46", "#3a7d50", "#2a5e3e"][k]; g.fill(); g.lineWidth = 5; g.strokeStyle = INKC; g.stroke();
+    }
+  }
+  g.restore();
+  return tex(c);
+};
+/** Canada's flag (maple leaf, simplified) for the modern dig site */
+export const canadaFlagTexture = () => {
+  const [c, g] = canvas(512, 256);
+  g.fillStyle = "#d52b1e"; g.fillRect(0, 0, 128, 256); g.fillRect(384, 0, 128, 256);
+  g.fillStyle = "#ffffff"; g.fillRect(128, 0, 256, 256);
+  const L: [number, number][] = [[256, 30], [276, 70], [300, 60], [292, 118], [334, 92], [326, 118], [352, 128], [316, 160], [326, 182], [266, 172], [262, 226], [250, 226], [246, 172], [186, 182], [196, 160], [160, 128], [186, 118], [178, 92], [220, 118], [212, 60], [236, 70]];
+  g.beginPath(); L.forEach(([x, y], i) => (i ? g.lineTo(x, y) : g.moveTo(x, y))); g.closePath(); g.fillStyle = "#d52b1e"; g.fill();
+  return tex(c);
+};
+/** pebble beach: grey-beige stones on sand */
+export const pebbleTexture = () => {
+  const [c, g] = canvas(1024, 1024), r = rng(67);
+  g.fillStyle = "#cbb894"; g.fillRect(0, 0, 1024, 1024);
+  blotches(g, 1024, 1024, r, 50, ["#bfa982", "#d9c8a4", "#b3a07c"], 40, 140, 0.5);
+  for (let i = 0; i < 700; i++) {
+    const x = r() * 1024, y = r() * 1024, rx = 5 + r() * 14, ry = rx * (0.6 + r() * 0.3);
+    g.beginPath(); g.ellipse(x, y, rx, ry, r() * 3, 0, 7);
+    g.fillStyle = ["#9a948a", "#b8b0a2", "#7d7a74", "#c9c0ae", "#8a7a66"][i % 5]; g.fill();
+    g.lineWidth = 1.5; g.strokeStyle = "rgba(40,34,30,0.5)"; g.stroke();
+  }
+  return tex(c, true);
+};
+/** dry flat cartoon flame for camp fires (k = drawing 0..3) */
+export const fireTexture = (k: number) => {
+  const [c, g] = canvas(256, 256), r = rng(70 + k);
+  const tongue = (x: number, h: number, w: number, col: string) => {
+    g.beginPath(); g.moveTo(x - w, 240); g.quadraticCurveTo(x - w * 1.1, 240 - h * 0.5, x + (r() - 0.5) * 20, 240 - h);
+    g.quadraticCurveTo(x + w * 1.1, 240 - h * 0.5, x + w, 240); g.closePath(); g.fillStyle = col; g.fill();
+  };
+  for (const [x, h, w] of [[100, 150 + r() * 40, 46], [156, 120 + r() * 50, 40], [128, 190 + r() * 40, 56]] as const) tongue(x, h, w, "#ff8a1e");
+  for (const [x, h, w] of [[112, 90 + r() * 30, 26], [146, 80 + r() * 30, 22], [128, 120 + r() * 30, 30]] as const) tongue(x, h, w, "#ffd75a");
+  return tex(c);
+};
+
+// ================= 1348 town textures (our own) =================
+/** rounded cobbles, grey-brown, dark joints */
+export const cobbleTexture = (seed = 81) => {
+  const [c, g] = canvas(1024, 1024), r = rng(seed);
+  g.fillStyle = "#4a4038"; g.fillRect(0, 0, 1024, 1024);
+  const n = 16;
+  for (let row = 0; row < n; row++) for (let col = 0; col < n; col++) {
+    const x = (col + (row % 2) * 0.5) * (1024 / n) + (r() - 0.5) * 10, y = row * (1024 / n) + 32 + (r() - 0.5) * 8;
+    const rx = 26 + r() * 6, ry = 22 + r() * 6;
+    for (const dx of [-1024, 0, 1024]) {
+      g.beginPath(); g.ellipse(x + dx, y, rx, ry, r() * 0.4, 0, 7);
+      g.fillStyle = ["#9a8f80", "#8a8070", "#a89c8a", "#7f776c", "#968a78"][Math.floor(r() * 5)]; g.fill();
+      g.fillStyle = "rgba(255,255,255,0.12)"; g.beginPath(); g.ellipse(x + dx - 6, y - 8, rx * 0.55, ry * 0.4, 0, 0, 7); g.fill();
+    }
+  }
+  blotches(g, 1024, 1024, r, 30, ["#5a4a3a", "#3a3a30"], 40, 140, 0.25);
+  return tex(c, true);
+};
+/** timber-framed facade: plaster with dark oak posts, rails and braces (seams painted, the world ink only does silhouettes) */
+export const frameTexture = (seed: number, plaster: string, beam = "#3e2a1e", cols = 3) => {
+  const [c, g] = canvas(512, 512), r = rng(seed);
+  g.fillStyle = plaster; g.fillRect(0, 0, 512, 512);
+  blotches(g, 512, 512, r, 30, ["#8a7a60", "#fff6e0", "#a0907a"], 30, 100, 0.22);
+  g.fillStyle = beam;
+  const bw = 22;
+  g.fillRect(0, 0, 512, bw); g.fillRect(0, 512 - bw, 512, bw); g.fillRect(0, 250, 512, bw * 0.8);
+  for (let i = 0; i <= cols; i++) g.fillRect((i * (512 - bw)) / cols, 0, bw, 512);
+  g.lineWidth = bw * 0.8; g.strokeStyle = beam;
+  for (let i = 0; i < cols; i++) if ((i + seed) % 2 === 0) {
+    const x0 = (i * (512 - bw)) / cols + bw / 2, x1 = ((i + 1) * (512 - bw)) / cols + bw / 2;
+    g.beginPath(); g.moveTo(x0, 255); g.lineTo(x1, bw); g.stroke();
+  }
+  g.fillStyle = "rgba(0,0,0,0.18)";
+  for (let i = 0; i < 40; i++) g.fillRect(r() * 512, r() * 512, 2, 8 + r() * 10);
+  return tex(c);
+};
+/** clay roof tiles in rows */
+export const tileTexture = (seed = 82, base = "#9a4a32") => {
+  const [c, g] = canvas(512, 512), r = rng(seed);
+  g.fillStyle = base; g.fillRect(0, 0, 512, 512);
+  for (let y = 0; y < 512; y += 32) for (let x = (y / 32) % 2 ? -16 : 0; x < 512; x += 32) {
+    g.fillStyle = `rgba(${r() < 0.5 ? "255,220,180" : "40,10,0"},${(0.06 + r() * 0.12).toFixed(2)})`; g.fillRect(x + 1, y + 1, 30, 30);
+    g.fillStyle = "rgba(40,16,8,0.55)"; g.fillRect(x, y + 28, 32, 4); g.fillRect(x, y, 2, 32);
+  }
+  return tex(c, true);
+};
+/** thatch: straw streaks */
+export const thatchTexture = (seed = 83) => {
+  const [c, g] = canvas(512, 512), r = rng(seed);
+  g.fillStyle = "#b09058"; g.fillRect(0, 0, 512, 512);
+  for (let i = 0; i < 2600; i++) { g.strokeStyle = ["#8a6a3a", "#c8a868", "#9a7a44", "#d8bc80"][i % 4]; g.globalAlpha = 0.6; g.lineWidth = 2; const x = r() * 512, y = r() * 512; g.beginPath(); g.moveTo(x, y); g.lineTo(x + (r() - 0.5) * 6, y + 18 + r() * 14); g.stroke(); }
+  g.globalAlpha = 1; g.fillStyle = "rgba(60,40,20,0.35)"; for (let y = 60; y < 512; y += 64) g.fillRect(0, y, 512, 6);
+  return tex(c, true);
+};
+/** ashlar stone blocks for the church */
+export const ashlarTexture = (seed = 84, base = "#b8b0a0") => {
+  const [c, g] = canvas(512, 512), r = rng(seed);
+  g.fillStyle = base; g.fillRect(0, 0, 512, 512);
+  blotches(g, 512, 512, r, 40, ["#a09888", "#c8c0b0", "#8f887a"], 20, 90, 0.5);
+  g.fillStyle = "rgba(50,44,40,0.6)";
+  for (let y = 0; y < 512; y += 64) { g.fillRect(0, y, 512, 4); for (let x = (y / 64) % 2 ? 64 : 0; x < 512; x += 128) g.fillRect(x, y, 4, 64); }
+  return tex(c, true);
+};
+/** small leaded window with open shutters; lit = warm glow inside */
+export const windowTexture = (lit = false) => {
+  const [c, g] = canvas(256, 256);
+  g.fillStyle = "#5a3a24"; g.fillRect(0, 0, 256, 256);
+  g.fillStyle = lit ? "#ffcf7a" : "#2a2a34"; g.fillRect(56, 40, 144, 176);
+  g.strokeStyle = lit ? "#7a4a20" : "#4a4a54"; g.lineWidth = 4;
+  for (let i = -176; i < 176; i += 28) { g.beginPath(); g.moveTo(56 + i, 40); g.lineTo(56 + i + 176, 216); g.stroke(); g.beginPath(); g.moveTo(200 - i, 40); g.lineTo(200 - i - 176, 216); g.stroke(); }
+  g.fillStyle = "#3e2a1e"; g.fillRect(56, 40, 144, 10); g.fillRect(56, 206, 144, 10); g.fillRect(56, 40, 10, 176); g.fillRect(190, 40, 10, 176); g.fillRect(122, 40, 10, 176);
+  g.fillStyle = "#6a4a2c"; g.fillRect(0, 30, 50, 196); g.fillRect(206, 30, 50, 196);
+  g.strokeStyle = "#3e2a1e"; g.lineWidth = 6; g.strokeRect(0, 30, 50, 196); g.strokeRect(206, 30, 50, 196);
+  return tex(c);
+};
+/** patchwork fields seen from high above (aerial), hedges as dark lines */
+export const fieldsTexture = (seed = 85) => {
+  const [c, g] = canvas(1024, 1024), r = rng(seed);
+  g.fillStyle = "#7a9a4a"; g.fillRect(0, 0, 1024, 1024);
+  const cols = ["#8aa852", "#a8a85a", "#c8b06a", "#6f8f42", "#9aa04e", "#b89a5a", "#7f9a4a"];
+  for (let i = 0; i < 140; i++) {
+    const x = r() * 1024, y = r() * 1024, w = 40 + r() * 110, h = 30 + r() * 90, a = (r() - 0.5) * 0.5;
+    g.save(); g.translate(x, y); g.rotate(a); g.fillStyle = cols[i % cols.length]; g.fillRect(-w / 2, -h / 2, w, h);
+    g.strokeStyle = "rgba(50,60,30,0.7)"; g.lineWidth = 3; g.strokeRect(-w / 2, -h / 2, w, h); g.restore();
+  }
+  blotches(g, 1024, 1024, r, 30, ["#4f6a30", "#5f7a3a"], 40, 110, 0.5);
+  return tex(c, true);
+};
+/** 1890s wallpaper: sage green with a small cream pattern */
+export const wallpaperTexture = () => {
+  const [c, g] = canvas(256, 256);
+  g.fillStyle = "#7f9a7a"; g.fillRect(0, 0, 256, 256);
+  g.fillStyle = "#93ad8e"; for (let x = 0; x < 256; x += 32) g.fillRect(x, 0, 12, 256);
+  g.fillStyle = "#e8dcb8"; for (let y = 16; y < 256; y += 64) for (let x = 22; x < 256; x += 64) { g.beginPath(); g.arc(x, y, 5, 0, 7); g.fill(); g.beginPath(); g.arc(x + 32, y + 32, 5, 0, 7); g.fill(); }
+  return tex(c, true);
+};
+/** limewashed interior plaster with oak studs */
+export const roomWallTexture = (seed = 86) => frameTexture(seed, "#e6dcc4", "#4a3222", 4);
+
+// ================= Constantinople 1453 textures (our own) =================
+/** Theodosian wall: limestone blocks with bands of red brick every few courses */
+export const byzWallTexture = (seed = 101) => {
+  const [c, g] = canvas(512, 512), r = rng(seed);
+  g.fillStyle = "#cbbfa6"; g.fillRect(0, 0, 512, 512);
+  blotches(g, 512, 512, r, 40, ["#b8ab90", "#d8cdb4", "#a89a80"], 20, 90, 0.45);
+  for (let y = 0; y < 512; y += 40) {
+    const brick = Math.floor(y / 40) % 5 === 2;
+    if (brick) {
+      for (let k = 0; k < 4; k++) { g.fillStyle = ["#a0503a", "#8f4430", "#b05a40"][k % 3]; g.fillRect(0, y + k * 10, 512, 8); g.fillStyle = "#d8c8b0"; g.fillRect(0, y + k * 10 + 8, 512, 2); }
+    } else {
+      g.fillStyle = "rgba(60,50,40,0.5)"; g.fillRect(0, y + 38, 512, 2);
+      for (let x = (y / 40) % 2 ? 32 : 0; x < 512; x += 64) g.fillRect(x, y, 2, 40);
+    }
+  }
+  return tex(c, true);
+};
+/** limewashed stucco with stains, for the houses */
+export const stuccoTexture = (seed: number, base: string) => {
+  const [c, g] = canvas(512, 512), r = rng(seed);
+  g.fillStyle = base; g.fillRect(0, 0, 512, 512);
+  blotches(g, 512, 512, r, 40, ["#a89878", "#fff8ea", "#c0a888"], 30, 120, 0.25);
+  g.fillStyle = "rgba(90,70,50,0.25)"; g.fillRect(0, 480, 512, 32);
+  for (let i = 0; i < 30; i++) { g.fillStyle = "rgba(80,60,40,0.18)"; g.fillRect(r() * 512, r() * 512, 2 + r() * 3, 10 + r() * 30); }
+  return tex(c);
+};
+/** arched window or doorway: dark opening in a pale frame (lit = warm glow) */
+export const archTexture = (lit = false) => {
+  const [c, g] = canvas(256, 384);
+  g.fillStyle = "#e8dcc4"; g.fillRect(0, 0, 256, 384);
+  g.beginPath(); g.moveTo(48, 384); g.lineTo(48, 130); g.arc(128, 130, 80, Math.PI, 0); g.lineTo(208, 384); g.closePath();
+  g.fillStyle = lit ? "#ffb85a" : "#2a2228"; g.fill(); g.lineWidth = 14; g.strokeStyle = "#a0503a"; g.stroke();
+  return tex(c);
+};
+/** lead sheet for domes */
+export const leadTexture = () => {
+  const [c, g] = canvas(256, 256), r = rng(103);
+  g.fillStyle = "#8a9098"; g.fillRect(0, 0, 256, 256);
+  for (let x = 0; x < 256; x += 32) { g.fillStyle = "rgba(40,44,50,0.45)"; g.fillRect(x, 0, 3, 256); }
+  blotches(g, 256, 256, r, 20, ["#7a8088", "#a0a6ae"], 20, 60, 0.4);
+  return tex(c, true);
+};
+/** striped camp tent cloth */
+export const tentTexture = (a: string, b: string) => {
+  const [c, g] = canvas(256, 256);
+  for (let i = 0; i < 8; i++) { g.fillStyle = i % 2 ? a : b; g.fillRect(i * 32, 0, 32, 256); }
+  return tex(c, true);
+};
+/** Palaiologan banner: gold cross on red with four gold fire-steels (no letters) */
+export const byzBannerTexture = () => {
+  const [c, g] = canvas(512, 384);
+  g.fillStyle = "#b02a26"; g.fillRect(0, 0, 512, 384);
+  g.fillStyle = "#e8c04a"; g.fillRect(232, 0, 48, 384); g.fillRect(0, 168, 512, 48);
+  g.strokeStyle = "#e8c04a"; g.lineWidth = 16;
+  for (const [x, y, s] of [[116, 84, 1], [396, 84, -1], [116, 300, 1], [396, 300, -1]] as const) { g.beginPath(); g.arc(x + s * 20, y, 40, s > 0 ? Math.PI * 0.5 : -Math.PI * 0.5, s > 0 ? Math.PI * 1.5 : Math.PI * 0.5); g.stroke(); }
+  g.strokeStyle = "#5a1410"; g.lineWidth = 10; g.strokeRect(0, 0, 512, 384);
+  return tex(c);
+};

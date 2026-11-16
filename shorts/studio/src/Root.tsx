@@ -7,6 +7,7 @@ import { VikingShort, VIKING_FRAMES } from "./videos/viking/Viking";
 import { CastSheet as PlagueCast } from "./videos/plague/CastSheet";
 import { PlagueShort, PLAGUE_FRAMES } from "./videos/plague/Plague";
 import { CastSheet as ByzCast } from "./videos/byzantium/CastSheet";
+import { ByzantiumShort, BYZ_FRAMES } from "./videos/byzantium/Byzantium";
 
 export const Root: React.FC = () => (
   <>
@@ -15,6 +16,7 @@ export const Root: React.FC = () => (
     <Composition id="VikingShort" component={VikingShort} durationInFrames={VIKING_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="VikingCast" component={CastSheet} durationInFrames={1} fps={30} width={1080} height={1920} />
     <Composition id="PlagueShort" component={PlagueShort} durationInFrames={PLAGUE_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="ByzantiumShort" component={ByzantiumShort} durationInFrames={BYZ_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="ByzCast" component={ByzCast} durationInFrames={1} fps={30} width={1080} height={1920} />
     <Composition id="PlagueCast" component={PlagueCast} durationInFrames={1} fps={30} width={1080} height={1920} />
   </>
