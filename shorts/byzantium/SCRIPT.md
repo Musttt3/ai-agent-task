@@ -51,3 +51,8 @@ Word timings: `voice/words.json` (faster-whisper small.en, matches the script wo
 
 ## Notes
 - No gore: the fighting reads as shields, dust and smoke; deaths are implied.
+- Final: `byzantium_short.mp4`, 1440x2560 (2K), 30 fps, 57.9 s, H.264 crf 18 + AAC 192k; -15.2 LUFS, peak -0.9 dBFS (mix true peak -1.2 dBTP). Word-by-word captions burned in.
+- Verifier (Opus): 6.4/10 on stills; all 10 fixes applied (outer-wall lintel + earth fill so nobody floats or stands in the moat, no houses through the rooftop and the ending kept close on the messenger, captions clear of faces, flat cloak and banner on the stones, crane ends on the dome, gate vault fixed, Mehmed's guards on the dais, cannon/impact framing, tower top tips outward, the commander's hand on the shoulder; banner fire-steels drawn as B's, Mehmed's beard lighter, bell tower moved into view).
+- The sitting messenger first sat inside the Hagia Sophia steps (half hidden) and shrank to a speck on the pull-back; the ending moved to the rooftop of the opening.
+- QA: no silences, no frozen spans, no unplanned white frames; frame-diff spikes are planned (cuts, bombard fires, kicks, caption word changes).
+- Rendered in resumable 100-frame chunks across two container restarts (`studio/brender_chunks.sh`).
