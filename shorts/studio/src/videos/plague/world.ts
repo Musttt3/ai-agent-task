@@ -538,7 +538,7 @@ export class World {
         this.actor(f, cam, { o: sick(1, { lump: lp }), id: `p1|${lp}`, pos: BED(1), opts: { expr: f < B(T.swollen) ? "neutral" : "nervous", mode: "sit" } }, false);
         this.actor(f, cam, { o: sick(2, { spots: sp }), id: `p2|${sp}`, pos: BED(2), opts: { expr: f < B(T.dark) ? "neutral" : "dazed", mode: "sit" } }, false);
         const cx = -3.2 + 3.2 * ramp(f, B(T.swollen) - 16, 16) + 3.2 * ramp(f, B(T.dark) - 16, 16);
-        pos = Rp(cx + 0.3, -0.4, 1.95); look = Rp(cx, -3.95, 1.25); fov = 44;
+        pos = Rp(cx + 0.3, -0.4 - 0.7 * smooth(u), 1.95 - 0.1 * smooth(u)); look = Rp(cx, -3.95, 1.25); fov = 44;
         focus = Rp(cx, -3.95, 1.25);
         break;
       }

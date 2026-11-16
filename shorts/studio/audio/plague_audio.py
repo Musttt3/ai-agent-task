@@ -141,6 +141,7 @@ put(I.pad([F(56), F(57), F(63)], 1.6, 0.3, rng(102), att=0.02, rel=0.8, warm=160
 put(I.timpani(F(33), 1.0, rng(103), dur=2.2), B("arm"), 1.0)
 cue(B("arm"), "music: sting on 'arm'")
 # you're the patient: a low brass + timpani hit, then a bleak pad
+put(I.pad([F(45), F(52)], T["patient"] - SH["patient"][0] + 0.3, 0.12, rng(109), att=0.3, rel=0.4, warm=500), SH["patient"][0])
 put(I.brass(F(33), 1.2, 0.7, rng(110), kind="tuba", scoop=-40), B("patient"), 0.8)
 put(I.timpani(F(33), 0.9, rng(111), dur=2.2), B("patient"), 0.9)
 cue(B("patient"), "music: hit on 'patient'")
@@ -312,6 +313,7 @@ cue(a, "heartbeat speeds up")
 fx(boing(r, 160, 300, 0.45) * 0.6, B("swelling") + 0.1, 1.0, 0.2, "swelling squelch")
 fx(G.whoa(r, base=170) * 0.4, B("arm") + 0.05, 1.0, 0.0)
 a, b = SH["patient"]; fx(G.creak(0.6, r, 80, 140) * 0.25, a + 0.1, 1.0, 0.3, "bed creaks")
+fx(widen(crackle(b - a, r, 5) * 0.18, r), a); fx(G.breeze(b - a, r, 0.06, bright=600), a, what="room tone (patient)")
 fx(cough(r, 0.9, 3), B("patient") + 0.4, 0.6, 0.3)
 # Europe: high wind, distant bells one after another
 a, b = SH["europe"]; fx(G.breeze(b - a, r, 0.35, bright=500), a, what="high wind (Europe)")
