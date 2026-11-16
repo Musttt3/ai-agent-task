@@ -1,0 +1,5 @@
+node_modules/
+out/
+# private study material of the style reference: never upload, publish or send (see skill/SKILL.md)
+skill/references/frames/
+skill/references/sheets/
