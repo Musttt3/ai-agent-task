@@ -16,7 +16,7 @@ The style reference is a channel studied privately (`references/`: STYLE_BIBLE.m
 - Never say the channel's name in a voice-over or description.
 
 User rules that apply:
-- No captions or labels in the video.
+- No spoken-word captions unless the user asks for them in that video. In-scene signs, boards and comic badges with text ARE wanted (user, 2026-11-17); for new videos prefer the `2d-in-3d-animation-agent` skill and its template.
 - English only.
 - Voice: one steady tone.
 - Jokes are researched real facts.

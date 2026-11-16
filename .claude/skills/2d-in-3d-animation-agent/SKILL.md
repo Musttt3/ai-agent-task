@@ -39,8 +39,13 @@ text; `skill/references` + `skill/templates` are identical to `.claude/skills/ca
 ## User rules (override the framework where they differ)
 - **Final export is always 2K: 1440x2560** (`--scale 1.3333` on the 1080x1920 composition). Never deliver 1080x1920.
 - The user writes Indonesian: reply in Indonesian.
-- Captions: the framework supports them, but the user's cartoon-short rule is **no captions or labels** unless the
-  user asks for captions for that video. Ask only if unclear; default = no captions.
+- Captions (spoken words): only when the user asks for them in that video; default = no captions.
+- **In-scene signs, boards and comic badges with text: always use them** (user, 2026-11-17), like the demo, inside the 9:16
+  safe area (GUIDELINES.md 4C). This overrides the older "no labels" rule.
+- **Look (user, 2026-11-17): start every new video from `src/videos/template/` (demo as reference), not from an older short.**
+  Keep 3x supersampled cards with distance LOD, `cardShade` lighting, contact + sun-direction cast-shadow blobs, `lidAt`
+  blinks, `hopY` reaction hops, `twoTone` world shading, `lights.ts` presets, motivated light sources + rim light, detailed
+  `build.ts` sets with a dedicated set per mood.
 - Story, characters and voice are our own; the style references (`skill/references/frames`, `sheets`) are private study
   material: never upload, publish, send or commit them (they are gitignored).
 - GUIDELINES.md section 0 ("ARGON vs Flash" model choice) belongs to another tool and does not apply here; keep its
