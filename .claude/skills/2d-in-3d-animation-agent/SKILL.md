@@ -46,3 +46,8 @@ text; `skill/references` + `skill/templates` are identical to `.claude/skills/ca
 - GUIDELINES.md section 0 ("ARGON vs Flash" model choice) belongs to another tool and does not apply here; keep its
   intent (do the 3D/camera work carefully, check stills and previews before the full render).
 - Opus verifies stills before the final render; run the frame QA (`shorts/studio/short_qa.py`) on the final mp4.
+- **Camera (user, 2026-11-17): follow GUIDELINES.md section 4A fully.** Every 4-6 s beat gets 2-3 sub-angles (medium -> macro
+  insert on a prop -> Dutch-tilt push-in), plus orbits, crane moves and foreground parallax; kicks on punch words. The Constantinople
+  short (`src/videos/byzantium/` in shorts/studio) still used one move per shot: do not copy its camera code as is.
+- Before the full render, show 1-3 s motion previews of the key beats (phase 2) and wait for the user's approval.
+- Master true peak at or below -1.5 dBTP (the mix scripts in shorts/studio/audio use -1.2: change `ceil = dbg(-1.5)`).
