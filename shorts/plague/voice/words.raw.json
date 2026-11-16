@@ -1,0 +1,752 @@
+[
+{
+"word": "You're",
+"start": 0.0,
+"end": 0.24
+},
+{
+"word": "a",
+"start": 0.24,
+"end": 0.38
+},
+{
+"word": "doctor",
+"start": 0.38,
+"end": 0.64
+},
+{
+"word": "in",
+"start": 0.64,
+"end": 0.96
+},
+{
+"word": "1348,",
+"start": 0.96,
+"end": 1.92
+},
+{
+"word": "and",
+"start": 2.32,
+"end": 2.42
+},
+{
+"word": "half",
+"start": 2.42,
+"end": 2.68
+},
+{
+"word": "your",
+"start": 2.68,
+"end": 2.88
+},
+{
+"word": "town",
+"start": 2.88,
+"end": 3.12
+},
+{
+"word": "is",
+"start": 3.12,
+"end": 3.3
+},
+{
+"word": "dying.",
+"start": 3.3,
+"end": 3.7
+},
+{
+"word": "The",
+"start": 4.26,
+"end": 4.4
+},
+{
+"word": "worst",
+"start": 4.4,
+"end": 4.56
+},
+{
+"word": "part?",
+"start": 4.56,
+"end": 4.9
+},
+{
+"word": "You",
+"start": 5.26,
+"end": 5.46
+},
+{
+"word": "have",
+"start": 5.46,
+"end": 5.62
+},
+{
+"word": "absolutely",
+"start": 5.62,
+"end": 6.16
+},
+{
+"word": "no",
+"start": 6.16,
+"end": 6.68
+},
+{
+"word": "idea",
+"start": 6.68,
+"end": 7.0
+},
+{
+"word": "why.",
+"start": 7.0,
+"end": 7.44
+},
+{
+"word": "Patients",
+"start": 8.02,
+"end": 8.22
+},
+{
+"word": "arrive",
+"start": 8.22,
+"end": 8.58
+},
+{
+"word": "with",
+"start": 8.58,
+"end": 8.82
+},
+{
+"word": "high",
+"start": 8.82,
+"end": 9.08
+},
+{
+"word": "fevers,",
+"start": 9.08,
+"end": 9.6
+},
+{
+"word": "swollen",
+"start": 9.98,
+"end": 10.2
+},
+{
+"word": "lumps,",
+"start": 10.2,
+"end": 10.6
+},
+{
+"word": "and",
+"start": 10.78,
+"end": 10.94
+},
+{
+"word": "dark",
+"start": 10.94,
+"end": 11.18
+},
+{
+"word": "patches",
+"start": 11.18,
+"end": 11.58
+},
+{
+"word": "on",
+"start": 11.58,
+"end": 11.8
+},
+{
+"word": "their",
+"start": 11.8,
+"end": 11.94
+},
+{
+"word": "skin.",
+"start": 11.94,
+"end": 12.26
+},
+{
+"word": "You",
+"start": 12.78,
+"end": 12.88
+},
+{
+"word": "try",
+"start": 12.88,
+"end": 13.12
+},
+{
+"word": "everything.",
+"start": 13.12,
+"end": 13.7
+},
+{
+"word": "Herbal",
+"start": 14.3,
+"end": 14.46
+},
+{
+"word": "medicines,",
+"start": 14.46,
+"end": 14.9
+},
+{
+"word": "bloodletting,",
+"start": 15.4,
+"end": 15.92
+},
+{
+"word": "even",
+"start": 16.2,
+"end": 16.38
+},
+{
+"word": "burning",
+"start": 16.38,
+"end": 16.76
+},
+{
+"word": "aromatic",
+"start": 16.76,
+"end": 17.2
+},
+{
+"word": "herbs",
+"start": 17.2,
+"end": 17.64
+},
+{
+"word": "to",
+"start": 17.64,
+"end": 17.9
+},
+{
+"word": "purify",
+"start": 17.9,
+"end": 18.36
+},
+{
+"word": "the",
+"start": 18.36,
+"end": 18.52
+},
+{
+"word": "air.",
+"start": 18.52,
+"end": 18.78
+},
+{
+"word": "Nothing",
+"start": 19.3,
+"end": 19.5
+},
+{
+"word": "seems",
+"start": 19.5,
+"end": 19.8
+},
+{
+"word": "to",
+"start": 19.8,
+"end": 20.04
+},
+{
+"word": "work.",
+"start": 20.04,
+"end": 20.32
+},
+{
+"word": "People",
+"start": 20.82,
+"end": 21.0
+},
+{
+"word": "believe",
+"start": 21.0,
+"end": 21.34
+},
+{
+"word": "the",
+"start": 21.34,
+"end": 21.56
+},
+{
+"word": "disease",
+"start": 21.56,
+"end": 21.86
+},
+{
+"word": "comes",
+"start": 21.86,
+"end": 22.18
+},
+{
+"word": "from",
+"start": 22.18,
+"end": 22.46
+},
+{
+"word": "poisonous",
+"start": 22.46,
+"end": 22.9
+},
+{
+"word": "air",
+"start": 22.9,
+"end": 23.32
+},
+{
+"word": "or",
+"start": 23.32,
+"end": 23.58
+},
+{
+"word": "divine",
+"start": 23.58,
+"end": 23.98
+},
+{
+"word": "punishment,",
+"start": 23.98,
+"end": 24.5
+},
+{
+"word": "but",
+"start": 24.78,
+"end": 25.16
+},
+{
+"word": "you",
+"start": 25.16,
+"end": 25.36
+},
+{
+"word": "don't",
+"start": 25.36,
+"end": 25.56
+},
+{
+"word": "know",
+"start": 25.56,
+"end": 25.76
+},
+{
+"word": "the",
+"start": 25.76,
+"end": 25.92
+},
+{
+"word": "real",
+"start": 25.92,
+"end": 26.14
+},
+{
+"word": "culprit.",
+"start": 26.14,
+"end": 26.54
+},
+{
+"word": "A",
+"start": 26.98,
+"end": 27.1
+},
+{
+"word": "bacterium",
+"start": 27.1,
+"end": 27.72
+},
+{
+"word": "called",
+"start": 27.72,
+"end": 28.0
+},
+{
+"word": "Yersinia",
+"start": 28.0,
+"end": 28.56
+},
+{
+"word": "pestis",
+"start": 28.56,
+"end": 29.16
+},
+{
+"word": "often",
+"start": 29.16,
+"end": 29.62
+},
+{
+"word": "spread",
+"start": 29.62,
+"end": 29.96
+},
+{
+"word": "by",
+"start": 29.96,
+"end": 30.18
+},
+{
+"word": "infected",
+"start": 30.18,
+"end": 30.58
+},
+{
+"word": "fleas.",
+"start": 30.58,
+"end": 31.18
+},
+{
+"word": "Every",
+"start": 31.62,
+"end": 31.88
+},
+{
+"word": "morning,",
+"start": 31.88,
+"end": 32.22
+},
+{
+"word": "more",
+"start": 32.42,
+"end": 32.7
+},
+{
+"word": "bodies",
+"start": 32.7,
+"end": 33.04
+},
+{
+"word": "appear",
+"start": 33.04,
+"end": 33.36
+},
+{
+"word": "in",
+"start": 33.36,
+"end": 33.52
+},
+{
+"word": "the",
+"start": 33.52,
+"end": 33.62
+},
+{
+"word": "streets.",
+"start": 33.62,
+"end": 33.94
+},
+{
+"word": "Families",
+"start": 34.8,
+"end": 34.8
+},
+{
+"word": "abandon",
+"start": 34.8,
+"end": 35.24
+},
+{
+"word": "their",
+"start": 35.24,
+"end": 35.52
+},
+{
+"word": "homes.",
+"start": 35.52,
+"end": 35.86
+},
+{
+"word": "Even",
+"start": 36.34,
+"end": 36.54
+},
+{
+"word": "fellow",
+"start": 36.54,
+"end": 36.8
+},
+{
+"word": "doctors",
+"start": 36.8,
+"end": 37.28
+},
+{
+"word": "begin",
+"start": 37.28,
+"end": 37.64
+},
+{
+"word": "disappearing.",
+"start": 37.64,
+"end": 38.16
+},
+{
+"word": "And",
+"start": 38.68,
+"end": 38.88
+},
+{
+"word": "now,",
+"start": 38.88,
+"end": 39.16
+},
+{
+"word": "you're",
+"start": 39.48,
+"end": 39.78
+},
+{
+"word": "developing",
+"start": 39.78,
+"end": 40.2
+},
+{
+"word": "a",
+"start": 40.2,
+"end": 40.4
+},
+{
+"word": "fever.",
+"start": 40.4,
+"end": 40.62
+},
+{
+"word": "You",
+"start": 41.18,
+"end": 41.36
+},
+{
+"word": "look",
+"start": 41.36,
+"end": 41.5
+},
+{
+"word": "down.",
+"start": 41.5,
+"end": 41.78
+},
+{
+"word": "A",
+"start": 42.2,
+"end": 42.34
+},
+{
+"word": "painful",
+"start": 42.34,
+"end": 42.74
+},
+{
+"word": "swelling",
+"start": 42.74,
+"end": 43.24
+},
+{
+"word": "has",
+"start": 43.24,
+"end": 43.44
+},
+{
+"word": "appeared",
+"start": 43.44,
+"end": 43.78
+},
+{
+"word": "beneath",
+"start": 43.78,
+"end": 44.06
+},
+{
+"word": "your",
+"start": 44.06,
+"end": 44.28
+},
+{
+"word": "arm.",
+"start": 44.28,
+"end": 44.6
+},
+{
+"word": "Suddenly,",
+"start": 45.14,
+"end": 45.48
+},
+{
+"word": "you're",
+"start": 45.66,
+"end": 46.02
+},
+{
+"word": "no",
+"start": 46.02,
+"end": 46.16
+},
+{
+"word": "longer",
+"start": 46.16,
+"end": 46.38
+},
+{
+"word": "the",
+"start": 46.38,
+"end": 46.58
+},
+{
+"word": "doctor.",
+"start": 46.58,
+"end": 46.86
+},
+{
+"word": "You're",
+"start": 47.34,
+"end": 47.62
+},
+{
+"word": "the",
+"start": 47.62,
+"end": 47.74
+},
+{
+"word": "patient.",
+"start": 47.74,
+"end": 48.16
+},
+{
+"word": "The",
+"start": 48.68,
+"end": 48.84
+},
+{
+"word": "Black",
+"start": 48.84,
+"end": 49.1
+},
+{
+"word": "Death",
+"start": 49.1,
+"end": 49.38
+},
+{
+"word": "would",
+"start": 49.38,
+"end": 49.62
+},
+{
+"word": "kill",
+"start": 49.62,
+"end": 49.86
+},
+{
+"word": "tens",
+"start": 49.86,
+"end": 50.2
+},
+{
+"word": "of",
+"start": 50.2,
+"end": 50.48
+},
+{
+"word": "millions",
+"start": 50.48,
+"end": 50.92
+},
+{
+"word": "across",
+"start": 50.92,
+"end": 51.34
+},
+{
+"word": "Europe.",
+"start": 51.34,
+"end": 51.72
+},
+{
+"word": "And",
+"start": 52.04,
+"end": 52.24
+},
+{
+"word": "the",
+"start": 52.24,
+"end": 52.36
+},
+{
+"word": "terrifying",
+"start": 52.36,
+"end": 52.74
+},
+{
+"word": "truth?",
+"start": 52.74,
+"end": 53.14
+},
+{
+"word": "You're",
+"start": 53.42,
+"end": 53.72
+},
+{
+"word": "fighting",
+"start": 53.72,
+"end": 53.96
+},
+{
+"word": "an",
+"start": 53.96,
+"end": 54.2
+},
+{
+"word": "invisible",
+"start": 54.2,
+"end": 54.62
+},
+{
+"word": "enemy",
+"start": 54.62,
+"end": 55.08
+},
+{
+"word": "that",
+"start": 55.08,
+"end": 55.32
+},
+{
+"word": "humanity",
+"start": 55.32,
+"end": 55.74
+},
+{
+"word": "won't",
+"start": 55.74,
+"end": 56.22
+},
+{
+"word": "scientifically",
+"start": 56.22,
+"end": 56.78
+},
+{
+"word": "identify",
+"start": 56.78,
+"end": 57.44
+},
+{
+"word": "for",
+"start": 57.44,
+"end": 57.74
+},
+{
+"word": "another",
+"start": 57.74,
+"end": 58.0
+},
+{
+"word": "500",
+"start": 58.0,
+"end": 58.7
+},
+{
+"word": "years.",
+"start": 58.7,
+"end": 59.3
+}
+]
