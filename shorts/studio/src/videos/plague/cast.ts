@@ -28,7 +28,7 @@ export const DOC_SICK: Outfit = { jacket: "#e8e0d0", pants: "#c8bfae", boots: "#
 /** fellow physicians in other robe colours */
 export const colleague = (v: number): Outfit => ({ jacket: ["#5a3a7a", "#2f5a4a", "#2f4f7a", "#6a4a2a"][v % 4], dress: ["#4e3270", "#284f40", "#28446c", "#5e4026"][v % 4],
   pants: "#3a3030", boots: "#2a2020", hat: "doccap", cap: ["#2a2030", "#1f2a24", "#1f2638", "#3a2a1a"][v % 4], hair: ["#3b2a1e", "#8a8a8a", "#2a201a", "#b08a5a"][v % 4],
-  beard: v % 2 ? ["#8a8a8a", "#3b2a1e"][Math.floor(v / 2) % 2] : undefined, skin: ["#fbf3ea", "#f1dcc6", "#e8c39e", "#fbf3ea"][v % 4], build: v === 3 ? "stout" : "adult" });
+  moustache: v % 2 ? ["#6a6a6a", "#3b2a1e"][Math.floor(v / 2) % 2] : undefined, skin: ["#fbf3ea", "#f1dcc6", "#e8c39e", "#fbf3ea"][v % 4], build: v === 3 ? "stout" : "adult" });
 /** townsfolk 1348: plant-dyed wool, linen coifs and hoods */
 export const folk = (v: number): Outfit => {
   const tun = ["#7a6a4a", "#5d7a3a", "#8c5a3a", "#4f6a8a", "#a07a3a", "#6a5a6a", "#8a4a3a", "#5a6a5a"];
@@ -42,7 +42,7 @@ export const folk = (v: number): Outfit => {
 export const sick = (v: number, s: { flush?: number; lump?: number; spots?: number } = {}): Outfit => ({ jacket: ["#e8e0d0", "#ded4c0", "#efe6d6"][v % 3], pants: "#c8bfae",
   boots: "#3a2a20", hat: v % 2 ? "coif" : "hair", hair: ["#5a3b2a", "#2a201a", "#b08a5a"][v % 3], skin: ["#f1e2ca", "#ecd8bc", "#e6d0b4"][v % 3], ...s });
 /** a gravedigger with a dark hood */
-export const DIGGER: Outfit = { jacket: "#5a4a3a", pants: "#3a3430", boots: "#2a2020", hat: "hood", cap: "#3a3434", hair: "#2a201a", beard: "#3a2a1e", skin: "#f1dcc6", waist: "#2a2020" };
+export const DIGGER: Outfit = { jacket: "#6a5a44", pants: "#4a4034", boots: "#2a2020", hat: "hood", cap: "#8a6a44", hair: "#2a201a", moustache: "#3a2a1e", skin: "#f1dcc6", waist: "#3a2a20" };
 /** a scientist of the 1890s: dark suit, white collar, moustache */
 export const SCIENTIST: Outfit = { jacket: "#3a3f4c", pants: "#2e323c", boots: "#1e1e22", buttons: "#d9dde0", hat: "hair", hair: "#3b2a1e", moustache: "#3b2a1e",
   skin: "#fbf3ea", trim: "#f2efe6" };
@@ -58,8 +58,8 @@ export const drawCard = (key: string, w: number, h: number, draw: (g: CanvasRend
   cache.set(key, t);
   return t;
 };
-const personTex = (o: Outfit, opts: FrontOpts, key: string) => drawCard("p|" + key, 480, 800, (g) => {
-  g.setTransform(0.8, 0, 0, 0.8, 0, 0);
+const personTex = (o: Outfit, opts: FrontOpts, key: string) => drawCard("p|" + key, 720, 1200, (g) => {
+  g.setTransform(1.2, 0, 0, 1.2, 0, 0);
   bodyFront(new Pen(g), o, opts);
 });
 

@@ -221,6 +221,8 @@ void main() {
 export class InkPass extends Pass {
   /** 0 = normal, 1 = show the ink mask, 2 = show the world normal buffer */
   debug = 0;
+  /** how far fully fogged ink moves toward the fog colour (0.3 default; 1 in thick mist so fogged buildings don't turn into wireframes) */
+  fogInk = 0.3;
   private world: THREE.Scene;
   private cam: THREE.PerspectiveCamera;
   private rt: THREE.WebGLRenderTarget;
@@ -348,7 +350,10 @@ export class InkPass extends Pass {
     const u = this.maskMat.uniforms, e = cam.projectionMatrix.elements;
     u.cNear.value = cam.near; u.cFar.value = cam.far; u.p00.value = e[0]; u.p11.value = e[5];
     const fog = scene.fog as THREE.Fog | null;
-    if (fog && (fog as THREE.Fog).isFog) { (u.fogRange.value as THREE.Vector2).set(fog.near, fog.far); (this.compMat.uniforms.fogColor.value as THREE.Color).copy(fog.color); }
+    if (fog && (fog as THREE.Fog).isFog) {
+      (u.fogRange.value as THREE.Vector2).set(fog.near, fog.far); (this.compMat.uniforms.fogColor.value as THREE.Color).copy(fog.color);
+      u.fogStart.value = this.fogInk > 0.5 ? fog.near : 60; this.compMat.uniforms.fogInk.value = this.fogInk;
+    }
     else (u.fogRange.value as THREE.Vector2).set(0, 0);
     this.quad.material = this.maskMat;
     renderer.setRenderTarget(this.maskRT);

@@ -110,7 +110,7 @@ export class World {
     }
     this.puffs = new Puffs(this.actors, 30);
     this.smoke = new Puffs(this.actors, 44);
-    this.plumes = new Puffs(this.actors, 50);
+    this.plumes = new Puffs(this.actors, 90);
     this.fx = new FxCard(this.actors, 1, 1); this.fx2 = new FxCard(this.actors, 1, 1); this.fx3 = new FxCard(this.actors, 1, 1);
     this.bubble = new FxCard(this.actors, 1, 1); this.flea = new FxCard(this.actors, 1, 1);
     for (let i = 0; i < 4; i++) this.bugs.push(new FxCard(this.actors, 2, 1));
@@ -310,10 +310,12 @@ export class World {
     this.brazierTop = [RM[0] + 1.95, 1.0, RM[2] - 0.6];
     // the doctor's cap and robe on a peg by the third bed
     const peg = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.2, 6).rotateX(Math.PI / 2), wood); peg.position.set(4.6, 1.95, -4.9); R.add(peg);
-    const robe = new THREE.Mesh(new THREE.PlaneGeometry(0.75, 1.5), lambert({ color: "#9a3236", side: THREE.DoubleSide })); robe.position.set(4.6, 1.2, -4.93); R.add(robe);
+    const rs = new THREE.Shape([new THREE.Vector2(-0.12, 0.72), new THREE.Vector2(0.12, 0.72), new THREE.Vector2(0.4, 0.6), new THREE.Vector2(0.55, 0.25), new THREE.Vector2(0.42, 0.22),
+      new THREE.Vector2(0.34, 0.4), new THREE.Vector2(0.4, -0.75), new THREE.Vector2(-0.4, -0.75), new THREE.Vector2(-0.34, 0.4), new THREE.Vector2(-0.42, 0.22), new THREE.Vector2(-0.55, 0.25), new THREE.Vector2(-0.4, 0.6)]);
+    const robe = new THREE.Mesh(new THREE.ShapeGeometry(rs), lambert({ color: "#9a3236", side: THREE.DoubleSide })); robe.position.set(4.6, 1.22, -4.93); R.add(robe);
     const capM = lambert({ color: "#5a2230" });
-    const cap = new THREE.Mesh(new THREE.SphereGeometry(0.22, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2), capM); cap.position.set(4.6, 1.98, -4.78); cap.rotation.x = 0.5; R.add(cap);
-    const brim = new THREE.Mesh(new THREE.TorusGeometry(0.22, 0.05, 6, 18).rotateX(Math.PI / 2), capM); brim.position.set(4.6, 1.98, -4.78); brim.rotation.x = Math.PI / 2 + 0.5; R.add(brim);
+    const cap = new THREE.Mesh(new THREE.SphereGeometry(0.22, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2), capM); cap.position.set(3.95, 1.12, -4.75); R.add(cap);
+    const brim = new THREE.Mesh(new THREE.TorusGeometry(0.22, 0.05, 6, 18).rotateX(Math.PI / 2), capM); brim.position.set(3.95, 1.12, -4.75); R.add(brim);
   }
 
   private buildLab() {
@@ -466,7 +468,7 @@ export class World {
     const p = this.landMesh.geometry.attributes.position as THREE.BufferAttribute, c = this.landMesh.geometry.attributes.color as THREE.BufferAttribute, b = this.landBase;
     const dk = new THREE.Color("#3a2c3a");
     for (let i = 0; i < p.count; i++) {
-      const d = Math.hypot(p.getX(i) - SPREAD_FROM[0], p.getZ(i) - SPREAD_FROM[1]), k = 0.62 * clamp01((r - d) / 70);
+      const d = Math.hypot(p.getX(i) - SPREAD_FROM[0], p.getZ(i) - SPREAD_FROM[1]), k = 0.6 * clamp01((r - d) / 25);
       c.setXYZ(i, b[i * 3] * (1 - k) + dk.r * k, b[i * 3 + 1] * (1 - k) + dk.g * k, b[i * 3 + 2] * (1 - k) + dk.b * k);
     }
     c.needsUpdate = true;
@@ -482,6 +484,7 @@ export class World {
     this.pi = 0;
     this.puffs.hide(); this.smoke.hide(); this.plumes.hide(); this.fx.hide(); this.fx2.hide(); this.fx3.hide(); this.bubble.hide(); this.flea.hide(); this.rat.hide();
     this.bugs.forEach((b) => b.hide());
+    this.clouds.forEach((c) => (c.visible = true));
     this.fireAt(f, cam, null);
     this.town.visible = false; this.room.visible = false; this.lab.visible = false; this.land.visible = false; this.cart.visible = false;
     this.stool.visible = false;
@@ -564,6 +567,7 @@ export class World {
         const dp = Rp(1.2, -0.25), wv = Math.round((0.5 + 0.5 * Math.sin(f * 0.32)) * 4) / 4;
         this.actor(f, cam, { o: DOC, id: "doc", pos: dp, opts: { expr: f < B(T.purify) ? "stern" : "smile", prop: "herbs", wave: wv } });
         const fill = ramp(f, shot.a, len * 0.8);
+        this.fireAt(f, cam, this.brazierTop, 0.5, 10);
         this.smoke.update(f, cam, [add3(dp, [0.55, 2.05, 0.05]), this.brazierTop, add3(this.brazierTop, [-0.4, 0.3, 0.2]), add3(dp, [-1.5, 1.2, -1.0]), add3(dp, [-3.5, 1.6, -2.0]), add3(dp, [1.6, 1.8, -2.2])],
           { period: 22, life: 70, size: 1.1 + fill, rise: 1.4, drift: [0.4, 0.2], opacity: 0.38 + 0.2 * fill, col: "#e2e0d0", seed: 9 });
         pos = lerp3(Rp(1.5, 2.6, 1.75), Rp(0.9, 5.6, 2.15), smooth(u)); look = lerp3(face(dp, 1.45), Rp(0.6, -2.4, 1.4), smooth(u)); fov = lerp(44, 54, smooth(u));
@@ -625,12 +629,12 @@ export class World {
         this.actor(f, cam, { o: DOC, id: "doc", pos: Tp(0.1, -1.9), opts: { expr: "smile", prop: "posy" } });
         const jump = B(T.fleas);
         const bo = ramp(f, B(T.bacterium) - 2, 10) * (1 + 0.15 * ramp(f, B(T.yersinia), 8)) * (1 - ramp(f, jump - 2, 8));
-        if (bo > 0.01) this.bubble.show(scopeTex(Math.floor(f / 4) % 4), Tp(0.32, 0.72, 0.98), cam, 0.62 * bo);
+        if (bo > 0.01) this.bubble.show(scopeTex(Math.floor(f / 4) % 4), Tp(0.74, 0.72, 0.52), cam, 0.46 * bo);
         const onRat = add3(rp, [0.05, 0.27, 0.02]);
         if (f >= B(T.spread) && f < jump) this.flea.show(fleaTex(0), onRat, cam, 0.1);
         else if (f >= jump) {
-          const j = clamp01((f - jump) / 14), p = lerp3(onRat, Tp(0.62, 1.35, 0.62), j); p[1] += Math.sin(Math.PI * j) * 0.25;
-          this.flea.show(fleaTex(j < 1 ? 1 : 0), p, cam, lerp(0.1, 0.26, j));
+          const j = clamp01((f - jump) / 14), p = lerp3(onRat, Tp(0.88, 0.75, 0.0), j); p[1] += Math.sin(Math.PI * j) * 0.3;
+          this.flea.show(fleaTex(j < 1 ? 1 : 0), p, cam, lerp(0.1, 0.12, j));
         }
         pos = lerp3(Tp(0.62, 2.9, 0.62), Tp(0.6, 2.5, 0.58), smooth(u)); look = Tp(0.36, 0.6, 0.55); fov = 42;
         focus = add3(rp, [0, 0.2, 0]);
@@ -650,8 +654,8 @@ export class World {
       }
       case "families": { // families abandon their homes
         this.light("cold"); this.town.visible = true;
-        const w = (d: number) => lerp(-5.8, 6.4, clamp01(u * 1.05 - d));
-        const fam: [Outfit, string, number][] = [[folk(0), "fa", 0], [{ ...folk(4), build: "kid" }, "fk", 0.05], [folk(1), "fm", 0.11], [{ ...folk(3), build: "kid" }, "fk2", 0.17]];
+        const w = (d: number) => lerp(-4.0, 3.0, clamp01(u * 1.05 - d)) - d * 6;
+        const fam: [Outfit, string, number][] = [[folk(0), "fa", 0], [{ ...folk(4), build: "kid" }, "fk", 0.05], [folk(1), "fm", 0.11], [{ ...folk(3), build: "kid", beard: undefined }, "fk2", 0.17]];
         fam.forEach(([o, id, d]) => this.actor(f, cam, { o, id, pos: Tp(w(d), -1.6 - d * 3), opts: { expr: id === "fk" ? "nervous" : "pained", mode: "stroll", phase: t / 16 + d, facing: 1 } }));
         pos = lerp3(Tp(0.3, 7.6, 1.7), Tp(0.6, 6.8, 1.7), smooth(u)); look = Tp(0.4, -3, 1.3); fov = 50;
         focus = Tp(0.4, -1.8, 1.4);
@@ -692,7 +696,7 @@ export class World {
         const up = f >= B(T.painful), bb = q4(ramp(f, B(T.swelling), 18));
         const ex = f < B(T.look) ? "pained" : f < B(T.arm) ? "nervous" : "shock";
         this.actor(f, cam, { o: { ...DOC, flush: 1, bubo: bb }, id: `doc|b${bb}`, pos: STUDY, opts: { expr: ex, headTilt: f >= B(T.look) ? 9 : 0, ...(up ? { wave: 1 } : {}), blink: false } });
-        pos = lerp3(Rp(-2.8, 3.5, 1.95), Rp(-2.9, 2.9, 1.9), smooth(u)); look = Rp(-3.15, 0.95, 1.45); fov = 44;
+        pos = lerp3(Rp(-3.2, 4.3, 1.95), Rp(-3.3, 3.7, 1.9), smooth(u)); look = Rp(-3.4, 0.95, 1.5); fov = 44;
         pos = add3(pos, kick(f, [B(T.arm)], 0.04));
         focus = Rp(-3.2, 0.95, 1.55);
         break;
@@ -710,11 +714,12 @@ export class World {
       }
       case "europe": { // the Black Death would kill tens of millions across Europe
         this.light("golden"); this.land.visible = true;
-        const R = lerp(20, 560, ramp(f, shot.a + 6, len - 10));
+        const R = lerp(20, 430, clamp01((f - shot.a - 4) / (len - 4)));
+        this.clouds.forEach((c) => (c.visible = false));
         this.spread(R);
         const em: V3[] = [];
-        for (const [x, z] of TOWNS) if (Math.hypot(x - SPREAD_FROM[0], z - SPREAD_FROM[1]) < R - 30 && em.length < 25) em.push(Ep(x, z, hLand(x, z) + 10));
-        this.plumes.update(f, cam, em, { period: 34, life: 64, size: 16, rise: 36, drift: [6, -4], opacity: 0.55, col: "#2e2630", seed: 12 });
+        for (const [x, z] of TOWNS) if (Math.hypot(x - SPREAD_FROM[0], z - SPREAD_FROM[1]) < R - 20 && em.length < 42) for (const h of [8, 22, 36]) em.push(Ep(x + h * 0.15, z - h * 0.1, hLand(x, z) + h));
+        this.plumes.update(f, cam, em, { period: 18, life: 34, size: 13, rise: 16, drift: [3, -2], opacity: 0.36, col: "#4a3e48", seed: 12 });
         pos = lerp3(Ep(-120, 250, 120), Ep(-70, 170, 95), smooth(u)); look = lerp3(Ep(30, -40, 0), Ep(60, -60, 0), smooth(u)); fov = 52;
         focus = Ep(40, -40, 0);
         break;
@@ -733,7 +738,7 @@ export class World {
         const dp = Rp(0.2, 0.3), wv = Math.round((0.5 + 0.5 * Math.sin(f * 0.42)) * 4) / 4;
         this.actor(f, cam, { o: DOC_SICK, id: "docS", pos: dp, opts: { expr: f < B(T.enemy) ? "stern" : "pained", prop: "herbs", wave: wv } });
         const op = ramp(f, B(T.invisible) - 2, 12);
-        const B4: [number, number, number, number][] = [[-1.4, 2.4, 0.4, 1.1], [1.6, 2.7, 0.2, 1.3], [-1.0, 1.2, 0.9, 0.9], [1.3, 1.0, 1.1, 1.0]];
+        const B4: [number, number, number, number][] = [[-0.8, 2.35, 0.4, 0.6], [0.8, 2.6, 0.2, 0.6], [-0.78, 1.2, 0.9, 0.5], [0.8, 0.95, 1.1, 0.55]];
         B4.forEach(([x, y, z, s], i) => this.bugs[i].show(bugTex(Math.floor(f / 4 + i) % 4, i), add3(dp, [x + 0.15 * Math.sin(f * 0.05 + i), y + 0.12 * Math.cos(f * 0.06 + i * 2), z]), cam, s * op, 0.85 * op, i % 2 ? -1 : 1));
         const back = ramp(f, B(T.humanity), 40);
         pos = lerp3(Rp(0.35, 4.0, 1.7), Rp(0.35, 5.6, 1.95), back); look = add3(dp, [0, 1.55, 0]); fov = 48;

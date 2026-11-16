@@ -246,7 +246,7 @@ const FACE: Record<Expr, { eye: [EyeK, EyeK]; brow: [number, number]; mouth: Mou
   relief: { eye: ["happy", "happy"], brow: [-2, 1], mouth: "smileWide" },
   relief_open: { eye: ["happy", "happy"], brow: [-2, 1], mouth: "grin" },
   dazed: { eye: ["spiral", "spiral"], brow: [-3, 2], mouth: "wave" },
-  pained: { eye: ["squeeze", "lid"], brow: [-3, 2], mouth: "teeth" },
+  pained: { eye: ["squeeze", "squeeze"], brow: [-3, 2], mouth: "wave" },
   smile: { eye: ["dot", "dot"], brow: [0, -1], mouth: "smirk" },
   smile_closed: { eye: ["happy", "happy"], brow: [0, -1], mouth: "smile" },
   lick: { eye: ["dot", "dot"], brow: [0, -1], mouth: "lick" },
@@ -534,7 +534,7 @@ const sickFace = (p: Pen, o: Outfit, fx: number, hc: number, u: number, H: Blob)
   }
   if (o.lump) {
     const r = (5 + 11 * o.lump) * u, lx = 300 + 0.78 * H.a, ly = hc + 0.82 * H.b;
-    p.ell(lx, ly, r, r * 0.9, mix(o.skin ?? SKIN, "#d8705a", 0.3), 2.6 * u);
+    p.ell(lx, ly, r, r * 0.9, mix(o.skin ?? SKIN, "#7a2a4a", 0.55), 2.6 * u);
     p.ell(lx - r * 0.3, ly - r * 0.35, r * 0.3, r * 0.2, "rgba(255,255,255,0.35)", 0);
   }
 };
@@ -700,8 +700,9 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
   }
   if (o.bubo && wave !== undefined && mode !== "sit") { // swelling in the raised armpit
     const bx = tcx + 0.92 * T.a, by = chin + 0.3 * HH, r = (6 + 12 * o.bubo) * u;
-    p.ell(bx, by, r, r * 0.85, mix(skin, "#d8705a", 0.35), 2.6 * u);
-    p.ell(bx - r * 0.3, by - r * 0.3, r * 0.3, r * 0.2, "rgba(255,255,255,0.35)", 0);
+    p.ell(bx, by, r, r * 0.85, "#7a2a4a", 2.6 * u);
+    p.ell(bx - r * 0.3, by - r * 0.3, r * 0.3, r * 0.2, "rgba(255,255,255,0.3)", 0);
+    if (o.bubo > 0.5) for (const ang of [-60, -20, 20]) { const a2 = rad(ang); p.stroke([[bx + (r + 4 * u) * Math.cos(a2), by + (r + 4 * u) * Math.sin(a2)], [bx + (r + 13 * u) * Math.cos(a2), by + (r + 13 * u) * Math.sin(a2)]], 2.6 * u); }
   }
   // in front of the body: hands holding props
   for (const a of arms) if (a.front) {
@@ -728,7 +729,7 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
       p.dot(hx, hy + 8 * u, 5.5 * u);
     } else if (prop === "mortar" || prop === "mortar2") {
       const k = prop === "mortar" ? -1 : 1;
-      p.band([[hx - 4 * u, hy - 4 * u], [hx - 4 * u + k * 16 * u, hy - 40 * u]], "#9a8a74", 6 * u, 1.6 * u, "round");
+      p.band([[hx - 4 * u, hy - 2 * u], [hx - 4 * u + k * 10 * u, hy - 26 * u]], "#9a8a74", 11 * u, 1.8 * u, "round");
       p.poly([[hx - 30 * u, hy + 2 * u], [hx + 22 * u, hy + 2 * u], [hx + 14 * u, hy + 24 * u], [hx - 22 * u, hy + 24 * u]], "#b8b0a2", 2.2 * u);
       p.ell(hx - 4 * u, hy + 2 * u, 26 * u, 6 * u, "#5d7a38", 2 * u);
       p.dot(hx - 4 * u, hy - 6 * u, 5.5 * u);
@@ -742,7 +743,7 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
       p.poly([[hx + 24 * u, hy + 10 * u], [hx + 38 * u, hy + 18 * u], [hx + 32 * u, hy + 28 * u], [hx + 20 * u, hy + 20 * u]], "#e7d3a1", 1.5 * u);
       p.dot(hx, hy, 5.5 * u);
     } else if (prop === "bowl") {
-      p.ell(hx - 6 * u, hy - 6 * u, 22 * u, 7 * u, "#c98a4a", 1.8 * u);
+      p.ell(hx - 6 * u, hy - 6 * u, 22 * u, 7 * u, "#8a1a22", 1.8 * u);
       p.poly([[hx - 28 * u, hy - 6 * u], [hx + 16 * u, hy - 6 * u], [hx + 8 * u, hy + 10 * u], [hx - 20 * u, hy + 10 * u]], "#8a5a34", 2.2 * u);
       p.dot(hx, hy + 4 * u, 5.5 * u);
     } else if (prop === "log") {

@@ -60,6 +60,7 @@ const Inner: React.FC<{ kit: Kit }> = ({ kit }) => {
   fpt.set(...focus);
   fx.lens.focus = Math.max(0.3, fpt.sub(cam.position).dot(fwd));
   fx.lens.cInf = shot.cInf;
+  fx.ink.fogInk = shot.grade === "cold" ? 1 : 0.3;
   gradeFor(fx.grade, shot.grade);
   return (
     <>
