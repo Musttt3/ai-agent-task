@@ -855,11 +855,11 @@ export const BEATS: Beat[] = [
     si: 63, set: "valley", light: "day",
     cams: (a) => [
       { f: a, s: ins([0, 1.25, 0], a, { az: 25, d: 0.85, h: 0.6, fov: 30 }) },
-      { f: wf(63, "berubah") - 4, cut: true, s: ins([-0.25, 1.25, 0.1], wf(63, "berubah"), { az: -25, d: 0.8, h: 0.5, fov: 30, roll: -0.06 }) },
+      { f: wf(63, "berubah") - 4, cut: true, s: ins([0, 1.3, 0], wf(63, "berubah"), { az: -30, d: 0.95, h: 0.55, fov: 30, roll: -0.06 }) },
     ],
     ws: () => ({ board: "fish1", gauge: 1, melt: true, lid: 1 }),
     stage: (c) => {
-      c.mark("BOCOR", "#e2453c", 0.25, 1.6, 0.2, 0.4, wf(63, "bocor") - 2);
+      c.mark("BOCOR", "#e2453c", 0.25, 1.45, 0.15, 0.28, wf(63, "bocor") - 2);
     },
   },
   { // 64: "Jumlah dagangan berkurang."
@@ -868,7 +868,7 @@ export const BEATS: Beat[] = [
     ws: () => ({ board: "fish1", gauge: 1, melt: true }),
     stage: (c) => {
       c.P(WHO.kamu, K[0], K[2], { expr: "pained", facing: 1 });
-      c.badge("stok", "STOK: SEDIKIT", "", "#e2453c", "#ffffff", K[0] + 0.55, 1.95, K[2] + 0.1, 0.65, ss(64) + 4);
+      c.badge("stok", "STOK: SEDIKIT", "", "#e2453c", "#ffffff", K[0] + 0.55, 1.7, K[2] + 0.1, 0.65, ss(64) + 4);
     },
   },
   { // 65: "Sementara orang-orang terus datang meminta makanan dingin yang kemarin mereka cicipi."
@@ -917,8 +917,8 @@ export const BEATS: Beat[] = [
   { // 69: "Dia menunjuk ikan kecil dan ikan besar."
     si: 69, set: "valley", light: "day",
     cams: (a) => [
-      { f: a, s: ins([F[0] - 0.45, 1.2, F[2] + 0.1], a, { az: -15, d: 1.0, h: 0.1, fov: 30 }) },
-      { f: wf(69, "besar") - 4, cut: true, s: ins([F[0] + 0.45, 1.2, F[2] + 0.1], wf(69, "besar"), { az: 15, d: 1.2, h: 0.1, fov: 30, roll: -0.05 }) },
+      { f: a, s: frame(F, a, 2.0, 1.25, 1.1, { az: -15, fov: 30, rate: 0.004 }) },
+      { f: wf(69, "besar") - 4, cut: true, s: frame(F, wf(69, "besar"), 1.8, 1.2, 1.05, { az: 15, fov: 30, roll: -0.05, rate: 0.004, punch: 0.01 }) },
     ],
     ws: () => ({ board: "fish2", gauge: 1, melt: true }),
     stage: (c) => {
@@ -933,7 +933,7 @@ export const BEATS: Beat[] = [
     stage: (c) => {
       c.P(WHO.purba, F[0] - 0.3, F[2], { expr: "stern", prop: "fishbig", facing: -1 });
       c.P(WHO.kamu, K[0] + 0.3, K[2] + 0.3, { expr: "nervous", facing: 1 });
-      c.badge("sama", "KECIL = BESAR?", "", "#f2efe6", "#241726", 0, 2.45, 1.0, 1.0, wf(70, "sama") - 2);
+      c.badge("sama", "KECIL = BESAR?", "", "#f2efe6", "#241726", 0, 2.05, 1.2, 0.9, wf(70, "sama") - 2);
     },
   },
   { // 71: "Kamu tidak tahu cara menjawabnya."
@@ -967,10 +967,10 @@ export const BEATS: Beat[] = [
       { f: wf(73, "matahari") - 4, cut: true, s: low(K, wf(73, "matahari"), { az: 30, d: 2.4, ly: 1.5, roll: 0.08 }) },
     ],
     kicks: [wf(73, "matahari")],
-    ws: () => ({ board: "fish2", gauge: 1 }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 1 }),
     stage: (c) => {
       c.P(WHO.kamu, K[0], K[2], { expr: "pained", facing: 1 });
-      c.badge("m2", "MASALAH #2", "MATAHARI", "#e2453c", "#ffffff", K[0] + 0.8, 2.05, K[2] + 0.1, 0.9, wf(73, "matahari") - 2);
+      c.badge("m2", "MASALAH #2", "MATAHARI", "#e2453c", "#ffffff", K[0] + 0.8, 1.8, K[2] + 0.1, 0.9, wf(73, "matahari") - 2);
       c.puffs("panas", K[0], 0.2, K[2] + 0.4, { n: 4, period: 30, life: 40, size: 0.35, rise: 1.0, drift: [0, 0], col: "#ffe2a8" });
     },
   },
@@ -980,7 +980,7 @@ export const BEATS: Beat[] = [
       { f: a, s: two([-0.6, 0, 0.9], a, { az: 25, d: 3.6, h: 1.5 }) },
       { f: wf(74, "udara") - 4, cut: true, s: ins([0, 1.3, 0], wf(74, "udara"), { az: 20, d: 1.1, h: 0.5, fov: 30 }) },
     ],
-    ws: (f) => ({ board: "fish2", gauge: 1, lid: f < wf(74, "udara") - 4 ? (Math.floor((f - ss(74)) / 14) % 2 ? 1 : 0.15) : 1 }),
+    ws: (f) => ({ melt: true, board: "fish2", gauge: 1, lid: f < wf(74, "udara") - 4 ? (Math.floor((f - ss(74)) / 14) % 2 ? 1 : 0.15) : 1 }),
     stage: (c) => {
       c.P(WHO.kamu, -0.55, 0.85, { expr: "nervous", prop: "reach", facing: 1 });
       [[-1.8, 1.8], [-2.6, 2.3]].forEach(([x, z], i) => c.P(WHO.tribe(i + 2), x, z, { expr: "grin", prop: "fish", facing: 1 }));
@@ -994,7 +994,7 @@ export const BEATS: Beat[] = [
       { f: a, s: ins([GEN[0], 0.4, GEN[2] + 0.1], a, { az: 30, d: 1.6, h: 0.2, fov: 30, orbit: -15 }) },
       { f: wf(75, "suhu") - 4, cut: true, s: ins([GEN[0] + 0.08, 0.3, GEN[2] + 0.25], wf(75, "suhu"), { az: 10, d: 0.85, h: 0.05, fov: 30 }) },
     ],
-    ws: (f) => ({ board: "fish2", gauge: f < wf(75, "suhu") ? 1 : 2 }),
+    ws: (f) => ({ melt: true, board: "fish2", gauge: f < wf(75, "suhu") ? 1 : 2 }),
     stage: (c) => {
       c.mark("BRRR", "#ffd43b", GEN[0] + 0.1, 0.95, GEN[2] + 0.35, 0.55, ss(75) + 2);
       c.badge("lembur", "LEMBUR!", "", "#ffd43b", "#241726", GEN[0] - 0.3, 0.95, GEN[2] + 0.3, 0.5, wf(75, "lama") - 2);
@@ -1007,7 +1007,7 @@ export const BEATS: Beat[] = [
       { f: wf(76, "perkiraanmu") - 4, cut: true, s: cu(K, wf(76, "perkiraanmu"), { az: 30, d: 1.5 }) },
     ],
     kicks: [wf(76, "cepat")],
-    ws: (f) => ({ board: "fish2", gauge: f < wf(76, "menipis") ? 2 : 3 }),
+    ws: (f) => ({ melt: true, board: "fish2", gauge: f < wf(76, "menipis") ? 2 : 3 }),
     stage: (c) => {
       c.P(WHO.kamu, K[0], K[2], { expr: "shock", facing: 1 });
       c.badge("bbm", "BBM: MENIPIS", "", "#e2453c", "#ffffff", GEN[0] - 0.1, 0.68, GEN[2] + 0.4, 0.45, wf(76, "menipis") - 2, wf(76, "perkiraanmu") - 4);
@@ -1015,11 +1015,11 @@ export const BEATS: Beat[] = [
   },
   { // 77: "Kamu mencoba mengurangi jam berjualan."
     si: 77, set: "valley", light: "day", sun: [10, 70],
-    cams: (a) => [{ f: a, s: ms([0, 0, 0.6], a, { az: -20, d: 3.4, orbit: 12 }) }],
-    ws: (f) => ({ board: "fish2", gauge: 3, top: f >= wf(77, "jam") ? "closed" : null }),
+    cams: (a) => [{ f: a, s: ms([-0.6, 0, 0.5], a, { az: -20, d: 3.9, orbit: 12 }) }],
+    ws: (f) => ({ melt: true, board: "fish2", gauge: 3, top: f >= wf(77, "jam") ? "closed" : null }),
     stage: (c) => {
       c.P(WHO.kamu, K[0], K[2], { expr: "stern", prop: "point_up", facing: 1 });
-      c.badge("jam", "BUKA: 2 JAM", "", "#f2efe6", "#241726", K[0] + 0.7, 2.05, K[2] + 0.1, 0.75, wf(77, "jam") - 2);
+      c.badge("jam", "BUKA: 2 JAM", "", "#f2efe6", "#241726", K[0] + 0.7, 1.75, K[2] + 0.1, 0.75, wf(77, "jam") - 2);
     },
   },
   { // 78: "Tetapi para pembeli justru berdatangan ketika hari paling panas."
@@ -1028,7 +1028,7 @@ export const BEATS: Beat[] = [
       { f: a, s: high([-1.5, 0, 2.0], a, { az: 30, d: 6.0, h: 6.5, rise: 1.0 }) },
       { f: wf(78, "panas") - 4, cut: true, s: two([-1.6, 0, 1.8], wf(78, "panas"), { az: -25, d: 4.0, h: 1.4 }) },
     ],
-    ws: () => ({ board: "fish2", gauge: 3, top: "closed" }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 3, top: "closed" }),
     stage: (c) => {
       const k = Math.min(1, (c.f - c.a) / 100);
       const q: [number, number][] = [[-1.4, 1.7], [-2.2, 2.3], [-0.6, 2.4], [-3.0, 2.9], [-1.6, 3.2], [0.4, 2.8], [-3.8, 3.5]];
@@ -1043,7 +1043,7 @@ export const BEATS: Beat[] = [
       { f: wf(79, "bergantian") - 4, cut: true, s: two([0, 0, 1.0], wf(79, "bergantian"), { az: 40, d: 3.6, h: 1.4, orbit: -14 }) },
     ],
     kicks: [wf(79, "mengetuknya"), wf(79, "mengetuknya") + 9, wf(79, "bergantian") + 4],
-    ws: () => ({ board: "fish2", gauge: 3, top: "closed" }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 3, top: "closed" }),
     stage: (c) => {
       const knock = (i: number) => (Math.floor((c.f + i * 5) / 5) % 3 === 0 ? 1 : 0);
       [[-0.55, 0.95], [0.55, 0.95], [-1.2, 1.4]].forEach(([x, z], i) => c.P(i === 2 ? WHO.kid(i) : WHO.tribe(i + 2), x, z, { expr: "stern", prop: "reach", wave: knock(i), facing: x < 0 ? 1 : -1 }));
@@ -1059,7 +1059,7 @@ export const BEATS: Beat[] = [
       { f: wf(80, "menjaga") - 4, cut: true, s: two([-0.6, 0, 1.6], wf(80, "menjaga"), { az: -30, d: 4.2, h: 1.5 }) },
     ],
     kicks: [wf(80, "mengangkat")],
-    ws: () => ({ board: "fish2", gauge: 3, top: "closed" }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 3, top: "closed" }),
     stage: (c) => {
       c.P(WHO.purba, F[0], F[2], { expr: "stern", prop: "spear", facing: -1, hop: [wf(80, "mengangkat")] });
       [[-1.0, 2.0], [-1.8, 2.5], [-2.6, 3.0]].forEach(([x, z], i) => c.P(WHO.tribe(i + 3), x, z, { expr: "nervous", facing: 1 }));
@@ -1069,7 +1069,7 @@ export const BEATS: Beat[] = [
   { // 81: "Bukan untuk mengusir hewan."
     si: 81, set: "valley", light: "day", sun: [10, 70],
     cams: (a) => [{ f: a, s: cu(F, a, { az: -15, d: 1.5, rate: 0.006 }) }],
-    ws: () => ({ board: "fish2", gauge: 3, top: "closed" }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 3, top: "closed" }),
     stage: (c) => {
       c.P(WHO.purba, F[0], F[2], { expr: "stern", prop: "spear", facing: -1 });
       c.mark("BUKAN SERIGALA", "#e2453c", F[0] + 0.5, 2.15, F[2], 0.6, wf(81, "hewan") - 2);
@@ -1082,7 +1082,7 @@ export const BEATS: Beat[] = [
       { f: wf(82, "tersendat") - 4, cut: true, s: ins([GEN[0], 0.4, GEN[2] + 0.1], wf(82, "tersendat"), { az: 30, d: 1.4, h: 0.2, fov: 30, roll: -0.06 }) },
     ],
     kicks: [wf(82, "tersendat") + 4, wf(82, "tersendat") + 14],
-    ws: (f) => ({ board: "fish2", gauge: 3, top: "closed", genOn: f < wf(82, "tersendat") || Math.floor(f / 6) % 3 !== 0 }),
+    ws: (f) => ({ melt: true, board: "fish2", gauge: 3, top: "closed", genOn: f < wf(82, "tersendat") || Math.floor(f / 6) % 3 !== 0 }),
     stage: (c) => {
       c.mark("TEK..TEK", "#f2efe6", GEN[0] + 0.1, 0.95, GEN[2] + 0.35, 0.55, wf(82, "tersendat"));
       c.puffs("asap", GEN[0] + 0.35, 0.9, GEN[2] - 0.1, { n: 3, period: 18, life: 30, size: 0.3, rise: 0.6, drift: [0.1, 0], col: "#5a5560", on: c.f >= wf(82, "tersendat") });
@@ -1091,7 +1091,7 @@ export const BEATS: Beat[] = [
   { // 83: "Kamu mencoba menyalakannya lagi."
     si: 83, set: "valley", light: "golden", sun: [-50, 16],
     cams: (a) => [{ f: a, s: ms([GEN[0] + 0.75, 0, GEN[2] + 0.45], a, { az: 40, d: 2.6, orbit: -10 }) }],
-    ws: () => ({ board: "fish2", gauge: 3, top: "closed", genOn: false }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 3, top: "closed", genOn: false }),
     stage: (c) => {
       const tug = Math.floor((c.f - ss(83)) / 6) % 2;
       c.P(WHO.kamu, GEN[0] + 0.75, GEN[2] + 0.45, { expr: "pained", prop: "reach", wave: tug, facing: -1 });
@@ -1105,7 +1105,7 @@ export const BEATS: Beat[] = [
       { f: wf(84, "mati") - 3, cut: true, s: cu([GEN[0] + 0.75, 0, GEN[2] + 0.45], wf(84, "mati"), { az: 35, d: 1.5, roll: 0.06 }) },
     ],
     kicks: [wf(84, "hidup")],
-    ws: (f) => ({ board: "fish2", gauge: 4, top: "closed", genOn: f >= wf(84, "hidup") && f < wf(84, "mati") }),
+    ws: (f) => ({ melt: true, board: "fish2", gauge: 4, top: "closed", genOn: f >= wf(84, "hidup") && f < wf(84, "mati") }),
     stage: (c) => {
       c.P(WHO.kamu, GEN[0] + 0.75, GEN[2] + 0.45, { expr: c.f < wf(84, "mati") ? "grin" : "shock", facing: -1 });
       if (c.f < wf(84, "mati")) c.mark("BRRR!", "#ffd43b", GEN[0] + 0.1, 0.95, GEN[2] + 0.35, 0.55, wf(84, "hidup"));
@@ -1116,7 +1116,7 @@ export const BEATS: Beat[] = [
     si: 85, set: "valley", light: "golden", sun: [-50, 16],
     cams: (a) => [{ f: a, s: ins([GEN[0] + 0.08, 0.3, GEN[2] + 0.25], a, { az: 10, d: 0.8, h: 0.05, fov: 30, punch: 0.014, roll: -0.05 }) }],
     kicks: [wf(85, "kosong")],
-    ws: () => ({ board: "fish2", gauge: 4, top: "closed", genOn: false }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 4, top: "closed", genOn: false }),
     stage: (c) => {
       c.badge("kosong", "TANGKI: KOSONG", "", "#e2453c", "#ffffff", GEN[0] + 0.08, 0.6, GEN[2] + 0.35, 0.4, wf(85, "kosong") - 2);
     },
@@ -1124,7 +1124,7 @@ export const BEATS: Beat[] = [
   { // 86: "Kamu terdiam."
     si: 86, set: "valley", light: "golden", sun: [-50, 16],
     cams: (a) => [{ f: a, s: cu([GEN[0] + 0.75, 0, GEN[2] + 0.45], a, { az: 5, d: 1.4, rate: 0.006 }) }],
-    ws: () => ({ board: "fish2", gauge: 4, top: "closed", genOn: false }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 4, top: "closed", genOn: false }),
     stage: (c) => {
       c.P(WHO.kamu, GEN[0] + 0.75, GEN[2] + 0.45, { expr: "dazed", facing: -1 });
     },
@@ -1132,7 +1132,7 @@ export const BEATS: Beat[] = [
   { // 87: "Tidak ada bengkel."
     si: 87, set: "valley", light: "golden", sun: [-50, 16],
     cams: (a) => [{ f: a, s: frame([-4, 0, -12], a, 14, 2.0, 1.6, { az: 180, fov: 34, rate: 0.003 }) }],
-    ws: () => ({ board: "fish2", gauge: 4, top: "closed", genOn: false }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 4, top: "closed", genOn: false }),
     stage: (c) => {
       c.badge("bengkel", "BENGKEL?", "TIDAK ADA", "#e2453c", "#ffffff", -4, 2.5, -10, 1.6, ss(87));
     },
@@ -1140,7 +1140,7 @@ export const BEATS: Beat[] = [
   { // 88: "Tidak ada SPBU."
     si: 88, set: "valley", light: "golden", sun: [-50, 16],
     cams: (a) => [{ f: a, s: frame([6, 0, -12], a, 14, 2.0, 1.6, { az: 150, fov: 34, rate: 0.003, roll: 0.05 }) }],
-    ws: () => ({ board: "fish2", gauge: 4, top: "closed", genOn: false }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 4, top: "closed", genOn: false }),
     stage: (c) => {
       c.badge("spbu", "SPBU?", "TIDAK ADA", "#e2453c", "#ffffff", 6, 2.5, -10, 1.6, ss(88));
     },
@@ -1151,7 +1151,7 @@ export const BEATS: Beat[] = [
       { f: a, s: two([-4.8, 0, -2.2], a, { az: 30, d: 4.6, h: 1.5 }) },
       { f: wf(89, "lembah") - 6, cut: true, s: high([-1, 0, -1], wf(89, "lembah"), { az: 20, d: 9, h: 9, ly: 0.5, rise: 2.5, rate: 0.0012 }) },
     ],
-    ws: () => ({ board: "fish2", gauge: 4, top: "closed", genOn: false, fire: true }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 4, top: "closed", genOn: false, fire: true }),
     stage: (c) => {
       c.P(WHO.tribe(1), -5.9, -1.9, { expr: "dazed", mode: "sit" });
       c.P(WHO.tribe(5), -4.4, -1.8, { expr: "neutral", mode: "sit", prop: "stone" });
@@ -1165,7 +1165,7 @@ export const BEATS: Beat[] = [
       { f: a, s: ins([0, 1.3, 0.45], a, { az: -10, d: 1.4, h: 0.3, fov: 30 }) },
       { f: wf(90, "menghangat") - 4, cut: true, s: ins([0, 1.25, 0], wf(90, "menghangat"), { az: 20, d: 0.9, h: 0.55, fov: 30, roll: 0.05 }) },
     ],
-    ws: (f) => ({ board: "fish2", gauge: 4, genOn: false, lid: f >= wf(90, "menghangat") - 4 ? 1 : 0, top: "closed" }),
+    ws: (f) => ({ melt: true, board: "fish2", gauge: 4, genOn: false, lid: f >= wf(90, "menghangat") - 4 ? 1 : 0, top: "closed" }),
     stage: (c) => {
       c.badge("jam", "KIRA-KIRA 4 JAM LAGI", "", "#ff8a3d", "#ffffff", 0.35, 1.9, 0.45, 0.7, wf(90, "jam") - 2, wf(90, "menghangat") - 4);
       c.puffs("hangat2", 0, 1.4, 0, { n: 3, period: 24, life: 40, size: 0.2, rise: 0.3, drift: [0.05, 0.05], col: "#ffd9a8", on: c.f >= wf(90, "menghangat") });
@@ -1175,7 +1175,7 @@ export const BEATS: Beat[] = [
     si: 91, set: "valley", light: "golden", sun: [-50, 16],
     cams: (a) => [{ f: a, s: low([-0.2, 0, 1.2], a, { az: -30, d: 3.0, ly: 1.3, roll: -0.09, orbit: 30, rate: 0.005 }) }],
     kicks: [ss(91) + 2],
-    ws: () => ({ board: "fish2", gauge: 4, genOn: false, top: "closed" }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 4, genOn: false, top: "closed" }),
     stage: (c) => {
       const k = (c.f - ss(91)) / 40, x = -0.2 + 1.2 * Math.sin(k * Math.PI);
       c.P(WHO.kamu, x, 1.2, { expr: "shock", mode: "march", phase: c.t * 3, facing: Math.cos(k * Math.PI) > 0 ? 1 : -1 });
@@ -1185,7 +1185,7 @@ export const BEATS: Beat[] = [
   { // 92: "Gerobak didorong ke tempat teduh."
     si: 92, set: "valley", light: "golden", sun: [-50, 16],
     cams: (a) => [{ f: a, s: frame([-3.5, 0, -2.4], a, 8.0, 2.4, 0.9, { az: 60, fov: 32, orbit: -12, rate: 0.0016 }) }],
-    ws: (f) => { const k = Math.max(0, Math.min(1, (f - ss(92)) / 50)); return { board: "fish2", gauge: 4, genOn: false, top: "closed", cart: [CSH[0] * k, 0, CSH[2] * k] as V3 }; },
+    ws: (f) => { const k = Math.max(0, Math.min(1, (f - ss(92)) / 50)); return { melt: true, board: "fish2", gauge: 4, genOn: false, top: "closed", cart: [CSH[0] * k, 0, CSH[2] * k] as V3 }; },
     stage: (c) => {
       const k = Math.max(0, Math.min(1, (c.f - ss(92)) / 50)), cx = CSH[0] * k, cz = CSH[2] * k;
       c.P(WHO.kamu, cx + 0.95, cz + 0.65, { expr: "pained", mode: k < 1 ? "march" : "stand", phase: c.t * 1.4, facing: -1, prop: "reach" });
@@ -1199,7 +1199,7 @@ export const BEATS: Beat[] = [
       { f: a, s: ms([CSH[0], 0, CSH[2] + 0.6], a, { az: 30, d: 3.0 }) },
       { f: wf(93, "rapat") - 4, cut: true, s: ins([CSH[0], 1.3, CSH[2] + 0.4], wf(93, "rapat"), { az: 10, d: 1.0, h: 0.2, fov: 30 }) },
     ],
-    ws: () => ({ board: "fish2", gauge: 4, genOn: false, top: "closed", cart: CSH }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 4, genOn: false, top: "closed", cart: CSH }),
     stage: (c) => {
       c.P(WHO.kamu, CSH[0] - 0.3, CSH[2] + 0.75, { expr: "pained", prop: "reach", facing: 1 });
       c.P(WHO.purba, CSH[0] + 0.5, CSH[2] + 0.75, { expr: "stern", prop: "reach", facing: -1 });
@@ -1212,7 +1212,7 @@ export const BEATS: Beat[] = [
       { f: a, s: frame([CSH[0], 0, CSH[2]], a, 5.0, 1.8, 1.0, { az: -30, fov: 32, orbit: 15 }) },
       { f: wf(94, "suhu") - 4, cut: true, s: ins([CSH[0] + 0.35, 1.2, CSH[2] + 0.45], wf(94, "suhu"), { az: 15, d: 1.1, h: 0.1, fov: 30 }) },
     ],
-    ws: () => ({ board: "fish2", gauge: 4, genOn: false, top: "closed", cart: CSH }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 4, genOn: false, top: "closed", cart: CSH }),
     stage: (c) => {
       c.P(WHO.kamu, CSH[0] - 0.3, CSH[2] + 0.85, { expr: "nervous", mode: "sit" });
       const k = Math.max(0, Math.min(1, (c.f - wf(94, "kenaikan")) / 50));
@@ -1222,7 +1222,7 @@ export const BEATS: Beat[] = [
   { // 95: "Bukan menciptakan dingin baru."
     si: 95, set: "valley", light: "golden", sun: [-50, 16],
     cams: (a) => [{ f: a, s: cu([CSH[0] - 0.3, 0, CSH[2] + 0.85], a, { az: 20, d: 1.6, rate: 0.005 }) }],
-    ws: () => ({ board: "fish2", gauge: 4, genOn: false, top: "closed", cart: CSH }),
+    ws: () => ({ melt: true, board: "fish2", gauge: 4, genOn: false, top: "closed", cart: CSH }),
     stage: (c) => {
       c.P(WHO.kamu, CSH[0] - 0.3, CSH[2] + 0.85, { expr: "pained", mode: "sit" });
       c.badge("dingin", "BUKAN DINGIN BARU", "", "#241726", "#bfe8ff", CSH[0] + 0.35, 1.55, CSH[2] + 0.8, 0.7, wf(95, "dingin") - 2);
