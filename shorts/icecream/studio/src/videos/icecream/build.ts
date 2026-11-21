@@ -1,8 +1,9 @@
-// Procedural 3D sets & props for "Perbedaan Saham vs Kripto"
+// Procedural 3D sets & props for "Es Krim di Zaman Purba" (helpers from the 2d-in-3d-animation-agent template)
 // Built on the proven two-tone Lambert + InkPass + hand-painted Canvas2D texture pipeline.
 import * as THREE from "three";
 import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 import { rng, ctex, rep, grassHD, stoneHD, planksHD, beamHD } from "./paint";
+export { rng, ctex, rep };
 import { twoTone } from "./shade";
 import { NOINK } from "./ink";
 
@@ -77,746 +78,238 @@ export const addTree = (b: Batch, x: number, y: number, z: number, h: number, se
   put(0, 0.16 * h, 0, 0.19 * h);
 };
 
-/** Helper to draw auto-fitted text inside Canvas2D textures so it never clips */
-const fitText = (
-  g: CanvasRenderingContext2D,
-  text: string,
-  cx: number,
-  cy: number,
-  maxW: number,
-  startPx: number,
-  weight = "900",
-  family = "sans-serif"
-) => {
-  let sz = startPx;
-  g.font = `${weight} ${sz}px ${family}`;
-  while (g.measureText(text).width > maxW && sz > 16) {
-    sz -= 2;
-    g.font = `${weight} ${sz}px ${family}`;
-  }
+// ---------------- text on painted signs (Poppins Black, loaded by the composition before the world is built) ----------------
+export const FONT = "'PoppinsBlack', 'Segoe UI', Arial, sans-serif";
+const fit = (g: CanvasRenderingContext2D, text: string, cx: number, cy: number, maxW: number, px: number) => {
+  let sz = px;
+  g.font = `900 ${sz}px ${FONT}`;
+  while (g.measureText(text).width > maxW && sz > 14) { sz -= 2; g.font = `900 ${sz}px ${FONT}`; }
   g.fillText(text, cx, cy);
 };
-
-// ---------------- Hand-Painted Custom Canvas2D Textures ----------------
-
-/** Polished cream & emerald marble floor tiles for Bursa Efek Hall */
-export const marbleTileTex = () => ctex("sahamMarbleTileHD", 1024, 1024, (g, r) => {
-  const S = 1024, N = 4, T = S / N;
-  g.fillStyle = "#b5aa99"; g.fillRect(0, 0, S, S);
-  const cols = ["#f5efe6", "#eee7dc", "#f8f3eb", "#e9e0d2"];
-  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
-    const px = x * T, py = y * T;
-    g.fillStyle = cols[(x + y * 3) % cols.length];
-    g.fillRect(px + 5, py + 5, T - 10, T - 10);
-    g.strokeStyle = "rgba(180, 160, 130, 0.35)";
-    g.lineWidth = 3;
-    g.beginPath();
-    g.moveTo(px + 20, py + 40 + r() * 80);
-    g.quadraticCurveTo(px + 128, py + 120, px + 230, py + 60 + r() * 120);
-    g.stroke();
-    if ((x + y) % 2 === 0) {
-      g.fillStyle = "#1f5a4c";
-      g.beginPath();
-      g.moveTo(px + T / 2, py + T / 2 - 18);
-      g.lineTo(px + T / 2 + 18, py + T / 2);
-      g.lineTo(px + T / 2, py + T / 2 + 18);
-      g.lineTo(px + T / 2 - 18, py + T / 2);
-      g.closePath();
-      g.fill();
-    }
-  }
-});
-
-/** Dark Cyberpunk Neon Grid Floor for Blockchain Lab & Volatile Room */
-export const cyberGridTex = (lineCol = "#00e5ff", bgCol = "#16192b") => ctex("cyberGrid_" + lineCol, 1024, 1024, (g) => {
-  g.fillStyle = bgCol; g.fillRect(0, 0, 1024, 1024);
-  const N = 4, T = 1024 / N;
-  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
-    const px = x * T, py = y * T;
-    g.fillStyle = (x + y) % 2 === 0 ? "#1d2238" : "#181c30";
-    g.fillRect(px + 6, py + 6, T - 12, T - 12);
-    g.strokeStyle = lineCol;
-    g.lineWidth = 4;
-    g.strokeRect(px + 4, py + 4, T - 8, T - 8);
-  }
-});
-
-/** Warm patterned rug for Auto Rejection & Fundamental Studio */
-export const rugTex = (baseCol = "#8f2d38", trimCol = "#e0a84c") => ctex("sahamRug_" + baseCol, 512, 512, (g) => {
-  g.fillStyle = baseCol; g.fillRect(0, 0, 512, 512);
-  g.strokeStyle = trimCol; g.lineWidth = 18;
-  g.strokeRect(28, 28, 456, 456);
-  g.strokeStyle = "#fff5dc"; g.lineWidth = 6;
-  g.strokeRect(54, 54, 404, 404);
-  g.fillStyle = trimCol;
-  g.beginPath(); g.ellipse(256, 256, 135, 90, 0, 0, Math.PI * 2); g.fill();
-});
-
-/** Plinth Signboard texture (auto-fitted) */
-export const plinthSignTex = (title: string, sub: string, bg: string, badgeCol: string) =>
-  ctex("sahamSign_" + title + sub, 512, 256, (g) => {
-    g.fillStyle = bg; g.fillRect(0, 0, 512, 256);
-    g.strokeStyle = "#241726"; g.lineWidth = 14;
-    g.strokeRect(8, 8, 496, 240);
-    g.fillStyle = "#ffffff"; g.textAlign = "center";
-    fitText(g, title, 256, 82, 456, 46);
-    g.fillStyle = badgeCol;
-    g.fillRect(28, 118, 456, 102);
-    g.strokeRect(28, 118, 456, 102);
-    g.fillStyle = "#241726";
-    fitText(g, sub, 256, 184, 430, 40);
+const INKC = "#241726";
+/** board texture: up to 3 lines on a coloured panel with an ink frame */
+export const signTex = (key: string, lines: string[], bg: string, fg: string, w = 1024, h = 512, accent?: string) =>
+  ctex("sign_" + key, w, h, (g) => {
+    g.fillStyle = bg; g.fillRect(0, 0, w, h);
+    g.strokeStyle = INKC; g.lineWidth = Math.round(h * 0.045); g.strokeRect(g.lineWidth / 2, g.lineWidth / 2, w - g.lineWidth, h - g.lineWidth);
+    g.textAlign = "center"; g.textBaseline = "middle";
+    const n = lines.length;
+    lines.forEach((t, i) => {
+      g.fillStyle = i === n - 1 && accent ? accent : fg;
+      fit(g, t, w / 2, (h * (i + 0.5)) / n + (n === 1 ? 0 : (i - (n - 1) / 2) * -h * 0.04), w * 0.86, Math.round((h / n) * (i === 0 ? 0.62 : 0.5)));
+    });
   });
+/** carved stone tablet */
+const tabletTex = (lines: string[]) => ctex("tablet_" + lines.join("|"), 1024, 640, (g, r) => {
+  g.fillStyle = "#a99c88"; g.fillRect(0, 0, 1024, 640);
+  for (let i = 0; i < 60; i++) { g.fillStyle = r() < 0.5 ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"; g.beginPath(); g.arc(r() * 1024, r() * 640, 20 + r() * 60, 0, 7); g.fill(); }
+  g.textAlign = "center"; g.textBaseline = "middle";
+  lines.forEach((t, i) => { g.fillStyle = "#3a2e26"; fit(g, t, 512, 200 + i * 230, 900, i === 0 ? 190 : 110); });
+});
+/** fuel gauge panel: needle level 0..1 */
+export const gaugeTex = (level: number) => ctex("gauge" + level.toFixed(2), 512, 256, (g) => {
+  g.fillStyle = "#f2efe6"; g.fillRect(0, 0, 512, 256);
+  g.strokeStyle = INKC; g.lineWidth = 14; g.strokeRect(7, 7, 498, 242);
+  g.textAlign = "center"; g.textBaseline = "middle"; g.fillStyle = INKC; fit(g, "BENSIN", 256, 52, 400, 54);
+  const bars = 5, on = Math.round(level * bars);
+  for (let i = 0; i < bars; i++) {
+    g.fillStyle = i < on ? (on <= 1 ? "#e2453c" : on <= 2 ? "#f2a33a" : "#3fb950") : "#d9d4c8";
+    g.fillRect(48 + i * 86, 110, 70, 100); g.strokeStyle = INKC; g.lineWidth = 6; g.strokeRect(48 + i * 86, 110, 70, 100);
+  }
+});
+/** striped awning cloth */
+const stripeTex = (a: string, b: string) => ctex("stripe" + a + b, 256, 64, (g) => { for (let i = 0; i < 8; i++) { g.fillStyle = i % 2 ? a : b; g.fillRect(i * 32, 0, 32, 64); } });
+/** school facade: cream wall, blue window frames, a door */
+const schoolTex = () => ctex("schoolFacade", 2048, 512, (g, r) => {
+  g.fillStyle = "#f1e6c8"; g.fillRect(0, 0, 2048, 512);
+  g.fillStyle = "#c9a86a"; g.fillRect(0, 440, 2048, 72);
+  for (let i = 0; i < 8; i++) {
+    const x = 70 + i * 250;
+    if (i === 4) { g.fillStyle = "#6a4a2a"; g.fillRect(x, 200, 140, 260); g.strokeStyle = INKC; g.lineWidth = 8; g.strokeRect(x, 200, 140, 260); continue; }
+    g.fillStyle = "#8ec4e8"; g.fillRect(x, 150, 160, 200); g.strokeStyle = "#2f5aa8"; g.lineWidth = 14; g.strokeRect(x, 150, 160, 200);
+    g.beginPath(); g.moveTo(x + 80, 150); g.lineTo(x + 80, 350); g.moveTo(x, 250); g.lineTo(x + 160, 250); g.stroke();
+  }
+  for (let i = 0; i < 40; i++) { g.fillStyle = "rgba(120,90,60,0.08)"; g.fillRect(r() * 2048, r() * 440, 4, 20 + r() * 40); }
+});
+/** sand */
+const sandTex = () => ctex("sand", 512, 512, (g, r) => {
+  g.fillStyle = "#e8d3a2"; g.fillRect(0, 0, 512, 512);
+  for (let i = 0; i < 900; i++) { g.fillStyle = r() < 0.5 ? "#d8bf8a" : "#f2e2b8"; g.fillRect(r() * 512, r() * 512, 3, 3); }
+});
+const asphaltTex = () => ctex("asphalt", 512, 512, (g, r) => {
+  g.fillStyle = "#5a5a60"; g.fillRect(0, 0, 512, 512);
+  for (let i = 0; i < 1500; i++) { g.fillStyle = r() < 0.5 ? "#4e4e54" : "#66666c"; g.fillRect(r() * 512, r() * 512, 3, 3); }
+});
 
-/** Overhead Banner Texture (compact width so it NEVER clips 9:16 edges) */
-export const headerBannerTex = (line1: string, line2: string, bg: string, topCol: string) =>
-  ctex("sahamHdr_" + line1, 1024, 256, (g) => {
-    g.fillStyle = bg; g.fillRect(0, 0, 1024, 256);
-    g.strokeStyle = "#241726"; g.lineWidth = 16;
-    g.strokeRect(12, 12, 1000, 232);
-    g.fillStyle = topCol; g.textAlign = "center";
-    fitText(g, line1, 512, 110, 940, 68);
-    g.fillStyle = "#ffffff";
-    fitText(g, line2, 512, 196, 940, 48);
+// ---------------- the ice cream cart (built once, placed per set) ----------------
+export type Cart = { root: THREE.Group; lid: THREE.Group; stock: THREE.Group; melt: THREE.Group; signs: Record<string, THREE.Mesh>; cold: THREE.Vector3 };
+export const buildCart = (): Cart => {
+  const root = new THREE.Group(), b = new Batch();
+  const white = lam("cartWhite", () => ({ color: "#f4f6f8" })), blue = lam("cartBlue", () => ({ color: "#2f7fd0" })), dark = lam("cartDark", () => ({ color: "#2b2b33" }));
+  const steel = lam("cartSteel", () => ({ color: "#b9c2cc" })), awn = lam("cartAwn", () => ({ map: rep(stripeTex("#e2453c", "#f8f4ec"), 3, 1) })), pole = lam("cartPole", () => ({ color: "#d9dde0" }));
+  b.add(new THREE.BoxGeometry(1.7, 0.86, 0.86).translate(0, 0.86, 0), white);
+  b.add(new THREE.BoxGeometry(1.74, 0.12, 0.9).translate(0, 0.42, 0), blue);
+  b.add(new THREE.BoxGeometry(1.74, 0.08, 0.9).translate(0, 1.27, 0), blue);
+  for (const s of [-1, 1]) {
+    b.add(new THREE.CylinderGeometry(0.36, 0.36, 0.08, 20).rotateZ(Math.PI / 2).translate(s * 0.92, 0.36, 0.12), dark);
+    b.add(new THREE.CylinderGeometry(0.06, 0.06, 0.1, 10).rotateZ(Math.PI / 2).translate(s * 0.92, 0.36, 0.12), steel);
+  }
+  b.add(new THREE.CylinderGeometry(0.03, 0.03, 0.9, 8).rotateZ(Math.PI / 2).translate(0, 1.05, -0.62), steel); // push bar
+  for (const s of [-1, 1]) b.add(new THREE.CylinderGeometry(0.03, 0.03, 0.25, 8).rotateX(Math.PI / 2).translate(s * 0.45, 1.05, -0.5), steel);
+  b.add(new THREE.CylinderGeometry(0.03, 0.03, 1.4, 8).translate(0.62, 2.0, -0.2), pole);
+  b.add(new THREE.ConeGeometry(1.15, 0.45, 16, 1, true).translate(0.62, 2.85, -0.2), awn);
+  b.build(root, true);
+  const front = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 0.62), lam("cartSign", () => ({ map: signTex("cartfront", ["ES KRIM", "DINGIN  •  SEGAR"], "#2f7fd0", "#ffffff", 1024, 420, "#ffd43b") })));
+  front.position.set(0, 0.86, 0.435); root.add(front);
+  // freezer lid, hinged on the back edge
+  const lid = new THREE.Group(); lid.position.set(0, 1.31, -0.42);
+  const lidM = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.06, 0.82).translate(0, 0.03, 0.41), steel); lidM.castShadow = true; lid.add(lidM);
+  const handle = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.04, 0.05).translate(0, 0.08, 0.78), dark); lid.add(handle);
+  root.add(lid);
+  // the stock inside: rows of wrapped ice creams (and a melted version)
+  const stock = new THREE.Group(), melt = new THREE.Group();
+  const cols = ["#6b3a22", "#f2e6c8", "#e86e9a", "#6fae48", "#f2b134"];
+  for (let i = 0; i < 6; i++) for (let k = 0; k < 3; k++) {
+    const m = new THREE.Mesh(new THREE.CapsuleGeometry(0.055, 0.12, 4, 10).rotateX(Math.PI / 2), lam("ice" + ((i + k) % 5), () => ({ color: cols[(i + k) % 5] })));
+    m.position.set(-0.6 + i * 0.24, 1.3, -0.29 + k * 0.24); m.scale.set(1.25, 0.7, 1); stock.add(m);
+    const st = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.012, 0.07), lam("stick", () => ({ color: "#e8c88a" })));
+    st.position.set(-0.6 + i * 0.24, 1.29, -0.29 + k * 0.24 + 0.13); stock.add(st);
+    const mm = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.12, 0.02, 10), lam("melt" + ((i + k) % 5), () => ({ color: cols[(i + k) % 5] })));
+    mm.position.set(-0.6 + i * 0.24, 1.28, -0.26 + k * 0.24); mm.scale.set(1.2, 1, 0.9); melt.add(mm);
+  }
+  root.add(stock, melt); melt.visible = false;
+  const signs: Record<string, THREE.Mesh> = {};
+  const top = (key: string, lines: string[], bg: string, fg: string) => {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(1.25, 0.42), lam("cartTop" + key, () => ({ map: signTex("carttop" + key, lines, bg, fg, 1024, 344) })));
+    m.position.set(0, 2.05, 0.38); m.visible = false; root.add(m); signs[key] = m;
+  };
+  top("first", ["PENJUAL ES KRIM", "PERTAMA DI DUNIA"], "#ffd43b", INKC);
+  top("closed", ["TUTUP"], "#e2453c", "#ffffff");
+  top("store", ["GUDANG & TEDUH"], "#8a5a34", "#ffffff");
+  return { root, lid, stock, melt, signs, cold: new THREE.Vector3(0, 1.45, 0) };
+};
+
+// ---------------- the generator ----------------
+export type Gen = { root: THREE.Group; body: THREE.Group; gauges: THREE.Mesh[]; lamp: THREE.MeshBasicMaterial; exhaust: THREE.Vector3 };
+export const buildGenerator = (): Gen => {
+  const root = new THREE.Group(), body = new THREE.Group(), b = new Batch();
+  const red = lam("genRed", () => ({ color: "#d9382e" })), dark = lam("genDark", () => ({ color: "#2b2b33" })), steel = lam("genSteel", () => ({ color: "#9aa3ad" }));
+  b.add(new THREE.BoxGeometry(0.72, 0.42, 0.48).translate(0, 0.27, 0), red);
+  b.add(new THREE.BoxGeometry(0.62, 0.16, 0.4).translate(0, 0.56, 0), red);
+  b.add(new THREE.CylinderGeometry(0.05, 0.05, 0.08, 10).translate(-0.2, 0.68, 0), dark);
+  for (const [x, z] of [[-0.3, -0.2], [0.3, -0.2], [-0.3, 0.2], [0.3, 0.2]] as const) b.add(new THREE.BoxGeometry(0.06, 0.06, 0.06).translate(x, 0.03, z), dark);
+  b.add(new THREE.CylinderGeometry(0.035, 0.035, 0.3, 8).rotateZ(Math.PI / 2).translate(0.5, 0.35, -0.12), steel);
+  b.add(new THREE.TorusGeometry(0.12, 0.02, 6, 16).translate(-0.37, 0.3, 0.05), steel);
+  b.build(body, true);
+  const gauges = [1, 0.6, 0.4, 0.2, 0].map((lv) => {
+    const g = new THREE.Mesh(new THREE.PlaneGeometry(0.34, 0.17), lam("gauge" + lv, () => ({ map: gaugeTex(lv) })));
+    g.position.set(0.08, 0.3, 0.245); g.visible = lv === 1; body.add(g); return g;
   });
+  const lamp = new THREE.MeshBasicMaterial({ color: new THREE.Color(0.5, 2.6, 0.6), fog: false });
+  const lm = new THREE.Mesh(new THREE.SphereGeometry(0.03, 8, 6), lamp); lm.position.set(0.28, 0.42, 0.245); lm.layers.set(NOINK); body.add(lm);
+  root.add(body);
+  return { root, body, gauges, lamp, exhaust: new THREE.Vector3(0.68, 0.35, -0.12) };
+};
 
-/** Golden Bitcoin 3D Coin Face Texture ("₿") */
-export const btcCoinTex = () => ctex("btcCoinTexHD", 512, 512, (g) => {
-  g.fillStyle = "#f39c12"; g.fillRect(0, 0, 512, 512);
-  g.fillStyle = "#ffd43b";
-  g.strokeStyle = "#241726"; g.lineWidth = 18;
-  g.beginPath(); g.arc(256, 256, 220, 0, Math.PI * 2); g.fill(); g.stroke();
-  g.fillStyle = "#f39c12";
-  g.beginPath(); g.arc(256, 256, 175, 0, Math.PI * 2); g.fill(); g.stroke();
-  g.fillStyle = "#241726"; g.textAlign = "center";
-  g.font = "900 220px 'Segoe UI', Arial, sans-serif";
-  g.fillText("₿", 256, 332);
-});
-
-/** Bursa Efek Wall Clock & Schedule Board ("09:00 - 16:00 HARI KERJA") */
-export const bursaClockTex = () => ctex("bursaClockTexHD", 512, 640, (g) => {
-  g.fillStyle = "#1b4d3e"; g.fillRect(0, 0, 512, 640);
-  g.strokeStyle = "#e0a84c"; g.lineWidth = 16;
-  g.strokeRect(12, 12, 488, 616);
-  // Clock face at top
-  g.fillStyle = "#fff9eb";
-  g.strokeStyle = "#241726"; g.lineWidth = 12;
-  g.beginPath(); g.arc(256, 200, 135, 0, Math.PI * 2); g.fill(); g.stroke();
-  for (let i = 0; i < 12; i++) {
-    const a = (i * Math.PI) / 6;
-    g.beginPath();
-    g.moveTo(256 + Math.cos(a) * 105, 200 + Math.sin(a) * 105);
-    g.lineTo(256 + Math.cos(a) * 122, 200 + Math.sin(a) * 122);
-    g.stroke();
+// ---------------- signs on posts ----------------
+export type Board = { root: THREE.Group; faces: Record<string, THREE.Mesh> };
+export const buildBoard = (variants: Record<string, [string[], string, string]>, w = 1.15, h = 0.72, postH = 1.35): Board => {
+  const root = new THREE.Group(), b = new Batch(), wood = lam("boardWood", () => ({ map: beamHD() }));
+  b.add(new THREE.BoxGeometry(0.08, postH + h, 0.08).translate(0, (postH + h) / 2, -0.06), wood);
+  b.add(new THREE.BoxGeometry(w + 0.1, h + 0.1, 0.06).translate(0, postH + h / 2, -0.02), wood);
+  b.build(root, true);
+  const faces: Record<string, THREE.Mesh> = {};
+  for (const [k, [lines, bg, fg]] of Object.entries(variants)) {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), lam("board" + k, () => ({ map: signTex("board" + k, lines, bg, fg, 1024, Math.round((1024 * h) / w)) })));
+    m.position.set(0, postH + h / 2, 0.015); m.visible = false; root.add(m); faces[k] = m;
   }
-  g.fillStyle = "rgba(46, 204, 113, 0.35)";
-  g.beginPath(); g.moveTo(256, 200); g.arc(256, 200, 95, Math.PI, Math.PI * 2.15); g.closePath(); g.fill();
-  g.strokeStyle = "#241726"; g.lineWidth = 10;
-  g.beginPath(); g.moveTo(256, 200); g.lineTo(175, 200); g.stroke();
-  g.beginPath(); g.moveTo(256, 200); g.lineTo(256, 95); g.stroke();
-  g.fillStyle = "#d9382e"; g.beginPath(); g.arc(256, 200, 12, 0, Math.PI * 2); g.fill();
+  return { root, faces };
+};
 
-  g.fillStyle = "#ffe66d";
-  g.fillRect(36, 370, 440, 110);
-  g.strokeRect(36, 370, 440, 110);
-  g.fillStyle = "#241726"; g.textAlign = "center";
-  fitText(g, "09:00 - 16:00 WIB", 256, 442, 410, 48);
-  g.fillStyle = "#ffffff";
-  fitText(g, "SENIN - JUMAT (HARI KERJA)", 256, 555, 450, 36);
-});
-
-/** Crypto 24/7 Widescreen Monitor Candlestick Texture */
-export const cryptoMonitorTex = () => ctex("cryptoMonitorTexHD", 512, 320, (g) => {
-  g.fillStyle = "#0d1326"; g.fillRect(0, 0, 512, 320);
-  g.strokeStyle = "#00e5ff"; g.lineWidth = 10;
-  g.strokeRect(6, 6, 500, 308);
-  g.strokeStyle = "rgba(0, 229, 255, 0.18)"; g.lineWidth = 2;
-  for (let x = 40; x < 500; x += 48) { g.beginPath(); g.moveTo(x, 12); g.lineTo(x, 300); g.stroke(); }
-  for (let y = 40; y < 300; y += 48) { g.beginPath(); g.moveTo(12, y); g.lineTo(500, y); g.stroke(); }
-  const candles = [
-    [60, 190, 70, "#2ecc71"],
-    [115, 150, 85, "#2ecc71"],
-    [170, 175, 65, "#ff4757"],
-    [225, 110, 95, "#2ecc71"],
-    [280, 130, 80, "#ff4757"],
-    [335, 75, 105, "#2ecc71"],
-    [390, 50, 90, "#2ecc71"],
-    [445, 35, 85, "#00e5ff"],
-  ] as const;
-  for (const [cx, top, h, col] of candles) {
-    g.strokeStyle = col; g.lineWidth = 4;
-    g.beginPath(); g.moveTo(cx + 14, top - 18); g.lineTo(cx + 14, top + h + 18); g.stroke();
-    g.fillStyle = col;
-    g.fillRect(cx, top, 28, h);
-  }
-  g.fillStyle = "#ffd43b"; g.textAlign = "left";
-  fitText(g, "BTC/USD • 24/7 LIVE", 28, 52, 320, 32);
-});
-
-/** Auto Rejection (ARA / ARB) Chart Board Texture */
-export const araBoardTex = () => ctex("araBoardTexHD", 768, 768, (g) => {
-  g.fillStyle = "#142838"; g.fillRect(0, 0, 768, 768);
-  g.strokeStyle = "#e0a84c"; g.lineWidth = 14;
-  g.strokeRect(10, 10, 748, 748);
-  // Top ARA Guardrail Zone
-  g.fillStyle = "#1e824c";
-  g.fillRect(28, 36, 712, 124);
-  g.strokeStyle = "#241726"; g.lineWidth = 8;
-  g.strokeRect(28, 36, 712, 124);
-  g.fillStyle = "#ffe66d"; g.textAlign = "center";
-  fitText(g, "BATAS ARA (+25%)", 384, 116, 650, 54);
-
-  // Bottom ARB Guardrail Zone
-  g.fillStyle = "#c0392b";
-  g.fillRect(28, 608, 712, 124);
-  g.strokeRect(28, 608, 712, 124);
-  g.fillStyle = "#ffffff";
-  fitText(g, "BATAS ARB (-15%)", 384, 688, 650, 54);
-
-  // Safe controlled price wave in middle
-  g.strokeStyle = "rgba(255,255,255,0.2)"; g.lineWidth = 3;
-  for (let y = 210; y <= 550; y += 68) { g.beginPath(); g.moveTo(40, y); g.lineTo(728, y); g.stroke(); }
-
-  g.strokeStyle = "#2ecc71"; g.lineWidth = 16;
-  g.beginPath();
-  g.moveTo(60, 480);
-  g.lineTo(210, 390);
-  g.lineTo(340, 420);
-  g.lineTo(490, 240);
-  g.lineTo(660, 175);
-  g.stroke();
-
-  g.fillStyle = "#ffffff";
-  fitText(g, "TERKENDALI HARIAN", 384, 340, 620, 46);
-});
-
-/** Laporan Keuangan (Corporate Fundamental Sheet) on Table */
-export const fundamentalTex = () => ctex("fundamentalTexHD", 1024, 768, (g) => {
-  g.fillStyle = "#fff9eb"; g.fillRect(0, 0, 1024, 768);
-  g.strokeStyle = "#1f5a4c"; g.lineWidth = 14;
-  g.strokeRect(20, 20, 984, 728);
-  g.fillStyle = "#1f5a4c";
-  g.fillRect(44, 44, 936, 130);
-  g.fillStyle = "#ffe66d"; g.textAlign = "center";
-  fitText(g, "LAPORAN KEUANGAN PERUSAHAAN", 512, 128, 890, 52);
-
-  const bars = [
-    [110, 440, 150, "#2980b9", "Q1"],
-    [250, 380, 210, "#2980b9", "Q2"],
-    [390, 300, 290, "#27ae60", "Q3"],
-    [530, 220, 370, "#2ecc71", "Q4"],
-  ] as const;
-  for (const [bx, top, h, col, lbl] of bars) {
-    g.fillStyle = col;
-    g.strokeStyle = "#241726"; g.lineWidth = 6;
-    g.fillRect(bx, top, 95, h);
-    g.strokeRect(bx, top, 95, h);
-    g.fillStyle = "#241726";
-    fitText(g, lbl, bx + 47, 645, 90, 36);
-  }
-  g.fillStyle = "#e8f8f5";
-  g.fillRect(670, 220, 290, 370);
-  g.strokeRect(670, 220, 290, 370);
-  g.fillStyle = "#1f5a4c";
-  fitText(g, "LABA BERSIH", 815, 310, 250, 38);
-  g.fillStyle = "#27ae60";
-  fitText(g, "+28.5%", 815, 410, 250, 64);
-  g.fillStyle = "#241726";
-  fitText(g, "FUNDAMENTAL KUAT", 815, 510, 250, 28);
-});
-
-/** Volatile Kripto Board Texture ("FLUKTUATIF TANPA BATAS") */
-export const volatileBoardTex = () => ctex("volatileBoardTexHD", 768, 768, (g) => {
-  g.fillStyle = "#1a0f2e"; g.fillRect(0, 0, 768, 768);
-  g.strokeStyle = "#ff4757"; g.lineWidth = 14;
-  g.strokeRect(10, 10, 748, 748);
-  g.strokeStyle = "#ffd43b"; g.lineWidth = 8; g.setLineDash([24, 18]);
-  g.beginPath(); g.moveTo(30, 110); g.lineTo(738, 110); g.stroke();
-  g.beginPath(); g.moveTo(30, 650); g.lineTo(738, 650); g.stroke();
-  g.setLineDash([]);
-
-  g.strokeStyle = "#00e5ff"; g.lineWidth = 14;
-  g.beginPath();
-  g.moveTo(50, 520);
-  g.lineTo(170, 160);
-  g.lineTo(290, 610);
-  g.lineTo(430, 65);
-  g.lineTo(570, 680);
-  g.lineTo(710, 90);
-  g.stroke();
-
-  g.fillStyle = "#ff4757";
-  g.fillRect(54, 150, 660, 145);
-  g.strokeStyle = "#241726"; g.lineWidth = 8;
-  g.strokeRect(54, 150, 660, 145);
-  g.fillStyle = "#ffe66d"; g.textAlign = "center";
-  fitText(g, "TANPA AUTO REJECTION!", 384, 214, 620, 48);
-  g.fillStyle = "#ffffff";
-  fitText(g, "NAIK & TURUN DRASTIS", 384, 270, 620, 38);
-});
-
-// ===============================================================================================================
-// HERO SET 1: SPLIT STAGE ARENA — SAHAM VS KRIPTO (Hook & Outro Comparison Stage)
-// ===============================================================================================================
-export const buildSplitSet = () => {
-  const g = new THREE.Group();
-  const b = new Batch();
-
-  const floorM = lam("splitFloor", () => ({ map: rep(marbleTileTex(), 3, 3) }));
-  const grassM = lam("splitGrass", () => ({ map: rep(grassHD(), 4, 4) }));
-  const curbM = lam("splitCurb", () => ({ map: stoneHD("splitCurbHD") }));
-  const plinthLeftM = lam("splitPlinthL", () => ({ color: "#1f4e3d" }));
-  const plinthRightM = lam("splitPlinthR", () => ({ color: "#2c1b47" }));
-  const towerWallM = lam("splitTowerWall", () => ({ color: "#dce6f2" }));
-  const towerGlassM = lam("splitTowerGlass", () => ({ color: "#2980b9" }));
-  const goldM = lam("splitGold", () => ({ color: "#f1c40f" }));
-  const btcFaceM = lam("splitBtcFace", () => ({ map: btcCoinTex() }));
-  const purpleM = lam("splitPurple", () => ({ color: "#8e44ad" }));
-  const cyanM = lam("splitCyan", () => ({ color: "#00d2d3" }));
-  const woodM = lam("splitWood", () => ({ map: beamHD() }));
-
-  const signSahamM = lam("splitSignSaham", () => ({
-    map: plinthSignTex("SAHAM (BEI)", "MODAL PERUSAHAAN", "#1b4d3e", "#2ecc71"),
-  }));
-  const signKriptoM = lam("splitSignKripto", () => ({
-    map: plinthSignTex("KRIPTO (24/7)", "ASET DIGITAL", "#3c1e6e", "#ffd43b"),
-  }));
-  const bannerVsM = lam("splitBannerVs", () => ({
-    map: headerBannerTex("SAHAM VS KRIPTO", "APA BEDANYA? YUK BAHAS!", "#1e272e", "#ffd43b"),
-  }));
-
-  // Floor: Polished marble stage foreground + grassy park behind
-  b.add(new THREE.BoxGeometry(20, 0.4, 9).translate(0, -0.2, 1.5), floorM);
-  b.add(new THREE.BoxGeometry(28, 0.4, 16).translate(0, -0.22, -10.5), grassM);
-  b.add(new THREE.BoxGeometry(12, 0.16, 3.6).translate(0, 0.04, -2.1), curbM);
-
-  // Overhead Header Frame & Banner (width = 1.68m centered at x = 0)
-  b.add(new THREE.BoxGeometry(0.14, 3.6, 0.14).translate(-1.85, 1.8, -3.20), woodM);
-  b.add(new THREE.BoxGeometry(0.14, 3.6, 0.14).translate(1.85, 1.8, -3.20), woodM);
-  b.add(new THREE.BoxGeometry(3.9, 0.16, 0.18).translate(0, 3.55, -3.20), woodM);
-  b.add(new THREE.BoxGeometry(1.68, 0.44, 0.08).translate(0, 3.22, -3.12), bannerVsM);
-
-  // ---- LEFT PLINTH: SAHAM CORPORATE SKYSCRAPER & GOLDEN CHART (x = -0.78, z = -2.20) ----
-  const lx = -0.78, lz = -2.20;
-  b.add(new THREE.BoxGeometry(1.32, 0.44, 1.24).translate(lx, 0.26, lz), plinthLeftM);
-  // Corporate Skyscraper Tower model
-  b.add(new THREE.BoxGeometry(0.74, 1.85, 0.64).translate(lx - 0.16, 1.40, lz - 0.05), towerWallM);
-  b.add(new THREE.BoxGeometry(0.58, 1.65, 0.68).translate(lx - 0.16, 1.40, lz - 0.05), towerGlassM);
-  b.add(new THREE.BoxGeometry(0.82, 0.12, 0.72).translate(lx - 0.16, 2.36, lz - 0.05), goldM);
-  // 2 Rising Gold Profit Bars next to the tower
-  b.add(new THREE.BoxGeometry(0.15, 0.65, 0.15).translate(lx + 0.30, 0.80, lz + 0.15), goldM);
-  b.add(new THREE.BoxGeometry(0.15, 1.05, 0.15).translate(lx + 0.46, 1.00, lz + 0.15), goldM);
-  // Elevated Signboard on Left Plinth (mounted above the tower at y = 2.68 so characters never block it!)
-  b.add(new THREE.BoxGeometry(1.18, 0.48, 0.08).translate(lx - 0.05, 2.66, lz + 0.32), signSahamM);
-
-  // ---- RIGHT PLINTH: KRIPTO BLOCKCHAIN MONUMENT & GIANT BITCOIN (x = +0.78, z = -2.20) ----
-  const rx = 0.78, rz = -2.20;
-  b.add(new THREE.BoxGeometry(1.32, 0.44, 1.24).translate(rx, 0.26, rz), plinthRightM);
-  // Blockchain stacked cyber cubes
-  b.add(new THREE.BoxGeometry(0.56, 0.56, 0.56).translate(rx + 0.22, 0.80, rz - 0.08), purpleM);
-  b.add(new THREE.BoxGeometry(0.44, 0.44, 0.44).rotateY(0.45).translate(rx + 0.22, 1.32, rz - 0.08), cyanM);
-  // Giant Golden Bitcoin Medallion with crisp "₿" face!
-  b.add(new THREE.CylinderGeometry(0.46, 0.46, 0.12, 24).rotateX(Math.PI / 2).translate(rx - 0.20, 1.42, rz + 0.08), goldM);
-  b.add(new THREE.BoxGeometry(0.66, 0.66, 0.04).translate(rx - 0.20, 1.42, rz + 0.15), btcFaceM);
-  // Elevated Signboard on Right Plinth (mounted at y = 2.66 so characters never block it!)
-  b.add(new THREE.BoxGeometry(1.18, 0.48, 0.08).translate(rx + 0.05, 2.66, rz + 0.32), signKriptoM);
-
-  // Framing background trees
-  addTree(b, -2.65, 0, -4.8, 3.8, 11);
-  addTree(b, 2.65, 0, -4.8, 3.9, 23);
-  addTree(b, -3.1, 0, -8.8, 4.3, 37);
-  addTree(b, 3.1, 0, -8.8, 4.1, 49);
-
+// ---------------- SET A: a modern school front (the "usual" day of an ice cream seller) ----------------
+export const SCHOOL_X = -120;
+export const buildSchool = () => {
+  const g = new THREE.Group(), b = new Batch();
+  const road = lam("road", () => ({ map: rep(asphaltTex(), 8, 8) })), walk = lam("walk", () => ({ map: rep(stoneHD("walkHD"), 6, 2) }));
+  const facade = lam("schoolWall", () => ({ map: schoolTex() })), roofM = lam("schoolRoof", () => ({ color: "#b8452f" })), fence = lam("fence", () => ({ color: "#2f7d4a" }));
+  const grassM = lam("schoolGrass", () => ({ map: rep(grassHD(), 6, 6) })), white = lam("gateWhite", () => ({ color: "#f4f4f0" }));
+  b.add(new THREE.BoxGeometry(60, 0.2, 14).translate(0, -0.1, 6), road);
+  b.add(new THREE.BoxGeometry(60, 0.24, 4).translate(0, 0.02, -2), walk);
+  b.add(new THREE.BoxGeometry(60, 0.2, 30).translate(0, -0.08, -19), grassM);
+  b.add(new THREE.BoxGeometry(26, 5, 6).translate(0, 2.5, -14), facade);
+  const rs = new THREE.Shape([new THREE.Vector2(-3.6, 0), new THREE.Vector2(0, 2.4), new THREE.Vector2(3.6, 0)]);
+  b.add(new THREE.ExtrudeGeometry(rs, { depth: 27, bevelEnabled: false }).rotateY(Math.PI / 2).translate(-13.5, 5, -14), roofM);
+  for (let x = -14; x <= 14; x += 0.5) if (Math.abs(x) > 2.2) b.add(new THREE.BoxGeometry(0.06, 1.3, 0.06).translate(x, 0.65, -4.2), fence);
+  for (const y of [0.4, 1.1]) for (const s of [-1, 1]) b.add(new THREE.BoxGeometry(11.8, 0.06, 0.06).translate(s * 8.1, y, -4.2), fence);
+  for (const s of [-1, 1]) b.add(new THREE.BoxGeometry(0.35, 3.2, 0.35).translate(s * 2.3, 1.6, -4.2), white);
+  b.add(new THREE.BoxGeometry(5.0, 0.3, 0.35).translate(0, 3.2, -4.2), white);
+  b.add(new THREE.CylinderGeometry(0.05, 0.05, 7, 8).translate(6.5, 3.5, -8), white);
+  addTree(b, -9, 0, -7, 5.5, 3); addTree(b, 10, 0, -7.5, 5.2, 7); addTree(b, -18, 0, -6, 6, 11); addTree(b, 19, 0, -6.5, 6.2, 13);
   b.build(g, true);
-
-  // ---- Motivated HDR Glowing Accents (NOINK Bloom Layer) ----
-  const goldGlow = new THREE.MeshBasicMaterial({ color: new THREE.Color(2.6, 2.0, 0.8), fog: false });
-  const cyanGlow = new THREE.MeshBasicMaterial({ color: new THREE.Color(0.5, 2.4, 2.8), fog: false });
-
-  const sahamStrip = new THREE.Mesh(new THREE.BoxGeometry(1.28, 0.05, 0.05), goldGlow);
-  sahamStrip.position.set(lx, 0.50, lz + 0.64);
-  sahamStrip.layers.set(NOINK);
-  g.add(sahamStrip);
-
-  const kriptoStrip = new THREE.Mesh(new THREE.BoxGeometry(1.28, 0.05, 0.05), cyanGlow);
-  kriptoStrip.position.set(rx, 0.50, rz + 0.64);
-  kriptoStrip.layers.set(NOINK);
-  g.add(kriptoStrip);
-
-  const btcRing = new THREE.Mesh(new THREE.TorusGeometry(0.52, 0.03, 10, 28), cyanGlow);
-  btcRing.position.set(rx - 0.20, 1.42, rz + 0.10);
-  btcRing.layers.set(NOINK);
-  g.add(btcRing);
-
+  const gate = new THREE.Mesh(new THREE.PlaneGeometry(4.2, 0.62), lam("gateSign", () => ({ map: signTex("gate", ["SEKOLAH DASAR"], "#2f7d4a", "#ffffff", 1024, 152) })));
+  gate.position.set(0, 3.2, -4.0); g.add(gate);
+  const flag = new THREE.Group();
+  const fr = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 0.5), new THREE.MeshLambertMaterial({ color: "#e2201c", side: THREE.DoubleSide })); fr.position.set(7.25, 6.55, -8);
+  const fw = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 0.5), new THREE.MeshLambertMaterial({ color: "#f8f8f4", side: THREE.DoubleSide })); fw.position.set(7.25, 6.05, -8);
+  flag.add(fr, fw); g.add(flag);
+  g.position.set(SCHOOL_X, 0, 0);
   return g;
 };
 
-// ===============================================================================================================
-// HERO SET 2: AULA BURSA EFEK INDONESIA (BEI & OJK HALL + 09:00-16:00 OPERATIONAL CLOCK)
-// ===============================================================================================================
-export const buildBursaSet = () => {
-  const g = new THREE.Group();
-  const b = new Batch();
-
-  const floorM = lam("bursaFloor", () => ({ map: rep(marbleTileTex(), 3, 3) }));
-  const wallM = lam("bursaWall", () => ({ color: "#f3ece0" }));
-  const woodM = lam("bursaWood", () => ({ map: rep(beamHD(), 2, 1) }));
-  const deskM = lam("bursaDesk", () => ({ map: planksHD() }));
-  const greenM = lam("bursaGreen", () => ({ color: "#1b4d3e" }));
-  const goldM = lam("bursaGold", () => ({ color: "#e6b450" }));
-  const glassM = lam("bursaGlass", () => ({ color: "#2980b9" }));
-  const skyPaneM = lam("bursaSkyPane", () => ({ color: "#88c8f2" }));
-  const clockM = lam("bursaClock", () => ({ map: bursaClockTex() }));
-  const tickerM = lam("bursaTicker", () => ({
-    map: headerBannerTex("BURSA EFEK INDONESIA", "IHSG +1.85% • DIAWASI OJK & BEI", "#0f2e24", "#2ecc71"),
-  }));
-  const ojkSignM = lam("bursaOjkSign", () => ({
-    map: plinthSignTex("PENGAWAS OJK & BEI", "RESMI & TERDAFTAR", "#78281f", "#ffe66d"),
-  }));
-
-  // Marble floor & back/side walls
-  b.add(new THREE.BoxGeometry(16, 0.3, 12).translate(0, -0.15, -1.0), floorM);
-  b.add(new THREE.BoxGeometry(11.0, 5.8, 0.28).translate(0, 2.9, -3.65), wallM);
-  b.add(new THREE.BoxGeometry(11.0, 1.25, 0.36).translate(0, 0.62, -3.55), woodM);
-  b.add(new THREE.BoxGeometry(0.28, 5.8, 6.5).translate(-2.35, 2.9, -0.8), wallM);
-  b.add(new THREE.BoxGeometry(0.28, 5.8, 6.5).translate(2.35, 2.9, -0.8), wallM);
-
-  for (const px of [-1.85, 0.0, 1.85]) {
-    b.add(new THREE.BoxGeometry(0.26, 4.6, 0.22).translate(px, 2.3, -3.48), woodM);
-  }
-
-  // ---- Overhead Glowing BEI Stock Ticker Board (x = 0.0, y = 3.22, z = -3.32, width = 1.68m) ----
-  b.add(new THREE.BoxGeometry(1.68, 0.46, 0.12).translate(0, 3.22, -3.32), tickerM);
-
-  // ---- Tall Sunlit Exchange Window on Back-Left Wall (x = -0.95, y = 2.30, z = -3.46) ----
-  b.add(new THREE.BoxGeometry(1.18, 1.60, 0.08).translate(-0.95, 2.30, -3.48), skyPaneM);
-  b.add(new THREE.BoxGeometry(1.32, 0.10, 0.18).translate(-0.95, 1.48, -3.40), woodM);
-  b.add(new THREE.BoxGeometry(1.32, 0.10, 0.18).translate(-0.95, 3.12, -3.40), woodM);
-
-  // ---- Wall Clock & Operational Hours Board on Back-Right Wall (x = +0.86, y = 2.25, z = -3.40) ----
-  b.add(new THREE.BoxGeometry(1.06, 1.32, 0.10).translate(0.86, 2.25, -3.40), clockM);
-
-  // ---- Left Podium: Corporate Ownership Model & Bursa Bell (x = -0.88, z = -2.05) ----
-  const lx = -0.88, lz = -2.05;
-  b.add(new THREE.BoxGeometry(1.08, 0.88, 0.82).translate(lx, 0.44, lz), greenM);
-  b.add(new THREE.BoxGeometry(1.16, 0.08, 0.88).translate(lx, 0.90, lz), goldM);
-  // Miniature Corporate Office Tower ("Modal Perusahaan") on left podium
-  b.add(new THREE.BoxGeometry(0.46, 0.92, 0.42).translate(lx - 0.18, 1.40, lz), glassM);
-  b.add(new THREE.BoxGeometry(0.52, 0.08, 0.48).translate(lx - 0.18, 1.88, lz), goldM);
-  // Golden Bursa Opening Bell on stand
-  b.add(new THREE.CylinderGeometry(0.03, 0.03, 0.42, 8).translate(lx + 0.24, 1.15, lz), woodM);
-  b.add(new THREE.ConeGeometry(0.15, 0.24, 14).translate(lx + 0.24, 1.28, lz), goldM);
-
-  // ---- Right Desk: Official OJK & BEI Supervision Desk (x = +0.76, z = -1.90) ----
-  const dx = 0.76, dz = -1.90;
-  b.add(new THREE.BoxGeometry(1.16, 0.86, 0.74).translate(dx, 0.43, dz), woodM);
-  b.add(new THREE.BoxGeometry(1.24, 0.08, 0.82).translate(dx, 0.88, dz), deskM);
-  // Front plaque "PENGAWAS OJK & BEI" centered cleanly on the desk
-  b.add(new THREE.BoxGeometry(0.98, 0.44, 0.06).translate(dx, 0.50, dz + 0.39), ojkSignM);
-  // Regulatory books & Gavel block on desk
-  b.add(new THREE.BoxGeometry(0.26, 0.14, 0.20).translate(dx - 0.28, 0.99, dz), greenM);
-  b.add(new THREE.CylinderGeometry(0.11, 0.13, 0.06, 12).translate(dx + 0.04, 0.95, dz + 0.08), woodM);
-  // Classic green banker's desk lamp on right corner of desk
-  b.add(new THREE.CylinderGeometry(0.11, 0.14, 0.05, 12).translate(dx + 0.36, 0.94, dz - 0.10), goldM);
-  b.add(new THREE.CylinderGeometry(0.02, 0.02, 0.44, 8).translate(dx + 0.36, 1.18, dz - 0.10), goldM);
-  b.add(new THREE.ConeGeometry(0.19, 0.14, 12).translate(dx + 0.30, 1.40, dz - 0.06), greenM);
-
+// ---------------- SET B: the valley near the beach, 30,000 years ago ----------------
+export const SHELTER: [number, number, number] = [-9, 0, -6.5];
+export const FIRE: [number, number, number] = [-5.2, 0, -2.6];
+export const buildValley = () => {
+  const g = new THREE.Group(), b = new Batch();
+  const grassM = lam("vGrass", () => ({ map: rep(grassHD(), 14, 14) })), sandM = lam("vSand", () => ({ map: rep(sandTex(), 20, 3) }));
+  const rockM = lam("vRock", () => ({ map: rep(stoneHD("vRockHD", ["#a59c8c", "#9a907f", "#b2a894", "#8f8676"], "#7a7062"), 1, 1) })), rockD = lam("vRockD", () => ({ color: "#8a8172" }));
+  const leafBed = lam("vLeafBed", () => ({ color: "#5d8a3a" })), furM = lam("vFur", () => ({ color: "#8a5a34" })), mtn = lam("vMtn", () => ({ color: "#7d9a6a" })), mtnFar = lam("vMtnFar", () => ({ color: "#9aaec0" }));
+  const fern = lam("vFern", () => ({ color: "#4f8a3c" })), log = lam("vLog", () => ({ color: "#7a5232" }));
+  b.add(new THREE.BoxGeometry(160, 0.4, 70).translate(0, -0.2, 15), grassM);
+  b.add(new THREE.BoxGeometry(160, 0.4, 14).translate(0, -0.25, -27), sandM);
+  const r = rng(321);
+  // rock shelter (overhang) with leaf beds and furs: the group's sleeping place
+  const [sx, , sz] = SHELTER;
+  for (let i = 0; i < 9; i++) b.add(new THREE.DodecahedronGeometry(1, 0).scale(1.4 + r(), 1.2 + r() * 1.4, 1.2 + r()).translate(sx - 3.2 + i * 0.8, 1, sz - 2.4 - r() * 0.5), rockM);
+  b.add(new THREE.BoxGeometry(7.5, 0.7, 3.4).rotateX(-0.12).translate(sx, 3.3, sz - 1.0), rockM);
+  for (const s of [-1, 1]) b.add(new THREE.DodecahedronGeometry(1, 0).scale(1.0, 1.9, 1.0).translate(sx + s * 3.4, 1.6, sz - 0.6), rockM);
+  for (let i = 0; i < 4; i++) { b.add(new THREE.CylinderGeometry(0.7, 0.75, 0.12, 14).scale(1.4, 1, 0.8).translate(sx - 2.2 + i * 1.5, 0.06, sz - 0.8), leafBed); b.add(new THREE.BoxGeometry(0.9, 0.05, 0.6).translate(sx - 2.2 + i * 1.5, 0.14, sz - 0.7), furM); }
+  // camp fire ring and a few logs to sit on
+  const [fx, , fz] = FIRE;
+  for (let k = 0; k < 9; k++) { const a = (k / 9) * Math.PI * 2; b.add(new THREE.DodecahedronGeometry(0.16, 0).translate(fx + 0.6 * Math.cos(a), 0.1, fz + 0.6 * Math.sin(a)), rockD); }
+  for (let k = 0; k < 3; k++) { const a = (k / 3) * Math.PI; b.add(new THREE.CylinderGeometry(0.06, 0.06, 0.8, 6).rotateZ(Math.PI / 2).rotateY(a).translate(fx, 0.12, fz), log); }
+  for (const [x, z, ry] of [[fx - 1.6, fz + 0.8, 0.3], [fx + 1.7, fz - 0.6, -0.5]] as const) b.add(new THREE.CylinderGeometry(0.22, 0.24, 1.6, 10).rotateZ(Math.PI / 2).rotateY(ry).translate(x, 0.22, z), log);
+  // scattered boulders, ferns, trees; far hills and mountains; the beach and the sea behind
+  for (let i = 0; i < 26; i++) { const x = -40 + r() * 80, z = -15 + r() * 30; if (Math.hypot(x, z) < 6 || (Math.abs(x - sx) < 5 && Math.abs(z - sz) < 4)) continue; b.add(new THREE.DodecahedronGeometry(0.3 + r() * 0.7, 0).scale(1.2, 0.7, 1).translate(x, 0.15, z), rockM); }
+  for (let i = 0; i < 40; i++) { const x = -30 + r() * 60, z = -12 + r() * 24; if (Math.hypot(x, z) < 5) continue; for (let k = 0; k < 5; k++) b.add(new THREE.ConeGeometry(0.08, 0.7, 4).rotateZ((k - 2) * 0.35).translate(x + (k - 2) * 0.08, 0.3, z), fern); }
+  const trees: [number, number, number][] = [[-14, -9, 6.5], [-17, 2, 7], [12, -8, 6.8], [16, 3, 7.4], [9, -14, 6], [-6, -14, 5.8], [22, -4, 6.2], [-24, -6, 7.5], [4, -16, 5.5]];
+  trees.forEach(([x, z, h], i) => addTree(b, x, 0, z, h, 101 + i));
+  for (let i = 0; i < 9; i++) { const x = -70 + i * 18, s = 14 + r() * 12; b.add(new THREE.ConeGeometry(s, s * 1.1, 8).translate(x, s * 0.5 - 2, 45 + r() * 15), mtn); }
+  for (let i = 0; i < 7; i++) { const x = -90 + i * 30, s = 30 + r() * 20; b.add(new THREE.ConeGeometry(s, s * 1.3, 8).translate(x, s * 0.6 - 4, 110 + r() * 30), mtnFar); }
   b.build(g, true);
-
-  // ---- Motivated Glowing Bulb inside Banker Lamp & LED Ticker Glow Strip (NOINK) ----
-  const bulbMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(3.2, 2.4, 1.1), fog: false });
-  const bulb = new THREE.Mesh(new THREE.SphereGeometry(0.07, 10, 10), bulbMat);
-  bulb.position.set(dx + 0.30, 1.34, dz - 0.06);
-  bulb.layers.set(NOINK);
-  g.add(bulb);
-
-  const greenGlow = new THREE.MeshBasicMaterial({ color: new THREE.Color(0.6, 2.8, 1.2), fog: false });
-  const tickerStrip = new THREE.Mesh(new THREE.BoxGeometry(1.70, 0.05, 0.05), greenGlow);
-  tickerStrip.position.set(0, 2.97, -3.26);
-  tickerStrip.layers.set(NOINK);
-  g.add(tickerStrip);
-
+  const tablet = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1.0, 0.25), [rockD, rockD, rockD, rockD, lam("tablet", () => ({ map: tabletTex(["30.000", "TAHUN LALU"]) })), rockD]);
+  tablet.position.set(-3.4, 0.62, 1.6); tablet.rotation.set(-0.08, 0.18, 0.02); tablet.castShadow = true; g.add(tablet);
   return g;
 };
 
-// ===============================================================================================================
-// HERO SET 3: CYBER BLOCKCHAIN NODE LAB 24/7 (BTC, ETH, SOL Monuments + 24/7 Monitors + Blockchain Nodes)
-// ===============================================================================================================
-export const buildCryptoSet = () => {
-  const g = new THREE.Group();
-  const b = new Batch();
-
-  const floorM = lam("cryFloor", () => ({ map: rep(cyberGridTex("#00e5ff", "#141829"), 3, 3) }));
-  const wallM = lam("cryWall", () => ({ color: "#1b1f38" }));
-  const trimM = lam("cryTrim", () => ({ color: "#2c2552" }));
-  const darkMetalM = lam("cryMetal", () => ({ color: "#23283d" }));
-  const monScreenM = lam("cryMonScreen", () => ({ map: cryptoMonitorTex() }));
-  const nightPaneM = lam("cryNightPane", () => ({ color: "#120b29" }));
-  const goldM = lam("cryGold", () => ({ color: "#f39c12" }));
-  const btcFaceM = lam("cryBtcFace", () => ({ map: btcCoinTex() }));
-  const cyanM = lam("cryCyan", () => ({ color: "#00d2d3" }));
-  const purpleM = lam("cryPurple", () => ({ color: "#9b59b6" }));
-
-  const banner24M = lam("cryBanner24", () => ({
-    map: headerBannerTex("BLOCKCHAIN 24/7", "TANPA OTORITAS PUSAT • NON-STOP", "#1e133c", "#00e5ff"),
-  }));
-  const btcSignM = lam("cryBtcSign", () => ({
-    map: plinthSignTex("BITCOIN", "BTC", "#b87300", "#ffd43b"),
-  }));
-  const ethSignM = lam("cryEthSign", () => ({
-    map: plinthSignTex("ETHEREUM", "ETH", "#165278", "#38e8ff"),
-  }));
-  const solSignM = lam("crySolSign", () => ({
-    map: plinthSignTex("SOLANA", "SOL", "#521b78", "#2ecc71"),
-  }));
-
-  // Cyber grid floor & walls
-  b.add(new THREE.BoxGeometry(16, 0.3, 12).translate(0, -0.15, -1.0), floorM);
-  b.add(new THREE.BoxGeometry(11.0, 5.8, 0.28).translate(0, 2.9, -3.65), wallM);
-  b.add(new THREE.BoxGeometry(11.0, 1.10, 0.36).translate(0, 0.55, -3.55), trimM);
-  b.add(new THREE.BoxGeometry(0.28, 5.8, 6.5).translate(-2.35, 2.9, -0.8), wallM);
-  b.add(new THREE.BoxGeometry(0.28, 5.8, 6.5).translate(2.35, 2.9, -0.8), wallM);
-
-  // ---- Overhead "BLOCKCHAIN 24/7" Banner (x = 0.0, y = 3.25, z = -3.32, width = 1.68m) ----
-  b.add(new THREE.BoxGeometry(1.68, 0.46, 0.10).translate(0, 3.25, -3.32), banner24M);
-
-  // ---- Moonlit Night Window on Back-Left Wall (x = -0.95, y = 2.25, z = -3.48) ----
-  b.add(new THREE.BoxGeometry(1.18, 1.42, 0.08).translate(-0.95, 2.25, -3.48), nightPaneM);
-  b.add(new THREE.BoxGeometry(1.30, 0.10, 0.18).translate(-0.95, 1.50, -3.40), darkMetalM);
-  b.add(new THREE.BoxGeometry(1.30, 0.10, 0.18).translate(-0.95, 2.98, -3.40), darkMetalM);
-
-  // ---- Left Cyber Trading Desk (x = -0.88, z = -1.95) ----
-  const dx = -0.88, dz = -1.95;
-  b.add(new THREE.BoxGeometry(1.12, 0.08, 0.68).translate(dx, 0.84, dz), darkMetalM);
-  b.add(new THREE.BoxGeometry(0.10, 0.82, 0.60).translate(dx - 0.48, 0.41, dz), darkMetalM);
-  b.add(new THREE.BoxGeometry(0.10, 0.82, 0.60).translate(dx + 0.48, 0.41, dz), darkMetalM);
-  // Dual widescreen trading monitors on desk
-  b.add(new THREE.BoxGeometry(0.52, 0.36, 0.05).rotateY(0.16).translate(dx - 0.25, 1.14, dz - 0.06), monScreenM);
-  b.add(new THREE.BoxGeometry(0.52, 0.36, 0.05).rotateY(-0.10).translate(dx + 0.25, 1.14, dz - 0.06), monScreenM);
-
-  // ---- Right 3 Crypto Pedestals safely inside 9:16 margins: BITCOIN (0.18), ETHEREUM (0.64), SOLANA (1.10) ----
-  const pillars = [
-    [0.18, -2.10, 1.05, btcSignM],
-    [0.64, -2.10, 0.92, ethSignM],
-    [1.10, -2.10, 0.82, solSignM],
-  ] as const;
-  for (const [px, pz, ph, signM] of pillars) {
-    b.add(new THREE.BoxGeometry(0.42, ph, 0.42).translate(px, ph / 2, pz), darkMetalM);
-    b.add(new THREE.BoxGeometry(0.40, 0.24, 0.05).translate(px, ph - 0.20, pz + 0.22), signM);
+// ---------------- SET C: the shady river ----------------
+export const RIVER_X = 120;
+export const buildRiver = () => {
+  const g = new THREE.Group(), b = new Batch(), r = rng(77);
+  const grassM = lam("rGrass", () => ({ map: rep(grassHD(), 10, 10) })), rockM = lam("rRock", () => ({ map: rep(stoneHD("rRockHD", ["#9aa094", "#8e9488", "#a6ac9e", "#848a7e"], "#6e7468"), 1, 1) }));
+  const pot = lam("rPot", () => ({ color: "#b0603a" })), leaf = lam("rLeaf", () => ({ color: "#5d9a3c" })), fern = lam("rFern", () => ({ color: "#4a8a3a" }));
+  b.add(new THREE.BoxGeometry(80, 0.4, 60).translate(0, -0.2, 0), grassM);
+  for (let i = 0; i < 18; i++) { const z = -14 + i * 1.8; for (const s of [-1, 1]) b.add(new THREE.DodecahedronGeometry(0.45 + r() * 0.5, 0).scale(1.3, 0.6, 1).translate(4.2 + s * 2.1 + r() * 0.4, 0.05, z), rockM); }
+  // clay pots with leaf lids in the cool shade (fruit kept cool, not frozen)
+  for (const [x, z, s] of [[1.2, -1.2, 1], [1.9, -0.6, 0.8], [0.6, -0.4, 0.9], [2.4, -1.5, 0.7]] as const) {
+    b.add(new THREE.CylinderGeometry(0.22 * s, 0.17 * s, 0.42 * s, 14).translate(x, 0.21 * s, z), pot);
+    b.add(new THREE.CylinderGeometry(0.26 * s, 0.26 * s, 0.03, 12).translate(x, 0.43 * s, z), leaf);
   }
-
-  // ---- 3 Overhead Blockchain Cube Frames along Back Wall (y = 2.48, z = -3.15) ----
-  for (const nx of [0.12, 0.64, 1.16]) {
-    b.add(new THREE.BoxGeometry(0.32, 0.32, 0.32).rotateY(0.4).rotateX(0.3).translate(nx, 2.48, -3.15), purpleM);
-  }
-
+  for (let i = 0; i < 30; i++) { const x = -14 + r() * 26, z = -10 + r() * 20; if (Math.abs(x - 4.2) < 3 || Math.hypot(x, z) < 3) continue; for (let k = 0; k < 5; k++) b.add(new THREE.ConeGeometry(0.08, 0.7, 4).rotateZ((k - 2) * 0.35).translate(x + (k - 2) * 0.08, 0.3, z), fern); }
+  [[-3, -4, 7.5], [-6, 2, 8], [9, -3, 7.2], [10, 4, 6.8], [-2, 6, 6.6], [6, -9, 7]].forEach(([x, z, h], i) => addTree(b, x, 0, z, h, 201 + i));
   b.build(g, true);
-
-  // ---- Animated 3D Crypto Emblems Group (BTC Coin with "₿", ETH Octahedron, SOL Ring) ----
-  const coinsGroup = new THREE.Group();
-
-  // 1. BTC Golden Coin at (0.18, 1.42, -2.10)
-  const btcGroup = new THREE.Group();
-  btcGroup.position.set(0.18, 1.42, -2.10);
-  const btcRim = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.06, 20).rotateX(Math.PI / 2), goldM);
-  const btcFront = new THREE.Mesh(new THREE.BoxGeometry(0.31, 0.31, 0.03).translate(0, 0, 0.03), btcFaceM);
-  btcGroup.add(btcRim, btcFront);
-  coinsGroup.add(btcGroup);
-
-  // 2. ETH Cyan Crystal Octahedron at (0.64, 1.28, -2.10)
-  const ethMesh = new THREE.Mesh(new THREE.OctahedronGeometry(0.21, 0), cyanM);
-  ethMesh.position.set(0.64, 1.28, -2.10);
-  coinsGroup.add(ethMesh);
-
-  // 3. SOL Neon Torus at (1.10, 1.16, -2.10)
-  const solMesh = new THREE.Mesh(new THREE.TorusGeometry(0.17, 0.05, 10, 24), purpleM);
-  solMesh.position.set(1.10, 1.16, -2.10);
-  coinsGroup.add(solMesh);
-
-  g.add(coinsGroup);
-
-  // HDR Glowing Laser Links between Blockchain Cubes & Desk Under-glow (NOINK)
-  const cyanBeamMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(0.4, 2.5, 3.0), fog: false });
-  const goldBeamMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(2.8, 2.0, 0.6), fog: false });
-
-  const laserLink = new THREE.Mesh(new THREE.BoxGeometry(1.25, 0.04, 0.04), cyanBeamMat);
-  laserLink.position.set(0.64, 2.48, -3.15);
-  laserLink.layers.set(NOINK);
-  g.add(laserLink);
-
-  const deskNeon = new THREE.Mesh(new THREE.BoxGeometry(1.10, 0.04, 0.04), cyanBeamMat);
-  deskNeon.position.set(dx, 0.82, dz + 0.33);
-  deskNeon.layers.set(NOINK);
-  g.add(deskNeon);
-
-  const pillarNeon = new THREE.Mesh(new THREE.BoxGeometry(1.36, 0.04, 0.04), goldBeamMat);
-  pillarNeon.position.set(0.64, 0.06, -1.86);
-  pillarNeon.layers.set(NOINK);
-  g.add(pillarNeon);
-
-  return { root: g, coinsGroup };
-};
-
-// ===============================================================================================================
-// HERO SET 4: AUTO REJECTION (ARA / ARB) & LAPORAN KEUANGAN VAULT (Saham Price Control & Fundamentals)
-// ===============================================================================================================
-export const buildAraSet = () => {
-  const g = new THREE.Group();
-  const b = new Batch();
-  const m4 = new THREE.Matrix4();
-
-  const floorM = lam("araFloor", () => ({ map: rep(planksHD(), 3, 3) }));
-  const rugM = lam("araRug", () => ({ map: rugTex("#8f2d38", "#e0a84c") }));
-  const wallM = lam("araWall", () => ({ color: "#efe4d2" }));
-  const woodM = lam("araWood", () => ({ map: rep(beamHD(), 2, 1) }));
-  const deskM = lam("araDesk", () => ({ map: planksHD() }));
-  const boardM = lam("araBoard", () => ({ map: araBoardTex() }));
-  const fundM = lam("araFund", () => ({ map: fundamentalTex() }));
-  const greenM = lam("araGreen", () => ({ color: "#27ae60" }));
-  const redM = lam("araRed", () => ({ color: "#c0392b" }));
-  const goldM = lam("araGold", () => ({ color: "#e6b450" }));
-  const sunsetPaneM = lam("araSunset", () => ({ color: "#ff9e5e" }));
-  const headerM = lam("araHeader", () => ({
-    map: headerBannerTex("MEKANISME AUTO REJECTION", "BATAS NAIK (ARA) & TURUN (ARB)", "#1b4d3e", "#ffe66d"),
-  }));
-
-  // Floor, rug, and back wall
-  b.add(new THREE.BoxGeometry(16, 0.3, 12).translate(0, -0.15, -1.0), floorM);
-  b.add(new THREE.BoxGeometry(4.8, 0.03, 3.4).translate(0, 0.015, -0.9), rugM);
-  b.add(new THREE.BoxGeometry(11.0, 5.8, 0.28).translate(0, 2.9, -3.65), wallM);
-  b.add(new THREE.BoxGeometry(11.0, 1.20, 0.36).translate(0, 0.60, -3.55), woodM);
-
-  // Overhead Header Banner (x = 0.0, y = 3.25, z = -3.32, width = 1.68m)
-  b.add(new THREE.BoxGeometry(1.68, 0.46, 0.10).translate(0, 3.25, -3.32), headerM);
-
-  // Golden-hour window on back-right wall (x = +0.92, y = 2.30, z = -3.48)
-  b.add(new THREE.BoxGeometry(1.22, 1.60, 0.08).translate(0.92, 2.30, -3.48), sunsetPaneM);
-  b.add(new THREE.BoxGeometry(1.34, 0.10, 0.18).translate(0.92, 1.48, -3.40), woodM);
-  b.add(new THREE.BoxGeometry(1.34, 0.10, 0.18).translate(0.92, 3.12, -3.40), woodM);
-
-  // ---- Back-Left: 3D Auto Rejection Guardrail Rig (x = -0.66, z = -2.15, elevated so 100% inside 9:16 margin!) ----
-  const gx = -0.66, gz = -2.15;
-  b.add(new THREE.BoxGeometry(1.26, 0.68, 0.58).translate(gx, 0.34, gz), woodM);
-  b.add(new THREE.BoxGeometry(1.22, 1.56, 0.10).translate(gx, 1.46, gz), boardM);
-  // Physical 3D Top ARA Bumper Bar & Bottom ARB Bumper Bar protruding from frame
-  b.add(new THREE.BoxGeometry(1.28, 0.11, 0.22).translate(gx, 2.18, gz + 0.08), greenM);
-  b.add(new THREE.BoxGeometry(1.28, 0.11, 0.22).translate(gx, 0.74, gz + 0.08), redM);
-  // 3D Green Stock Candlestick Bars rising and safely hitting the ARA top bumper
-  b.add(new THREE.BoxGeometry(0.14, 0.58, 0.12).translate(gx - 0.30, 1.12, gz + 0.10), greenM);
-  b.add(new THREE.BoxGeometry(0.14, 0.90, 0.12).translate(gx - 0.06, 1.36, gz + 0.10), greenM);
-  b.add(new THREE.BoxGeometry(0.14, 1.24, 0.12).translate(gx + 0.20, 1.50, gz + 0.10), greenM);
-
-  // ---- Back-Right: Corporate Fundamental & Laporan Keuangan Table (x = +0.76, z = -1.82) ----
-  const tx = 0.76, tz = -1.82;
-  const tableTop = new THREE.BoxGeometry(1.22, 0.09, 0.86);
-  m4.makeRotationX(0.20);
-  m4.setPosition(tx, 0.92, tz);
-  b.add(tableTop, deskM, m4);
-  for (const [lx, lz] of [[tx - 0.50, tz - 0.32], [tx + 0.50, tz - 0.32], [tx - 0.50, tz + 0.32], [tx + 0.50, tz + 0.32]]) {
-    b.add(new THREE.BoxGeometry(0.08, 0.88, 0.08).translate(lx, 0.44, lz), woodM);
-  }
-  // Large tilted Laporan Keuangan sheet on table
-  const sheetGeo = new THREE.BoxGeometry(0.96, 0.02, 0.68);
-  m4.makeRotationX(0.20);
-  m4.setPosition(tx - 0.06, 0.98, tz + 0.02);
-  b.add(sheetGeo, fundM, m4);
-
-  // Stacked Gold Bullion Bars & Brass Desk Lamp on right corner of table
-  b.add(new THREE.BoxGeometry(0.20, 0.10, 0.13).translate(tx + 0.38, 1.04, tz - 0.16), goldM);
-  b.add(new THREE.CylinderGeometry(0.12, 0.15, 0.05, 12).translate(tx + 0.40, 1.06, tz - 0.26), goldM);
-  b.add(new THREE.CylinderGeometry(0.02, 0.02, 0.46, 8).translate(tx + 0.40, 1.30, tz - 0.26), goldM);
-  b.add(new THREE.ConeGeometry(0.19, 0.14, 12).translate(tx + 0.32, 1.52, tz - 0.20), greenM);
-
-  b.build(g, true);
-
-  // ---- Motivated Glowing Bulb & ARA Guardrail Laser Strip (NOINK) ----
-  const bulbMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(3.4, 2.4, 1.1), fog: false });
-  const bulb = new THREE.Mesh(new THREE.SphereGeometry(0.075, 10, 10), bulbMat);
-  bulb.position.set(tx + 0.32, 1.46, tz - 0.20);
-  bulb.layers.set(NOINK);
-  g.add(bulb);
-
-  const araGlow = new THREE.MeshBasicMaterial({ color: new THREE.Color(0.5, 2.8, 1.2), fog: false });
-  const araBar = new THREE.Mesh(new THREE.BoxGeometry(1.26, 0.05, 0.05), araGlow);
-  araBar.position.set(gx, 2.24, gz + 0.20);
-  araBar.layers.set(NOINK);
-  g.add(araBar);
-
-  return g;
-};
-
-// ===============================================================================================================
-// HERO SET 5: STORM ROOM VOLATILITAS EKSTREM KRIPTO (Rollercoaster Chart + Global Sentiment Radar)
-// ===============================================================================================================
-export const buildVolatileSet = () => {
-  const g = new THREE.Group();
-  const b = new Batch();
-  const m4 = new THREE.Matrix4();
-
-  const floorM = lam("volFloor", () => ({ map: rep(cyberGridTex("#ff4757", "#181028"), 3, 3) }));
-  const wallM = lam("volWall", () => ({ color: "#23153c" }));
-  const darkM = lam("volDark", () => ({ color: "#1c132e" }));
-  const boardM = lam("volBoard", () => ({ map: volatileBoardTex() }));
-  const greenM = lam("volGreen", () => ({ color: "#2ecc71" }));
-  const redM = lam("volRed", () => ({ color: "#ff4757" }));
-  const goldM = lam("volGold", () => ({ color: "#ffd43b" }));
-  const cyanM = lam("volCyan", () => ({ color: "#00d2d3" }));
-  const headerM = lam("volHeader", () => ({
-    map: headerBannerTex("VOLATILITAS EKSTREM", "TANPA BATAS AUTO REJECTION!", "#8c1d2c", "#ffd43b"),
-  }));
-  const radarSignM = lam("volRadarSign", () => ({
-    map: plinthSignTex("SENTIMEN PASAR", "LIKUIDITAS GLOBAL", "#381b5c", "#00e5ff"),
-  }));
-
-  // Floor & walls
-  b.add(new THREE.BoxGeometry(16, 0.3, 12).translate(0, -0.15, -1.0), floorM);
-  b.add(new THREE.BoxGeometry(11.0, 5.8, 0.28).translate(0, 2.9, -3.65), wallM);
-  b.add(new THREE.BoxGeometry(0.28, 5.8, 6.5).translate(-2.35, 2.9, -0.8), wallM);
-  b.add(new THREE.BoxGeometry(0.28, 5.8, 6.5).translate(2.35, 2.9, -0.8), wallM);
-
-  // Overhead Warning Header Banner (x = 0.0, y = 3.28, z = -3.32, width = 1.68m)
-  b.add(new THREE.BoxGeometry(1.68, 0.46, 0.10).translate(0, 3.28, -3.32), headerM);
-
-  // ---- Back-Left: 3D Rollercoaster Spike & Crash Rig (x = -0.66, z = -2.15) ----
-  const vx = -0.66, vz = -2.15;
-  b.add(new THREE.BoxGeometry(1.26, 0.56, 0.58).translate(vx, 0.28, vz), darkM);
-  b.add(new THREE.BoxGeometry(1.22, 1.56, 0.10).translate(vx, 1.34, vz), boardM);
-  // Giant Green Pump Candlestick shooting WAY ABOVE the frame top (no ARA limit!)
-  b.add(new THREE.BoxGeometry(0.18, 2.15, 0.16).translate(vx - 0.34, 1.55, vz + 0.12), greenM);
-  b.add(new THREE.ConeGeometry(0.20, 0.36, 8).translate(vx - 0.34, 2.78, vz + 0.12), greenM);
-  // Giant Red Crash Candlestick plunging down to the floor (no ARB limit!)
-  const crashGeo = new THREE.BoxGeometry(0.18, 1.85, 0.16);
-  m4.makeRotationZ(-0.16);
-  m4.setPosition(vx + 0.28, 1.24, vz + 0.14);
-  b.add(crashGeo, redM, m4);
-  b.add(new THREE.ConeGeometry(0.20, 0.36, 8).rotateX(Math.PI).translate(vx + 0.42, 0.36, vz + 0.14), redM);
-
-  // ---- Back-Right: Global Sentiment & Liquidity Globe Pedestal (x = +0.76, z = -2.05) ----
-  const rx = 0.76, rz = -2.05;
-  b.add(new THREE.BoxGeometry(1.06, 0.86, 0.74).translate(rx, 0.43, rz), darkM);
-  b.add(new THREE.BoxGeometry(0.96, 0.44, 0.06).translate(rx, 0.48, rz + 0.39), radarSignM);
-  // 3D Global Liquidity Sphere + Orbital Ring + Megaphone
-  b.add(new THREE.SphereGeometry(0.36, 16, 12).translate(rx - 0.08, 1.38, rz), cyanM);
-  b.add(new THREE.TorusGeometry(0.48, 0.032, 8, 24).rotateX(1.1).rotateY(0.3).translate(rx - 0.08, 1.38, rz), goldM);
-  b.add(new THREE.ConeGeometry(0.16, 0.34, 12).rotateZ(-1.1).translate(rx + 0.32, 1.18, rz + 0.10), redM);
-
-  // Overhead Siren Mount placed at (x = +0.92, y = 2.68, z = -1.65) so the center header banner is 100% unobstructed!
-  b.add(new THREE.CylinderGeometry(0.02, 0.02, 1.10, 6).translate(0.92, 3.30, -1.65), darkM);
-  b.add(new THREE.ConeGeometry(0.26, 0.18, 10).translate(0.92, 2.68, -1.65), darkM);
-
-  b.build(g, true);
-
-  // ---- Glowing Red Warning Beacon & Neon Spike/Crash Strips (NOINK) ----
-  const sirenMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(3.6, 0.8, 1.2), fog: false });
-  const siren = new THREE.Mesh(new THREE.SphereGeometry(0.10, 12, 10), sirenMat);
-  siren.position.set(0.92, 2.55, -1.65);
-  siren.layers.set(NOINK);
-  g.add(siren);
-
-  const redNeon = new THREE.MeshBasicMaterial({ color: new THREE.Color(3.2, 0.5, 0.8), fog: false });
-  const alertStrip = new THREE.Mesh(new THREE.BoxGeometry(1.24, 0.05, 0.05), redNeon);
-  alertStrip.position.set(vx, 2.14, vz + 0.10);
-  alertStrip.layers.set(NOINK);
-  g.add(alertStrip);
-
+  const water = new THREE.Mesh(new THREE.PlaneGeometry(3.6, 40).rotateX(-Math.PI / 2), lam("rWater", () => ({ color: "#4f9ed0", emissive: "#1a4a6a", emissiveIntensity: 0.25 })));
+  water.position.set(4.2, 0.04, 0); g.add(water);
+  g.position.set(RIVER_X, 0, 0);
   return g;
 };

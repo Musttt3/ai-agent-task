@@ -1,4 +1,4 @@
-// 2D Character Cast & Cartoon Effect Cards for "Perbedaan Saham vs Kripto".
+// 2D Character Cast & Cartoon Effect Cards for "Es Krim di Zaman Purba" (engine from the 2d-in-3d-animation-agent template).
 // Uses 3x supersampled (1800x3000) lit cardShade sprites, contact/cast shadow blobs, and NOINK layer 3.
 // Follows skill/references/reports/motion.md & Gold Benchmark kosan/cast.ts:
 // - Bouncy walk cycles ("march" / "stroll" with 4.8% height bob & weight-shift sway)
@@ -9,9 +9,9 @@ import * as THREE from "three";
 import {
   Pen, bodyFront, bodySide, fxShadow, fxContact, fxBurst, fxStars, fxCreak,
   Outfit, FrontOpts, SideOpts, INK,
-  PAK_BUDI_OUTFIT, BRO_KEVIN_OUTFIT, PAK_DARMA_OUTFIT, BANG_NIK_OUTFIT,
 } from "./toon";
-import { FPS, SHOTS, clamp01, smooth, WorldState } from "./story";
+import { FPS } from "./timing";
+import { clamp01 } from "./cam";
 import { LightName } from "./lights";
 import { NOINK } from "./ink";
 import { cardShade, blobMaterial, CARD_K } from "./cardshade";
@@ -116,19 +116,19 @@ export type Stage = { places: Place[]; fx: FxPlace[] };
 const hh = (i: number, s = 0) => { const v = Math.sin(i * 127.1 + s * 311.7) * 43758.5453; return v - Math.floor(v); };
 const q = (v: number, n = 120) => Math.round(v * n) / n;
 
-const tier = (d: number): [number, number, number] =>
+export const tier = (d: number): [number, number, number] =>
   d < 8.5 ? [1800, 3000, 3.0] : d < 14 ? [1080, 1800, 1.8] : [480, 800, 0.8];
 
-const SUN = new THREE.Vector3(0.5, 0.75, 0.4).normalize();
+export const SUN = new THREE.Vector3(0.5, 0.75, 0.4).normalize();
 const tmp = new THREE.Vector3();
-let LNAME: LightName = "golden";
+export let LNAME: LightName = "golden";
 
 const sunOf = (root: THREE.Object3D) => {
   let s: THREE.DirectionalLight | null = null;
   root.traverse((o) => { if (!s && o instanceof THREE.DirectionalLight && o.castShadow) s = o; });
   return s as THREE.DirectionalLight | null;
 };
-const findSun = (cam: CamInfo, out: THREE.Vector3) => {
+export const findSun = (cam: CamInfo, out: THREE.Vector3) => {
   if (cam.sun) return out.copy(cam.sun).normalize();
   let best: THREE.DirectionalLight | null = null, err = Infinity;
   for (const r of ROOTS) {
@@ -140,7 +140,7 @@ const findSun = (cam: CamInfo, out: THREE.Vector3) => {
   }
   return best ? out.copy(best.position).sub(best.target.position).normalize() : out;
 };
-const light2D = (cam: CamInfo, mirror: boolean) => {
+export const light2D = (cam: CamInfo, mirror: boolean) => {
   const sx = SUN.dot(cam.right) * (mirror ? -1 : 1), sy = -SUN.y;
   return Math.round(Math.atan2(sy, sx) / (Math.PI / 4)) * (Math.PI / 4);
 };
@@ -148,7 +148,7 @@ const light2D = (cam: CamInfo, mirror: boolean) => {
 // ---------------- blinks, expression swaps & micro-motion helpers ----------------
 const LEAD = 2 / FPS;
 const LID = [0.5, 1, 1, 0.5];
-const lidAt = (t: number, i: number, swaps: number[] = []) => {
+export const lidAt = (t: number, i: number, swaps: number[] = []) => {
   const f = Math.round(t * FPS);
   for (const ts of swaps) { const k = f - Math.round((ts - LEAD) * FPS) + 1; if (k >= 0 && k < 4) return LID[k]; }
   let s = Math.round(-60 * hh(i, 9));
@@ -164,7 +164,7 @@ const liveTilt = (t: number, seed: number, amp = 2.6) => q(amp * Math.sin(t * 3.
 const liveHead = (t: number, seed: number, amp = 4.0) => q(amp * Math.sin(t * 2.4 + seed * 1.7) + (amp * 0.4) * Math.cos(t * 4.1 + seed), 30);
 
 /** Parabolic hop/jump arc with a 3-frame crouch anticipation */
-const hopY = (t: number, t0: number, dur = 0.42, height = 0.16): number => {
+export const hopY = (t: number, t0: number, dur = 0.42, height = 0.16): number => {
   const dt = t - t0;
   if (dt < -0.08 || dt > dur) return 0;
   if (dt < 0) return -0.025 * Math.sin(((dt + 0.08) / 0.08) * Math.PI);
@@ -172,8 +172,8 @@ const hopY = (t: number, t0: number, dur = 0.42, height = 0.16): number => {
   return height * 4 * u * (1 - u);
 };
 
-type Who = { i: number; o: Outfit; okey: string };
-const person = (cam: CamInfo, who: Who, x: number, y: number, z: number, side: boolean, mirror: boolean, fo: FrontOpts, so: SideOpts, scale = 1): Place => {
+export type Who = { i: number; o: Outfit; okey: string };
+export const person = (cam: CamInfo, who: Who, x: number, y: number, z: number, side: boolean, mirror: boolean, fo: FrontOpts, so: SideOpts, scale = 1): Place => {
   const d = cam.pos.distanceTo(tmp.set(x, y + 1.2, z)) / scale;
   const [w, h, k] = tier(d);
   const m = side && mirror, light = light2D(cam, m), seed = ((who.i * 5 + 3) % 7) + 1;
@@ -196,7 +196,7 @@ const TAIL: [number, number, number] = [0.38, 0.36, 0.56];
 const toSrgb = (v: number) => { const c = clamp01(v); return c <= 0.0031308 ? 12.92 * c : 1.055 * c ** (1 / 2.4) - 0.055; };
 const hexOf = (c: [number, number, number], k: number) => "#" + c.map((v) => Math.round(255 * toSrgb(1 - (1 - v) * k)).toString(16).padStart(2, "0")).join("");
 
-const blob = (out: Stage, x: number, _y: number, z: number, sc = 1, k = 1) => {
+export const blob = (out: Stage, x: number, _y: number, z: number, sc = 1, k = 1) => {
   const hl = Math.hypot(SUN.x, SUN.z) || 1, ox = -SUN.x / hl, oz = -SUN.z / hl, rot = Math.atan2(-ox, -oz);
   const el = Math.asin(Math.min(0.99, Math.max(0.15, SUN.y)));
   const len = Math.min(2.2, Math.max(0.5, 1.4 / Math.tan(el))) * sc, h = len + 0.5 * sc, c = 0.3 * h;
@@ -234,7 +234,7 @@ const fxMoneyFly = (p: Pen, phase: number) => {
     g.arc(0, 0, 18, 0, Math.PI * 2);
     g.fill(); g.stroke();
     g.fillStyle = INK;
-    g.font = "900 22px 'Segoe UI', Arial, sans-serif";
+    g.font = "900 22px 'PoppinsBlack', 'Segoe UI', Arial, sans-serif";
     g.textAlign = "center";
     g.fillText("Rp", 0, 8);
     g.restore();
@@ -274,14 +274,14 @@ const fxCryptoSwarm = (p: Pen, phase: number) => {
     g.fill(); g.stroke();
 
     g.fillStyle = INK;
-    g.font = "900 32px 'Segoe UI', Arial, sans-serif";
+    g.font = "900 32px 'PoppinsBlack', 'Segoe UI', Arial, sans-serif";
     g.textAlign = "center";
     g.fillText(sym, x, y + 11);
   }
 };
 
 /** Comic Floating Price / Alert Badge (560x260) — auto-fits text with generous internal padding so it NEVER overflows the box! */
-const fxBadge = (p: Pen, text: string, sub: string, bg: string, fg: string) => {
+export const fxBadge = (p: Pen, text: string, sub: string, bg: string, fg: string) => {
   const g = p.g;
   g.fillStyle = INK;
   g.beginPath();
@@ -301,689 +301,141 @@ const fxBadge = (p: Pen, text: string, sub: string, bg: string, fg: string) => {
 
   // Auto-fit main heading within max width 456 px
   let mainSz = 50;
-  g.font = `900 ${mainSz}px 'Segoe UI', Arial, sans-serif`;
+  g.font = `900 ${mainSz}px 'PoppinsBlack', 'Segoe UI', Arial, sans-serif`;
   while (g.measureText(text).width > 456 && mainSz > 26) {
     mainSz -= 2;
-    g.font = `900 ${mainSz}px 'Segoe UI', Arial, sans-serif`;
+    g.font = `900 ${mainSz}px 'PoppinsBlack', 'Segoe UI', Arial, sans-serif`;
   }
   g.fillText(text, 272, 112);
 
   // Auto-fit subtitle within max width 456 px
   let subSz = 31;
-  g.font = `800 ${subSz}px 'Segoe UI', Arial, sans-serif`;
+  g.font = `800 ${subSz}px 'PoppinsBlack', 'Segoe UI', Arial, sans-serif`;
   while (g.measureText(sub).width > 456 && subSz > 18) {
     subSz -= 2;
-    g.font = `800 ${subSz}px 'Segoe UI', Arial, sans-serif`;
+    g.font = `800 ${subSz}px 'PoppinsBlack', 'Segoe UI', Arial, sans-serif`;
   }
   g.fillText(sub, 272, 174);
 };
 
-// ---------------- Character Roster ----------------
-const WHO_BUDI: Who  = { i: 1, o: PAK_BUDI_OUTFIT,  okey: "budi" };
-const WHO_KEVIN: Who = { i: 2, o: BRO_KEVIN_OUTFIT, okey: "kevin" };
-const WHO_DARMA: Who = { i: 3, o: PAK_DARMA_OUTFIT, okey: "darma" };
-const WHO_NIK: Who   = { i: 4, o: BANG_NIK_OUTFIT,  okey: "bangnik" };
 
-// ---------------- Stage Characters & 2D Effects Across All 16 Shots ----------------
-export const stage = (ws: WorldState, cam: CamInfo): Stage => {
-  const out: Stage = { places: [], fx: [] };
-  const { id, f, t } = ws;
-  LNAME = SHOTS[id - 1].light;
+// ================= "Es Krim di Zaman Purba": roster, stage context, extra cards =================
+export const setLight = (l: LightName) => { LNAME = l; };
+
+// ---- outfits (our own characters) ----
+/** you: yellow T-shirt, blue shorts, blue flip-flops */
+export const KAMU: Outfit = { jacket: "#f2c230", tee: true, shorts: true, pants: "#2f5aa8", boots: "#2fa0d8", hat: "hair", hair: "#1e1a18", skin: "#f1d2b0", noButtons: true };
+/** your prehistoric friend: fur tunic, long hair, beard, bare arms and legs */
+export const PURBA: Outfit = { jacket: "#9a6a3a", fur: "#5e3d22", bareArms: true, bareLegs: true, pants: "#9a6a3a", boots: "#7a5232", hat: "hair", hair: "#3a2618",
+  longHair: "#3a2618", beard: "#3a2618", skin: "#c99067", build: "stout", noButtons: true };
+/** the group: hunters, gatherers, kids (fur in different colours) */
+export const tribe = (v: number): Outfit => {
+  const fur = ["#a8784a", "#8f6440", "#b88a58", "#7a5a3a", "#c09a6a", "#9a7048"][v % 6], spot = ["#5e3d22", "#4a3020", "#6a4a2a"][v % 3];
+  const hair = ["#2a1a14", "#3a2618", "#4a3020", "#1e1612"][v % 4], skin = ["#c99067", "#b98058", "#d0a07a", "#a87050"][v % 4];
+  const base: Outfit = { jacket: fur, fur: spot, bareArms: true, bareLegs: true, pants: fur, boots: "#7a5232", hat: "hair", hair, longHair: hair, skin, noButtons: true };
+  if (v % 3 === 1) return { ...base, dress: fur, beard: undefined };                       // women: long fur dress
+  return { ...base, beard: v % 2 ? hair : undefined, longHair: v % 4 === 0 ? undefined : hair };
+};
+export const tribeKid = (v: number): Outfit => ({ ...tribe(v * 2), dress: undefined, beard: undefined, build: "kid" });
+/** modern school kids in the red-and-white primary school uniform */
+export const schoolKid = (v: number): Outfit => ({ jacket: "#f7f7f2", pants: "#c8322c", boots: "#1e1e22", hat: "hair", hair: ["#1e1a18", "#2a1a14", "#3a2618"][v % 3], build: "kid",
+  skin: ["#f1d2b0", "#e0b890", "#c99067"][v % 3], shorts: v % 2 === 0, dress: v % 2 ? "#c8322c" : undefined, buttons: "#d9dde0" });
+
+export const WHO = {
+  kamu: { i: 1, o: KAMU, okey: "kamu" } as Who,
+  purba: { i: 2, o: PURBA, okey: "purba" } as Who,
+  tribe: (v: number): Who => ({ i: 10 + v, o: tribe(v), okey: "tribe" + v }),
+  kid: (v: number): Who => ({ i: 30 + v, o: tribeKid(v), okey: "tkid" + v }),
+  school: (v: number): Who => ({ i: 50 + v, o: schoolKid(v), okey: "skid" + v }),
+};
+
+// ---- extra cards ----
+const softPuff = (p: Pen, col: string) => {
+  const g = p.g, gr = g.createRadialGradient(128, 128, 0, 128, 128, 124);
+  gr.addColorStop(0, col + "e0"); gr.addColorStop(0.55, col + "80"); gr.addColorStop(1, col + "00");
+  g.fillStyle = gr; g.fillRect(0, 0, 256, 256);
+};
+/** a cartoon text mark (question marks, "Zz", "!" ...) with an ink outline */
+const fxText = (p: Pen, text: string, col: string) => {
+  const g = p.g; g.textAlign = "center"; g.textBaseline = "middle"; g.font = "900 190px 'PoppinsBlack', 'Segoe UI', sans-serif";
+  g.lineJoin = "round"; g.lineWidth = 26; g.strokeStyle = INK; g.strokeText(text, 256, 140); g.fillStyle = col; g.fillText(text, 256, 140);
+};
+/** a wolf in profile facing right, drawn in the 600 x 1000 card space (soles at y = 975); k = trot drawing 0..3 */
+export const drawWolf = (p: Pen, k: number, sit = false) => {
+  const fur = "#8a8f98", belly = "#c8ccd2", leg = (x: number, ph: number) => { const s = sit ? 0 : 14 * Math.sin((k * Math.PI) / 2 + ph); p.line([[x, 860], [x + s, 968]], fur, 18); };
+  p.ol = 8;
+  p.line([[150, 830], [90, 800], [60, 760]], fur, 26);                       // tail
+  leg(190, 0); leg(380, Math.PI);
+  p.ell(285, 830, 150, 70, fur, 8);
+  p.ell(290, 865, 105, 26, belly, 0);
+  leg(220, Math.PI); leg(410, 0);
+  p.poly([[400, 760], [520, 800], [545, 830], [470, 850], [410, 840]], fur, 8);      // head + snout
+  p.poly([[420, 770], [430, 715], [455, 765]], fur, 7);                             // ear
+  p.dot(545, 826, 9, "#1e1a18");
+  p.ell(470, 790, 8, 9, "#ffffff", 3); p.dot(473, 792, 5);
+};
+
+// ---- the stage context a beat draws its people and effects with ----
+export type POpts = FrontOpts & { y?: number; hop?: number[]; hopH?: number; scale?: number; mirror?: boolean; swaps?: number[]; noShadow?: boolean };
+export type Ctx = {
+  f: number; t: number; a: number; b: number; u: number; cam: CamInfo; out: Stage;
+  P: (who: Who, x: number, z: number, o?: POpts) => void;
+  badge: (key: string, text: string, sub: string, bg: string, fg: string, x: number, y: number, z: number, w: number, at: number, until?: number) => void;
+  mark: (text: string, col: string, x: number, y: number, z: number, w: number, at: number, until?: number) => void;
+  puffs: (key: string, x: number, y: number, z: number, o: { n?: number; period?: number; life?: number; size?: number; rise?: number; drift?: [number, number]; col?: string; on?: boolean }) => void;
+  wolf: (x: number, z: number, sit?: boolean, mirror?: boolean) => void;
+  burst: (x: number, y: number, z: number, w: number, at: number, col?: string) => void;
+};
+const backOut = (x: number) => { const c = 1.7; const u = clamp01(x) - 1; return 1 + (c + 1) * u * u * u + c * u * u; };
+const hash = (s: string) => { let h = 7; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 100003; return h; };
+
+export const makeCtx = (f: number, a: number, b: number, cam: CamInfo): Ctx => {
+  const out: Stage = { places: [], fx: [] }, t = f / FPS;
   findSun(cam, SUN);
-
-  const addChar = (
-    who: Who,
-    x: number,
-    y: number,
-    z: number,
-    fo: FrontOpts,
-    scale = 0.84,
-    side = false,
-    mirror = false,
-    so: SideOpts = {}
-  ) => {
-    out.places.push(person(cam, who, x, y, z, side, mirror, fo, so, scale));
-    blob(out, x, y, z, scale * 0.95);
+  const ctx: Ctx = {
+    f, t, a, b, u: clamp01((f - a) / Math.max(1, b - a)), cam, out,
+    P: (who, x, z, o = {}) => {
+      const sc = o.scale ?? 1;
+      let y = o.y ?? 0;
+      for (const h of o.hop ?? []) y += hopY(t, h / FPS, 0.42, (o.hopH ?? 0.16) * sc);
+      const blink = o.blink ?? lidAt(t, who.i, (o.swaps ?? []).map((s) => s / FPS));
+      const fo: FrontOpts = { mode: "stand", phase: t * 0.9, ...o, blink };
+      out.places.push(person(cam, who, x, y, z, false, !!o.mirror, fo, {}, sc));
+      if (!o.noShadow && (o.mode ?? "stand") !== "sit") blob(out, x, 0, z, sc);
+    },
+    badge: (key, text, sub, bg, fg, x, y, z, w, at, until) => {
+      if (f < at || (until !== undefined && f >= until)) return;
+      const s = backOut((f - at) / 7) * (until !== undefined ? clamp01((until - f) / 5) : 1);
+      if (s <= 0.01) return;
+      out.fx.push({ key: "badge|" + key, cw: 560, ch: 260, draw: (p) => fxBadge(p, text, sub, bg, fg), x, y, z, w: w * s, h: w * (260 / 560) * s });
+    },
+    mark: (text, col, x, y, z, w, at, until) => {
+      if (f < at || (until !== undefined && f >= until)) return;
+      const s = backOut((f - at) / 6), bob = 0.04 * Math.sin((f - at) * 0.3);
+      out.fx.push({ key: "mark|" + text + col, cw: 512, ch: 280, draw: (p) => fxText(p, text, col), x, y: y + bob, z, w: w * s, h: w * (280 / 512) * s });
+    },
+    puffs: (key, x, y, z, o) => {
+      if (o.on === false) return;
+      const n = o.n ?? 4, period = o.period ?? 40, life = o.life ?? 40, size = o.size ?? 0.4, rise = o.rise ?? 0.6, col = o.col ?? "#ffffff", seed = hash(key);
+      for (let i = 0; i < n; i++) {
+        const age = (f + Math.floor((i * period) / n) + (seed % period)) % period;
+        if (age >= life) continue;
+        const k = age / life, s = size * (0.4 + 1.2 * k);
+        const dx = (o.drift?.[0] ?? 0) * k + 0.15 * Math.sin(i * 2.1 + seed), dz = (o.drift?.[1] ?? 0) * k;
+        out.fx.push({ key: "puff|" + col, cw: 256, ch: 256, draw: (p) => softPuff(p, col), x: x + dx, y: y + rise * k, z: z + dz, w: s, h: s, soft: true });
+      }
+    },
+    wolf: (x, z, sit = false, mirror = false) => {
+      const k = Math.floor(f / 4) % 4, d = cam.pos.distanceTo(new THREE.Vector3(x, 0.6, z)), [w, h, kk] = tier(d);
+      out.places.push({ key: `wolf|${sit ? "s" : k}`, x, y: 0, z, mirror, draw: (p) => drawWolf(p, sit ? 0 : k, sit), size: [w, h, kk] });
+      blob(out, x, 0, z, 1.1);
+    },
+    burst: (x, y, z, w, at, col = "#fff3b0") => {
+      const k = (f - at) / 14;
+      if (k < 0 || k > 1) return;
+      const q = Math.round(k * 10) / 10;
+      out.fx.push({ key: `burst|${q}|${col}`, cw: 500, ch: 500, draw: (p) => fxBurst(p, q, col, 12, 50, 240), x, y, z, w, h: w });
+    },
   };
-
-  if (id === 1) {
-    // Shot 1 (0..54, HERO 1 at f=35): "Ini saham, ini kripto."
-    // Pak Budi (Saham Investor) on Left, Bang Nik (Host) in Center, Bro Kevin (Crypto Trader) on Right
-    addChar(WHO_BUDI, -0.68, 0, -0.58, {
-      mode: "stand",
-      phase: q(t * 1.1, 20),
-      expr: "smile",
-      blink: lidAt(t, 1, [0.34]),
-      tilt: liveTilt(t, 1, 2.8) + 3,
-      headTilt: liveHead(t, 1, 4.0) + 3,
-      prop: "cert",
-      wave: q(Math.sin(t * 4.2), 10),
-      look: 1,
-      facing: 1,
-    }, 0.82);
-
-    const hopNik = hopY(t, 0.95, 0.36, 0.12);
-    addChar(WHO_NIK, 0.0, hopNik, -0.46, {
-      mode: "stand",
-      phase: q(t * 1.4, 20),
-      expr: t < 1.0 ? "grin" : "laugh",
-      blink: lidAt(t, 4, [1.0]),
-      tilt: liveTilt(t, 4, 3.4),
-      headTilt: liveHead(t, 4, 4.6),
-      prop: "mic",
-      wave: q(Math.sin(t * 5.2), 10),
-      look: t < 0.8 ? -1 : 1,
-      facing: 1,
-    }, 0.85);
-
-    addChar(WHO_KEVIN, 0.68, 0, -0.58, {
-      mode: "stand",
-      phase: q(t * 1.2, 20),
-      expr: "grin",
-      blink: lidAt(t, 2, [1.20]),
-      tilt: liveTilt(t, 2, 3.0) - 3,
-      headTilt: liveHead(t, 2, 4.2) - 4,
-      prop: "btc",
-      wave: q(Math.cos(t * 4.5), 10),
-      look: -1,
-      facing: -1,
-    }, 0.82);
-
-    out.fx.push({
-      key: "fx|badge|s1",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "SAHAM VS KRIPTO", "KENALI PERBEDAANNYA!", "#ffd43b", INK),
-      x: 0.0, y: 2.02 + Math.sin(t * 3.8) * 0.03, z: -0.95,
-      w: 0.78, h: 0.36,
-    });
-  } else if (id === 2) {
-    // Shot 2 (54..99): "Sini aku jelasin bedanya." -> White Flash at 97!
-    addChar(WHO_BUDI, -0.68, 0, -0.60, {
-      mode: "stand",
-      phase: q(t * 1.0, 20),
-      expr: "smile",
-      blink: lidAt(t, 1),
-      tilt: liveTilt(t, 1, 2.4),
-      headTilt: liveHead(t, 1, 3.5),
-      prop: "cert",
-      look: 1,
-      facing: 1,
-    }, 0.81);
-
-    const hopNik = hopY(t, 2.55, 0.40, 0.15);
-    addChar(WHO_NIK, 0.0, hopNik, -0.45, {
-      mode: f >= 74 ? "march" : "stand",
-      phase: q(t * 2.0, 20),
-      expr: t < 2.5 - LEAD ? "grin" : "laugh",
-      blink: lidAt(t, 4, [2.5]),
-      tilt: liveTilt(t, 4, 3.8) + 4,
-      headTilt: liveHead(t, 4, 5.0) - 4,
-      prop: f >= 72 ? "point_up" : "mic",
-      wave: q(Math.sin(t * 6.0), 10),
-      facing: 1,
-    }, 0.85);
-
-    addChar(WHO_KEVIN, 0.68, 0, -0.60, {
-      mode: "stand",
-      phase: q(t * 1.1, 20),
-      expr: "grin",
-      blink: lidAt(t, 2),
-      tilt: liveTilt(t, 2, 2.6),
-      headTilt: liveHead(t, 2, 3.8),
-      prop: "btc",
-      look: -1,
-      facing: -1,
-    }, 0.81);
-
-    if (f >= 74 && f <= 97) {
-      const bt = q(clamp01((f - 74) / 22), 20);
-      out.fx.push({
-        key: `fx|burst|s2|${bt}`,
-        cw: 500, ch: 500,
-        draw: (p) => fxBurst(p, bt, "#ffd43b", 12, 36, 235),
-        x: 0.08, y: 2.04, z: -0.55,
-        w: 0.76, h: 0.76,
-      });
-    }
-  } else if (id === 3) {
-    // Shot 3 (99..215): "Saham adalah bukti kepemilikan atas sebagian modal sebuah perusahaan"
-    const walkU = clamp01((f - 99) / 32);
-    const bx = -0.68 + 0.24 * smooth(walkU);
-    addChar(WHO_BUDI, bx, 0, -0.52, {
-      mode: walkU < 0.95 ? "march" : "stand",
-      phase: q(t * 1.8, 20),
-      expr: t < 5.5 - LEAD ? "smile" : "grin",
-      blink: lidAt(t, 1, [5.5]),
-      tilt: liveTilt(t, 1, 3.0) + 3,
-      headTilt: liveHead(t, 1, 4.4) - 3,
-      prop: "cert",
-      wave: q(Math.sin(t * 4.5), 10),
-      look: 1,
-      facing: 1,
-    }, 0.84);
-
-    addChar(WHO_DARMA, 0.54, 0, -0.56, {
-      mode: "stand",
-      phase: q(t * 1.0, 20),
-      expr: "smile",
-      blink: lidAt(t, 3),
-      tilt: liveTilt(t, 3, 2.5),
-      headTilt: liveHead(t, 3, 3.8),
-      prop: "pointer",
-      wave: q(Math.cos(t * 3.8), 10),
-      look: -1,
-      facing: -1,
-    }, 0.84);
-
-    out.fx.push({
-      key: "fx|badge|kepemilikan",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "BUKTI KEPEMILIKAN", "MODAL PERUSAHAAN RIIL", "#2ecc71", "#ffffff"),
-      x: -0.05, y: 1.98 + Math.sin(t * 3.5) * 0.04, z: -0.95,
-      w: 0.78, h: 0.36,
-    });
-  } else if (id === 4) {
-    // Shot 4 (215..290): "...yang terdaftar di Bursa Efek. Di Indonesia,"
-    addChar(WHO_BUDI, -0.46, 0, -0.54, {
-      mode: "stand",
-      phase: q(t * 1.1, 20),
-      expr: "grin",
-      blink: lidAt(t, 1, [8.06]),
-      tilt: liveTilt(t, 1, 2.8),
-      headTilt: liveHead(t, 1, 4.2),
-      prop: "cert",
-      wave: q(Math.sin(t * 4.2), 10),
-      look: 1,
-      facing: 1,
-    }, 0.84);
-
-    addChar(WHO_DARMA, 0.48, 0, -0.54, {
-      mode: "stand",
-      phase: q(t * 1.05, 20),
-      expr: "smile",
-      blink: lidAt(t, 3, [8.40]),
-      tilt: liveTilt(t, 3, 2.6),
-      headTilt: liveHead(t, 3, 4.0),
-      prop: "gavel",
-      wave: q(Math.cos(t * 4.0), 10),
-      look: -1,
-      facing: -1,
-    }, 0.84);
-
-    out.fx.push({
-      key: "fx|badge|bei",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "TERDAFTAR DI BEI", "BURSA EFEK INDONESIA", "#1b4d3e", "#ffe66d"),
-      x: 0.0, y: 2.02 + Math.sin(t * 3.6) * 0.04, z: -0.95,
-      w: 0.78, h: 0.36,
-    });
-  } else if (id === 5) {
-    // Shot 5 (290..412, HERO 2 at f=355): "aktivitas pasar saham diawasi oleh OJK dan BEI..."
-    const walkBudi = clamp01((f - 290) / 28);
-    const bx5 = -0.68 + 0.16 * smooth(walkBudi);
-    addChar(WHO_BUDI, bx5, 0, -0.55, {
-      mode: walkBudi < 0.95 ? "march" : "stand",
-      phase: q(t * 1.4, 20),
-      expr: "smile",
-      blink: lidAt(t, 1, [11.80]),
-      tilt: liveTilt(t, 1, 2.6) + 2,
-      headTilt: liveHead(t, 1, 4.0) + 3,
-      prop: "cert",
-      wave: q(Math.sin(t * 4.0), 10),
-      look: 1,
-      facing: 1,
-    }, 0.84);
-
-    const hopDarma = hopY(t, 11.80, 0.38, 0.13) + hopY(t, 12.10, 0.32, 0.10);
-    addChar(WHO_DARMA, 0.48, hopDarma, -0.52, {
-      mode: "stand",
-      phase: q(t * 1.5, 20),
-      expr: t < 11.80 - LEAD ? "stern" : "grin",
-      blink: lidAt(t, 3, [11.80, 12.48]),
-      tilt: liveTilt(t, 3, 3.4) - 3,
-      headTilt: liveHead(t, 3, 4.6) - 3,
-      prop: "gavel",
-      wave: q(Math.sin(t * 5.8), 10),
-      look: -1,
-      facing: -1,
-    }, 0.85);
-
-    if (f >= 354 && f <= 378) {
-      const bt = q(clamp01((f - 354) / 22), 20);
-      out.fx.push({
-        key: `fx|burst|s5|${bt}`,
-        cw: 500, ch: 500,
-        draw: (p) => fxBurst(p, bt, "#ffd43b", 10, 32, 220),
-        x: 0.48, y: 1.98, z: -0.62,
-        w: 0.68, h: 0.68,
-      });
-    }
-
-    out.fx.push({
-      key: "fx|badge|ojk",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "DIAWASI OJK & BEI", "AMAN & TEREGULASI RESMI", "#f39c12", "#ffffff"),
-      x: 0.0, y: 1.98 + Math.sin(t * 3.6) * 0.03, z: -0.92,
-      w: 0.78, h: 0.36,
-    });
-  } else if (id === 6) {
-    // Shot 6 (412..513): "...mengikuti jam operasional bursa di hari kerja."
-    addChar(WHO_BUDI, -0.46, 0, -0.54, {
-      mode: "stand",
-      phase: q(t * 1.0, 20),
-      expr: "smile",
-      blink: lidAt(t, 1, [15.20]),
-      tilt: liveTilt(t, 1, 2.6),
-      headTilt: liveHead(t, 1, 3.8),
-      prop: "kopi",
-      wave: q(Math.sin(t * 3.8), 10),
-      look: 1,
-      facing: 1,
-    }, 0.84);
-
-    addChar(WHO_DARMA, 0.46, 0, -0.54, {
-      mode: "stand",
-      phase: q(t * 1.05, 20),
-      expr: "smile",
-      blink: lidAt(t, 3, [16.36]),
-      tilt: liveTilt(t, 3, 2.6),
-      headTilt: liveHead(t, 3, 4.0),
-      prop: "pointer",
-      wave: q(Math.cos(t * 4.2), 10),
-      look: -1,
-      facing: -1,
-    }, 0.84);
-
-    out.fx.push({
-      key: "fx|badge|jamkerja",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "JAM BURSA: HARI KERJA", "SENIN - JUMAT (09:00 - 16:00)", "#2980b9", "#ffffff"),
-      x: 0.04, y: 1.96 + Math.sin(t * 3.4) * 0.03, z: -0.92,
-      w: 0.78, h: 0.36,
-    });
-  } else if (id === 7) {
-    // Shot 7 (513..647): "Sedangkan kripto adalah aset digital yang menggunakan teknologi blockchain"
-    const walkU = clamp01((f - 513) / 34);
-    const kx = 0.48 - 0.72 * smooth(walkU);
-    const hopK = hopY(t, 20.62, 0.40, 0.14);
-    addChar(WHO_KEVIN, kx, hopK, -0.52, {
-      mode: walkU < 0.95 ? "march" : "stand",
-      phase: q(t * 1.9, 20),
-      expr: t < 20.62 - LEAD ? "grin" : "laugh",
-      blink: lidAt(t, 2, [17.54, 20.62]),
-      tilt: liveTilt(t, 2, 3.4) + 3,
-      headTilt: liveHead(t, 2, 4.8) - 3,
-      prop: "btc",
-      wave: q(Math.sin(t * 5.2), 10),
-      look: 1,
-      facing: 1,
-    }, 0.85);
-
-    out.fx.push({
-      key: "fx|badge|blockchain",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "ASET DIGITAL KRIPTO", "TEKNOLOGI BLOCKCHAIN", "#8e44ad", "#ffd43b"),
-      x: 0.12, y: 1.98 + Math.sin(t * 3.8) * 0.04, z: -0.92,
-      w: 0.78, h: 0.36,
-    });
-  } else if (id === 8) {
-    // Shot 8 (647..796): "bersifat terdesentralisasi tanpa otoritas pusat yang mengatur seluruh transaksinya."
-    addChar(WHO_KEVIN, -0.32, 0, -0.52, {
-      mode: "stand",
-      phase: q(t * 1.2, 20),
-      expr: t < 23.42 - LEAD ? "grin" : "laugh",
-      blink: lidAt(t, 2, [22.08, 23.76]),
-      tilt: liveTilt(t, 2, 3.2),
-      headTilt: liveHead(t, 2, 4.6),
-      prop: "phone",
-      wave: q(Math.sin(t * 4.8), 10),
-      look: 1,
-      facing: 1,
-    }, 0.85);
-
-    out.fx.push({
-      key: "fx|badge|decentral",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "TERDESENTRALISASI", "TANPA OTORITAS PUSAT!", "#00a8ff", "#ffffff"),
-      x: 0.14, y: 1.96 + Math.sin(t * 3.6) * 0.04, z: -0.90,
-      w: 0.78, h: 0.36,
-    });
-  } else if (id === 9) {
-    // Shot 9 (796..990): "Menariknya, perdagangan kripto bisa dilakukan kapan saja, 24 jam sehari & 7 hari seminggu."
-    const jump1 = hopY(t, 30.20, 0.44, 0.17);
-    const jump2 = hopY(t, 31.88, 0.40, 0.14);
-    const excited = f >= 862;
-    addChar(WHO_KEVIN, -0.26, jump1 + jump2, -0.50, {
-      mode: excited ? "march" : "stand",
-      phase: q(t * (excited ? 2.2 : 1.2), 20),
-      expr: excited ? "laugh" : "grin",
-      blink: lidAt(t, 2, [30.20, 31.88]),
-      tilt: liveTilt(t, 2, excited ? 4.4 : 2.8) + (excited ? 4 : 0),
-      headTilt: liveHead(t, 2, 5.0),
-      prop: excited ? "point_up" : "btc",
-      wave: q(Math.sin(t * 6.0), 10),
-      facing: 1,
-    }, 0.85);
-
-    out.fx.push({
-      key: "fx|badge|247",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "BUKA 24 JAM / 7 HARI!", "TRADING NON-STOP KAPAN SAJA", "#2ecc71", "#ffffff"),
-      x: 0.16, y: 1.96 + Math.sin(t * 4.2) * 0.04, z: -0.88,
-      w: 0.78, h: 0.36,
-    });
-  } else if (id === 10) {
-    // Shot 10 (990..1123, HERO 3 at f=1050): "Contohnya seperti Bitcoin, Ethereum, dan Solana."
-    const hopK10 = hopY(t, 35.47, 0.40, 0.15);
-    addChar(WHO_KEVIN, -0.44, hopK10, -0.52, {
-      mode: f >= 1064 ? "march" : "stand",
-      phase: q(t * 1.5, 20),
-      expr: "laugh",
-      blink: lidAt(t, 2, [34.02, 35.47]),
-      tilt: liveTilt(t, 2, 3.4) + 3,
-      headTilt: liveHead(t, 2, 4.6) + 3,
-      prop: "btc",
-      wave: q(Math.sin(t * 5.2), 10),
-      look: 1,
-      facing: 1,
-    }, 0.84);
-
-    const cp = q(t, 15);
-    out.fx.push({
-      key: `fx|crypto|${cp}`,
-      cw: 520, ch: 520,
-      draw: (p) => fxCryptoSwarm(p, cp),
-      x: 0.42, y: 2.02, z: -1.10,
-      w: 0.72, h: 0.72,
-    });
-
-    out.fx.push({
-      key: "fx|badge|btcehtsol",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "BTC • ETH • SOLANA", "KOIN KRIPTO POPULER", "#f39c12", INK),
-      x: -0.04, y: 1.98 + Math.sin(t * 3.5) * 0.03, z: -0.92,
-      w: 0.76, h: 0.35,
-    });
-  } else if (id === 11) {
-    // Shot 11 (1123..1397, HERO 4 at f=1250): "saham cenderung memiliki mekanisme pengendalian seperti auto rejection..."
-    const hopD11 = hopY(t, 40.86, 0.38, 0.13);
-    addChar(WHO_DARMA, -0.48, hopD11, -0.54, {
-      mode: "stand",
-      phase: q(t * 1.3, 20),
-      expr: t < 40.86 - LEAD ? "stern" : "smile",
-      blink: lidAt(t, 3, [40.86, 42.62]),
-      tilt: liveTilt(t, 3, 3.0) + 3,
-      headTilt: liveHead(t, 3, 4.4) + 3,
-      prop: "pointer",
-      wave: q(Math.sin(t * 5.0), 10),
-      look: 1,
-      facing: 1,
-    }, 0.85);
-
-    const hopB11 = hopY(t, 42.00, 0.36, 0.12);
-    addChar(WHO_BUDI, 0.48, hopB11, -0.54, {
-      mode: "stand",
-      phase: q(t * 1.2, 20),
-      expr: "grin",
-      blink: lidAt(t, 1, [41.12, 42.00]),
-      tilt: liveTilt(t, 1, 2.8) - 2,
-      headTilt: liveHead(t, 1, 4.2) - 3,
-      prop: "cert",
-      wave: q(Math.cos(t * 4.4), 10),
-      look: -1,
-      facing: -1,
-    }, 0.84);
-
-    out.fx.push({
-      key: "fx|badge|ara",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "ADA AUTO REJECTION!", "BATAS AMAN NAIK & TURUN", "#1e824c", "#ffffff"),
-      x: 0.0, y: 1.98 + Math.sin(t * 3.6) * 0.03, z: -0.92,
-      w: 0.78, h: 0.36,
-    });
-  } else if (id === 12) {
-    // Shot 12 (1397..1529): "harga saham juga dipengaruhi oleh kinerja keuangan dan kondisi perusahaan."
-    addChar(WHO_DARMA, -0.50, 0, -0.56, {
-      mode: "stand",
-      phase: q(t * 1.0, 20),
-      expr: "smile",
-      blink: lidAt(t, 3),
-      tilt: liveTilt(t, 3, 2.5),
-      headTilt: liveHead(t, 3, 3.8),
-      prop: "gavel",
-      look: 1,
-      facing: 1,
-    }, 0.84);
-
-    const hopBudi = hopY(t, 48.44, 0.38, 0.13);
-    addChar(WHO_BUDI, 0.44, hopBudi, -0.50, {
-      mode: "stand",
-      phase: q(t * 1.25, 20),
-      expr: "laugh",
-      blink: lidAt(t, 1, [48.44]),
-      tilt: liveTilt(t, 1, 3.0),
-      headTilt: liveHead(t, 1, 4.4),
-      prop: "calc",
-      wave: q(Math.sin(t * 4.8), 10),
-      look: -1,
-      facing: -1,
-    }, 0.85);
-
-    out.fx.push({
-      key: "fx|badge|kinerja",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "KINERJA KEUANGAN", "LABA & FUNDAMENTAL BISNIS", "#f39c12", "#ffffff"),
-      x: 0.0, y: 1.96 + Math.sin(t * 3.5) * 0.03, z: -0.92,
-      w: 0.78, h: 0.36,
-    });
-  } else if (id === 13) {
-    // Shot 13 (1529..1728, HERO 5 at f=1630): "Sedangkan kripto punya pergerakan harga yang jauh lebih fluktuatif tanpa batas auto rejection..."
-    const shockHop = hopY(t, 53.84, 0.42, 0.18) + hopY(t, 55.56, 0.38, 0.14);
-    addChar(WHO_KEVIN, -0.36, shockHop, -0.52, {
-      mode: "stand",
-      phase: q(t * 1.8, 20),
-      expr: t < 53.5 - LEAD ? "nervous" : "shock",
-      blink: lidAt(t, 2, [53.84, 55.56]),
-      tilt: liveTilt(t, 2, 4.5) - 5,
-      headTilt: liveHead(t, 2, 5.8) - 4,
-      prop: "phone",
-      wave: q(Math.sin(t * 7.5), 10),
-      look: 1,
-      facing: 1,
-    }, 0.85);
-
-    addChar(WHO_BUDI, 0.52, 0, -0.56, {
-      mode: "stand",
-      phase: q(t * 1.1, 20),
-      expr: "shock",
-      blink: lidAt(t, 1, [54.62]),
-      tilt: liveTilt(t, 1, 3.0) + 4,
-      headTilt: liveHead(t, 1, 4.2) + 4,
-      prop: "cert",
-      look: -1,
-      facing: -1,
-    }, 0.83);
-
-    // Circling dizzy stars above shocked Bro Kevin
-    const st = q(t * 0.9, 20);
-    out.fx.push({
-      key: `fx|stars|s13|${st}`,
-      cw: 420, ch: 210,
-      draw: (p) => fxStars(p, st),
-      x: -0.44, y: 1.88, z: -0.48,
-      w: 0.52, h: 0.26,
-    });
-
-    out.fx.push({
-      key: "fx|badge|fluktuatif",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "FLUKTUATIF EKSTREM!", "TANPA BATAS AUTO REJECTION", "#ff4757", "#ffffff"),
-      x: 0.14, y: 2.16 + Math.sin(t * 4.8) * 0.04, z: -0.92,
-      w: 0.78, h: 0.36,
-    });
-  } else if (id === 14) {
-    // Shot 14 (1728..1924): "Nilainya bisa berubah drastis karena dipengaruhi sentimen pasar, tren komunitas, hingga likuiditas global."
-    addChar(WHO_KEVIN, -0.48, 0, -0.54, {
-      mode: "stand",
-      phase: q(t * 1.3, 20),
-      expr: t < 60.28 - LEAD ? "shock" : "nervous",
-      blink: lidAt(t, 2, [58.68, 60.28]),
-      tilt: liveTilt(t, 2, 3.6) - 3,
-      headTilt: liveHead(t, 2, 4.8),
-      prop: "phone",
-      wave: q(Math.sin(t * 5.2), 10),
-      look: 1,
-      facing: 1,
-    }, 0.84);
-
-    const walkU = clamp01((f - 1785) / 28);
-    const nx = 0.82 - 0.36 * smooth(walkU);
-    addChar(WHO_NIK, nx, 0, -0.50, {
-      mode: walkU < 0.95 ? "march" : "stand",
-      phase: q(t * 1.8, 20),
-      expr: "grin",
-      blink: lidAt(t, 4, [61.66]),
-      tilt: liveTilt(t, 4, 3.0),
-      headTilt: liveHead(t, 4, 4.4),
-      prop: "mic",
-      wave: q(Math.cos(t * 4.6), 10),
-      look: -1,
-      facing: -1,
-    }, 0.84);
-
-    const ct = q(t, 15);
-    out.fx.push({
-      key: `fx|creak|s14|${ct}`,
-      cw: 300, ch: 300,
-      draw: (p) => fxCreak(p, ct),
-      x: -0.48, y: 1.95, z: -0.50,
-      w: 0.45, h: 0.45,
-    });
-
-    out.fx.push({
-      key: "fx|badge|sentimen",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "SENTIMEN & HYPE PASAR", "TREN KOMUNITAS & GLOBAL", "#8e44ad", "#ffd43b"),
-      x: 0.04, y: 1.98 + Math.sin(t * 3.8) * 0.04, z: -0.92,
-      w: 0.78, h: 0.36,
-    });
-  } else if (id === 15) {
-    // Shot 15 (1924..2052): "Jadi, siapa nih yang habis gajian langsung kepikiran buat investasi saham?"
-    const hopBudi = hopY(t, 65.76, 0.44, 0.16);
-    addChar(WHO_BUDI, -0.58, hopBudi, -0.54, {
-      mode: "stand",
-      phase: q(t * 1.4, 20),
-      expr: "laugh",
-      blink: lidAt(t, 1, [65.76]),
-      tilt: liveTilt(t, 1, 3.2) + 3,
-      headTilt: liveHead(t, 1, 4.5),
-      prop: "cert",
-      wave: q(Math.sin(t * 5.2), 10),
-      look: 1,
-      facing: 1,
-    }, 0.84);
-
-    addChar(WHO_NIK, 0.0, 0, -0.46, {
-      mode: "stand",
-      phase: q(t * 1.3, 20),
-      expr: "grin",
-      blink: lidAt(t, 4, [67.26]),
-      tilt: liveTilt(t, 4, 3.0),
-      headTilt: liveHead(t, 4, 4.4),
-      prop: "mic",
-      wave: q(Math.sin(t * 4.8), 10),
-      facing: 1,
-    }, 0.85);
-
-    addChar(WHO_KEVIN, 0.58, 0, -0.54, {
-      mode: "stand",
-      phase: q(t * 1.2, 20),
-      expr: "smile",
-      blink: lidAt(t, 2),
-      tilt: liveTilt(t, 2, 2.8) - 3,
-      headTilt: liveHead(t, 2, 4.0),
-      prop: "btc",
-      wave: q(Math.cos(t * 4.5), 10),
-      look: -1,
-      facing: -1,
-    }, 0.84);
-
-    const mp = q(t, 15);
-    out.fx.push({
-      key: `fx|money|s15|${mp}`,
-      cw: 520, ch: 520,
-      draw: (p) => fxMoneyFly(p, mp),
-      x: -0.52, y: 2.02, z: -0.58,
-      w: 0.68, h: 0.68,
-    });
-
-    out.fx.push({
-      key: "fx|badge|gajian",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "HABIS GAJIAN?", "INVESTASI SAHAM ATAU KRIPTO?", "#2ecc71", "#ffffff"),
-      x: 0.04, y: 1.98 + Math.sin(t * 3.8) * 0.03, z: -0.92,
-      w: 0.78, h: 0.36,
-    });
-  } else {
-    // Shot 16 (2052..2121): "Komen AI kalau mau buat video kayak gini"
-    addChar(WHO_BUDI, -0.62, 0, -0.56, {
-      mode: "stand",
-      phase: q(t * 1.2, 20),
-      expr: "laugh",
-      blink: lidAt(t, 1),
-      tilt: liveTilt(t, 1, 2.8),
-      headTilt: liveHead(t, 1, 4.0),
-      prop: "cert",
-      wave: q(Math.sin(t * 5.5), 10),
-      look: 1,
-      facing: 1,
-    }, 0.83);
-
-    const hopCta = hopY(t, 68.76, 0.42, 0.16);
-    addChar(WHO_NIK, 0.0, hopCta, -0.44, {
-      mode: "stand",
-      phase: q(t * 1.8, 20),
-      expr: "laugh",
-      blink: lidAt(t, 4, [68.76]),
-      tilt: liveTilt(t, 4, 3.8) + 4,
-      headTilt: liveHead(t, 4, 5.0),
-      prop: "point_up",
-      wave: q(Math.sin(t * 6.2), 10),
-      facing: 1,
-    }, 0.86);
-
-    addChar(WHO_KEVIN, 0.62, 0, -0.56, {
-      mode: "stand",
-      phase: q(t * 1.2, 20),
-      expr: "laugh",
-      blink: lidAt(t, 2),
-      tilt: liveTilt(t, 2, 2.8),
-      headTilt: liveHead(t, 2, 4.0),
-      prop: "btc",
-      wave: q(Math.cos(t * 5.5), 10),
-      look: -1,
-      facing: -1,
-    }, 0.83);
-
-    out.fx.push({
-      key: "fx|badge|komenai",
-      cw: 560, ch: 260,
-      draw: (p) => fxBadge(p, "KOMEN 'AI' DI BAWAH!", "MAU BIKIN VIDEO KAYAK GINI?", "#ff4757", "#ffffff"),
-      x: 0.0, y: 2.02 + Math.sin(t * 4.5) * 0.04, z: -0.88,
-      w: 0.78, h: 0.36,
-    });
-
-    if (f >= 2060 && f <= 2100) {
-      const bt = q(clamp01((f - 2060) / 36), 20);
-      out.fx.push({
-        key: `fx|burst|s16|${bt}`,
-        cw: 500, ch: 500,
-        draw: (p) => fxBurst(p, bt, "#ffd43b", 12, 36, 235),
-        x: 0.0, y: 2.05, z: -0.52,
-        w: 0.76, h: 0.76,
-      });
-    }
-  }
-
-  return out;
+  return ctx;
 };

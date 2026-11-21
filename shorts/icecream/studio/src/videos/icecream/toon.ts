@@ -571,8 +571,8 @@ const beardOn = (p: Pen, col: string, hp: P2[], H: Blob, cx: number, hc: number,
 export type Arms = [P2[], P2[]];
 /** held prop; for the hammer the number is the strike 0 (raised) .. 1 (struck) */
 export type Prop = null | "icecream" | "shako" | "kopi" | "point_up" | "lever" | "mic" | "phone" | "calc" | "key" | "pointer" | "suitcase" | "cert" | "btc" | "gavel" | ["hammer", number]
-  | "spear" | "fish" | "fishbig" | "popsicle" | "popsicle_bit" | "melted" | "leaf" | "stone" | "twig" | "gem" | "sticktoy" | "basket" | "rub" | "fuel";
-const HOLD_PROPS = new Set(["fish", "fishbig", "popsicle", "popsicle_bit", "melted", "leaf", "stone", "twig", "gem", "sticktoy", "basket", "rub", "fuel"]);
+  | "spear" | "fish" | "fishbig" | "popsicle" | "popsicle_bit" | "melted" | "leaf" | "stone" | "twig" | "gem" | "sticktoy" | "basket" | "rub" | "fuel" | "money";
+const HOLD_PROPS = new Set(["fish", "fishbig", "popsicle", "popsicle_bit", "melted", "leaf", "stone", "twig", "gem", "sticktoy", "basket", "rub", "fuel", "money"]);
 
 const BUILD: Record<Build, { a: number; torso: number; legs: number; tw: number }> = {
   adult: { a: 118, torso: 1.1, legs: 1.4, tw: 0.8 },
@@ -853,6 +853,10 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
     } else if (prop === "rub") { // palm up, rubbing fingers ("money" gesture)
       p.ell(hx + 4 * u, hy - 4 * u, 9 * u, 5 * u, skinLimb, 1.6 * u);
       for (const dx of [-2, 4, 10]) p.stroke([[hx + dx * u, hy - 8 * u], [hx + (dx + 1) * u, hy - 14 * u]], 1.6 * u, INK);
+    } else if (prop === "money") { // a banknote waved in the hand
+      p.poly(rrect(hx - 4 * u, hy - 30 * u, hx + 34 * u, hy - 6 * u, 3 * u), "#7fc27a", 2.2 * u);
+      p.ell(hx + 15 * u, hy - 18 * u, 6 * u, 6 * u, "#f2efe6", 1.4 * u);
+      p.dot(hx, hy, 5.5 * u);
     } else if (prop === "fuel") { // jerry can
       p.poly(rrect(hx - 14 * u, hy - 6 * u, hx + 14 * u, hy + 26 * u, 3 * u), "#d9382e", 2.2 * u);
       p.stroke([[hx - 8 * u, hy - 6 * u], [hx - 8 * u, hy - 12 * u], [hx + 6 * u, hy - 12 * u], [hx + 6 * u, hy - 6 * u]], 2.4 * u, INK);
