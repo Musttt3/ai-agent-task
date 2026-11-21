@@ -401,7 +401,7 @@ export const BEATS: Beat[] = [
     si: 26, set: "valley", light: "day",
     cams: (a) => [
       { f: a, s: two([-1.9, 0, 0.8], a, { az: 15, d: 3.6, h: 1.4 }) },
-      { f: wf(26, "mengoleskan") - 4, cut: true, s: ins([-0.95, 1.2, 0.75], wf(26, "mengoleskan"), { az: 15, d: 0.95, h: 0.12, fov: 30, roll: -0.05 }) },
+      { f: wf(26, "mengoleskan") - 4, cut: true, s: frame([-1.55, 0, 0.75], wf(26, "mengoleskan"), 2.4, 1.35, 1.25, { az: 15, fov: 30, roll: -0.05, rate: 0.004, punch: 0.01 }) },
     ],
     stage: (c) => {
       const near = Math.min(1, (c.f - wf(26, "mengambil")) / 30);

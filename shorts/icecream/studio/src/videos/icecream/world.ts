@@ -148,6 +148,7 @@ export class World {
     this.gen.lamp.color.setRGB(ws.genOn ? 0.5 : 2.6, ws.genOn ? 2.6 : 0.4, ws.genOn ? 0.6 : 0.3);
     this.gen.body.position.set(ws.genOn ? 0.006 * Math.sin(f * 2.7) : 0, ws.genOn ? 0.004 * Math.abs(Math.sin(f * 3.1)) : 0, 0);
     this.pile.visible = ws.set === "valley" && ws.fish;
+    const tab = this.valley.getObjectByName("tablet"); if (tab) tab.visible = beat.si < 22; // the "30.000 TAHUN LALU" stone only in chapters 1-2
     this.board.root.visible = ws.set === "valley" && !!ws.board;
     for (const [k, m] of Object.entries(this.board.faces)) m.visible = ws.board === k;
     // motivated glows

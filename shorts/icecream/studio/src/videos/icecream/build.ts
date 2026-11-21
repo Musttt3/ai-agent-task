@@ -288,7 +288,7 @@ export const buildValley = () => {
   for (let i = 0; i < 7; i++) { const x = -90 + i * 30, s = 30 + r() * 20; b.add(new THREE.ConeGeometry(s, s * 1.3, 8).translate(x, s * 0.6 - 4, 110 + r() * 30), mtnFar); }
   b.build(g, true);
   const tablet = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1.0, 0.25), [rockD, rockD, rockD, rockD, lam("tablet", () => ({ map: tabletTex(["30.000", "TAHUN LALU"]) })), rockD]);
-  tablet.position.set(-3.4, 0.62, 1.6); tablet.rotation.set(-0.08, 0.18, 0.02); tablet.castShadow = true; g.add(tablet);
+  tablet.position.set(-3.4, 0.62, 1.6); tablet.rotation.set(-0.08, 0.18, 0.02); tablet.castShadow = true; tablet.name = "tablet"; g.add(tablet);
   return g;
 };
 
