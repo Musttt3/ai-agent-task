@@ -552,7 +552,7 @@ const hatOn = (p: Pen, o: Outfit, hp: P2[], H: Blob, cx: number, hc: number, lig
 
 /** full beard + moustache as one shape over the lower face; the mouth is drawn on top of it */
 const beardOn = (p: Pen, col: string, hp: P2[], H: Blob, cx: number, hc: number, light: number, thick: number, ow: number, facing: number) => {
-  const yCut = hc + 0.3 * H.b, fx = cx + 7 * (H.a / 50) * facing;
+  const yCut = hc + 0.42 * H.b, fx = cx + 7 * (H.a / 50) * facing;
   const keep = (y: number) => y > yCut;
   const n = hp.length, st = Math.max(0, hp.findIndex(([, y], i) => keep(y) && !keep(hp[(i + n - 1) % n][1])));
   let low = [...hp.slice(st), ...hp.slice(0, st)].filter(([, y]) => keep(y)).map(([x, y]) => {
@@ -571,8 +571,8 @@ const beardOn = (p: Pen, col: string, hp: P2[], H: Blob, cx: number, hc: number,
 export type Arms = [P2[], P2[]];
 /** held prop; for the hammer the number is the strike 0 (raised) .. 1 (struck) */
 export type Prop = null | "icecream" | "shako" | "kopi" | "point_up" | "lever" | "mic" | "phone" | "calc" | "key" | "pointer" | "suitcase" | "cert" | "btc" | "gavel" | ["hammer", number]
-  | "spear" | "fish" | "fishbig" | "popsicle" | "popsicle_bit" | "melted" | "leaf" | "stone" | "twig" | "gem" | "sticktoy" | "basket" | "rub" | "fuel" | "money";
-const HOLD_PROPS = new Set(["fish", "fishbig", "popsicle", "popsicle_bit", "melted", "leaf", "stone", "twig", "gem", "sticktoy", "basket", "rub", "fuel", "money"]);
+  | "spear" | "fish" | "fishbig" | "popsicle" | "popsicle_bit" | "melted" | "leaf" | "stone" | "twig" | "gem" | "sticktoy" | "basket" | "rub" | "fuel" | "money" | "popsicle_down" | "reach" | "shell";
+const HOLD_PROPS = new Set(["fish", "fishbig", "popsicle", "popsicle_bit", "melted", "leaf", "stone", "twig", "gem", "sticktoy", "basket", "rub", "fuel", "money", "popsicle_down", "shell"]);
 
 const BUILD: Record<Build, { a: number; torso: number; legs: number; tw: number }> = {
   adult: { a: 118, torso: 1.1, legs: 1.4, tw: 0.8 },
@@ -702,6 +702,9 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
       arms.push({ pts: [S, [tcx + 1.15 * T.a + 12 * u, S[1] + 0.12 * HH - 4 * u * wv], [tcx + 1.40 * T.a + 24 * u + 6 * u * wv, S[1] + 0.05 * HH - 10 * u * wv]], front: true });
     } else if (prop === "spear") {
       arms.push({ pts: hang(1, 0.6), front: true });
+    } else if (prop === "reach") { // arm straight out sideways at chest height (grabbing a hand, knocking)
+      const S = sh(1);
+      arms.push({ pts: [S, [tcx + 1.3 * T.a + 16 * u, S[1] + 0.1 * HH - 6 * u * (wave ?? 0)], [tcx + 1.6 * T.a + 40 * u, S[1] + 0.12 * HH - 14 * u * (wave ?? 0)]], front: true });
     } else if (prop === "kopi" || prop === "phone" || prop === "mic" || prop === "icecream" || prop === "calc" || prop === "key" || prop === "cert" || prop === "btc" || (prop !== null && HOLD_PROPS.has(prop as string))) {
       const S = sh(1);
       arms.push({ pts: [S, [tcx + 1.05 * T.a + 4 * u, S[1] + 0.45 * HH - 4 * u * wv], [tcx + 0.55 * T.a + 4 * u * wv, S[1] + 0.36 * HH - 8 * u * wv]], front: true });
@@ -820,6 +823,14 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
       p.poly([[hx - 4 * u, hy - 4 * u], [hx - 4 * u - 12 * u * k, hy - 14 * u * k], [hx - 4 * u - 12 * u * k, hy + 6 * u * k]], "#6fa8c8", 1.8 * u);
       p.ell(hx + 16 * u * k, hy - 4 * u, 20 * u * k, 9 * u * k, "#8cc4e0", 2.2 * u);
       p.dot(hx + 28 * u * k, hy - 6 * u, 2.2 * u * k, INK);
+      p.dot(hx, hy, 5.5 * u);
+    } else if (prop === "shell") { // a scallop shell
+      p.poly([[hx - 16 * u, hy - 6 * u], [hx, hy - 26 * u], [hx + 16 * u, hy - 6 * u], [hx, hy + 2 * u]], "#f2d4c0", 2 * u);
+      for (const dx of [-8, 0, 8]) p.stroke([[hx, hy - 2 * u], [hx + dx * u, hy - 20 * u]], 1.4 * u, "#c89a84");
+      p.dot(hx, hy, 5.5 * u);
+    } else if (prop === "popsicle_down") { // held the wrong way round: the stick points up to the mouth
+      p.poly([[hx - 10 * u, hy + 2 * u], [hx + 10 * u, hy + 2 * u], [hx + 10 * u, hy + 30 * u], [hx, hy + 36 * u], [hx - 10 * u, hy + 30 * u]], "#6b3a22", 2.2 * u);
+      p.band([[hx, hy + 2 * u], [hx, hy - 20 * u]], "#e8c88a", 4 * u, 1.2 * u, "butt");
       p.dot(hx, hy, 5.5 * u);
     } else if (prop === "popsicle" || prop === "popsicle_bit" || prop === "melted") { // chocolate ice cream on a wooden stick
       p.band([[hx, hy + 2 * u], [hx, hy - 12 * u]], "#e8c88a", 4 * u, 1.2 * u, "butt");

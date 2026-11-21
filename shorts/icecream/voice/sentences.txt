@@ -1,0 +1,130 @@
+  0      0-   266 ( 8.9s) Apa jadinya, kalau kamu punya gerobak es krim, lengkap dengan freezer dan ratusan es krim, tetapi bukan untuk berjualan di depan sekolah.
+  1    277-   497 ( 7.3s) Melainkan 30 ribu tahun lalu, ketika manusia masih berburu, mengumpulkan makanan, dan belum mengenali strek.
+  2    506-   629 ( 4.1s) Biasanya, anak -anak berlari menghampirimu sambil membawa uang.
+  3    644-   776 ( 4.4s) Sekarang, yang menghampiri justru manusia purba dengan tomba kayu.
+  4    776-   925 ( 5.0s) Mereka belum pernah melihat es krim, apalagi gerobak yang mengeluarkan hawa dingin.
+  5    938-   974 ( 1.2s) Kedengerannya keren bukan?
+  6    991-  1088 ( 3.2s) Kamu bisa menjadi penjual es krim pertama di zaman purba.
+  7   1101-  1309 ( 6.9s) Tapi tunggu, di dunia tanpa pombensin, bahkan satu es krim yang tidak laku bisa menjadi awal bencana.
+  8   1326-  1507 ( 6.0s) Semuanya bermula ketika kamu dan teman purbamu tiba -tiba muncul di sebuah lembah dekat pantai.
+  9   1517-  1632 ( 3.8s) Kamu masih memakai kaos kuning, celana pendek, dan sandal jepit.
+ 10   1632-  1812 ( 6.0s) Disampingmu berdiri gerobak es krim modern, dilengkapi freezer bertenaga generator kecil.
+ 11   1823-  1944 ( 4.0s) Tanki bahan bakarnya penuh, dan seluruh isinya masih membekuh.
+ 12   1957-  2035 ( 2.6s) Teman purbamu mendekat sambil memegang tomba.
+ 13   2047-  2173 ( 4.2s) Dia mengetuk dinding freezer, kemudian menempelkan pipi ke permukaannya.
+ 14   2186-  2271 ( 2.8s) Begitu merasakan dingin, dia melompat mundur.
+ 15   2281-  2407 ( 4.2s) Mungkin dia mengira kamu menyimpan angin dari puncak gunung di dalam kotak besi.
+ 16   2420-  2519 ( 3.3s) Kamu membuka tutup freezer dan mengambil es krim coklat.
+ 17   2519-  2705 ( 6.2s) Temanmu mencium aromanya, mengamatinya lama, lalu mencoba menggigit bagian stik kayunya.
+ 18   2716-  2774 ( 1.9s) Kamu buru -buru membalik es krim itu.
+ 19   2785-  2876 ( 3.0s) Setelah menjilat ujungnya, matanya membesar.
+ 20   2888-  2970 ( 2.7s) Dia langsung merah tanganmu, meminta satu lagi.
+ 21   2983-  3082 ( 3.3s) Kamu menggeleng, dagangan tidak boleh dihabiskan sendiri.
+ 22   3100-  3214 ( 3.8s) Masalah pertama muncul ketika beberapa anggota kelompok mendekat.
+ 23   3224-  3343 ( 4.0s) Mereka melihat temanmu menikmati makanan aneh dan ingin mencobanya.
+ 24   3343-  3526 ( 6.1s) Kamu tersenyum, mengulurkan telapak tangan, lalu menggosok jari seperti orang meminta uang.
+ 25   3536-  3598 ( 2.1s) Mereka malah mengira tanganmu gatal.
+ 26   3610-  3724 ( 3.8s) Salah seorang mengambil daun dan mencoba mengoleskannya ke jarimu.
+ 27   3733-  3889 ( 5.2s) Kamu menjelaskan dengan gerakan bahwa satu es krim harus ditukar dengan sesuatu.
+ 28   3904-  3957 ( 1.8s) Seorang pemburu menyerahkan batu.
+ 29   3967-  3990 ( 0.8s) Kamu menolak.
+ 30   4001-  4041 ( 1.3s) Yang lain memberikan ranting.
+ 31   4054-  4094 ( 1.3s) Kamu juga menolak.
+ 32   4101-  4185 ( 2.8s) Sampai seorang perempuan datang membawa ikan segar.
+ 33   4185-  4289 ( 3.5s) Nah, akhirnya ada transaksi masuk akal.
+ 34   4298-  4351 ( 1.8s) Kamu memberikan dua es krim.
+ 35   4362-  4448 ( 2.9s) Dia mencicipinya lalu memanggil keluarganya.
+ 36   4460-  4559 ( 3.3s) Dalam waktu singkat, orang -orang berkerumun di sekitar grobak.
+ 37   4569-  4690 ( 4.0s) Ada yang membawa buah, kerang, ikan dan potongan kayu.
+ 38   4698-  4834 ( 4.5s) Kamu bahkan menerima sebuah batu mengilap karena mengira itu mungkin berharga.
+ 39   4846-  4936 ( 3.0s) Hari pertama terasa seperti kesuksesan besar.
+ 40   4950-  5036 ( 2.9s) Kamu punya banyak makanan tanpa perlu berburu.
+ 41   5036-  5119 ( 2.8s) Teman purbamu bertugas menjaga anterian.
+ 42   5131-  5252 ( 4.0s) Sayangnya, dia tidak faham konsep satu orang satu es krim.
+ 43   5266-  5369 ( 3.4s) Setiap melihat anak kecil, dia memberikan tambahan diam -diam.
+ 44   5380-  5467 ( 2.9s) Ketika kamu memergokinya, dia hanya tersenyum.
+ 45   5478-  5560 ( 2.7s) Belum lagi seekor hewan liar mulai berkeliaran.
+ 46   5569-  5684 ( 3.8s) Tertarik oleh bau ikan hasil barter yang kamu letakkan sembarangan.
+ 47   5696-  5823 ( 4.2s) Teman purbamu segera memindahkan ikan itu menjauh dari tempat tidur kelompok.
+ 48   5831-  5856 ( 0.8s) Kamu baru sadar.
+ 49   5856-  5982 ( 4.2s) Setiap es krim yang terjual bukan cuma menghasilkan keuntungan.
+ 50   5991-  6045 ( 1.8s) Kamu juga mendapat pekerjaan baru.
+ 51   6058-  6143 ( 2.8s) Menjaga makanan agar tidak mengundang masalah.
+ 52   6156-  6260 ( 3.5s) Malam tiba, tetapi generator masih berdengung.
+ 53   6267-  6306 ( 1.3s) Kamu mulai mengantuk.
+ 54   6315-  6461 ( 4.9s) Temanmu menunjuk mesin dan bertanya dengan isyarat mengapa benda itu terus berisik.
+ 55   6468-  6557 ( 3.0s) Kamu mematikan generator supaya bisa tidur nyenyak.
+ 56   6566-  6596 ( 1.0s) Kesalahan besar.
+ 57   6612-  6696 ( 2.8s) Pagi harinya, sebagian es krim mulai melunak.
+ 58   6696-  6761 ( 2.2s) Freezer memang memiliki insulasi.
+ 59   6772-  6858 ( 2.9s) Tetapi tanpa listrik, suhunya perlahan naik.
+ 60   6867-  6928 ( 2.0s) Kamu segera menghidupkan generator lagi.
+ 61   6938-  7095 ( 5.2s) Es krim yang sudah mencahir tidak otomatis kembali aman dijual hanya karena dibekukan ulang.
+ 62   7104-  7150 ( 1.5s) Kamu memeriksa persediaan.
+ 63   7156-  7268 ( 3.7s) Beberapa bungkus bocor dan banyak yang mulai berubah bentuk.
+ 64   7276-  7317 ( 1.4s) Jumlah dagangan berkurang.
+ 65   7326-  7468 ( 4.7s) Sementara orang -orang terus datang meminta makanan dingin yang kemarin mereka cicipi.
+ 66   7474-  7506 ( 1.1s) Kamu menaikan harga.
+ 67   7506-  7620 ( 3.8s) Sekarang satu es krim harus ditukar dengan dua ikan.
+ 68   7628-  7688 ( 2.0s) Teman purbamu menatapmu bingung.
+ 69   7698-  7760 ( 2.1s) Dia menunjuk ikan kecil dan ikan besar.
+ 70   7772-  7857 ( 2.8s) Seolah bertanya apakah kedua nya dihargai sama.
+ 71   7868-  7921 ( 1.8s) Kamu tidak tahu cara menjawabnya.
+ 72   7928-  8082 ( 5.1s) Ternyata membuat sistem pembayaran jauh lebih rumit daripada menempelkan daftar harga.
+ 73   8091-  8159 ( 2.3s) Masalah berikutnya datang dari matahari.
+ 74   8169-  8277 ( 3.6s) Ketika tutup freezer terlalu sering dibuka, udara hangat masuk.
+ 75   8288-  8366 ( 2.6s) Generator bekerja lebih lama untuk menjaga suhu.
+ 76   8366-  8475 ( 3.6s) Bahan bakar menipis jauh lebih cepat daripada perkiraanmu.
+ 77   8482-  8544 ( 2.1s) Kamu mencoba mengurangi jam berjualan.
+ 78   8550-  8678 ( 4.3s) Tetapi para pembeli justru berdatangan ketika hari paling panas.
+ 79   8685-  8776 ( 3.0s) Begitu gerobak ditutup, mereka mengetuknya bergantian.
+ 80   8785-  8871 ( 2.9s) Temanmu sampai mengangkat tombak untuk menjaga anterian.
+ 81   8879-  8921 ( 1.4s) Bukan untuk mengusir hewan.
+ 82   8932-  8993 ( 2.0s) Sore itu generator tersendat.
+ 83   9002-  9052 ( 1.7s) Kamu mencoba menyalakannya lagi.
+ 84   9062-  9125 ( 2.1s) Mesin sempat hidup, kemudian mati.
+ 85   9134-  9178 ( 1.5s) Tankinya hampir kosong.
+ 86   9189-  9207 ( 0.6s) Kamu terdiam.
+ 87   9207-  9249 ( 1.4s) Tidak ada bankel.
+ 88   9257-  9291 ( 1.1s) Tidak ada SPBU.
+ 89   9303-  9422 ( 4.0s) Dan tidak ada orang yang bisa menyuling bahan bakar pengganti disekitar lembah.
+ 90   9430-  9526 ( 3.2s) Dalam beberapa jam, daganganmu akan mulai menghangat.
+ 91   9532-  9571 ( 1.3s) Kamu panik mencari cara.
+ 92   9581-  9631 ( 1.7s) Gerobak didorong ke tempat seduh.
+ 93   9638-  9704 ( 2.2s) Tutup freezer ditahan agar tetap rapat.
+ 94   9710-  9820 ( 3.7s) Tetapi, semua itu hanya memperlambat kenaikan suhu.
+ 95   9831-  9880 ( 1.6s) Bukan menciptakan dingin baru.
+ 96   9900- 10012 ( 3.7s) Malam berikutnya, Eskrim terakhir tak lagi layak dijual.
+ 97  10012- 10157 ( 4.8s) Kamu membuang produk yang sudah rusak dan duduk lesu di samping gerobak.
+ 98  10173- 10311 ( 4.6s) Seluruh keuntunganmu berupa ikan dan buah, juga tidak bisa disimpan lama.
+ 99  10327- 10442 ( 3.8s) Sebagian harus segera dimakan atau diolah agar tidak busuk.
+100  10456- 10517 ( 2.0s) Kamu mengeluh kepada teman purbamu.
+101  10530- 10642 ( 3.7s) Bisnismu bangkrut, bahkan sebelum sempat membuka cabang kedua.
+102  10661- 10731 ( 2.3s) Anehnya, temanmu tidak ikut sedih.
+103  10744- 10931 ( 6.2s) Dia mengajakmu menuju aliran sungai yang teduh, lalu memperlihatkan buah -buahan yang tadi ia kumpulkan.
+104  10947- 11078 ( 4.4s) Sebagian sudah disimpan dalam wadah tertutup dan diletakkan di tempat sejuk.
+105  11090- 11204 ( 3.8s) Bukan membekuh, hanya lebih nyaman dimakan saat cuaca panas.
+106  11216- 11289 ( 2.4s) Dia membagikannya kepada anak -anak kelompok.
+107  11302- 11383 ( 2.7s) Mereka tersenyum dan menikmati buah bersama.
+108  11400- 11528 ( 4.3s) Tak ada generator, tak ada freezer, dan tidak ada anterian panjang.
+109  11543- 11585 ( 1.4s) Kamu baru mengerti.
+110  11600- 11692 ( 3.1s) Orang -orang itu bukan membutuhkan eskrim setiap hari.
+111  11692- 11779 ( 2.9s) Mereka menyukai rasa baru yang kamu bawa.
+112  11793- 11940 ( 4.9s) Tetapi mereka tetap membutuhkan makanan yang bisa didapat secara berkelanjutan.
+113  11958- 12113 ( 5.2s) Keesokan paginya, kamu mengubah gerobak menjadi tempat menyimpan peralatan dan berteduh.
+114  12126- 12276 ( 5.0s) Teman purbamu menggunakannya untuk menaruh keranjang buah agar tidak terkena hujan.
+115  12292- 12394 ( 3.4s) Namun kejutan terakhir muncul saat seorang anak mendekat.
+116  12405- 12525 ( 4.0s) Dia menyerahkan ikan kecil, lalu menunjuk gerobakmu sambil tersenyum.
+117  12525- 12644 ( 4.0s) Kamu menggeleng, merasa bersalah karena tak punya eskrim lagi.
+118  12660- 12752 ( 3.1s) Ternyata anak itu tidak meminta makanan dingin.
+119  12762- 12859 ( 3.2s) Dia hanya ingin stik kayu bekas yang kemarin kamu berikan.
+120  12873- 13024 ( 5.0s) Dengan bangga, dia menunjukkan beberapa stik yang sudah diikat menjadi mainan kecil.
+121  13037- 13059 ( 0.7s) Kamu terdiam.
+122  13074- 13214 ( 4.7s) Kamu datang membawa teknologi mahal untuk menjual makanan yang langsung habis.
+123  13225- 13392 ( 5.6s) Tetapi benda paling berharga bagi anak itu justru potongan kayu yang biasanya kamu buang.
+124  13392- 13508 ( 3.9s) Jadi, bagaimana rasanya menjual eskrim di jaman purba?
+125  13522- 13640 ( 3.9s) Hari pertama, kamu menjadi pedagang paling terkenal dilembah.
+126  13650- 13738 ( 2.9s) Hari kedua, kamu sibuk menghitung bahan bakar.
+127  13752- 13819 ( 2.2s) Beberapa hari kemudian, kamu bangkrut.
+128  13832- 14056 ( 7.5s) Dan lucunya, setelah semua eskrim habis, satu -satunya produk yang masih diminati ternyata bukan coklat atau vanila.
+129  14067- 14130 ( 2.1s) Melayinkan stik eskrim bekas.

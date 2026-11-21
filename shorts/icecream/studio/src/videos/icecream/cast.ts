@@ -334,7 +334,7 @@ export const tribe = (v: number): Outfit => {
   const hair = ["#2a1a14", "#3a2618", "#4a3020", "#1e1612"][v % 4], skin = ["#c99067", "#b98058", "#d0a07a", "#a87050"][v % 4];
   const base: Outfit = { jacket: fur, fur: spot, bareArms: true, bareLegs: true, pants: fur, boots: "#7a5232", hat: "hair", hair, longHair: hair, skin, noButtons: true };
   if (v % 3 === 1) return { ...base, dress: fur, beard: undefined };                       // women: long fur dress
-  return { ...base, beard: v % 2 ? hair : undefined, longHair: v % 4 === 0 ? undefined : hair };
+  return { ...base, beard: v % 2 ? ["#5a3a22", "#6a4a2a", "#4e3420", "#73502e"][v % 4] : undefined, longHair: v % 4 === 0 ? undefined : hair };
 };
 export const tribeKid = (v: number): Outfit => ({ ...tribe(v * 2), dress: undefined, beard: undefined, build: "kid" });
 /** modern school kids in the red-and-white primary school uniform */
@@ -375,6 +375,21 @@ export const drawWolf = (p: Pen, k: number, sit = false) => {
   p.ell(470, 790, 8, 9, "#ffffff", 3); p.dot(473, 792, 5);
 };
 
+/** thought bubble with a snowy mountain top and wind gusts (512 x 512) */
+const drawMountainBubble = (p: Pen) => {
+  const g = p.g;
+  p.ell(256, 220, 220, 180, "#fbfaf2", 9);
+  p.ell(120, 440, 26, 22, "#fbfaf2", 7); p.ell(80, 490, 14, 12, "#fbfaf2", 6);
+  g.save(); g.beginPath(); g.ellipse(256, 220, 212, 172, 0, 0, Math.PI * 2); g.clip();
+  const sky = g.createLinearGradient(0, 40, 0, 400); sky.addColorStop(0, "#8ec4f0"); sky.addColorStop(1, "#dff0ff"); g.fillStyle = sky; g.fillRect(0, 0, 512, 512);
+  p.poly([[60, 380], [230, 120], [400, 380]], "#8a9aa8", 7);
+  p.poly([[175, 205], [230, 120], [285, 205], [258, 190], [232, 212], [205, 190]], "#ffffff", 6);
+  p.poly([[300, 380], [400, 210], [500, 380]], "#9aaab8", 7);
+  for (const [y, x0] of [[150, 300], [190, 330], [230, 310]] as const) p.stroke([[x0, y], [x0 + 60, y - 6], [x0 + 110, y + 4]], 7, "#ffffff");
+  g.restore();
+  p.ell(256, 220, 220, 180, null, 9);
+};
+
 // ---- the stage context a beat draws its people and effects with ----
 export type POpts = FrontOpts & { y?: number; hop?: number[]; hopH?: number; scale?: number; mirror?: boolean; swaps?: number[]; noShadow?: boolean };
 export type Ctx = {
@@ -385,6 +400,7 @@ export type Ctx = {
   puffs: (key: string, x: number, y: number, z: number, o: { n?: number; period?: number; life?: number; size?: number; rise?: number; drift?: [number, number]; col?: string; on?: boolean }) => void;
   wolf: (x: number, z: number, sit?: boolean, mirror?: boolean) => void;
   burst: (x: number, y: number, z: number, w: number, at: number, col?: string) => void;
+  thought: (x: number, y: number, z: number, w: number, at: number, until?: number) => void;
 };
 const backOut = (x: number) => { const c = 1.7; const u = clamp01(x) - 1; return 1 + (c + 1) * u * u * u + c * u * u; };
 const hash = (s: string) => { let h = 7; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 100003; return h; };
@@ -429,6 +445,11 @@ export const makeCtx = (f: number, a: number, b: number, cam: CamInfo): Ctx => {
       const k = Math.floor(f / 4) % 4, d = cam.pos.distanceTo(new THREE.Vector3(x, 0.6, z)), [w, h, kk] = tier(d);
       out.places.push({ key: `wolf|${sit ? "s" : k}`, x, y: 0, z, mirror, draw: (p) => drawWolf(p, sit ? 0 : k, sit), size: [w, h, kk] });
       blob(out, x, 0, z, 1.1);
+    },
+    thought: (x, y, z, w, at, until) => {
+      if (f < at || (until !== undefined && f >= until)) return;
+      const sc = backOut((f - at) / 8);
+      out.fx.push({ key: "thought|mountain", cw: 512, ch: 512, draw: drawMountainBubble, x, y: y + 0.03 * Math.sin(f * 0.15), z, w: w * sc, h: w * sc });
     },
     burst: (x, y, z, w, at, col = "#fff3b0") => {
       const k = (f - at) / 14;

@@ -282,7 +282,7 @@ export const buildValley = () => {
   // scattered boulders, ferns, trees; far hills and mountains; the beach and the sea behind
   for (let i = 0; i < 26; i++) { const x = -40 + r() * 80, z = -15 + r() * 30; if (Math.hypot(x, z) < 6 || (Math.abs(x - sx) < 5 && Math.abs(z - sz) < 4)) continue; b.add(new THREE.DodecahedronGeometry(0.3 + r() * 0.7, 0).scale(1.2, 0.7, 1).translate(x, 0.15, z), rockM); }
   for (let i = 0; i < 40; i++) { const x = -30 + r() * 60, z = -12 + r() * 24; if (Math.hypot(x, z) < 5) continue; for (let k = 0; k < 5; k++) b.add(new THREE.ConeGeometry(0.08, 0.7, 4).rotateZ((k - 2) * 0.35).translate(x + (k - 2) * 0.08, 0.3, z), fern); }
-  const trees: [number, number, number][] = [[-14, -9, 6.5], [-17, 2, 7], [12, -8, 6.8], [16, 3, 7.4], [9, -14, 6], [-6, -14, 5.8], [22, -4, 6.2], [-24, -6, 7.5], [4, -16, 5.5]];
+  const trees: [number, number, number][] = [[-14, -9, 6.5], [-17, 2, 7], [12, -8, 6.8], [16, 3, 7.4], [9, -14, 6], [-6, -14, 5.8], [22, -4, 6.2], [-24, -6, 7.5], [4, -16, 5.5], [-9.0, 2.4, 7.6]]; // the last one is the shade tree the cart is pushed under
   trees.forEach(([x, z, h], i) => addTree(b, x, 0, z, h, 101 + i));
   for (let i = 0; i < 9; i++) { const x = -70 + i * 18, s = 14 + r() * 12; b.add(new THREE.ConeGeometry(s, s * 1.1, 8).translate(x, s * 0.5 - 2, 45 + r() * 15), mtn); }
   for (let i = 0; i < 7; i++) { const x = -90 + i * 30, s = 30 + r() * 20; b.add(new THREE.ConeGeometry(s, s * 1.3, 8).translate(x, s * 0.6 - 4, 110 + r() * 30), mtnFar); }
@@ -311,5 +311,18 @@ export const buildRiver = () => {
   const water = new THREE.Mesh(new THREE.PlaneGeometry(3.6, 40).rotateX(-Math.PI / 2), lam("rWater", () => ({ color: "#4f9ed0", emissive: "#1a4a6a", emissiveIntensity: 0.25 })));
   water.position.set(4.2, 0.04, 0); g.add(water);
   g.position.set(RIVER_X, 0, 0);
+  return g;
+};
+
+// ---------------- the barter goods (fish, fruit, shells, wood) left next to the cart ----------------
+export const buildPile = () => {
+  const g = new THREE.Group(), b = new Batch(), r = rng(55);
+  const fish = lam("pFish", () => ({ color: "#8cc4e0" })), fruitC = ["#e2453c", "#f2b134", "#8cc63f"], shell = lam("pShell", () => ({ color: "#f2d4c0" })), wood = lam("pWood", () => ({ color: "#7a5232" })), leaf = lam("pLeaf", () => ({ color: "#5d9a3c" }));
+  b.add(new THREE.CylinderGeometry(0.75, 0.75, 0.04, 16).scale(1.3, 1, 1).translate(0, 0.02, 0), leaf);
+  for (let i = 0; i < 9; i++) { const a = r() * Math.PI * 2, d = r() * 0.55; b.add(new THREE.SphereGeometry(0.13, 10, 8).scale(2.2, 0.6, 0.8).rotateY(a).translate(Math.cos(a) * d, 0.1 + (i % 3) * 0.08, Math.sin(a) * d * 0.7), fish); }
+  for (let i = 0; i < 8; i++) { const a = r() * Math.PI * 2, d = 0.4 + r() * 0.4; b.add(new THREE.SphereGeometry(0.09, 10, 8).translate(Math.cos(a) * d + 0.9, 0.09, Math.sin(a) * d * 0.6), lam("pFruit" + (i % 3), () => ({ color: fruitC[i % 3] }))); }
+  for (let i = 0; i < 5; i++) b.add(new THREE.ConeGeometry(0.08, 0.04, 8).translate(-0.9 + r() * 0.3, 0.03, -0.2 + r() * 0.5), shell);
+  for (let i = 0; i < 3; i++) b.add(new THREE.CylinderGeometry(0.05, 0.05, 0.7, 6).rotateZ(Math.PI / 2).rotateY(r()).translate(-0.4 + r() * 0.3, 0.06, 0.45), wood);
+  b.build(g, true);
   return g;
 };

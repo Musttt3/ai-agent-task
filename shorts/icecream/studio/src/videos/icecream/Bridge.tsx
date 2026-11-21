@@ -72,7 +72,7 @@ const Inner: React.FC<{ kit: Kit }> = ({ kit }) => {
 
   const composer = useMemo(() => {
     gl.toneMapping = THREE.NoToneMapping;
-    const c = new PostEffectComposer(gl, { multisampling: 4, frameBufferType: THREE.HalfFloatType });
+    const c = new PostEffectComposer(gl, { multisampling: (getInputProps() as { post?: { msaa?: number } }).post?.msaa ?? 4, frameBufferType: THREE.HalfFloatType });
     c.addPass(new RenderPass(scene, camera));
     if (on.ink) c.addPass(fx.ink);
     if (on.lens && on.pre) c.addPass(new EffectPass(camera, fx.lens.pre));

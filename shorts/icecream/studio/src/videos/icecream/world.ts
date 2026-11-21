@@ -3,13 +3,14 @@
 // two-tone shaded sets (school front, the valley by the sea, the shady river), the cart + generator + boards, and the
 // 2D lit character cards and effect cards of the current beat.
 import * as THREE from "three";
-import { V, Kit, buildSchool, buildValley, buildRiver, buildCart, buildGenerator, buildBoard, lam, Cart, Gen, Board, ctex, rng, FIRE } from "./build";
+import { getInputProps } from "remotion";
+import { V, Kit, buildSchool, buildValley, buildRiver, buildCart, buildGenerator, buildBoard, buildPile, lam, Cart, Gen, Board, ctex, rng, FIRE } from "./build";
 import { LIGHTS, LOOK, LightPreset } from "./lights";
 import { TONE, CHAR, untone } from "./shade";
 import { NOINK } from "./ink";
 import { Pool, Actor, Fx, makeCtx, setLight } from "./cast";
 import { RANGES, camAt } from "./story";
-import { DEFAULT_WS, WS, CART_S, GEN_POS } from "./beats";
+import { DEFAULT_WS, WS, CART_S, GEN_POS, PILE_POS } from "./beats";
 
 export const loadKit = async (): Promise<Kit> => ({});
 
@@ -42,7 +43,7 @@ export class World {
   private coldHalo: THREE.Sprite; private fireHalo: THREE.Sprite; private fireLight = new THREE.PointLight("#ffa860", 0, 14, 1.6);
   private sunCache = new Map<number, THREE.Vector3>();
   private school: THREE.Group; private valley: THREE.Group; private river: THREE.Group; private sea: THREE.Mesh;
-  private cart: Cart; private gen: Gen; private board: Board;
+  private cart: Cart; private gen: Gen; private board: Board; private pile: THREE.Group;
   private frustum = new THREE.Frustum(); private m4 = new THREE.Matrix4(); private v = new THREE.Vector3(); private sph = new THREE.Sphere();
 
   constructor(_kit: Kit) {
@@ -71,7 +72,8 @@ export class World {
     for (const s of [this.moon, this.moonHalo, this.coldHalo, this.fireHalo]) { s.frustumCulled = false; s.layers.set(NOINK); R.add(s); }
     this.hemi = new THREE.HemisphereLight("#d8c4ff", "#5e3c82", 0.65);
     this.sun = new THREE.DirectionalLight("#fff0d6", 3.1);
-    this.sun.castShadow = true; this.sun.shadow.mapSize.set(4096, 4096);
+    const sm = (getInputProps() as { post?: { shadow?: number } }).post?.shadow ?? 4096;
+    this.sun.castShadow = true; this.sun.shadow.mapSize.set(sm, sm);
     R.add(this.hemi, this.sun, this.sun.target, this.fireLight);
 
     this.school = buildSchool(); this.valley = buildValley(); this.river = buildRiver();
@@ -85,7 +87,8 @@ export class World {
       rule: [["1 ORANG", "1 ES KRIM"], "#f2efe6", "#241726"],
     });
     this.board.root.position.set(-2.55, 0, 0.75); this.board.root.rotation.y = 0.25;
-    R.add(this.school, this.valley, this.river, this.cart.root, this.gen.root, this.board.root);
+    this.pile = buildPile(); this.pile.position.set(PILE_POS[0], 0, PILE_POS[2]);
+    R.add(this.school, this.valley, this.river, this.cart.root, this.gen.root, this.board.root, this.pile);
   }
 
   private shotSun(i: number, L: LightPreset) {
@@ -144,6 +147,7 @@ export class World {
     this.gen.gauges.forEach((g, k) => (g.visible = k === ws.gauge));
     this.gen.lamp.color.setRGB(ws.genOn ? 0.5 : 2.6, ws.genOn ? 2.6 : 0.4, ws.genOn ? 0.6 : 0.3);
     this.gen.body.position.set(ws.genOn ? 0.006 * Math.sin(f * 2.7) : 0, ws.genOn ? 0.004 * Math.abs(Math.sin(f * 3.1)) : 0, 0);
+    this.pile.visible = ws.set === "valley" && ws.fish;
     this.board.root.visible = ws.set === "valley" && !!ws.board;
     for (const [k, m] of Object.entries(this.board.faces)) m.visible = ws.board === k;
     // motivated glows
