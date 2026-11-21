@@ -319,7 +319,14 @@ export const buildPile = () => {
   const g = new THREE.Group(), b = new Batch(), r = rng(55);
   const fish = lam("pFish", () => ({ color: "#8cc4e0" })), fruitC = ["#e2453c", "#f2b134", "#8cc63f"], shell = lam("pShell", () => ({ color: "#f2d4c0" })), wood = lam("pWood", () => ({ color: "#7a5232" })), leaf = lam("pLeaf", () => ({ color: "#5d9a3c" }));
   b.add(new THREE.CylinderGeometry(0.75, 0.75, 0.04, 16).scale(1.3, 1, 1).translate(0, 0.02, 0), leaf);
-  for (let i = 0; i < 9; i++) { const a = r() * Math.PI * 2, d = r() * 0.55; b.add(new THREE.SphereGeometry(0.13, 10, 8).scale(2.2, 0.6, 0.8).rotateY(a).translate(Math.cos(a) * d, 0.1 + (i % 3) * 0.08, Math.sin(a) * d * 0.7), fish); }
+  const eye = lam("pEye", () => ({ color: "#1a1418" }));
+  for (let i = 0; i < 9; i++) {
+    const a = r() * Math.PI * 2, d = r() * 0.55, x = Math.cos(a) * d, y = 0.1 + (i % 3) * 0.08, z = Math.sin(a) * d * 0.7, ry = r() * Math.PI * 2;
+    const m = new THREE.Matrix4().makeRotationY(ry).setPosition(x, y, z);
+    b.add(new THREE.SphereGeometry(0.13, 10, 8).scale(2.2, 0.6, 0.8).applyMatrix4(m), fish);                                   // body
+    b.add(new THREE.ConeGeometry(0.11, 0.16, 4).rotateZ(-Math.PI / 2).scale(1, 1, 0.35).translate(-0.34, 0, 0).applyMatrix4(m), fish); // tail fin
+    b.add(new THREE.SphereGeometry(0.022, 6, 5).translate(0.2, 0.025, 0.08).applyMatrix4(m), eye);                              // eye
+  }
   for (let i = 0; i < 8; i++) { const a = r() * Math.PI * 2, d = 0.4 + r() * 0.4; b.add(new THREE.SphereGeometry(0.09, 10, 8).translate(Math.cos(a) * d + 0.9, 0.09, Math.sin(a) * d * 0.6), lam("pFruit" + (i % 3), () => ({ color: fruitC[i % 3] }))); }
   for (let i = 0; i < 5; i++) b.add(new THREE.ConeGeometry(0.08, 0.04, 8).translate(-0.9 + r() * 0.3, 0.03, -0.2 + r() * 0.5), shell);
   for (let i = 0; i < 3; i++) b.add(new THREE.CylinderGeometry(0.05, 0.05, 0.7, 6).rotateZ(Math.PI / 2).rotateY(r()).translate(-0.4 + r() * 0.3, 0.06, 0.45), wood);

@@ -524,10 +524,10 @@ export const BEATS: Beat[] = [
   { // 37: "Ada yang membawa buah, kerang, ikan dan potongan kayu."
     si: 37, set: "valley", light: "day",
     cams: (a) => [
-      { f: a, s: ins([-1.6, 1.25, 2.25], a, { az: 10, d: 1.0, h: 0.1, fov: 30 }) },
-      { f: wf(37, "kerang") - 3, cut: true, s: ins([-0.4, 1.25, 2.55], wf(37, "kerang"), { az: -10, d: 1.0, h: 0.1, fov: 30, roll: -0.04 }) },
-      { f: wf(37, "ikan") - 3, cut: true, s: ins([0.9, 1.25, 2.35], wf(37, "ikan"), { az: 10, d: 1.0, h: 0.1, fov: 30 }) },
-      { f: wf(37, "kayu") - 4, cut: true, s: ins([2.0, 1.25, 1.95], wf(37, "kayu"), { az: -12, d: 1.1, h: 0.15, fov: 30, roll: 0.04 }) },
+      { f: a, s: ins([-1.6, 0.95, 2.25], a, { az: 10, d: 1.5, h: 0.0, fov: 30 }) },
+      { f: wf(37, "kerang") - 3, cut: true, s: ins([-0.4, 0.95, 2.55], wf(37, "kerang"), { az: -10, d: 1.5, h: 0.0, fov: 30, roll: -0.04 }) },
+      { f: wf(37, "ikan") - 3, cut: true, s: ins([0.9, 0.95, 2.35], wf(37, "ikan"), { az: 10, d: 1.5, h: 0.0, fov: 30 }) },
+      { f: wf(37, "kayu") - 4, cut: true, s: ins([2.0, 0.95, 1.95], wf(37, "kayu"), { az: -12, d: 1.5, h: 0.05, fov: 30, roll: 0.04 }) },
     ],
     ws: () => ({ board: "fish1", lid: 1 }),
     stage: (c) => {
@@ -565,7 +565,7 @@ export const BEATS: Beat[] = [
   { // 40: "Kamu punya banyak makanan tanpa perlu berburu."
     si: 40, set: "valley", light: "golden", sun: [40, 26],
     cams: (a) => [
-      { f: a, s: ins([2.3, 0.3, 2.2], a, { az: 20, d: 2.0, h: 0.9, fov: 32 }) },
+      { f: a, s: frame([2.0, 0, 2.4], a, 3.0, 1.1, 0.55, { az: 25, fov: 30, rate: 0.003 }) },
       { f: wf(40, "berburu") - 6, cut: true, s: ms([1.6, 0, 2.6], wf(40, "berburu"), { az: 10, d: 3.2 }) },
     ],
     ws: () => ({ board: "fish1", fish: true }),
@@ -588,7 +588,7 @@ export const BEATS: Beat[] = [
       c.P(WHO.kamu, K[0], K[2], { expr: "smile", facing: 1 });
       const q: [number, number][] = [[-2.1, 2.3], [-2.9, 2.9], [-3.7, 3.5], [-4.5, 4.1], [-5.3, 4.7]];
       q.forEach(([x, z], i) => c.P(i === 1 || i === 3 ? WHO.kid(i) : WHO.tribe(i + 2), x, z, { expr: i % 2 ? "neutral" : "grin", prop: i === 0 ? "fish" : null, facing: 1 }));
-      c.badge("antre", "ANTRE DI SINI", "", "#ffd43b", "#241726", -1.9, 2.25, 2.0, 1.0, wf(41, "menjaga") - 2);
+      c.badge("antre", "ANTRE DI SINI", "", "#ffd43b", "#241726", -1.9, 1.95, 2.0, 0.9, wf(41, "menjaga") - 2);
     },
   },
   { // 42: "Sayangnya, dia tidak faham konsep satu orang satu es krim."
@@ -608,7 +608,7 @@ export const BEATS: Beat[] = [
     si: 43, set: "valley", light: "day",
     cams: (a) => [
       { f: a, s: two([-1.2, 0, 2.1], a, { az: 35, d: 3.8, h: 1.3 }) },
-      { f: wf(43, "tambahan") - 4, cut: true, s: ins([-1.25, 1.0, 2.05], wf(43, "tambahan"), { az: 25, d: 1.0, h: 0.1, fov: 30, roll: 0.05 }) },
+      { f: wf(43, "tambahan") - 4, cut: true, s: frame([-1.15, 0, 2.0], wf(43, "tambahan"), 2.6, 1.0, 1.05, { az: 60, fov: 30, roll: 0.05, rate: 0.004 }) },
     ],
     ws: () => ({ board: "fish1", lid: 1 }),
     stage: (c) => {
@@ -623,7 +623,7 @@ export const BEATS: Beat[] = [
   { // 44: "Ketika kamu memergokinya, dia hanya tersenyum."
     si: 44, set: "valley", light: "day",
     cams: (a) => [
-      { f: a, s: low(K, a, { az: 40, d: 2.6, ly: 1.4, roll: -0.08 }) },
+      { f: a, s: low(K, a, { az: -40, d: 2.6, ly: 1.4, roll: -0.08 }) },
       { f: wf(44, "tersenyum") - 4, cut: true, s: cu([-0.7, 0, 1.7], wf(44, "tersenyum"), { az: -20, d: 1.4, rate: 0.005, punch: 0.01 }) },
     ],
     kicks: [wf(44, "memergokinya")],
@@ -667,7 +667,7 @@ export const BEATS: Beat[] = [
     si: 47, set: "valley", light: "golden", sun: [-40, 22],
     cams: (a) => [
       { f: a, s: two([1.4, 0, 2.0], a, { az: 30, d: 4.6, h: 1.5 }) },
-      { f: wf(47, "menjauh") - 4, cut: true, s: wide([-3.0, 0, -1.5], wf(47, "menjauh"), { az: 120, d: 9.5, h: 2.6, orbit: 10 }) },
+      { f: wf(47, "menjauh") - 4, cut: true, s: wide([5.0, 0, -0.5], wf(47, "menjauh"), { az: 70, d: 8.5, h: 2.4, orbit: -10 }) },
     ],
     ws: (f) => ({ board: "fish1", fish: f < wf(47, "memindahkan") }),
     stage: (c) => {
@@ -675,7 +675,7 @@ export const BEATS: Beat[] = [
       if (c.f < m) c.P(WHO.purba, 1.2, 1.4, { expr: "shock", prop: "spear", facing: 1 });
       else c.P(WHO.purba, 2.3 + 5.5 * k, 2.2 - 3.5 * k, { expr: "stern", prop: "basket", mode: k < 1 ? "march" : "stand", phase: c.t * 2.2, facing: 1 });
       c.wolf(3.0 + 5.4 * k, 0.6 - 3.8 * k, false, false);
-      c.badge("tidur", "TEMPAT TIDUR", "", "#f2efe6", "#241726", -9, 2.4, -6.0, 1.3, wf(47, "tempat") - 2);
+      c.badge("tidur", "JAUH DARI", "TEMPAT TIDUR!", "#f2efe6", "#241726", 6.2, 2.5, -1.0, 1.2, wf(47, "tempat") - 2);
     },
   },
   { // 48: "Kamu baru sadar."
