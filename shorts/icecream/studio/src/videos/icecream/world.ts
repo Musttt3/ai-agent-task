@@ -68,7 +68,7 @@ export class World {
     R.add(this.stars);
     const halo = (c: [number, number, number]) => new THREE.Sprite(new THREE.SpriteMaterial({ map: haloTex(), color: new THREE.Color(...c), fog: false, depthWrite: false, transparent: true, blending: THREE.AdditiveBlending }));
     this.moon = new THREE.Sprite(new THREE.SpriteMaterial({ map: discTex(), color: new THREE.Color(2.4, 2.3, 2.1), fog: false, depthWrite: false }));
-    this.moonHalo = halo([1.2, 1.1, 1.5]); this.coldHalo = halo([0.5, 1.1, 1.6]); this.fireHalo = halo([1.9, 1.0, 0.35]);
+    this.moonHalo = halo([1.2, 1.1, 1.5]); this.coldHalo = halo([0.5, 1.1, 1.6]); this.fireHalo = halo([1.15, 0.6, 0.2]);
     for (const s of [this.moon, this.moonHalo, this.coldHalo, this.fireHalo]) { s.frustumCulled = false; s.layers.set(NOINK); R.add(s); }
     this.hemi = new THREE.HemisphereLight("#d8c4ff", "#5e3c82", 0.65);
     this.sun = new THREE.DirectionalLight("#fff0d6", 3.1);
@@ -158,7 +158,7 @@ export class World {
     if (this.coldHalo.visible) { this.coldHalo.position.set(ws.cart[0], 1.45, ws.cart[2]); this.coldHalo.scale.setScalar(1.6 * ws.lid); }
     this.fireHalo.visible = ws.fire && ws.set === "valley";
     this.fireLight.intensity = this.fireHalo.visible ? 9 * (1 + 0.12 * Math.sin(f * 1.7)) : 0;
-    if (this.fireHalo.visible) { this.fireHalo.position.set(FIRE[0], 0.7, FIRE[2]); this.fireHalo.scale.setScalar(3.2 + 0.25 * Math.sin(f * 1.3)); this.fireLight.position.set(FIRE[0], 1.0, FIRE[2]); }
+    if (this.fireHalo.visible) { this.fireHalo.position.set(FIRE[0], 0.4, FIRE[2]); this.fireHalo.scale.setScalar(1.35 + 0.1 * Math.sin(f * 1.3)); this.fireLight.position.set(FIRE[0], 1.0, FIRE[2]); }
     // 2D cast and effect cards of this beat
     const right = V(0, 0, 0).setFromMatrixColumn(cam.matrixWorld, 0);
     const ctx = makeCtx(f, R.a, R.b, { pos: cam.position, right, sun: sunDir });

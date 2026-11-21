@@ -195,7 +195,9 @@ put(I.cymbal(0.5, r, dur=2.4), E - 1.1, 0.5)
 cue(E - 1.6, "music: final button")
 
 ir = make_ir(1.4, 5)
-mus = 0.8 * mus + 0.25 * convolve_st(mus, ir)[:, :N]
+from scipy.signal import oaconvolve
+for c in range(2): mus[c] = 0.8 * mus[c] + 0.25 * oaconvolve(mus[c], ir[c])[:N]   # overlap-add: low memory
+print("music done", flush=True)
 
 # ---------------------------------------------------------------- SFX
 sfx = np.zeros((2, N))
@@ -239,28 +241,50 @@ def sputter(dur, r, g=1.0):
         y[ns(t): ns(t) + ns(0.06)] += (lp(r.standard_normal(ns(0.06)), 900) * np.exp(-np.arange(ns(0.06)) / SR / 0.02))[: len(y) - ns(t)]
         t += r.uniform(0.08, 0.25)
     return fades(y * 0.8 * g, 0.002, 0.05)
-def lid_open(r): return G.creak(0.45, r, 140, 220, scale=0.6) * 0.5 + click(r) * 0.6
+def msum(*xs):
+    """sum mono signals of different lengths (zero-padded)"""
+    n = max(len(x) for x in xs); y = np.zeros(n)
+    for x in xs: y[:len(x)] += x
+    return y
+def lid_open(r): return msum(G.creak(0.45, r, 140, 220, scale=0.6) * 0.5, click(r) * 0.6)
 def lid_close(r): return G.push_thump(r) * 0.6
 
 r = rng(500)
+def wd(x, _r=None):
+    """widen a mono signal to stereo; stereo passes through"""
+    x = np.asarray(x); return widen(x, r) if x.ndim == 1 else x
+def bed(fn, d, piece=12.0, xf=0.5):
+    """a long bed built from <= piece-second segments with equal-power crossfades (keeps memory low)"""
+    if d <= piece: return np.asarray(fn(d))
+    parts = []; t = 0.0
+    while t < d: parts.append(np.asarray(fn(min(piece + xf, d - t + xf)))); t += piece
+    st2 = parts[0].ndim == 2; n = ns(d); out = np.zeros((2, n)) if st2 else np.zeros(n)
+    k = ns(xf); fin = np.sin(np.linspace(0, np.pi / 2, k)); fo = np.cos(np.linspace(0, np.pi / 2, k))
+    for i, x in enumerate(parts):
+        x = x.copy(); a = ns(i * piece)
+        if i > 0: x[..., :k] *= fin
+        if i < len(parts) - 1: x[..., -k:] *= fo
+        m = min(x.shape[-1], n - a)
+        if m > 0: out[..., a:a + m] += x[..., :m]
+    return out
 # beds: school chatter + birds; valley birds and breeze by day, breeze at golden hour, crickets and fire at night; the river
 for a, b, v in runs("set"):
     d = b - a
     if v == "school":
-        fx(widen(sum(lp(G.babble(d, r, 260 * r.uniform(0.9, 1.3), 1.25, rate=r.uniform(4.5, 6), active=0.7), 3000) * 0.25 for _ in range(6)), r), a, 0.5, what="school yard chatter")
-        fx(G.bird_chirps(d, r, 0.5), a, 0.3, 0.4)
-    if v == "river": fx(widen(G.water_bed(d, r, 0.7), r), a, 0.5, what="the river")
+        fx(bed(lambda q: wd(sum(lp(G.babble(q, r, 260 * r.uniform(0.9, 1.3), 1.25, rate=r.uniform(4.5, 6), active=0.7), 3000) * 0.25 for _ in range(6)), r), d), a, 0.5, what="school yard chatter")
+        fx(bed(lambda q: G.bird_chirps(q, r, 0.5), d), a, 0.3, 0.4)
+    if v == "river": fx(bed(lambda q: wd(G.water_bed(q, r, 0.7), r), d), a, 0.5, what="the river")
 for a, b, v in runs("light"):
     d = b - a
-    if v == "night": fx(widen(G.crickets(d, r, 4), r), a, 0.35, what="crickets"); fx(G.breeze(d, r, 0.05, bright=500), a)
+    if v == "night": fx(bed(lambda q: wd(G.crickets(q, r, 4), r), d), a, 0.35, what="crickets"); fx(bed(lambda q: G.breeze(q, r, 0.05, bright=500), d), a)
     else:
-        fx(G.breeze(d, r, 0.07 if v == "day" else 0.09, bright=800), a)
-        if v == "day": fx(G.bird_chirps(d, r, 0.35), a, 0.25, -0.4)
+        fx(bed(lambda q: G.breeze(q, r, 0.07 if v == "day" else 0.09, bright=800), d), a)
+        if v == "day": fx(bed(lambda q: G.bird_chirps(q, r, 0.35), d), a, 0.25, -0.4)
 for a, b, v in runs("fire"):
-    if v and b - a > 0.3: fx(crackle(b - a, r, 0.6), a, 1.0, -0.2, "camp fire")
+    if v and b - a > 0.3: fx(bed(lambda q: crackle(q, r, 0.6), b - a), a, 1.0, -0.2, "camp fire")
 # the generator: hum while it runs (only in the valley), a start-up rev and a cough when it stops
 for a, b, v in runs("gen"):
-    if v and b - a > 0.2: fx(gen_hum(b - a, r, 0.18), a, 1.0, 0.3)
+    if v and b - a > 0.2: fx(bed(lambda q: gen_hum(q, r, 0.18), b - a), a, 1.0, 0.3)
 prev = None
 for a, b, v in runs("gen"):
     if prev is not None and v != prev and a > 9.5:
@@ -282,11 +306,12 @@ for a, b, n in runs("walkers"):
         for tm in np.arange(a, b, 0.5 / min(4, n)): fx(G.stroll_step(r, 0.4) * 0.35, tm + r.uniform(0, 0.05), 1.0, r.uniform(-0.5, 0.5))
 for a, b, n in runs("people"):
     if n >= 6 and b - a > 0.6:
-        fx(widen(sum(lp(G.babble(b - a, r, 150 * r.uniform(0.8, 1.5), r.uniform(0.95, 1.2), rate=4.5, active=0.7), 2400) * 0.22 for _ in range(4)), r), a, 0.5)
+        fx(bed(lambda q: wd(sum(lp(G.babble(q, r, 150 * r.uniform(0.8, 1.5), r.uniform(0.95, 1.2), rate=4.5, active=0.7), 2400) * 0.22 for _ in range(4)), r), b - a), a, 0.5)
 # the wolf: a low growl when it appears, sniffs at the fish
 for a, b, n in runs("wolf"):
     if n and b - a > 0.3: fx(growl(min(2.2, b - a), r, 0.8), a + 0.3, 1.0, 0.5, "wolf growl")
 fx(sniff(r), W(46, "bau"), 0.8, 0.4, "wolf sniffs")
+print("beds done", flush=True)
 # events: badges pop, marks get their own sound, bursts sparkle, hops thump
 for e in TL["events"]:
     t = e["f"] / FPS; k = e["k"]
@@ -317,9 +342,10 @@ fx(G.whoosh(0.4, r, peak=0.2, f_lo=1500, f_hi=6000) * 0.3, W(26, "mengoleskan"),
 for w, si in (("batu", 28), ("ranting", 30)): fx(knock(r, 0.5), W(si, w), 1.0, -0.2)
 fx(G.splash_big(r) * 0.12, W(32, "ikan"), 1.0, -0.3, "fish slap")
 fx(G.hurrah(r, 160, 1.05) * 0.35, W(39, "kesuksesan"), 1.0, 0.0, "day one cheer")
-fx(widen(sum(G.hurrah(r, 300 * r.uniform(0.9, 1.2), 1.3, kid=True) * 0.25 for _ in range(3)), r), W(107, "tersenyum"), 1.0, 0.0, "kids laugh by the river")
-fx(widen(sum(G.hurrah(r, 300 * r.uniform(0.9, 1.2), 1.3, kid=True) * 0.25 for _ in range(3)), r), W(129, "bekas") + 0.4, 1.0, 0.0, "kids cheer at the end")
+fx(wd(msum(*[G.hurrah(r, 300 * r.uniform(0.9, 1.2), 1.3, kid=True) * 0.25 for _ in range(3)]), r), W(107, "tersenyum"), 1.0, 0.0, "kids laugh by the river")
+fx(wd(msum(*[G.hurrah(r, 300 * r.uniform(0.9, 1.2), 1.3, kid=True) * 0.25 for _ in range(3)]), r), W(129, "bekas") + 0.4, 1.0, 0.0, "kids cheer at the end")
 
+print("sfx done", flush=True)
 # ---------------------------------------------------------------- mix
 voice, _sr = read_wav(sys.argv[1])
 if voice.ndim == 1: voice = st(voice)
@@ -338,12 +364,20 @@ mus = to_lufs(mus, VL - 7.0) * duck[None, :]
 sfx = to_lufs(sfx, VL - 11.0)
 mix = to_lufs(v + mus + sfx, -15.0)
 ceil = dbg(-1.8)
-for _ in range(2):
-    up = signal.resample_poly(mix, 4, 1, axis=1)
-    pk = np.abs(up).max(axis=0).reshape(-1, 4).max(axis=1)[:N]
-    g = np.minimum(1.0, ceil / np.maximum(pk, 1e-9))
-    g = ndimage.minimum_filter1d(g, ns(0.005)); g = ndimage.uniform_filter1d(g, ns(0.005))
-    g = np.minimum(g, ndimage.minimum_filter1d(np.minimum(1.0, ceil / np.maximum(pk, 1e-9)), 3))
+def tp_env(x):
+    """per-sample true-peak estimate (4x oversampled), computed in 20 s blocks to keep memory low"""
+    out = np.empty(x.shape[1]); B = ns(20.0); pad = 64
+    for a in range(0, x.shape[1], B):
+        lo, hi = max(0, a - pad), min(x.shape[1], a + B + pad)
+        up = signal.resample_poly(x[:, lo:hi], 4, 1, axis=1)
+        pk = np.abs(up).max(axis=0).reshape(-1, 4).max(axis=1)
+        out[a:min(x.shape[1], a + B)] = pk[a - lo: a - lo + min(B, x.shape[1] - a)]
+    return out
+for _ in range(3):
+    pk = tp_env(mix)
+    g0 = np.minimum(1.0, ceil / np.maximum(pk, 1e-9))
+    g = ndimage.minimum_filter1d(g0, ns(0.005)); g = ndimage.uniform_filter1d(g, ns(0.005))
+    g = np.minimum(g, ndimage.minimum_filter1d(g0, 3))
     mix = mix * g[None, :]
 mix[:, -ns(0.5):] *= np.linspace(1, 0, ns(0.5))[None, :]
 out = sys.argv[2]
@@ -351,6 +385,6 @@ os.makedirs(os.path.dirname(out), exist_ok=True)
 write_wav(out, mix)
 for nm, x in (("voice", v), ("music", mus), ("sfx", sfx)): write_wav(os.path.join(os.path.dirname(out), f"ice_stem_{nm}.wav"), x)
 with open(os.path.join(os.path.dirname(out), "ice_cues.md"), "w") as fh:
-    fh.write(f"# Cues\n\nLength {DUR:.3f} s, 48 kHz stereo. Integrated {integrated(mix):.1f} LUFS, true peak {true_peak(mix):.1f} dBTP.\n\n")
+    fh.write(f"# Cues\n\nLength {DUR:.3f} s, 48 kHz stereo. Integrated {integrated(mix):.1f} LUFS, true peak {20 * np.log10(tp_env(mix).max()):.1f} dBTP.\n\n")
     for t, w in sorted(cues): fh.write(f"- {t:6.2f} s  {w}\n")
-print("done", DUR, integrated(mix), true_peak(mix))
+print("done", DUR, integrated(mix), 20 * np.log10(tp_env(mix).max()))

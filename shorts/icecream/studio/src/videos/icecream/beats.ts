@@ -359,7 +359,7 @@ export const BEATS: Beat[] = [
         c.P(WHO.tribe(i + 1), x + 4.2 * k, z + 2.6 * k, { expr: i % 2 ? "neutral" : "stern", mode: k < 1 ? "stroll" : "stand", phase: c.t * 1.5 + i * 0.3, facing: 1, prop: i === 0 ? "spear" : null }));
       c.P(WHO.purba, 0.45, 1.2, { expr: "lick", prop: "popsicle_bit" });
       c.P(WHO.kamu, K[0], K[2], { expr: "nervous", facing: -1 });
-      c.badge("m1", "MASALAH #1", "", "#e2453c", "#ffffff", -2.6, 2.0, -0.6, 0.9, wf(22, "masalah") - 2);
+      c.badge("m1", "MASALAH #1", "", "#e2453c", "#ffffff", -2.6, 1.75, -0.6, 0.8, wf(22, "masalah") - 2);
     },
   },
   { // 23: "Mereka melihat temanmu menikmati makanan aneh dan ingin mencobanya."
@@ -768,12 +768,12 @@ export const BEATS: Beat[] = [
     si: 55, set: "valley", light: "night",
     cams: (a) => [
       { f: a, s: ins([GEN[0] + 0.1, 0.45, GEN[2] + 0.3], a, { az: 20, d: 1.2, h: 0.2, fov: 30 }) },
-      { f: wf(55, "tidur") - 4, cut: true, s: frame([-6.5, 0, -4.5], wf(55, "tidur"), 6.0, 2.4, 0.6, { az: 35, fov: 32, rate: 0.002 }) },
+      { f: wf(55, "tidur") - 4, cut: true, s: frame([-8.3, 0, -6.6], wf(55, "tidur"), 5.0, 2.0, 0.6, { az: 15, fov: 32, rate: 0.002 }) },
     ],
     ws: (f) => ({ stars: true, moon: true, fire: true, board: "fish1", gauge: 1, genOn: f < wf(55, "generator") + 4 }),
     stage: (c) => {
       if (c.f < wf(55, "tidur") - 4) c.P(WHO.kamu, GEN[0] + 0.75, GEN[2] + 0.45, { expr: "relief", prop: "reach", facing: -1 });
-      else { c.P(WHO.kamu, -6.6, -4.4, { expr: "smile_closed", mode: "sit" }); c.mark("Zzz", "#bfe8ff", -6.2, 1.5, -4.4, 0.45, wf(55, "tidur")); }
+      else { c.P(WHO.kamu, -8.3, -6.6, { expr: "smile_closed", mode: "sit" }); c.mark("Zzz", "#bfe8ff", -7.9, 1.4, -6.6, 0.4, wf(55, "tidur")); }
       c.mark("KLIK", "#ffffff", GEN[0], 0.85, GEN[2] + 0.35, 0.45, wf(55, "generator") + 4);
     },
   },
@@ -796,7 +796,7 @@ export const BEATS: Beat[] = [
     stage: (c) => {
       c.P(WHO.kamu, K[0], K[2], { expr: c.f >= wf(57, "melunak") ? "shock" : "relief", facing: 1 });
       c.badge("pagi", "PAGI", "", "#ffd43b", "#241726", 0, 2.8, 0.3, 0.8, ss(57) + 4, wf(57, "melunak") - 6);
-      c.puffs("uap", 0, 1.4, 0, { n: 3, period: 24, life: 40, size: 0.18, rise: 0.3, drift: [0.05, 0.05], col: "#f2efe6", on: c.f >= wf(57, "melunak") });
+      c.puffs("uap", -0.3, 1.36, -0.15, { n: 3, period: 24, life: 40, size: 0.06, rise: 0.2, drift: [0.05, 0.05], col: "#f2efe6", on: c.f >= wf(57, "melunak") });
     },
   },
   { // 58: "Freezer memang memiliki insulasi."
@@ -868,7 +868,7 @@ export const BEATS: Beat[] = [
     ws: () => ({ board: "fish1", gauge: 1, melt: true }),
     stage: (c) => {
       c.P(WHO.kamu, K[0], K[2], { expr: "pained", facing: 1 });
-      c.badge("stok", "STOK: SEDIKIT", "", "#e2453c", "#ffffff", K[0] + 0.55, 1.7, K[2] + 0.1, 0.65, ss(64) + 4);
+      c.badge("stok", "STOK: SEDIKIT", "", "#e2453c", "#ffffff", K[0] + 0.62, 1.5, K[2] + 0.1, 0.65, ss(64) + 4);
     },
   },
   { // 65: "Sementara orang-orang terus datang meminta makanan dingin yang kemarin mereka cicipi."
@@ -963,7 +963,7 @@ export const BEATS: Beat[] = [
   { // 73: "Masalah berikutnya datang dari matahari."
     si: 73, set: "valley", light: "day", sun: [10, 70], flash: true,
     cams: (a) => [
-      { f: a, s: frame([0, 0, 0.3], a, 4.0, 0.5, 2.6, { az: 20, fov: 34, rate: 0.002 }) },
+      { f: a, s: frame(K, a, 3.0, 0.45, 2.1, { az: 30, fov: 34, rate: 0.002 }) },
       { f: wf(73, "matahari") - 4, cut: true, s: low(K, wf(73, "matahari"), { az: 30, d: 2.4, ly: 1.5, roll: 0.08 }) },
     ],
     kicks: [wf(73, "matahari")],
@@ -1168,7 +1168,7 @@ export const BEATS: Beat[] = [
     ws: (f) => ({ melt: true, board: "fish2", gauge: 4, genOn: false, lid: f >= wf(90, "menghangat") - 4 ? 1 : 0, top: "closed" }),
     stage: (c) => {
       c.badge("jam", "KIRA-KIRA 4 JAM LAGI", "", "#ff8a3d", "#ffffff", 0.35, 1.55, 0.6, 0.7, wf(90, "jam") - 2, wf(90, "menghangat") - 4);
-      c.puffs("hangat2", 0, 1.4, 0, { n: 3, period: 24, life: 40, size: 0.2, rise: 0.3, drift: [0.05, 0.05], col: "#ffd9a8", on: c.f >= wf(90, "menghangat") });
+      c.puffs("hangat2", -0.3, 1.36, -0.15, { n: 3, period: 24, life: 40, size: 0.06, rise: 0.2, drift: [0.05, 0.05], col: "#ffd9a8", on: c.f >= wf(90, "menghangat") });
     },
   },
   { // 91: "Kamu panik mencari cara."
@@ -1210,7 +1210,7 @@ export const BEATS: Beat[] = [
     si: 94, set: "valley", light: "golden", sun: [-50, 16],
     cams: (a) => [
       { f: a, s: frame([CSH[0], 0, CSH[2]], a, 5.0, 1.8, 1.0, { az: -30, fov: 32, orbit: 15 }) },
-      { f: wf(94, "suhu") - 4, cut: true, s: ins([CSH[0] + 0.35, 1.2, CSH[2] + 0.45], wf(94, "suhu"), { az: 15, d: 1.1, h: 0.1, fov: 30 }) },
+      { f: wf(94, "suhu") - 4, cut: true, s: ins([CSH[0] + 0.35, 1.45, CSH[2] + 0.55], wf(94, "suhu"), { az: 15, d: 1.4, h: 0.05, fov: 30 }) },
     ],
     ws: () => ({ melt: true, board: "fish2", gauge: 4, genOn: false, top: "closed", cart: CSH }),
     stage: (c) => {
@@ -1397,7 +1397,7 @@ export const BEATS: Beat[] = [
     cams: (a) => [{ f: a, s: ms([RV - 0.9, 0, 0.5], a, { az: -30, d: 3.0, orbit: 10 }) }],
     stage: (c) => {
       c.P(WHO.kamu, RV - 0.9, 0.5, { expr: "neutral", prop: "point_up", facing: 1 });
-      c.badge("tiaphari", "ES KRIM TIAP HARI?", "TIDAK PERLU", "#241726", "#ffd43b", RV - 0.2, 1.8, 0.5, 0.95, wf(110, "eskrim") - 2);
+      c.badge("tiaphari", "ES KRIM TIAP HARI?", "TIDAK PERLU", "#241726", "#ffd43b", RV - 0.2, 1.6, 0.5, 0.95, wf(110, "eskrim") - 2);
     },
   },
   { // 111: "Mereka menyukai rasa baru yang kamu bawa."
@@ -1484,7 +1484,7 @@ export const BEATS: Beat[] = [
   },
   { // 118: "Ternyata anak itu tidak meminta makanan dingin."
     si: 118, set: "valley", light: "golden", sun: [60, 14],
-    cams: (a) => [{ f: a, s: cu([CSH[0] + 2.4, 0, CSH[2] + 1.8], a, { az: -30, d: 1.9, h: 0.95, ly: 0.78, orbit: 10 }) }],
+    cams: (a) => [{ f: a, s: cu([CSH[0] + 2.4, 0, CSH[2] + 1.8], a, { az: -30, d: 2.3, h: 1.1, ly: 0.95, orbit: 10 }) }],
     ws: () => ({ gauge: 4, genOn: false, cart: CSH, top: "store" }),
     stage: (c) => {
       c.P(WHO.kid(0), CSH[0] + 2.4, CSH[2] + 1.8, { expr: "grin", facing: ([-1, 1] as const)[Math.floor(c.f / 7) % 2] });
@@ -1495,7 +1495,7 @@ export const BEATS: Beat[] = [
     si: 119, set: "valley", light: "golden", sun: [60, 14],
     cams: (a) => [
       { f: a, s: two([CSH[0] + 1.6, 0, CSH[2] + 1.4], a, { az: -20, d: 3.4, h: 1.2 }) },
-      { f: wf(119, "stik") - 3, cut: true, s: cu([CSH[0] + 2.4, 0, CSH[2] + 1.8], wf(119, "stik"), { az: -20, d: 1.9, h: 0.95, ly: 0.8, punch: 0.012 }) },
+      { f: wf(119, "stik") - 3, cut: true, s: cu([CSH[0] + 2.4, 0, CSH[2] + 1.8], wf(119, "stik"), { az: -20, d: 2.3, h: 1.1, ly: 0.95, punch: 0.012 }) },
     ],
     kicks: [wf(119, "stik")],
     ws: () => ({ gauge: 4, genOn: false, cart: CSH, top: "store" }),
@@ -1510,7 +1510,7 @@ export const BEATS: Beat[] = [
     si: 120, set: "valley", light: "golden", sun: [60, 14],
     cams: (a) => [
       { f: a, s: low([CSH[0] + 2.4, 0, CSH[2] + 1.8], a, { az: -30, d: 2.2, ly: 1.0, roll: -0.07 }) },
-      { f: wf(120, "mainan") - 6, cut: true, s: ins([CSH[0] + 2.05, 0.95, CSH[2] + 1.85], wf(120, "mainan"), { az: -10, d: 0.85, h: 0.08, fov: 30, roll: 0.05 }) },
+      { f: wf(120, "mainan") - 6, cut: true, s: cu([CSH[0] + 2.4, 0, CSH[2] + 1.8], wf(120, "mainan"), { az: -10, d: 1.8, h: 0.95, ly: 0.8, roll: 0.05, punch: 0.01 }) },
     ],
     ws: () => ({ gauge: 4, genOn: false, cart: CSH, top: "store" }),
     stage: (c) => {
@@ -1543,7 +1543,7 @@ export const BEATS: Beat[] = [
     si: 123, set: "valley", light: "golden", sun: [60, 14],
     cams: (a) => [
       { f: a, s: two([CSH[0] + 1.6, 0, CSH[2] + 1.4], a, { az: -25, d: 3.6, h: 1.3, orbit: 12 }) },
-      { f: wf(123, "potongan") - 4, cut: true, s: ins([CSH[0] + 2.05, 0.95, CSH[2] + 1.85], wf(123, "potongan"), { az: 15, d: 0.9, h: 0.1, fov: 30 }) },
+      { f: wf(123, "potongan") - 4, cut: true, s: cu([CSH[0] + 2.4, 0, CSH[2] + 1.8], wf(123, "potongan"), { az: 15, d: 1.8, h: 0.95, ly: 0.8 }) },
     ],
     ws: () => ({ gauge: 4, genOn: false, cart: CSH, top: "store" }),
     stage: (c) => {
@@ -1612,7 +1612,7 @@ export const BEATS: Beat[] = [
   { // 129: "Melainkan stik es krim bekas."
     si: 129, set: "valley", light: "golden", sun: [60, 14],
     cams: (a) => [
-      { f: a, s: ins([CSH[0] + 2.05, 0.95, CSH[2] + 1.85], a, { az: 15, d: 1.0, h: 0.1, fov: 30, punch: 0.012 }) },
+      { f: a, s: cu([CSH[0] + 2.4, 0, CSH[2] + 1.8], a, { az: 15, d: 2.4, h: 1.15, ly: 1.0, punch: 0.012 }) },
       { f: wf(129, "bekas") + 10, cut: true, s: wide([CSH[0] + 1.6, 0, CSH[2] + 1.8], wf(129, "bekas") + 10, { az: 25, d: 9, h: 2.6, rise: 1.5, rate: 0.0016 }) },
     ],
     kicks: [wf(129, "stik")],
