@@ -1214,17 +1214,17 @@ export const BEATS: Beat[] = [
     ],
     ws: () => ({ melt: true, board: "fish2", gauge: 4, genOn: false, top: "closed", cart: CSH }),
     stage: (c) => {
-      c.P(WHO.kamu, CSH[0] - 0.3, CSH[2] + 0.85, { expr: "nervous", mode: "sit" });
+      c.P(WHO.kamu, CSH[0] - 0.3, CSH[2] + 1.25, { expr: "nervous", mode: "sit" });
       const k = Math.max(0, Math.min(1, (c.f - wf(94, "kenaikan")) / 50));
       c.badge("suhu2", `SUHU ${Math.round(-12 + 6 * k)}°C`, "PELAN-PELAN NAIK", "#ff8a3d", "#ffffff", CSH[0] + 0.35, 1.5, CSH[2] + 0.55, 0.65, wf(94, "suhu") - 2);
     },
   },
   { // 95: "Bukan menciptakan dingin baru."
     si: 95, set: "valley", light: "golden", sun: [-50, 16],
-    cams: (a) => [{ f: a, s: cu([CSH[0] - 0.3, 0, CSH[2] + 0.85], a, { az: 20, d: 1.6, rate: 0.005 }) }],
+    cams: (a) => [{ f: a, s: cu([CSH[0] - 0.3, 0, CSH[2] + 1.25], a, { az: 20, d: 1.6, h: 0.95, ly: 0.75, rate: 0.005 }) }],
     ws: () => ({ melt: true, board: "fish2", gauge: 4, genOn: false, top: "closed", cart: CSH }),
     stage: (c) => {
-      c.P(WHO.kamu, CSH[0] - 0.3, CSH[2] + 0.85, { expr: "pained", mode: "sit" });
+      c.P(WHO.kamu, CSH[0] - 0.3, CSH[2] + 1.25, { expr: "pained", mode: "sit" });
       c.badge("dingin", "BUKAN DINGIN BARU", "", "#241726", "#bfe8ff", CSH[0] + 0.35, 1.55, CSH[2] + 0.8, 0.7, wf(95, "dingin") - 2);
     },
   },
@@ -1257,14 +1257,14 @@ export const BEATS: Beat[] = [
   { // 98: "Seluruh keuntunganmu berupa ikan dan buah juga tidak bisa disimpan lama."
     si: 98, set: "valley", light: "day",
     cams: (a) => [
-      { f: a, s: ins([CSH[0] + 1.6, 0.2, CSH[2] + 0.4], a, { az: 25, d: 1.9, h: 0.8, fov: 30, orbit: -15 }) },
-      { f: wf(98, "lama") - 6, cut: true, s: ins([CSH[0] + 1.6, 0.15, CSH[2] + 0.4], wf(98, "lama"), { az: -20, d: 1.2, h: 0.45, fov: 30, roll: 0.05 }) },
+      { f: a, s: ins([PILE_POS[0], 0.2, PILE_POS[2]], a, { az: 25, d: 2.1, h: 0.8, fov: 30, orbit: -15 }) },
+      { f: wf(98, "lama") - 6, cut: true, s: ins([PILE_POS[0], 0.15, PILE_POS[2]], wf(98, "lama"), { az: -20, d: 1.5, h: 0.45, fov: 30, roll: 0.05 }) },
     ],
-    ws: () => ({ gauge: 4, genOn: false, top: "closed", cart: CSH, melt: true }),
+    ws: () => ({ gauge: 4, genOn: false, top: "closed", cart: CSH, melt: true, fish: true }),
     stage: (c) => {
-      c.puffs("bau2", CSH[0] + 1.6, 0.3, CSH[2] + 0.4, { n: 4, period: 30, life: 60, size: 0.3, rise: 0.6, drift: [0.1, 0], col: "#cfe3a8" });
-      c.badge("untung2", "KEUNTUNGAN:", "IKAN & BUAH", "#3fb950", "#ffffff", CSH[0] + 1.6, 1.25, CSH[2] + 0.4, 0.75, wf(98, "ikan") - 2, wf(98, "lama") - 6);
-      c.badge("simpan", "TIDAK TAHAN LAMA", "", "#e2453c", "#ffffff", CSH[0] + 1.6, 0.95, CSH[2] + 0.4, 0.7, wf(98, "lama") - 2);
+      c.puffs("bau2", PILE_POS[0], 0.3, PILE_POS[2], { n: 4, period: 30, life: 60, size: 0.3, rise: 0.6, drift: [0.1, 0], col: "#cfe3a8" });
+      c.badge("untung2", "KEUNTUNGAN:", "IKAN & BUAH", "#3fb950", "#ffffff", PILE_POS[0], 1.05, PILE_POS[2], 0.75, wf(98, "ikan") - 2, wf(98, "lama") - 6);
+      c.badge("simpan", "TIDAK TAHAN LAMA", "", "#e2453c", "#ffffff", PILE_POS[0], 0.8, PILE_POS[2], 0.7, wf(98, "lama") - 2);
     },
   },
   { // 99: "Sebagian harus segera dimakan atau diolah agar tidak busuk."
@@ -1294,7 +1294,7 @@ export const BEATS: Beat[] = [
   { // 101: "Bisnismu bangkrut, bahkan sebelum sempat membuka cabang kedua."
     si: 101, set: "valley", light: "day",
     cams: (a) => [
-      { f: a, s: low([CSH[0], 0, CSH[2]], a, { az: 35, d: 3.0, ly: 1.3, roll: -0.09, punch: 0.012 }) },
+      { f: a, s: low([CSH[0] + 0.9, 0, CSH[2] + 0.9], a, { az: 35, d: 2.6, ly: 1.4, roll: -0.09, punch: 0.012 }) },
       { f: wf(101, "cabang") - 4, cut: true, s: cu([CSH[0] + 0.9, 0, CSH[2] + 0.9], wf(101, "cabang"), { az: 20, d: 1.5 }) },
     ],
     kicks: [wf(101, "bangkrut")],
@@ -1361,7 +1361,7 @@ export const BEATS: Beat[] = [
   { // 107: "Mereka tersenyum dan menikmati buah bersama."
     si: 107, set: "river", light: "golden", sun: [-30, 22],
     cams: (a) => [
-      { f: a, s: cu([RV + 0.4, 0, 1.7], a, { az: 15, d: 1.6 }) },
+      { f: a, s: cu([RV + 0.4, 0, 1.7], a, { az: -25, d: 1.6 }) },
       { f: wf(107, "bersama") - 4, cut: true, s: wide([RV + 0.6, 0, 1.0], wf(107, "bersama"), { az: 20, d: 8, h: 2.2, orbit: -8 }) },
     ],
     stage: (c) => {
@@ -1397,7 +1397,7 @@ export const BEATS: Beat[] = [
     cams: (a) => [{ f: a, s: ms([RV - 0.9, 0, 0.5], a, { az: -30, d: 3.0, orbit: 10 }) }],
     stage: (c) => {
       c.P(WHO.kamu, RV - 0.9, 0.5, { expr: "neutral", prop: "point_up", facing: 1 });
-      c.badge("tiaphari", "ES KRIM TIAP HARI?", "TIDAK PERLU", "#241726", "#ffd43b", RV - 0.2, 2.1, 0.5, 0.95, wf(110, "eskrim") - 2);
+      c.badge("tiaphari", "ES KRIM TIAP HARI?", "TIDAK PERLU", "#241726", "#ffd43b", RV - 0.2, 1.8, 0.5, 0.95, wf(110, "eskrim") - 2);
     },
   },
   { // 111: "Mereka menyukai rasa baru yang kamu bawa."

@@ -175,7 +175,13 @@ export const buildCart = (): Cart => {
     const st = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.012, 0.07), lam("stick", () => ({ color: "#e8c88a" })));
     st.position.set(-0.6 + i * 0.24, 1.29, -0.29 + k * 0.24 + 0.13); stock.add(st);
     const mm = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.12, 0.02, 10), lam("melt" + ((i + k) % 5), () => ({ color: cols[(i + k) % 5] })));
-    mm.position.set(-0.6 + i * 0.24, 1.28, -0.26 + k * 0.24); mm.scale.set(1.2, 1, 0.9); melt.add(mm);
+    mm.position.set(-0.6 + i * 0.24, 1.322, -0.26 + k * 0.24); mm.scale.set(1.2, 1, 0.9); melt.add(mm);   // puddle on the freezer top
+    if ((i * 3 + k) % 4 !== 0) {   // most bars slumped into a soft blob with the stick lying in it
+      const bl = new THREE.Mesh(new THREE.SphereGeometry(0.07, 10, 8).scale(1.3, 0.45, 1.0), lam("ice" + ((i + k) % 5), () => ({ color: cols[(i + k) % 5] })));
+      bl.position.set(-0.6 + i * 0.24 + 0.02, 1.345, -0.27 + k * 0.24); melt.add(bl);
+      const st2 = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.012, 0.09), lam("stick", () => ({ color: "#e8c88a" })));
+      st2.position.set(-0.6 + i * 0.24 + 0.05, 1.338, -0.26 + k * 0.24 + 0.1); st2.rotation.y = 0.5; melt.add(st2);
+    }
   }
   root.add(stock, melt); melt.visible = false;
   const signs: Record<string, THREE.Mesh> = {};

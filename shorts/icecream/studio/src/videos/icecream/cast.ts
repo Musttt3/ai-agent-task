@@ -423,7 +423,7 @@ export const makeCtx = (f: number, a: number, b: number, cam: CamInfo): Ctx => {
       if (f < at || (until !== undefined && f >= until)) return;
       const s = backOut((f - at) / 7) * (until !== undefined ? clamp01((until - f) / 5) : 1);
       if (s <= 0.01) return;
-      out.fx.push({ key: "badge|" + key, cw: 560, ch: 260, draw: (p) => fxBadge(p, text, sub, bg, fg), x, y, z, w: w * s, h: w * (260 / 560) * s });
+      out.fx.push({ key: "badge|" + key + "|" + text + "|" + sub + "|" + bg, cw: 560, ch: 260, draw: (p) => fxBadge(p, text, sub, bg, fg), x, y, z, w: w * s, h: w * (260 / 560) * s });
     },
     mark: (text, col, x, y, z, w, at, until) => {
       if (f < at || (until !== undefined && f >= until)) return;
