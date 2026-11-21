@@ -1047,9 +1047,9 @@ export const BEATS: Beat[] = [
     stage: (c) => {
       const knock = (i: number) => (Math.floor((c.f + i * 5) / 5) % 3 === 0 ? 1 : 0);
       [[-0.55, 0.95], [0.55, 0.95], [-1.2, 1.4]].forEach(([x, z], i) => c.P(i === 2 ? WHO.kid(i) : WHO.tribe(i + 2), x, z, { expr: "stern", prop: "reach", wave: knock(i), facing: x < 0 ? 1 : -1 }));
-      c.mark("TOK", "#ffffff", -0.3, 1.55, 0.6, 0.4, wf(79, "mengetuknya"));
-      c.mark("TOK", "#ffffff", 0.35, 1.7, 0.6, 0.4, wf(79, "mengetuknya") + 9);
-      c.mark("TOK!", "#ffd43b", 0, 1.9, 0.6, 0.45, wf(79, "bergantian") + 4);
+      c.mark("TOK", "#ffffff", -0.3, 1.55, 0.6, 0.26, wf(79, "mengetuknya"));
+      c.mark("TOK", "#ffffff", 0.35, 1.7, 0.6, 0.26, wf(79, "mengetuknya") + 9);
+      c.mark("TOK!", "#ffd43b", 0, 1.85, 0.6, 0.3, wf(79, "bergantian") + 4);
     },
   },
   { // 80: "Temanmu sampai mengangkat tombak untuk menjaga antrean."
@@ -1131,24 +1131,24 @@ export const BEATS: Beat[] = [
   },
   { // 87: "Tidak ada bengkel."
     si: 87, set: "valley", light: "golden", sun: [-50, 16],
-    cams: (a) => [{ f: a, s: frame([-4, 0, -12], a, 14, 2.0, 1.6, { az: 180, fov: 34, rate: 0.003 }) }],
+    cams: (a) => [{ f: a, s: frame([-4, 0, -14], a, 6.0, 1.7, 1.7, { az: 0, fov: 34, rate: 0.003 }) }],
     ws: () => ({ melt: true, board: "fish2", gauge: 4, top: "closed", genOn: false }),
     stage: (c) => {
-      c.badge("bengkel", "BENGKEL?", "TIDAK ADA", "#e2453c", "#ffffff", -4, 2.5, -10, 1.6, ss(87));
+      c.badge("bengkel", "BENGKEL?", "TIDAK ADA", "#e2453c", "#ffffff", -4, 1.8, -12.5, 1.5, ss(87));
     },
   },
   { // 88: "Tidak ada SPBU."
     si: 88, set: "valley", light: "golden", sun: [-50, 16],
-    cams: (a) => [{ f: a, s: frame([6, 0, -12], a, 14, 2.0, 1.6, { az: 150, fov: 34, rate: 0.003, roll: 0.05 }) }],
+    cams: (a) => [{ f: a, s: frame([6, 0, -14], a, 6.0, 1.7, 1.7, { az: -15, fov: 34, rate: 0.003, roll: 0.05 }) }],
     ws: () => ({ melt: true, board: "fish2", gauge: 4, top: "closed", genOn: false }),
     stage: (c) => {
-      c.badge("spbu", "SPBU?", "TIDAK ADA", "#e2453c", "#ffffff", 6, 2.5, -10, 1.6, ss(88));
+      c.badge("spbu", "SPBU?", "TIDAK ADA", "#e2453c", "#ffffff", 6, 1.8, -12.5, 1.5, ss(88));
     },
   },
   { // 89: "Dan tidak ada orang yang bisa menyuling bahan bakar pengganti di sekitar lembah."
     si: 89, set: "valley", light: "golden", sun: [-50, 16],
     cams: (a) => [
-      { f: a, s: two([-4.8, 0, -2.2], a, { az: 30, d: 4.6, h: 1.5 }) },
+      { f: a, s: two([-4.8, 0, -2.2], a, { az: 100, d: 4.6, h: 1.5 }) },
       { f: wf(89, "lembah") - 6, cut: true, s: high([-1, 0, -1], wf(89, "lembah"), { az: 20, d: 9, h: 9, ly: 0.5, rise: 2.5, rate: 0.0012 }) },
     ],
     ws: () => ({ melt: true, board: "fish2", gauge: 4, top: "closed", genOn: false, fire: true }),
@@ -1167,7 +1167,7 @@ export const BEATS: Beat[] = [
     ],
     ws: (f) => ({ melt: true, board: "fish2", gauge: 4, genOn: false, lid: f >= wf(90, "menghangat") - 4 ? 1 : 0, top: "closed" }),
     stage: (c) => {
-      c.badge("jam", "KIRA-KIRA 4 JAM LAGI", "", "#ff8a3d", "#ffffff", 0.35, 1.9, 0.45, 0.7, wf(90, "jam") - 2, wf(90, "menghangat") - 4);
+      c.badge("jam", "KIRA-KIRA 4 JAM LAGI", "", "#ff8a3d", "#ffffff", 0.35, 1.55, 0.6, 0.7, wf(90, "jam") - 2, wf(90, "menghangat") - 4);
       c.puffs("hangat2", 0, 1.4, 0, { n: 3, period: 24, life: 40, size: 0.2, rise: 0.3, drift: [0.05, 0.05], col: "#ffd9a8", on: c.f >= wf(90, "menghangat") });
     },
   },
@@ -1184,7 +1184,7 @@ export const BEATS: Beat[] = [
   },
   { // 92: "Gerobak didorong ke tempat teduh."
     si: 92, set: "valley", light: "golden", sun: [-50, 16],
-    cams: (a) => [{ f: a, s: frame([-3.5, 0, -2.4], a, 8.0, 2.4, 0.9, { az: 60, fov: 32, orbit: -12, rate: 0.0016 }) }],
+    cams: (a) => [{ f: a, s: frame([-4.0, 0, 1.6], a, 8.5, 2.4, 0.9, { az: 75, fov: 32, orbit: -10, rate: 0.0016 }) }],
     ws: (f) => { const k = Math.max(0, Math.min(1, (f - ss(92)) / 50)); return { melt: true, board: "fish2", gauge: 4, genOn: false, top: "closed", cart: [CSH[0] * k, 0, CSH[2] * k] as V3 }; },
     stage: (c) => {
       const k = Math.max(0, Math.min(1, (c.f - ss(92)) / 50)), cx = CSH[0] * k, cz = CSH[2] * k;
