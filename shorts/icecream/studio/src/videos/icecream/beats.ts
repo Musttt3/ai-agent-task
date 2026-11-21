@@ -1411,7 +1411,7 @@ export const BEATS: Beat[] = [
   { // 112: "Tetapi mereka tetap membutuhkan makanan yang bisa didapat secara berkelanjutan."
     si: 112, set: "river", light: "golden", sun: [-30, 22],
     cams: (a) => [
-      { f: a, s: ins([RV + 1.5, 0.35, -0.9], a, { az: 30, d: 2.0, h: 0.8, fov: 30 }) },
+      { f: a, s: ins([RV + 1.5, 0.35, -0.9], a, { az: -25, d: 2.0, h: 0.8, fov: 30 }) },
       { f: wf(112, "berkelanjutan") - 6, cut: true, s: high([RV + 1.5, 0, 0], wf(112, "berkelanjutan"), { az: -20, d: 8, h: 7, rise: 2, rate: 0.0012 }) },
     ],
     stage: (c) => {
@@ -1484,7 +1484,7 @@ export const BEATS: Beat[] = [
   },
   { // 118: "Ternyata anak itu tidak meminta makanan dingin."
     si: 118, set: "valley", light: "golden", sun: [60, 14],
-    cams: (a) => [{ f: a, s: cu([CSH[0] + 2.4, 0, CSH[2] + 1.8], a, { az: -30, d: 1.6, h: 1.0, ly: 0.9, orbit: 10 }) }],
+    cams: (a) => [{ f: a, s: cu([CSH[0] + 2.4, 0, CSH[2] + 1.8], a, { az: -30, d: 1.9, h: 0.95, ly: 0.78, orbit: 10 }) }],
     ws: () => ({ gauge: 4, genOn: false, cart: CSH, top: "store" }),
     stage: (c) => {
       c.P(WHO.kid(0), CSH[0] + 2.4, CSH[2] + 1.8, { expr: "grin", facing: ([-1, 1] as const)[Math.floor(c.f / 7) % 2] });
@@ -1495,15 +1495,15 @@ export const BEATS: Beat[] = [
     si: 119, set: "valley", light: "golden", sun: [60, 14],
     cams: (a) => [
       { f: a, s: two([CSH[0] + 1.6, 0, CSH[2] + 1.4], a, { az: -20, d: 3.4, h: 1.2 }) },
-      { f: wf(119, "stik") - 3, cut: true, s: ins([CSH[0] + 1.5, 0.35, CSH[2] + 1.1], wf(119, "stik"), { az: 10, d: 0.9, h: 0.25, fov: 30, punch: 0.012 }) },
+      { f: wf(119, "stik") - 3, cut: true, s: cu([CSH[0] + 2.4, 0, CSH[2] + 1.8], wf(119, "stik"), { az: -20, d: 1.9, h: 0.95, ly: 0.8, punch: 0.012 }) },
     ],
     kicks: [wf(119, "stik")],
     ws: () => ({ gauge: 4, genOn: false, cart: CSH, top: "store" }),
     stage: (c) => {
       c.P(WHO.kid(0), CSH[0] + 2.4, CSH[2] + 1.8, { expr: "laugh", prop: "reach", facing: -1 });
       c.P(WHO.kamu, CSH[0] + 0.85, CSH[2] + 0.95, { expr: "dazed", mode: "sit" });
-      c.burst(CSH[0] + 1.5, 0.2, CSH[2] + 1.1, 0.6, wf(119, "stik") - 1, "#fff3b0");
-      c.badge("stik", "STIK BEKAS?!", "", "#ffd43b", "#241726", CSH[0] + 1.5, 0.75, CSH[2] + 1.1, 0.6, wf(119, "stik") - 1);
+      c.burst(CSH[0] + 2.4, 1.2, CSH[2] + 1.8, 0.8, wf(119, "stik") - 1, "#fff3b0");
+      c.badge("stik", "STIK BEKAS?!", "", "#ffd43b", "#241726", CSH[0] + 2.1, 1.35, CSH[2] + 1.9, 0.55, wf(119, "stik") - 1);
     },
   },
   { // 120: "Dengan bangga, dia menunjukkan beberapa stik yang sudah diikat menjadi mainan kecil."
@@ -1542,7 +1542,7 @@ export const BEATS: Beat[] = [
   { // 123: "Tetapi benda paling berharga bagi anak itu justru potongan kayu yang biasanya kamu buang."
     si: 123, set: "valley", light: "golden", sun: [60, 14],
     cams: (a) => [
-      { f: a, s: two([CSH[0] + 1.6, 0, CSH[2] + 1.4], a, { az: 20, d: 3.6, h: 1.3, orbit: -12 }) },
+      { f: a, s: two([CSH[0] + 1.6, 0, CSH[2] + 1.4], a, { az: -25, d: 3.6, h: 1.3, orbit: 12 }) },
       { f: wf(123, "potongan") - 4, cut: true, s: ins([CSH[0] + 2.05, 0.95, CSH[2] + 1.85], wf(123, "potongan"), { az: 15, d: 0.9, h: 0.1, fov: 30 }) },
     ],
     ws: () => ({ gauge: 4, genOn: false, cart: CSH, top: "store" }),
@@ -1554,13 +1554,13 @@ export const BEATS: Beat[] = [
   },
   { // 124: "Jadi, bagaimana rasanya menjual es krim di zaman purba?"
     si: 124, set: "valley", light: "golden", sun: [40, 20], flash: true,
-    cams: (a) => [{ f: a, s: high([-1.5, 0, 1.0], a, { az: 30, d: 9, h: 6.5, ly: 0.8, rise: 2.5, rate: 0.0014, orbit: -14 }) }],
+    cams: (a) => [{ f: a, s: high([CSH[0] + 1.4, 0, CSH[2] + 1.0], a, { az: 30, d: 8, h: 5.5, ly: 0.8, rise: 2.5, rate: 0.0014, orbit: -14 }) }],
     ws: () => ({ gauge: 4, genOn: false, cart: CSH, top: "store", fire: true }),
     stage: (c) => {
       c.P(WHO.kid(0), CSH[0] + 2.4, CSH[2] + 1.8, { expr: "laugh", prop: "sticktoy", facing: -1 });
       c.P(WHO.kamu, CSH[0] + 0.85, CSH[2] + 0.95, { expr: "smile", mode: "sit" });
       c.P(WHO.purba, CSH[0] + 1.8, CSH[2] + 0.4, { expr: "grin", prop: "spear" });
-      c.badge("jadi", "JADI...", "BAGAIMANA RASANYA?", "#f2efe6", "#241726", -1.5, 2.6, 1.0, 1.6, ss(124) + 6);
+      c.badge("jadi", "JADI...", "BAGAIMANA RASANYA?", "#f2efe6", "#241726", CSH[0] + 1.4, 2.6, CSH[2] + 1.0, 1.6, ss(124) + 6);
     },
   },
   { // 125: "Hari pertama, kamu menjadi pedagang paling terkenal di lembah."
