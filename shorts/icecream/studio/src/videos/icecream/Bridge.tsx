@@ -63,7 +63,7 @@ const Inner: React.FC<{ kit: Kit }> = ({ kit }) => {
 
   const fx = useMemo(() => ({
     ink: new InkPass(scene, camera as THREE.PerspectiveCamera),
-    lens: new LensBlur({ maxCoC: 24, nearScale: 1.2 }),
+    lens: new LensBlur({ maxCoC: 24, nearScale: 1.2, ...((getInputProps() as { post?: { lens?: unknown; lensTaps?: { taps?: number; nearTaps?: number; preTaps?: number } } }).post?.lensTaps ?? {}) }),
     bloom: makeBloom(),
     tone: new ToneMappingEffect({ mode: ToneMappingMode.NEUTRAL }),
     grade: new GradeEffect(GRADES.night, GRADE_STRENGTH.night),
