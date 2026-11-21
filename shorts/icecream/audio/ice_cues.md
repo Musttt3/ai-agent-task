@@ -1,0 +1,78 @@
+# Cues
+
+Length 472.500 s, 48 kHz stereo. Integrated -15.0 LUFS, true peak -1.8 dBTP.
+
+-   0.00 s  school yard chatter
+-   8.58 s  flash whoosh
+-   9.13 s  music: hit on the white flash
+-  16.77 s  generator off
+-  16.77 s  school yard chatter
+-  21.37 s  generator on
+-  43.13 s  music: sad tuba sting
+-  43.55 s  flash whoosh
+-  44.10 s  music: hit on the white flash
+-  68.33 s  knock
+-  68.55 s  knock
+-  96.27 s  music: glock rise sting
+- 122.67 s  leaf rub
+- 132.28 s  music: sad tuba sting
+- 135.18 s  music: sad tuba sting
+- 138.83 s  fish slap
+- 141.70 s  music: glock rise sting
+- 163.30 s  day one cheer
+- 163.30 s  music: glock rise sting
+- 182.80 s  wolf growl
+- 186.33 s  wolf sniffs
+- 202.13 s  wolf growl
+- 204.30 s  music: sad tuba sting
+- 204.55 s  flash whoosh
+- 205.10 s  camp fire
+- 205.10 s  crickets
+- 205.10 s  music: hit on the white flash
+- 216.47 s  generator off
+- 216.47 s  switch click
+- 219.02 s  music: sad tuba sting
+- 219.75 s  flash whoosh
+- 220.30 s  music: hit on the white flash
+- 230.13 s  generator on
+- 243.27 s  music: sad tuba sting
+- 269.05 s  flash whoosh
+- 269.60 s  music: hit on the white flash
+- 291.20 s  knock
+- 291.50 s  knock
+- 292.07 s  knock
+- 299.03 s  generator sputters
+- 299.40 s  generator off
+- 299.60 s  generator on
+- 299.97 s  generator off
+- 300.40 s  pull cord
+- 302.67 s  generator on
+- 303.70 s  generator off
+- 303.70 s  music: sad tuba sting
+- 310.00 s  camp fire
+- 319.37 s  cart rolls into the shade
+- 329.35 s  flash whoosh
+- 329.90 s  camp fire
+- 329.90 s  crickets
+- 329.90 s  music: hit on the white flash
+- 344.13 s  camp fire
+- 351.57 s  music: sad tuba sting
+- 358.03 s  the river
+- 377.00 s  kids laugh by the river
+- 385.60 s  music: glock rise sting
+- 397.95 s  flash whoosh
+- 398.50 s  music: hit on the white flash
+- 426.27 s  music: glock rise sting
+- 445.75 s  flash whoosh
+- 446.30 s  camp fire
+- 446.30 s  music: hit on the white flash
+- 450.63 s  generator on
+- 453.60 s  music: glock rise sting
+- 458.30 s  crickets
+- 458.30 s  generator off
+- 460.00 s  music: sad tuba sting
+- 460.42 s  flash whoosh
+- 460.97 s  music: hit on the white flash
+- 469.53 s  music: glock rise sting
+- 470.60 s  music: final button
+- 470.90 s  kids cheer at the end
