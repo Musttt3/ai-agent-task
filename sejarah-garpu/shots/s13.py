@@ -6,7 +6,8 @@ from shot_lib import *
 SID = "13"; f0, f1, _ = SHOTS[SID]
 sc = open_set("venesia", SID)
 # the head-end tablecloth skirt: shorten so her knees pass under the table (cloth would fold over them)
-end = bpy.data.objects["Taplak_Ujung_1"]; end.scale.z = 0.25; end.location.z = 0.76 - 0.05
+from venesia_common import shorten_skirt
+shorten_skirt(bpy.data.objects["Taplak_Ujung_1"], 0.76)
 b, r = actor("putri", mark="putri")
 sz = seat_z(0, 3.6)
 print("SEAT", sz)

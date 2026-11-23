@@ -7,7 +7,16 @@ TH = 0.76; TY1 = 3.0; TW = 1.15
 
 def prepare_table():
     """the head-end cloth skirt is shortened so seated knees pass under the table (cloth would fold over them)"""
-    end = bpy.data.objects["Taplak_Ujung_1"]; end.scale.z = 0.25; end.location.z = TH - 0.05
+    shorten_skirt(bpy.data.objects["Taplak_Ujung_1"], TH)
+
+def shorten_skirt(end, th):
+    """move the skirt's lower verts up to th-0.1 and its upper verts to the cloth top (world space; the set mesh
+    has its origin at the world origin, so scaling the object would lift the skirt above the table)"""
+    mw = end.matrix_world; inv = mw.inverted()
+    zs = [(mw @ v.co).z for v in end.data.vertices]; mid = (min(zs) + max(zs)) / 2
+    for v in end.data.vertices:
+        w = mw @ v.co; w.z = th - 0.1 if w.z < mid else th + 0.006; v.co = inv @ w
+    end.data.update()
 
 def putri_seated(f0, f1, lean=12):
     prepare_table()
