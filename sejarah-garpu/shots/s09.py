@@ -5,11 +5,15 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from shot_lib import *
 SID = "09"; f0, f1, _ = SHOTS[SID]
 sc = open_set("dapur", SID)
-b, r = actor("koki", loc=Vector((0.0, 1.0, 0)), yaw=0)
+b, r = actor("koki", loc=Vector((0.0, 1.18, 0)), yaw=0)
+sm_ = bpy.data.materials.get("Uap")
+if sm_:
+    for n_ in sm_.node_tree.nodes:
+        if n_.type == "MAP_RANGE": n_.inputs["To Max"].default_value = 0.18
 plant_feet(r, b)
 X, F, U = P.char_axes(r)
 P.turn(r, "spine02", X, 10); P.turn(r, "spine03", X, 6)
-sp = bpy.data.objects["SUMPIT_MASAK"]
+sp = bpy.data.objects["SUMPIT_MASAK"]; sp["grip_mode"] = "pena"; sp["r"] = 0.0035
 pot = bpy.data.objects["DING"].matrix_world.translation + Vector((0, 0, 0.36))
 keys = [(f, pot + Vector((0.07 * math.cos(i * 1.3), 0.07 * math.sin(i * 1.3), -0.03))) for i, f in enumerate(range(f0, 490, 9))]
 keys += [(498, pot + Vector((0.03, -0.03, 0.06))), (f1, pot + Vector((0.03, -0.03, 0.08)))]

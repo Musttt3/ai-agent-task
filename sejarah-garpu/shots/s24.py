@@ -6,11 +6,11 @@ from nusa_common import *
 SID = "24"; f0, f1, _ = SHOTS[SID]
 sc = open_set("nusantara", SID)
 a, ra = leluhur_bersila("leluhur_a", -0.35, -0.85, 0, f0, f1)
-p, rp = actor("pelaut", loc=Vector((0.45, -2.45, 0)), yaw=180)
+p, rp = actor("pelaut", loc=Vector((0.45, -2.6, 0)), yaw=180)
 plant_feet(rp, p)
 Xp, Fp, Up = P.char_axes(rp)
 spoon, fork = PR.sendok_garpu_eropa(bpy.data.collections["PROPS"])
-spot_s = Vector((0.38, -1.62, FZ + 0.006)); spot_f = Vector((0.52, -1.62, FZ + 0.006))
+spot_s = Vector((0.22, -1.7, FZ + 0.006)); spot_f = Vector((0.7, -1.7, FZ + 0.006))
 # held: spoon in the right hand, fork in the left; laid down at 1330 (swap to resting copies)
 for prop, side, spot in ((spoon, "R", spot_s), (fork, "L", spot_f)):
     prop["grip_mode"] = "pena"
@@ -31,7 +31,7 @@ for side in ("L", "R"):
     P.hand_shape(rp, side, "rileks", 0.7)
     P.key_pose(rp, 1345, bones=[pb.name for pb in rp.pose.bones if pb.name.endswith("." + side)])
     P.key_pose(rp, f1, bones=[pb.name for pb in rp.pose.bones if pb.name.endswith("." + side)])
-P.turn(rp, "spine02", Xp, 18); P.key_pose(rp, 1328, bones=["spine02"])
+P.turn(rp, "spine02", Xp, 8); P.key_pose(rp, 1328, bones=["spine02"])
 look(rp, f0, spot_s, 0.8); look(rp, 1345, P.bone_world(ra, "head"), 0.7); look(rp, f1, P.bone_world(ra, "head"), 0.7)
 P.face(p, f0, "SENYUM", 0.6); P.face(p, 1345, "SENANG", 0.7)
 look(ra, f0, P.bone_world(rp, "head"), 0.8); look(ra, 1333, spot_s, 0.9); look(ra, f1, spot_s, 0.9)

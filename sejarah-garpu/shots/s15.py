@@ -4,7 +4,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from venesia_common import *
 SID = "15"; f0, f1, _ = SHOTS[SID]
 sc = open_set("venesia", SID)
-u, ru = actor("uskup", loc=Vector((1.25, 2.95, 0)), yaw=110)
+u, ru = actor("uskup", loc=Vector((1.25, 2.95, 0)), yaw=-110)
 mit = put_mitre(ru, u)
 from shot_lib import plant_feet
 Xu, Fu, Uu = P.char_axes(ru)
@@ -16,7 +16,7 @@ P.hand_shape(ru, "R", "tunjuk", 1.0); P.hand_shape(ru, "L", "rileks", 0.8)
 plant_feet(ru, u)
 P.turn(ru, "spine02", Xu, 6)
 P.key_pose(ru, f0); P.turn(ru, "spine02", Xu, 4); P.key_pose(ru, 893); ru.keyframe_insert("location", frame=f0)
-look(ru, f0, target, 1.0)
+look(ru, f0, target, 1.0); look(ru, 893, target, 1.0); look(ru, f1, target, 1.0)
 P.face(u, f0, "MARAH", 1.0); P.face(u, 887, "TERIAK", 1.0); P.face(u, 899, "TERIAK", 0.9); P.face(u, f1, "MARAH", 1.0, extra={"jawOpen": 0.15})
 head = P.bone_world(ru, "head") + Uu * 0.08
 cam_dir = (target - head).normalized()

@@ -6,7 +6,7 @@ SID = "19"; f0, f1, _ = SHOTS[SID]
 sc = open_set("london", SID)
 folk = townsfolk(f0, f1)
 cor = Vector((0.0, 1.1, 1.25))
-for i, ((b, r), side) in enumerate(zip(folk, ("R", "L", "R"))):
+for i, ((b, r), side) in enumerate(zip(folk, (None, None, None))):
     look(r, f0, cor, 1.0)
     point_at(r, 1066 + i * 2, cor, side)
     X, F, U = P.char_axes(r)

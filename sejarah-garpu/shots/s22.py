@@ -14,7 +14,7 @@ edge = rc + (P.bone_world(ra, "spine01") - rc).normalized() * 0.05; edge.z = rc.
 from props import gundukan_nasi
 clump = gundukan_nasi("SUAPAN", 0.016, 0.9, bpy.data.collections["PROPS"])
 mouth = P.lips_front(a, ra, out=0.04)
-keys = [(f0, edge + U * 0.12 + F * 0.05), (1222, edge + U * 0.012), (1228, edge + U * 0.006), (1240, edge + U * 0.12), (f1, mouth - U * 0.05 + F * 0.06)]
+keys = [(f0, edge + U * 0.12 + F * 0.05), (1222, edge + U * 0.012), (1228, edge + U * 0.006), (1240, edge + U * 0.12), (f1, mouth - U * 0.1 + F * 0.15)]
 for f, t in keys:
     sc.frame_set(f)
     P.reach(ra, "R", t + U * 0.04 - F * 0.06, pole_dir=-X * 0.8 - U * 0.5, wrist_fwd=(F * 0.75 - U * 0.6).normalized())

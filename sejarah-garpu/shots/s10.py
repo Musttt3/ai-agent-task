@@ -24,7 +24,7 @@ errs = hold(co, r, "R", [(f0, table_pt + U * 0.06), (565, show - U * 0.08), (585
             fingers=(1, 3), pre_shape=("garpu", 1.0), prop_dirs={565: d_up, 585: d_up, 600: d_turn, f1: d_turn})
 print("HOLD", errs)
 P.relaxed_arms(r, sides=("L",))
-P.reach(r, "L", Vector((0.15 + 0.35, 0.86, seat_z(0.5, 0.86) + 0.04)), pole_dir=X - U * 0.3, wrist_fwd=(F * 0.3 - U * 0.9).normalized())
+P.reach(r, "L", Vector((0.15 + 0.35, 0.86, seat_z(0.5, 0.86) + 0.075)), pole_dir=X - U * 0.3, wrist_fwd=(F * 0.3 - U * 0.9).normalized())
 P._roll_palm(r, "L", -U); P.hand_shape(r, "L", "rileks", 0.7)
 P.key_pose(r, f0, bones=[pb.name for pb in r.pose.bones if pb.name.endswith(".L")])
 r.keyframe_insert("location", frame=f0)

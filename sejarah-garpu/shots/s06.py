@@ -5,8 +5,12 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from shot_lib import *
 SID = "06"; f0, f1, _ = SHOTS[SID]
 sc = open_set("gua", SID)
-b, r = actor("purba", loc=Vector((-0.55, 1.08, 0)), yaw=0)
-P.sit(r, b, 0.3, lean=30, spread=0.15)     # crouched on a low stone behind the slab (out of frame)
+for nm in ("MANGKUK_BATU", "CANGKANG_KERANG", "SERPIHAN_KAYU", "Batu_Datar"):
+    o_ = bpy.data.objects.get(nm)
+    if o_: o_.location.y += 0.3
+bpy.context.view_layer.update()
+b, r = actor("purba", loc=Vector((-0.5, 1.44, 0)), yaw=0)
+P.sit(r, b, seat_z(-0.5, 1.4), lean=32, spread=0.16)
 X, F, U = P.char_axes(r)
 bowl = bpy.data.objects["MANGKUK_BATU"]; shell = bpy.data.objects["CANGKANG_KERANG"]; chip = bpy.data.objects["SERPIHAN_KAYU"]
 bc = bowl.matrix_world.translation; surf = bc.z + 0.062

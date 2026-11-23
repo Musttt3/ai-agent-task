@@ -217,6 +217,7 @@ def garpu_emas(name="GARPU_EMAS", coll=None):
         _sweep(bm, path, lambda t: 0.0016 * (1 - 0.82 * t) + 0.0002, segs=8, flat=0.85)
     bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-5)
     o = _new(name, bm, [GOLD()], subsurf=1, coll=coll)
+    o["r"] = 0.0036
     return _finish(o, tip=(0, 0, zr + 0.042))
 
 def garpu_coryat(name="GARPU_CORYAT", coll=None):
@@ -233,6 +234,7 @@ def garpu_coryat(name="GARPU_CORYAT", coll=None):
         _sweep(bm, [(sx * (0.0022 + 0.0008 * t), 0, zr + 0.05 * t) for t in [i / 14 for i in range(15)]], lambda t: 0.0014 * (1 - 0.8 * t) + 0.0002, segs=8, flat=0.8, mat_index=1)
     bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-5)
     o = _new(name, bm, [mat_noise_color("Tulang", (0.86, 0.8, 0.66), (0.74, 0.66, 0.5), scale=40, rough=0.45, bump=0.05), IRON()], subsurf=1, coll=coll)
+    o["r"] = 0.0062
     return _finish(o, tip=(0, 0, zr + 0.05))
 
 def sendok_cochlear(name="SENDOK_ROMAWI", coll=None):
@@ -745,7 +747,7 @@ def mitra(name="MITRA", head_width=0.17, coll=None):
     """bishop's mitre: two stiff peaks (front and back) rising to points, white silk with gold orphrey bands.
     Origin at the head band centre; worn level, the band circles the head just above the brows."""
     bm = bmesh.new()
-    W = head_width * 0.62; H = 0.3
+    W = head_width * 0.68; H = 0.21
     for sy in (-1, 1):            # front and back plates, slightly curved
         rows = []
         for j in range(13):

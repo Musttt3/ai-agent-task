@@ -249,7 +249,7 @@ def place_pen(prop, rig, side, grip_local=Vector((0, 0, 0)), axis_local=Vector((
     q = Quaternion(ax_w, math.radians(roll)) @ q
     prop.rotation_mode = "QUATERNION"; prop.rotation_quaternion = q
     bpy.context.view_layer.update()
-    seat = bone_world(rig, f"finger2-2.{side}") + normal * 0.02 + across * 0.009        # under the middle phalanx, thumb side
+    seat = bone_world(rig, f"finger2-2.{side}") + normal * (0.0165 + float(prop.get("r", 0.0035))) + across * 0.009        # under the middle phalanx, thumb side
     gw = prop.matrix_world.to_3x3() @ Vector(grip_local)
     prop.location = seat - gw + ax_w * slide
     bpy.context.view_layer.update()

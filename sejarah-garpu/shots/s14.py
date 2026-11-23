@@ -12,7 +12,7 @@ plate = Vector((0.02, 2.88, TH + 0.03)); chest = P.bone_world(r, "spine01") + F 
 d_up = (U * 0.75 + F * 0.3 + X * 0.25).normalized()
 hold(g, r, "R", [(f0, chest), (f1, chest - U * 0.02)], point_local=Vector(g["tip"]), grip_local=(0, 0, 0.025), pole=-U * 0.8 - X * 0.6,
      hand_dirs={f0: d_up, f1: d_up}, palm_dirs={f0: X * 0.7 - F * 0.4, f1: X * 0.7 - F * 0.4}, fingers=(1, 3), pre_shape=("garpu", 1.0), prop_dirs={f0: d_up, f1: d_up})
-u, ru = actor("uskup", loc=Vector((1.75, 2.75, 0)), yaw=110)
+u, ru = actor("uskup", loc=Vector((1.75, 2.75, 0)), yaw=-112)
 mit = put_mitre(ru, u)
 from shot_lib import plant_feet, walk
 # two angry steps toward the table end, then he points

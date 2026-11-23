@@ -7,7 +7,7 @@ SID = "17"; f0, f1, _ = SHOTS[SID]
 sc = open_set("london", SID)
 b, r = coryat_seated(f0, f1)
 X, F, U = P.char_axes(r)
-g = bpy.data.objects["GARPU_CORYAT"]; g["grip_mode"] = "pena"
+g = bpy.data.objects["GARPU_CORYAT"]; g["grip_mode"] = "pena"; g["r"] = 0.0062
 case = bpy.data.objects["KOTAK_GARPU"]
 start = g.matrix_world @ Vector(g["tip"])
 show = P.bone_world(r, "spine01") + F * 0.35 + U * 0.24 - X * 0.1
@@ -20,6 +20,6 @@ print("HOLD", errs)
 P.face(b, f0, "SENYUM", 0.5, extra={"eyeLookDownLeft": 0.5, "eyeLookDownRight": 0.5}); P.face(b, 1012, "SENANG", 0.9); P.face(b, f1, "BANGGA", 1.0)
 look(r, 1018, show + U * 0.05, 0.6); look(r, f1, show + U * 0.05, 0.6)
 head = P.bone_world(r, "head")
-cam = camera(SID, 45, [(f0, (0.45, -1.15, 1.32), (0.0, 0.9, 1.1)), (f1, (0.38, -0.85, 1.32), (0.0, 0.95, 1.18))], focus=show, fstop=2.8)
+cam = camera(SID, 45, [(f0, (0.45, -0.95, 1.32), (0.0, 1.1, 1.1)), (f1, (0.38, -0.65, 1.32), (0.0, 1.15, 1.18))], focus=show, fstop=2.8)
 finish(SID, chars=[(b, r)], props=[g, case], env=[o for o in bpy.data.objects["Meja_Coryat"].children_recursive if o.type == "MESH"])
 if "stills" in sys.argv: print("STILLS", stills(SID, [f0, 1015, f1]))
