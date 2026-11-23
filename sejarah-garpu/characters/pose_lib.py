@@ -608,3 +608,19 @@ def bersila(rig, body, floor_z, spread=0.85, lean=10.0):
     if lean:
         turn(rig, "spine03", X, lean * 0.5); turn(rig, "spine02", X, lean * 0.5)
     bpy.context.view_layer.update()
+
+def berlutut(rig, body, floor_z, lean=40.0, spread=0.1):
+    """kneeling, sitting back on the heels: thighs forward-down, shins flat on the ground behind, knees on the floor"""
+    X, F, U = char_axes(rig)
+    for s, sg in (("L", 1), ("R", -1)):
+        d = F * 0.75 - U * 0.65 + X * sg * spread
+        for b in (f"upperleg01.{s}", f"upperleg02.{s}"): aim(rig, b, d)
+        d2 = -F * 0.97 - U * 0.08 + X * sg * 0.04
+        for b in (f"lowerleg01.{s}", f"lowerleg02.{s}"): aim(rig, b, d2)
+        aim(rig, f"foot.{s}", -F * 0.6 - U * 0.75)
+    for _ in range(3):
+        low = _lowest(body, lambda r: r in ("kaki.L", "kaki.R"))
+        rig.location.z += (floor_z + 0.004) - low; bpy.context.view_layer.update()
+    if lean:
+        turn(rig, "spine03", X, lean * 0.4); turn(rig, "spine02", X, lean * 0.35); turn(rig, "spine01", X, lean * 0.25)
+    bpy.context.view_layer.update()

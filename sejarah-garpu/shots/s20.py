@@ -6,7 +6,7 @@ SID = "20"; f0, f1, _ = SHOTS[SID]
 sc = open_set("london", SID)
 b, r = coryat_seated(f0, f1)
 X, F, U = P.char_axes(r)
-g = bpy.data.objects["GARPU_CORYAT"]; g["grip_mode"] = "pena"; g["r"] = 0.0062
+g = bpy.data.objects["GARPU_CORYAT"]; g["grip_mode"] = "pena"; g["r"] = 0.0072
 show = P.bone_world(r, "spine01") + F * 0.35 + U * 0.24 - X * 0.1
 low = P.bone_world(r, "spine01") + F * 0.4 - U * 0.02 - X * 0.12
 d_up = (U * 0.85 + F * 0.3 + X * 0.15).normalized(); d_low = (F * 0.6 + U * 0.2 + X * 0.4).normalized()

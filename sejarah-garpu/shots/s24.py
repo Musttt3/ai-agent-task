@@ -23,7 +23,12 @@ for prop, side, spot in ((spoon, "R", spot_s), (fork, "L", spot_f)):
     if rest.animation_data: rest.animation_data_clear()
     sc.frame_set(1330); rest.matrix_world = prop.matrix_world.copy(); rest.location.z = FZ + 0.004
     hide_between(rest, 1331); hide_between(prop, f0 - 5, 1331)
-# after letting go the hands withdraw
+# after letting go the hands lift a little, then withdraw to the sides (never toward each other)
+for side in ("L", "R"):
+    sc.frame_set(1335)
+    sh = P.bone_world(rp, f"upperarm01.{side}")
+    P.reach(rp, side, sh - Up * 0.38 + Fp * 0.42 + (Xp if side == "L" else -Xp) * 0.12, pole_dir=-Up * 0.6 + (Xp if side == "L" else -Xp) * 0.6, wrist_fwd=(Fp - Up * 0.3).normalized())
+    P.key_pose(rp, 1335, bones=[pb.name for pb in rp.pose.bones if pb.name.endswith("." + side) and ("arm" in pb.name or "wrist" in pb.name)])
 for side in ("L", "R"):
     sc.frame_set(1345)
     sh = P.bone_world(rp, f"upperarm01.{side}")

@@ -5,18 +5,14 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from shot_lib import *
 SID = "06"; f0, f1, _ = SHOTS[SID]
 sc = open_set("gua", SID)
-for nm in ("MANGKUK_BATU", "CANGKANG_KERANG", "SERPIHAN_KAYU", "Batu_Datar"):
-    o_ = bpy.data.objects.get(nm)
-    if o_: o_.location.y += 0.3
-bpy.context.view_layer.update()
-b, r = actor("purba", loc=Vector((-0.5, 1.44, 0)), yaw=0)
-P.sit(r, b, seat_z(-0.5, 1.4), lean=32, spread=0.16)
+b, r = actor("purba", loc=Vector((-0.6, 1.12, 0)), yaw=0)
+P.berlutut(r, b, seat_z(-0.6, 1.12), lean=42)
 X, F, U = P.char_axes(r)
 bowl = bpy.data.objects["MANGKUK_BATU"]; shell = bpy.data.objects["CANGKANG_KERANG"]; chip = bpy.data.objects["SERPIHAN_KAYU"]
 bc = bowl.matrix_world.translation; surf = bc.z + 0.062
 inside = Vector((bc.x + 0.02, bc.y + 0.01, surf - 0.006))
 up_pt = Vector((bc.x + 0.02, bc.y - 0.06, surf + 0.07))
-shell["grip_mode"] = "palm"
+shell["grip_mode"] = "pena"; shell["r"] = 0.006
 errs = hold(shell, r, "R", [(f0, up_pt + U * 0.03), (258, inside), (268, inside + Vector((0.0, -0.03, 0.01))), (282, up_pt), (f1, up_pt + U * 0.02)],
             point_local=Vector(shell["tip"]), grip_local=(0, -0.004, 0.012), axis_local=(0, 0, 1), pole=-U * 0.7 - X * 0.6,
             hand_dir=(F * 0.8 - U * 0.4).normalized(), palm_dir=(U * 0.2 - F * 0.2 + X * 0.6).normalized(), fingers=(1, 2, 3), pre_shape=("cubit", 0.6))
