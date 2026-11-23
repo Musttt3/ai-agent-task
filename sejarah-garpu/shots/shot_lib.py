@@ -41,7 +41,19 @@ def open_set(name, sid):
     sc.render.filepath = os.path.join(ROOT, "out", "frames", "#####")
     sc.render.image_settings.file_format = "PNG"; sc.render.image_settings.color_mode = "RGB"
     sc["shot"] = sid
+    fix_materials()
     return sc
+
+def fix_materials():
+    """late look tweaks applied to every shot (no set rebuild needed): richer gold, darker polished silver"""
+    for name, col, rmin, rmax in (("Emas", (1.0, 0.66, 0.22), 0.1, 0.22), ("Perak", (0.62, 0.6, 0.57), 0.12, 0.28)):
+        m = bpy.data.materials.get(name)
+        if not m: continue
+        b = next(n for n in m.node_tree.nodes if n.type == "BSDF_PRINCIPLED")
+        b.inputs["Base Color"].default_value = (*col, 1)
+        for n in m.node_tree.nodes:
+            if n.type == "MAP_RANGE" and n.outputs[0].links and n.outputs[0].links[0].to_socket.name == "Roughness":
+                n.inputs["To Min"].default_value = rmin; n.inputs["To Max"].default_value = rmax
 
 def mark(name):
     return bpy.data.objects["MARK_" + name]
