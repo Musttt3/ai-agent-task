@@ -7,7 +7,7 @@ SID = "17"; f0, f1, _ = SHOTS[SID]
 sc = open_set("london", SID)
 b, r = coryat_seated(f0, f1)
 X, F, U = P.char_axes(r)
-g = bpy.data.objects["GARPU_CORYAT"]; g["grip_mode"] = "pena"; g["r"] = 0.0072
+g = bpy.data.objects["GARPU_CORYAT"]; g["grip_mode"] = "pena"; g["r"] = 0.009
 case = bpy.data.objects["KOTAK_GARPU"]
 start = g.matrix_world @ Vector(g["tip"])
 show = P.bone_world(r, "spine01") + F * 0.35 + U * 0.24 - X * 0.1

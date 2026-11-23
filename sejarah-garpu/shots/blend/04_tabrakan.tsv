@@ -1,62 +1,29 @@
-142	purba.body:tangan.L	purba.body:kaki.L	220
-142	purba.body:tangan.R	DAGING_BAKAR (mm)	7.8
-145	purba.body:tangan.L	purba.body:kaki.L	220
-145	purba.body:tangan.R	DAGING_BAKAR (mm)	7.8
-148	purba.body:tangan.L	purba.body:kaki.L	220
-148	purba.body:tangan.R	DAGING_BAKAR (mm)	7.8
-151	purba.body:tangan.L	purba.body:kaki.L	220
-151	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-154	purba.body:tangan.L	purba.body:kaki.L	220
-154	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-157	purba.body:tangan.L	purba.body:kaki.L	220
-157	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-160	purba.body:tangan.L	purba.body:kaki.L	220
-160	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-163	purba.body:tangan.L	purba.body:kaki.L	220
-163	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-166	purba.body:tangan.L	purba.body:kaki.L	220
-166	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-169	purba.body:tangan.L	purba.body:kaki.L	220
-169	purba.body:tangan.R	DAGING_BAKAR (mm)	7.8
-172	purba.body:tangan.L	purba.body:kaki.L	220
-172	purba.body:tangan.R	DAGING_BAKAR (mm)	7.8
-172	purba.body:kepala	DAGING_BAKAR (mm)	2.9
-175	purba.body:tangan.L	purba.body:kaki.L	220
-175	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-175	purba.body:kepala	DAGING_BAKAR (mm)	13.9
-178	purba.body:tangan.L	purba.body:kaki.L	220
-178	purba.body:tangan.R	DAGING_BAKAR (mm)	7.8
-178	purba.body:kepala	DAGING_BAKAR (mm)	13.0
-181	purba.body:tangan.L	purba.body:kaki.L	220
-181	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-181	purba.body:kepala	DAGING_BAKAR (mm)	4.9
-184	purba.body:tangan.L	purba.body:kaki.L	220
-184	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-187	purba.body:tangan.L	purba.body:kaki.L	220
-187	purba.body:tangan.R	DAGING_BAKAR (mm)	7.8
-190	purba.body:tangan.L	purba.body:kaki.L	220
-190	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-193	purba.body:tangan.L	purba.body:kaki.L	220
-193	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-196	purba.body:tangan.L	purba.body:kaki.L	220
-196	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-199	purba.body:tangan.L	purba.body:kaki.L	220
-199	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-202	purba.body:tangan.L	purba.body:kaki.L	220
-202	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-205	purba.body:tangan.L	purba.body:kaki.L	220
-205	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-208	purba.body:tangan.L	purba.body:kaki.L	220
-208	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-211	purba.body:tangan.L	purba.body:kaki.L	220
-211	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-214	purba.body:tangan.L	purba.body:kaki.L	220
-214	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-217	purba.body:tangan.L	purba.body:kaki.L	220
-217	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-220	purba.body:tangan.L	purba.body:kaki.L	220
-220	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-223	purba.body:tangan.L	purba.body:kaki.L	220
-223	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
-223	purba.body:tangan.L	purba.body:kaki.L	220
-223	purba.body:tangan.R	DAGING_BAKAR (mm)	7.3
+142	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+145	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+148	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+151	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+154	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+157	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+160	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+163	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+166	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+169	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+172	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+175	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+178	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+181	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+184	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+187	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+190	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+193	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+196	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+199	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+202	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+205	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+208	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+211	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+214	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+217	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+220	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+223	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9
+223	purba.body:tangan.R	DAGING_BAKAR (mm)	7.9

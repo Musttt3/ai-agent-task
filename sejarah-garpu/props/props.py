@@ -744,37 +744,39 @@ def pohon_kelapa(name="KELAPA", height=8.0, lean=0.12, seed=1, coll=None):
     return o
 
 def mitra(name="MITRA", head_width=0.17, coll=None):
-    """bishop's mitre: two stiff peaks (front and back) rising to points, white silk with gold orphrey bands.
-    Origin at the head band centre; worn level, the band circles the head just above the brows."""
+    """bishop's mitre: front and back plates rising to pointed arches, close together and joined at the sides by
+    fabric over the lower part; white silk with gold orphrey bands and a gold circlet. Origin at the band centre."""
     bm = bmesh.new()
-    W = head_width * 0.68; H = 0.21
-    for sy in (-1, 1):            # front and back plates, slightly curved
-        rows = []
-        for j in range(13):
-            t = j / 12; z = H * t
-            half = W * (1 - 0.55 * t ** 1.6) if t < 0.97 else 0.004
-            row = [bm.verts.new((x * half, sy * 0.055 * (1 - t) ** 0.7 + sy * 0.004, z)) for x in [i / 8 * 2 - 1 for i in range(9)]]
-            rows.append(row)
-        for j in range(12):
-            for i in range(8):
-                f = bm.faces.new((rows[j][i], rows[j][i + 1], rows[j + 1][i + 1], rows[j + 1][i]))
-    # head band (ring)
-    bmesh.ops.create_cone(bm, cap_ends=False, segments=40, radius1=head_width * 0.6, radius2=head_width * 0.62, depth=0.05, matrix=Matrix.Translation((0, 0, 0.02)))
+    W = head_width * 0.6; H = 0.24; D = head_width * 0.68   # half width, height, half depth at the band (head is deeper than wide)
+    def half(t): return W * (1.0 if t < 0.45 else max(0.004, math.cos((t - 0.45) / 0.55 * math.pi / 2) ** 0.8))
+    def dep(t): return D * max(0.05, 1 - t * 1.15)        # plates converge toward the top
+    rows = []
+    nu, nv = 24, 16
+    for j in range(nv + 1):
+        t = j / nv; z = H * t; row = []
+        for i in range(nu):
+            a_ = 2 * math.pi * i / nu
+            x = math.sin(a_) * half(t); y = math.cos(a_) * dep(t)
+            if t > 0.45 and abs(math.sin(a_)) > 0.92: y *= 0.2                     # side gap above the closed part
+            row.append(bm.verts.new((x, y, z)))
+        rows.append(row)
+    for j in range(nv):
+        for i in range(nu):
+            k = (i + 1) % nu
+            bm.faces.new((rows[j][i], rows[j][k], rows[j + 1][k], rows[j + 1][i]))
     silk = mat_simple("Sutra_Putih", (0.92, 0.9, 0.84), rough=0.35)
     o = _new(name, bm, [silk], coll=coll)
-    o.modifiers.new("Tebal", "SOLIDIFY").thickness = 0.004
-    s = o.modifiers.new("Halus", "SUBSURF"); s.levels = s.render_levels = 1
-    # gold bands: vertical orphrey on both plates + the circlet
+    o.modifiers.new("Tebal", "SOLIDIFY").thickness = 0.003
+    s_ = o.modifiers.new("Halus", "SUBSURF"); s_.levels = s_.render_levels = 1
     gold = mat_simple("Bordir_Emas", (0.85, 0.62, 0.2), rough=0.35, metal=0.8)
-    for sy in (-1, 1):
+    for sy in (-1, 1):   # vertical orphrey on the front and the back
         bm2 = bmesh.new()
-        for j in range(12):
-            t0, t1 = j / 12, (j + 1) / 12
-            for x0 in (-0.12,):
-                pass
-        _sweep(bm2, [(0, sy * (0.055 * (1 - t) ** 0.7 + 0.0075), H * t) for t in [k / 12 for k in range(13)]], lambda t: 0.012, segs=4, flat=0.15)
+        _sweep(bm2, [(0, sy * (dep(t) + 0.003), H * t * 0.97) for t in [k / 14 for k in range(15)]], lambda t: 0.02 * (1 - 0.5 * t), segs=4, flat=0.12)
         b2 = _new(f"{name}_PITA_{sy}", bm2, [gold], coll=coll); b2.parent = o
-    bm3 = bmesh.new(); bmesh.ops.create_cone(bm3, cap_ends=False, segments=40, radius1=head_width * 0.615, radius2=head_width * 0.625, depth=0.022, matrix=Matrix.Translation((0, 0, 0.012)))
+    bm3 = bmesh.new()
+    rr = [bm3.verts.new((math.sin(2 * math.pi * i / 48) * (W + 0.003), math.cos(2 * math.pi * i / 48) * (D + 0.003), 0.0)) for i in range(48)]
+    rr2 = [bm3.verts.new((math.sin(2 * math.pi * i / 48) * (W + 0.003), math.cos(2 * math.pi * i / 48) * (D + 0.003), 0.028)) for i in range(48)]
+    for i in range(48): bm3.faces.new((rr[i], rr[(i + 1) % 48], rr2[(i + 1) % 48], rr2[i]))
     b3 = _new(f"{name}_LINGKAR", bm3, [gold], coll=coll); b3.parent = o
     b3.modifiers.new("Tebal", "SOLIDIFY").thickness = 0.003
     return o

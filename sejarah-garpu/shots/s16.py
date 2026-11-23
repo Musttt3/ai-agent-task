@@ -5,6 +5,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from london_common import *
 SID = "16"; f0, f1, _ = SHOTS[SID]
 sc = open_set("london", SID)
+arrange_tables()
 door = bpy.data.objects["Pintu"]; hinge = Vector((-3.85, -0.5, 0))
 # pivot the door on its hinge
 piv = bpy.data.objects.new("ENGSEL_PINTU", None); bpy.data.collections["SET"].objects.link(piv); piv.location = hinge

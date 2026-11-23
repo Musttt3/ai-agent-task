@@ -21,7 +21,7 @@ CAST = {
                       skin="young_caucasian_female", hair="elvs_french_braid_variation", eyebrows="eyebrow012", eyelashes="eyelashes02",
                       clothes=["punkduck_medieval_dress", "toigo_pearl_necklace", "elvs_flatshoe_plain1"], tint={"punkduck_medieval_dress": (0.42, 0.16, 0.5)}),
     "uskup":     dict(phenotype=dict(gender=1.0, age=0.86, muscle=0.45, weight=0.55, race=EROPA),
-                      skin="old_caucasian_male", hair="short03", eyebrows="eyebrow002",
+                      skin="old_caucasian_male", hair="short02", eyebrows="eyebrow002",
                       clothes=["donitz_monk_robe", "punkduck_medieval_boots"], tint={"donitz_monk_robe": (0.95, 0.93, 0.88)}),
     "bangsawan_a": dict(phenotype=dict(gender=0.0, age=0.62, muscle=0.4, weight=0.5, race=MEDIT),
                       skin="middleage_caucasian_female", hair="elvs_reverse_french_braid_bun", eyebrows="eyebrow011", eyelashes="eyelashes02",

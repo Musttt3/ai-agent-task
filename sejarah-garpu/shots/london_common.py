@@ -9,10 +9,23 @@ def table_top(name):
     root = bpy.data.objects[name]; c = root.matrix_world.translation
     return seat_z(c.x, c.y, z0=2.0)
 
+def arrange_tables():
+    """the tavern tables are small round pedestal tables (top radius ~0.27 m): keep every table thing on the top"""
+    moves = {"Mangkuk_Coryat": (0.12, 0.5), "Kaki_Lilin_C": (-0.13, 0.55), "Lilin_C": (-0.13, 0.55),
+             "Kendi_0": (1.8, 1.6), "Kendi_1": (2.0, 1.8), "Kendi_2": (1.86, 1.86), "Kaki_Lilin_W": (1.98, 1.6), "Lilin_W": (1.98, 1.6)}
+    for nm, (x, y) in moves.items():
+        o = bpy.data.objects.get(nm)
+        if o and not o.get("_ok"): o.location.x, o.location.y = x, y; o["_ok"] = 1
+    for nm in ("KOTAK_GARPU", "GARPU_CORYAT"):
+        o = bpy.data.objects.get(nm)
+        if o and not o.get("_ok"): o.location.x -= 0.1; o.location.y += 0.3; o["_ok"] = 1
+    bpy.context.view_layer.update()
+
 def coryat_hat(r, b):
     h = PR.topi_tinggi("TOPI_CORYAT", coll=bpy.data.collections["PROPS"]); P.wear(h, r, b, height=0.135); return h
 
 def coryat_seated(f0, f1):
+    arrange_tables()
     bench = bpy.data.objects["Bangku_Coryat"]; bench.location.y = 1.36
     bpy.context.view_layer.update()
     b, r = actor("coryat", loc=Vector((0.0, 1.32, 0)), yaw=0)
@@ -22,13 +35,14 @@ def coryat_seated(f0, f1):
     X, F, U = P.char_axes(r)
     P.relaxed_arms(r)
     for s, dx in (("L", 0.22), ("R", -0.22)):
-        P.reach(r, s, Vector((dx, 0.9, th + 0.035)), pole_dir=-U * 0.8 + (X if s == "L" else -X) * 0.6, wrist_fwd=F - U * 0.15)
+        P.reach(r, s, Vector((dx * 0.55, 0.76, th + 0.035)), pole_dir=-U * 0.8 + (X if s == "L" else -X) * 0.6, wrist_fwd=F - U * 0.15)
         P._roll_palm(r, s, -U); P.hand_shape(r, s, "rileks", 0.6)
     P.key_pose(r, f0); P.key_pose(r, f1); r.keyframe_insert("location", frame=f0)
     return b, r
 
 def townsfolk(f0, f1):
     """the three regulars around their table (1.9, 1.7)"""
+    arrange_tables()
     out = []
     for nm, xy in (("Dingklik_0", (1.18, 1.7)), ("Dingklik_1", (2.62, 1.7)), ("Dingklik_2", (1.9, 2.72))):
         st = bpy.data.objects.get(nm)
@@ -40,11 +54,11 @@ def townsfolk(f0, f1):
         P.sit(r, b, seat_z(x, y), lean=8)
         X, F, U = P.char_axes(r)
         P.relaxed_arms(r)
-        tbl = Vector((1.9, 1.7, th + 0.035))
-        for s in ("L", "R"):
+        for s in ("L", "R"):      # hands rest on the thighs (the table top is too small for six hands)
             side = X if s == "L" else -X
-            tgt = tbl + (Vector((x, y, th)) - tbl).normalized() * 0.3 + side * 0.15; tgt.z = th + 0.035
-            P.reach(r, s, tgt, pole_dir=-U * 0.8 + side * 0.6, wrist_fwd=F - U * 0.1)
+            hip = P.bone_world(r, f"upperleg01.{s}"); knee = P.bone_world(r, f"lowerleg01.{s}")
+            tgt = hip.lerp(knee, 0.62) + U * 0.17 - side * 0.02
+            P.reach(r, s, tgt, pole_dir=-U * 0.3 + side * 0.9, wrist_fwd=(F * 0.9 - U * 0.15).normalized())
             P._roll_palm(r, s, -U); P.hand_shape(r, s, "rileks", 0.6)
         P.key_pose(r, f0); P.key_pose(r, f1); r.keyframe_insert("location", frame=f0)
         out.append((b, r))

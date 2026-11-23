@@ -9,7 +9,7 @@ a, ra = leluhur_bersila("leluhur_a", -0.35, -0.85, 0, f0, f1)
 p, rp = actor("pelaut", loc=Vector((0.45, -2.6, 0)), yaw=180)
 plant_feet(rp, p)
 Xp, Fp, Up = P.char_axes(rp)
-spoon, fork = PR.sendok_garpu_eropa(bpy.data.collections["PROPS"])
+spoon, fork = PR.sendok_garpu_eropa(bpy.data.collections["PROPS"]); fork["r"] = 0.009; spoon["r"] = 0.005
 spot_s = Vector((0.22, -1.7, FZ + 0.006)); spot_f = Vector((0.7, -1.7, FZ + 0.006))
 # held: spoon in the right hand, fork in the left; laid down at 1330 (swap to resting copies)
 for prop, side, spot in ((spoon, "R", spot_s), (fork, "L", spot_f)):
