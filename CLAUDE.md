@@ -19,3 +19,8 @@ Build every new video from the `2d-in-3d-animation-agent` template (`.claude/ski
 - World materials with `twoTone` cel shading (`shade.ts`); light presets and palettes in `lights.ts`/`LOOK`; motivated light sources in the set (lamps, windows, screens, fire) and a strong rim light separating characters from the set.
 - Detailed procedural sets in `build.ts`, a dedicated set per mood.
 - **In-scene signs, boards and comic badges with text are wanted** (like the demo): use them in every new video, inside the 9:16 safe area (boards <= 1.8 m wide centred at x = 0, badges between x -0.2 and +0.25). This replaces the old "no labels" rule. Spoken-word captions are still only added when the user asks for them in that video.
+
+## Delivery notes (learned 2026-11-23, es krim purba)
+- SendUserFile refuses files over 500 MiB. A 7:52 16:9 2K video at CRF 17 is about 544 MiB; deliver a CRF 19 copy (about 400 MiB) and keep the CRF 17 master.
+- A 16:9 2K frame with the full post chain renders in about 8 s at concurrency 3 (about 20 min per 150-frame chunk), so 5 chunks fit in one 2 h background slot.
+- QA for 16:9: `shorts/icecream/studio/scripts/ice_qa.py`. It streams frames, so it is light on memory.
