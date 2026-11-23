@@ -1,0 +1,446 @@
+# Posing toolkit for MPFB characters (default rig): faces, arm IK, finger grips, keyframing, penetration check.
+#   from pose_lib import *
+# Conventions: a character is the pair (body, rig) returned by mh_lib.build_char; objects are named "<name>.<asset>".
+import bpy, math
+from mathutils import Vector, Matrix, Quaternion
+from mathutils.bvhtree import BVHTree
+
+# ------------------------------------------------------------------ face
+EXPR = {  # ARKit face units (MPFB faceunits01) per expression
+    "NETRAL":  {},
+    "SENYUM":  {"mouthSmileLeft": 0.55, "mouthSmileRight": 0.55, "cheekSquintLeft": 0.25, "cheekSquintRight": 0.25, "eyeSquintLeft": 0.15, "eyeSquintRight": 0.15},
+    "SENANG":  {"mouthSmileLeft": 0.85, "mouthSmileRight": 0.85, "jawOpen": 0.18, "cheekSquintLeft": 0.45, "cheekSquintRight": 0.45, "eyeSquintLeft": 0.3, "eyeSquintRight": 0.3, "browInnerUp": 0.15},
+    "TERTAWA": {"mouthSmileLeft": 1.0, "mouthSmileRight": 1.0, "jawOpen": 0.42, "cheekSquintLeft": 0.7, "cheekSquintRight": 0.7, "eyeSquintLeft": 0.6, "eyeSquintRight": 0.6, "mouthUpperUpLeft": 0.3, "mouthUpperUpRight": 0.3},
+    "KAGET":   {"eyeWideLeft": 0.8, "eyeWideRight": 0.8, "browInnerUp": 0.8, "browOuterUpLeft": 0.7, "browOuterUpRight": 0.7, "jawOpen": 0.25, "mouthFunnel": 0.3},
+    "MIKIR":   {"browInnerUp": 0.2, "browOuterUpLeft": 0.6, "browDownRight": 0.35, "mouthLeft": 0.35, "mouthPressLeft": 0.3, "eyeLookUpLeft": 0.35, "eyeLookUpRight": 0.35, "eyeSquintRight": 0.2},
+    "BINGUNG": {"browInnerUp": 0.55, "browDownLeft": 0.2, "mouthShrugUpper": 0.3, "mouthRight": 0.25, "mouthFrownLeft": 0.2, "eyeLookDownLeft": 0.5, "eyeLookDownRight": 0.5},
+    "SINIS":   {"browDownLeft": 0.45, "browDownRight": 0.15, "eyeSquintLeft": 0.5, "eyeSquintRight": 0.35, "mouthSmileLeft": 0.25, "mouthPressRight": 0.3, "noseSneerLeft": 0.3, "eyeLookOutLeft": 0.45, "eyeLookInRight": 0.45},
+    "MARAH":   {"browDownLeft": 0.9, "browDownRight": 0.9, "eyeSquintLeft": 0.45, "eyeSquintRight": 0.45, "noseSneerLeft": 0.5, "noseSneerRight": 0.5, "mouthFrownLeft": 0.45, "mouthFrownRight": 0.45, "mouthPressLeft": 0.3, "mouthPressRight": 0.3},
+    "TERIAK":  {"browDownLeft": 1.0, "browDownRight": 1.0, "eyeSquintLeft": 0.4, "eyeSquintRight": 0.4, "noseSneerLeft": 0.7, "noseSneerRight": 0.7, "jawOpen": 0.75, "mouthStretchLeft": 0.5, "mouthStretchRight": 0.5, "mouthUpperUpLeft": 0.5, "mouthUpperUpRight": 0.5},
+    "SEDIH":   {"browInnerUp": 0.7, "mouthFrownLeft": 0.6, "mouthFrownRight": 0.6, "mouthShrugLower": 0.4, "eyeLookDownLeft": 0.4, "eyeLookDownRight": 0.4, "eyeSquintLeft": 0.1, "eyeSquintRight": 0.1},
+    "BANGGA":  {"mouthSmileLeft": 0.6, "mouthSmileRight": 0.6, "browOuterUpLeft": 0.3, "browOuterUpRight": 0.3, "cheekSquintLeft": 0.3, "cheekSquintRight": 0.3, "eyeSquintLeft": 0.2, "eyeSquintRight": 0.2},
+    "KEDIP":   {"eyeBlinkLeft": 1.0, "eyeBlinkRight": 1.0},
+    "MENGUNYAH": {"jawOpen": 0.12, "mouthClose": 0.12, "mouthPucker": 0.15},
+}
+from bl_ext.user_default.mpfb.services.faceservice import FaceService, ARKIT_FACEUNITS
+from bl_ext.user_default.mpfb.services.targetservice import TargetService
+
+def setup_face(body):
+    """load all ARKit face units as shape keys (value 0); make brows/lashes follow the face (surface deform)"""
+    FaceService.load_targets(body, load_microsoft_visemes=False, load_arkit_faceunits=True)
+    rig = body.parent
+    name = body.name.rsplit(".", 1)[0]
+    bpy.context.view_layer.update()
+    for o in bpy.data.objects:
+        if o.name.startswith(name + ".") and ("eyebrow" in o.name or "eyelash" in o.name):
+            for m in list(o.modifiers):
+                if m.type == "ARMATURE": o.modifiers.remove(m)
+            sd = o.modifiers.new("FollowFace", "SURFACE_DEFORM"); sd.target = body; sd.falloff = 4
+            with bpy.context.temp_override(object=o, active_object=o):
+                bpy.ops.object.surfacedeform_bind(modifier=sd.name)
+            if not sd.is_bound: print("WARN surface deform not bound", o.name)
+
+def _key(body, unit):
+    kb = body.data.shape_keys.key_blocks if body.data.shape_keys else None
+    if not kb: return None
+    return kb.get(unit) or kb.get(TargetService.expression_name_to_shapekey_name(unit))
+
+def face(body, frame, preset="NETRAL", weight=1.0, extra=None, interp="BEZIER"):
+    """key the whole face at `frame`: preset (scaled by weight) + extra units; every other unit keyed to 0"""
+    want = {u: v * weight for u, v in EXPR[preset].items()}
+    for u, v in (extra or {}).items(): want[u] = v
+    for u in ARKIT_FACEUNITS:
+        k = _key(body, u)
+        if not k: continue
+        k.value = min(1.0, max(0.0, want.get(u, 0.0)))
+        k.keyframe_insert("value", frame=frame)
+    _interp(body.data.shape_keys, interp)
+
+def blink(body, frame, length=5):
+    """a natural blink centred on frame (eyes keep whatever else they had)"""
+    for u in ("eyeBlinkLeft", "eyeBlinkRight"):
+        k = _key(body, u)
+        if not k: continue
+        for f, v in ((frame - length // 2 - 1, 0.0), (frame, 1.0), (frame + length // 2 + 1, 0.0)):
+            k.value = v; k.keyframe_insert("value", frame=f)
+
+def _interp(idblock, interp):
+    ad = idblock.animation_data if idblock else None
+    if ad and ad.action:
+        for fc in ad.action.fcurves:
+            for kp in fc.keyframe_points:
+                if kp.interpolation != "CONSTANT": kp.interpolation = interp
+
+# ------------------------------------------------------------------ bones
+def bone_world(rig, bone, tail=False):
+    bpy.context.view_layer.update()
+    pb = rig.pose.bones[bone]; return rig.matrix_world @ (pb.tail if tail else pb.head)
+
+def aim(rig, bone, direction, blend=1.0):
+    """point a bone (head->tail) along a world direction, relative to its parent's current pose"""
+    bpy.context.view_layer.update()
+    pb = rig.pose.bones[bone]; pb.rotation_mode = "QUATERNION"
+    pb.rotation_quaternion = Quaternion(); bpy.context.view_layer.update()
+    M = rig.matrix_world @ pb.matrix
+    cur = (M.to_3x3() @ Vector((0, 1, 0))).normalized()
+    q = cur.rotation_difference(Vector(direction).normalized())
+    if blend < 1: q = Quaternion().slerp(q, blend)
+    R3 = M.to_3x3().normalized()
+    pb.rotation_quaternion = (R3.inverted() @ q.to_matrix() @ R3).to_quaternion()
+    bpy.context.view_layer.update()
+
+def turn(rig, bone, axis_world, deg):
+    """rotate a bone about a WORLD axis by deg (added to its current pose)"""
+    bpy.context.view_layer.update()
+    pb = rig.pose.bones[bone]; pb.rotation_mode = "QUATERNION"
+    M = rig.matrix_world @ pb.matrix; R3 = M.to_3x3().normalized()
+    q = Quaternion(Vector(axis_world).normalized(), math.radians(deg))
+    pb.rotation_quaternion = pb.rotation_quaternion @ (R3.inverted() @ q.to_matrix() @ R3).to_quaternion()
+    bpy.context.view_layer.update()
+
+def rest_pose(rig):
+    for pb in rig.pose.bones:
+        pb.rotation_mode = "QUATERNION"; pb.rotation_quaternion = Quaternion(); pb.location = (0, 0, 0); pb.scale = (1, 1, 1)
+    bpy.context.view_layer.update()
+
+def key_pose(rig, frame, bones=None, interp="BEZIER"):
+    for pb in rig.pose.bones:
+        if bones and pb.name not in bones: continue
+        pb.keyframe_insert("rotation_quaternion", frame=frame)
+        if pb.name == "root": pb.keyframe_insert("location", frame=frame)
+    _interp(rig, interp)
+
+def key_obj(o, frame, interp="BEZIER"):
+    o.keyframe_insert("location", frame=frame); o.keyframe_insert("rotation_euler", frame=frame)
+    _interp(o, interp)
+
+def side_of(rig, side):
+    return 1 if (rig.matrix_world @ rig.pose.bones[f"upperarm01.{side}"].head).x > (rig.matrix_world.translation.x) else -1
+
+def char_axes(rig):
+    """world vectors of the character: right(+x of its own left), forward (face), up"""
+    R = rig.matrix_world.to_3x3().normalized()
+    return R @ Vector((1, 0, 0)), R @ Vector((0, -1, 0)), R @ Vector((0, 0, 1))   # MPFB humans face -Y
+
+def relaxed_arms(rig, out=0.26, fwd=0.06, elbow=14, sides=("L", "R")):
+    X, F, U = char_axes(rig)
+    for s in sides:
+        sg = 1 if s == "L" else -1
+        d = X * (sg * out) + F * fwd - U
+        for b in (f"upperarm01.{s}", f"upperarm02.{s}"): aim(rig, b, d)
+        d2 = (X * (sg * out * 0.5) + F * math.tan(math.radians(elbow)) - U)
+        for b in (f"lowerarm01.{s}", f"lowerarm02.{s}"): aim(rig, b, d2)
+
+# ------------------------------------------------------------------ arm IK (two-segment analytic, keyable FK result)
+ARM = {"upper": ("upperarm01", "upperarm02"), "lower": ("lowerarm01", "lowerarm02")}
+def reach(rig, side, target, pole_dir, wrist_fwd=None, wrist_up=None):
+    """place the wrist at `target` (world) with the elbow bending toward pole_dir (world). Solved analytically,
+    written as FK rotations (so it can be keyed and blended). Optional wrist orientation: hand pointing along
+    wrist_fwd (world) with the back of the hand facing wrist_up."""
+    s = side
+    sh = bone_world(rig, f"upperarm01.{s}")
+    # segment lengths from the rest chain
+    L1 = sum(rig.pose.bones[b].length for b in (f"upperarm01.{s}", f"upperarm02.{s}"))
+    L2 = sum(rig.pose.bones[b].length for b in (f"lowerarm01.{s}", f"lowerarm02.{s}"))
+    t = Vector(target); d = t - sh; D = min(d.length, (L1 + L2) * 0.999)
+    dn = d.normalized()
+    # elbow position: law of cosines
+    a = math.acos(max(-1, min(1, (L1 * L1 + D * D - L2 * L2) / (2 * L1 * D))))
+    p = Vector(pole_dir); p = (p - dn * p.dot(dn)).normalized()
+    elbow = sh + (dn * math.cos(a) + p * math.sin(a)) * L1
+    for b in (f"upperarm01.{s}", f"upperarm02.{s}"): aim(rig, b, elbow - sh)
+    wr = sh + dn * D
+    for b in (f"lowerarm01.{s}", f"lowerarm02.{s}"): aim(rig, b, wr - elbow)
+    if wrist_fwd is not None:
+        aim(rig, f"wrist.{s}", wrist_fwd)
+        if wrist_up is not None: roll_to(rig, f"wrist.{s}", wrist_up)
+
+def roll_to(rig, bone, up_world, axis_local=Vector((0, 0, 1))):
+    """roll a bone about its own length so that its local axis (default Z) points as close as possible to up_world"""
+    bpy.context.view_layer.update()
+    pb = rig.pose.bones[bone]
+    M = (rig.matrix_world @ pb.matrix).to_3x3().normalized()
+    along = (M @ Vector((0, 1, 0))).normalized(); cur = (M @ axis_local).normalized()
+    u = Vector(up_world); u = (u - along * u.dot(along)).normalized()
+    ang = cur.angle(u) if cur.length and u.length else 0.0
+    sgn = 1 if along.dot(cur.cross(u)) > 0 else -1
+    turn(rig, bone, along, math.degrees(ang) * sgn)
+
+# ------------------------------------------------------------------ fingers
+FINGERS = {1: "thumb", 2: "index", 3: "middle", 4: "ring", 5: "pinky"}
+def curl(rig, side, finger, deg, spread=0.0):
+    """curl one finger (1 thumb .. 5 pinky) by deg per joint toward the palm"""
+    X, F, U = char_axes(rig)
+    for j in (1, 2, 3):
+        b = f"finger{finger}-{j}.{side}"
+        if b not in rig.pose.bones: continue
+        bpy.context.view_layer.update()
+        pb = rig.pose.bones[b]; M = (rig.matrix_world @ pb.matrix).to_3x3().normalized()
+        # bend axis = bone's local X (MakeHuman finger bones bend about X)
+        ax = M @ Vector((1, 0, 0))
+        k = deg * (0.8 if j == 1 else 1.0 if j == 2 else 0.8) * (0.7 if finger == 1 else 1.0)
+        turn(rig, b, ax, k * (1 if side == "L" else 1))
+        if spread and j == 1: turn(rig, b, M @ Vector((0, 0, 1)), spread)
+
+def hand_shape(rig, side, shape="rileks", amount=1.0):
+    """preset hand shapes: rileks, kepal (fist), cubit (pinch), pegang (grip a handle), tunjuk (point), buka (open)"""
+    table = {"rileks": (12, 18, 22, 26, 30), "kepal": (55, 85, 90, 90, 90), "cubit": (35, 55, 40, 50, 55),
+             "pegang": (40, 70, 75, 78, 80), "tunjuk": (45, 0, 85, 88, 90), "buka": (0, 0, 0, 0, 0)}
+    for i, deg in enumerate(table[shape], start=1): curl(rig, side, i, deg * amount)
+
+def close_on(rig, side, prop_objs, fingers=(1, 2, 3, 4, 5), step=4, max_deg=95, gap=0.002):
+    """close fingers joint by joint until each fingertip touches the prop (no penetration): BVH distance test"""
+    deps = bpy.context.evaluated_depsgraph_get()
+    trees = [BVHTree.FromObject(o, deps) for o in prop_objs]
+    def tip(b):
+        bpy.context.view_layer.update(); return bone_world(rig, b, tail=True)
+    def near(p):
+        best = 1e9
+        for o, tr in zip(prop_objs, trees):
+            lp = o.matrix_world.inverted() @ p
+            hit = tr.find_nearest(lp)
+            if hit and hit[0] is not None:
+                best = min(best, ((o.matrix_world @ hit[0]) - p).length)
+        return best
+    for fi in fingers:
+        total = 0
+        while total < max_deg:
+            b3 = f"finger{fi}-3.{side}"
+            if near(tip(b3)) < 0.009 + gap: break
+            curl(rig, side, fi, step); total += step
+
+# ------------------------------------------------------------------ props in hands
+def attach(prop, rig, bone, frame=None):
+    """parent prop to a bone keeping its current world transform (Child Of constraint, keyable influence)"""
+    bpy.context.view_layer.update()
+    mw = prop.matrix_world.copy()
+    c = prop.constraints.new("CHILD_OF"); c.target = rig; c.subtarget = bone
+    c.set_inverse_pending = False
+    pb = rig.pose.bones[bone]
+    c.inverse_matrix = (rig.matrix_world @ pb.matrix).inverted()
+    prop.matrix_world = mw
+    if frame is not None: c.keyframe_insert("influence", frame=frame)
+    return c
+
+def palm_frame(rig, side):
+    """palm centre and axes (world): along = wrist->knuckles, normal = out of the palm, thumbward"""
+    bpy.context.view_layer.update()
+    w = bone_world(rig, f"wrist.{side}")
+    k2, k5 = bone_world(rig, f"finger2-1.{side}"), bone_world(rig, f"finger5-1.{side}")
+    k3 = bone_world(rig, f"finger3-1.{side}")
+    along = (k3 - w).normalized()
+    across = (k2 - k5).normalized()                   # toward the index side
+    normal = along.cross(across).normalized()
+    if side == "R": normal = -normal                  # palm side for each hand
+    centre = w + (k3 - w) * 0.62 + normal * 0.018
+    return centre, along, across, normal
+
+def place_in_palm(prop, rig, side, grip_local=Vector((0, 0, 0)), axis_local=Vector((0, 0, 1)), roll=0.0, slide=0.0):
+    """put prop so its grip point (local) sits in the palm, its long axis (local) across the palm (index->pinky
+    direction tilted toward the thumb a little), rotated by roll about that axis; slide moves it along the axis"""
+    c, along, across, normal = palm_frame(rig, side)
+    ax_w = (across * 0.82 + along * 0.57).normalized()          # a held handle crosses the palm diagonally
+    q = Vector(axis_local).normalized().rotation_difference(ax_w)
+    q = Quaternion(ax_w, math.radians(roll)) @ q
+    prop.rotation_mode = "QUATERNION"; prop.rotation_quaternion = q
+    bpy.context.view_layer.update()
+    gw = prop.matrix_world.to_3x3() @ Vector(grip_local)
+    prop.location = c - gw + ax_w * slide
+    bpy.context.view_layer.update()
+
+def hold_to(rig, side, prop, point_local, target, pole_dir, hand_dir, palm_dir, grip_local=Vector((0, 0, 0)),
+            axis_local=Vector((0, 0, 1)), roll=0.0, iters=6):
+    """pose the arm so that prop (held in the palm) brings its point_local to the world target.
+    hand_dir / palm_dir: desired world directions of the hand (knuckles) and the palm normal."""
+    T = Vector(target).copy()
+    sh = bone_world(rig, f"upperarm01.{side}")
+    for _ in range(iters):
+        reach(rig, side, T, pole_dir, wrist_fwd=hand_dir, wrist_up=None)
+        _roll_palm(rig, side, palm_dir)
+        place_in_palm(prop, rig, side, grip_local, axis_local, roll)
+        tip = prop.matrix_world @ Vector(point_local)
+        err = Vector(target) - tip
+        if err.length < 0.004: break
+        T = T + err
+    return (Vector(target) - prop.matrix_world @ Vector(point_local)).length
+
+def _roll_palm(rig, side, palm_dir):
+    """roll the wrist about the forearm-hand axis until the palm normal faces palm_dir"""
+    best = None
+    pb = rig.pose.bones[f"wrist.{side}"]
+    base = pb.rotation_quaternion.copy()
+    _, along, _, _ = palm_frame(rig, side)
+    for deg in range(-180, 180, 10):
+        pb.rotation_quaternion = base; turn(rig, f"wrist.{side}", along, deg)
+        n = palm_frame(rig, side)[3]
+        d = n.dot(Vector(palm_dir).normalized())
+        if best is None or d > best[0]: best = (d, deg)
+    pb.rotation_quaternion = base; turn(rig, f"wrist.{side}", along, best[1])
+
+# ------------------------------------------------------------------ penetration check
+REGIONS = {
+    "tangan.L": ("wrist.L", "finger", "metacarpal"), "tangan.R": ("wrist.R", "finger", "metacarpal"),
+    "lengan_bawah.L": ("lowerarm01.L", "lowerarm02.L"), "lengan_bawah.R": ("lowerarm01.R", "lowerarm02.R"),
+    "lengan_atas.L": ("upperarm01.L", "upperarm02.L"), "lengan_atas.R": ("upperarm01.R", "upperarm02.R"),
+    "badan": ("spine", "pelvis", "breast", "clavicle", "shoulder"), "kepala": ("neck", "head", "jaw", "oris", "levator",
+             "orbicularis", "oculi", "temporalis", "risorius", "special", "tongue", "eye"),
+    "kaki.L": ("upperleg01.L", "upperleg02.L", "lowerleg01.L", "lowerleg02.L", "foot.L", "toe"), "kaki.R": ("upperleg01.R", "upperleg02.R", "lowerleg01.R", "lowerleg02.R", "foot.R"),
+}
+def _region_of(gname, side_hint=None):
+    for r, keys in REGIONS.items():
+        for k in keys:
+            if gname == k or gname.startswith(k):
+                if r.endswith((".L", ".R")) and not gname.endswith(r[-2:]) and k in ("finger", "metacarpal", "toe"): continue
+                return r
+    return None
+
+def _vertex_regions(o):
+    """dominant deform group per vertex -> region name (computed on the base mesh, index-stable)"""
+    names = {g.index: g.name for g in o.vertex_groups}
+    body_gi = o.vertex_groups["body"].index if "body" in o.vertex_groups else None
+    out = []
+    for v in o.data.vertices:
+        best, bw = None, 0.0
+        if body_gi is not None and not any(g.group == body_gi and g.weight > 0.5 for g in v.groups):
+            out.append(None); continue
+        for g in v.groups:
+            r = _region_of(names[g.group])
+            if r and g.weight > bw: best, bw = r, g.weight
+        out.append(best)
+    return out
+
+def _region_bvh(o, deps, regions_wanted, vreg, exclude_near=None):
+    """BVH per region from the evaluated (deformed) mesh. Modifiers that change topology must be off."""
+    ev = o.evaluated_get(deps); me = ev.to_mesh()
+    mw = o.matrix_world
+    co = [mw @ v.co for v in me.vertices]
+    out = {}
+    if len(me.vertices) != len(vreg):
+        ev.to_mesh_clear(); raise RuntimeError(f"{o.name}: evaluated vertex count changed (disable subdivision for checks)")
+    for r in regions_wanted:
+        tris = []
+        for p in me.polygons:
+            vs = list(p.vertices)
+            if all(vreg[i] == r for i in vs):
+                if exclude_near and any(min((co[i] - q).length for q in exclude_near) < 0.07 for i in vs): continue
+                for k in range(1, len(vs) - 1): tris.append((vs[0], vs[k], vs[k + 1]))
+        if tris: out[r] = BVHTree.FromPolygons(co, tris, all_triangles=True)
+    ev.to_mesh_clear()
+    return out
+
+PAIRS = [("tangan.L", "badan"), ("tangan.R", "badan"), ("tangan.L", "kepala"), ("tangan.R", "kepala"),
+         ("tangan.L", "tangan.R"), ("lengan_bawah.L", "badan"), ("lengan_bawah.R", "badan"),
+         ("tangan.L", "kaki.L"), ("tangan.L", "kaki.R"), ("tangan.R", "kaki.L"), ("tangan.R", "kaki.R"),
+         ("lengan_bawah.L", "kaki.L"), ("lengan_bawah.R", "kaki.R"), ("kaki.L", "kaki.R"),
+         ("lengan_atas.L", "kepala"), ("lengan_atas.R", "kepala")]
+
+def check(chars, props=(), env=(), frames=(), report=None):
+    """penetration report over frames.
+    chars: list of (body, rig) ; props: objects held/handled ; env: set objects people must not pass through.
+    Checks inside each body (hands vs torso/head/legs...), body vs its own torso clothes, bodies vs props, bodies vs
+    env, and body vs other bodies. Returns list of (frame, a, b, n_overlapping_triangle_pairs)."""
+    sc = bpy.context.scene; res = []
+    sub_off = []
+    for body, rig in chars:
+        for o in [body] + [c for c in rig.children if c.type == "MESH"]:
+            for m in o.modifiers:
+                if m.type in ("SUBSURF", "MASK") and m.show_viewport:
+                    sub_off.append((m, m.show_viewport)); m.show_viewport = False
+    cache = {}
+    for body, rig in chars:
+        cache[body.name] = _vertex_regions(body)
+    for f in frames:
+        sc.frame_set(f); deps = bpy.context.evaluated_depsgraph_get()
+        bv = {}
+        for body, rig in chars:
+            shoulders = [bone_world(rig, f"upperarm01.{s}") for s in "LR"] + [bone_world(rig, "neck01")]
+            elbows = [bone_world(rig, f"lowerarm01.{s}") for s in "LR"]
+            hips = [bone_world(rig, f"upperleg01.{s}") for s in "LR"]
+            R = _region_bvh(body, deps, set(a for p in PAIRS for a in p), cache[body.name])
+            # joints: regions that meet at a joint are allowed to touch there -> rebuild with exclusion near joints
+            Rx = _region_bvh(body, deps, set(a for p in PAIRS for a in p), cache[body.name], exclude_near=shoulders + elbows + hips)
+            bv[body.name] = (R, Rx)
+            for a, b in PAIRS:
+                A, B = Rx.get(a), Rx.get(b)
+                if A and B:
+                    n = len(A.overlap(B))
+                    if n: res.append((f, f"{body.name}:{a}", f"{body.name}:{b}", n))
+            # hands/forearms vs this character's own clothes (torso + skirt parts only)
+            for c in [c for c in rig.children if c.type == "MESH" and c != body and not any(k in c.name for k in ("eyebrow", "eyelash", "high-poly", "teeth", "tongue"))]:
+                tr = _clothes_bvh(c, deps, rig, exclude_near=shoulders + elbows)
+                if not tr: continue
+                for a in ("tangan.L", "tangan.R", "lengan_bawah.L", "lengan_bawah.R"):
+                    A = R.get(a)
+                    if A:
+                        n = len(A.overlap(tr))
+                        if n > 2: res.append((f, f"{body.name}:{a}", c.name, n))
+        whole = {}
+        for body, rig in chars:
+            whole[body.name] = BVHTree.FromObject(body, deps)
+        for o in props:
+            T = _world_bvh(o, deps)
+            for body, rig in chars:
+                for a in ("tangan.L", "tangan.R", "kepala"):
+                    A = bv[body.name][0].get(a)
+                    if A and T:
+                        n = len(A.overlap(T))
+                        if n > 1: res.append((f, f"{body.name}:{a}", o.name, n))
+        for o in env:
+            T = _world_bvh(o, deps)
+            if not T: continue
+            for body, rig in chars:
+                Wb = _world_bvh(body, deps)
+                n = len(Wb.overlap(T))
+                if n > 3: res.append((f, body.name, o.name, n))
+        names = [c[0] for c in chars]
+        for i in range(len(names)):
+            for j in range(i + 1, len(names)):
+                A = _world_bvh(names[i], deps); B = _world_bvh(names[j], deps)
+                n = len(A.overlap(B))
+                if n: res.append((f, names[i].name, names[j].name, n))
+    for m, v in sub_off: m.show_viewport = v
+    if report:
+        with open(report, "w") as fh:
+            for r in res: fh.write("\t".join(map(str, r)) + "\n")
+    return res
+
+def _world_bvh(o, deps):
+    ev = o.evaluated_get(deps)
+    try: me = ev.to_mesh()
+    except Exception: return None
+    if me is None or not len(me.polygons): ev.to_mesh_clear(); return None
+    mw = o.matrix_world
+    co = [mw @ v.co for v in me.vertices]; polys = [list(p.vertices) for p in me.polygons]
+    ev.to_mesh_clear()
+    return BVHTree.FromPolygons(co, polys)
+
+def _clothes_bvh(c, deps, rig, exclude_near=()):
+    """clothes triangles dominated by torso/leg bones (sleeves excluded), away from shoulder/elbow joints"""
+    names = {g.index: g.name for g in c.vertex_groups}
+    keep = []
+    for v in c.data.vertices:
+        best, bw = None, 0.0
+        for g in v.groups:
+            r = _region_of(names.get(g.group, ""))
+            if r and g.weight > bw: best, bw = r, g.weight
+        keep.append(best in ("badan", "kaki.L", "kaki.R"))
+    ev = c.evaluated_get(deps); me = ev.to_mesh()
+    if len(me.vertices) != len(keep): ev.to_mesh_clear(); return None
+    mw = c.matrix_world; co = [mw @ v.co for v in me.vertices]
+    tris = []
+    for p in me.polygons:
+        vs = list(p.vertices)
+        if all(keep[i] for i in vs) and not any(min((co[i] - q).length for q in exclude_near) < 0.08 for i in vs if exclude_near):
+            for k in range(1, len(vs) - 1): tris.append((vs[0], vs[k], vs[k + 1]))
+    ev.to_mesh_clear()
+    return BVHTree.FromPolygons(co, tris, all_triangles=True) if tris else None
+
+def summarize(res):
+    """compact text: per pair, frame ranges with max overlap"""
+    from collections import defaultdict
+    d = defaultdict(list)
+    for f, a, b, n in res: d[(a, b)].append((f, n))
+    lines = []
+    for (a, b), l in sorted(d.items()):
+        fs = [x[0] for x in l]; lines.append(f"{a} x {b}: frames {min(fs)}-{max(fs)} ({len(fs)} f), max {max(x[1] for x in l)}")
+    return "\n".join(lines) if lines else "BERSIH: tidak ada tabrakan"

@@ -4,3 +4,4 @@ export/
 out/
 node_modules/
 audio/stem_*.wav
+assets/ph/
