@@ -12,10 +12,11 @@ case = bpy.data.objects["KOTAK_GARPU"]
 start = g.matrix_world @ Vector(g["tip"])
 show = P.bone_world(r, "spine01") + F * 0.35 + U * 0.24 - X * 0.1
 d_case = (g.matrix_world.to_3x3() @ Vector((0, 0, 1))).normalized(); d_up = (U * 0.85 + F * 0.3 + X * 0.15).normalized()
-errs = hold(g, r, "R", [(f0, start + U * 0.045), (1000, start + U * 0.17 + F * 0.03), (1015, show), (f1, show + U * 0.01)], point_local=Vector(g["tip"]),
-            grip_local=(0, 0, -0.01), pole=-U * 0.8 - X * 0.6, hand_dirs={f0: d_case, 1000: (d_case + d_up).normalized(), 1015: d_up, f1: d_up},
-            palm_dirs={f0: -U, 1000: X * 0.6 - U * 0.4, 1015: X * 0.7 - F * 0.4, f1: X * 0.7 - F * 0.4}, fingers=(1, 3), pre_shape=("garpu", 1.0),
-            prop_dirs={1000: (d_case + d_up).normalized(), 1015: d_up, f1: d_up})
+mid = start.lerp(show, 0.5) + U * 0.14
+errs = hold(g, r, "R", [(f0, start + U * 0.045), (1000, start + U * 0.17 + F * 0.03), (1007, mid), (1015, show), (f1, show + U * 0.01)], point_local=Vector(g["tip"]),
+            grip_local=(0, 0, -0.01), pole=-U * 0.8 - X * 0.6, hand_dirs={f0: d_case, 1000: (d_case + d_up).normalized(), 1007: d_up, 1015: d_up, f1: d_up},
+            palm_dirs={f0: -U, 1000: X * 0.6 - U * 0.4, 1007: X * 0.7 - F * 0.4, 1015: X * 0.7 - F * 0.4, f1: X * 0.7 - F * 0.4}, fingers=(1, 3), pre_shape=("garpu", 1.0),
+            prop_dirs={1000: (d_case + d_up).normalized(), 1007: d_up, 1015: d_up, f1: d_up})
 print("HOLD", errs)
 P.face(b, f0, "SENYUM", 0.5, extra={"eyeLookDownLeft": 0.5, "eyeLookDownRight": 0.5}); P.face(b, 1012, "SENANG", 0.9); P.face(b, f1, "BANGGA", 1.0)
 look(r, 1018, show + U * 0.05, 0.6); look(r, f1, show + U * 0.05, 0.6)
