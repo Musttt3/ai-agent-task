@@ -1425,6 +1425,8 @@ export const BEATS: Beat[] = [
     cams: (a) => [
       { f: a, s: wide([CSH[0] + 0.8, 0, CSH[2]], a, { az: 40, d: 8.5, h: 2.4 }) },
       { f: wf(113, "peralatan") - 4, cut: true, s: ms([CSH[0], 0, CSH[2] + 0.4], wf(113, "peralatan"), { az: -25, d: 3.0, orbit: 12 }) },
+      // the stand -> sit pose change lands on a cut, not mid-orbit
+      { f: wf(113, "berteduh"), cut: true, s: ms([CSH[0] + 0.3, 0, CSH[2] + 0.6], wf(113, "berteduh"), { az: 15, d: 4.6, h: 1.5, ly: 1.45 }) },
     ],
     ws: (f) => ({ gauge: 4, genOn: false, cart: CSH, lid: 1, melt: true, top: f >= wf(113, "mengubah") ? "store" : "closed" }),
     stage: (c) => {
