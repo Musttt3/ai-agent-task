@@ -35,7 +35,7 @@ def coryat_seated(f0, f1):
     X, F, U = P.char_axes(r)
     P.relaxed_arms(r)
     for s, dx in (("L", 0.22), ("R", -0.22)):
-        P.reach(r, s, Vector((dx * 0.55, 0.76, th + 0.035)), pole_dir=-U * 0.8 + (X if s == "L" else -X) * 0.6, wrist_fwd=F - U * 0.15)
+        P.reach(r, s, Vector((dx * 0.7, 0.78, th + 0.06)), pole_dir=-U * 0.8 + (X if s == "L" else -X) * 0.6, wrist_fwd=F)
         P._roll_palm(r, s, -U); P.hand_shape(r, s, "rileks", 0.6)
     P.key_pose(r, f0); P.key_pose(r, f1); r.keyframe_insert("location", frame=f0)
     return b, r
@@ -44,12 +44,12 @@ def townsfolk(f0, f1):
     """the three regulars around their table (1.9, 1.7)"""
     arrange_tables()
     out = []
-    for nm, xy in (("Dingklik_0", (1.18, 1.7)), ("Dingklik_1", (2.62, 1.7)), ("Dingklik_2", (1.9, 2.72))):
+    for nm, xy in (("Dingklik_0", (1.08, 1.7)), ("Dingklik_1", (2.76, 1.7)), ("Dingklik_2", (1.9, 2.72))):
         st = bpy.data.objects.get(nm)
         if st: st.location.x, st.location.y = xy
     bpy.context.view_layer.update()
     th = table_top("Meja_Warga")
-    for name, (x, y), yaw in (("warga_a", (1.18, 1.75), 90), ("warga_b", (2.62, 1.75), -90), ("warga_c", (1.9, 2.72), 0)):
+    for name, (x, y), yaw in (("warga_a", (1.08, 1.75), 90), ("warga_b", (2.76, 1.75), -90), ("warga_c", (1.9, 2.72), 0)):
         b, r = actor(name, loc=Vector((x, y, 0)), yaw=yaw)
         P.sit(r, b, seat_z(x, y), lean=8)
         X, F, U = P.char_axes(r)
@@ -57,7 +57,7 @@ def townsfolk(f0, f1):
         for s in ("L", "R"):      # hands rest on the thighs (the table top is too small for six hands)
             side = X if s == "L" else -X
             hip = P.bone_world(r, f"upperleg01.{s}"); knee = P.bone_world(r, f"lowerleg01.{s}")
-            tgt = hip.lerp(knee, 0.62) + U * 0.17 - side * 0.02
+            tgt = hip.lerp(knee, 0.62) + U * 0.235 - side * 0.02
             P.reach(r, s, tgt, pole_dir=-U * 0.3 + side * 0.9, wrist_fwd=(F * 0.9 - U * 0.15).normalized())
             P._roll_palm(r, s, -U); P.hand_shape(r, s, "rileks", 0.6)
         P.key_pose(r, f0); P.key_pose(r, f1); r.keyframe_insert("location", frame=f0)
@@ -73,6 +73,12 @@ def point_at(r, f, target, side=None):
     for bn, k in (("spine02", 0.3), ("spine01", 0.3)):
         r.pose.bones[bn].rotation_mode = "QUATERNION"; P.turn(r, bn, U, max(-45, min(45, yaw * k)))
     P.key_pose(r, f, bones=["spine02", "spine01"])
+    # lift the hand off the lap first (a key 4 frames before), so it never sweeps through the thigh
+    bpy.context.scene.frame_set(f - 4)
+    shl = P.bone_world(r, f"upperarm01.{side}")
+    P.reach(r, side, shl + F * 0.3 - U * 0.25 + (X if side == "L" else -X) * 0.1, pole_dir=-U - (X if side == "R" else -X) * 0.3, wrist_fwd=F)
+    P.key_pose(r, f - 4, bones=[pb.name for pb in r.pose.bones if pb.name.endswith("." + side) and ("arm" in pb.name or "wrist" in pb.name)])
+    bpy.context.scene.frame_set(f)
     sh = P.bone_world(r, f"upperarm01.{side}")
     d = (Vector(target) - sh).normalized()
     P.reach(r, side, sh + d * 0.52, pole_dir=-U - (X if side == "R" else -X) * 0.3, wrist_fwd=d)

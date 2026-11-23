@@ -1,21 +1,58 @@
-1061	warga_a.body	WoodenTable_02.001 (mm)	42.0
-1061	warga_b.body	WoodenTable_02.001 (mm)	32.5
-1065	warga_b.body	WoodenTable_02.001 (mm)	39.2
-1069	warga_b.body	WoodenTable_02.001 (mm)	42.6
-1073	warga_b.body	WoodenTable_02.001 (mm)	41.0
-1077	warga_b.body	WoodenTable_02.001 (mm)	41.9
-1081	warga_b.body	WoodenTable_02.001 (mm)	35.0
-1085	warga_b.body	WoodenTable_02.001 (mm)	34.6
-1089	warga_b.body	WoodenTable_02.001 (mm)	41.8
-1093	warga_a.body	WoodenTable_02.001 (mm)	42.5
-1093	warga_b.body	WoodenTable_02.001 (mm)	42.1
-1097	warga_a.body	WoodenTable_02.001 (mm)	41.1
-1097	warga_b.body	WoodenTable_02.001 (mm)	27.5
-1101	warga_a.body	WoodenTable_02.001 (mm)	35.5
-1101	warga_b.body	WoodenTable_02.001 (mm)	22.4
-1105	warga_a.body	WoodenTable_02.001 (mm)	40.2
-1105	warga_b.body	WoodenTable_02.001 (mm)	23.4
-1109	warga_a.body	WoodenTable_02.001 (mm)	42.3
-1109	warga_b.body	WoodenTable_02.001 (mm)	30.1
-1112	warga_a.body	WoodenTable_02.001 (mm)	42.0
-1112	warga_b.body	WoodenTable_02.001 (mm)	32.5
+1061	warga_a.body:tangan.L	warga_a.elvs_male_trouser	49
+1061	warga_a.body:tangan.R	warga_a.elvs_male_trouser	47
+1061	warga_b.body:tangan.L	warga_b.punkduck_medieval_dress	199
+1061	warga_b.body:tangan.R	warga_b.punkduck_medieval_dress	199
+1061	warga_c.body:tangan.L	warga_c.toigo_wool_pants	31
+1061	warga_c.body:tangan.R	warga_c.toigo_wool_pants	32
+1061	warga_b.body	WoodenTable_02.001 (mm)	4.6
+1065	warga_b.body:tangan.R	warga_b.punkduck_medieval_dress	210
+1065	warga_b.body	WoodenTable_02.001 (mm)	4.6
+1069	warga_b.body:tangan.R	warga_b.punkduck_medieval_dress	234
+1069	warga_c.body:tangan.L	warga_c.body:kaki.R	78
+1069	warga_c.body:tangan.L	warga_c.toigo_wool_pants	100
+1069	warga_b.body	WoodenTable_02.001 (mm)	4.6
+1073	warga_b.body:tangan.R	warga_b.punkduck_medieval_dress	228
+1073	warga_c.body:tangan.L	warga_c.body:kaki.R	103
+1073	warga_c.body:tangan.L	warga_c.toigo_wool_pants	131
+1073	warga_b.body	WoodenTable_02.001 (mm)	4.6
+1077	warga_b.body:tangan.R	warga_b.punkduck_medieval_dress	225
+1077	warga_c.body:tangan.L	warga_c.body:kaki.R	88
+1077	warga_c.body:tangan.L	warga_c.toigo_wool_pants	86
+1077	warga_b.body	WoodenTable_02.001 (mm)	4.6
+1081	warga_b.body:tangan.R	warga_b.punkduck_medieval_dress	180
+1081	warga_c.body:tangan.L	warga_c.toigo_wool_pants	29
+1081	warga_b.body	WoodenTable_02.001 (mm)	4.6
+1085	warga_b.body:tangan.R	warga_b.punkduck_medieval_dress	173
+1085	warga_b.body	WoodenTable_02.001 (mm)	4.6
+1089	warga_a.body:tangan.L	warga_a.elvs_male_trouser	69
+1089	warga_b.body:tangan.R	warga_b.punkduck_medieval_dress	204
+1089	warga_b.body	WoodenTable_02.001 (mm)	14.3
+1093	warga_a.body:tangan.L	warga_a.body:kaki.R	63
+1093	warga_a.body:tangan.L	warga_a.elvs_male_trouser	190
+1093	warga_b.body:tangan.R	warga_b.punkduck_medieval_dress	225
+1093	warga_b.body	WoodenTable_02.001 (mm)	8.1
+1097	warga_b.body:tangan.R	warga_b.punkduck_medieval_dress	128
+1097	warga_b.body	WoodenTable_02.001 (mm)	4.6
+1101	warga_b.body:tangan.R	warga_b.punkduck_medieval_dress	97
+1101	warga_b.body	WoodenTable_02.001 (mm)	4.6
+1105	warga_a.body:tangan.R	warga_a.body:kaki.R	41
+1105	warga_a.body:tangan.R	warga_a.elvs_male_trouser	91
+1105	warga_b.body:tangan.L	warga_b.punkduck_medieval_dress	96
+1105	warga_b.body:tangan.R	warga_b.punkduck_medieval_dress	150
+1105	warga_c.body:tangan.R	warga_c.body:kaki.R	34
+1105	warga_c.body:tangan.R	warga_c.toigo_wool_pants	80
+1105	warga_b.body	WoodenTable_02.001 (mm)	4.6
+1109	warga_a.body:tangan.L	warga_a.elvs_male_trouser	35
+1109	warga_a.body:tangan.R	warga_a.elvs_male_trouser	83
+1109	warga_b.body:tangan.L	warga_b.punkduck_medieval_dress	197
+1109	warga_b.body:tangan.R	warga_b.punkduck_medieval_dress	190
+1109	warga_c.body:tangan.L	warga_c.toigo_wool_pants	20
+1109	warga_c.body:tangan.R	warga_c.toigo_wool_pants	36
+1109	warga_b.body	WoodenTable_02.001 (mm)	4.6
+1112	warga_a.body:tangan.L	warga_a.elvs_male_trouser	49
+1112	warga_a.body:tangan.R	warga_a.elvs_male_trouser	47
+1112	warga_b.body:tangan.L	warga_b.punkduck_medieval_dress	199
+1112	warga_b.body:tangan.R	warga_b.punkduck_medieval_dress	199
+1112	warga_c.body:tangan.L	warga_c.toigo_wool_pants	31
+1112	warga_c.body:tangan.R	warga_c.toigo_wool_pants	32
+1112	warga_b.body	WoodenTable_02.001 (mm)	4.6

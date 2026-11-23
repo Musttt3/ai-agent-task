@@ -14,8 +14,8 @@ low = P.bone_world(r, "spine01") + F * 0.4 + U * 0.02 - X * 0.05
 # right hand holds the bare bone end; the meat comes up to the mouth for a bite (the meat surface stops at the lips)
 d_meat = (X * 1.0 + U * 0.25 - F * 0.1).normalized()      # the bone lies across, meat toward his left
 keys = [(f0, low), (166, mouth + F * 0.05 - U * 0.03), (176, mouth), (192, mouth + F * 0.07 - U * 0.08), (f1, low + U * 0.05)]
-errs = hold(meat, r, "R", keys, point_local=Vector((0, 0, 0.01)), grip_local=(0, 0, -0.121), axis_local=(0, 0, 1), pole=-U * 0.8 - X * 0.5,
-            hand_dir=(F * 0.6 + X * 0.6 + U * 0.3).normalized(), palm_dir=(X * 0.5 + U * 0.6).normalized(), pre_shape=("pegang", 0.3), fingers=(1, 2, 3),
+errs = hold(meat, r, "R", keys, point_local=Vector((0, 0, 0.01)), grip_local=(0, 0, -0.127), axis_local=(0, 0, 1), pole=-U * 0.8 - X * 0.5,
+            hand_dir=(F * 0.6 + X * 0.6 + U * 0.3).normalized(), palm_dir=(X * 0.5 + U * 0.6).normalized(), pre_shape=("pegang", 0.25), fingers=(1, 2),
             prop_dirs={k[0]: d_meat for k in keys})
 print("HOLD", errs)
 # left hand rests on the left knee
