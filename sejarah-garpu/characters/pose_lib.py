@@ -384,7 +384,8 @@ def check(chars, props=(), env=(), frames=(), report=None):
     for f in frames:
         sc.frame_set(f); deps = bpy.context.evaluated_depsgraph_get()
         bv = {}
-        for body, rig in chars:
+        live = [(b_, r_) for b_, r_ in chars if not b_.hide_viewport and not b_.hide_get()]
+        for body, rig in live:
             shoulders = [bone_world(rig, f"upperarm01.{s}") for s in "LR"] + [bone_world(rig, "neck01")]
             elbows = [bone_world(rig, f"lowerarm01.{s}") for s in "LR"]
             hips = [bone_world(rig, f"upperleg01.{s}") for s in "LR"]
@@ -406,12 +407,9 @@ def check(chars, props=(), env=(), frames=(), report=None):
                     if A:
                         n = len(A.overlap(tr))
                         if n > 2: res.append((f, f"{body.name}:{a}", c.name, n))
-        whole = {}
-        for body, rig in chars:
-            whole[body.name] = BVHTree.FromObject(body, deps)
         for o in props:
             T = _world_bvh(o, deps)
-            for body, rig in chars:
+            for body, rig in live:
                 for a in ("tangan.L", "tangan.R", "kepala"):
                     A = bv[body.name][0].get(a)
                     if A and T and len(A.overlap(T)):
@@ -420,11 +418,11 @@ def check(chars, props=(), env=(), frames=(), report=None):
         for o in env:
             T = _world_bvh(o, deps)
             if not T: continue
-            for body, rig in chars:
-                Wb = _world_bvh(body, deps)
-                n = len(Wb.overlap(T))
-                if n > 3: res.append((f, body.name, o.name, n))
-        names = [c[0] for c in chars]
+            soft = any(k in o.name for k in ("Kasur", "Bantal", "Tikar", "Karpet", "Taplak", "Selimut"))
+            for body, rig in live:
+                dmm = round(_body_depth(body, deps, T, cache[body.name]) * 1000, 1)
+                if dmm > (15.0 if soft else 3.0): res.append((f, body.name, o.name + " (mm)", dmm))
+        names = [c[0] for c in live]
         for i in range(len(names)):
             for j in range(i + 1, len(names)):
                 A = _world_bvh(names[i], deps); B = _world_bvh(names[j], deps)
@@ -435,6 +433,18 @@ def check(chars, props=(), env=(), frames=(), report=None):
         with open(report, "w") as fh:
             for r in res: fh.write("\t".join(map(str, r)) + "\n")
     return res
+
+def _body_depth(body, deps, bvh, vreg=None, reach=0.06):
+    """max depth (m) of the body's skin vertices (helpers excluded) below the surface of bvh (an environment object)"""
+    ev = body.evaluated_get(deps); me = ev.to_mesh(); mw = body.matrix_world; worst = 0.0
+    for i, v in enumerate(me.vertices):
+        if vreg is not None and (i >= len(vreg) or not vreg[i]): continue
+        p = mw @ v.co
+        hit = bvh.find_nearest(p, reach)
+        if hit and hit[0] is not None:
+            d = (p - hit[0]).dot(hit[1])
+            if d < 0: worst = max(worst, -d)
+    ev.to_mesh_clear(); return worst
 
 def _depth(o, deps, bvh):
     """max depth (m) of o's vertices below the surface of bvh (uses the nearest-face normal)"""

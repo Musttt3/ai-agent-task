@@ -8,6 +8,11 @@ sc = open_set("romawi", SID)
 b, r = actor("romawi", loc=Vector((0.15, 0.78, 0)), yaw=0)
 P.sit(r, b, seat_z(0.15, 0.8), lean=12, spread=0.1)
 X, F, U = P.char_axes(r)
+# the mensa (and everything on it) a little further from the couch so his knees clear it
+for o in bpy.data.objects:
+    if o.name.startswith(("Mensa", "Kaki_Mensa", "Alas_Mensa")) or (o.users_collection and o.users_collection[0].name == "PROPS" and o.parent is None):
+        o.location.y -= 0.16
+bpy.context.view_layer.update()
 co = bpy.data.objects["SENDOK_ROMAWI"]; co["grip_mode"] = "pena"
 TH = 0.545
 table_pt = co.matrix_world.translation + Vector((0, 0, 0.02))
