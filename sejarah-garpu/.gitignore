@@ -1,0 +1,6 @@
+*.blend1
+__pycache__/
+export/
+out/
+node_modules/
+audio/stem_*.wav

@@ -1,0 +1,558 @@
+{
+ "text": "Dulu, orang yang makan pakai garpu bisa dicap sombong. Kok bisa? Awalnya, manusia makan pakai tangan. Sendoknya? Cangkang kerang dan serpihan kayu. Sekitar seribu dua ratus sebelum masehi, Tiongkok sudah punya sumpit perunggu. Tapi awalnya buat masak, bukan buat makan. Orang Romawi pakai sendok kecil berujung runcing buat mencungkil siput dari cangkangnya. Abad kesebelas, Putri Byzantium di Venesia makan pakai garpu emas. Tokoh gereja langsung mengecamnya. Sombong! Tahun 1611, Thomas Coryat membawa garpu ke Inggris. Hasilnya? Dia diejek Furcifer, si pembawa garpu. Di Nusantara, leluhur kita makan pakai tangan kanan. Sendok dan garpu baru populer setelah dibawa orang Eropa. Sekarang tinggal pilih, tim sendok atau tim makan pakai tangan?",
+ "source": "ElevenLabs scribe_v1 (word timestamps), ejaan nama dikoreksi",
+ "segments": [
+  {
+   "start": 0.1,
+   "end": 49.14,
+   "text": "Dulu, orang yang makan pakai garpu bisa dicap sombong. Kok bisa? Awalnya, manusia makan pakai tangan. Sendoknya? Cangkang kerang dan serpihan kayu. Sekitar seribu dua ratus sebelum masehi, Tiongkok sudah punya sumpit perunggu. Tapi awalnya buat masak, bukan buat makan. Orang Romawi pakai sendok kecil berujung runcing buat mencungkil siput dari cangkangnya. Abad kesebelas, Putri Byzantium di Venesia makan pakai garpu emas. Tokoh gereja langsung mengecamnya. Sombong! Tahun 1611, Thomas Coryat membawa garpu ke Inggris. Hasilnya? Dia diejek Furcifer, si pembawa garpu. Di Nusantara, leluhur kita makan pakai tangan kanan. Sendok dan garpu baru populer setelah dibawa orang Eropa. Sekarang tinggal pilih, tim sendok atau tim makan pakai tangan?",
+   "words": [
+    {
+     "word": "Dulu,",
+     "start": 0.1,
+     "end": 0.5
+    },
+    {
+     "word": "orang",
+     "start": 0.78,
+     "end": 1.0
+    },
+    {
+     "word": "yang",
+     "start": 1.04,
+     "end": 1.16
+    },
+    {
+     "word": "makan",
+     "start": 1.2,
+     "end": 1.46
+    },
+    {
+     "word": "pakai",
+     "start": 1.48,
+     "end": 1.7
+    },
+    {
+     "word": "garpu",
+     "start": 1.72,
+     "end": 2.2
+    },
+    {
+     "word": "bisa",
+     "start": 2.26,
+     "end": 2.46
+    },
+    {
+     "word": "dicap",
+     "start": 2.48,
+     "end": 2.74
+    },
+    {
+     "word": "sombong.",
+     "start": 2.82,
+     "end": 3.32
+    },
+    {
+     "word": "Kok",
+     "start": 3.68,
+     "end": 3.8
+    },
+    {
+     "word": "bisa?",
+     "start": 3.84,
+     "end": 4.24
+    },
+    {
+     "word": "Awalnya,",
+     "start": 4.74,
+     "end": 5.28
+    },
+    {
+     "word": "manusia",
+     "start": 5.52,
+     "end": 6.02
+    },
+    {
+     "word": "makan",
+     "start": 6.06,
+     "end": 6.34
+    },
+    {
+     "word": "pakai",
+     "start": 6.36,
+     "end": 6.56
+    },
+    {
+     "word": "tangan.",
+     "start": 6.66,
+     "end": 7.1
+    },
+    {
+     "word": "Sendoknya?",
+     "start": 7.46,
+     "end": 7.9
+    },
+    {
+     "word": "Cangkang",
+     "start": 8.2,
+     "end": 8.52
+    },
+    {
+     "word": "kerang",
+     "start": 8.58,
+     "end": 8.96
+    },
+    {
+     "word": "dan",
+     "start": 9.02,
+     "end": 9.12
+    },
+    {
+     "word": "serpihan",
+     "start": 9.18,
+     "end": 9.56
+    },
+    {
+     "word": "kayu.",
+     "start": 9.62,
+     "end": 10.0
+    },
+    {
+     "word": "Sekitar",
+     "start": 10.38,
+     "end": 10.74
+    },
+    {
+     "word": "seribu",
+     "start": 10.82,
+     "end": 11.12
+    },
+    {
+     "word": "dua",
+     "start": 11.16,
+     "end": 11.28
+    },
+    {
+     "word": "ratus",
+     "start": 11.32,
+     "end": 11.58
+    },
+    {
+     "word": "sebelum",
+     "start": 11.6,
+     "end": 11.88
+    },
+    {
+     "word": "masehi,",
+     "start": 11.92,
+     "end": 12.46
+    },
+    {
+     "word": "Tiongkok",
+     "start": 12.72,
+     "end": 13.12
+    },
+    {
+     "word": "sudah",
+     "start": 13.2,
+     "end": 13.4
+    },
+    {
+     "word": "punya",
+     "start": 13.5,
+     "end": 13.76
+    },
+    {
+     "word": "sumpit",
+     "start": 13.82,
+     "end": 14.08
+    },
+    {
+     "word": "perunggu.",
+     "start": 14.14,
+     "end": 14.62
+    },
+    {
+     "word": "Tapi",
+     "start": 14.84,
+     "end": 15.1
+    },
+    {
+     "word": "awalnya",
+     "start": 15.16,
+     "end": 15.52
+    },
+    {
+     "word": "buat",
+     "start": 15.56,
+     "end": 15.76
+    },
+    {
+     "word": "masak,",
+     "start": 15.8,
+     "end": 16.18
+    },
+    {
+     "word": "bukan",
+     "start": 16.42,
+     "end": 16.76
+    },
+    {
+     "word": "buat",
+     "start": 16.78,
+     "end": 16.96
+    },
+    {
+     "word": "makan.",
+     "start": 17.0,
+     "end": 17.42
+    },
+    {
+     "word": "Orang",
+     "start": 17.74,
+     "end": 17.92
+    },
+    {
+     "word": "Romawi",
+     "start": 17.96,
+     "end": 18.42
+    },
+    {
+     "word": "pakai",
+     "start": 18.54,
+     "end": 18.74
+    },
+    {
+     "word": "sendok",
+     "start": 18.82,
+     "end": 19.06
+    },
+    {
+     "word": "kecil",
+     "start": 19.1,
+     "end": 19.42
+    },
+    {
+     "word": "berujung",
+     "start": 19.48,
+     "end": 19.84
+    },
+    {
+     "word": "runcing",
+     "start": 19.88,
+     "end": 20.38
+    },
+    {
+     "word": "buat",
+     "start": 20.58,
+     "end": 20.76
+    },
+    {
+     "word": "mencungkil",
+     "start": 20.78,
+     "end": 21.24
+    },
+    {
+     "word": "siput",
+     "start": 21.32,
+     "end": 21.7
+    },
+    {
+     "word": "dari",
+     "start": 21.78,
+     "end": 21.98
+    },
+    {
+     "word": "cangkangnya.",
+     "start": 22.06,
+     "end": 22.64
+    },
+    {
+     "word": "Abad",
+     "start": 22.96,
+     "end": 23.16
+    },
+    {
+     "word": "kesebelas,",
+     "start": 23.2,
+     "end": 23.8
+    },
+    {
+     "word": "Putri",
+     "start": 23.98,
+     "end": 24.24
+    },
+    {
+     "word": "Byzantium",
+     "start": 24.3,
+     "end": 24.84
+    },
+    {
+     "word": "di",
+     "start": 24.88,
+     "end": 24.96
+    },
+    {
+     "word": "Venesia",
+     "start": 25.0,
+     "end": 25.54
+    },
+    {
+     "word": "makan",
+     "start": 25.68,
+     "end": 26.04
+    },
+    {
+     "word": "pakai",
+     "start": 26.12,
+     "end": 26.32
+    },
+    {
+     "word": "garpu",
+     "start": 26.38,
+     "end": 26.62
+    },
+    {
+     "word": "emas.",
+     "start": 26.66,
+     "end": 27.08
+    },
+    {
+     "word": "Tokoh",
+     "start": 27.32,
+     "end": 27.58
+    },
+    {
+     "word": "gereja",
+     "start": 27.62,
+     "end": 28.04
+    },
+    {
+     "word": "langsung",
+     "start": 28.14,
+     "end": 28.54
+    },
+    {
+     "word": "mengecamnya.",
+     "start": 28.56,
+     "end": 29.14
+    },
+    {
+     "word": "Sombong!",
+     "start": 29.5,
+     "end": 30.02
+    },
+    {
+     "word": "Tahun",
+     "start": 30.36,
+     "end": 30.6
+    },
+    {
+     "word": "1611,",
+     "start": 30.66,
+     "end": 31.94
+    },
+    {
+     "word": "Thomas",
+     "start": 32.119,
+     "end": 32.4
+    },
+    {
+     "word": "Coryat",
+     "start": 32.479,
+     "end": 32.86
+    },
+    {
+     "word": "membawa",
+     "start": 32.9,
+     "end": 33.22
+    },
+    {
+     "word": "garpu",
+     "start": 33.34,
+     "end": 33.68
+    },
+    {
+     "word": "ke",
+     "start": 33.74,
+     "end": 33.82
+    },
+    {
+     "word": "Inggris.",
+     "start": 33.88,
+     "end": 34.36
+    },
+    {
+     "word": "Hasilnya?",
+     "start": 34.58,
+     "end": 35.06
+    },
+    {
+     "word": "Dia",
+     "start": 35.36,
+     "end": 35.54
+    },
+    {
+     "word": "diejek",
+     "start": 35.62,
+     "end": 36.06
+    },
+    {
+     "word": "Furcifer,",
+     "start": 36.22,
+     "end": 36.8
+    },
+    {
+     "word": "si",
+     "start": 37.1,
+     "end": 37.18
+    },
+    {
+     "word": "pembawa",
+     "start": 37.28,
+     "end": 37.78
+    },
+    {
+     "word": "garpu.",
+     "start": 37.88,
+     "end": 38.3
+    },
+    {
+     "word": "Di",
+     "start": 38.6,
+     "end": 38.68
+    },
+    {
+     "word": "Nusantara,",
+     "start": 38.72,
+     "end": 39.38
+    },
+    {
+     "word": "leluhur",
+     "start": 39.6,
+     "end": 39.92
+    },
+    {
+     "word": "kita",
+     "start": 40.0,
+     "end": 40.24
+    },
+    {
+     "word": "makan",
+     "start": 40.34,
+     "end": 40.68
+    },
+    {
+     "word": "pakai",
+     "start": 40.7,
+     "end": 40.9
+    },
+    {
+     "word": "tangan",
+     "start": 40.96,
+     "end": 41.18
+    },
+    {
+     "word": "kanan.",
+     "start": 41.26,
+     "end": 41.72
+    },
+    {
+     "word": "Sendok",
+     "start": 41.98,
+     "end": 42.3
+    },
+    {
+     "word": "dan",
+     "start": 42.34,
+     "end": 42.46
+    },
+    {
+     "word": "garpu",
+     "start": 42.52,
+     "end": 42.94
+    },
+    {
+     "word": "baru",
+     "start": 43.0,
+     "end": 43.16
+    },
+    {
+     "word": "populer",
+     "start": 43.24,
+     "end": 43.7
+    },
+    {
+     "word": "setelah",
+     "start": 43.78,
+     "end": 44.18
+    },
+    {
+     "word": "dibawa",
+     "start": 44.22,
+     "end": 44.54
+    },
+    {
+     "word": "orang",
+     "start": 44.58,
+     "end": 44.76
+    },
+    {
+     "word": "Eropa.",
+     "start": 44.82,
+     "end": 45.22
+    },
+    {
+     "word": "Sekarang",
+     "start": 45.54,
+     "end": 45.92
+    },
+    {
+     "word": "tinggal",
+     "start": 45.94,
+     "end": 46.16
+    },
+    {
+     "word": "pilih,",
+     "start": 46.24,
+     "end": 46.5
+    },
+    {
+     "word": "tim",
+     "start": 46.8,
+     "end": 46.9
+    },
+    {
+     "word": "sendok",
+     "start": 46.98,
+     "end": 47.4
+    },
+    {
+     "word": "atau",
+     "start": 47.66,
+     "end": 47.96
+    },
+    {
+     "word": "tim",
+     "start": 48.08,
+     "end": 48.18
+    },
+    {
+     "word": "makan",
+     "start": 48.22,
+     "end": 48.46
+    },
+    {
+     "word": "pakai",
+     "start": 48.5,
+     "end": 48.68
+    },
+    {
+     "word": "tangan?",
+     "start": 48.76,
+     "end": 49.14
+    }
+   ]
+  }
+ ]
+}
