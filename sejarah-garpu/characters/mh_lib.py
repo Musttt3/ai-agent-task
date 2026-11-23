@@ -22,7 +22,7 @@ def build_char(spec, subdiv=1):
     body = HumanService.create_human(macro_detail_dict=ph)
     body.name = spec["name"] + ".body"
     if subdiv:
-        m = body.modifiers.new("Subdivision", "SUBSURF"); m.levels = 0; m.render_levels = subdiv
+        m = body.modifiers.new("Subdivision", "SUBSURF"); m.levels = subdiv; m.render_levels = subdiv   # same in viewport and render (surface-deformed brows stay bound)
     rig = HumanService.add_builtin_rig(body, "default")
     rig.name = spec["name"] + ".rig"
     HumanService.add_mhclo_asset(_asset("eyes", "high-poly"), body, asset_type="Eyes", subdiv_levels=0, material_type="MAKESKIN")

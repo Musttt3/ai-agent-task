@@ -5,3 +5,13 @@ out/
 node_modules/
 audio/stem_*.wav
 assets/ph/
+out/
+shots/blend/*.blend
+shots/blend/*.blend1
+shots/blend/*.log
+review/_set_*
+review/shots/
+sets/*.blend
+props/*.blend
+*.blend1
+__pycache__/

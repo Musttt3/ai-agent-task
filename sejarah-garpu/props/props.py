@@ -31,7 +31,7 @@ def mat_metal(name, color, rough=0.25, amp=0.08):
     _noise_rough(m, rough, amp); return m
 
 def GOLD(): return mat_metal("Emas", (1.0, 0.74, 0.32), 0.2, 0.07)
-def SILVER(): return mat_metal("Perak", (0.93, 0.92, 0.89), 0.24, 0.08)
+def SILVER(): return mat_metal("Perak", (0.8, 0.78, 0.74), 0.32, 0.1)
 def IRON(): return mat_metal("Besi_Tua", (0.42, 0.41, 0.4), 0.42, 0.12)
 def STEEL(): return mat_metal("Baja_Tahan_Karat", (0.8, 0.8, 0.8), 0.16, 0.05)
 
@@ -101,6 +101,8 @@ def mat_ph(name, tex, scale=1.0, tint=(1, 1, 1), rough_mul=1.0, bump=1.0, res="2
         if non_color: t.image.colorspace_settings.name = "Non-Color"
         t.projection = "BOX"; t.projection_blend = 0.25; nt.links.new(mp.outputs["Vector"], t.inputs["Vector"]); return t
     d = img("diffuse", False)
+    if not d:
+        b.inputs["Base Color"].default_value = (*tint, 1)
     if d:
         mul = nt.nodes.new("ShaderNodeMix"); mul.data_type = "RGBA"; mul.blend_type = "MULTIPLY"; mul.inputs["Factor"].default_value = 1
         mul.inputs[7].default_value = (*tint, 1); nt.links.new(d.outputs["Color"], mul.inputs[6]); nt.links.new(mul.outputs[2], b.inputs["Base Color"])
@@ -621,17 +623,169 @@ def kotak_garpu(name="KOTAK_GARPU", coll=None):
     return o
 
 def nasi_piring_modern(name="PIRING_NASI", coll=None):
-    """modern dinner: white ceramic plate with rice, fried chicken piece and vegetables"""
-    plate = piring(name, 0.14, mat_simple("Keramik_Putih", (0.92, 0.92, 0.9), rough=0.12), coll)
-    bm = bmesh.new(); s = bmesh.ops.create_uvsphere(bm, u_segments=40, v_segments=20, radius=0.06)
-    for v in s["verts"]:
-        v.co.z = max(0.0, v.co.z) * 0.8; v.co += v.co.normalized() * noise.noise(v.co * 40) * 0.005 if v.co.length > 1e-4 else Vector()
-    rice = _new(name + "_NASI", bm, [bpy.data.materials.get("Nasi") or mat_simple("Nasi", (0.92, 0.9, 0.84), rough=0.42, sss=0.35)], coll=coll)
-    rice.location = (-0.03, 0.01, 0.008); rice.parent = plate
-    for p in rice.data.polygons: p.use_smooth = True
-    bm = bmesh.new(); s = bmesh.ops.create_uvsphere(bm, u_segments=24, v_segments=14, radius=0.04)
-    for v in s["verts"]:
-        v.co.x *= 1.3; v.co.z = max(-0.005, v.co.z) * 0.7; v.co += v.co.normalized() * noise.noise(v.co * 50) * 0.006 if v.co.length > 1e-4 else Vector()
-    ay = _new(name + "_AYAM", bm, [mat_noise_color("Ayam_Goreng", (0.62, 0.36, 0.12), (0.36, 0.18, 0.05), scale=70, rough=0.4, bump=0.7)], subsurf=1, coll=coll)
-    ay.location = (0.055, -0.02, 0.022); ay.parent = plate
+    """modern dinner: white ceramic plate with rice (real grains), a piece of fried chicken and a few vegetables"""
+    plate = piring(name, 0.14, mat_simple("Keramik_Putih", (0.9, 0.9, 0.88), rough=0.15), coll)
+    rice = gundukan_nasi(name + "_NASI", 0.06, 0.6, coll); rice.location = (-0.03, 0.01, 0.007); rice.parent = plate
+    bm = bmesh.new(); s_ = bmesh.ops.create_uvsphere(bm, u_segments=32, v_segments=16, radius=0.04)
+    for v in s_["verts"]:
+        v.co.x *= 1.35; v.co.z = max(-0.004, v.co.z) * 0.65
+        if v.co.length > 1e-4: v.co += v.co.normalized() * (noise.noise(v.co * 60) * 0.005 + noise.noise(v.co * 200) * 0.0015)
+    ay = _new(name + "_AYAM", bm, [mat_noise_color("Ayam_Goreng_Renyah", (0.42, 0.2, 0.05), (0.14, 0.06, 0.015), scale=90, rough=0.32, bump=0.9)], subsurf=1, coll=coll)
+    ay.location = (0.06, -0.025, 0.02); ay.parent = plate
+    for k in range(5):   # cucumber slices
+        bm = bmesh.new(); bmesh.ops.create_cone(bm, cap_ends=True, segments=20, radius1=0.016, radius2=0.016, depth=0.004)
+        cu = _new(f"{name}_TIMUN{k}", bm, [mat_noise_color("Timun", (0.75, 0.82, 0.55), (0.2, 0.4, 0.1), scale=120, rough=0.3, bump=0.1, sss=0.2)], coll=coll)
+        cu.location = (0.03 + k * 0.012, 0.06 + (k % 2) * 0.008, 0.012 + k * 0.001); cu.rotation_euler = (0.15, 0.1 * k, 0); cu.parent = plate
     return plate
+
+def sendok_modern(name="SENDOK_MODERN", coll=None):
+    """stainless table spoon, 19.5 cm. Origin at the grip, +Z toward the bowl."""
+    bm = bmesh.new()
+    _sweep(bm, [(0, 0.004 * math.sin(math.pi * t), -0.075 + 0.11 * t) for t in [i / 24 for i in range(25)]],
+           lambda t: 0.0055 - 0.0035 * math.sin(math.pi * t * 0.9) ** 2 + 0.001 * (t < 0.15), segs=10, flat=0.25)
+    bc = Vector((0, 0.004, 0.072)); R = 0.024
+    sph = bmesh.ops.create_uvsphere(bm, u_segments=32, v_segments=16, radius=R, matrix=Matrix.Translation(bc))
+    bmesh.ops.delete(bm, geom=[v for v in sph["verts"] if v.co.y - bc.y > -0.005], context="VERTS")
+    for v in [v for v in bm.verts if (v.co - bc).length < R * 1.01]:
+        v.co.y = bc.y + (v.co.y - bc.y) * 0.45; v.co.z = bc.z + (v.co.z - bc.z) * 1.45; v.co.x *= 0.92
+    bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-5)
+    o = _new(name, bm, [STEEL()], subsurf=1, coll=coll); o.modifiers.new("Tebal", "SOLIDIFY").thickness = 0.0013; o.modifiers.move(1, 0)
+    return _finish(o, tip=(0, 0.004, 0.1))
+
+def garpu_modern(name="GARPU_MODERN", coll=None):
+    """stainless table fork, 4 tines, 19.5 cm"""
+    bm = bmesh.new()
+    _sweep(bm, [(0, 0.004 * math.sin(math.pi * t), -0.075 + 0.105 * t) for t in [i / 24 for i in range(25)]],
+           lambda t: 0.0055 - 0.0035 * math.sin(math.pi * t * 0.9) ** 2 + 0.001 * (t < 0.15), segs=10, flat=0.25)
+    _sweep(bm, [(0, 0.004, 0.03 + 0.022 * t) for t in [i / 8 for i in range(9)]], lambda t: 0.004 + 0.008 * t, segs=10, flat=0.22)
+    for k in range(4):
+        x = (k - 1.5) * 0.0062
+        _sweep(bm, [(x, 0.004 + 0.003 * t * t, 0.052 + 0.04 * t) for t in [i / 10 for i in range(11)]], lambda t: 0.0016 * (1 - 0.6 * t), segs=6, flat=0.7)
+    o = _new(name, bm, [STEEL()], subsurf=1, coll=coll)
+    return _finish(o, tip=(0, 0.006, 0.092))
+
+def gelas_air(name="GELAS", coll=None):
+    bm = bmesh.new()
+    prof = [(0.001, 0), (0.032, 0), (0.036, 0.11), (0.034, 0.11), (0.03, 0.004), (0.001, 0.004)]
+    _lathe(bm, prof, segs=48)
+    o = _new(name, bm, [mat_simple("Kaca", (0.95, 0.97, 0.96), rough=0.02, transmission=1.0, ior=1.5)], subsurf=1, coll=coll)
+    bm2 = bmesh.new(); _lathe(bm2, [(0.001, 0.006), (0.0298, 0.006), (0.033, 0.085), (0.001, 0.085)], segs=48)
+    w = _new(name + "_AIR", bm2, [mat_simple("Air", (0.92, 0.96, 0.98), rough=0.0, transmission=1.0, ior=1.33)], coll=coll); w.parent = o
+    return o
+
+def pohon_kelapa(name="KELAPA", height=8.0, lean=0.12, seed=1, coll=None):
+    """coconut palm: slender curved ringed trunk, crown of ~16 arching pinnate fronds with drooping leaflets,
+    a cluster of coconuts. Real-world size; origin at the base."""
+    rnd = random.Random(seed)
+    bm = bmesh.new()
+    ang = rnd.uniform(0, 6.28); d = Vector((math.cos(ang), math.sin(ang), 0))
+    path = []
+    for i in range(41):
+        t = i / 40
+        p = d * (lean * height * (t ** 1.6)) + Vector((0, 0, height * t))
+        path.append(tuple(p))
+    _sweep(bm, path, lambda t: 0.2 * (1 - 0.35 * t) + 0.05 * (t < 0.05), segs=16)
+    trunk_faces = set(bm.faces)
+    top = Vector(path[-1])
+    # fronds
+    nf = 16
+    for k in range(nf):
+        a = 2 * math.pi * k / nf + rnd.uniform(-0.15, 0.15)
+        dirv = Vector((math.cos(a), math.sin(a), 0))
+        up0 = rnd.uniform(0.25, 0.9)              # initial elevation
+        L = rnd.uniform(3.6, 4.6)
+        mid = []
+        for i in range(25):
+            t = i / 24
+            p = top + dirv * (L * t) + Vector((0, 0, L * (up0 * t - 0.75 * t * t)))
+            mid.append(p)
+        _sweep(bm, [tuple(p) for p in mid], lambda t: 0.035 * (1 - 0.8 * t), segs=5)
+        side = dirv.cross(Vector((0, 0, 1))).normalized()
+        for i in range(3, 24):
+            t = i / 24; p = mid[i]
+            ll = 0.75 * math.sin(math.pi * min(1, t * 1.15)) + 0.15
+            for sg in (-1, 1):
+                tipp = p + side * sg * ll + Vector((0, 0, -ll * 0.55)) + dirv * 0.12
+                w = 0.045 * (1 - 0.5 * t)
+                v1 = bm.verts.new(p + dirv * w); v2 = bm.verts.new(p - dirv * w); v3 = bm.verts.new(tipp)
+                f = bm.faces.new((v1, v2, v3)); f.material_index = 1
+    # coconuts
+    for k in range(7):
+        a = 2 * math.pi * k / 7
+        c = top + Vector((math.cos(a) * 0.22, math.sin(a) * 0.22, -0.35 - 0.1 * (k % 2)))
+        s_ = bmesh.ops.create_uvsphere(bm, u_segments=12, v_segments=8, radius=0.13, matrix=Matrix.Translation(c))
+        for f in bm.faces:
+            if all(v in s_["verts"] for v in f.verts): f.material_index = 2
+    for f in bm.faces:
+        if f in trunk_faces: f.material_index = 0
+    trunk_m = bpy.data.materials.get("Batang_Kelapa")
+    if not trunk_m:
+        trunk_m = bpy.data.materials.new("Batang_Kelapa"); trunk_m.use_nodes = True; nt = trunk_m.node_tree; b = _bsdf(trunk_m)
+        tc = nt.nodes.new("ShaderNodeTexCoord"); w = nt.nodes.new("ShaderNodeTexWave"); w.wave_type = "BANDS"; w.bands_direction = "Z"
+        w.inputs["Scale"].default_value = 0.9; w.inputs["Distortion"].default_value = 1.5
+        nt.links.new(tc.outputs["Object"], w.inputs["Vector"])
+        ramp = nt.nodes.new("ShaderNodeValToRGB"); E = ramp.color_ramp.elements; E[0].color = (0.16, 0.13, 0.1, 1); E[1].color = (0.42, 0.38, 0.32, 1)
+        nt.links.new(w.outputs["Fac"], ramp.inputs["Fac"]); nt.links.new(ramp.outputs["Color"], b.inputs["Base Color"]); b.inputs["Roughness"].default_value = 0.9
+        bp = nt.nodes.new("ShaderNodeBump"); bp.inputs["Strength"].default_value = 0.6; nt.links.new(w.outputs["Fac"], bp.inputs["Height"]); nt.links.new(bp.outputs["Normal"], b.inputs["Normal"])
+    leaf_m = bpy.data.materials.get("Daun_Kelapa")
+    if not leaf_m:
+        leaf_m = bpy.data.materials.new("Daun_Kelapa"); leaf_m.use_nodes = True; nt = leaf_m.node_tree; b = _bsdf(leaf_m)
+        tc = nt.nodes.new("ShaderNodeTexCoord"); nz = nt.nodes.new("ShaderNodeTexNoise"); nz.inputs["Scale"].default_value = 3
+        nt.links.new(tc.outputs["Object"], nz.inputs["Vector"])
+        mx = nt.nodes.new("ShaderNodeMix"); mx.data_type = "RGBA"; mx.inputs[6].default_value = (0.08, 0.2, 0.03, 1); mx.inputs[7].default_value = (0.25, 0.32, 0.08, 1)
+        nt.links.new(nz.outputs["Fac"], mx.inputs["Factor"]); nt.links.new(mx.outputs[2], b.inputs["Base Color"])
+        b.inputs["Roughness"].default_value = 0.45; b.inputs["Subsurface Weight"].default_value = 0.0
+        b.inputs["Transmission Weight"].default_value = 0.15
+    nut_m = mat_noise_color("Buah_Kelapa", (0.35, 0.42, 0.1), (0.2, 0.26, 0.06), scale=30, rough=0.5, bump=0.1)
+    o = _new(name, bm, [trunk_m, leaf_m, nut_m], coll=coll)
+    for p in o.data.polygons: p.use_smooth = p.material_index != 1
+    return o
+
+def mitra(name="MITRA", head_width=0.17, coll=None):
+    """bishop's mitre: two stiff peaks (front and back) rising to points, white silk with gold orphrey bands.
+    Origin at the head band centre; worn level, the band circles the head just above the brows."""
+    bm = bmesh.new()
+    W = head_width * 0.62; H = 0.3
+    for sy in (-1, 1):            # front and back plates, slightly curved
+        rows = []
+        for j in range(13):
+            t = j / 12; z = H * t
+            half = W * (1 - 0.55 * t ** 1.6) if t < 0.97 else 0.004
+            row = [bm.verts.new((x * half, sy * 0.055 * (1 - t) ** 0.7 + sy * 0.004, z)) for x in [i / 8 * 2 - 1 for i in range(9)]]
+            rows.append(row)
+        for j in range(12):
+            for i in range(8):
+                f = bm.faces.new((rows[j][i], rows[j][i + 1], rows[j + 1][i + 1], rows[j + 1][i]))
+    # head band (ring)
+    bmesh.ops.create_cone(bm, cap_ends=False, segments=40, radius1=head_width * 0.6, radius2=head_width * 0.62, depth=0.05, matrix=Matrix.Translation((0, 0, 0.02)))
+    silk = mat_simple("Sutra_Putih", (0.92, 0.9, 0.84), rough=0.35)
+    o = _new(name, bm, [silk], coll=coll)
+    o.modifiers.new("Tebal", "SOLIDIFY").thickness = 0.004
+    s = o.modifiers.new("Halus", "SUBSURF"); s.levels = s.render_levels = 1
+    # gold bands: vertical orphrey on both plates + the circlet
+    gold = mat_simple("Bordir_Emas", (0.85, 0.62, 0.2), rough=0.35, metal=0.8)
+    for sy in (-1, 1):
+        bm2 = bmesh.new()
+        for j in range(12):
+            t0, t1 = j / 12, (j + 1) / 12
+            for x0 in (-0.12,):
+                pass
+        _sweep(bm2, [(0, sy * (0.055 * (1 - t) ** 0.7 + 0.0075), H * t) for t in [k / 12 for k in range(13)]], lambda t: 0.012, segs=4, flat=0.15)
+        b2 = _new(f"{name}_PITA_{sy}", bm2, [gold], coll=coll); b2.parent = o
+    bm3 = bmesh.new(); bmesh.ops.create_cone(bm3, cap_ends=False, segments=40, radius1=head_width * 0.615, radius2=head_width * 0.625, depth=0.022, matrix=Matrix.Translation((0, 0, 0.012)))
+    b3 = _new(f"{name}_LINGKAR", bm3, [gold], coll=coll); b3.parent = o
+    b3.modifiers.new("Tebal", "SOLIDIFY").thickness = 0.003
+    return o
+
+def topi_tinggi(name="TOPI_CORYAT", head_width=0.17, coll=None):
+    """Jacobean 'capotain' hat: tall slightly tapering crown, narrow brim, black felt, a plain band"""
+    bm = bmesh.new()
+    r0 = head_width * 0.6
+    prof = [(r0 + 0.045, 0.0), (r0 + 0.05, 0.006), (r0 + 0.002, 0.008), (r0, 0.03), (r0 * 0.9, 0.17), (r0 * 0.84, 0.19), (0.001, 0.195)]
+    _lathe(bm, prof, segs=48)
+    felt = mat_noise_color("Laken_Hitam", (0.05, 0.045, 0.04), (0.02, 0.018, 0.016), scale=300, rough=0.85, bump=0.15)
+    o = _new(name, bm, [felt], subsurf=1, coll=coll)
+    o.modifiers.new("Tebal", "SOLIDIFY").thickness = 0.003
+    bm2 = bmesh.new(); bmesh.ops.create_cone(bm2, cap_ends=False, segments=48, radius1=r0 * 0.985, radius2=r0 * 0.975, depth=0.025, matrix=Matrix.Translation((0, 0, 0.022)))
+    b = _new(name + "_PITA", bm2, [mat_simple("Pita_Topi", (0.12, 0.08, 0.05), rough=0.5)], coll=coll); b.parent = o
+    return o

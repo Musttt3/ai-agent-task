@@ -141,3 +141,9 @@ hdri secluded_beach 4k
 hdri golden_bay 2k
 hdri lythwood_room 2k
 hdri kiara_interior 2k
+tex bark_brown_02 2k
+tex clay_plaster 2k
+tex brown_mud_dry 2k
+hdri citrus_orchard_puresky 2k
+hdri dry_field 2k
+tex bamboo_veneer 2k

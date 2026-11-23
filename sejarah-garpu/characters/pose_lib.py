@@ -185,7 +185,7 @@ def curl(rig, side, finger, deg, spread=0.0):
 def hand_shape(rig, side, shape="rileks", amount=1.0):
     """preset hand shapes: rileks, kepal (fist), cubit (pinch), pegang (grip a handle), tunjuk (point), buka (open)"""
     table = {"rileks": (12, 18, 22, 26, 30), "kepal": (55, 85, 90, 90, 90), "cubit": (35, 55, 40, 50, 55),
-             "pegang": (40, 70, 75, 78, 80), "tunjuk": (45, 0, 85, 88, 90), "buka": (0, 0, 0, 0, 0)}
+             "pegang": (40, 70, 75, 78, 80), "tunjuk": (45, 0, 85, 88, 90), "buka": (0, 0, 0, 0, 0), "garpu": (20, 16, 40, 38, 42)}
     for i, deg in enumerate(table[shape], start=1): curl(rig, side, i, deg * amount)
 
 def close_on(rig, side, prop_objs, fingers=(1, 2, 3, 4, 5), step=4, max_deg=95, gap=0.002):
@@ -206,7 +206,7 @@ def close_on(rig, side, prop_objs, fingers=(1, 2, 3, 4, 5), step=4, max_deg=95, 
         total = 0
         while total < max_deg:
             b3 = f"finger{fi}-3.{side}"
-            if near(tip(b3)) < 0.009 + gap: break
+            if near(tip(b3)) < 0.015 + gap: break
             curl(rig, side, fi, step); total += step
 
 # ------------------------------------------------------------------ props in hands
@@ -232,10 +232,34 @@ def palm_frame(rig, side):
     across = (k2 - k5).normalized()                   # toward the index side
     normal = along.cross(across).normalized()
     if side == "R": normal = -normal                  # palm side for each hand
-    centre = w + (k3 - w) * 0.62 + normal * 0.018
+    centre = w + (k3 - w) * 0.62 + normal * 0.033
     return centre, along, across, normal
 
+def place_pen(prop, rig, side, grip_local=Vector((0, 0, 0)), axis_local=Vector((0, 0, 1)), roll=0.0, slide=0.0):
+    """pen / cutlery grip: the handle lies along the underside of the index finger, pinched by the thumb and the
+    middle finger; the working end sticks out past the index fingertip"""
+    bpy.context.view_layer.update()
+    a = bone_world(rig, f"finger2-1.{side}"); b = bone_world(rig, f"finger2-3.{side}", tail=True)
+    c, along, across, normal = palm_frame(rig, side)
+    ax_w = (b - a).normalized()
+    # the rear of the handle must leave through the thumb web over the knuckle (dorsal + thumb side), never through
+    # the palm: tilt the working end toward the palm and the pinky side
+    ax_w = (ax_w + normal * 0.35 - across * 0.28).normalized()
+    q = Vector(axis_local).normalized().rotation_difference(ax_w)
+    q = Quaternion(ax_w, math.radians(roll)) @ q
+    prop.rotation_mode = "QUATERNION"; prop.rotation_quaternion = q
+    bpy.context.view_layer.update()
+    seat = bone_world(rig, f"finger2-2.{side}") + normal * 0.02 + across * 0.009        # under the middle phalanx, thumb side
+    gw = prop.matrix_world.to_3x3() @ Vector(grip_local)
+    prop.location = seat - gw + ax_w * slide
+    bpy.context.view_layer.update()
+
+GRIP = "palm"
 def place_in_palm(prop, rig, side, grip_local=Vector((0, 0, 0)), axis_local=Vector((0, 0, 1)), roll=0.0, slide=0.0):
+    if prop.get("grip_mode") == "pena": return place_pen(prop, rig, side, grip_local, axis_local, roll, slide)
+    return _place_palm(prop, rig, side, grip_local, axis_local, roll, slide)
+
+def _place_palm(prop, rig, side, grip_local=Vector((0, 0, 0)), axis_local=Vector((0, 0, 1)), roll=0.0, slide=0.0):
     """put prop so its grip point (local) sits in the palm, its long axis (local) across the palm (index->pinky
     direction tilted toward the thumb a little), rotated by roll about that axis; slide moves it along the axis"""
     c, along, across, normal = palm_frame(rig, side)
@@ -249,7 +273,7 @@ def place_in_palm(prop, rig, side, grip_local=Vector((0, 0, 0)), axis_local=Vect
     bpy.context.view_layer.update()
 
 def hold_to(rig, side, prop, point_local, target, pole_dir, hand_dir, palm_dir, grip_local=Vector((0, 0, 0)),
-            axis_local=Vector((0, 0, 1)), roll=0.0, iters=6):
+            axis_local=Vector((0, 0, 1)), roll=0.0, iters=6, prop_dir=None):
     """pose the arm so that prop (held in the palm) brings its point_local to the world target.
     hand_dir / palm_dir: desired world directions of the hand (knuckles) and the palm normal."""
     T = Vector(target).copy()
@@ -258,6 +282,14 @@ def hold_to(rig, side, prop, point_local, target, pole_dir, hand_dir, palm_dir, 
         reach(rig, side, T, pole_dir, wrist_fwd=hand_dir, wrist_up=None)
         _roll_palm(rig, side, palm_dir)
         place_in_palm(prop, rig, side, grip_local, axis_local, roll)
+        if prop_dir is not None:      # bend the wrist so the prop points along prop_dir
+            for _k in range(3):
+                cur = (prop.matrix_world.to_3x3() @ Vector(axis_local)).normalized()
+                want = Vector(prop_dir).normalized()
+                ax = cur.cross(want)
+                if ax.length < 1e-4: break
+                turn(rig, f"wrist.{side}", ax.normalized(), math.degrees(cur.angle(want)) * 0.8)
+                place_in_palm(prop, rig, side, grip_local, axis_local, roll)
         tip = prop.matrix_world @ Vector(point_local)
         err = Vector(target) - tip
         if err.length < 0.004: break
@@ -382,9 +414,9 @@ def check(chars, props=(), env=(), frames=(), report=None):
             for body, rig in chars:
                 for a in ("tangan.L", "tangan.R", "kepala"):
                     A = bv[body.name][0].get(a)
-                    if A and T:
-                        n = len(A.overlap(T))
-                        if n > 1: res.append((f, f"{body.name}:{a}", o.name, n))
+                    if A and T and len(A.overlap(T)):
+                        dmm = round(_depth(o, deps, A) * 1000, 1)       # how deep the prop sinks into the skin
+                        if dmm > 1.5: res.append((f, f"{body.name}:{a}", o.name + " (mm)", dmm))
         for o in env:
             T = _world_bvh(o, deps)
             if not T: continue
@@ -403,6 +435,17 @@ def check(chars, props=(), env=(), frames=(), report=None):
         with open(report, "w") as fh:
             for r in res: fh.write("\t".join(map(str, r)) + "\n")
     return res
+
+def _depth(o, deps, bvh):
+    """max depth (m) of o's vertices below the surface of bvh (uses the nearest-face normal)"""
+    ev = o.evaluated_get(deps); me = ev.to_mesh(); mw = o.matrix_world; worst = 0.0
+    for v in me.vertices:
+        p = mw @ v.co
+        hit = bvh.find_nearest(p, 0.03)
+        if hit and hit[0] is not None:
+            d = (p - hit[0]).dot(hit[1])
+            if d < 0: worst = max(worst, -d)
+    ev.to_mesh_clear(); return worst
 
 def _world_bvh(o, deps):
     ev = o.evaluated_get(deps)
@@ -444,3 +487,114 @@ def summarize(res):
     for (a, b), l in sorted(d.items()):
         fs = [x[0] for x in l]; lines.append(f"{a} x {b}: frames {min(fs)}-{max(fs)} ({len(fs)} f), max {max(x[1] for x in l)}")
     return "\n".join(lines) if lines else "BERSIH: tidak ada tabrakan"
+
+# ------------------------------------------------------------------ sitting
+def _lowest(body, vfilter):
+    """lowest world z of evaluated body vertices whose dominant region passes vfilter(region)"""
+    deps = bpy.context.evaluated_depsgraph_get()
+    mods = [(m, m.show_viewport) for m in body.modifiers if m.type in ("SUBSURF", "MASK")]
+    for m, _ in mods: m.show_viewport = False
+    deps.update(); ev = body.evaluated_get(deps); me = ev.to_mesh()
+    vreg = body.get("_vreg")
+    if vreg is None:
+        vreg = _vertex_regions(body); body["_vreg"] = [r or "" for r in vreg]
+    mw = body.matrix_world
+    zs = [(mw @ v.co).z for v, r in zip(me.vertices, vreg) if vfilter(r)]
+    ev.to_mesh_clear()
+    for m, v in mods: m.show_viewport = v
+    return min(zs) if zs else None
+
+def sit(rig, body, seat_z, floor_z=0.0, spread=0.06, knee_fwd=0.0, lean=4.0):
+    """seated pose on a seat at height seat_z: thighs forward (horizontal), shins down so the feet land on the
+    floor, buttocks resting on the seat (rig lowered until the lowest thigh/pelvis point is seat_z + 3 mm).
+    lean: torso forward lean in degrees."""
+    X, F, U = char_axes(rig)
+    for s in ("L", "R"):
+        sg = 1 if s == "L" else -1
+        d = F + X * (sg * spread) - U * 0.02
+        for b in (f"upperleg01.{s}", f"upperleg02.{s}"): aim(rig, b, d)
+    # drop the rig so the buttocks touch the seat
+    for _ in range(3):
+        low = _lowest(body, lambda r: r in ("badan", "kaki.L", "kaki.R"))
+        rig.location.z += (seat_z + 0.003) - low; bpy.context.view_layer.update()
+    # shins: pick the angle (from vertical) that puts the heel on the floor
+    for s in ("L", "R"):
+        knee = bone_world(rig, f"lowerleg01.{s}")
+        Lsh = sum(rig.pose.bones[b].length for b in (f"lowerleg01.{s}", f"lowerleg02.{s}"))
+        foot_h = 0.075 * (rig.matrix_world.to_scale().z)
+        h = knee.z - floor_z - foot_h
+        ang = math.acos(max(-1.0, min(1.0, h / Lsh))) if Lsh > 0 else 0.0
+        d = -U * math.cos(ang) + F * (math.sin(ang) + knee_fwd)
+        for b in (f"lowerleg01.{s}", f"lowerleg02.{s}"): aim(rig, b, d)
+        aim(rig, f"foot.{s}", F * 1.0 - U * 0.25)
+    if lean:
+        turn(rig, "spine03", X, lean * 0.5); turn(rig, "spine02", X, lean * 0.5)
+    bpy.context.view_layer.update()
+
+def joint_world(body, group="joint-mouth"):
+    """world centroid of a MakeHuman joint helper group (evaluated: follows pose and shape keys)"""
+    gi = body.vertex_groups[group].index
+    idx = [v.index for v in body.data.vertices if any(g.group == gi and g.weight > 0.5 for g in v.groups)]
+    mods = [(m, m.show_viewport) for m in body.modifiers if m.type in ("SUBSURF", "MASK")]
+    for m, _ in mods: m.show_viewport = False
+    deps = bpy.context.evaluated_depsgraph_get(); deps.update()
+    ev = body.evaluated_get(deps); me = ev.to_mesh(); mw = body.matrix_world
+    c = sum((mw @ me.vertices[i].co for i in idx), Vector()) / max(1, len(idx))
+    ev.to_mesh_clear()
+    for m, v in mods: m.show_viewport = v
+    return c
+
+def lips_front(body, rig, out=0.012):
+    """a point `out` metres in front of the lip surface (world). The lip surface = the evaluated skin vertex near the
+    mouth joint that sticks out furthest along the face's forward direction (mouth joint -> nose tip)."""
+    m = joint_world(body, "joint-mouth")
+    mods = [(mm, mm.show_viewport) for mm in body.modifiers if mm.type in ("SUBSURF", "MASK")]
+    for mm, _ in mods: mm.show_viewport = False
+    deps = bpy.context.evaluated_depsgraph_get(); deps.update()
+    ev = body.evaluated_get(deps); me = ev.to_mesh(); mw = body.matrix_world
+    vreg = body.get("_vreg") or [r or "" for r in _vertex_regions(body)]
+    near = [mw @ v.co for v, r in zip(me.vertices, vreg) if r and (mw @ v.co - m).length < 0.06]
+    ev.to_mesh_clear()
+    for mm, v in mods: mm.show_viewport = v
+    X, F, U = char_axes(rig)
+    head_q = (rig.matrix_world @ rig.pose.bones["head"].matrix).to_quaternion()
+    fwd = (head_q @ Vector((0, 0, 1)))                      # MPFB head bone: local Z points out of the face
+    if fwd.dot(F) < 0: fwd = -fwd
+    fwd = (fwd + F * 0.5).normalized()
+    near = [p for p in near if -0.018 < (p - m).dot(U) < 0.012 and abs((p - m).dot(X)) < 0.02]
+    best = max(near, key=lambda p: (p - m).dot(fwd)) if near else m + F * 0.05
+    return best + fwd * out
+
+def wear(hat, rig, body, height=0.105, fwd=0.0, tilt=0.0):
+    """put a hat on: centred over the skull (head bone), band at `height` above the head joint, level with the head,
+    then attached to the head bone (follows every turn)"""
+    bpy.context.view_layer.update()
+    M = rig.matrix_world @ rig.pose.bones["head"].matrix
+    up = (M.to_3x3() @ Vector((0, 1, 0))).normalized()          # head bone axis (neck -> crown)
+    X, F, U = char_axes(rig)
+    base = M.translation + up * height + F * fwd
+    hat.rotation_mode = "QUATERNION"
+    q = Vector((0, 0, 1)).rotation_difference(up)
+    hat.rotation_quaternion = Quaternion(up, math.radians(tilt)) @ q
+    hat.location = base
+    bpy.context.view_layer.update()
+    for c in list(hat.constraints): hat.constraints.remove(c)
+    attach(hat, rig, "head")
+
+def bersila(rig, body, floor_z, spread=0.85, lean=10.0):
+    """cross-legged on the floor: thighs out to the sides, shins crossed in front (left shin in front of the
+    right, a few cm apart), buttocks on the floor"""
+    X, F, U = char_axes(rig)
+    for s, sg in (("L", 1), ("R", -1)):
+        d = F * 0.55 + X * sg * spread - U * 0.05
+        for b in (f"upperleg01.{s}", f"upperleg02.{s}"): aim(rig, b, d)
+    for s, sg, fwd, lift in (("L", 1, 0.42, 0.05), ("R", -1, 0.2, 0.0)):
+        d = -X * sg * 0.9 + F * fwd - U * (0.12 - lift)
+        for b in (f"lowerleg01.{s}", f"lowerleg02.{s}"): aim(rig, b, d)
+        aim(rig, f"foot.{s}", -X * sg * 0.5 - U * 0.6 + F * 0.2)
+    for _ in range(3):
+        low = _lowest(body, lambda r: r in ("badan", "kaki.L", "kaki.R"))
+        rig.location.z += (floor_z + 0.004) - low; bpy.context.view_layer.update()
+    if lean:
+        turn(rig, "spine03", X, lean * 0.5); turn(rig, "spine02", X, lean * 0.5)
+    bpy.context.view_layer.update()

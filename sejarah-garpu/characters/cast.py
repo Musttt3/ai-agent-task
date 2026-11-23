@@ -31,7 +31,7 @@ CAST = {
                       clothes=["maciekg_wizard_robe", "punkduck_medieval_boots"], tint={"maciekg_wizard_robe": (0.5, 0.12, 0.1)}),
     "coryat":    dict(phenotype=dict(gender=1.0, age=0.64, muscle=0.45, weight=0.4, race=EROPA),
                       skin="young_caucasian_male2", hair="cortu_short_messy_hair", eyebrows="eyebrow005",
-                      clothes=["drednicolson_asymmetric_tunic_and_sash", "toigo_wool_pants", "punkduck_riding_boots", "elvs_tophat1"],
+                      clothes=["drednicolson_asymmetric_tunic_and_sash", "toigo_wool_pants", "punkduck_riding_boots"],
                       tint={"drednicolson_asymmetric_tunic_and_sash": (0.18, 0.16, 0.14), "toigo_wool_pants": (0.2, 0.18, 0.16)}),
     "warga_a":   dict(phenotype=dict(gender=1.0, age=0.7, muscle=0.6, weight=0.75, race=EROPA),
                       skin="middleage_caucasian_male", hair="short03", eyebrows="eyebrow006",
