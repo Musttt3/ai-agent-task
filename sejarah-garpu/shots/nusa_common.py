@@ -18,7 +18,7 @@ def leluhur_bersila(name, x, y, yaw, f0, f1, lean=12):
     X, F, U = P.char_axes(r)
     for s, sg in (("L", 1), ("R", -1)):          # hands resting on the knees
         knee = P.bone_world(r, f"lowerleg01.{s}")
-        P.reach(r, s, knee + U * 0.13 - F * 0.03, pole_dir=X * sg * 0.8 - F * 0.3, wrist_fwd=(F * 0.5 - U * 0.7 + X * sg * 0.3).normalized())
+        P.reach(r, s, knee + U * 0.13 - F * 0.03, pole_dir=X * sg * 0.8 - F * 0.3, wrist_fwd=(F * 0.85 - U * 0.2 + X * sg * 0.25).normalized())
         P._roll_palm(r, s, -U); P.hand_shape(r, s, "rileks", 0.7)
     P.key_pose(r, f0); P.key_pose(r, f1); r.keyframe_insert("location", frame=f0)
     return b, r

@@ -1,46 +1,57 @@
-1061	warga_c.body	WoodenTable_02.001 (mm)	35.5
-1065	warga_c.body	WoodenTable_02.001 (mm)	34.9
-1069	warga_c.body	WoodenTable_02.001 (mm)	32.3
-1069	warga_a.body	warga_c.body	112
-1073	warga_c.body	WoodenTable_02.001 (mm)	34.5
-1073	warga_a.body	warga_c.body	149
-1077	warga_c.body	WoodenTable_02.001 (mm)	34.3
-1077	warga_a.body	warga_c.body	153
-1081	warga_c.body	WoodenTable_02.001 (mm)	35.3
-1081	warga_a.body	warga_c.body	137
-1085	warga_a.body:tangan.R	warga_a.body:kaki.L	55
-1085	warga_a.body:tangan.R	warga_a.elvs_male_trouser	42
-1085	warga_c.body	WoodenTable_02.001 (mm)	35.6
-1085	warga_a.body	warga_c.body	110
-1089	warga_a.body:tangan.R	warga_a.body:kaki.L	64
-1089	warga_a.body:tangan.R	warga_a.body:kaki.R	200
-1089	warga_a.body:lengan_bawah.R	warga_a.body:kaki.R	56
-1089	warga_a.body:tangan.R	warga_a.elvs_male_shirt_untucked_bd1	361
-1089	warga_a.body:tangan.R	warga_a.elvs_male_trouser	503
-1089	warga_a.body:lengan_bawah.R	warga_a.elvs_male_trouser	60
-1089	warga_c.body	WoodenTable_02.001 (mm)	33.6
-1089	warga_a.body	warga_c.body	85
-1093	warga_a.body:tangan.R	warga_a.body:badan	23
-1093	warga_a.body:tangan.R	warga_a.body:kaki.R	98
-1093	warga_a.body:lengan_bawah.R	warga_a.body:kaki.R	72
-1093	warga_a.body:tangan.R	warga_a.elvs_male_shirt_untucked_bd1	3
-1093	warga_a.body:lengan_bawah.R	warga_a.elvs_male_shirt_untucked_bd1	41
-1093	warga_a.body:tangan.R	warga_a.elvs_male_trouser	192
-1093	warga_a.body:lengan_bawah.R	warga_a.elvs_male_trouser	95
-1093	warga_c.body	WoodenTable_02.001 (mm)	33.0
-1097	warga_a.body:tangan.R	warga_a.body:badan	104
-1097	warga_a.body:tangan.R	warga_a.elvs_male_shirt_untucked_bd1	60
-1097	warga_a.body:lengan_bawah.R	warga_a.elvs_male_shirt_untucked_bd1	40
-1097	warga_a.body:tangan.R	warga_a.elvs_male_trouser	229
-1097	warga_c.body	WoodenTable_02.001 (mm)	36.3
-1101	warga_a.body:tangan.R	warga_a.body:badan	111
-1101	warga_a.body:tangan.R	warga_a.elvs_male_shirt_untucked_bd1	180
-1101	warga_a.body:tangan.R	warga_a.elvs_male_trouser	163
-1101	warga_c.body	WoodenTable_02.001 (mm)	36.8
-1105	warga_a.body:tangan.R	warga_a.body:badan	29
-1105	warga_a.body:tangan.R	warga_a.elvs_male_shirt_untucked_bd1	109
-1105	warga_a.body:tangan.R	warga_a.elvs_male_trouser	83
-1105	warga_c.body	WoodenTable_02.001 (mm)	35.9
-1109	warga_a.body:tangan.R	warga_a.elvs_male_shirt_untucked_bd1	33
-1109	warga_c.body	WoodenTable_02.001 (mm)	35.4
-1112	warga_c.body	WoodenTable_02.001 (mm)	35.5
+1061	warga_a.body	WoodenTable_02.001 (mm)	41.6
+1061	warga_b.body	WoodenTable_02.001 (mm)	37.1
+1061	warga_a.body	warga_b.body	1242
+1061	warga_a.body	warga_c.body	83
+1061	warga_b.body	warga_c.body	64
+1065	warga_a.body	WoodenTable_02.001 (mm)	37.6
+1065	warga_b.body	WoodenTable_02.001 (mm)	37.1
+1065	warga_c.body	WoodenTable_02.001 (mm)	31.4
+1065	warga_a.body	warga_b.body	1242
+1069	warga_a.body	WoodenTable_02.001 (mm)	37.6
+1069	warga_b.body	WoodenTable_02.001 (mm)	41.9
+1069	warga_a.body	warga_b.body	1242
+1073	warga_a.body	WoodenTable_02.001 (mm)	37.6
+1073	warga_b.body	WoodenTable_02.001 (mm)	43.0
+1073	warga_a.body	warga_b.body	1242
+1077	warga_a.body	WoodenTable_02.001 (mm)	37.6
+1077	warga_b.body	WoodenTable_02.001 (mm)	40.6
+1077	warga_c.body	WoodenTable_02.001 (mm)	7.2
+1077	warga_a.body	warga_b.body	1242
+1081	warga_a.body	WoodenTable_02.001 (mm)	37.6
+1081	warga_b.body	WoodenTable_02.001 (mm)	38.9
+1081	warga_c.body	WoodenTable_02.001 (mm)	21.7
+1081	warga_a.body	warga_b.body	1242
+1085	warga_a.body	WoodenTable_02.001 (mm)	37.6
+1085	warga_b.body	WoodenTable_02.001 (mm)	37.1
+1085	warga_c.body	WoodenTable_02.001 (mm)	25.5
+1085	warga_a.body	warga_b.body	1242
+1089	warga_a.body	WoodenTable_02.001 (mm)	41.5
+1089	warga_b.body	WoodenTable_02.001 (mm)	37.1
+1089	warga_c.body	WoodenTable_02.001 (mm)	41.0
+1089	warga_a.body	warga_b.body	1242
+1093	warga_a.body	WoodenTable_02.001 (mm)	41.6
+1093	warga_b.body	WoodenTable_02.001 (mm)	37.1
+1093	warga_c.body	WoodenTable_02.001 (mm)	38.6
+1093	warga_a.body	warga_b.body	1242
+1097	warga_a.body	WoodenTable_02.001 (mm)	42.0
+1097	warga_b.body	WoodenTable_02.001 (mm)	40.8
+1097	warga_c.body	WoodenTable_02.001 (mm)	16.9
+1097	warga_a.body	warga_b.body	1242
+1101	warga_a.body	WoodenTable_02.001 (mm)	42.2
+1101	warga_b.body	WoodenTable_02.001 (mm)	42.5
+1101	warga_c.body	WoodenTable_02.001 (mm)	6.5
+1101	warga_a.body	warga_b.body	1242
+1101	warga_a.body	warga_c.body	28
+1105	warga_a.body	WoodenTable_02.001 (mm)	43.5
+1105	warga_b.body	WoodenTable_02.001 (mm)	40.4
+1105	warga_a.body	warga_b.body	1242
+1109	warga_a.body	WoodenTable_02.001 (mm)	37.6
+1109	warga_b.body	WoodenTable_02.001 (mm)	37.1
+1109	warga_a.body	warga_b.body	1242
+1109	warga_a.body	warga_c.body	140
+1109	warga_b.body	warga_c.body	14
+1112	warga_a.body	WoodenTable_02.001 (mm)	41.6
+1112	warga_b.body	WoodenTable_02.001 (mm)	37.1
+1112	warga_a.body	warga_b.body	1242
+1112	warga_a.body	warga_c.body	83
+1112	warga_b.body	warga_c.body	64
