@@ -10,6 +10,7 @@ P.sit(r, b, seat_z(0.0, 1.4), lean=14, spread=0.12)
 X, F, U = P.char_axes(r)
 meat = bpy.data.objects["DAGING_BAKAR"]
 mouth = P.lips_front(b, r, out=0.115)
+meat.scale = (0.85, 0.85, 1.0)   # a slightly smaller haunch keeps the meat clear of the gripping fingers
 low = P.bone_world(r, "spine01") + F * 0.4 + U * 0.02 - X * 0.05
 # right hand holds the bare bone end; the meat comes up to the mouth for a bite (the meat surface stops at the lips)
 d_meat = (X * 1.0 + U * 0.25 - F * 0.1).normalized()      # the bone lies across, meat toward his left

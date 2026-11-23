@@ -36,7 +36,7 @@ def coryat_seated(f0, f1):
     P.relaxed_arms(r)
     for s, dx in (("L", 0.22), ("R", -0.22)):
         P.reach(r, s, Vector((dx * 0.7, 0.78, th + 0.06)), pole_dir=-U * 0.8 + (X if s == "L" else -X) * 0.6, wrist_fwd=F)
-        P._roll_palm(r, s, -U); P.hand_shape(r, s, "rileks", 0.6)
+        P._roll_palm(r, s, -U); P.hand_shape(r, s, "rileks", 0.2)
     P.key_pose(r, f0); P.key_pose(r, f1); r.keyframe_insert("location", frame=f0)
     return b, r
 
