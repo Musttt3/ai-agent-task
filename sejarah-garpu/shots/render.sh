@@ -3,15 +3,18 @@
 # Frames already on disk are skipped (no overwrite, placeholders), so it can be restarted at any time.
 cd "$(dirname "$0")/.."
 mkdir -p out/frames
-SAMPLES=${SAMPLES:-48}
+SAMPLES=${SAMPLES:-12}
 for s in ${@:-01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26}; do
   echo "=== render $s $(date +%T)" >> out/render.log
   blender -b shots/blend/$s.blend --python-expr "
 import bpy
 sc = bpy.context.scene
 sc.render.resolution_x, sc.render.resolution_y, sc.render.resolution_percentage = 1080, 1920, 100
-c = sc.cycles; c.samples = $SAMPLES; c.use_adaptive_sampling = True; c.adaptive_threshold = 0.025; c.use_denoising = True
-c.denoiser = 'OPENIMAGEDENOISE'; c.denoising_input_passes = 'RGB_ALBEDO_NORMAL'
+c = sc.cycles; c.samples = $SAMPLES; c.use_adaptive_sampling = True; c.adaptive_threshold = 0.05; c.adaptive_min_samples = 4
+c.use_denoising = True; c.denoiser = 'OPENIMAGEDENOISE'; c.denoising_input_passes = 'RGB_ALBEDO_NORMAL'; c.denoising_prefilter = 'ACCURATE'
+c.max_bounces = 4; c.diffuse_bounces = 2; c.glossy_bounces = 2; c.transmission_bounces = 3; c.transparent_max_bounces = 12; c.volume_bounces = 1
+c.caustics_reflective = False; c.caustics_refractive = False; c.blur_glossy = 1.0; c.sample_clamp_indirect = 4.0; c.texture_limit_render = '2048'
+c.seed = 7; c.use_animated_seed = False
 sc.render.use_persistent_data = True; sc.render.use_overwrite = False; sc.render.use_placeholder = True
 sc.render.filepath = '//../../out/frames/#####'
 sc.render.image_settings.file_format = 'PNG'; sc.render.image_settings.color_mode = 'RGB'; sc.render.image_settings.compression = 30
