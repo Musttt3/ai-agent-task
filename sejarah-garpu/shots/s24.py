@@ -10,11 +10,11 @@ p, rp = actor("pelaut", loc=Vector((0.86, -2.12, 0)), yaw=180)
 plant_feet(rp, p)
 Xp, Fp, Up = P.char_axes(rp)
 spoon, fork = PR.sendok_garpu_eropa(bpy.data.collections["PROPS"]); fork["r"] = 0.009; spoon["r"] = 0.005
-spot_s = Vector((1.0, -1.62, FZ + 0.006)); spot_f = Vector((0.62, -1.62, FZ + 0.006))
+spot_s = Vector((1.0, -1.8, FZ + 0.006)); spot_f = Vector((0.66, -1.8, FZ + 0.006))   # just inside the floor edge (y -1.9)
 # held: spoon in the right hand, fork in the left; laid down at 1330 (swap to resting copies)
 for prop, side, spot in ((spoon, "R", spot_s), (fork, "L", spot_f)):
     prop["grip_mode"] = "pena"
-    dd = (Fp * 0.8 - Up * 0.4).normalized()
+    dd = (Fp * 0.95 - Up * 0.2).normalized()           # the floor is at his chest: forearm over the edge, hand level
     hold(prop, rp, side, [(f0, spot + Up * 0.25 - Fp * 0.15), (1324, spot + Up * 0.04), (1330, spot + Up * 0.012)], point_local=Vector(prop["tip"]),
          grip_local=(0, 0, -0.02), pole=-Up * 0.7 + (Xp if side == "L" else -Xp) * 0.6, hand_dir=dd, palm_dir=-Up, fingers=(1, 3), pre_shape=("garpu", 1.0),
          prop_dirs={f0: dd, 1324: dd, 1330: (Fp - Up * 0.05).normalized()})
@@ -27,12 +27,12 @@ for prop, side, spot in ((spoon, "R", spot_s), (fork, "L", spot_f)):
 for side in ("L", "R"):
     sc.frame_set(1335)
     sh = P.bone_world(rp, f"upperarm01.{side}")
-    P.reach(rp, side, sh - Up * 0.38 + Fp * 0.42 + (Xp if side == "L" else -Xp) * 0.12, pole_dir=-Up * 0.6 + (Xp if side == "L" else -Xp) * 0.6, wrist_fwd=(Fp - Up * 0.3).normalized())
+    P.reach(rp, side, sh - Up * 0.15 + Fp * 0.32 + (Xp if side == "L" else -Xp) * 0.12, pole_dir=-Up * 0.6 + (Xp if side == "L" else -Xp) * 0.6, wrist_fwd=(Fp - Up * 0.3).normalized())
     P.key_pose(rp, 1335, bones=[pb.name for pb in rp.pose.bones if pb.name.endswith("." + side) and ("arm" in pb.name or "wrist" in pb.name)])
 for side in ("L", "R"):
     sc.frame_set(1345)
     sh = P.bone_world(rp, f"upperarm01.{side}")
-    P.reach(rp, side, sh - Up * 0.5 + Fp * 0.15 + (Xp if side == "L" else -Xp) * 0.12, pole_dir=-Fp * 0.5 + (Xp if side == "L" else -Xp) * 0.5, wrist_fwd=-Up)
+    P.reach(rp, side, sh - Up * 0.5 + Fp * 0.04 + (Xp if side == "L" else -Xp) * 0.12, pole_dir=-Fp * 0.5 + (Xp if side == "L" else -Xp) * 0.5, wrist_fwd=-Up)
     P.hand_shape(rp, side, "rileks", 0.7)
     P.key_pose(rp, 1345, bones=[pb.name for pb in rp.pose.bones if pb.name.endswith("." + side)])
     P.key_pose(rp, f1, bones=[pb.name for pb in rp.pose.bones if pb.name.endswith("." + side)])

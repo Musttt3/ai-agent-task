@@ -369,6 +369,12 @@ def hand_shape(rig, side, shape="rileks", amount=1.0):
     """preset hand shapes: rileks, kepal (fist), cubit (pinch), pegang (grip a handle), tunjuk (point), buka (open)"""
     table = {"rileks": (12, 18, 22, 26, 30), "kepal": (55, 85, 90, 90, 90), "cubit": (35, 55, 40, 50, 55),
              "pegang": (40, 70, 75, 78, 80), "tunjuk": (45, 0, 85, 88, 90), "buka": (0, 0, 0, 0, 0), "garpu": (20, 16, 45, 60, 68)}
+    # absolute: the fingers start from their rest pose, so calling it again (e.g. inside a solver loop) never
+    # stacks the curl
+    for i in range(1, 6):
+        for j in (1, 2, 3):
+            pb = rig.pose.bones.get(f"finger{i}-{j}.{side}")
+            if pb: pb.rotation_mode = "QUATERNION"; pb.rotation_quaternion = Quaternion()
     for i, deg in enumerate(table[shape], start=1): curl(rig, side, i, deg * amount)
 
 def close_on(rig, side, prop_objs, fingers=(1, 2, 3, 4, 5), step=4, max_deg=95, gap=0.002):
