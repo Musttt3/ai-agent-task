@@ -127,6 +127,7 @@ def hold(prop, rig, side, frames_keys, point_local=None, pole=None, hand_dir=Non
             if pb: pb.rotation_mode = "QUATERNION"; pb.rotation_quaternion = Quaternion()
         hd = (hand_dirs or {}).get(f, hand_dir); pdir = (palm_dirs or {}).get(f, palm_dir)
         if pre_shape: P.hand_shape(rig, s, pre_shape[0], pre_shape[1])
+        P.limit_fingers(rig, s)                    # final index/thumb shape before the prop is seated
         e = P.hold_to(rig, s, prop, pt, target, pole if pole is not None else (-U * 0.8 + (X if s == "L" else -X) * 0.6),
                       hd if hd is not None else F, pdir if pdir is not None else (U * 0.3 + (-X if s == "L" else X)),
                       grip_local=Vector(grip_local), axis_local=Vector(axis_local), roll=roll,

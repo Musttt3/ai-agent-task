@@ -74,10 +74,10 @@ def point_at(r, f, target, side=None):
         r.pose.bones[bn].rotation_mode = "QUATERNION"; P.turn(r, bn, U, max(-45, min(45, yaw * k)))
     P.key_pose(r, f, bones=["spine02", "spine01"])
     # lift the hand off the lap first (a key 4 frames before), so it never sweeps through the thigh
-    bpy.context.scene.frame_set(f - 4)
+    bpy.context.scene.frame_set(f - 6)
     shl = P.bone_world(r, f"upperarm01.{side}")
     P.reach(r, side, shl + F * 0.3 - U * 0.25 + (X if side == "L" else -X) * 0.1, pole_dir=-U - (X if side == "R" else -X) * 0.3, wrist_fwd=F)
-    P.key_pose(r, f - 4, bones=[pb.name for pb in r.pose.bones if pb.name.endswith("." + side) and ("arm" in pb.name or "wrist" in pb.name)])
+    P.key_pose(r, f - 6, bones=[pb.name for pb in r.pose.bones if pb.name.endswith("." + side) and ("arm" in pb.name or "wrist" in pb.name)])
     bpy.context.scene.frame_set(f)
     sh = P.bone_world(r, f"upperarm01.{side}")
     d = (Vector(target) - sh).normalized()
