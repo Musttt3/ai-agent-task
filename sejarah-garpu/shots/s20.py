@@ -14,7 +14,7 @@ P.key_pose(r, f0, Lb); P.key_pose(r, f1, Lb)
 g = bpy.data.objects["GARPU_CORYAT"]; g["grip_mode"] = "genggam"; g["r"] = 0.009
 GL = Vector((0, 0, -0.035))
 # fist held up beside his face with the fork upright, then lowered to the table edge, tines forward
-show = P.bone_world(r, "spine01") + F * 0.12 + U * 0.16 - X * 0.3
+show = P.bone_world(r, "spine01") + F * 0.18 + U * 0.16 - X * 0.26
 low = P.bone_world(r, "spine01") + F * 0.4 - U * 0.12 - X * 0.14
 d_up = (U * 0.95 + X * 0.12 + F * 0.05).normalized(); d_low = (F * 0.7 + U * 0.35 + X * 0.3).normalized()
 d_fwd = (F * 0.85 + X * 0.35 - U * 0.1).normalized()
@@ -25,6 +25,6 @@ look(r, f0, Vector((-1.15, 0.45, 1.16)), 0.75); look(r, 1135, Vector((-1.15, 0.4
 P.face(b, f0, "BANGGA", 0.9); P.face(b, 1122, "BANGGA", 0.6); P.face(b, 1132, "BINGUNG", 0.7); P.face(b, f1, "SEDIH", 0.9)
 P.blink(b, 1140)
 head = P.bone_world(r, "head") + U * 0.06
-cam = camera(SID, 60, [(f0, head + Vector((-0.72, -0.96, -0.12)), head - U * 0.1 - X * 0.05), (f1, head + Vector((-0.6, -0.8, -0.2)), head - U * 0.12)], focus=head, fstop=2.2)
+cam = camera(SID, 50, [(f0, head + Vector((-0.72, -0.96, -0.12)), head - U * 0.12 - X * 0.14), (f1, head + Vector((-0.6, -0.8, -0.2)), head - U * 0.12)], focus=head, fstop=2.2)
 finish(SID, chars=[(b, r)], props=[g])
 if "stills" in sys.argv: print("STILLS", stills(SID, [f0, 1135, f1]))
