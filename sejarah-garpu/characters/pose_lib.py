@@ -318,7 +318,7 @@ def curl(rig, side, finger, deg, spread=0.0):
 def hand_shape(rig, side, shape="rileks", amount=1.0):
     """preset hand shapes: rileks, kepal (fist), cubit (pinch), pegang (grip a handle), tunjuk (point), buka (open)"""
     table = {"rileks": (12, 18, 22, 26, 30), "kepal": (55, 85, 90, 90, 90), "cubit": (35, 55, 40, 50, 55),
-             "pegang": (40, 70, 75, 78, 80), "tunjuk": (45, 0, 85, 88, 90), "buka": (0, 0, 0, 0, 0), "garpu": (20, 16, 40, 38, 42)}
+             "pegang": (40, 70, 75, 78, 80), "tunjuk": (45, 0, 85, 88, 90), "buka": (0, 0, 0, 0, 0), "garpu": (20, 16, 45, 60, 68)}
     for i, deg in enumerate(table[shape], start=1): curl(rig, side, i, deg * amount)
 
 def close_on(rig, side, prop_objs, fingers=(1, 2, 3, 4, 5), step=4, max_deg=95, gap=0.002):
@@ -342,6 +342,59 @@ def close_on(rig, side, prop_objs, fingers=(1, 2, 3, 4, 5), step=4, max_deg=95, 
             if near(tip(b3)) < 0.015 + gap: break
             if fi > 1 and _finger_at_limit(rig, side, fi): break
             curl(rig, side, fi, step); total += step
+
+def unpress_fingers(rig, side, props, tol=0.0012, step=3.0, max_iter=14):
+    """open any finger whose skin sinks into a held prop (handle pressed into the fingertip pad)"""
+    body = next((c for c in rig.children if c.type == "MESH" and c.name.endswith(".body")), None)
+    if body is None or not props: return
+    vg = {i: g.name for i, g in enumerate(body.vertex_groups)}
+    fmap = {}
+    for v in body.data.vertices:
+        best = None
+        for g in v.groups:
+            n = vg[g.group]
+            if n.startswith("finger") and n.endswith("." + side) and (best is None or g.weight > best[0]): best = (g.weight, n)
+        if best and best[0] > 0.4: fmap[v.index] = int(best[1][6])
+    mods = [(m, m.show_viewport) for m in body.modifiers if m.type in ("SUBSURF", "MASK")]
+    for m, _ in mods: m.show_viewport = False
+    try:
+        for _ in range(max_iter):
+            bpy.context.view_layer.update(); dg = bpy.context.evaluated_depsgraph_get()
+            ev = body.evaluated_get(dg); me = ev.to_mesh(); mw = body.matrix_world
+            worst = {}
+            for o in props:
+                T = BVHTree.FromObject(o, dg); gi = o.matrix_world.inverted()
+                for vi, fi in fmap.items():
+                    lp = gi @ (mw @ me.vertices[vi].co)
+                    loc, nor, _, dist = T.find_nearest(lp)
+                    if loc is not None and dist < 0.02 and (lp - loc).dot(nor) < 0:
+                        worst[fi] = max(worst.get(fi, 0.0), dist)
+            ev.to_mesh_clear()
+            bad = [fi for fi, d in worst.items() if d > tol]
+            if not bad: break
+            _, _, lat = _hand_axes(rig, side)
+            for fi in bad:
+                if fi == 1: curl(rig, side, 1, -step); continue
+                for j in (3, 2):                                  # lift the fingertip first (DIP, then PIP)
+                    turn(rig, f"finger{fi}-{j}.{side}", lat, -step)
+    finally:
+        for m, v in mods: m.show_viewport = v
+
+def _finger_total(rig, side, fi):
+    along, n, lat = _hand_axes(rig, side); pdir = along; tot = 0.0
+    for j in (1, 2, 3):
+        d = _bone_dir(rig, f"finger{fi}-{j}.{side}"); tot += _flex(pdir, d, lat)[0]; pdir = d
+    return tot
+
+def cascade_curl(rig, side, slack=8.0):
+    """a natural hand: ring and little finger curl at least as much as their neighbour toward the index
+    (no lone straight little finger next to a curled middle finger)"""
+    if f"finger5-1.{side}" not in rig.pose.bones: return
+    for fi in (4, 5):
+        for _ in range(30):
+            if _finger_total(rig, side, fi) >= _finger_total(rig, side, fi - 1) - slack: break
+            if _finger_at_limit(rig, side, fi): break
+            curl(rig, side, fi, 4)
 
 def _finger_at_limit(rig, side, fi):
     along, n, lat = _hand_axes(rig, side); pdir = along
@@ -381,7 +434,7 @@ def place_pen(prop, rig, side, grip_local=Vector((0, 0, 0)), axis_local=Vector((
     """pen / cutlery grip: the handle lies along the underside of the index finger, pinched by the thumb and the
     middle finger; the working end sticks out past the index fingertip"""
     bpy.context.view_layer.update()
-    a = bone_world(rig, f"finger2-1.{side}"); b = bone_world(rig, f"finger2-3.{side}", tail=True)
+    a = bone_world(rig, f"finger2-1.{side}"); b = bone_world(rig, f"finger2-2.{side}", tail=True)   # tip joint excluded
     c, along, across, normal = palm_frame(rig, side)
     ax_w = (b - a).normalized()
     # the rear of the handle must leave through the thumb web over the knuckle (dorsal + thumb side), never through
