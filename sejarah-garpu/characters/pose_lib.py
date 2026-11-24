@@ -270,10 +270,25 @@ def apply_anatomy(rig, bones=None):
         elif bones and f"wrist.{s}" in bones: fix_arm(rig, s, swivel=False)
         if not bones or any(b.startswith("finger") and b.endswith("." + s) for b in bones): limit_fingers(rig, s)
 
+def _hemisphere(rig, pb, frame):
+    """keep a new quaternion key on the same hemisphere as the animation around it (q and -q are the same
+    rotation, but interpolating from one to the other's sign spins the bone the long way round)"""
+    ad = rig.animation_data
+    if not ad or not ad.action: return
+    path = f'pose.bones["{pb.name}"].rotation_quaternion'
+    fc = [ad.action.fcurves.find(path, index=i) for i in range(4)]
+    if any(c is None or not len(c.keyframe_points) for c in fc): return
+    # the nearest existing key in time is the neighbour this key will be interpolated against
+    ks = sorted({round(k.co.x) for k in fc[0].keyframe_points if round(k.co.x) != frame}, key=lambda x: abs(x - frame))
+    if not ks: return
+    q0 = Quaternion([c.evaluate(ks[0]) for c in fc])
+    if q0.dot(pb.rotation_quaternion) < 0: pb.rotation_quaternion = -pb.rotation_quaternion
+
 def key_pose(rig, frame, bones=None, interp="BEZIER"):
     apply_anatomy(rig, bones)
     for pb in rig.pose.bones:
         if bones and pb.name not in bones: continue
+        if pb.rotation_mode == "QUATERNION": _hemisphere(rig, pb, frame)
         pb.keyframe_insert("rotation_quaternion", frame=frame)
         if pb.name == "root": pb.keyframe_insert("location", frame=frame)
     _interp(rig, interp)
