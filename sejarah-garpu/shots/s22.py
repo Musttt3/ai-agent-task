@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from nusa_common import *
 SID = "22"; f0, f1, _ = SHOTS[SID]
 sc = open_set("nusantara", SID)
-a, ra = leluhur_bersila("leluhur_a", -0.35, -0.76, 0, f0, f1, lean=40)
+a, ra = leluhur_bersila("leluhur_a", -0.35, -0.76, 0, f0, f1, lean=50)
 X, F, U = P.char_axes(ra)
 rice = bpy.data.objects["NASI_DAUN_A_NASI"]
 rc = rice.matrix_world.translation; top = rc + Vector((0, 0, 0.07 * 0.62 + 0.004))
@@ -15,11 +15,20 @@ from props import gundukan_nasi
 clump = gundukan_nasi("SUAPAN", 0.016, 0.9, bpy.data.collections["PROPS"])
 mouth = P.lips_front(a, ra, out=0.04)
 keys = [(f0, edge + U * 0.12 + F * 0.05), (1222, edge + U * 0.012), (1228, edge + U * 0.006), (1240, edge + U * 0.12), (f1, mouth - U * 0.1 + F * 0.15)]
+def pinch(): return (P.bone_world(ra, "finger2-3.R", tail=True) + P.bone_world(ra, "finger1-3.R", tail=True)) / 2
 for f, t in keys:
     sc.frame_set(f)
-    P.reach(ra, "R", t + U * 0.04 - F * 0.06, pole_dir=-X * 0.8 - U * 0.5, wrist_fwd=(F * 0.75 - U * 0.6).normalized())
-    P._roll_palm(ra, "R", (-U * 0.5 + X * 0.3 + F * 0.3).normalized())
-    P.hand_shape(ra, "R", "cubit", 0.75 if f >= 1228 else 0.35)
+    d = (F * 0.45 - U * 0.9).normalized() if f < 1240 else (F * 0.6 - U * 0.5).normalized()
+    w = t - d * 0.14
+    for it in range(6):            # aim the pinch point (thumb + index tips) exactly at t
+        P.reach(ra, "R", w, pole_dir=-X * 0.8 - U * 0.5, wrist_fwd=d)
+        P._roll_palm(ra, "R", (-U * 0.5 + X * 0.3 + F * 0.3).normalized())
+        P.hand_shape(ra, "R", "cubit", 0.75 if f >= 1228 else 0.35)
+        bpy.context.view_layer.update()
+        err = t - pinch()
+        if err.length < 0.004: break
+        w = w + err
+    print("PINCH", f, "err %.3f" % err.length)
     P.key_pose(ra, f, bones=[pb.name for pb in ra.pose.bones if pb.name.endswith(".R") and ("arm" in pb.name or "wrist" in pb.name or "finger" in pb.name)])
 sc.frame_set(1228)
 tipI = P.bone_world(ra, "finger2-3.R", tail=True); tipT = P.bone_world(ra, "finger1-3.R", tail=True)
