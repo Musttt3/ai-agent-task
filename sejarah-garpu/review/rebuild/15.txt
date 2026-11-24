@@ -1,4 +1,0 @@
-CHECK 15:
-BERSIH: tidak ada tabrakan
-AUDIT 15: frames 885-910
-AUDIT OK

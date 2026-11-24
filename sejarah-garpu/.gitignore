@@ -16,3 +16,7 @@ props/*.blend
 *.blend1
 __pycache__/
 shots/build.log
+
+# generated while building (collision + audit reports)
+shots/blend/*_tabrakan.tsv
+review/rebuild/

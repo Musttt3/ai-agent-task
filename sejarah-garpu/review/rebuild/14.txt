@@ -1,6 +1,0 @@
-CHECK 14:
-putri.body:lengan_bawah.R x putri.body:badan: frames 871-884 (6 f), max 9
-putri.body:lengan_bawah.R x putri.punkduck_medieval_dress: frames 862-884 (9 f), max 16
-putri.body:tangan.R x GARPU_EMAS (mm): frames 820-884 (23 f), max 2.7
-AUDIT 14: frames 820-884
-AUDIT OK
