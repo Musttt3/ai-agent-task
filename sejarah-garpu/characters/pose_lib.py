@@ -179,6 +179,40 @@ def _arm_pen(e, sh, wr, sp_lo, sp_hi, F, U):
     pen += max(0.0, (e - sh).dot(U) + 0.02) * 400 + max(0.0, -(e - sh).dot(F) - 0.12) * 200
     return pen
 
+_TORSO_TRIS = {}
+def _torso_bvh(rig):
+    """BVH of the character's own torso skin (deformed, current pose) for elbow-swivel clearance tests"""
+    body = next((c for c in rig.children if c.type == "MESH" and c.name.endswith(".body")), None)
+    if body is None: return None
+    if body.name not in _TORSO_TRIS:
+        vreg = _vertex_regions(body); tris = []
+        for p in body.data.polygons:
+            vs = list(p.vertices)
+            if all(vreg[i] == "badan" for i in vs):
+                for k in range(1, len(vs) - 1): tris.append((vs[0], vs[k], vs[k + 1]))
+        _TORSO_TRIS[body.name] = tris
+    mods = [(m, m.show_viewport) for m in body.modifiers if m.type in ("SUBSURF", "MASK")]
+    for m, _ in mods: m.show_viewport = False
+    try:
+        bpy.context.view_layer.update(); dg = bpy.context.evaluated_depsgraph_get()
+        ev = body.evaluated_get(dg); me = ev.to_mesh(); mw = body.matrix_world
+        co = [mw @ v.co for v in me.vertices]; ev.to_mesh_clear()
+    finally:
+        for m, v in mods: m.show_viewport = v
+    return BVHTree.FromPolygons(co, _TORSO_TRIS[body.name], all_triangles=True)
+
+def _torso_pen(T, e, sh, wr):
+    """how far (m, weighted) the elbow / forearm / upper arm skin would sink into the torso"""
+    if T is None: return 0.0
+    pen = 0.0
+    for pt, rad in ((e, 0.042), (e + (wr - e) * 0.25, 0.04), (e + (wr - e) * 0.5, 0.035), (e + (wr - e) * 0.75, 0.032),
+                    (sh + (e - sh) * 0.6, 0.045)):
+        loc, nor, _, d = T.find_nearest(pt, 0.3)
+        if loc is None: continue
+        sd = d if (pt - loc).dot(nor) >= 0 else -d
+        pen += max(0.0, rad - sd)
+    return pen * 2500
+
 def fix_arm(rig, side, swivel=True):
     """keep the wrist inside anatomical limits without moving the hand: swivel the elbow about the shoulder-wrist
     axis (hand world pose held fixed); if no swivel is good enough, bend the hand back to the limit"""
@@ -194,8 +228,9 @@ def fix_arm(rig, side, swivel=True):
         axis = (wr - sh).normalized()
         sp_lo = bone_world(rig, "spine03"); sp_hi = bone_world(rig, "neck01")
         keep = {b: rig.pose.bones[b].rotation_quaternion.copy() for b in (f"upperarm01.{s}", f"upperarm02.{s}", f"lowerarm01.{s}", f"lowerarm02.{s}")}
-        best = (ex0 + _arm_pen(el0, sh, wr, sp_lo, sp_hi, F, U), 0)
-        for deg in range(-170, 180, 10):
+        T = _torso_bvh(rig)
+        best = (ex0 + _arm_pen(el0, sh, wr, sp_lo, sp_hi, F, U) + _torso_pen(T, el0, sh, wr), 0)
+        for deg in range(-120, 130, 10):
             if deg == 0: continue
             e = sh + Quaternion(axis, math.radians(deg)) @ (el0 - sh)
             for b in (f"upperarm01.{s}", f"upperarm02.{s}"): aim(rig, b, e - sh)
@@ -203,7 +238,7 @@ def fix_arm(rig, side, swivel=True):
             _set_world(rig, f"wrist.{s}", Mw)
             ex = _wrist_state(rig, s)[0]
             # elbow must stay outside the torso and not lift above the shoulder
-            cost = ex + _arm_pen(e, sh, wr, sp_lo, sp_hi, F, U) + abs(deg) * 0.05
+            cost = ex + _arm_pen(e, sh, wr, sp_lo, sp_hi, F, U) + _torso_pen(T, e, sh, wr) + abs(deg) * 0.12
             if cost < best[0]: best = (cost, deg)
         for b, q in keep.items(): rig.pose.bones[b].rotation_quaternion = q
         bpy.context.view_layer.update()

@@ -73,14 +73,21 @@ def point_at(r, f, target, side=None):
     for bn, k in (("spine02", 0.3), ("spine01", 0.3)):
         r.pose.bones[bn].rotation_mode = "QUATERNION"; P.turn(r, bn, U, max(-45, min(45, yaw * k)))
     P.key_pose(r, f, bones=["spine02", "spine01"])
-    # lift the hand off the lap first (a key 4 frames before), so it never sweeps through the thigh
-    bpy.context.scene.frame_set(f - 6)
+    bones = [pb.name for pb in r.pose.bones if pb.name.endswith("." + side) and ("arm" in pb.name or "wrist" in pb.name or "finger" in pb.name or "clavicle" in pb.name)]
+    pole = -U - (X if side == "R" else -X) * 0.3
+    def final():
+        bpy.context.scene.frame_set(f)
+        sh = P.bone_world(r, f"upperarm01.{side}"); d = (Vector(target) - sh).normalized()
+        P.reach(r, side, sh + d * 0.52, pole_dir=pole, wrist_fwd=d)
+        P.hand_shape(r, side, "tunjuk", 1.0)
+        return d
+    # the palm faces the same way on the way up as in the point (no forearm spin), and the hand leaves the lap
+    # 13 frames before the point lands: up off the thigh first, then out toward the target
+    d = final(); pn = P.palm_frame(r, side)[3].copy()
+    bpy.context.scene.frame_set(f - 13)
     shl = P.bone_world(r, f"upperarm01.{side}")
-    P.reach(r, side, shl + F * 0.3 - U * 0.25 + (X if side == "L" else -X) * 0.1, pole_dir=-U - (X if side == "R" else -X) * 0.3, wrist_fwd=F)
-    P.key_pose(r, f - 6, bones=[pb.name for pb in r.pose.bones if pb.name.endswith("." + side) and ("arm" in pb.name or "wrist" in pb.name)])
-    bpy.context.scene.frame_set(f)
-    sh = P.bone_world(r, f"upperarm01.{side}")
-    d = (Vector(target) - sh).normalized()
-    P.reach(r, side, sh + d * 0.52, pole_dir=-U - (X if side == "R" else -X) * 0.3, wrist_fwd=d)
-    P.hand_shape(r, side, "tunjuk", 1.0)
-    P.key_pose(r, f, bones=[pb.name for pb in r.pose.bones if pb.name.endswith("." + side) and ("arm" in pb.name or "wrist" in pb.name or "finger" in pb.name or "clavicle" in pb.name)])
+    P.reach(r, side, shl + F * 0.3 - U * 0.22 + (X if side == "L" else -X) * 0.1, pole_dir=pole, wrist_fwd=(F + d).normalized())
+    P._roll_palm(r, side, pn); P.hand_shape(r, side, "rileks", 0.6)
+    P.key_pose(r, f - 13, bones=bones)
+    final()
+    P.key_pose(r, f, bones=bones)

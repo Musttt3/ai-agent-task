@@ -10,11 +10,13 @@ TH = 0.76
 b, r = actor("narator", loc=Vector((0.0, 0.74, 0)), yaw=0)
 P.sit(r, b, seat_z(0.0, 0.74), lean=10)
 X, F, U = P.char_axes(r)
-g = bpy.data.objects["GARPU_EMAS"]; g["grip_mode"] = "pena"
-show = P.bone_world(r, "spine01") + F * 0.33 + U * 0.25 - X * 0.08
-d_up = (U * 0.85 + F * 0.2 + X * 0.3).normalized()
-hold(g, r, "R", [(f0, show), (f1, show + U * 0.01)], point_local=Vector(g["tip"]), grip_local=(0, 0, 0.0), pole=-U * 0.8 - X * 0.6,
-     hand_dirs={f0: d_up, f1: d_up}, palm_dirs={f0: X * 0.7 - F * 0.4, f1: X * 0.7 - F * 0.4}, fingers=(1, 3), pre_shape=("garpu", 1.0), prop_dirs={f0: d_up, f1: d_up})
+g = bpy.data.objects["GARPU_EMAS"]; g["grip_mode"] = "genggam"
+# he holds the fork upright in a loose fist (thumb over the index), tines up at chin height, and studies it
+show = P.bone_world(r, "spine01") + F * 0.32 + U * 0.07 - X * 0.17
+d_fwd = (F * 0.85 + X * 0.35 - U * 0.1).normalized()
+d_up = (U * 0.95 + X * 0.12 + F * 0.05).normalized()
+hold(g, r, "R", [(f0, show), (f1, show + U * 0.012)], point_local=Vector((0, 0, -0.035)), grip_local=(0, 0, -0.035), pole=-U * 0.8 - X * 0.5,
+     hand_dirs={f0: d_fwd, f1: d_fwd}, palm_dirs={f0: X, f1: X}, fingers=(1, 2, 3, 4, 5), pre_shape=("pegang", 0.55), prop_dirs={f0: d_up, f1: d_up})
 P.relaxed_arms(r, sides=("L",))
 P.reach(r, "L", Vector((0.22, 0.38, TH + 0.035)), pole_dir=X - U * 0.5, wrist_fwd=F - U * 0.15); P._roll_palm(r, "L", -U); P.hand_shape(r, "L", "rileks", 0.6)
 P.key_pose(r, f0, bones=[pb.name for pb in r.pose.bones if pb.name.endswith(".L")]); r.keyframe_insert("location", frame=f0)

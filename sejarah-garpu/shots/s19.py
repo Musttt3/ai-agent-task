@@ -8,7 +8,7 @@ folk = townsfolk(f0, f1)
 cor = Vector((0.0, 1.1, 1.25))
 for i, ((b, r), side) in enumerate(zip(folk, (None, None, None))):
     look(r, f0, cor, 1.0)
-    point_at(r, 1072 + i * 3, cor, side)
+    point_at(r, 1078 + i * 4, cor, side)
     X, F, U = P.char_axes(r)
     for f, k in ((1075, 1), (1083, -1), (1091, 1), (1099, -1), (f1, 0)):    # shoulders shake with laughter
         sc.frame_set(f); P.turn(r, "spine03", X, 3 * k); P.key_pose(r, f, bones=["spine03"])

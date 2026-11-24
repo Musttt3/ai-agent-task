@@ -7,19 +7,22 @@ SID = "17"; f0, f1, _ = SHOTS[SID]
 sc = open_set("london", SID)
 b, r = coryat_seated(f0, f1)
 X, F, U = P.char_axes(r)
-g = bpy.data.objects["GARPU_CORYAT"]; g["grip_mode"] = "pena"; g["r"] = 0.009
+g = bpy.data.objects["GARPU_CORYAT"]; g["grip_mode"] = "genggam"; g["r"] = 0.009
 case = bpy.data.objects["KOTAK_GARPU"]
-start = g.matrix_world @ Vector(g["tip"])
-show = P.bone_world(r, "spine01") + F * 0.35 + U * 0.24 - X * 0.1
-d_case = (g.matrix_world.to_3x3() @ Vector((0, 0, 1))).normalized(); d_up = (U * 0.85 + F * 0.3 + X * 0.15).normalized()
-mid = start.lerp(show, 0.5) + U * 0.18
-errs = hold(g, r, "R", [(f0, start + U * 0.045), (1000, start + U * 0.23 + F * 0.02), (1007, mid), (1015, show), (f1, show + U * 0.01)], point_local=Vector(g["tip"]),
-            grip_local=(0, 0, -0.01), pole=-U * 0.8 - X * 0.6, hand_dirs={f0: d_case, 1000: (d_case + d_up).normalized(), 1007: d_up, 1015: d_up, f1: d_up},
-            palm_dirs={f0: -U, 1000: X * 0.6 - U * 0.4, 1007: X * 0.7 - F * 0.4, 1015: X * 0.7 - F * 0.4, f1: X * 0.7 - F * 0.4}, fingers=(1, 3), pre_shape=("garpu", 1.0),
-            prop_dirs={1000: (d_case + d_up).normalized(), 1007: d_up, 1015: d_up, f1: d_up})
+GL = Vector((0, 0, -0.035))                                   # where the fist closes on the handle
+start = g.matrix_world @ GL
+# he closes his fist on the handle in the case, lifts it, and holds it up proudly, tines up, beside his face
+show = P.bone_world(r, "spine01") + F * 0.34 + U * 0.1 - X * 0.16
+d_case = (g.matrix_world.to_3x3() @ Vector((0, 0, 1))).normalized(); d_up = (U * 0.95 + X * 0.12 + F * 0.05).normalized()
+d_fwd = (F * 0.85 + X * 0.35 - U * 0.1).normalized()
+mid = start.lerp(show, 0.5) + U * 0.1
+errs = hold(g, r, "R", [(f0, start + U * 0.004), (1000, start + U * 0.16 + F * 0.02), (1007, mid), (1015, show), (f1, show + U * 0.01)], point_local=GL,
+            grip_local=GL, pole=-U * 0.8 - X * 0.6, hand_dirs={f0: (F - U * 0.3).normalized(), 1000: d_fwd, 1007: d_fwd, 1015: d_fwd, f1: d_fwd},
+            palm_dirs={f0: -U, 1000: X * 0.6 - U * 0.4, 1007: X, 1015: X, f1: X}, fingers=(1, 2, 3, 4, 5), pre_shape=("pegang", 0.55),
+            prop_dirs={f0: d_case, 1000: (d_case + d_up).normalized(), 1007: d_up, 1015: d_up, f1: d_up})
 print("HOLD", errs)
 P.face(b, f0, "SENYUM", 0.5, extra={"eyeLookDownLeft": 0.5, "eyeLookDownRight": 0.5}); P.face(b, 1012, "SENANG", 0.9); P.face(b, f1, "BANGGA", 1.0)
-look(r, 1018, show + U * 0.05, 0.6); look(r, f1, show + U * 0.05, 0.6)
+look(r, 1018, show + U * 0.12, 0.6); look(r, f1, show + U * 0.12, 0.6)
 head = P.bone_world(r, "head")
 cam = camera(SID, 45, [(f0, (0.45, -0.95, 1.32), (0.0, 1.1, 1.1)), (f1, (0.38, -0.65, 1.32), (0.0, 1.15, 1.18))], focus=show, fstop=2.8)
 finish(SID, chars=[(b, r)], props=[g, case], env=[o for o in bpy.data.objects["Meja_Coryat"].children_recursive if o.type == "MESH"])
