@@ -1,28 +1,46 @@
-1113	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	4
+1113	coryat.body:tangan.R	coryat.body:kepala	204
+1113	coryat.body:lengan_bawah.R	coryat.body:badan	46
+1113	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	45
 1113	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
-1116	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	4
+1113	coryat.body:kepala	GARPU_CORYAT (mm)	10.7
+1116	coryat.body:tangan.R	coryat.body:kepala	206
+1116	coryat.body:lengan_bawah.R	coryat.body:badan	46
+1116	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	45
 1116	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
-1119	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	4
+1116	coryat.body:kepala	GARPU_CORYAT (mm)	10.7
+1119	coryat.body:tangan.R	coryat.body:kepala	206
+1119	coryat.body:lengan_bawah.R	coryat.body:badan	46
+1119	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	45
 1119	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
-1122	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	4
+1119	coryat.body:kepala	GARPU_CORYAT (mm)	10.8
+1122	coryat.body:tangan.R	coryat.body:kepala	206
+1122	coryat.body:lengan_bawah.R	coryat.body:badan	46
+1122	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	45
 1122	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
-1125	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	4
+1122	coryat.body:kepala	GARPU_CORYAT (mm)	10.7
+1125	coryat.body:tangan.R	coryat.body:kepala	206
+1125	coryat.body:lengan_bawah.R	coryat.body:badan	46
+1125	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	45
 1125	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
-1128	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	4
+1125	coryat.body:kepala	GARPU_CORYAT (mm)	10.4
+1128	coryat.body:tangan.R	coryat.body:kepala	211
+1128	coryat.body:lengan_bawah.R	coryat.body:badan	46
+1128	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	45
 1128	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
-1131	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	12
-1131	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.7
-1134	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	13
+1128	coryat.body:kepala	GARPU_CORYAT (mm)	10.4
+1131	coryat.body:lengan_bawah.R	coryat.body:badan	34
+1131	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	44
+1131	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
+1131	coryat.body:kepala	GARPU_CORYAT (mm)	4.2
+1134	coryat.body:lengan_bawah.R	coryat.body:badan	52
+1134	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	46
 1134	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
-1137	coryat.body:lengan_bawah.R	coryat.body:badan	13
 1137	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	21
-1137	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.7
-1140	coryat.body:lengan_bawah.R	coryat.body:badan	16
-1140	coryat.body:lengan_bawah.R	coryat.drednicolson_asymmetric_tunic_and_sash	28
-1140	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.7
-1143	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.7
-1146	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.7
-1149	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.7
-1152	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.7
-1155	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.7
-1157	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.7
+1137	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
+1140	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
+1143	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
+1146	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
+1149	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
+1152	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
+1155	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
+1157	coryat.body:tangan.R	GARPU_CORYAT (mm)	3.8
