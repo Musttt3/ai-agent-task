@@ -131,7 +131,9 @@ def hold(prop, rig, side, frames_keys, point_local=None, pole=None, hand_dir=Non
                       hd if hd is not None else F, pdir if pdir is not None else (U * 0.3 + (-X if s == "L" else X)),
                       grip_local=Vector(grip_local), axis_local=Vector(axis_local), roll=roll,
                       prop_dir=(prop_dirs or {}).get(f))
+        P.limit_fingers(rig, s)
         P.close_on(rig, s, [prop], fingers=fingers)
+        P.limit_fingers(rig, s)
         P.key_pose(rig, f, bones=arm_bones)
         errs.append(round(e, 4))
     # the prop rides on the wrist: same palm-relative placement at every key -> one Child Of constraint

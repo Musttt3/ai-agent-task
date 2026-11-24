@@ -1,0 +1,451 @@
+AUDIT 01: frames 0-51
+AUDIT OK
+AUDIT 02: frames 52-109
+AUDIT pergelangan_ekstrem: bangsawan_b L frames 52-108 (58x) e.g. bangsawan_b L fleksi -147°
+AUDIT pergelangan_ekstrem: bangsawan_b R frames 52-108 (58x) e.g. bangsawan_b R fleksi -147°
+AUDIT pergelangan_ekstrem: putri R frames 52-108 (43x) e.g. putri R miring -44°
+AUDIT jari_terlalu_menekuk: putri finger3-1.R frames 52-108 (29x) e.g. putri finger3-1.R 130°
+AUDIT jari_terlalu_menekuk: putri finger3-2.R frames 52-108 (29x) e.g. putri finger3-2.R 141°
+AUDIT jari_terlalu_menekuk: putri finger3-3.R frames 52-108 (29x) e.g. putri finger3-3.R 116°
+AUDIT 03: frames 110-141
+AUDIT pergelangan_ekstrem: narator L frames 110-140 (16x) e.g. narator L miring 40°
+AUDIT pergelangan_ekstrem: narator R frames 110-140 (16x) e.g. narator R fleksi -90°
+AUDIT jari_terlalu_menekuk: narator finger3-1.R frames 110-140 (16x) e.g. narator finger3-1.R 129°
+AUDIT jari_terlalu_menekuk: narator finger3-2.R frames 110-140 (16x) e.g. narator finger3-2.R 141°
+AUDIT jari_terlalu_menekuk: narator finger3-3.R frames 110-140 (16x) e.g. narator finger3-3.R 116°
+AUDIT 04: frames 142-223
+AUDIT pergelangan_ekstrem: purba L frames 142-222 (41x) e.g. purba L miring 51°
+AUDIT pergelangan_ekstrem: purba R frames 142-222 (76x) e.g. purba R fleksi 104°
+AUDIT 05: frames 224-245
+AUDIT OK
+AUDIT 06: frames 246-310
+AUDIT jari_terlalu_menekuk: purba finger2-1.R frames 246-310 (33x) e.g. purba finger2-1.R 117°
+AUDIT jari_terlalu_menekuk: purba finger2-2.R frames 246-310 (33x) e.g. purba finger2-2.R 140°
+AUDIT jari_terlalu_menekuk: purba finger2-3.R frames 246-310 (33x) e.g. purba finger2-3.R 113°
+AUDIT jari_miring: purba finger2-2.R frames 246-310 (33x) e.g. purba finger2-2.R 31°
+AUDIT 07: frames 311-381
+AUDIT jari_terlalu_menekuk: koki finger2-1.R frames 311-381 (36x) e.g. koki finger2-1.R 119°
+AUDIT jari_terlalu_menekuk: koki finger2-2.R frames 311-381 (36x) e.g. koki finger2-2.R 142°
+AUDIT jari_terlalu_menekuk: koki finger2-3.R frames 311-381 (36x) e.g. koki finger2-3.R 115°
+AUDIT jari_terlalu_menekuk: koki finger3-1.R frames 311-381 (36x) e.g. koki finger3-1.R 127°
+AUDIT jari_terlalu_menekuk: koki finger3-2.R frames 311-381 (36x) e.g. koki finger3-2.R 139°
+AUDIT jari_terlalu_menekuk: koki finger3-3.R frames 311-381 (36x) e.g. koki finger3-3.R 115°
+AUDIT jari_miring: koki finger2-2.R frames 311-381 (36x) e.g. koki finger2-2.R 33°
+AUDIT pergelangan_ekstrem: koki R frames 311-381 (36x) e.g. koki R fleksi -90°
+AUDIT 08: frames 382-444
+AUDIT OK
+AUDIT 09: frames 445-531
+AUDIT jari_terlalu_menekuk: koki finger2-1.R frames 445-531 (44x) e.g. koki finger2-1.R 119°
+AUDIT jari_terlalu_menekuk: koki finger2-2.R frames 445-531 (44x) e.g. koki finger2-2.R 142°
+AUDIT jari_terlalu_menekuk: koki finger2-3.R frames 445-531 (44x) e.g. koki finger2-3.R 115°
+AUDIT jari_terlalu_menekuk: koki finger3-1.R frames 445-531 (44x) e.g. koki finger3-1.R 127°
+AUDIT jari_terlalu_menekuk: koki finger3-2.R frames 445-531 (44x) e.g. koki finger3-2.R 139°
+AUDIT jari_terlalu_menekuk: koki finger3-3.R frames 445-531 (44x) e.g. koki finger3-3.R 115°
+AUDIT jari_miring: koki finger2-2.R frames 445-531 (44x) e.g. koki finger2-2.R 33°
+AUDIT pergelangan_ekstrem: koki R frames 445-531 (44x) e.g. koki R fleksi -90°
+AUDIT 10: frames 532-616
+AUDIT pergelangan_ekstrem: romawi L frames 532-616 (43x) e.g. romawi L fleksi -83°
+AUDIT pergelangan_ekstrem: romawi R frames 554-594 (21x) e.g. romawi R fleksi -77°
+AUDIT jari_terlalu_menekuk: romawi finger3-1.R frames 532-616 (43x) e.g. romawi finger3-1.R 130°
+AUDIT jari_terlalu_menekuk: romawi finger3-2.R frames 532-616 (43x) e.g. romawi finger3-2.R 142°
+AUDIT jari_terlalu_menekuk: romawi finger3-3.R frames 532-616 (43x) e.g. romawi finger3-3.R 115°
+AUDIT 11: frames 617-688
+AUDIT jari_terlalu_menekuk: romawi finger3-1.R frames 617-687 (36x) e.g. romawi finger3-1.R 130°
+AUDIT jari_terlalu_menekuk: romawi finger3-2.R frames 617-687 (36x) e.g. romawi finger3-2.R 142°
+AUDIT jari_terlalu_menekuk: romawi finger3-3.R frames 617-687 (36x) e.g. romawi finger3-3.R 115°
+AUDIT pergelangan_ekstrem: romawi R frames 617-687 (72x) e.g. romawi R fleksi 178°
+AUDIT 12: frames 689-769
+AUDIT pergelangan_ekstrem: bangsawan_a L frames 689-769 (41x) e.g. bangsawan_a L fleksi -147°
+AUDIT pergelangan_ekstrem: bangsawan_a R frames 689-769 (41x) e.g. bangsawan_a R fleksi -147°
+AUDIT pergelangan_ekstrem: bangsawan_b L frames 689-769 (82x) e.g. bangsawan_b L fleksi -147°
+AUDIT pergelangan_ekstrem: bangsawan_b R frames 689-769 (82x) e.g. bangsawan_b R fleksi -147°
+AUDIT pergelangan_ekstrem: putri R frames 689-769 (41x) e.g. putri R miring -44°
+AUDIT jari_terlalu_menekuk: putri finger3-1.R frames 689-769 (41x) e.g. putri finger3-1.R 130°
+AUDIT jari_terlalu_menekuk: putri finger3-2.R frames 689-769 (41x) e.g. putri finger3-2.R 141°
+AUDIT jari_terlalu_menekuk: putri finger3-3.R frames 689-769 (41x) e.g. putri finger3-3.R 116°
+AUDIT 13: frames 770-819
+AUDIT jari_terlalu_menekuk: putri finger3-1.R frames 770-818 (25x) e.g. putri finger3-1.R 130°
+AUDIT jari_terlalu_menekuk: putri finger3-2.R frames 770-818 (25x) e.g. putri finger3-2.R 141°
+AUDIT jari_terlalu_menekuk: putri finger3-3.R frames 770-818 (25x) e.g. putri finger3-3.R 116°
+AUDIT pergelangan_ekstrem: putri R frames 770-818 (34x) e.g. putri R miring -44°
+AUDIT 14: frames 820-884
+AUDIT jari_terlalu_menekuk: putri finger3-1.R frames 820-884 (33x) e.g. putri finger3-1.R 130°
+AUDIT jari_terlalu_menekuk: putri finger3-2.R frames 820-884 (33x) e.g. putri finger3-2.R 141°
+AUDIT jari_terlalu_menekuk: putri finger3-3.R frames 820-884 (33x) e.g. putri finger3-3.R 116°
+AUDIT pergelangan_ekstrem: putri R frames 820-884 (66x) e.g. putri R fleksi -114°
+AUDIT gerak_terlalu_cepat: uskup wrist.R frames 842-844 (2x) e.g. uskup wrist.R 3.4 m/s
+AUDIT rotasi_melompat: uskup finger3-3.R frames 842-844 (2x) e.g. uskup finger3-3.R 36°/f
+AUDIT rotasi_melompat: uskup finger4-3.R frames 842-844 (2x) e.g. uskup finger4-3.R 36°/f
+AUDIT rotasi_melompat: uskup finger5-3.R frames 842-844 (2x) e.g. uskup finger5-3.R 38°/f
+AUDIT jari_miring: uskup finger5-2.R frames 844-884 (21x) e.g. uskup finger5-2.R 31°
+AUDIT gerak_menyentak: uskup wrist.R frames 846-846 (1x) e.g. uskup wrist.R accel 35 mm/f²
+AUDIT 15: frames 885-910
+AUDIT jari_miring: uskup finger5-2.R frames 885-909 (13x) e.g. uskup finger5-2.R 27°
+AUDIT 16: frames 911-986
+AUDIT OK
+AUDIT 17: frames 987-1036
+AUDIT jari_terlalu_menekuk: coryat finger3-1.R frames 987-1035 (25x) e.g. coryat finger3-1.R 131°
+AUDIT jari_terlalu_menekuk: coryat finger3-2.R frames 987-1035 (25x) e.g. coryat finger3-2.R 141°
+AUDIT jari_terlalu_menekuk: coryat finger3-3.R frames 987-1035 (25x) e.g. coryat finger3-3.R 115°
+AUDIT pergelangan_ekstrem: coryat R frames 987-1035 (34x) e.g. coryat R miring 81°
+AUDIT 18: frames 1037-1060
+AUDIT pergelangan_ekstrem: warga_a L frames 1037-1059 (12x) e.g. warga_a L miring 67°
+AUDIT pergelangan_ekstrem: warga_a R frames 1037-1059 (12x) e.g. warga_a R miring -67°
+AUDIT pergelangan_ekstrem: warga_b L frames 1037-1059 (12x) e.g. warga_b L miring 69°
+AUDIT pergelangan_ekstrem: warga_b R frames 1037-1059 (12x) e.g. warga_b R miring -69°
+AUDIT pergelangan_ekstrem: warga_c L frames 1037-1059 (12x) e.g. warga_c L miring 69°
+AUDIT pergelangan_ekstrem: warga_c R frames 1037-1059 (12x) e.g. warga_c R miring -69°
+AUDIT rotasi_melompat: warga_a head frames 1045-1045 (1x) e.g. warga_a head 31°/f
+AUDIT rotasi_melompat: warga_a jaw frames 1045-1045 (1x) e.g. warga_a jaw 31°/f
+AUDIT rotasi_melompat: warga_a special04 frames 1045-1045 (1x) e.g. warga_a special04 31°/f
+AUDIT rotasi_melompat: warga_a oris02 frames 1045-1045 (1x) e.g. warga_a oris02 31°/f
+AUDIT rotasi_melompat: warga_a oris01 frames 1045-1045 (1x) e.g. warga_a oris01 31°/f
+AUDIT rotasi_melompat: warga_a oris06.L frames 1045-1045 (1x) e.g. warga_a oris06.L 31°/f
+AUDIT rotasi_melompat: warga_a oris07.L frames 1045-1045 (1x) e.g. warga_a oris07.L 31°/f
+AUDIT rotasi_melompat: warga_a oris06.R frames 1045-1045 (1x) e.g. warga_a oris06.R 31°/f
+AUDIT rotasi_melompat: warga_a oris07.R frames 1045-1045 (1x) e.g. warga_a oris07.R 31°/f
+AUDIT rotasi_melompat: warga_a tongue00 frames 1045-1045 (1x) e.g. warga_a tongue00 31°/f
+AUDIT rotasi_melompat: warga_a tongue01 frames 1045-1045 (1x) e.g. warga_a tongue01 31°/f
+AUDIT rotasi_melompat: warga_a tongue02 frames 1045-1045 (1x) e.g. warga_a tongue02 31°/f
+AUDIT rotasi_melompat: warga_a tongue03 frames 1045-1045 (1x) e.g. warga_a tongue03 31°/f
+AUDIT rotasi_melompat: warga_a tongue04 frames 1045-1045 (1x) e.g. warga_a tongue04 31°/f
+AUDIT rotasi_melompat: warga_a tongue07.L frames 1045-1045 (1x) e.g. warga_a tongue07.L 31°/f
+AUDIT rotasi_melompat: warga_a tongue07.R frames 1045-1045 (1x) e.g. warga_a tongue07.R 31°/f
+AUDIT rotasi_melompat: warga_a tongue06.L frames 1045-1045 (1x) e.g. warga_a tongue06.L 31°/f
+AUDIT rotasi_melompat: warga_a tongue06.R frames 1045-1045 (1x) e.g. warga_a tongue06.R 31°/f
+AUDIT rotasi_melompat: warga_a tongue05.L frames 1045-1045 (1x) e.g. warga_a tongue05.L 31°/f
+AUDIT rotasi_melompat: warga_a tongue05.R frames 1045-1045 (1x) e.g. warga_a tongue05.R 31°/f
+AUDIT rotasi_melompat: warga_a levator02.L frames 1045-1045 (1x) e.g. warga_a levator02.L 31°/f
+AUDIT rotasi_melompat: warga_a levator03.L frames 1045-1045 (1x) e.g. warga_a levator03.L 31°/f
+AUDIT rotasi_melompat: warga_a levator04.L frames 1045-1045 (1x) e.g. warga_a levator04.L 31°/f
+AUDIT rotasi_melompat: warga_a levator05.L frames 1045-1045 (1x) e.g. warga_a levator05.L 31°/f
+AUDIT rotasi_melompat: warga_a levator02.R frames 1045-1045 (1x) e.g. warga_a levator02.R 31°/f
+AUDIT rotasi_melompat: warga_a levator03.R frames 1045-1045 (1x) e.g. warga_a levator03.R 31°/f
+AUDIT rotasi_melompat: warga_a levator04.R frames 1045-1045 (1x) e.g. warga_a levator04.R 31°/f
+AUDIT rotasi_melompat: warga_a levator05.R frames 1045-1045 (1x) e.g. warga_a levator05.R 31°/f
+AUDIT rotasi_melompat: warga_a special01 frames 1045-1045 (1x) e.g. warga_a special01 31°/f
+AUDIT rotasi_melompat: warga_a oris04.L frames 1045-1045 (1x) e.g. warga_a oris04.L 31°/f
+AUDIT rotasi_melompat: warga_a oris03.L frames 1045-1045 (1x) e.g. warga_a oris03.L 31°/f
+AUDIT rotasi_melompat: warga_a oris04.R frames 1045-1045 (1x) e.g. warga_a oris04.R 31°/f
+AUDIT rotasi_melompat: warga_a oris03.R frames 1045-1045 (1x) e.g. warga_a oris03.R 31°/f
+AUDIT rotasi_melompat: warga_a oris06 frames 1045-1045 (1x) e.g. warga_a oris06 31°/f
+AUDIT rotasi_melompat: warga_a oris05 frames 1045-1045 (1x) e.g. warga_a oris05 31°/f
+AUDIT rotasi_melompat: warga_a special03 frames 1045-1045 (1x) e.g. warga_a special03 31°/f
+AUDIT rotasi_melompat: warga_a levator06.L frames 1045-1045 (1x) e.g. warga_a levator06.L 31°/f
+AUDIT rotasi_melompat: warga_a levator06.R frames 1045-1045 (1x) e.g. warga_a levator06.R 31°/f
+AUDIT rotasi_melompat: warga_a special06.L frames 1045-1045 (1x) e.g. warga_a special06.L 31°/f
+AUDIT rotasi_melompat: warga_a special05.L frames 1045-1045 (1x) e.g. warga_a special05.L 31°/f
+AUDIT rotasi_melompat: warga_a eye.L frames 1045-1045 (1x) e.g. warga_a eye.L 31°/f
+AUDIT rotasi_melompat: warga_a orbicularis03.L frames 1045-1045 (1x) e.g. warga_a orbicularis03.L 31°/f
+AUDIT rotasi_melompat: warga_a orbicularis04.L frames 1045-1045 (1x) e.g. warga_a orbicularis04.L 31°/f
+AUDIT rotasi_melompat: warga_a special06.R frames 1045-1045 (1x) e.g. warga_a special06.R 31°/f
+AUDIT rotasi_melompat: warga_a special05.R frames 1045-1045 (1x) e.g. warga_a special05.R 31°/f
+AUDIT rotasi_melompat: warga_a eye.R frames 1045-1045 (1x) e.g. warga_a eye.R 31°/f
+AUDIT rotasi_melompat: warga_a orbicularis03.R frames 1045-1045 (1x) e.g. warga_a orbicularis03.R 31°/f
+AUDIT rotasi_melompat: warga_a orbicularis04.R frames 1045-1045 (1x) e.g. warga_a orbicularis04.R 31°/f
+AUDIT rotasi_melompat: warga_a temporalis01.L frames 1045-1045 (1x) e.g. warga_a temporalis01.L 31°/f
+AUDIT rotasi_melompat: warga_a oculi02.L frames 1045-1045 (1x) e.g. warga_a oculi02.L 31°/f
+AUDIT rotasi_melompat: warga_a oculi01.L frames 1045-1045 (1x) e.g. warga_a oculi01.L 31°/f
+AUDIT rotasi_melompat: warga_a temporalis01.R frames 1045-1045 (1x) e.g. warga_a temporalis01.R 31°/f
+AUDIT rotasi_melompat: warga_a oculi02.R frames 1045-1045 (1x) e.g. warga_a oculi02.R 31°/f
+AUDIT rotasi_melompat: warga_a oculi01.R frames 1045-1045 (1x) e.g. warga_a oculi01.R 31°/f
+AUDIT rotasi_melompat: warga_a temporalis02.L frames 1045-1045 (1x) e.g. warga_a temporalis02.L 31°/f
+AUDIT rotasi_melompat: warga_a risorius02.L frames 1045-1045 (1x) e.g. warga_a risorius02.L 31°/f
+AUDIT rotasi_melompat: warga_a risorius03.L frames 1045-1045 (1x) e.g. warga_a risorius03.L 31°/f
+AUDIT rotasi_melompat: warga_a temporalis02.R frames 1045-1045 (1x) e.g. warga_a temporalis02.R 31°/f
+AUDIT rotasi_melompat: warga_a risorius02.R frames 1045-1045 (1x) e.g. warga_a risorius02.R 31°/f
+AUDIT rotasi_melompat: warga_a risorius03.R frames 1045-1045 (1x) e.g. warga_a risorius03.R 31°/f
+AUDIT 19: frames 1061-1112
+AUDIT pergelangan_ekstrem: warga_a L frames 1061-1111 (26x) e.g. warga_a L miring 67°
+AUDIT pergelangan_ekstrem: warga_a R frames 1061-1111 (15x) e.g. warga_a R miring -67°
+AUDIT pergelangan_ekstrem: warga_b L frames 1061-1111 (16x) e.g. warga_b L miring 69°
+AUDIT pergelangan_ekstrem: warga_b R frames 1061-1111 (26x) e.g. warga_b R miring -69°
+AUDIT pergelangan_ekstrem: warga_c L frames 1061-1111 (26x) e.g. warga_c L miring 69°
+AUDIT pergelangan_ekstrem: warga_c R frames 1061-1111 (15x) e.g. warga_c R miring -69°
+AUDIT jari_miring: warga_a finger5-2.R frames 1063-1093 (8x) e.g. warga_a finger5-2.R 25°
+AUDIT jari_miring: warga_a finger5-3.R frames 1065-1077 (7x) e.g. warga_a finger5-3.R -29°
+AUDIT jari_miring: warga_b finger4-2.L frames 1065-1087 (10x) e.g. warga_b finger4-2.L -26°
+AUDIT jari_miring: warga_b finger5-2.L frames 1065-1095 (8x) e.g. warga_b finger5-2.L -30°
+AUDIT jari_miring: warga_c finger5-2.R frames 1065-1095 (8x) e.g. warga_c finger5-2.R 27°
+AUDIT jari_miring: warga_b finger5-3.L frames 1067-1081 (8x) e.g. warga_b finger5-3.L 34°
+AUDIT jari_miring: warga_c finger5-3.R frames 1069-1079 (6x) e.g. warga_c finger5-3.R -31°
+AUDIT gerak_terlalu_cepat: warga_a wrist.R frames 1063-1065 (2x) e.g. warga_a wrist.R 6.2 m/s
+AUDIT gerak_terlalu_cepat: warga_a wrist.L frames 1065-1065 (1x) e.g. warga_a wrist.L 3.7 m/s
+AUDIT gerak_terlalu_cepat: warga_b wrist.L frames 1067-1067 (1x) e.g. warga_b wrist.L 3.6 m/s
+AUDIT gerak_terlalu_cepat: warga_c wrist.R frames 1069-1069 (1x) e.g. warga_c wrist.R 4.3 m/s
+AUDIT rotasi_melompat: warga_a lowerarm01.R frames 1063-1065 (2x) e.g. warga_a lowerarm01.R 54°/f
+AUDIT rotasi_melompat: warga_a lowerarm02.R frames 1063-1065 (2x) e.g. warga_a lowerarm02.R 54°/f
+AUDIT rotasi_melompat: warga_a wrist.R frames 1063-1065 (2x) e.g. warga_a wrist.R 39°/f
+AUDIT rotasi_melompat: warga_a finger1-1.R frames 1063-1065 (2x) e.g. warga_a finger1-1.R 37°/f
+AUDIT rotasi_melompat: warga_a finger1-2.R frames 1063-1065 (2x) e.g. warga_a finger1-2.R 37°/f
+AUDIT rotasi_melompat: warga_a finger1-3.R frames 1063-1065 (2x) e.g. warga_a finger1-3.R 37°/f
+AUDIT rotasi_melompat: warga_a metacarpal1.R frames 1063-1065 (2x) e.g. warga_a metacarpal1.R 39°/f
+AUDIT rotasi_melompat: warga_a finger2-1.R frames 1063-1065 (2x) e.g. warga_a finger2-1.R 39°/f
+AUDIT rotasi_melompat: warga_a finger2-2.R frames 1063-1065 (2x) e.g. warga_a finger2-2.R 39°/f
+AUDIT rotasi_melompat: warga_a finger2-3.R frames 1063-1065 (2x) e.g. warga_a finger2-3.R 39°/f
+AUDIT rotasi_melompat: warga_a metacarpal2.R frames 1063-1065 (2x) e.g. warga_a metacarpal2.R 39°/f
+AUDIT rotasi_melompat: warga_a finger3-1.R frames 1063-1065 (2x) e.g. warga_a finger3-1.R 41°/f
+AUDIT rotasi_melompat: warga_a finger3-2.R frames 1063-1065 (2x) e.g. warga_a finger3-2.R 46°/f
+AUDIT rotasi_melompat: warga_a finger3-3.R frames 1063-1065 (2x) e.g. warga_a finger3-3.R 52°/f
+AUDIT rotasi_melompat: warga_a metacarpal3.R frames 1063-1065 (2x) e.g. warga_a metacarpal3.R 39°/f
+AUDIT rotasi_melompat: warga_a finger4-1.R frames 1063-1065 (2x) e.g. warga_a finger4-1.R 43°/f
+AUDIT rotasi_melompat: warga_a finger4-2.R frames 1063-1065 (2x) e.g. warga_a finger4-2.R 50°/f
+AUDIT rotasi_melompat: warga_a finger4-3.R frames 1063-1065 (2x) e.g. warga_a finger4-3.R 57°/f
+AUDIT rotasi_melompat: warga_a metacarpal4.R frames 1063-1065 (2x) e.g. warga_a metacarpal4.R 39°/f
+AUDIT rotasi_melompat: warga_a finger5-1.R frames 1063-1065 (2x) e.g. warga_a finger5-1.R 44°/f
+AUDIT rotasi_melompat: warga_a finger5-2.R frames 1063-1065 (2x) e.g. warga_a finger5-2.R 52°/f
+AUDIT rotasi_melompat: warga_a finger5-3.R frames 1063-1065 (2x) e.g. warga_a finger5-3.R 61°/f
+AUDIT rotasi_melompat: warga_b finger3-2.L frames 1063-1065 (2x) e.g. warga_b finger3-2.L 31°/f
+AUDIT rotasi_melompat: warga_b finger3-3.L frames 1063-1067 (3x) e.g. warga_b finger3-3.L 34°/f
+AUDIT rotasi_melompat: warga_b finger4-2.L frames 1063-1065 (2x) e.g. warga_b finger4-2.L 33°/f
+AUDIT rotasi_melompat: warga_b finger4-3.L frames 1063-1067 (3x) e.g. warga_b finger4-3.L 37°/f
+AUDIT rotasi_melompat: warga_b finger5-1.L frames 1063-1063 (1x) e.g. warga_b finger5-1.L 31°/f
+AUDIT rotasi_melompat: warga_b finger5-2.L frames 1063-1065 (2x) e.g. warga_b finger5-2.L 36°/f
+AUDIT rotasi_melompat: warga_b finger5-3.L frames 1063-1067 (3x) e.g. warga_b finger5-3.L 41°/f
+AUDIT rotasi_melompat: warga_a upperarm01.R frames 1065-1065 (1x) e.g. warga_a upperarm01.R 35°/f
+AUDIT rotasi_melompat: warga_a upperarm02.R frames 1065-1065 (1x) e.g. warga_a upperarm02.R 35°/f
+AUDIT rotasi_melompat: warga_c finger3-3.R frames 1065-1067 (2x) e.g. warga_c finger3-3.R 36°/f
+AUDIT rotasi_melompat: warga_c finger4-2.R frames 1065-1065 (1x) e.g. warga_c finger4-2.R 32°/f
+AUDIT rotasi_melompat: warga_c finger4-3.R frames 1065-1067 (2x) e.g. warga_c finger4-3.R 40°/f
+AUDIT rotasi_melompat: warga_c finger5-2.R frames 1065-1065 (1x) e.g. warga_c finger5-2.R 36°/f
+AUDIT rotasi_melompat: warga_c finger5-3.R frames 1065-1067 (2x) e.g. warga_c finger5-3.R 45°/f
+AUDIT jari_terlalu_menekuk: warga_a finger4-1.R frames 1065-1075 (6x) e.g. warga_a finger4-1.R 97°
+AUDIT jari_terlalu_menekuk: warga_a finger5-1.R frames 1065-1079 (8x) e.g. warga_a finger5-1.R 101°
+AUDIT jari_terlalu_menekuk: warga_a finger5-2.R frames 1065-1075 (6x) e.g. warga_a finger5-2.R 111°
+AUDIT jari_terlalu_menekuk: warga_a finger3-1.R frames 1067-1073 (4x) e.g. warga_a finger3-1.R 100°
+AUDIT jari_terlalu_menekuk: warga_b finger3-1.L frames 1067-1075 (5x) e.g. warga_b finger3-1.L 96°
+AUDIT jari_terlalu_menekuk: warga_b finger4-1.L frames 1067-1077 (6x) e.g. warga_b finger4-1.L 99°
+AUDIT jari_terlalu_menekuk: warga_b finger5-1.L frames 1067-1079 (7x) e.g. warga_b finger5-1.L 103°
+AUDIT jari_terlalu_menekuk: warga_b finger5-2.L frames 1067-1077 (6x) e.g. warga_b finger5-2.L 117°
+AUDIT jari_terlalu_menekuk: warga_b finger4-2.L frames 1069-1069 (1x) e.g. warga_b finger4-2.L 111°
+AUDIT jari_terlalu_menekuk: warga_c finger3-1.R frames 1069-1077 (5x) e.g. warga_c finger3-1.R 98°
+AUDIT jari_terlalu_menekuk: warga_c finger4-1.R frames 1069-1079 (6x) e.g. warga_c finger4-1.R 102°
+AUDIT jari_terlalu_menekuk: warga_c finger5-1.R frames 1069-1081 (7x) e.g. warga_c finger5-1.R 105°
+AUDIT jari_terlalu_menekuk: warga_c finger5-2.R frames 1069-1077 (5x) e.g. warga_c finger5-2.R 117°
+AUDIT gerak_menyentak: warga_a wrist.L frames 1065-1067 (2x) e.g. warga_a wrist.L accel 40 mm/f²
+AUDIT gerak_menyentak: warga_a wrist.R frames 1065-1069 (3x) e.g. warga_a wrist.R accel 197 mm/f²
+AUDIT gerak_menyentak: warga_b wrist.L frames 1067-1069 (2x) e.g. warga_b wrist.L accel 65 mm/f²
+AUDIT gerak_menyentak: warga_c wrist.R frames 1069-1071 (2x) e.g. warga_c wrist.R accel 67 mm/f²
+AUDIT 20: frames 1113-1157
+AUDIT pergelangan_ekstrem: coryat L frames 1113-1157 (23x) e.g. coryat L miring 66°
+AUDIT pergelangan_ekstrem: coryat R frames 1113-1157 (23x) e.g. coryat R fleksi -107°
+AUDIT jari_terlalu_menekuk: coryat finger3-1.R frames 1113-1157 (23x) e.g. coryat finger3-1.R 131°
+AUDIT jari_terlalu_menekuk: coryat finger3-2.R frames 1113-1157 (23x) e.g. coryat finger3-2.R 141°
+AUDIT jari_terlalu_menekuk: coryat finger3-3.R frames 1113-1157 (23x) e.g. coryat finger3-3.R 115°
+AUDIT 21: frames 1158-1209
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-1.L frames 1158-1208 (26x) e.g. leluhur_a finger2-1.L 126°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-2.L frames 1158-1208 (26x) e.g. leluhur_a finger2-2.L 152°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-3.L frames 1158-1208 (26x) e.g. leluhur_a finger2-3.L 120°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-1.L frames 1158-1208 (26x) e.g. leluhur_a finger3-1.L 157°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-2.L frames 1158-1208 (26x) e.g. leluhur_a finger3-2.L 176°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-3.L frames 1158-1208 (26x) e.g. leluhur_a finger3-3.L 146°
+AUDIT jari_terlalu_menekuk: leluhur_a finger4-1.L frames 1158-1208 (26x) e.g. leluhur_a finger4-1.L 179°
+AUDIT jari_terlalu_menekuk: leluhur_a finger4-3.L frames 1158-1208 (26x) e.g. leluhur_a finger4-3.L 169°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-1.R frames 1158-1208 (26x) e.g. leluhur_a finger2-1.R 126°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-2.R frames 1158-1208 (26x) e.g. leluhur_a finger2-2.R 152°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-3.R frames 1158-1208 (26x) e.g. leluhur_a finger2-3.R 120°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-1.R frames 1158-1208 (26x) e.g. leluhur_a finger3-1.R 157°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-2.R frames 1158-1208 (26x) e.g. leluhur_a finger3-2.R 176°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-3.R frames 1158-1208 (26x) e.g. leluhur_a finger3-3.R 146°
+AUDIT jari_terlalu_menekuk: leluhur_a finger4-1.R frames 1158-1208 (26x) e.g. leluhur_a finger4-1.R 179°
+AUDIT jari_terlalu_menekuk: leluhur_a finger4-3.R frames 1158-1208 (26x) e.g. leluhur_a finger4-3.R 169°
+AUDIT jari_terlalu_menekuk: leluhur_b finger2-1.L frames 1158-1208 (26x) e.g. leluhur_b finger2-1.L 109°
+AUDIT jari_terlalu_menekuk: leluhur_b finger2-2.L frames 1158-1208 (26x) e.g. leluhur_b finger2-2.L 132°
+AUDIT jari_terlalu_menekuk: leluhur_b finger3-1.L frames 1158-1208 (26x) e.g. leluhur_b finger3-1.L 136°
+AUDIT jari_terlalu_menekuk: leluhur_b finger3-2.L frames 1158-1208 (26x) e.g. leluhur_b finger3-2.L 150°
+AUDIT jari_terlalu_menekuk: leluhur_b finger3-3.L frames 1158-1208 (26x) e.g. leluhur_b finger3-3.L 124°
+AUDIT jari_terlalu_menekuk: leluhur_b finger4-1.L frames 1158-1208 (26x) e.g. leluhur_b finger4-1.L 155°
+AUDIT jari_terlalu_menekuk: leluhur_b finger4-2.L frames 1158-1208 (26x) e.g. leluhur_b finger4-2.L 178°
+AUDIT jari_terlalu_menekuk: leluhur_b finger4-3.L frames 1158-1208 (26x) e.g. leluhur_b finger4-3.L 144°
+AUDIT jari_terlalu_menekuk: leluhur_b finger5-1.L frames 1158-1208 (26x) e.g. leluhur_b finger5-1.L 180°
+AUDIT jari_terlalu_menekuk: leluhur_b finger5-3.L frames 1158-1208 (26x) e.g. leluhur_b finger5-3.L 154°
+AUDIT jari_terlalu_menekuk: leluhur_b finger2-1.R frames 1158-1208 (26x) e.g. leluhur_b finger2-1.R 100°
+AUDIT jari_terlalu_menekuk: leluhur_b finger2-2.R frames 1158-1208 (26x) e.g. leluhur_b finger2-2.R 122°
+AUDIT jari_terlalu_menekuk: leluhur_b finger3-1.R frames 1158-1208 (26x) e.g. leluhur_b finger3-1.R 126°
+AUDIT jari_terlalu_menekuk: leluhur_b finger3-2.R frames 1158-1208 (26x) e.g. leluhur_b finger3-2.R 137°
+AUDIT jari_terlalu_menekuk: leluhur_b finger3-3.R frames 1158-1208 (26x) e.g. leluhur_b finger3-3.R 113°
+AUDIT jari_terlalu_menekuk: leluhur_b finger4-1.R frames 1158-1208 (26x) e.g. leluhur_b finger4-1.R 143°
+AUDIT jari_terlalu_menekuk: leluhur_b finger4-2.R frames 1158-1208 (26x) e.g. leluhur_b finger4-2.R 162°
+AUDIT jari_terlalu_menekuk: leluhur_b finger4-3.R frames 1158-1208 (26x) e.g. leluhur_b finger4-3.R 133°
+AUDIT jari_terlalu_menekuk: leluhur_b finger5-1.R frames 1158-1208 (26x) e.g. leluhur_b finger5-1.R 164°
+AUDIT jari_terlalu_menekuk: leluhur_b finger5-3.R frames 1158-1208 (26x) e.g. leluhur_b finger5-3.R 139°
+AUDIT jari_miring: leluhur_a finger2-2.L frames 1158-1208 (26x) e.g. leluhur_a finger2-2.L -37°
+AUDIT jari_miring: leluhur_a finger4-2.L frames 1158-1208 (26x) e.g. leluhur_a finger4-2.L 40°
+AUDIT jari_miring: leluhur_a finger4-3.L frames 1158-1208 (26x) e.g. leluhur_a finger4-3.L -52°
+AUDIT jari_miring: leluhur_a finger2-2.R frames 1158-1208 (26x) e.g. leluhur_a finger2-2.R 37°
+AUDIT jari_miring: leluhur_a finger4-2.R frames 1158-1208 (26x) e.g. leluhur_a finger4-2.R -40°
+AUDIT jari_miring: leluhur_a finger4-3.R frames 1158-1208 (26x) e.g. leluhur_a finger4-3.R 52°
+AUDIT jari_miring: leluhur_b finger4-2.L frames 1158-1208 (26x) e.g. leluhur_b finger4-2.L 28°
+AUDIT jari_miring: leluhur_b finger5-2.L frames 1158-1208 (26x) e.g. leluhur_b finger5-2.L 50°
+AUDIT jari_miring: leluhur_b finger5-3.L frames 1158-1208 (26x) e.g. leluhur_b finger5-3.L -54°
+AUDIT jari_miring: leluhur_b finger5-2.R frames 1158-1208 (26x) e.g. leluhur_b finger5-2.R -53°
+AUDIT jari_miring: leluhur_b finger5-3.R frames 1158-1208 (26x) e.g. leluhur_b finger5-3.R 49°
+AUDIT jari_tertekuk_balik: leluhur_a finger4-2.L frames 1158-1208 (26x) e.g. leluhur_a finger4-2.L -148°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-1.L frames 1158-1208 (26x) e.g. leluhur_a finger5-1.L -148°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-2.L frames 1158-1208 (26x) e.g. leluhur_a finger5-2.L -116°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-3.L frames 1158-1208 (26x) e.g. leluhur_a finger5-3.L -175°
+AUDIT jari_tertekuk_balik: leluhur_a finger4-2.R frames 1158-1208 (26x) e.g. leluhur_a finger4-2.R -148°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-1.R frames 1158-1208 (26x) e.g. leluhur_a finger5-1.R -148°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-2.R frames 1158-1208 (26x) e.g. leluhur_a finger5-2.R -116°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-3.R frames 1158-1208 (26x) e.g. leluhur_a finger5-3.R -175°
+AUDIT jari_tertekuk_balik: leluhur_b finger5-2.L frames 1158-1208 (26x) e.g. leluhur_b finger5-2.L -148°
+AUDIT jari_tertekuk_balik: leluhur_b finger5-2.R frames 1158-1208 (26x) e.g. leluhur_b finger5-2.R -169°
+AUDIT 22: frames 1210-1258
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-1.L frames 1210-1258 (25x) e.g. leluhur_a finger2-1.L 117°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-2.L frames 1210-1258 (25x) e.g. leluhur_a finger2-2.L 141°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-3.L frames 1210-1258 (25x) e.g. leluhur_a finger2-3.L 114°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-1.L frames 1210-1258 (25x) e.g. leluhur_a finger3-1.L 147°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-2.L frames 1210-1258 (25x) e.g. leluhur_a finger3-2.L 163°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-3.L frames 1210-1258 (25x) e.g. leluhur_a finger3-3.L 136°
+AUDIT jari_terlalu_menekuk: leluhur_a finger4-1.L frames 1210-1258 (25x) e.g. leluhur_a finger4-1.L 166°
+AUDIT jari_terlalu_menekuk: leluhur_a finger4-3.L frames 1210-1258 (25x) e.g. leluhur_a finger4-3.L 156°
+AUDIT jari_terlalu_menekuk: leluhur_a finger5-3.L frames 1210-1258 (25x) e.g. leluhur_a finger5-3.L 171°
+AUDIT jari_terlalu_menekuk: leluhur_a finger5-2.R frames 1224-1258 (4x) e.g. leluhur_a finger5-2.R 148°
+AUDIT jari_terlalu_menekuk: leluhur_a finger4-1.R frames 1226-1244 (4x) e.g. leluhur_a finger4-1.R 105°
+AUDIT jari_terlalu_menekuk: leluhur_a finger5-1.R frames 1226-1226 (1x) e.g. leluhur_a finger5-1.R 163°
+AUDIT jari_terlalu_menekuk: leluhur_a finger5-3.R frames 1226-1226 (1x) e.g. leluhur_a finger5-3.R 144°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-1.R frames 1228-1242 (6x) e.g. leluhur_a finger2-1.R 126°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-3.R frames 1228-1244 (6x) e.g. leluhur_a finger2-3.R 119°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-2.R frames 1228-1230 (2x) e.g. leluhur_a finger3-2.R 144°
+AUDIT jari_terlalu_menekuk: leluhur_a finger4-3.R frames 1228-1244 (4x) e.g. leluhur_a finger4-3.R 132°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-1.R frames 1236-1244 (5x) e.g. leluhur_a finger3-1.R 104°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-2.R frames 1238-1238 (1x) e.g. leluhur_a finger2-2.R 174°
+AUDIT jari_terlalu_menekuk: leluhur_a finger4-2.R frames 1238-1238 (1x) e.g. leluhur_a finger4-2.R 128°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-3.R frames 1240-1242 (2x) e.g. leluhur_a finger3-3.R 121°
+AUDIT jari_miring: leluhur_a finger2-2.L frames 1210-1258 (25x) e.g. leluhur_a finger2-2.L -33°
+AUDIT jari_miring: leluhur_a finger4-2.L frames 1210-1258 (25x) e.g. leluhur_a finger4-2.L 34°
+AUDIT jari_miring: leluhur_a finger4-3.L frames 1210-1258 (25x) e.g. leluhur_a finger4-3.L -40°
+AUDIT jari_miring: leluhur_a finger5-2.L frames 1210-1258 (25x) e.g. leluhur_a finger5-2.L 40°
+AUDIT jari_miring: leluhur_a finger5-3.L frames 1210-1258 (25x) e.g. leluhur_a finger5-3.L -35°
+AUDIT jari_miring: leluhur_a finger2-3.R frames 1210-1248 (8x) e.g. leluhur_a finger2-3.R 38°
+AUDIT jari_miring: leluhur_a finger4-3.R frames 1210-1244 (6x) e.g. leluhur_a finger4-3.R -30°
+AUDIT jari_miring: leluhur_a finger5-3.R frames 1210-1236 (7x) e.g. leluhur_a finger5-3.R 29°
+AUDIT jari_miring: leluhur_a finger3-3.R frames 1220-1220 (1x) e.g. leluhur_a finger3-3.R -26°
+AUDIT jari_miring: leluhur_a finger5-2.R frames 1222-1258 (9x) e.g. leluhur_a finger5-2.R 38°
+AUDIT jari_miring: leluhur_a finger2-2.R frames 1226-1240 (3x) e.g. leluhur_a finger2-2.R 30°
+AUDIT jari_miring: leluhur_a finger4-2.R frames 1228-1240 (3x) e.g. leluhur_a finger4-2.R -28°
+AUDIT jari_tertekuk_balik: leluhur_a finger4-2.L frames 1210-1258 (25x) e.g. leluhur_a finger4-2.L -166°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-1.L frames 1210-1258 (25x) e.g. leluhur_a finger5-1.L -164°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-2.L frames 1210-1258 (25x) e.g. leluhur_a finger5-2.L -131°
+AUDIT jari_tertekuk_balik: leluhur_a finger2-1.R frames 1210-1258 (16x) e.g. leluhur_a finger2-1.R -141°
+AUDIT jari_tertekuk_balik: leluhur_a finger2-2.R frames 1210-1246 (15x) e.g. leluhur_a finger2-2.R -92°
+AUDIT jari_tertekuk_balik: leluhur_a finger2-3.R frames 1210-1258 (16x) e.g. leluhur_a finger2-3.R -146°
+AUDIT jari_tertekuk_balik: leluhur_a finger3-1.R frames 1210-1258 (12x) e.g. leluhur_a finger3-1.R -136°
+AUDIT jari_tertekuk_balik: leluhur_a finger3-2.R frames 1210-1248 (13x) e.g. leluhur_a finger3-2.R -97°
+AUDIT jari_tertekuk_balik: leluhur_a finger3-3.R frames 1210-1258 (13x) e.g. leluhur_a finger3-3.R -148°
+AUDIT jari_tertekuk_balik: leluhur_a finger4-1.R frames 1210-1248 (12x) e.g. leluhur_a finger4-1.R -94°
+AUDIT jari_tertekuk_balik: leluhur_a finger4-2.R frames 1210-1244 (12x) e.g. leluhur_a finger4-2.R -46°
+AUDIT jari_tertekuk_balik: leluhur_a finger4-3.R frames 1210-1254 (15x) e.g. leluhur_a finger4-3.R -104°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-1.R frames 1210-1236 (10x) e.g. leluhur_a finger5-1.R -61°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-3.R frames 1210-1238 (12x) e.g. leluhur_a finger5-3.R -78°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-2.R frames 1226-1234 (5x) e.g. leluhur_a finger5-2.R -61°
+AUDIT pergelangan_ekstrem: leluhur_a L frames 1210-1258 (25x) e.g. leluhur_a L fleksi -72°
+AUDIT pergelangan_ekstrem: leluhur_a R frames 1248-1258 (9x) e.g. leluhur_a R miring -43°
+AUDIT rotasi_melompat: leluhur_a finger5-3.R frames 1220-1240 (8x) e.g. leluhur_a finger5-3.R 30°/f
+AUDIT rotasi_melompat: leluhur_a finger2-3.R frames 1222-1250 (12x) e.g. leluhur_a finger2-3.R 34°/f
+AUDIT rotasi_melompat: leluhur_a finger4-3.R frames 1222-1248 (11x) e.g. leluhur_a finger4-3.R 34°/f
+AUDIT rotasi_melompat: leluhur_a finger1-3.R frames 1224-1248 (4x) e.g. leluhur_a finger1-3.R 42°/f
+AUDIT rotasi_melompat: leluhur_a finger2-2.R frames 1224-1248 (10x) e.g. leluhur_a finger2-2.R 56°/f
+AUDIT rotasi_melompat: leluhur_a finger3-2.R frames 1224-1246 (5x) e.g. leluhur_a finger3-2.R 46°/f
+AUDIT rotasi_melompat: leluhur_a finger3-3.R frames 1224-1248 (8x) e.g. leluhur_a finger3-3.R 65°/f
+AUDIT rotasi_melompat: leluhur_a finger4-2.R frames 1224-1248 (10x) e.g. leluhur_a finger4-2.R 50°/f
+AUDIT rotasi_melompat: leluhur_a finger5-2.R frames 1224-1236 (5x) e.g. leluhur_a finger5-2.R 51°/f
+AUDIT rotasi_melompat: leluhur_a finger1-2.R frames 1226-1226 (1x) e.g. leluhur_a finger1-2.R 39°/f
+AUDIT rotasi_melompat: leluhur_a finger2-1.R frames 1226-1238 (3x) e.g. leluhur_a finger2-1.R 48°/f
+AUDIT rotasi_melompat: leluhur_a finger3-1.R frames 1226-1226 (1x) e.g. leluhur_a finger3-1.R 32°/f
+AUDIT rotasi_melompat: leluhur_a finger4-1.R frames 1226-1246 (4x) e.g. leluhur_a finger4-1.R 38°/f
+AUDIT rotasi_melompat: leluhur_a finger5-1.R frames 1226-1238 (2x) e.g. leluhur_a finger5-1.R 44°/f
+AUDIT 23: frames 1259-1312
+AUDIT OK
+AUDIT 24: frames 1313-1365
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-1.L frames 1313-1365 (27x) e.g. leluhur_a finger2-1.L 126°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-2.L frames 1313-1365 (27x) e.g. leluhur_a finger2-2.L 152°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-3.L frames 1313-1365 (27x) e.g. leluhur_a finger2-3.L 120°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-1.L frames 1313-1365 (27x) e.g. leluhur_a finger3-1.L 157°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-2.L frames 1313-1365 (27x) e.g. leluhur_a finger3-2.L 176°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-3.L frames 1313-1365 (27x) e.g. leluhur_a finger3-3.L 146°
+AUDIT jari_terlalu_menekuk: leluhur_a finger4-1.L frames 1313-1365 (27x) e.g. leluhur_a finger4-1.L 179°
+AUDIT jari_terlalu_menekuk: leluhur_a finger4-3.L frames 1313-1365 (27x) e.g. leluhur_a finger4-3.L 169°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-1.R frames 1313-1365 (27x) e.g. leluhur_a finger2-1.R 126°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-2.R frames 1313-1365 (27x) e.g. leluhur_a finger2-2.R 152°
+AUDIT jari_terlalu_menekuk: leluhur_a finger2-3.R frames 1313-1365 (27x) e.g. leluhur_a finger2-3.R 120°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-1.R frames 1313-1365 (27x) e.g. leluhur_a finger3-1.R 157°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-2.R frames 1313-1365 (27x) e.g. leluhur_a finger3-2.R 176°
+AUDIT jari_terlalu_menekuk: leluhur_a finger3-3.R frames 1313-1365 (27x) e.g. leluhur_a finger3-3.R 146°
+AUDIT jari_terlalu_menekuk: leluhur_a finger4-1.R frames 1313-1365 (27x) e.g. leluhur_a finger4-1.R 179°
+AUDIT jari_terlalu_menekuk: leluhur_a finger4-3.R frames 1313-1365 (27x) e.g. leluhur_a finger4-3.R 169°
+AUDIT jari_terlalu_menekuk: pelaut finger3-1.L frames 1313-1365 (27x) e.g. pelaut finger3-1.L 131°
+AUDIT jari_terlalu_menekuk: pelaut finger3-2.L frames 1313-1365 (27x) e.g. pelaut finger3-2.L 142°
+AUDIT jari_terlalu_menekuk: pelaut finger3-3.L frames 1313-1365 (27x) e.g. pelaut finger3-3.L 114°
+AUDIT jari_terlalu_menekuk: pelaut finger3-1.R frames 1313-1365 (27x) e.g. pelaut finger3-1.R 131°
+AUDIT jari_terlalu_menekuk: pelaut finger3-2.R frames 1313-1365 (27x) e.g. pelaut finger3-2.R 142°
+AUDIT jari_terlalu_menekuk: pelaut finger3-3.R frames 1313-1365 (27x) e.g. pelaut finger3-3.R 114°
+AUDIT jari_miring: leluhur_a finger2-2.L frames 1313-1365 (27x) e.g. leluhur_a finger2-2.L -37°
+AUDIT jari_miring: leluhur_a finger4-2.L frames 1313-1365 (27x) e.g. leluhur_a finger4-2.L 40°
+AUDIT jari_miring: leluhur_a finger4-3.L frames 1313-1365 (27x) e.g. leluhur_a finger4-3.L -52°
+AUDIT jari_miring: leluhur_a finger2-2.R frames 1313-1365 (27x) e.g. leluhur_a finger2-2.R 37°
+AUDIT jari_miring: leluhur_a finger4-2.R frames 1313-1365 (27x) e.g. leluhur_a finger4-2.R -40°
+AUDIT jari_miring: leluhur_a finger4-3.R frames 1313-1365 (27x) e.g. leluhur_a finger4-3.R 52°
+AUDIT jari_miring: pelaut finger5-2.L frames 1337-1365 (15x) e.g. pelaut finger5-2.L -26°
+AUDIT jari_miring: pelaut finger5-2.R frames 1337-1365 (15x) e.g. pelaut finger5-2.R 26°
+AUDIT jari_tertekuk_balik: leluhur_a finger4-2.L frames 1313-1365 (27x) e.g. leluhur_a finger4-2.L -148°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-1.L frames 1313-1365 (27x) e.g. leluhur_a finger5-1.L -148°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-2.L frames 1313-1365 (27x) e.g. leluhur_a finger5-2.L -116°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-3.L frames 1313-1365 (27x) e.g. leluhur_a finger5-3.L -175°
+AUDIT jari_tertekuk_balik: leluhur_a finger4-2.R frames 1313-1365 (27x) e.g. leluhur_a finger4-2.R -148°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-1.R frames 1313-1365 (27x) e.g. leluhur_a finger5-1.R -148°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-2.R frames 1313-1365 (27x) e.g. leluhur_a finger5-2.R -116°
+AUDIT jari_tertekuk_balik: leluhur_a finger5-3.R frames 1313-1365 (27x) e.g. leluhur_a finger5-3.R -175°
+AUDIT pergelangan_ekstrem: pelaut L frames 1329-1331 (2x) e.g. pelaut L fleksi -78°
+AUDIT pergelangan_ekstrem: pelaut R frames 1329-1331 (2x) e.g. pelaut R fleksi -76°
+AUDIT 25: frames 1366-1429
+AUDIT jari_terlalu_menekuk: narator finger3-1.R frames 1366-1428 (32x) e.g. narator finger3-1.R 129°
+AUDIT jari_terlalu_menekuk: narator finger3-2.R frames 1366-1428 (32x) e.g. narator finger3-2.R 141°
+AUDIT jari_terlalu_menekuk: narator finger3-3.R frames 1366-1428 (32x) e.g. narator finger3-3.R 116°
+AUDIT pergelangan_ekstrem: narator R frames 1366-1428 (47x) e.g. narator R fleksi 178°
+AUDIT 26: frames 1430-1514
+AUDIT pergelangan_ekstrem: narator R frames 1430-1514 (43x) e.g. narator R miring -71°
+AUDIT jari_miring: narator finger5-2.R frames 1444-1514 (32x) e.g. narator finger5-2.R 30°
+AUDIT jari_miring: narator finger4-2.R frames 1446-1514 (23x) e.g. narator finger4-2.R 27°
+AUDIT jari_miring: narator finger5-3.R frames 1448-1514 (32x) e.g. narator finger5-3.R -33°
+AUDIT jari_miring: narator finger2-2.R frames 1452-1472 (11x) e.g. narator finger2-2.R 28°
+AUDIT jari_miring: narator finger4-3.R frames 1452-1514 (21x) e.g. narator finger4-3.R -27°
+AUDIT jari_miring: narator finger2-3.R frames 1456-1472 (9x) e.g. narator finger2-3.R -34°
+AUDIT rotasi_melompat: narator finger2-3.R frames 1446-1462 (3x) e.g. narator finger2-3.R 30°/f
+AUDIT rotasi_melompat: narator finger5-3.R frames 1446-1462 (3x) e.g. narator finger5-3.R 31°/f
+AUDIT rotasi_melompat: narator wrist.R frames 1450-1450 (1x) e.g. narator wrist.R 42°/f
+AUDIT rotasi_melompat: narator finger1-1.R frames 1450-1450 (1x) e.g. narator finger1-1.R 41°/f
+AUDIT rotasi_melompat: narator finger1-2.R frames 1450-1462 (2x) e.g. narator finger1-2.R 40°/f
+AUDIT rotasi_melompat: narator finger1-3.R frames 1450-1462 (2x) e.g. narator finger1-3.R 39°/f
+AUDIT rotasi_melompat: narator metacarpal1.R frames 1450-1450 (1x) e.g. narator metacarpal1.R 42°/f
+AUDIT rotasi_melompat: narator finger2-1.R frames 1450-1462 (2x) e.g. narator finger2-1.R 38°/f
+AUDIT rotasi_melompat: narator finger2-2.R frames 1450-1462 (2x) e.g. narator finger2-2.R 35°/f
+AUDIT rotasi_melompat: narator metacarpal2.R frames 1450-1450 (1x) e.g. narator metacarpal2.R 42°/f
+AUDIT rotasi_melompat: narator finger3-1.R frames 1450-1462 (2x) e.g. narator finger3-1.R 39°/f
+AUDIT rotasi_melompat: narator finger3-2.R frames 1450-1462 (2x) e.g. narator finger3-2.R 37°/f
+AUDIT rotasi_melompat: narator finger3-3.R frames 1450-1462 (2x) e.g. narator finger3-3.R 35°/f
+AUDIT rotasi_melompat: narator metacarpal3.R frames 1450-1450 (1x) e.g. narator metacarpal3.R 42°/f
+AUDIT rotasi_melompat: narator finger4-1.R frames 1450-1462 (2x) e.g. narator finger4-1.R 39°/f
+AUDIT rotasi_melompat: narator finger4-2.R frames 1450-1462 (2x) e.g. narator finger4-2.R 35°/f
+AUDIT rotasi_melompat: narator finger4-3.R frames 1450-1462 (2x) e.g. narator finger4-3.R 33°/f
+AUDIT rotasi_melompat: narator metacarpal4.R frames 1450-1450 (1x) e.g. narator metacarpal4.R 42°/f
+AUDIT rotasi_melompat: narator finger5-1.R frames 1450-1462 (2x) e.g. narator finger5-1.R 39°/f
+AUDIT rotasi_melompat: narator finger5-2.R frames 1450-1462 (2x) e.g. narator finger5-2.R 36°/f
+AUDIT jari_terlalu_menekuk: narator finger2-2.R frames 1448-1456 (5x) e.g. narator finger2-2.R 111°
+AUDIT jari_terlalu_menekuk: narator finger5-1.R frames 1448-1476 (15x) e.g. narator finger5-1.R 98°
+AUDIT jari_terlalu_menekuk: narator finger5-2.R frames 1448-1458 (6x) e.g. narator finger5-2.R 111°
+AUDIT jari_terlalu_menekuk: narator finger2-1.R frames 1450-1482 (17x) e.g. narator finger2-1.R 99°
+AUDIT jari_terlalu_menekuk: narator finger4-1.R frames 1450-1514 (33x) e.g. narator finger4-1.R 98°
+AUDIT jari_terlalu_menekuk: narator finger4-2.R frames 1452-1474 (12x) e.g. narator finger4-2.R 117°
+AUDIT jari_terlalu_menekuk: narator finger2-3.R frames 1454-1494 (21x) e.g. narator finger2-3.R 119°
+AUDIT jari_terlalu_menekuk: narator finger3-1.R frames 1454-1514 (31x) e.g. narator finger3-1.R 100°
+AUDIT jari_terlalu_menekuk: narator finger5-3.R frames 1454-1514 (31x) e.g. narator finger5-3.R 112°
+AUDIT jari_terlalu_menekuk: narator finger3-2.R frames 1456-1514 (30x) e.g. narator finger3-2.R 118°
+AUDIT jari_terlalu_menekuk: narator finger4-3.R frames 1456-1514 (30x) e.g. narator finger4-3.R 120°
+AUDIT jari_terlalu_menekuk: narator finger3-3.R frames 1462-1514 (27x) e.g. narator finger3-3.R 111°
+AUDIT jari_tertekuk_balik: narator finger2-2.R frames 1458-1514 (29x) e.g. narator finger2-2.R -180°
+AUDIT jari_tertekuk_balik: narator finger5-2.R frames 1460-1514 (28x) e.g. narator finger5-2.R -174°
+AUDIT jari_tertekuk_balik: narator finger4-2.R frames 1476-1514 (20x) e.g. narator finger4-2.R -177°
+AUDIT jari_tertekuk_balik: narator finger5-1.R frames 1478-1514 (19x) e.g. narator finger5-1.R -180°
+AUDIT jari_tertekuk_balik: narator finger2-1.R frames 1484-1514 (16x) e.g. narator finger2-1.R -179°
+AUDIT jari_tertekuk_balik: narator finger2-3.R frames 1496-1514 (10x) e.g. narator finger2-3.R -179°

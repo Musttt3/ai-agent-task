@@ -103,7 +103,140 @@ def rest_pose(rig):
         pb.rotation_mode = "QUATERNION"; pb.rotation_quaternion = Quaternion(); pb.location = (0, 0, 0); pb.scale = (1, 1, 1)
     bpy.context.view_layer.update()
 
+# ------------------------------------------------------------------ anatomical limits (applied when a pose is keyed)
+FINGER_LIM = {1: (-12, 88), 2: (-4, 100), 3: (-4, 72)}          # MCP / PIP / DIP flexion range (deg), fingers 2-5
+WRIST_LIM = dict(flex=72, ext=62, dev=28)                          # palmar flexion, extension, side deviation (deg)
+ANATOMY = True
+
+def _flex(p, d, lat):
+    pp = p - lat * p.dot(lat); dd = d - lat * d.dot(lat)
+    if pp.length < 1e-6 or dd.length < 1e-6: return 0.0, 0.0
+    ang = math.degrees(pp.angle(dd)); sg = 1 if pp.cross(dd).dot(lat) >= 0 else -1
+    side = math.degrees(math.asin(max(-1, min(1, d.dot(lat)))) - math.asin(max(-1, min(1, p.dot(lat)))))
+    return sg * ang, side
+
+def _hand_axes(rig, s):
+    _, along, across, n = palm_frame(rig, s)
+    return along, n, along.cross(n).normalized()
+
+def _bone_dir(rig, b):
+    return (bone_world(rig, b, tail=True) - bone_world(rig, b)).normalized()
+
+def limit_fingers(rig, side):
+    """keep every finger joint inside its flexion range and in its flexion plane (no sideways kinks)"""
+    if f"finger2-1.{side}" not in rig.pose.bones: return
+    along, n, lat = _hand_axes(rig, side)
+    for fi in (2, 3, 4, 5):
+        pdir = along
+        for j in (1, 2, 3):
+            b = f"finger{fi}-{j}.{side}"
+            if b not in rig.pose.bones: break
+            d = _bone_dir(rig, b)
+            bend, sideways = _flex(pdir, d, lat)
+            lo, hi = FINGER_LIM[j]
+            if bend > hi: turn(rig, b, lat, -(bend - hi))
+            elif bend < lo: turn(rig, b, lat, lo - bend)
+            if j > 1 and abs(sideways) > 6:
+                d = _bone_dir(rig, b)
+                want = (d - lat * (d.dot(lat) - pdir.dot(lat))).normalized()
+                ax = d.cross(want)
+                if ax.length > 1e-6: turn(rig, b, ax.normalized(), math.degrees(d.angle(want)))
+            pdir = _bone_dir(rig, b)
+
+def _wrist_state(rig, s):
+    along, n, lat = _hand_axes(rig, s)
+    fa = (bone_world(rig, f"lowerarm02.{s}", tail=True) - bone_world(rig, f"lowerarm01.{s}")).normalized()
+    fl, dev = _flex(fa, along, lat)
+    ex = max(0.0, fl - WRIST_LIM["flex"]) + max(0.0, -WRIST_LIM["ext"] - fl) + max(0.0, abs(dev) - WRIST_LIM["dev"])
+    return ex, fl, dev, lat, n
+
+def _set_world(rig, b, Mw):
+    pb = rig.pose.bones[b]; pb.matrix = rig.matrix_world.inverted() @ Mw; bpy.context.view_layer.update()
+
+def _spread_twist(rig, s, Mw):
+    """move the hand's roll relative to the forearm into the forearm bones (no candy-wrapper wrist)"""
+    wb = rig.pose.bones[f"wrist.{s}"]
+    q = wb.rotation_quaternion
+    tw = 2 * math.atan2(q.y, q.w)
+    if tw > math.pi: tw -= 2 * math.pi
+    if tw < -math.pi: tw += 2 * math.pi
+    if abs(tw) < math.radians(8): return
+    for b, k in ((f"lowerarm01.{s}", 0.3), (f"lowerarm02.{s}", 0.5)):
+        pb = rig.pose.bones[b]
+        pb.rotation_quaternion = pb.rotation_quaternion @ Quaternion((0, 1, 0), tw * k)
+        bpy.context.view_layer.update()
+    _set_world(rig, f"wrist.{s}", Mw)
+
+def _arm_pen(e, sh, wr, sp_lo, sp_hi, F, U):
+    """penalty for an elbow placement: elbow / forearm inside the torso capsule, elbow above the shoulder or far
+    behind the back"""
+    seg = sp_hi - sp_lo
+    def dist(pt):
+        t = max(0, min(1, (pt - sp_lo).dot(seg) / seg.length_squared)); return (pt - (sp_lo + seg * t)).length
+    pen = max(0.0, 0.17 - dist(e)) * 600
+    for k in (0.25, 0.5, 0.7):                                    # along the forearm (not the hand end)
+        pen += max(0.0, 0.15 - dist(e + (wr - e) * k)) * 400
+    pen += max(0.0, (e - sh).dot(U) + 0.02) * 400 + max(0.0, -(e - sh).dot(F) - 0.12) * 200
+    return pen
+
+def fix_arm(rig, side, swivel=True):
+    """keep the wrist inside anatomical limits without moving the hand: swivel the elbow about the shoulder-wrist
+    axis (hand world pose held fixed); if no swivel is good enough, bend the hand back to the limit"""
+    s = side
+    if f"wrist.{s}" not in rig.pose.bones: return
+    bpy.context.view_layer.update()
+    wb = rig.pose.bones[f"wrist.{s}"]; wb.rotation_mode = "QUATERNION"
+    Mw = (rig.matrix_world @ wb.matrix).copy()
+    ex0 = _wrist_state(rig, s)[0]
+    if ex0 > 0 and swivel:
+        X, F, U = char_axes(rig)
+        sh = bone_world(rig, f"upperarm01.{s}"); wr = bone_world(rig, f"wrist.{s}"); el0 = bone_world(rig, f"lowerarm01.{s}")
+        axis = (wr - sh).normalized()
+        sp_lo = bone_world(rig, "spine03"); sp_hi = bone_world(rig, "neck01")
+        keep = {b: rig.pose.bones[b].rotation_quaternion.copy() for b in (f"upperarm01.{s}", f"upperarm02.{s}", f"lowerarm01.{s}", f"lowerarm02.{s}")}
+        best = (ex0 + _arm_pen(el0, sh, wr, sp_lo, sp_hi, F, U), 0)
+        for deg in range(-170, 180, 10):
+            if deg == 0: continue
+            e = sh + Quaternion(axis, math.radians(deg)) @ (el0 - sh)
+            for b in (f"upperarm01.{s}", f"upperarm02.{s}"): aim(rig, b, e - sh)
+            for b in (f"lowerarm01.{s}", f"lowerarm02.{s}"): aim(rig, b, wr - e)
+            _set_world(rig, f"wrist.{s}", Mw)
+            ex = _wrist_state(rig, s)[0]
+            # elbow must stay outside the torso and not lift above the shoulder
+            cost = ex + _arm_pen(e, sh, wr, sp_lo, sp_hi, F, U) + abs(deg) * 0.05
+            if cost < best[0]: best = (cost, deg)
+        for b, q in keep.items(): rig.pose.bones[b].rotation_quaternion = q
+        bpy.context.view_layer.update()
+        if best[1]:
+            e = sh + Quaternion(axis, math.radians(best[1])) @ (el0 - sh)
+            for b in (f"upperarm01.{s}", f"upperarm02.{s}"): aim(rig, b, e - sh)
+            for b in (f"lowerarm01.{s}", f"lowerarm02.{s}"): aim(rig, b, wr - e)
+        _set_world(rig, f"wrist.{s}", Mw)
+    ex = _wrist_state(rig, s)[0]
+    if ex > 0:                                                    # still out of range: bend the hand back (least change)
+        step = 8.0
+        while ex > 0.3 and step >= 0.5:
+            _, _, _, lat, n = _wrist_state(rig, s)
+            best = None
+            for ax in (lat, -lat, n, -n):
+                turn(rig, f"wrist.{s}", ax, step); e2 = _wrist_state(rig, s)[0]; turn(rig, f"wrist.{s}", ax, -step)
+                if best is None or e2 < best[0]: best = (e2, ax)
+            if best[0] < ex - 1e-3: turn(rig, f"wrist.{s}", best[1], step); ex = best[0]
+            else: step *= 0.5
+        Mw = (rig.matrix_world @ wb.matrix).copy()
+    _spread_twist(rig, s, Mw)
+
+def apply_anatomy(rig, bones=None):
+    if not ANATOMY: return
+    for s in ("L", "R"):
+        if f"wrist.{s}" not in rig.pose.bones: continue
+        arm = all(b in bones for b in (f"upperarm01.{s}", f"lowerarm01.{s}", f"wrist.{s}")) if bones else True
+        if arm: fix_arm(rig, s)
+        elif bones and f"wrist.{s}" in bones: fix_arm(rig, s, swivel=False)
+        if not bones or any(b.startswith("finger") and b.endswith("." + s) for b in bones): limit_fingers(rig, s)
+
 def key_pose(rig, frame, bones=None, interp="BEZIER"):
+    apply_anatomy(rig, bones)
     for pb in rig.pose.bones:
         if bones and pb.name not in bones: continue
         pb.keyframe_insert("rotation_quaternion", frame=frame)
@@ -207,7 +340,16 @@ def close_on(rig, side, prop_objs, fingers=(1, 2, 3, 4, 5), step=4, max_deg=95, 
         while total < max_deg:
             b3 = f"finger{fi}-3.{side}"
             if near(tip(b3)) < 0.015 + gap: break
+            if fi > 1 and _finger_at_limit(rig, side, fi): break
             curl(rig, side, fi, step); total += step
+
+def _finger_at_limit(rig, side, fi):
+    along, n, lat = _hand_axes(rig, side); pdir = along
+    for j in (1, 2):
+        d = _bone_dir(rig, f"finger{fi}-{j}.{side}")
+        if _flex(pdir, d, lat)[0] >= FINGER_LIM[j][1] - 2: return True
+        pdir = d
+    return False
 
 # ------------------------------------------------------------------ props in hands
 def attach(prop, rig, bone, frame=None):
@@ -290,6 +432,8 @@ def hold_to(rig, side, prop, point_local, target, pole_dir, hand_dir, palm_dir, 
                 if ax.length < 1e-4: break
                 turn(rig, f"wrist.{side}", ax.normalized(), math.degrees(cur.angle(want)) * 0.8)
                 place_in_palm(prop, rig, side, grip_local, axis_local, roll)
+        if ANATOMY:
+            fix_arm(rig, side); place_in_palm(prop, rig, side, grip_local, axis_local, roll)
         tip = prop.matrix_world @ Vector(point_local)
         err = Vector(target) - tip
         if err.length < 0.004: break
