@@ -6,6 +6,11 @@ SID = "20"; f0, f1, _ = SHOTS[SID]
 sc = open_set("london", SID)
 b, r = coryat_seated(f0, f1)
 X, F, U = P.char_axes(r)
+# left hand rests in the lap (keeps the forearm out of the close-up)
+P.reach(r, "L", P.bone_world(r, "spine01") + F * 0.24 - U * 0.2 + X * 0.1, pole_dir=-U * 0.5 + X * 0.8, wrist_fwd=(F - U * 0.3).normalized())
+P._roll_palm(r, "L", -U); P.hand_shape(r, "L", "rileks", 0.3)
+Lb = [pb.name for pb in r.pose.bones if pb.name.endswith(".L") or pb.name.endswith("_l")]
+P.key_pose(r, f0, Lb); P.key_pose(r, f1, Lb)
 g = bpy.data.objects["GARPU_CORYAT"]; g["grip_mode"] = "pena"; g["r"] = 0.009
 show = P.bone_world(r, "spine01") + F * 0.34 + U * 0.3 + X * 0.03
 low = P.bone_world(r, "spine01") + F * 0.4 - U * 0.02 - X * 0.12
