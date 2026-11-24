@@ -747,17 +747,22 @@ def mitra(name="MITRA", head_width=0.17, coll=None):
     """bishop's mitre: front and back plates rising to pointed arches, close together and joined at the sides by
     fabric over the lower part; white silk with gold orphrey bands and a gold circlet. Origin at the band centre."""
     bm = bmesh.new()
-    W = head_width * 0.6; H = 0.24; D = head_width * 0.68   # half width, height, half depth at the band (head is deeper than wide)
-    def half(t): return W * (1.0 if t < 0.45 else max(0.004, math.cos((t - 0.45) / 0.55 * math.pi / 2) ** 0.8))
-    def dep(t): return D * max(0.05, 1 - t * 1.15)        # plates converge toward the top
+    W = head_width * 0.56; H = 0.30; D = head_width * 0.66   # half width, height, half depth at the band (head is deeper than wide)
+    S = 0.5                                                 # where the straight, slightly flaring sides turn into the arch
+    def half(t):
+        if t < S: return W * (1 + 0.06 * t / S)
+        u = (t - S) / (1 - S); return W * 1.06 * max(0.004, 1 - u ** 1.7)   # full gothic arch ending in a point
+    def dep(t): return D * max(0.06, 1 - 0.9 * max(0.0, (t - 0.12) / 0.88) ** 1.2)   # front/back plates stay upright, then meet
     rows = []
-    nu, nv = 24, 16
+    nu, nv = 32, 24
     for j in range(nv + 1):
         t = j / nv; z = H * t; row = []
         for i in range(nu):
             a_ = 2 * math.pi * i / nu
-            x = math.sin(a_) * half(t); y = math.cos(a_) * dep(t)
-            if t > 0.45 and abs(math.sin(a_)) > 0.92: y *= 0.2                     # side gap above the closed part
+            sa, ca = math.sin(a_), math.cos(a_)
+            x = math.copysign(abs(sa) ** 0.7, sa) * half(t)                       # squarer plan: flat front and back plates
+            y = math.copysign(abs(ca) ** 0.5, ca) * dep(t)
+            if t > S and abs(sa) > 0.92: y *= 0.2                                  # side cleft above the closed part
             row.append(bm.verts.new((x, y, z)))
         rows.append(row)
     for j in range(nv):
@@ -769,16 +774,33 @@ def mitra(name="MITRA", head_width=0.17, coll=None):
     o.modifiers.new("Tebal", "SOLIDIFY").thickness = 0.003
     s_ = o.modifiers.new("Halus", "SUBSURF"); s_.levels = s_.render_levels = 1
     gold = mat_simple("Bordir_Emas", (0.85, 0.62, 0.2), rough=0.35, metal=0.8)
-    for sy in (-1, 1):   # vertical orphrey on the front and the back
-        bm2 = bmesh.new()
-        _sweep(bm2, [(0, sy * (dep(t) + 0.003), H * t * 0.97) for t in [k / 14 for k in range(15)]], lambda t: 0.02 * (1 - 0.5 * t), segs=4, flat=0.12)
+    def front_y(x, t):   # the plate surface at height t and across-offset x (same superellipse as the shell)
+        hw = half(t); sa = min(1.0, abs(x) / hw) ** (1 / 0.7); ca = math.sqrt(max(0.0, 1 - sa * sa))
+        return ca ** 0.5 * dep(t)
+    for sy in (-1, 1):   # vertical orphrey on the front and the back: a flat strip lying on the plate
+        bm2 = bmesh.new(); nt, nx = 22, 4; grid = []
+        for j in range(nt + 1):
+            t = 0.07 + (0.9 - 0.07) * j / nt; hw = min(0.017, half(t) * 0.45); row = []
+            for i in range(nx + 1):
+                x = -hw + 2 * hw * i / nx
+                row.append(bm2.verts.new((x, sy * (front_y(x, t) + 0.0025), H * t)))
+            grid.append(row)
+        for j in range(nt):
+            for i in range(nx):
+                f = (grid[j][i], grid[j][i + 1], grid[j + 1][i + 1], grid[j + 1][i])
+                bm2.faces.new(f if sy > 0 else f[::-1])
         b2 = _new(f"{name}_PITA_{sy}", bm2, [gold], coll=coll); b2.parent = o
+        b2.modifiers.new("Tebal", "SOLIDIFY").thickness = 0.0015
     bm3 = bmesh.new()
-    rr = [bm3.verts.new((math.sin(2 * math.pi * i / 48) * (W + 0.003), math.cos(2 * math.pi * i / 48) * (D + 0.003), 0.0)) for i in range(48)]
-    rr2 = [bm3.verts.new((math.sin(2 * math.pi * i / 48) * (W + 0.003), math.cos(2 * math.pi * i / 48) * (D + 0.003), 0.028)) for i in range(48)]
+    def ring_pt(i, z):
+        sa, ca = math.sin(2 * math.pi * i / 48), math.cos(2 * math.pi * i / 48)
+        return (math.copysign(abs(sa) ** 0.7, sa) * (W + 0.003), math.copysign(abs(ca) ** 0.5, ca) * (D + 0.003), z)
+    rr = [bm3.verts.new(ring_pt(i, 0.0)) for i in range(48)]
+    rr2 = [bm3.verts.new(ring_pt(i, 0.032)) for i in range(48)]
     for i in range(48): bm3.faces.new((rr[i], rr[(i + 1) % 48], rr2[(i + 1) % 48], rr2[i]))
     b3 = _new(f"{name}_LINGKAR", bm3, [gold], coll=coll); b3.parent = o
     b3.modifiers.new("Tebal", "SOLIDIFY").thickness = 0.003
+    o["band_W"], o["band_D"], o["band_px"], o["band_py"] = W, D, 0.7, 0.5   # inner band shape, for seating on the head
     return o
 
 def topi_tinggi(name="TOPI_CORYAT", head_width=0.17, coll=None):

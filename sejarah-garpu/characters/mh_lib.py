@@ -68,7 +68,9 @@ def skin_tone(body, rgb):
         if slot.material and slot.material.use_nodes: _mul_inputs(slot.material.node_tree, rgb)
 
 def tint(o, rgb):
-    """recolour a costume: grey-scale its diffuse texture (keeps weave/folds), then multiply by rgb"""
+    """recolour a costume: grey-scale its diffuse texture (keeps weave/folds), then multiply by rgb.
+    An optional 4th value brightens the grey-scale first (for white cloth made from a dark texture)."""
+    gain = rgb[3] if len(rgb) > 3 else 1.0; rgb = tuple(rgb[:3])
     for slot in o.material_slots:
         m = slot.material
         if not m or not m.use_nodes: continue
@@ -91,7 +93,7 @@ def tint(o, rgb):
                     mean = max(0.03, sum(lum) / len(lum))
                 except Exception as e: print("TINT mean", e)
             mr = nt.nodes.new("ShaderNodeMapRange"); mr.clamp = True
-            mr.inputs["From Min"].default_value = 0.0; mr.inputs["From Max"].default_value = mean / (0.9 if max(rgb) > 0.8 else 0.62)
+            mr.inputs["From Min"].default_value = 0.0; mr.inputs["From Max"].default_value = mean / (0.9 if max(rgb) > 0.8 else 0.62) / gain
             nt.links.new(bw.outputs[0], mr.inputs["Value"]); nt.links.new(mr.outputs["Result"], mix.inputs[6])
         else:
             mix.inputs[6].default_value = (0.6, 0.6, 0.6, 1)

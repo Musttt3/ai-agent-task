@@ -583,8 +583,38 @@ def wear(hat, rig, body, height=0.105, fwd=0.0, tilt=0.0):
     up = (M.to_3x3() @ Vector((0, 1, 0))).normalized()          # head bone axis (neck -> crown)
     X, F, U = char_axes(rig)
     base = M.translation + up * height + F * fwd
+    if "band_W" in hat.keys():   # seat the band on the skull: lowest height where no scalp vertex sticks out of the band
+        side = up.cross(F).normalized(); fw = side.cross(up).normalized()
+        dg = bpy.context.evaluated_depsgraph_get(); o0 = M.translation + F * fwd
+        pts = []
+        heads = [body] + [o for o in bpy.data.objects if o.type == "MESH" and o.parent == rig and o != body and o.visible_get()
+                          and any(k in o.name.lower() for k in ("hair", "short", "bob", "ponytail", "braid", "afro"))]
+        for ob in heads:
+            ev = ob.evaluated_get(dg); me = ev.to_mesh(); mw = ob.matrix_world
+            for v in me.vertices:
+                d = mw @ v.co - o0; h = d.dot(up)
+                if 0.02 < h < 0.3 and d.length < 0.3: pts.append((d.dot(side), d.dot(fw), h))
+            ev.to_mesh_clear()
+        print("WEAR meshes", [o.name for o in heads])
+        W, D, px, py = hat["band_W"], hat["band_D"], hat["band_px"], hat["band_py"]
+        def norm(x, y, k):   # superellipse matching the band plan scaled by k: <= 1 inside
+            return abs(x / (W * k)) ** (2 / px) + abs(y / (D * k)) ** (2 / py)
+        top = max(z for x, y, z in pts)
+        best = top - 0.075                      # band sits ~7.5 cm below the crown (forehead / above the ears)
+        slab = [(x, y) for x, y, z in pts if best <= z <= best + 0.03]
+        cx = (min(x for x, y in slab) + max(x for x, y in slab)) / 2; cy = (min(y for x, y in slab) + max(y for x, y in slab)) / 2
+        slab = [(x - cx, y - cy) for x, y in slab]
+        k = 0.5
+        while any(norm(x, y, k) > 1.0 for x, y in slab) and k < 2.0: k += 0.005
+        k *= 1.0 + 0.004 / W                   # a little room under the band
+        hat.scale = (k, k, k ** 0.5)
+        base = M.translation + up * best + F * fwd + side * cx + fw * cy
+        print("WEAR seat", round(best, 3), "top", round(top, 3), "scale", round(k, 3))
     hat.rotation_mode = "QUATERNION"
     q = Vector((0, 0, 1)).rotation_difference(up)
+    if "band_W" in hat.keys():   # hat Y (front/back plates) along the face direction, X across the head
+        from mathutils import Matrix
+        q = Matrix((-side, fw, up)).transposed().to_quaternion()
     hat.rotation_quaternion = Quaternion(up, math.radians(tilt)) @ q
     hat.location = base
     bpy.context.view_layer.update()
