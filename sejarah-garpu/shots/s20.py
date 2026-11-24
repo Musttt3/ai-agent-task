@@ -12,10 +12,10 @@ P._roll_palm(r, "L", -U); P.hand_shape(r, "L", "rileks", 0.3)
 Lb = [pb.name for pb in r.pose.bones if pb.name.endswith(".L") or pb.name.endswith("_l")]
 P.key_pose(r, f0, Lb); P.key_pose(r, f1, Lb)
 g = bpy.data.objects["GARPU_CORYAT"]; g["grip_mode"] = "pena"; g["r"] = 0.009
-show = P.bone_world(r, "spine01") + F * 0.34 + U * 0.3 + X * 0.03
+show = P.bone_world(r, "spine01") + F * 0.36 + U * 0.42 - X * 0.06
 low = P.bone_world(r, "spine01") + F * 0.4 - U * 0.02 - X * 0.12
-d_up = (U * 0.85 + F * 0.3 + X * 0.15).normalized(); d_low = (F * 0.6 + U * 0.2 + X * 0.4).normalized()
-hold(g, r, "R", [(f0, show), (1128, show), (1145, low), (f1, low)], point_local=Vector(g["tip"]), grip_local=(0, 0, -0.01), pole=-U * 0.8 - X * 0.6,
+d_up = (U * 0.9 + F * 0.15 - X * 0.05).normalized(); d_low = (F * 0.6 + U * 0.2 + X * 0.4).normalized()
+hold(g, r, "R", [(f0, show), (1128, show), (1145, low), (f1, low)], point_local=Vector(g["tip"]), grip_local=(0, 0, -0.01), pole=-U * 0.9 - X * 0.4,
      hand_dirs={f0: d_up, 1128: d_up, 1145: d_low, f1: d_low}, palm_dirs={f0: X * 0.7 - F * 0.4, 1128: X * 0.7 - F * 0.4, 1145: X * 0.5 - U * 0.5, f1: X * 0.5 - U * 0.5},
      fingers=(1, 3), pre_shape=("garpu", 1.0), prop_dirs={f0: d_up, 1128: d_up, 1145: d_low, f1: d_low})
 look(r, f0, Vector((1.15, 0.45, 1.16)), 0.75); look(r, 1135, Vector((1.15, 0.45, 1.16)), 0.75); look(r, f1, low + U * 0.22, 0.6)
