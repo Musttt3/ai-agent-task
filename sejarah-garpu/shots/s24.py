@@ -41,6 +41,6 @@ look(rp, f0, spot_s, 0.8); look(rp, 1345, P.bone_world(ra, "head"), 0.7); look(r
 P.face(p, f0, "SENYUM", 0.6); P.face(p, 1345, "SENANG", 0.7)
 look(ra, f0, P.bone_world(rp, "head"), 0.8); look(ra, 1333, spot_s, 0.9); look(ra, f1, spot_s, 0.9)
 P.face(a, f0, "NETRAL"); P.face(a, 1334, "KAGET", 0.6); P.face(a, f1, "MIKIR", 0.8)
-cam = camera(SID, 32, [(f0, (1.9, -3.4, 1.9), (0.1, -1.2, 1.45)), (f1, (1.75, -3.2, 1.85), (0.1, -1.3, 1.4))], focus=spot_s, fstop=3.5)
+cam = camera(SID, 24, [(f0, (-0.95, -4.0, 2.45), (0.12, -1.55, 1.42)), (f1, (-0.85, -3.8, 2.4), (0.1, -1.45, 1.42))], focus=spot_s, fstop=4.0)
 finish(SID, chars=[(a, ra), (p, rp)], props=[spoon, fork], env=[bpy.data.objects["Lantai_Rumah"]], every=4)
 if "stills" in sys.argv: print("STILLS", stills(SID, [f0, 1330, f1]))

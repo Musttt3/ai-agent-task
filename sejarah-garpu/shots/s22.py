@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from nusa_common import *
 SID = "22"; f0, f1, _ = SHOTS[SID]
 sc = open_set("nusantara", SID)
-a, ra = leluhur_bersila("leluhur_a", -0.35, -0.7, 0, f0, f1, lean=22)
+a, ra = leluhur_bersila("leluhur_a", -0.35, -0.76, 0, f0, f1, lean=40)
 X, F, U = P.char_axes(ra)
 rice = bpy.data.objects["NASI_DAUN_A_NASI"]
 rc = rice.matrix_world.translation; top = rc + Vector((0, 0, 0.07 * 0.62 + 0.004))
@@ -31,3 +31,7 @@ P.face(a, f0, "NETRAL", extra={"eyeLookDownLeft": 0.6, "eyeLookDownRight": 0.6})
 cam = camera(SID, 55, [(f0, rc + Vector((0.35, -0.6, 0.42)), rc + Vector((0, 0.05, 0.05))), (f1, rc + Vector((0.32, -0.55, 0.5)), rc + Vector((0, 0.12, 0.18)))], focus=rc + Vector((0, 0, 0.06)), fstop=3.2)
 finish(SID, chars=[(a, ra)], props=[], env=[bpy.data.objects["Tikar"]])
 if "stills" in sys.argv: print("STILLS", stills(SID, [f0, 1228, f1]))
+if "measure" in sys.argv:
+    for f in (f0, 1222, 1228, 1240, f1):
+        sc.frame_set(f); tip = P.bone_world(ra, "finger2-3.R", tail=True)
+        print("MEAS", f, "tip-edge %.3f" % (tip - edge).length, "tip", tuple(round(v, 3) for v in tip))
