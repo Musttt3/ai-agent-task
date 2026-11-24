@@ -5,11 +5,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from nusa_common import *
 SID = "22"; f0, f1, _ = SHOTS[SID]
 sc = open_set("nusantara", SID)
-a, ra = leluhur_bersila("leluhur_a", -0.35, -0.76, 0, f0, f1, lean=50)
+a, ra = leluhur_bersila("leluhur_a", -0.35, -0.76, 0, f0, f1, lean=58)
 X, F, U = P.char_axes(ra)
 rice = bpy.data.objects["NASI_DAUN_A_NASI"]
 rc = rice.matrix_world.translation; top = rc + Vector((0, 0, 0.07 * 0.62 + 0.004))
-edge = rc + (P.bone_world(ra, "spine01") - rc).normalized() * 0.05; edge.z = rc.z + 0.03
+edge = rc + (P.bone_world(ra, "spine01") - rc).normalized() * 0.065; edge.z = rc.z + 0.028
 # a small clump of rice that lives in the fingers after 1228
 from props import gundukan_nasi
 clump = gundukan_nasi("SUAPAN", 0.016, 0.9, bpy.data.collections["PROPS"])

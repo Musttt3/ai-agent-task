@@ -6,7 +6,7 @@ from nusa_common import *
 SID = "24"; f0, f1, _ = SHOTS[SID]
 sc = open_set("nusantara", SID)
 a, ra = leluhur_bersila("leluhur_a", -0.35, -0.85, 0, f0, f1)
-p, rp = actor("pelaut", loc=Vector((0.86, -2.2, 0)), yaw=180)
+p, rp = actor("pelaut", loc=Vector((0.86, -2.12, 0)), yaw=180)
 plant_feet(rp, p)
 Xp, Fp, Up = P.char_axes(rp)
 spoon, fork = PR.sendok_garpu_eropa(bpy.data.collections["PROPS"]); fork["r"] = 0.009; spoon["r"] = 0.005
