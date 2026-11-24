@@ -7,7 +7,7 @@ sc = open_set("london", SID)
 b, r = coryat_seated(f0, f1)
 X, F, U = P.char_axes(r)
 # left hand rests in the lap (keeps the forearm out of the close-up)
-P.reach(r, "L", P.bone_world(r, "spine01") + F * 0.24 - U * 0.2 + X * 0.1, pole_dir=-U * 0.5 + X * 0.8, wrist_fwd=(F - U * 0.3).normalized())
+P.reach(r, "L", P.bone_world(r, "spine01") + F * 0.3 - U * 0.1 + X * 0.12, pole_dir=-U * 0.5 + X * 0.8, wrist_fwd=(F - U * 0.3).normalized())
 P._roll_palm(r, "L", -U); P.hand_shape(r, "L", "rileks", 0.3)
 Lb = [pb.name for pb in r.pose.bones if pb.name.endswith(".L") or pb.name.endswith("_l")]
 P.key_pose(r, f0, Lb); P.key_pose(r, f1, Lb)
