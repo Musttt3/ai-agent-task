@@ -6,11 +6,11 @@ from nusa_common import *
 SID = "24"; f0, f1, _ = SHOTS[SID]
 sc = open_set("nusantara", SID)
 a, ra = leluhur_bersila("leluhur_a", -0.35, -0.85, 0, f0, f1)
-p, rp = actor("pelaut", loc=Vector((0.45, -2.6, 0)), yaw=180)
+p, rp = actor("pelaut", loc=Vector((0.86, -2.2, 0)), yaw=180)
 plant_feet(rp, p)
 Xp, Fp, Up = P.char_axes(rp)
 spoon, fork = PR.sendok_garpu_eropa(bpy.data.collections["PROPS"]); fork["r"] = 0.009; spoon["r"] = 0.005
-spot_s = Vector((0.22, -1.7, FZ + 0.006)); spot_f = Vector((0.7, -1.7, FZ + 0.006))
+spot_s = Vector((1.0, -1.62, FZ + 0.006)); spot_f = Vector((0.62, -1.62, FZ + 0.006))
 # held: spoon in the right hand, fork in the left; laid down at 1330 (swap to resting copies)
 for prop, side, spot in ((spoon, "R", spot_s), (fork, "L", spot_f)):
     prop["grip_mode"] = "pena"
@@ -41,6 +41,6 @@ look(rp, f0, spot_s, 0.8); look(rp, 1345, P.bone_world(ra, "head"), 0.7); look(r
 P.face(p, f0, "SENYUM", 0.6); P.face(p, 1345, "SENANG", 0.7)
 look(ra, f0, P.bone_world(rp, "head"), 0.8); look(ra, 1333, spot_s, 0.9); look(ra, f1, spot_s, 0.9)
 P.face(a, f0, "NETRAL"); P.face(a, 1334, "KAGET", 0.6); P.face(a, f1, "MIKIR", 0.8)
-cam = camera(SID, 24, [(f0, (-0.95, -4.0, 2.45), (0.12, -1.55, 1.42)), (f1, (-0.85, -3.8, 2.4), (0.1, -1.45, 1.42))], focus=spot_s, fstop=4.0)
-finish(SID, chars=[(a, ra), (p, rp)], props=[spoon, fork], env=[bpy.data.objects["Lantai_Rumah"]], every=4)
+cam = camera(SID, 24, [(f0, (-0.55, -4.1, 2.5), (0.3, -1.6, 1.42)), (f1, (-0.45, -3.9, 2.45), (0.3, -1.5, 1.42))], focus=spot_s, fstop=4.0)
+finish(SID, chars=[(a, ra), (p, rp)], props=[spoon, fork], env=[bpy.data.objects["Lantai_Rumah"], bpy.data.objects["Tiang_0_-1.8"]] + [o for o in bpy.data.objects if o.name.startswith(("Anak_Tangga", "Ibu_Tangga"))], every=4)
 if "stills" in sys.argv: print("STILLS", stills(SID, [f0, 1330, f1]))
