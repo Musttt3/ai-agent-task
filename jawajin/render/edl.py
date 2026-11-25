@@ -284,8 +284,9 @@ def build():
     # world map: Jawa, Jepang, Roma
     sh.append(MapShot(S(75) - 0.35, None, (-12, 150, -16, 62), res='50m', z=(1.0, 1.05), c=((.7, .62), (.55, .55)),
                       points=[{'lon': 110.5, 'lat': -7.4, 'label': 'JAWA', 't': S(75) - 0.1, 'off': (0, 54)},
-                              {'lon': 139.7, 'lat': 35.7, 'label': 'JEPANG', 't': w('Jepang', 338.9) - 0.4, 'off': (0, -56)},
-                              {'lon': 12.5, 'lat': 41.9, 'label': 'ROMA', 't': w('Roma', 343) - 0.6, 'off': (0, -56)}], tin=F))
+                              {'lon': 139.7, 'lat': 35.7, 'label': 'JEPANG', 't': S(75) + 0.7, 'off': (0, -56)},
+                              {'lon': 12.5, 'lat': 41.9, 'label': 'ROMA', 't': S(75) + 1.4, 'off': (0, -56)}], tin=F))
+    cue('pop', S(75) + 0.7, 0.3); cue('pop', S(75) + 1.4, 0.3)
     cue('pop', S(75) - 0.1, 0.35)
     amat = 'AI09_amaterasu-toshimasa-1889.jpg' if has('AI09_amaterasu-toshimasa-1889.jpg') else 'G19'
     kb(w('Kaisar', 338.9) - 0.1, amat, z=(1.05, 1.12), c=((.3, .5), (.6, .5)))
