@@ -8,6 +8,10 @@ TH = 0.76; TY1 = 3.0; TW = 1.15
 def prepare_table():
     """the head-end cloth skirt is shortened so seated knees pass under the table (cloth would fold over them)"""
     shorten_skirt(bpy.data.objects["Taplak_Ujung_1"], TH)
+    # her plate sits within reach of a seated person (0.6 m from her chair, not 0.8)
+    pl = bpy.data.objects.get("Piring_putri")
+    if pl and not pl.get("moved"): pl.location.y += 0.2; pl["moved"] = 1
+    bpy.context.view_layer.update()
 
 def shorten_skirt(end, th):
     """move the skirt's lower verts up to th-0.1 and its upper verts to the cloth top (world space; the set mesh

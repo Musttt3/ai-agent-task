@@ -6,8 +6,8 @@ from shot_lib import *
 SID = "13"; f0, f1, _ = SHOTS[SID]
 sc = open_set("venesia", SID)
 # the head-end tablecloth skirt: shorten so her knees pass under the table (cloth would fold over them)
-from venesia_common import shorten_skirt
-shorten_skirt(bpy.data.objects["Taplak_Ujung_1"], 0.76)
+from venesia_common import prepare_table
+prepare_table()                     # shortened skirt + her plate within reach
 b, r = actor("putri", mark="putri")
 sz = seat_z(0, 3.6)
 print("SEAT", sz)
@@ -33,7 +33,7 @@ for p_ in bite.data.polygons: p_.use_smooth = True
 bite.parent = g; bite.location = Vector(g["tip"]) + Vector((0, 0, 0.002))
 mouth = P.lips_front(b, r, out=0.024) - Vector((0, 0, 0.019))
 print("MOUTH", mouth)
-plate = Vector((0.02, 2.88, TH + 0.03))
+plate = Vector((0.02, 3.08, TH + 0.03))
 keys = [(f0, plate + Vector((0.02, -0.02, 0.01))), (785, plate.lerp(mouth, 0.55) + Vector((-0.03, -0.04, 0.0))), (800, mouth), (809, mouth + F * 0.05 - U * 0.05), (f1, mouth + F * 0.08 - U * 0.1)]
 g["grip_mode"] = "pena"
 # hand (= fork) directions: tines down into the food, then turned toward the lips

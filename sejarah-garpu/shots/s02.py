@@ -8,7 +8,7 @@ sc = open_set("venesia", SID)
 b, r = putri_seated(f0, f1)
 X, F, U = P.char_axes(r)
 g = bpy.data.objects["GARPU_EMAS"]; g["grip_mode"] = "pena"
-plate = Vector((0.02, 2.88, TH + 0.03))
+plate = Vector((0.02, 3.08, TH + 0.03))
 chest = P.bone_world(r, "spine01") + F * 0.32 + U * 0.08 - X * 0.08
 d_down = (-U * 0.8 + F * 0.45 + X * 0.25).normalized(); d_up = (U * 0.75 + F * 0.3 + X * 0.25).normalized()
 errs = hold(g, r, "R", [(f0, plate + Vector((0.02, -0.02, 0.01))), (75, chest), (f1, chest + U * 0.01)], point_local=Vector(g["tip"]),

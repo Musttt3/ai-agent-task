@@ -9,7 +9,7 @@ b, r = putri_seated(f0, f1)
 P.face(b, f0, "SENYUM", 0.6); P.blink(b, 720); P.blink(b, 760)
 g = bpy.data.objects["GARPU_EMAS"]; g["grip_mode"] = "pena"
 X, F, U = P.char_axes(r)
-plate = Vector((0.02, 2.88, TH + 0.03))
+plate = Vector((0.02, 3.08, TH + 0.03))
 hold(g, r, "R", [(f0, plate + Vector((0.02, -0.02, 0.012))), (f1, plate + Vector((0.02, -0.03, 0.02)))], point_local=Vector(g["tip"]),
      grip_local=(0, 0, 0.025), pole=-U * 0.8 - X * 0.6, hand_dirs={f0: (-U * 0.8 + F * 0.45 + X * 0.25).normalized(), f1: (-U * 0.8 + F * 0.45 + X * 0.25).normalized()},
      palm_dirs={f0: -U * 0.3 + X * 0.9, f1: -U * 0.3 + X * 0.9}, fingers=(1, 3), pre_shape=("garpu", 1.0))
