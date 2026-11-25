@@ -144,6 +144,7 @@ def hold(prop, rig, side, frames_keys, point_local=None, pole=None, hand_dir=Non
     P.place_in_palm(prop, rig, s, Vector(grip_local), Vector(axis_local), roll)
     for c in list(prop.constraints): prop.constraints.remove(c)
     P.attach(prop, rig, f"wrist.{s}")
+    print("HOLDERR", prop.name, rig.name, s, errs, "WORST %.3f" % max(errs))
     return errs
 
 def finish(sid, chars=(), props=(), env=(), every=3, check=True):
