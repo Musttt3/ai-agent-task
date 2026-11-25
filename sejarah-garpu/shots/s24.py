@@ -11,19 +11,19 @@ a, ra = leluhur_bersila("leluhur_a", -0.35, -0.85, 0, f0, f1)
 mb = bpy.data.objects.get("NASI_DAUN_B")
 if mb:
     for o in [mb] + list(mb.children_recursive): o.hide_render = True; o.hide_viewport = True
-p, rp = leluhur_bersila("pelaut", 0.64, -1.2, -90, f0, f1, lean=50)       # facing -x, toward the leluhur and the rice
+p, rp = leluhur_bersila("pelaut", 0.64, -1.2, -90, f0, f1, lean=56)       # facing -x, toward the leluhur and the rice
 Xp, Fp, Up = P.char_axes(rp)
 spoon, fork = PR.sendok_garpu_eropa(bpy.data.collections["PROPS"]); fork["r"] = 0.009; spoon["r"] = 0.005
 MZ = FZ + 0.012                                                        # top of the mat
-spot_s = Vector((0.1, -1.3, MZ + 0.006)); spot_f = Vector((0.16, -1.47, MZ + 0.006))   # beside the rice leaf
+spot_s = Vector((0.03, -1.05, MZ + 0.006)); spot_f = Vector((0.06, -1.34, MZ + 0.006))  # beyond his knees, each on its own hand's side
 # held: spoon in the right hand, fork in the left; laid down at 1330 (swap to resting copies)
 for prop, side, spot in ((spoon, "R", spot_s), (fork, "L", spot_f)):
     prop["grip_mode"] = "pena"
     sg = 1 if side == "L" else -1
     dd = (Fp * 0.7 - Up * 0.7).normalized()
-    hold(prop, rp, side, [(f0, spot + Up * 0.2 + Fp * 0.08), (1324, spot + Up * 0.04), (1330, spot + Up * 0.012)], point_local=Vector(prop["tip"]),
+    hold(prop, rp, side, [(f0, spot - Fp * 0.2 + Up * 0.26), (1317, spot + Up * 0.15), (1324, spot + Up * 0.04), (1330, spot + Up * 0.012)], point_local=Vector(prop["tip"]),
          grip_local=(0, 0, -0.02), pole=-Up * 0.6 + Xp * sg * 0.8, hand_dir=dd, palm_dir=-Up, fingers=(1, 3), pre_shape=("garpu", 1.0),
-         prop_dirs={f0: dd, 1324: dd, 1330: (Fp - Up * 0.05).normalized()})
+         prop_dirs={f0: dd, 1317: dd, 1324: dd, 1330: (Fp - Up * 0.05).normalized()})
     rest = prop.copy(); rest.data = prop.data; bpy.data.collections["PROPS"].objects.link(rest)
     for c in list(rest.constraints): rest.constraints.remove(c)
     if rest.animation_data: rest.animation_data_clear()
@@ -33,7 +33,7 @@ for prop, side, spot in ((spoon, "R", spot_s), (fork, "L", spot_f)):
 for side in ("L", "R"):
     sc.frame_set(1336)
     sg = 1 if side == "L" else -1
-    w = P.bone_world(rp, f"wrist.{side}") + Up * 0.1 - Fp * 0.06
+    w = P.bone_world(rp, f"wrist.{side}") + Up * 0.17 - Fp * 0.05
     P.reach(rp, side, w, pole_dir=-Up * 0.6 + Xp * sg * 0.8, wrist_fwd=(Fp * 0.7 - Up * 0.7).normalized())
     P.key_pose(rp, 1336, bones=[pb.name for pb in rp.pose.bones if pb.name.endswith("." + side) and ("arm" in pb.name or "wrist" in pb.name)])
 sc.frame_set(1348); rest_hands_on_knees(p, rp, 1348); rest_hands_on_knees(p, rp, f1)
