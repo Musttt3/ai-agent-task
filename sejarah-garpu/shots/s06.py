@@ -7,10 +7,10 @@ SID = "06"; f0, f1, _ = SHOTS[SID]
 sc = open_set("gua", SID)
 for nm in ("MANGKUK_BATU", "CANGKANG_KERANG", "SERPIHAN_KAYU", "Batu_Datar"):
     o_ = bpy.data.objects.get(nm)
-    if o_: o_.location.y -= 0.12
+    if o_: o_.location.y -= 0.12; o_.location.z += 0.08       # a higher flat rock: within reach of the kneeling man
 bpy.context.view_layer.update()
-b, r = actor("purba", loc=Vector((-0.6, 1.08, 0)), yaw=0)
-P.berlutut(r, b, seat_z(-0.6, 1.08), lean=55)
+b, r = actor("purba", loc=Vector((-0.6, 0.9, 0)), yaw=0)
+P.berlutut(r, b, seat_z(-0.6, 0.9), lean=62)
 X, F, U = P.char_axes(r)
 bowl = bpy.data.objects["MANGKUK_BATU"]; shell = bpy.data.objects["CANGKANG_KERANG"]; chip = bpy.data.objects["SERPIHAN_KAYU"]
 bc = bowl.matrix_world.translation; surf = bc.z + 0.062
