@@ -20,3 +20,4 @@ shots/build.log
 # generated while building (collision + audit reports)
 shots/blend/*_tabrakan.tsv
 review/rebuild/
+review/render_queue.txt
