@@ -97,11 +97,11 @@ def build():
         kb(S(14) - 0.3, 'AI05_lontar-calonarang.jpg', z=(1.05, 1.2), c=((.35, .5), (.6, .5)))
         src(S(14), w('Majapahit', 80) - 0.4, 'Lontar Tojan · Wikimedia Commons (CC BY-SA 4.0)')
     else:
-        kb(S(14) - 0.3, 'G34', z=(1.2, 1.3), c=((.5, .6), (.5, .55)))
-    if has('AI06_relief-majapahit-trowulan.jpg'):
-        kb(w('Majapahit', 80) - 0.6, 'AI06_relief-majapahit-trowulan.jpg', z=(1.0, 1.06), c=((.25, .5), (.45, .5)), grade='bw')
-        src(w('Majapahit', 80), S(15), 'Relief Majapahit, Trowulan (1923) · Wikimedia Commons')
-    txt(w('lontar', 80), S(15) - 0.2, 'ZAMAN MAJAPAHIT', 960, 960, size=50, tracking=10, wght=700, color=CREAM)
+        kb(S(14) - 0.3, 'G34', z=(1.7, 1.85), c=((.45, .62), (.55, .6)))
+    if has('AI06b_majapahit-relief-met.jpg'):
+        card(w('Majapahit', 80) - 0.6, 'AI06b_majapahit-relief-met.jpg', bg='blur', bg_img='G34', h=0.84, pos=(0.5, 0.47), yaw=(-6, 5))
+        src(w('Majapahit', 80), S(15), 'Terakota Jawa Timur, abad 14–15 · The Met (CC0)')
+    txt(w('lontar', 80), w('Majapahit', 80) - 0.7, 'DAUN LONTAR', 960, 960, size=50, tracking=10, wght=700, color=CREAM)
     sh.append(TimelineMajapahit(S(15) - 0.4, None, {'x': w('Nyatanya', 85), 'abad': w('abad', 85)}, tin=F))
     cue('scribble', w('Nyatanya', 85), 0.5); cue('pageturn', S(15) - 0.4, 0.5)
     # appointment 1845
@@ -288,15 +288,15 @@ def build():
     kb(w('Kaisar', 338.9) - 0.1, amat, z=(1.05, 1.12), c=((.3, .5), (.6, .5)))
     lt(w('Amaterasu', 338.9) - 0.4, S(77) - 0.2, 'AMATERASU', 'Dewi Matahari · Jepang')
     if amat.startswith('AI'): src(w('Kaisar', 338.9) + 0.4, S(77) - 0.2, 'Shunsai Toshimasa, 1889 · Wikimedia Commons')
-    rom = 'AI10_rubens-romulus-remus.jpg' if has('AI10_rubens-romulus-remus.jpg') else 'G46'
-    kb(S(77) - 0.3, rom, z=(1.1, 1.2), c=((.5, .55), (.45, .6)))
-    if rom.startswith('AI'): src(S(77), w('Mars', 343) - 0.4, 'Rubens, Romulus dan Remus (±1616) · Wikimedia Commons')
+    rom = 'AI10_romulus-remus-met.jpg' if has('AI10_romulus-remus-met.jpg') else 'G46'
+    kb(S(77) - 0.3, rom, z=(1.15, 1.25), c=((.45, .45), (.42, .45)), grade='bw' if rom.startswith('AI') else None)
+    if rom.startswith('AI'): src(S(77), S(78) - 0.2, 'Romulus & Remus, cetakan ±1650–75 · The Met (CC0)')
     lt(w('Romulus', 343), S(78) - 0.2, 'ROMULUS', 'anak Dewa Mars · Roma')
     if has('AI11_velazquez-mars.jpg'):
         card(w('Mars', 343) - 0.5, 'AI11_velazquez-mars.jpg', bg='blur', bg_img=rom, h=0.86, pos=(0.7, 0.5), yaw=(-8, -2))
     myth = [('G02', (0.25, 0.0, 0.9, 1.0), 'JAWA', 'para dewa', w('Hampir', 346.8)),
             (amat, None, 'JEPANG', 'Amaterasu', w('semua', 346.8) + 0.2),
-            ('AI17_lupa-capitolina.jpg' if has('AI17_lupa-capitolina.jpg') else 'G46', None, 'ROMA', 'Dewa Mars', w('kerajaan', 346.8))]
+            ('AI10b_romulus-remus-1652-met.jpg' if has('AI10b_romulus-remus-1652-met.jpg') else 'G46', (0.05, 0.05, 0.95, 0.86) if has('AI10b_romulus-remus-1652-met.jpg') else None, 'ROMA', 'Dewa Mars', w('kerajaan', 346.8))]
     sh.append(Cards(S(78) - 0.3, None, myth, 'G47', ('LELUHUR SETENGAH GAIB', w('leluhur', 347)), tin=F, h=380, y=520))
     for m_ in myth: cue('photo', m_[4], 0.45)
     if has('AV03_penobatan-solo-1945.webm'):
