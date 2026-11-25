@@ -16,7 +16,7 @@ for f, lift in ((f0, 0.0), (232, 1.0), (f1, 1.0)):
         tgt = head - U * (0.38 - 0.08 * lift) + F * 0.33 + X * sg * 0.11
         P.reach(r, s, tgt, pole_dir=-U * 0.9 + X * sg * 0.4, wrist_fwd=(F * 0.5 + U * 0.6 + X * sg * 0.1).normalized())
         P._roll_palm(r, s, (-F * 0.7 + U * 0.5).normalized())       # palms up toward his face
-        P.hand_shape(r, s, "buka", 1.0); P.hand_shape(r, s, "rileks", 0.5)
+        P.hand_shape(r, s, "rileks", 0.8)      # open palms, fingers softly curved
     P.key_pose(r, f)
 P.turn(r, "neck02", X, 14); P.key_pose(r, f0, bones=["neck02"]); P.key_pose(r, f1, bones=["neck02"])
 P.face(b, f0, "BINGUNG", 0.6); P.face(b, 230, "BINGUNG", 1.0); P.face(b, f1, "BINGUNG", 1.0, extra={"browInnerUp": 0.8})
