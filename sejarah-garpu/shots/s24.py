@@ -15,8 +15,8 @@ spot_s = Vector((1.0, -1.8, FZ + 0.006)); spot_f = Vector((0.66, -1.8, FZ + 0.00
 for prop, side, spot in ((spoon, "R", spot_s), (fork, "L", spot_f)):
     prop["grip_mode"] = "pena"
     dd = (Fp * 0.95 - Up * 0.2).normalized()           # the floor is at his chest: forearm over the edge, hand level
-    hold(prop, rp, side, [(f0, spot + Up * 0.25 - Fp * 0.15), (1324, spot + Up * 0.04), (1330, spot + Up * 0.012)], point_local=Vector(prop["tip"]),
-         grip_local=(0, 0, -0.02), pole=-Up * 0.7 + (Xp if side == "L" else -Xp) * 0.6, hand_dir=dd, palm_dir=-Up, fingers=(1, 3), pre_shape=("garpu", 1.0),
+    hold(prop, rp, side, [(f0, spot + Up * 0.22 - Fp * 0.05), (1324, spot + Up * 0.04), (1330, spot + Up * 0.012)], point_local=Vector(prop["tip"]),
+         grip_local=(0, 0, -0.02), pole=-Up * 0.2 - Fp * 0.3 + (Xp if side == "L" else -Xp) * 0.9,     # elbows out: forearms level over the floor hand_dir=dd, palm_dir=-Up, fingers=(1, 3), pre_shape=("garpu", 1.0),
          prop_dirs={f0: dd, 1324: dd, 1330: (Fp - Up * 0.05).normalized()})
     rest = prop.copy(); rest.data = prop.data; bpy.data.collections["PROPS"].objects.link(rest)
     for c in list(rest.constraints): rest.constraints.remove(c)
@@ -27,7 +27,7 @@ for prop, side, spot in ((spoon, "R", spot_s), (fork, "L", spot_f)):
 for side in ("L", "R"):
     sc.frame_set(1335)
     sh = P.bone_world(rp, f"upperarm01.{side}")
-    P.reach(rp, side, sh - Up * 0.12 + Fp * 0.17 + (Xp if side == "L" else -Xp) * 0.12, pole_dir=-Up * 0.6 + (Xp if side == "L" else -Xp) * 0.6, wrist_fwd=(Fp - Up * 0.3).normalized())
+    P.reach(rp, side, sh - Up * 0.08 + Fp * 0.22 + (Xp if side == "L" else -Xp) * 0.12, pole_dir=-Up * 0.3 + (Xp if side == "L" else -Xp) * 0.9, wrist_fwd=(Fp - Up * 0.3).normalized())
     P.key_pose(rp, 1335, bones=[pb.name for pb in rp.pose.bones if pb.name.endswith("." + side) and ("arm" in pb.name or "wrist" in pb.name)])
 for side in ("L", "R"):
     sc.frame_set(1345)
