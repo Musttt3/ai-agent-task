@@ -1,0 +1,13 @@
+# bahan besar / sementara (sumber ada di Google Drive "Jawajin" dan Wikimedia Commons)
+dl/
+src/
+assets/img/
+assets/archive/
+assets/audio/VO_full.mp3
+assets/geo/ne_10m_land.geojson
+out/
+work/*.wav
+work/*.jpg
+work/*.log
+render/__pycache__/
+tools/__pycache__/
