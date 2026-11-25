@@ -23,11 +23,11 @@ for f in (f0, 1311, 1346, f1):
 for f in (1321, 1334):
     sc.frame_set(f)
     for bn, q in base.items(): rp.pose.bones[bn].rotation_quaternion = q
-    for bn, d in zip(SP, (13, 11, 8)): P.turn(rp, bn, Xp, d)
+    for bn, d in zip(SP, (16, 13, 10)): P.turn(rp, bn, Xp, d)
     P.key_pose(rp, f, bones=list(SP))
 spoon, fork = PR.sendok_garpu_eropa(bpy.data.collections["PROPS"]); fork["r"] = 0.009; spoon["r"] = 0.005
 MZ = FZ + 0.012                                                        # top of the mat
-spot_s = Vector((0.12, -1.08, MZ + 0.006)); spot_f = Vector((0.12, -1.3, MZ + 0.006))  # beyond his knees, each on its own hand's side
+spot_s = Vector((0.06, -1.08, MZ + 0.006)); spot_f = Vector((0.06, -1.28, MZ + 0.006))  # beyond his knees, each on its own hand's side
 # held: spoon in the right hand, fork in the left; laid down at 1330 (swap to resting copies)
 for prop, side, spot in ((spoon, "R", spot_s), (fork, "L", spot_f)):
     prop["grip_mode"] = "pena"
