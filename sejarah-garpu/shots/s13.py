@@ -39,11 +39,11 @@ g["grip_mode"] = "pena"
 # hand (= fork) directions: tines down into the food, then turned toward the lips
 d0 = (-U * 0.8 + F * 0.45 + X * 0.25).normalized()
 dm = (mouth - (plate.lerp(mouth, 0.55))).normalized()
-d1 = (X * 0.22 - F * 0.75 + U * 0.55).normalized()
+d1 = (X * 0.55 - F * 0.6 + U * 0.3).normalized()      # fork comes in from her right-front, slightly up, to the lips
 errs = hold(g, r, "R", keys, point_local=Vector(g["tip"]), grip_local=(0, 0, 0.025), pole=-U * 0.8 - X * 0.6,
             hand_dirs={f0: d0, 785: (dm + d1).normalized(), 800: d1, 809: d1, f1: d1},
-            palm_dirs={f0: -U * 0.3 + X * 0.9, 785: X * 0.8 - U * 0.4, 800: -U * 0.7 + X * 0.5 + F * 0.2, 809: -U * 0.7 + X * 0.5 + F * 0.2, f1: -U * 0.7 + X * 0.5 + F * 0.2},
-            fingers=(1, 3), pre_shape=("garpu", 1.0), prop_dirs={785: (dm + d1).normalized(), 800: d1, 809: d1, f1: (d1 - U * 0.15).normalized()})
+            palm_dirs={f0: -U * 0.3 + X * 0.9, 785: X * 0.6 - U * 0.6, 800: -U * 0.6 - F * 0.4, 809: -U * 0.6 - F * 0.4, f1: -U * 0.6 - F * 0.4},
+            fingers=(1, 3), pre_shape=("garpu_makan", 1.0), prop_dirs={785: (dm + d1).normalized(), 800: d1, 809: d1, f1: (d1 - U * 0.15).normalized()})
 print("HOLD errors", errs)
 hide_between(bite, f0 - 5, 803)   # eaten
 # face: soft smile, eyes on the fork, a blink after the bite

@@ -368,7 +368,8 @@ def curl(rig, side, finger, deg, spread=0.0):
 def hand_shape(rig, side, shape="rileks", amount=1.0):
     """preset hand shapes: rileks, kepal (fist), cubit (pinch), pegang (grip a handle), tunjuk (point), buka (open)"""
     table = {"rileks": (12, 18, 22, 26, 30), "kepal": (55, 85, 90, 90, 90), "cubit": (35, 55, 40, 50, 55),
-             "pegang": (40, 70, 75, 78, 80), "tunjuk": (45, 0, 85, 88, 90), "buka": (0, 0, 0, 0, 0), "garpu": (20, 16, 45, 60, 68)}
+             "pegang": (40, 70, 75, 78, 80), "tunjuk": (45, 0, 85, 88, 90), "buka": (0, 0, 0, 0, 0), "garpu": (20, 16, 45, 60, 68),
+             "garpu_makan": (24, 34, 50, 62, 70)}       # eating: the index curls over the handle
     # absolute: the fingers start from their rest pose, so calling it again (e.g. inside a solver loop) never
     # stacks the curl
     for i in range(1, 6):
