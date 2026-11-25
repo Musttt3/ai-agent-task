@@ -156,7 +156,7 @@ def build():
     circ(w('bergaris', 162), S(35), 360, 280, 210, 110, angle=-12)
     circ(w('pulpen', 162), S(35), 450, 440, 360, 85, angle=-27)
     circ(w('stiker', 162), S(35), 600, 570, 190, 130, angle=-8)
-    sh.append(TimelineAges(S(35) - 0.3, None, {'cerita': w('Isinya', 170), 'tulis': w('ditulisnya', 170) - 0.2}, tin=F))
+    sh.append(TimelineAges(S(35) - 0.3, None, {'cerita': S(35) + 0.2, 'tulis': w('ditulisnya', 170) - 0.2}, tin=F))
     kb(S(37) - 0.3, 'G03', z=(1.02, 1.12), c=((.6, .55), (.55, .5)))
     ov.append(Dim(S(37), 179.9, 0.5, grad='bottom'))
     txt(w('tua', 175.5), 179.9, 'Tua ceritanya,', 960, 880, fname='cormi', size=70, wght=600, color=CREAM)
@@ -214,10 +214,13 @@ def build():
     if has('AI18_penari-kraton-1885.jpg'):
         kb(S(56) - 0.3, 'AI18_penari-kraton-1885.jpg', z=(1.05, 1.12), c=((.5, .5), (.5, .45)), grade='bw')
         src(S(56), S(57) - 0.2, 'Kassian Céphas, Keraton Yogyakarta ±1885 · KITLV / Commons')
+    elif has('AV03_penobatan-solo-1945.webm'):
+        sh.append(Vid(S(56) - 0.3, None, 'AV03_penobatan-solo-1945.webm', 131.6, mode='film', tin=F))
+        src(S(56), S(57) - 0.2, 'Nampo Hodo 1945, Surakarta · Wikimedia Commons')
     else:
-        kb(S(56) - 0.3, 'G15', z=(1.3, 1.36), c=((.85, .4), (.85, .4)))
+        kb(S(56) - 0.3, 'G24', z=(1.3, 1.36), c=((.7, .5), (.7, .5)))
     txt(w('putri', 254.7), S(57) - 0.1, 'PUTRI BANGSAWAN BIASA?', 960, 960, size=50, tracking=8, wght=700, color=CREAM)
-    kb(S(57) - 0.3, 'G22', z=(1.4, 1.5), c=((.5, .85), (.45, .82)))
+    kb(S(57) - 0.3, 'G40', z=(1.9, 2.0), c=((.12, .62), (.2, .6)))
     txt(w('lebih', 257), S(58) - 0.1, 'PENGHUNI DUNIA LEBIH TUA', 960, 160, size=48, tracking=8, wght=700, color=CREAM)
     kb(S(58) - 0.3, 'G09', z=(1.0, 1.06), c=((.5, .5), (.5, .5)))
     txt(w('nyata', 262.8), S(59) - 0.1, 'ALAM NYATA', 430, 930, size=58, tracking=10, wght=800, color=GOLD, glow=0.3)
