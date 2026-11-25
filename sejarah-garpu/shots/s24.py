@@ -15,14 +15,14 @@ p, rp = leluhur_bersila("pelaut", 0.64, -1.2, -90, f0, f1, lean=56)       # faci
 Xp, Fp, Up = P.char_axes(rp)
 spoon, fork = PR.sendok_garpu_eropa(bpy.data.collections["PROPS"]); fork["r"] = 0.009; spoon["r"] = 0.005
 MZ = FZ + 0.012                                                        # top of the mat
-spot_s = Vector((0.03, -1.05, MZ + 0.006)); spot_f = Vector((0.06, -1.34, MZ + 0.006))  # beyond his knees, each on its own hand's side
+spot_s = Vector((0.15, -1.02, MZ + 0.006)); spot_f = Vector((0.15, -1.37, MZ + 0.006))  # beyond his knees, each on its own hand's side
 # held: spoon in the right hand, fork in the left; laid down at 1330 (swap to resting copies)
 for prop, side, spot in ((spoon, "R", spot_s), (fork, "L", spot_f)):
     prop["grip_mode"] = "pena"
     sg = 1 if side == "L" else -1
-    dd = (Fp * 0.7 - Up * 0.7).normalized()
+    dd = (Fp * 0.45 - Up * 0.9).normalized()            # forearm steep over the spot: clear of his own knees
     hold(prop, rp, side, [(f0, spot - Fp * 0.2 + Up * 0.26), (1317, spot + Up * 0.15), (1324, spot + Up * 0.04), (1330, spot + Up * 0.012)], point_local=Vector(prop["tip"]),
-         grip_local=(0, 0, -0.02), pole=-Up * 0.6 + Xp * sg * 0.8, hand_dir=dd, palm_dir=-Up, fingers=(1, 3), pre_shape=("garpu", 1.0),
+         grip_local=(0, 0, -0.02), pole=Up * 0.2 - Fp * 0.3 + Xp * sg * 0.9, hand_dir=dd, palm_dir=-Up, fingers=(1, 3), pre_shape=("garpu", 1.0),
          prop_dirs={f0: dd, 1317: dd, 1324: dd, 1330: (Fp - Up * 0.05).normalized()})
     rest = prop.copy(); rest.data = prop.data; bpy.data.collections["PROPS"].objects.link(rest)
     for c in list(rest.constraints): rest.constraints.remove(c)
