@@ -13,6 +13,11 @@ if sm_:
 plant_feet(r, b)
 X, F, U = P.char_axes(r)
 P.turn(r, "spine02", X, 16); P.turn(r, "spine03", X, 10)      # leaning over the ding
+# the ding (with its fire and steam) sits on her side of the stove top, within reach of the long chopsticks
+for o in bpy.data.objects:
+    if o.parent is None and (o.name in ("DING", "API_TUNGKU", "API_TUNGKU_cahaya") or o.name.upper().startswith("UAP")):
+        o.location.y += 0.12
+bpy.context.view_layer.update()
 sp = bpy.data.objects["SUMPIT_MASAK"]; sp["grip_mode"] = "pena"; sp["r"] = 0.0035
 pot = bpy.data.objects["DING"].matrix_world.translation + Vector((0, 0.06, 0.3))   # in the broth (surface z 0.6), her side of the pot
 keys = [(f, pot + Vector((0.05 * math.cos(i * 1.3), 0.04 * math.sin(i * 1.3), -0.03))) for i, f in enumerate(range(f0, f1 + 1, 10))]
