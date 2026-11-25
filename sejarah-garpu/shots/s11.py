@@ -14,6 +14,7 @@ for o in bpy.data.objects:
 bpy.context.view_layer.update()
 co = bpy.data.objects["SENDOK_ROMAWI"]; co["grip_mode"] = "pena"
 sn = bpy.data.objects["SIPUT_1"]
+sn.location.y = 0.08; bpy.context.view_layer.update()            # this snail sits at his edge of the mensa (within reach)
 mouth_local = Vector(sn["mulut"]); ap = sn.matrix_world @ mouth_local
 # a second snail object with the body drawn out, swapped in at 640 (the drawn-out body follows the point)
 sn2 = PR.siput("SIPUT_KELUAR", bpy.data.collections["PROPS"], body_out=1.0); sn2.matrix_world = sn.matrix_world.copy()

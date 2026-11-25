@@ -15,7 +15,13 @@ for o in bpy.data.objects:
 bpy.context.view_layer.update()
 co = bpy.data.objects["SENDOK_ROMAWI"]; co["grip_mode"] = "pena"
 TH = 0.545
+co.location.y = 0.14; co.location.x = 0.02; bpy.context.view_layer.update()     # the spoon lies at his edge of the mensa
 table_pt = co.matrix_world.translation + Vector((0, 0, 0.02))
+# he leans in to pick it up, then sits back up to show it
+base = {bn: r.pose.bones[bn].rotation_quaternion.copy() for bn in ("spine02", "spine03")}
+sc.frame_set(f0); P.turn(r, "spine03", X, 12); P.turn(r, "spine02", X, 10); P.key_pose(r, f0, bones=list(base))
+for bn, q in base.items(): r.pose.bones[bn].rotation_quaternion = q
+P.key_pose(r, 565, bones=list(base)); P.key_pose(r, f1, bones=list(base))
 show = P.bone_world(r, "spine01") + F * 0.36 + U * 0.22 - X * 0.12
 d_flat = (F * 0.7 + X * 0.5 - U * 0.3).normalized(); d_up = (U * 0.8 + F * 0.4 + X * 0.2).normalized(); d_turn = (U * 0.6 + X * 0.75 + F * 0.2).normalized()
 errs = hold(co, r, "R", [(f0, table_pt + U * 0.06), (565, show - U * 0.08), (585, show), (600, show + U * 0.01), (f1, show + U * 0.01)],
