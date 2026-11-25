@@ -5,17 +5,17 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from shot_lib import *
 SID = "07"; f0, f1, _ = SHOTS[SID]
 sc = open_set("dapur", SID)
-b, r = actor("koki", loc=Vector((0.0, 1.18, 0)), yaw=0)
+b, r = actor("koki", loc=Vector((0.0, 1.06, 0)), yaw=0)     # toes at the stove edge (y 0.9)
 sm_ = bpy.data.materials.get("Uap")
 if sm_:
     for n_ in sm_.node_tree.nodes:
         if n_.type == "MAP_RANGE": n_.inputs["To Max"].default_value = 0.18
 plant_feet(r, b)
 X, F, U = P.char_axes(r)
-P.turn(r, "spine02", X, 10); P.turn(r, "spine03", X, 6)
+P.turn(r, "spine02", X, 16); P.turn(r, "spine03", X, 10)      # leaning over the ding
 sp = bpy.data.objects["SUMPIT_MASAK"]; sp["grip_mode"] = "pena"; sp["r"] = 0.0035
-pot = bpy.data.objects["DING"].matrix_world.translation + Vector((0, 0, 0.36))
-keys = [(f, pot + Vector((0.07 * math.cos(i * 1.3), 0.07 * math.sin(i * 1.3), -0.03))) for i, f in enumerate(range(f0, f1 + 1, 10))]
+pot = bpy.data.objects["DING"].matrix_world.translation + Vector((0, 0.1, 0.36))   # her side of the pot
+keys = [(f, pot + Vector((0.06 * math.cos(i * 1.3), 0.05 * math.sin(i * 1.3), -0.03))) for i, f in enumerate(range(f0, f1 + 1, 10))]
 errs = hold(sp, r, "R", keys, point_local=Vector(sp["tip"]), grip_local=(0, 0, -0.02), pole=-U * 0.8 - X * 0.6,
             hand_dir=(F * 0.5 - U * 0.5 - X * 0.2).normalized(), palm_dir=(X * 0.7 - F * 0.3).normalized(), fingers=(1, 2, 3), pre_shape=("pegang", 0.5),
             prop_dirs={k[0]: (-U * 0.85 + F * 0.3).normalized() for k in keys})
