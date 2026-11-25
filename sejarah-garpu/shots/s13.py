@@ -31,7 +31,7 @@ bpy.ops.mesh.primitive_uv_sphere_add(radius=0.011, location=(0, 0, 0)); bite = b
 bite.scale = (1.0, 0.8, 1.2); bite.data.materials.append(PR.mat_noise_color("Daging_Pir", (0.92, 0.88, 0.66), (0.82, 0.76, 0.5), scale=400, rough=0.3, bump=0.2, sss=0.3))
 for p_ in bite.data.polygons: p_.use_smooth = True
 bite.parent = g; bite.location = Vector(g["tip"]) + Vector((0, 0, 0.002))
-mouth = P.lips_front(b, r, out=0.024) - Vector((0, 0, 0.019))
+mouth = P.lips_front(b, r, out=0.03) - Vector((0, 0, 0.031))
 print("MOUTH", mouth)
 plate = Vector((0.02, 3.08, TH + 0.03))
 keys = [(f0, plate + Vector((0.02, -0.02, 0.01))), (785, plate.lerp(mouth, 0.55) + Vector((-0.03, -0.04, 0.0))), (800, mouth), (809, mouth + F * 0.05 - U * 0.05), (f1, mouth + F * 0.08 - U * 0.1)]

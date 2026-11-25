@@ -27,6 +27,8 @@ look(rb, 80, P.bone_world(r, "head"), 0.9); look(rb, f1, P.bone_world(r, "head")
 P.face(bb, f0, "NETRAL"); P.face(bb, 80, "NETRAL", extra={"eyeLookOutLeft": 0.3, "eyeLookInRight": 0.3})
 P.face(bb, 88, "SINIS", 1.0); P.face(bb, f1, "SINIS", 1.0)
 P.blink(b, 96)
-cam = camera(SID, 30, [(f0, (-0.55, 1.7, 1.25), (0.42, 3.2, 1.1)), (f1, (-0.5, 1.82, 1.25), (0.42, 3.2, 1.11))], focus=P.bone_world(r, "head"), fstop=2.8)
+# on the princess and her fork, then (on "sombong") the camera eases back and round to reveal the sneering noble
+cam = camera(SID, 24, [(f0, (-0.78, 2.5, 1.38), (0.0, 3.38, 1.12)), (78, (-0.8, 2.42, 1.4), (0.02, 3.34, 1.13)),
+                       (100, (-1.31, 1.4, 1.48), (0.5, 2.91, 1.15)), (f1, (-1.29, 1.43, 1.48), (0.5, 2.91, 1.15))], focus=P.bone_world(r, "head"), fstop=3.5)
 finish(SID, chars=[(b, r), (bb, rb)], props=[g], env=[bpy.data.objects["Meja"], bpy.data.objects["Taplak"]])
-if "stills" in sys.argv: print("STILLS", stills(SID, [f0, 80, f1]))
+if "stills" in sys.argv: print("STILLS", stills(SID, [f0, 75, 92, f1]))
