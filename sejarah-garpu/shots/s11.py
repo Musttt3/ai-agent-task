@@ -6,7 +6,7 @@ from shot_lib import *
 SID = "11"; f0, f1, _ = SHOTS[SID]
 sc = open_set("romawi", SID)
 b, r = actor("romawi", loc=Vector((0.15, 0.78, 0)), yaw=0)
-P.sit(r, b, seat_z(0.15, 0.8), lean=24, spread=0.1)
+P.sit(r, b, seat_z(0.15, 0.8), lean=32, spread=0.1)
 X, F, U = P.char_axes(r)
 for o in bpy.data.objects:
     if o.name.startswith(("Mensa", "Kaki_Mensa", "Alas_Mensa")) or (o.users_collection and o.users_collection[0].name == "PROPS" and o.parent is None):
@@ -14,7 +14,7 @@ for o in bpy.data.objects:
 bpy.context.view_layer.update()
 co = bpy.data.objects["SENDOK_ROMAWI"]; co["grip_mode"] = "pena"
 sn = bpy.data.objects["SIPUT_1"]
-sn.location.y = 0.08; bpy.context.view_layer.update()            # this snail sits at his edge of the mensa (within reach)
+sn.location.y = 0.12; bpy.context.view_layer.update()            # this snail sits at his edge of the mensa (within reach)
 mouth_local = Vector(sn["mulut"]); ap = sn.matrix_world @ mouth_local
 # a second snail object with the body drawn out, swapped in at 640 (the drawn-out body follows the point)
 sn2 = PR.siput("SIPUT_KELUAR", bpy.data.collections["PROPS"], body_out=1.0); sn2.matrix_world = sn.matrix_world.copy()
