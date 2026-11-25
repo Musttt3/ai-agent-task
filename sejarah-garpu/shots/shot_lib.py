@@ -137,7 +137,14 @@ def hold(prop, rig, side, frames_keys, point_local=None, pole=None, hand_dir=Non
         P.limit_fingers(rig, s)
         P.close_on(rig, s, [prop], fingers=fingers)
         P.limit_fingers(rig, s); P.cascade_curl(rig, s); P.limit_fingers(rig, s); P.unpress_fingers(rig, s, [prop])
+        # a pen grip follows the index finger: solve the arm again with the final finger shape
+        P.hold_to(rig, s, prop, pt, target, pole if pole is not None else (-U * 0.8 + (X if s == "L" else -X) * 0.6),
+                  hd if hd is not None else F, pdir if pdir is not None else (U * 0.3 + (-X if s == "L" else X)),
+                  grip_local=Vector(grip_local), axis_local=Vector(axis_local), roll=roll, prop_dir=(prop_dirs or {}).get(f))
+        P.unpress_fingers(rig, s, [prop])
         P.key_pose(rig, f, bones=arm_bones)
+        P.place_in_palm(prop, rig, s, Vector(grip_local), Vector(axis_local), roll)
+        e = (Vector(target) - prop.matrix_world @ pt).length            # as keyed (after fingers and anatomy)
         errs.append(round(e, 4))
     # the prop rides on the wrist: same palm-relative placement at every key -> one Child Of constraint
     f_first = frames_keys[0][0]
