@@ -541,12 +541,23 @@ def hold_to(rig, side, prop, point_local, target, pole_dir, hand_dir, palm_dir, 
                 if ax.length < 1e-4: break
                 turn(rig, f"wrist.{side}", ax.normalized(), math.degrees(cur.angle(want)) * 0.8)
                 place_in_palm(prop, rig, side, grip_local, axis_local, roll)
-        if ANATOMY:
-            fix_arm(rig, side); place_in_palm(prop, rig, side, grip_local, axis_local, roll)
         tip = prop.matrix_world @ Vector(point_local)
         err = Vector(target) - tip
         if err.length < 0.004: break
         T = T + err
+    if ANATOMY:
+        # anatomical wrist: swivel the elbow (hand held still) or bend the hand back into range; if that moved the
+        # prop point, carry the whole hand (same world orientation) back to the target with the arm and repeat
+        wb = rig.pose.bones[f"wrist.{side}"]
+        for _ in range(10):
+            fix_arm(rig, side); place_in_palm(prop, rig, side, grip_local, axis_local, roll)
+            err = Vector(target) - prop.matrix_world @ Vector(point_local)
+            if err.length < 0.004: break
+            Mw = (rig.matrix_world @ wb.matrix).copy()
+            reach(rig, side, bone_world(rig, f"wrist.{side}") + err, pole_dir)
+            bpy.context.view_layer.update()
+            Mw.translation = bone_world(rig, f"wrist.{side}"); _set_world(rig, f"wrist.{side}", Mw)
+            place_in_palm(prop, rig, side, grip_local, axis_local, roll)
     return (Vector(target) - prop.matrix_world @ Vector(point_local)).length
 
 def _roll_palm(rig, side, palm_dir):
