@@ -6,6 +6,8 @@
 #   cam = camera("13", lens=50, keys=[(f, loc, look), ...], focus=obj_or_point, fstop=2.0)
 #   finish("13", chars=[(b, r)], props=[...], env=[...])   # penetration check + save shots/blend/13.blend
 import bpy, os, sys, math, json
+try: sys.stdout.reconfigure(line_buffering=True)     # build logs show progress as it happens
+except Exception: pass
 from mathutils import Vector, Euler, Quaternion
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 for d in ("sets", "props", "characters"): sys.path.insert(0, os.path.join(ROOT, d))
