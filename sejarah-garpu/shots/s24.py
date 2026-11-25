@@ -11,8 +11,20 @@ a, ra = leluhur_bersila("leluhur_a", -0.35, -0.85, 0, f0, f1)
 mb = bpy.data.objects.get("NASI_DAUN_B")
 if mb:
     for o in [mb] + list(mb.children_recursive): o.hide_render = True; o.hide_viewport = True
-p, rp = leluhur_bersila("pelaut", 0.64, -1.2, -90, f0, f1, lean=56)       # facing -x, toward the leluhur and the rice
+p, rp = leluhur_bersila("pelaut", 0.64, -1.2, -90, f0, f1, lean=24)       # facing -x, toward the leluhur and the rice
 Xp, Fp, Up = P.char_axes(rp)
+# he sits fairly upright, bows forward only to lay the pieces down (1321-1334), then sits back up
+SP = ("spine03", "spine02", "spine01")
+base = {bn: rp.pose.bones[bn].rotation_quaternion.copy() for bn in SP}
+for f in (f0, 1311, 1346, f1):
+    sc.frame_set(f)
+    for bn, q in base.items(): rp.pose.bones[bn].rotation_quaternion = q
+    P.key_pose(rp, f, bones=list(SP))
+for f in (1321, 1334):
+    sc.frame_set(f)
+    for bn, q in base.items(): rp.pose.bones[bn].rotation_quaternion = q
+    for bn, d in zip(SP, (13, 11, 8)): P.turn(rp, bn, Xp, d)
+    P.key_pose(rp, f, bones=list(SP))
 spoon, fork = PR.sendok_garpu_eropa(bpy.data.collections["PROPS"]); fork["r"] = 0.009; spoon["r"] = 0.005
 MZ = FZ + 0.012                                                        # top of the mat
 spot_s = Vector((0.12, -1.08, MZ + 0.006)); spot_f = Vector((0.12, -1.3, MZ + 0.006))  # beyond his knees, each on its own hand's side
