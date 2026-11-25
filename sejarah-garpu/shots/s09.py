@@ -19,12 +19,12 @@ for o in bpy.data.objects:
         o.location.y += 0.12
 bpy.context.view_layer.update()
 sp = bpy.data.objects["SUMPIT_MASAK"]; sp["grip_mode"] = "pena"; sp["r"] = 0.0035
-pot = bpy.data.objects["DING"].matrix_world.translation + Vector((0, 0.06, 0.3))   # in the broth (surface z 0.6), her side of the pot
-keys = [(f, pot + Vector((0.05 * math.cos(i * 1.3), 0.04 * math.sin(i * 1.3), -0.03))) for i, f in enumerate(range(f0, 490, 9))]
+pot = bpy.data.objects["DING"].matrix_world.translation + Vector((0, 0.14, 0.3))   # in the broth (surface z 0.6), near her rim
+keys = [(f, pot + Vector((0.05 * math.cos(i * 1.3), 0.03 * math.sin(i * 1.3), -0.03))) for i, f in enumerate(range(f0, 490, 9))]
 keys += [(498, pot + Vector((0.03, -0.03, 0.06))), (f1, pot + Vector((0.03, -0.03, 0.08)))]
 hold(sp, r, "R", keys, point_local=Vector(sp["tip"]), grip_local=(0, 0, -0.02), pole=-U * 0.8 - X * 0.6,
      hand_dir=(F * 0.5 - U * 0.5 - X * 0.2).normalized(), palm_dir=(X * 0.7 - F * 0.3).normalized(), fingers=(1, 2, 3), pre_shape=("pegang", 0.5),
-     prop_dirs={k[0]: (-U * 0.85 + F * 0.3).normalized() for k in keys})
+     prop_dirs={k[0]: (-U * 0.92 + F * 0.2).normalized() for k in keys})
 P.relaxed_arms(r, sides=("L",)); P.key_pose(r, f0, bones=[pb.name for pb in r.pose.bones if pb.name.endswith(".L")])
 plant_feet(r, b); r.keyframe_insert("location", frame=f0)
 # head: down at the pot, up to camera at 490, shakes on "bukan buat makan" (493-523)
