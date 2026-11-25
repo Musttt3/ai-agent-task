@@ -19,8 +19,8 @@ keys = [(f0, grab + U * 0.15 + F * 0.05), (1437, grab + U * 0.012), (1441, grab 
 for f, t in keys:
     sc.frame_set(f)
     up = f in (1450, 1456)
-    P.reach(r, "R", t + (-U * 0.08 + F * 0.14 if up else U * 0.04 - F * 0.06), pole_dir=-X * 0.8 - U * 0.5,
-            wrist_fwd=((-F * 0.6 + U * 0.6 + X * 0.3) if up else (F * 0.75 - U * 0.6)).normalized())
+    P.reach(r, "R", t + (-U * 0.05 + F * 0.15 if up else U * 0.04 - F * 0.06), pole_dir=-X * 0.8 - U * 0.5,
+            wrist_fwd=((-F * 0.85 + U * 0.3 + X * 0.3) if up else (F * 0.75 - U * 0.6)).normalized())
     P._roll_palm(r, "R", ((X * 0.4 + U * 0.6 - F * 0.2) if up else (-U * 0.5 + X * 0.3 + F * 0.3)).normalized())
     P.hand_shape(r, "R", "cubit", 0.75 if 1441 <= f <= 1456 else 0.35)
     P.key_pose(r, f, bones=[pb.name for pb in r.pose.bones if pb.name.endswith(".R") and ("arm" in pb.name or "wrist" in pb.name or "finger" in pb.name)])
