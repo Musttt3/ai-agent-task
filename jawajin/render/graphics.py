@@ -338,6 +338,7 @@ class CaseBoard(Shot):
             cv2.rectangle(m, (int(lx - tw / 2), int(ly - 26)), (int(lx + tw / 2), int(ly + 26)), 255, -1)
             fill_mask(f, m, (236, 226, 200), a)
             blit(f, tag, lx, ly, a, 'c')
+        label(f, 'SATU GARIS KETURUNAN', 960 + ox, 90 + oy, appear(t, self.t0 + 0.2, 0.6), 46, (236, 226, 200), 'elite', None, 6)
         # strings
         for k in range(1, len(self.cards)):
             ts = self.cards[k][3]
