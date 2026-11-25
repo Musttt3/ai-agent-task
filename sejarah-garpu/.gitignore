@@ -21,3 +21,4 @@ shots/build.log
 shots/blend/*_tabrakan.tsv
 review/rebuild/
 review/render_queue.txt
+shots/blend/knee_cache.json
