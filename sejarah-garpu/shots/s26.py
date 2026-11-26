@@ -14,15 +14,20 @@ rice = bpy.data.objects["PIRING_NARATOR_NASI"]; rc = rice.matrix_world.translati
 grab = rc + Vector((0.0, -0.03, 0.035))
 from props import gundukan_nasi
 clump = gundukan_nasi("SUAPAN_NARATOR", 0.014, 0.9, bpy.data.collections["PROPS"])
-# hand-eating as people really do it: the hand rises from BELOW the chin, fingers pointing up-back at the lips
-# (thumb pushes the rice in), elbow low at his side, so the face stays visible; then it comes down in steps
+# hand-eating as people really do it: palm up, fingertips into the mouth from the front-below
+# (thumb pushes the rice in), elbow low at his side; then the hand comes down in steps
 plate_keys = [(f0, grab + U * 0.15 + F * 0.05), (1437, grab + U * 0.012), (1441, grab + U * 0.006)]
-FW_UP = (-F * 0.7 + U * 0.5 - X * 0.2).normalized()         # fingers toward the lips, from below-front
 FW_DN = (F * 0.75 - U * 0.6).normalized()                    # fingers toward the plate
-PALM_UP = (-F * 0.7 + X * 0.4 - U * 0.2).normalized(); PALM_DN = (-U * 0.5 + X * 0.3 + F * 0.3).normalized()
-# (frame, tip goal relative to mouth or None, fingers dir, palm dir, curl)
-mouth_keys = [(1446, (F * 0.2 - U * 0.2), 0.5, 0.75), (1450, (F * 0.06 - U * 0.06), 1.0, 0.75), (1456, (F * 0.012), 1.0, 0.75),
-              (1462, (F * 0.06 - U * 0.09), 1.0, 0.55), (1469, (F * 0.16 - U * 0.18), 0.55, 0.45)]
+PALM_DN = (-U * 0.5 + X * 0.3 + F * 0.3).normalized()
+# at the mouth: palm UP, fingers pointing back into the mouth, thumb pushes the rice in -> the curled fingers and
+# knuckles stay BELOW the lips, the eyes and nose stay visible
+FW_M = (-F * 0.8 + U * 0.3 - X * 0.25).normalized(); PALM_M = (U * 0.75 - F * 0.3 + X * 0.2).normalized()
+def mix(a, b, k): return a.lerp(b, k).normalized()
+# (frame, tip goal relative to the lips, fingers dir, palm dir, curl)
+mouth_keys = [(1446, F * 0.2 - U * 0.2, mix(FW_DN, FW_M, 0.5), (X * 0.6 + U * 0.2 - F * 0.2).normalized(), 0.75),
+              (1450, F * 0.06 - U * 0.03, FW_M, PALM_M, 0.75), (1456, F * 0.012, FW_M, PALM_M, 0.75),
+              (1462, F * 0.12 - U * 0.1, mix(FW_M, FW_DN, 0.25), (X * 0.6 + U * 0.5 - F * 0.2).normalized(), 0.6),
+              (1469, F * 0.18 - U * 0.2, mix(FW_M, FW_DN, 0.6), (X * 0.7 - U * 0.2).normalized(), 0.55)]
 rest_keys = [(1480, grab + U * 0.12 + F * 0.1), (f1, grab + U * 0.12 + F * 0.1)]
 def tips():
     bpy.context.view_layer.update()
@@ -32,13 +37,12 @@ for f, t in plate_keys + rest_keys:
     sc.frame_set(f)
     P.reach(r, "R", t + U * 0.04 - F * 0.06, pole_dir=-X * 0.8 - U * 0.5, wrist_fwd=FW_DN)
     P._roll_palm(r, "R", PALM_DN)
-    P.hand_shape(r, "R", "cubit", 0.75 if f == 1441 else 0.35)
+    P.hand_shape(r, "R", "cubit", 0.75 if f == 1441 else 0.5)
     P.key_pose(r, f, bones=RB)
-for f, off, k, curl in mouth_keys:
+for f, off, fwd, palm, curl in mouth_keys:
     # fingertips (not the wrist) go to the goal: the mouth is re-measured at this frame (head lean + look)
     sc.frame_set(f)
     goal = P.mouth_front(b, r) + off
-    fwd = (FW_DN.lerp(FW_UP, k)).normalized(); palm = (PALM_DN.lerp(PALM_UP, k)).normalized()
     w = goal - fwd * 0.15
     for _ in range(10):
         P.reach(r, "R", w, pole_dir=-X * 0.6 - U * 0.8, wrist_fwd=fwd)
