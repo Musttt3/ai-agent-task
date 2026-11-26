@@ -22,7 +22,8 @@ S.objects["Lubang_Kusen"].hide_render = True; S.objects["Lubang_Kusen"].display_
 box(S, "Plint", (0, 0.5 + D / 2 - 0.11, 0.05), (W, 0.02, 0.1), mat_simple("Plint", (0.3, 0.22, 0.15), rough=0.5))
 # furniture
 tb = ph_model("dining_table", S, loc=(0, 0, 0), size=0.76, axis="z", name="Meja_Makan")
-for k_, (x, y, r) in enumerate(((0, 0.7, 180), (-0.6, 0.7, 180), (0.6, -0.7, 0), (-0.6, -0.7, 0))):
+# the chair model's backrest is on its -y side at rot 0: far-side chairs (+y) keep rot 0 so the back is away from the table
+for k_, (x, y, r) in enumerate(((0, 0.74, 0), (-0.6, 0.74, 0), (0.6, -0.74, 180), (-0.6, -0.74, 180))):
     ph_model("dining_chair_02", S, loc=(x, y, 0), rot=(0, 0, math.radians(r)), size=0.9, axis="z", name=f"Kursi_{k_}")
 ph_model("modern_wooden_cabinet", S, loc=(1.2, 0.5 + D / 2 - 0.4, 0), rot=(0, 0, math.radians(180)), size=0.85, axis="z", name="Bufet")
 ph_model("ceramic_vase_04", S, loc=(0.9, 0.5 + D / 2 - 0.4, 0.85), size=0.3, axis="z", name="Vas_Bufet")

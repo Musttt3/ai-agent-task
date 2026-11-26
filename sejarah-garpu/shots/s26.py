@@ -12,17 +12,35 @@ P.sit(r, b, seat_z(0.0, 0.74), lean=10)
 X, F, U = P.char_axes(r)
 rice = bpy.data.objects["PIRING_NARATOR_NASI"]; rc = rice.matrix_world.translation
 grab = rc + Vector((0.0, -0.03, 0.035))
-mouth = P.lips_front(b, r, out=0.012)
+mouth = P.lips_front(b, r, out=0.012)                       # rough; the eating keys re-measure it per frame
 from props import gundukan_nasi
 clump = gundukan_nasi("SUAPAN_NARATOR", 0.014, 0.9, bpy.data.collections["PROPS"])
 keys = [(f0, grab + U * 0.15 + F * 0.05), (1437, grab + U * 0.012), (1441, grab + U * 0.006), (1450, mouth - U * 0.05 + F * 0.06), (1456, mouth), (1466, mouth + F * 0.1 - U * 0.12), (1480, grab + U * 0.12 + F * 0.1), (f1, grab + U * 0.12 + F * 0.1)]
+def tips():
+    bpy.context.view_layer.update()
+    return (P.bone_world(r, "finger2-3.R", tail=True) + P.bone_world(r, "finger1-3.R", tail=True)) / 2
 for f, t in keys:
     sc.frame_set(f)
     up = f in (1450, 1456)
-    P.reach(r, "R", t + (-U * 0.05 + F * 0.15 if up else U * 0.04 - F * 0.06), pole_dir=-X * 0.8 - U * 0.5,
-            wrist_fwd=((-F * 0.85 + U * 0.3 + X * 0.3) if up else (F * 0.75 - U * 0.6)).normalized())
-    P._roll_palm(r, "R", ((X * 0.4 + U * 0.6 - F * 0.2) if up else (-U * 0.5 + X * 0.3 + F * 0.3)).normalized())
-    P.hand_shape(r, "R", "cubit", 0.75 if 1441 <= f <= 1456 else 0.35)
+    if up:
+        # fingertips (not the wrist) go to the lips: the mouth is re-measured at this frame (head lean + look),
+        # the hand comes from below-front with the fingers pointing back at the mouth; solve the wrist so the tips land
+        m = P.lips_front(b, r, out=0.0)
+        goal = m + F * 0.012 if f == 1456 else m + F * 0.07 - U * 0.035
+        fwd = (-F * 0.75 + U * 0.35 - X * 0.15).normalized()
+        w = goal - fwd * 0.17
+        for _ in range(8):
+            P.reach(r, "R", w, pole_dir=-X * 0.8 - U * 0.5, wrist_fwd=fwd)
+            P._roll_palm(r, "R", (U * 0.7 - F * 0.3).normalized())
+            P.hand_shape(r, "R", "cubit", 0.75)
+            err = goal - tips()
+            if err.length < 0.004: break
+            w = w + err
+        print("MOUTHERR", f, round(err.length * 1000, 1), "mm")
+    else:
+        P.reach(r, "R", t + U * 0.04 - F * 0.06, pole_dir=-X * 0.8 - U * 0.5, wrist_fwd=(F * 0.75 - U * 0.6).normalized())
+        P._roll_palm(r, "R", (-U * 0.5 + X * 0.3 + F * 0.3).normalized())
+        P.hand_shape(r, "R", "cubit", 0.75 if 1441 <= f <= 1456 else 0.35)
     P.key_pose(r, f, bones=[pb.name for pb in r.pose.bones if pb.name.endswith(".R") and ("arm" in pb.name or "wrist" in pb.name or "finger" in pb.name)])
 sc.frame_set(1441)
 tipI = P.bone_world(r, "finger2-3.R", tail=True); tipT = P.bone_world(r, "finger1-3.R", tail=True)
