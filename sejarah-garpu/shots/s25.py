@@ -14,9 +14,13 @@ s = bpy.data.objects["SENDOK_NARATOR"]; s["grip_mode"] = "pena"
 rest = s.matrix_world @ Vector(s["tip"])
 show = P.bone_world(r, "spine01") + F * 0.36 + U * 0.22 - X * 0.12
 d_rest = (s.matrix_world.to_3x3() @ Vector((0, 0, 1))).normalized(); d_up = (U * 0.8 + F * 0.35 + X * 0.2).normalized()
-hold(s, r, "R", [(f0, rest + U * 0.004), (1380, rest + U * 0.004), (1398, show), (f1, show + U * 0.01)], point_local=Vector(s["tip"]), grip_local=(0, 0, -0.03),
-     pole=-U * 0.8 - X * 0.6, hand_dirs={f0: d_rest, 1380: d_rest, 1398: d_up, f1: d_up}, palm_dirs={f0: -U, 1380: -U, 1398: X * 0.7 - F * 0.4, f1: X * 0.7 - F * 0.4},
-     fingers=(1, 3), pre_shape=("garpu", 1.0), prop_dirs={1398: d_up, f1: d_up})
+# half-way (1389) the spoon is out in front of the chest, pointing forward-up: the hand neither brushes his chest
+# nor swings the spoon across his face on the way up
+mid = rest.lerp(show, 0.5) + F * 0.1; d_mid = (F * 0.7 + U * 0.5 + X * 0.1).normalized()
+hold(s, r, "R", [(f0, rest + U * 0.004), (1380, rest + U * 0.004), (1389, mid), (1398, show), (f1, show + U * 0.01)], point_local=Vector(s["tip"]), grip_local=(0, 0, -0.03),
+     pole=-U * 0.8 - X * 0.6, hand_dirs={f0: d_rest, 1380: d_rest, 1389: d_mid, 1398: d_up, f1: d_up},
+     palm_dirs={f0: -U, 1380: -U, 1389: X * 0.5 - U * 0.6 - F * 0.1, 1398: X * 0.7 - F * 0.4, f1: X * 0.7 - F * 0.4},
+     fingers=(1, 3), pre_shape=("garpu", 1.0), prop_dirs={1389: d_mid, 1398: d_up, f1: d_up})
 P.relaxed_arms(r, sides=("L",))
 P.reach(r, "L", Vector((0.25, 0.38, TH + 0.035)), pole_dir=X - U * 0.5, wrist_fwd=F - U * 0.15); P._roll_palm(r, "L", -U); P.hand_shape(r, "L", "rileks", 0.6)
 P.key_pose(r, f0, bones=[pb.name for pb in r.pose.bones if pb.name.endswith(".L")]); r.keyframe_insert("location", frame=f0)
@@ -26,4 +30,4 @@ P.face(b, f0, "SENYUM", 0.4, extra={"eyeLookDownLeft": 0.5, "eyeLookDownRight": 
 P.blink(b, 1390)
 cam = camera(SID, 40, [(f0, cam_pos, (0.0, 0.6, 1.0)), (f1, cam_pos + Vector((0, 0.25, 0)), (0.0, 0.6, 1.05))], focus=P.bone_world(r, "head"), fstop=2.8)
 finish(SID, chars=[(b, r)], props=[s], env=[o for o in bpy.data.objects["Meja_Makan"].children_recursive if o.type == "MESH"])
-if "stills" in sys.argv: print("STILLS", stills(SID, [f0, 1404, f1]))
+if "stills" in sys.argv: print("STILLS", stills(SID, [f0, 1386, 1389, 1393, 1404, f1]))
