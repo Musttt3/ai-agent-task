@@ -840,6 +840,29 @@ def lips_front(body, rig, out=0.012):
     best = max(near, key=lambda p: (p - m).dot(fwd)) if near else m + F * 0.05
     return best + fwd * out
 
+def mouth_front(body, rig, out=0.0):
+    """a point `out` metres in front of the lips (world), from the evaluated vertices of the MakeHuman "lips" weight
+    group: the front-most lip vertex near the face's centre line. (joint-mouth is the jaw hinge, at eye height and
+    ~7 cm behind the face, so lips_front can land in front of the eyes on a lowered head.)"""
+    gi = body.vertex_groups["lips"].index
+    idx = [v.index for v in body.data.vertices if any(g.group == gi and g.weight > 0.5 for g in v.groups)]
+    mods = [(mm, mm.show_viewport) for mm in body.modifiers if mm.type in ("SUBSURF", "MASK")]
+    for mm, _ in mods: mm.show_viewport = False
+    deps = bpy.context.evaluated_depsgraph_get(); deps.update()
+    ev = body.evaluated_get(deps); me = ev.to_mesh(); mw = body.matrix_world
+    pts = [mw @ me.vertices[i].co for i in idx]
+    ev.to_mesh_clear()
+    for mm, v in mods: mm.show_viewport = v
+    X, F, U = char_axes(rig)
+    head_q = (rig.matrix_world @ rig.pose.bones["head"].matrix).to_quaternion()
+    fwd = (head_q @ Vector((0, 0, 1)))
+    if fwd.dot(F) < 0: fwd = -fwd
+    fwd = (fwd + F * 0.5).normalized()
+    c = sum(pts, Vector()) / len(pts)
+    mid = [p for p in pts if abs((p - c).dot(X)) < 0.012] or pts
+    best = max(mid, key=lambda p: (p - c).dot(fwd))
+    return best + fwd * out
+
 def wear(hat, rig, body, height=0.105, fwd=0.0, tilt=0.0):
     """put a hat on: centred over the skull (head bone), band at `height` above the head joint, level with the head,
     then attached to the head bone (follows every turn)"""

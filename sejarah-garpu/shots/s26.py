@@ -12,18 +12,17 @@ P.sit(r, b, seat_z(0.0, 0.74), lean=10)
 X, F, U = P.char_axes(r)
 rice = bpy.data.objects["PIRING_NARATOR_NASI"]; rc = rice.matrix_world.translation
 grab = rc + Vector((0.0, -0.03, 0.035))
-mouth = P.lips_front(b, r, out=0.012)                       # rough; the eating keys re-measure it per frame
 from props import gundukan_nasi
 clump = gundukan_nasi("SUAPAN_NARATOR", 0.014, 0.9, bpy.data.collections["PROPS"])
 # hand-eating as people really do it: the hand rises from BELOW the chin, fingers pointing up-back at the lips
 # (thumb pushes the rice in), elbow low at his side, so the face stays visible; then it comes down in steps
 plate_keys = [(f0, grab + U * 0.15 + F * 0.05), (1437, grab + U * 0.012), (1441, grab + U * 0.006)]
-FW_UP = (-F * 0.55 + U * 0.75 - X * 0.2).normalized()       # fingers toward the lips, from below-front
+FW_UP = (-F * 0.7 + U * 0.5 - X * 0.2).normalized()         # fingers toward the lips, from below-front
 FW_DN = (F * 0.75 - U * 0.6).normalized()                    # fingers toward the plate
 PALM_UP = (-F * 0.7 + X * 0.4 - U * 0.2).normalized(); PALM_DN = (-U * 0.5 + X * 0.3 + F * 0.3).normalized()
 # (frame, tip goal relative to mouth or None, fingers dir, palm dir, curl)
 mouth_keys = [(1446, (F * 0.2 - U * 0.2), 0.5, 0.75), (1450, (F * 0.06 - U * 0.06), 1.0, 0.75), (1456, (F * 0.012), 1.0, 0.75),
-              (1462, (F * 0.06 - U * 0.09), 1.0, 0.55), (1468, (F * 0.16 - U * 0.22), 0.6, 0.45), (1474, (F * 0.22 - U * 0.33), 0.25, 0.4)]
+              (1462, (F * 0.06 - U * 0.09), 1.0, 0.55), (1469, (F * 0.16 - U * 0.18), 0.55, 0.45)]
 rest_keys = [(1480, grab + U * 0.12 + F * 0.1), (f1, grab + U * 0.12 + F * 0.1)]
 def tips():
     bpy.context.view_layer.update()
@@ -38,7 +37,7 @@ for f, t in plate_keys + rest_keys:
 for f, off, k, curl in mouth_keys:
     # fingertips (not the wrist) go to the goal: the mouth is re-measured at this frame (head lean + look)
     sc.frame_set(f)
-    goal = P.lips_front(b, r, out=0.0) + off
+    goal = P.mouth_front(b, r) + off
     fwd = (FW_DN.lerp(FW_UP, k)).normalized(); palm = (PALM_DN.lerp(PALM_UP, k)).normalized()
     w = goal - fwd * 0.15
     for _ in range(10):
@@ -66,4 +65,4 @@ P.face(b, 1480, "SINIS", 0.5, extra={"mouthSmileLeft": 0.6, "browOuterUpLeft": 0
 P.blink(b, 1495)
 cam = camera(SID, 40, [(f0, cam_pos, (0.0, 0.5, 1.0)), (1470, cam_pos, (0.0, 0.6, 1.08)), (f1, cam_pos + Vector((0, 0.22, 0.0)), (0.0, 0.62, 1.12))], focus=P.bone_world(r, "head"), fstop=2.8)
 finish(SID, chars=[(b, r)], props=[], env=[o for o in bpy.data.objects["Meja_Makan"].children_recursive if o.type == "MESH"])
-if "stills" in sys.argv: print("STILLS", stills(SID, [f0, 1441, 1450, 1456, 1462, 1468, 1474, 1490]))
+if "stills" in sys.argv: print("STILLS", stills(SID, [f0, 1441, 1450, 1456, 1462, 1469, 1476, 1490]))
